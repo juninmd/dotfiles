@@ -1,0 +1,5 @@
+# Firefox Quantum
+
+## Firefox Color
+
+<https://color.firefox.com/?theme=XQAAAALyAAAAAAAAAABBqYhm849SCiazH1KEGccwS-xNVAVKEqArbLAENDFZcMwCbeRjUc7NVF5_ymCzjlSiXdYt-F7hwykTFK5xXhMcmQ5SaeswJDuenKvZUSFc2zanPyDmbm9q5jb3tct7G76WH2398PCf_8hZ936gjGre5pS9DKnifkwVZnf4RuxtNDpCGVOURlnJJIkVQV-nKhyjCaJ4HcV-MpDQTHyCTwsMspQOifoZBTWpA9L4__EN-AA>
