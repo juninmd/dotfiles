@@ -19,6 +19,7 @@ User Settings
     "workbench.iconTheme": "eq-material-theme-icons-darker",
     "gitlens.defaultDateStyle": "absolute",
     "materialTheme.fixIconsRunning": false,
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "window.titleBarStyle": "custom"
 }
 ```
