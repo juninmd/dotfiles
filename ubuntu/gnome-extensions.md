@@ -1,6 +1,5 @@
 https://extensions.gnome.org/extension/15/alternatetab/
 https://extensions.gnome.org/extension/16/auto-move-windows/
-https://extensions.gnome.org/extension/1262/bing-wallpaper-changer/
 https://extensions.gnome.org/extension/517/caffeine/
 https://extensions.gnome.org/extension/779/clipboard-indicator/
 https://extensions.gnome.org/extension/307/dash-to-dock/
@@ -11,3 +10,4 @@ https://extensions.gnome.org/extension/723/pixel-saver/
 https://extensions.gnome.org/extension/8/places-status-indicator/
 https://extensions.gnome.org/extension/905/refresh-wifi-connections/
 https://extensions.gnome.org/extension/19/user-themes/
+https://extensions.gnome.org/extension/708/panel-osd/

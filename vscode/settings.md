@@ -7,19 +7,21 @@ User Settings
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
     "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "Material Theme Darker",
+    "workbench.iconTheme": "material-icon-theme",
+    "breadcrumbs.enabled": true,
     "explorer.confirmDelete": false,
     "git.autofetch": true,
     "extensions.ignoreRecommendations": true,
-    "workbench.colorTheme": "Material Theme Darker",
     "npm.enableScriptExplorer": true,
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
     },
     "gitlens.historyExplorer.enabled": true,
-    "workbench.iconTheme": "eq-material-theme-icons-darker",
     "gitlens.defaultDateStyle": "absolute",
-    "materialTheme.fixIconsRunning": false,
     "explorer.confirmDragAndDrop": false,
-    "window.titleBarStyle": "custom"
+    "window.titleBarStyle": "custom",
+    "debug.allowBreakpointsEverywhere": true,
+    "debug.toolBarLocation": "docked"
 }
 ```
