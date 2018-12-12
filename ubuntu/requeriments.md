@@ -40,21 +40,29 @@ sudo apt-get update && sudo apt-get install yarn
 ```
 
 ## SSH 
+```
 ssh-keygen 
 
 eval `ssh-agent` 
 
 ssh-add ~/.ssh/id_rsa
+```
 
 ### Generate new pub
+```
 ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub
+```
 
-## Test Bitbucket
+### Test Bitbucket
+```
 ssh -T git@bitbucket.org
+```
 
 ## Java
-sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install software-properties-common
-add-apt-repository ppa:webupd8team/java
-apt-get update
-apt-get install oracle-java8-installer
+```
+sudo apt-get update && sudo apt-get upgrade  
+sudo apt-get install software-properties-common  
+add-apt-repository ppa:webupd8team/java  
+apt-get update  
+apt-get install oracle-java8-installer  
+```
