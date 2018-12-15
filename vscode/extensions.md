@@ -25,5 +25,6 @@ code --install-extension ms-vscode.Go
 code --install-extension PKief.material-icon-theme
 code --install-extension roblourens.unittest-navigate
 code --install-extension xabikos.JavaScriptSnippets
+code --install-extension visualstudioexptteam.vscodeintellicode
 code --install-extension Zignd.html-css-class-completion
 ```
