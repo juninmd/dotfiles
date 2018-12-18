@@ -6,7 +6,6 @@ User Settings
 {
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
-    "workbench.startupEditor": "newUntitledFile",
     "workbench.colorTheme": "Material Theme Darker High Contrast",
     "workbench.iconTheme": "eq-material-theme-icons-darker",
     "breadcrumbs.enabled": true,
