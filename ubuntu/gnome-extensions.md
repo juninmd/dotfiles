@@ -31,3 +31,7 @@
 * [Window List](https://extensions.gnome.org/extension/602/window-list/)
 
 * [Workspace Indicator](https://extensions.gnome.org/extension/21/workspace-indicator/)
+
+https://extensions.gnome.org/extension/442/drop-down-terminal/
+
+https://extensions.gnome.org/extension/97/coverflow-alt-tab/
