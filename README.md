@@ -14,7 +14,7 @@ Repositório para guardar configurações, padrões, dicas, macetes.
 ## Extensões
 
 - [VS Code](./vscode/extensions.md)
-- [Gnome](./ubuntu/gnome-extensions.md)
+- [Gnome](./gnome/extensions.md)
 
 ## Quick Install
 
