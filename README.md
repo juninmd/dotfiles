@@ -19,3 +19,8 @@ Repositório para guardar configurações, padrões, dicas, macetes.
 ## Quick Install
 
 - [Ubuntu](./ubuntu/install.md)
+
+## Minhas Libs NPM
+
+- [Teresinha](https://github.com/juninmd/teresinha)
+- [Gign](https://github.com/juninmd/gign)
