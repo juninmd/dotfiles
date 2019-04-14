@@ -1,4 +1,6 @@
-```
+# Tema
+
+```shell
 https://github.com/adapta-project/adapta-gtk-theme
 sudo add-apt-repository ppa:tista/adapta
 sudo apt-get update
