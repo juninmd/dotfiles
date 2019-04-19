@@ -94,7 +94,7 @@ ssh -T git@bitbucket.org
 ```bash
 sudo apt-get update && sudo apt-get upgrade  
 sudo apt-get install software-properties-common  
-sudo add-apt-repository ppa:webupd8team/java  
-sudo apt-get update  
-sudo apt-get install oracle-java8-installer  
+sudo add-apt-repository ppa:linuxuprising/java
+sudo apt update
+sudo apt install oracle-java11-installer
 ```
