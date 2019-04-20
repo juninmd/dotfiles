@@ -127,6 +127,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 docker-compose --version
 
+docker-compose up -d
+
 ```
 
 ## Placa de vídeo
