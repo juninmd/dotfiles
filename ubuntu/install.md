@@ -130,3 +130,16 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
 ```
+
+```
+Nvidia GTX Drivers
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt-get update
+sudo ubuntu-drivers list
+sudo apt-get install nvidia-*last_version*
+```
+https://www.maketecheasier.com/install-nvidia-drivers-ubuntu/
+```
+edit /etc/gdm3/custom.conf and uncomment the line:
+#WaylandEnable=false
+```
