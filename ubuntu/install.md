@@ -131,6 +131,8 @@ docker-compose --version
 
 ```
 
+## Placa de vídeo
+
 ```
 Nvidia GTX Drivers
 sudo add-apt-repository ppa:graphics-drivers/ppa
@@ -142,4 +144,9 @@ https://www.maketecheasier.com/install-nvidia-drivers-ubuntu/
 ```
 edit /etc/gdm3/custom.conf and uncomment the line:
 #WaylandEnable=false
+```
+## Vídeo
+
+```
+sudo apt install libavcodec-extra
 ```
