@@ -150,3 +150,9 @@ edit /etc/gdm3/custom.conf and uncomment the line:
 ```
 sudo apt install libavcodec-extra
 ```
+
+## Extensões
+
+```
+apt install gnome-tweak-tool
+```
