@@ -154,5 +154,5 @@ sudo apt install libavcodec-extra
 ## Extensões
 
 ```
-apt install gnome-tweak-tool
+sudo apt install gnome-tweak-tool
 ```
