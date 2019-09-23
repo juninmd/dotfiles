@@ -156,3 +156,6 @@ sudo apt install libavcodec-extra
 ```
 sudo apt install gnome-tweak-tool
 ```
+```
+sudo apt-get install chrome-gnome-shell
+```
