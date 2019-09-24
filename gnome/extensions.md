@@ -35,3 +35,7 @@
 https://extensions.gnome.org/extension/442/drop-down-terminal/
 
 https://extensions.gnome.org/extension/97/coverflow-alt-tab/
+
+https://extensions.gnome.org/extension/818/battery-percentage/
+
+https://extensions.gnome.org/extension/1213/dynamic-battery/
