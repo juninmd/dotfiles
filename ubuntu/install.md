@@ -162,6 +162,18 @@ sudo apt-get install chrome-gnome-shell
 
 ## Android
 
+Adicionar no arquivo ~/.zshrc
+
+```
+export ANDROID_HOME=~/home/antonio/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+```
+
+```
+source ~/.zshrc
+```
+
 ```
 sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
 ```
