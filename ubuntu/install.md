@@ -165,7 +165,7 @@ sudo apt-get install chrome-gnome-shell
 Adicionar no arquivo ~/.zshrc
 
 ```
-export ANDROID_HOME=~/home/antonio/Android/Sdk
+export ANDROID_HOME=~/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 ```
