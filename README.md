@@ -37,3 +37,7 @@ Repositório para guardar configurações, padrões, dicas, macetes.
 - [Ping](https://github.com/juninmd/Ping-Hermano)
 - [Pega IP](https://github.com/juninmd/pega-ip-local)
 - [Parser xml](https://github.com/juninmd/ParserXml)
+
+## Créditos
+
+- <https://github.com/shubhampathak/autosetup>
