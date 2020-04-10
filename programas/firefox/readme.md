@@ -1,4 +1,4 @@
-# Firefox Quantum
+# Firefox
 
 ## Firefox Color
 

@@ -1,6 +1,6 @@
-# configs
+# dotfiles
 
-Repositório para guardar configurações, padrões, dicas, macetes.
+> Repositório para guardar configurações, padrões, dicas, macetes.
 
 ## Configs
 
@@ -16,7 +16,7 @@ Repositório para guardar configurações, padrões, dicas, macetes.
 - [VS Code](./vscode/extensions.md)
 - [Gnome](./gnome/extensions.md)
 
-## Quick Install
+## Post Install Ubuntu
 
 - [Ubuntu](./ubuntu/install.md)
 

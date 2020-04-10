@@ -32,10 +32,10 @@
 
 * [Workspace Indicator](https://extensions.gnome.org/extension/21/workspace-indicator/)
 
-https://extensions.gnome.org/extension/442/drop-down-terminal/
+* [DropDownTerminal](https://extensions.gnome.org/extension/442/drop-down-terminal/)
 
-https://extensions.gnome.org/extension/97/coverflow-alt-tab/
+* [Coverflow Alt Tab](https://extensions.gnome.org/extension/97/coverflow-alt-tab/)
 
-https://extensions.gnome.org/extension/818/battery-percentage/
+* [Battery Percentage](https://extensions.gnome.org/extension/818/battery-percentage/)
 
-https://extensions.gnome.org/extension/1213/dynamic-battery/
+* [Dynamic Battery](https://extensions.gnome.org/extension/1213/dynamic-battery/)

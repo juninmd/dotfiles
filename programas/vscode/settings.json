@@ -1,8 +1,3 @@
-# Settings
-
-User Settings
-
-```json
 {
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
@@ -46,4 +41,3 @@ User Settings
     "search.useGlobalIgnoreFiles": true,
     "debug.inlineValues": true
 }
-```

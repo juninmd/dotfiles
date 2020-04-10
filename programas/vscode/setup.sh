@@ -1,12 +1,3 @@
-# My list of `Visual Studio Code` extensions
-
-> To generate the list, run this code bellow:
-
-```bash
-code --list-extensions | xargs -L 1 echo code --install-extension
-```
-
-```bash
 code --install-extension aaron-bond.better-comments
 code --install-extension amatiasq.sort-imports
 code --install-extension arcticicestudio.nord-visual-studio-code
@@ -31,4 +22,3 @@ code --install-extension roblourens.unittest-navigate
 code --install-extension visualstudioexptteam.vscodeintellicode
 code --install-extension xabikos.JavaScriptSnippets
 code --install-extension Zignd.html-css-class-completion
-```

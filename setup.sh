@@ -34,6 +34,9 @@ sudo systemctl enable apparmor
 export PATH=$PATH:/snap/bin
 sudo snap refresh
 
+echo -e "${c}Install libavcodec-extra."; $r
+sudo apt install libavcodec-extra
+
 #Setting up Git
 read -p "${c}Do you want to setup Git global config? (y/n): " -r; $r
 echo
