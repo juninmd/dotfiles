@@ -147,6 +147,7 @@ options=(1 "Visual Studio Code" on
   24 "Telegram" on
   25 "Steam" on
   26 "VLC Media Player" on
+  27 "Postman" on
 	)
 
 selected=$("${dialogbox[@]}" "${options[@]}" 2>&1 >/dev/tty)
@@ -286,8 +287,8 @@ do
 		18)
 		echo -e "${c}Installing NVM"; $r
 		curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-    nvm install --lts
-    nvm use --lts
+		nvm install --lts
+		nvm use --lts
 		;;	   
 
 		19)
@@ -352,6 +353,12 @@ do
 		echo -e "${c}VLC"; $r
 		sudo apt install vlc -y
 		;;	
+
+		27)
+		echo -e "${c}Postman"; $r
+		sudo snap install postman
+		;;	
+
 	esac
 done
 
