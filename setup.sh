@@ -35,9 +35,12 @@ export PATH=$PATH:/snap/bin
 sudo snap refresh
 
 echo -e "${c}Install libavcodec-extra."; $r
-sudo apt install libavcodec-extra
+sudo apt install -y libavcodec-extra
 
 #Setting up Git
+echo -e "${c}Installing Git"; $r
+sudo apt -y install git
+
 read -p "${c}Do you want to setup Git global config? (y/n): " -r; $r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -77,12 +80,15 @@ sudo apt install -y android-tools-adb android-tools-fastboot
 
 #Installing libc6
 echo -e "${c}Installing libc6"; $r
-sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
+sudo apt-get install -y libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
 
-#Installing libc6
+#Installing gnome-tweak-tool
 echo -e "${c}Installing Ubuntu Extensions"; $r
-sudo apt install gnome-tweak-tool
-sudo apt-get install chrome-gnome-shell
+sudo apt install -y gnome-tweak-tool
+sudo apt-get install chrome-gnome-shell -y
+
+#Installing Media Codecs
+sudo apt install ubuntu-restricted-extras -y
 
 #Creating Directory Inside $HOME
 echo -e "${c}Creating Directory named 'tools' inside $HOME directory."; $r
@@ -138,6 +144,9 @@ options=(1 "Visual Studio Code" on
 	21 "MYSQL" on
   22 "Docker" on
   23 "Docker Compose" on
+  24 "Telegram" on
+  25 "Steam" on
+  26 "VLC Media Player" on
 	)
 
 selected=$("${dialogbox[@]}" "${options[@]}" 2>&1 >/dev/tty)
@@ -176,8 +185,8 @@ do
 
 		5)
 		echo -e "${c}Android Studio"; $r
-    sudo add-apt-repository ppa:maarten-fonville/android-studio
-		sudo apt-get install android-studio 
+    	sudo add-apt-repository ppa:maarten-fonville/android-studio
+		sudo apt-get install -y android-studio 
 		;;
 
 		6) 
@@ -285,21 +294,21 @@ do
 		echo -e "${c}Installing YARN"; $r
 		curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 		echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-		sudo apt-get update && sudo apt-get install yarn
+		sudo apt-get update && sudo apt-get install yarn -y
 		;;	   
 
 		20)
-		echo -e "${c}Installing YARN"; $r
+		echo -e "${c}Installing Java"; $r
 		sudo apt-get update && sudo apt-get upgrade  
-		sudo apt-get install software-properties-common  
+		sudo apt-get install software-properties-common -y
 		sudo add-apt-repository ppa:linuxuprising/java
 		sudo apt update
-		sudo apt install oracle-java11-installer
+		sudo apt install oracle-java11-installer -y
 		;;	 
 
 		21)
 		echo -e "${c}Installing MySql"; $r
-		sudo apt-get install mysql-client
+		sudo apt-get install mysql-client -y
 		;;	
 
 		22)
@@ -315,8 +324,8 @@ do
 		sudo usermod -aG docker ${USER}
 		su - ${USER}
 		id -nG
-		sudo usermod -aG docker nome-do-usuário
-		docker run hello-world
+		echo "sudo usermod -aG docker nome-do-usuário"
+		echo "docker run hello-world"
 		;;	
 
 		23)
@@ -324,7 +333,24 @@ do
 		sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 		sudo chmod +x /usr/local/bin/docker-compose
 		docker-compose --version
-		docker-compose up -d
+		echo "docker-compose up -d"
+		;;	
+
+		24)
+		echo -e "${c}Telegram"; $r
+		sudo add-apt-repository ppa:atareao/telegram
+		sudo apt-get update
+		sudo apt-get install telegram
+		;;	
+
+		25)
+		echo -e "${c}Steam"; $r
+		sudo apt-get install steam-installer -y
+		;;	
+		
+		26)
+		echo -e "${c}VLC"; $r
+		sudo apt install vlc -y
 		;;	
 	esac
 done
