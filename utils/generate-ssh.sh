@@ -1,5 +1,7 @@
 echo -p generating ssh
 
+ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+
 ssh-keygen
 eval `ssh-agent`
 ssh-add ~/.ssh/id_rsa
