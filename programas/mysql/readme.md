@@ -4,8 +4,6 @@
 
 ```shell
 
-service mysql stop
-
 sudo mysql -u root
 
 DROP USER 'root'@'localhost';
