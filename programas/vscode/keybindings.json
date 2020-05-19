@@ -1,13 +1,22 @@
-// Place your key bindings in this file to override the defaults
 [
-  {
-    "key": "shift+alt+f",
-    "command": "editor.action.formatDocument",
-    "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+shift+i",
-    "command": "-editor.action.formatDocument",
-    "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
-  }
-]
+    {
+      "key": "shift+alt+f",
+      "command": "editor.action.formatDocument",
+      "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+      "key": "ctrl+shift+i",
+      "command": "-editor.action.formatDocument",
+      "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+      "key": "alt+enter",
+      "command": "editor.action.quickFix",
+      "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+      "key": "ctrl+.",
+      "command": "-editor.action.quickFix",
+      "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+    }
+  ]
