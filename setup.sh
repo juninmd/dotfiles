@@ -322,7 +322,9 @@ do
 		apt-cache policy docker-ce
 		sudo apt install docker-ce
 		sudo systemctl status docker
+		sudo groupadd docker
 		sudo usermod -aG docker ${USER}
+		newgrp docker
 		su - ${USER}
 		id -nG
 		echo "sudo usermod -aG docker nome-do-usuário"
