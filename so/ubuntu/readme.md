@@ -23,3 +23,12 @@ sudo apt-get install nvidia-*last_version*
 edit /etc/gdm3/custom.conf and uncomment the line:
 #WaylandEnable=false
 ```
+
+---
+
+## Recuperar boot ubuntu
+```
+sudo add-apt-repository ppa:yannubuntu/boot-repair
+sudo apt-get update
+sudo apt-get install boot-repair -y
+```
