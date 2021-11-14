@@ -18,7 +18,7 @@
 
 ## Post Install Ubuntu
 
-- [Ubuntu](./so/ubuntu/install.md)
+- [Ubuntu](./so/ubuntu/readme.md)
 
 ## Minhas Libs NPM
 
