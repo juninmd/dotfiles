@@ -32,3 +32,7 @@ sudo add-apt-repository ppa:yannubuntu/boot-repair
 sudo apt-get update
 sudo apt-get install boot-repair -y
 ```
+ou no windows
+```
+bcdedit /set {bootmgr} path \EFI\ubuntu\grubx64.efi
+```
