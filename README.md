@@ -30,6 +30,7 @@
 
 ## Utilitários
 
+- [Generate SSH](https://raw.githubusercontent.com/juninmd/dotfiles/master/utils/generate-ssh.sh)
 - [VS Code Context - Windows](https://github.com/juninmd/vscode-context)
 - [Unificador PDF](https://github.com/juninmd/unificadorpdf)
 - [Toogle Network - Windows](https://github.com/juninmd/togglenetwork)
