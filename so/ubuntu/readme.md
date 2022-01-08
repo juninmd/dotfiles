@@ -36,3 +36,6 @@ ou no windows
 ```
 bcdedit /set {bootmgr} path \EFI\ubuntu\grubx64.efi
 ```
+
+## WSDL Windows + Ubuntu
+- https://docs.microsoft.com/pt-br/windows/dev-environment/javascript/nodejs-on-wsl
