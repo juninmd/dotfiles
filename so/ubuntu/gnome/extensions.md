@@ -6,7 +6,7 @@
 
 * [Caffeine](https://extensions.gnome.org/extension/517/caffeine/)
 
-* [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
+* [Clipboard History](https://extensions.gnome.org/extension/4839/clipboard-history/)
 
 * [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 
@@ -28,17 +28,13 @@
 
 * [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
 
-* [Window List](https://extensions.gnome.org/extension/602/window-list/)
+* [Window List *](https://extensions.gnome.org/extension/602/window-list/)
 
 * [Workspace Indicator](https://extensions.gnome.org/extension/21/workspace-indicator/)
 
 * [DropDownTerminal](https://extensions.gnome.org/extension/442/drop-down-terminal/)
 
 * [Coverflow Alt Tab](https://extensions.gnome.org/extension/97/coverflow-alt-tab/)
-
-* [Battery Percentage](https://extensions.gnome.org/extension/818/battery-percentage/)
-
-* [Dynamic Battery](https://extensions.gnome.org/extension/1213/dynamic-battery/)
 
 * [Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/)
 
