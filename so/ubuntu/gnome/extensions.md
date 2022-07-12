@@ -14,7 +14,7 @@
 
 * [Lyrics Finder](https://extensions.gnome.org/extension/1383/lyrics-finder/)
 
-* [Media Player Indicator](https://extensions.gnome.org/extension/55/media-player-indicator/)
+* [Media Player Indicator](https://extensions.gnome.org/extension/1379/mpris-indicator-button/)
 
 * [Native Window Placement](https://extensions.gnome.org/extension/18/native-window-placement/)
 
