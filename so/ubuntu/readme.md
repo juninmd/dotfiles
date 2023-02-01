@@ -39,3 +39,10 @@ bcdedit /set {bootmgr} path \EFI\ubuntu\grubx64.efi
 
 ## WSDL Windows + Ubuntu
 - https://docs.microsoft.com/pt-br/windows/dev-environment/javascript/nodejs-on-wsl
+
+## Remover pacotes do ubuntu
+
+```
+sudo rm -r /var/lib/apt/lists/* -vf
+sudo apt-get update
+```
