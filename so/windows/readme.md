@@ -11,3 +11,5 @@ flutter doctor --android-licenses
 ```
 
 https://code.visualstudio.com/r
+
+https://github.com/ChrisTitusTech/winutil
