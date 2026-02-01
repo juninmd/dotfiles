@@ -39,6 +39,12 @@
 - [Pega IP](https://github.com/juninmd/pega-ip-local)
 - [Parser xml](https://github.com/juninmd/ParserXml)
 
+## Ferramentas de IA
+
+- [GitHub Copilot](https://copilot.github.com/)
+- [Tabnine](https://www.tabnine.com/)
+- [Fig](https://fig.io/)
+
 ## Créditos
 
 - <https://github.com/shubhampathak/autosetup>

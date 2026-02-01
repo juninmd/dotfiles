@@ -1,0 +1,16 @@
+# futuristic zsh setup suggestions
+
+## Starship - a modern, customizable prompt
+# 1. Install starship
+curl -sS https://starship.rs/install.sh | sh
+
+# 2. Add to your ~/.zshrc
+eval "$(starship init zsh)"
+
+
+## zsh-autosuggestions - fish-like autosuggestions
+# 1. Clone the repository
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# 2. Add the plugin to your ~/.zshrc (in the plugins array)
+# plugins=(... zsh-autosuggestions)

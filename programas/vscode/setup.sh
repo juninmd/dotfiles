@@ -22,3 +22,5 @@ code --install-extension roblourens.unittest-navigate
 code --install-extension visualstudioexptteam.vscodeintellicode
 code --install-extension xabikos.JavaScriptSnippets
 code --install-extension Zignd.html-css-class-completion
+code --install-extension GitHub.copilot
+code --install-extension RobbOwen.synthwave-vscode
