@@ -24,3 +24,7 @@ code --install-extension xabikos.JavaScriptSnippets
 code --install-extension Zignd.html-css-class-completion
 code --install-extension GitHub.copilot
 code --install-extension RobbOwen.synthwave-vscode
+code --install-extension esbenp.prettier-vscode
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension bradlc.vscode-tailwindcss
+code --install-extension usernamehw.errorlens

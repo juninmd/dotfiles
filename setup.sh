@@ -10,6 +10,8 @@
 c='\e[32m' # Coloured echo (Green)
 r='tput sgr0' #Reset colour after echo
 
+REPO_ROOT=$(pwd)
+
 # Required dependencies for all softwares (important)
 echo -e "${c}Installing complete dependencies pack."; $r
 sudo apt install -y software-properties-common apt-transport-https build-essential checkinstall libreadline-gplv2-dev libxssl libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev autoconf automake libtool make g++ unzip flex bison gcc libssl-dev libyaml-dev libreadline6-dev zlib1g zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev libpq-dev libpcap-dev libmagickwand-dev libappindicator3-1 libindicator3-7 imagemagick xdg-utils
@@ -122,7 +124,7 @@ checkGo() {
 #Executing Install Dialog
 dialogbox=(whiptail --separate-output --ok-button "Install" --title "Auto Setup Script" --checklist "\nPlease select required software(s):\n(Press 'Space' to Select/Deselect, 'Enter' to Install and 'Esc' to Cancel)" 30 80 20)
 options=(1 "Visual Studio Code" on
-	2 "Python2 and iPython" on
+	2 "Modern CLI Tools (eza, bat, etc.)" on
 	3 "Python3" off
 	4 "Go" off
 	5 "Android Studio" off
@@ -132,7 +134,7 @@ options=(1 "Visual Studio Code" on
 	9 "httprobe" off
 	10 "SQLMAP" off
 	11 "i3 Window Manager" off
-	12 "NodeJS" on
+	12 "NodeJS (LTS)" on
 	13 "Wireshark" off
 	14 "Knockpy" off
 	15 "Dirsearch" off
@@ -140,14 +142,19 @@ options=(1 "Visual Studio Code" on
 	17 "Virtual Box" off
   18 "Node Version Mananger" on
   19 "YARN" on
-  20 "Java 11" on
+  20 "Java (Latest LTS)" on
 	21 "MYSQL" on
   22 "Docker" on
-  23 "Docker Compose" on
+  23 "Docker Compose (V2)" on
   24 "Telegram" on
   25 "Steam" on
   26 "VLC Media Player" on
   27 "Postman" on
+  28 "LazyGit" on
+  29 "LazyDocker" on
+  30 "Bun (JS Runtime)" on
+  31 "Starship Prompt" on
+  32 "Zsh Configuration" on
 	)
 
 selected=$("${dialogbox[@]}" "${options[@]}" 2>&1 >/dev/tty)
@@ -167,10 +174,9 @@ do
 		;;
 
 		2) 
-		echo -e "${c}Installing Python2 and iPython"; $r
-		sudo apt install -y python-pip
-		( set -x ; pip --version )
-		sudo pip install ipython
+		echo -e "${c}Installing Modern CLI Tools"; $r
+		chmod +x "$REPO_ROOT/programas/cli-tools/setup.sh"
+		"$REPO_ROOT/programas/cli-tools/setup.sh"
 		;;
 
 		3) 
@@ -237,7 +243,7 @@ do
 		12) 
 		echo -e "${c}Installing NodeJS"; $r
 		cd
-		curl -sL https://deb.nodesource.com/setup_12.x | sudo bash - #Submit the version according to your need.
+		curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 		sudo apt install -y nodejs
 		( set -x; nodejs -v )
 		echo -e "${c}NodeJS Installed Successfully."; $r
@@ -299,12 +305,9 @@ do
 		;;	   
 
 		20)
-		echo -e "${c}Installing Java"; $r
-		sudo apt-get update && sudo apt-get upgrade  
-		sudo apt-get install software-properties-common -y
-		sudo add-apt-repository ppa:linuxuprising/java
-		sudo apt update
-		sudo apt install oracle-java11-installer -y
+		echo -e "${c}Installing Java (OpenJDK)"; $r
+		sudo apt-get update
+		sudo apt install -y openjdk-17-jdk
 		;;	 
 
 		21)
@@ -332,11 +335,11 @@ do
 		;;	
 
 		23)
-		echo -e "${c}Installing Docker Compose"; $r
-		sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-		sudo chmod +x /usr/local/bin/docker-compose
-		docker-compose --version
-		echo "docker-compose up -d"
+		echo -e "${c}Installing Docker Compose Plugin"; $r
+		sudo apt-get update
+		sudo apt-get install -y docker-compose-plugin
+		docker compose version
+		echo "docker compose up -d"
 		;;	
 
 		24)
@@ -360,6 +363,36 @@ do
 		echo -e "${c}Postman"; $r
 		sudo snap install postman
 		;;	
+
+		28)
+		echo -e "${c}Installing LazyGit"; $r
+		chmod +x "$REPO_ROOT/programas/lazygit/setup.sh"
+		"$REPO_ROOT/programas/lazygit/setup.sh"
+		;;
+
+		29)
+		echo -e "${c}Installing LazyDocker"; $r
+		chmod +x "$REPO_ROOT/programas/lazydocker/setup.sh"
+		"$REPO_ROOT/programas/lazydocker/setup.sh"
+		;;
+
+		30)
+		echo -e "${c}Installing Bun"; $r
+		chmod +x "$REPO_ROOT/programas/bun/setup.sh"
+		"$REPO_ROOT/programas/bun/setup.sh"
+		;;
+
+		31)
+		echo -e "${c}Installing Starship"; $r
+		chmod +x "$REPO_ROOT/programas/starship/setup.sh"
+		"$REPO_ROOT/programas/starship/setup.sh"
+		;;
+
+		32)
+		echo -e "${c}Configuring Zsh"; $r
+		chmod +x "$REPO_ROOT/programas/zsh/setup.sh"
+		"$REPO_ROOT/programas/zsh/setup.sh"
+		;;
 
 	esac
 done

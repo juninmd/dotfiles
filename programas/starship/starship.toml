@@ -1,0 +1,37 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+[character]
+success_symbol = '[➜](bold #36f9f6)' # Cyan
+error_symbol = '[✗](bold #ff7edb)'   # Pink
+
+[directory]
+style = "bold #36f9f6"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+style = "bold #fede5d" # Yellow
+symbol = " "
+
+[git_status]
+style = "bold #ff7edb" # Pink
+
+[nodejs]
+symbol = " "
+style = "bold #72f1b8" # Green
+
+[python]
+symbol = "🐍 "
+style = "bold #fede5d"
+
+[docker_context]
+symbol = " "
+style = "bold #36f9f6"
+
+[cmd_duration]
+min_time = 500
+style = "bold #fede5d"
