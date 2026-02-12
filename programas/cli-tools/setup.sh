@@ -69,4 +69,73 @@ fi
 echo -e "${c}Installing tldr...${r}"
 sudo apt install -y tldr
 
-echo -e "${c}CLI Tools installed! Ensure ~/.local/bin is in your PATH.${r}"
+# --- NEW TOOLS (2026 Apps) ---
+
+# Check for Cargo (Rust)
+if ! command -v cargo &> /dev/null; then
+    echo -e "${c}Cargo not found. Installing Rust...${r}"
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    source "$HOME/.cargo/env"
+fi
+
+# Yazi (Modern File Manager)
+if ! command -v yazi &> /dev/null; then
+    echo -e "${c}Installing yazi...${r}"
+    cargo install --locked yazi-fm yazi-cli
+else
+    echo -e "${c}yazi already installed.${r}"
+fi
+
+# Zellij (Terminal Workspace)
+if ! command -v zellij &> /dev/null; then
+    echo -e "${c}Installing zellij...${r}"
+    cargo install --locked zellij
+else
+    echo -e "${c}zellij already installed.${r}"
+fi
+
+# Dust (Disk Usage)
+if ! command -v dust &> /dev/null; then
+    echo -e "${c}Installing dust...${r}"
+    cargo install du-dust
+else
+    echo -e "${c}dust already installed.${r}"
+fi
+
+# Duf (Disk Usage/Free)
+if ! command -v duf &> /dev/null; then
+    echo -e "${c}Installing duf...${r}"
+    if command -v go &> /dev/null; then
+        go install github.com/muesli/duf@latest
+    else
+        echo -e "${c}Go not found, skipping duf installation via go install.${r}"
+    fi
+else
+    echo -e "${c}duf already installed.${r}"
+fi
+
+# Delta (Git Diff)
+if ! command -v delta &> /dev/null; then
+    echo -e "${c}Installing git-delta...${r}"
+    cargo install git-delta
+else
+    echo -e "${c}git-delta already installed.${r}"
+fi
+
+# Navi (Interactive Cheatsheet)
+if ! command -v navi &> /dev/null; then
+    echo -e "${c}Installing navi...${r}"
+    cargo install --locked navi
+else
+    echo -e "${c}navi already installed.${r}"
+fi
+
+# The Fuck (Command Corrector)
+if ! command -v thefuck &> /dev/null; then
+    echo -e "${c}Installing thefuck...${r}"
+    pip3 install thefuck --break-system-packages 2>/dev/null || pip3 install thefuck
+else
+    echo -e "${c}thefuck already installed.${r}"
+fi
+
+echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"

@@ -78,12 +78,38 @@ if command -v btop &> /dev/null; then
     alias top='btop'
 fi
 
+if command -v lazygit &> /dev/null; then
+    alias lg='lazygit'
+fi
+
+# New 2026 Apps Integrations
+
+if command -v zellij &> /dev/null; then
+    eval "\$(zellij setup --generate-completion zsh)"
+fi
+
+if command -v navi &> /dev/null; then
+    eval "\$(navi widget zsh)"
+fi
+
+if command -v thefuck &> /dev/null; then
+    eval "\$(thefuck --alias)"
+fi
+
+if command -v dust &> /dev/null; then
+    alias du='dust'
+fi
+
+if command -v duf &> /dev/null; then
+    alias df='duf'
+fi
+
 # Plugins (sourcing directly)
 [ -f $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Path for local binaries
-export PATH="\$HOME/.local/bin:\$PATH"
+export PATH="\$HOME/.local/bin:\$HOME/.cargo/bin:\$HOME/go/bin:\$PATH"
 export PATH="\$HOME/.bun/bin:\$PATH"
 
 # --- End Custom Configuration ---
