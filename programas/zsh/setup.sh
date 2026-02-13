@@ -104,6 +104,30 @@ if command -v duf &> /dev/null; then
     alias df='duf'
 fi
 
+if command -v atuin &> /dev/null; then
+    eval "\$(atuin init zsh)"
+fi
+
+if command -v mise &> /dev/null; then
+    eval "\$(mise activate zsh)"
+fi
+
+if command -v procs &> /dev/null; then
+    alias ps='procs'
+fi
+
+if command -v doggo &> /dev/null; then
+    alias dig='doggo'
+fi
+
+if command -v curlie &> /dev/null; then
+    alias curl='curlie'
+fi
+
+# Aesthetics
+export BAT_THEME="Dracula"
+export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
+
 # Plugins (sourcing directly)
 [ -f $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -7,8 +7,8 @@ echo -e "${c}Installing Modern CLI Tools...${r}"
 # Update apt first
 sudo apt update
 
-# Install dependencies for adding repos
-sudo apt install -y wget gpg
+# Install dependencies for adding repos and essential build tools
+sudo apt install -y wget gpg python3-pip golang-go curl unzip
 
 # Eza (Modern ls)
 if ! command -v eza &> /dev/null; then
@@ -130,12 +130,104 @@ else
     echo -e "${c}navi already installed.${r}"
 fi
 
+# Atuin (Magical Shell History)
+if ! command -v atuin &> /dev/null; then
+    echo -e "${c}Installing atuin...${r}"
+    cargo install atuin
+else
+    echo -e "${c}atuin already installed.${r}"
+fi
+
+# Procs (Modern ps)
+if ! command -v procs &> /dev/null; then
+    echo -e "${c}Installing procs...${r}"
+    cargo install procs
+else
+    echo -e "${c}procs already installed.${r}"
+fi
+
+# Hyperfine (Benchmarking)
+if ! command -v hyperfine &> /dev/null; then
+    echo -e "${c}Installing hyperfine...${r}"
+    cargo install hyperfine
+else
+    echo -e "${c}hyperfine already installed.${r}"
+fi
+
 # The Fuck (Command Corrector)
 if ! command -v thefuck &> /dev/null; then
     echo -e "${c}Installing thefuck...${r}"
     pip3 install thefuck --break-system-packages 2>/dev/null || pip3 install thefuck
 else
     echo -e "${c}thefuck already installed.${r}"
+fi
+
+# Mise (Polyglot Tool Version Manager)
+if ! command -v mise &> /dev/null; then
+    echo -e "${c}Installing mise...${r}"
+    curl https://mise.jdx.dev/install.sh | sh
+else
+    echo -e "${c}mise already installed.${r}"
+fi
+
+# Doggo (Modern DNS Client)
+if ! command -v doggo &> /dev/null; then
+    echo -e "${c}Installing doggo...${r}"
+    if command -v go &> /dev/null; then
+        go install github.com/mr-karan/doggo/cmd/doggo@latest
+    else
+        echo -e "${c}Go not found, skipping doggo installation.${r}"
+    fi
+else
+    echo -e "${c}doggo already installed.${r}"
+fi
+
+# Curlie (Modern curl)
+if ! command -v curlie &> /dev/null; then
+    echo -e "${c}Installing curlie...${r}"
+    if command -v go &> /dev/null; then
+        go install github.com/rs/curlie@latest
+    else
+        echo -e "${c}Go not found, skipping curlie installation.${r}"
+    fi
+else
+    echo -e "${c}curlie already installed.${r}"
+fi
+
+# K9s (Kubernetes CLI)
+if ! command -v k9s &> /dev/null; then
+    echo -e "${c}Installing k9s...${r}"
+    sudo snap install k9s
+else
+    echo -e "${c}k9s already installed.${r}"
+fi
+
+# Glances (System Monitoring)
+if ! command -v glances &> /dev/null; then
+    echo -e "${c}Installing glances...${r}"
+    pip3 install glances[all] --break-system-packages 2>/dev/null || pip3 install glances[all]
+else
+    echo -e "${c}glances already installed.${r}"
+fi
+
+# FiraCode Nerd Font
+echo -e "${c}Installing FiraCode Nerd Font...${r}"
+FONT_DIR="$HOME/.local/share/fonts"
+if [ ! -d "$FONT_DIR" ]; then
+    mkdir -p "$FONT_DIR"
+fi
+
+if ls "$FONT_DIR"/FiraCode*.ttf 1> /dev/null 2>&1; then
+    echo -e "${c}FiraCode Nerd Font seems to be installed.${r}"
+else
+    wget -qO /tmp/FiraCode.zip https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
+    unzip -o -q /tmp/FiraCode.zip -d "$FONT_DIR"
+    rm /tmp/FiraCode.zip
+    echo -e "${c}FiraCode Nerd Font installed.${r}"
+    if command -v fc-cache &> /dev/null; then
+        echo -e "${c}Updating font cache...${r}"
+        fc-cache -fv
+    fi
 fi
 
 echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"
