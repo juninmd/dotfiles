@@ -155,6 +155,8 @@ options=(1 "Visual Studio Code" on
   30 "Bun (JS Runtime)" on
   31 "Starship Prompt" on
   32 "Zsh Configuration" on
+  33 "Zellij (Terminal Workspace)" on
+  34 "Yazi (File Manager)" on
 	)
 
 selected=$("${dialogbox[@]}" "${options[@]}" 2>&1 >/dev/tty)
@@ -392,6 +394,18 @@ do
 		echo -e "${c}Configuring Zsh"; $r
 		chmod +x "$REPO_ROOT/programas/zsh/setup.sh"
 		"$REPO_ROOT/programas/zsh/setup.sh"
+		;;
+
+		33)
+		echo -e "${c}Installing and Configuring Zellij"; $r
+		chmod +x "$REPO_ROOT/programas/zellij/setup.sh"
+		"$REPO_ROOT/programas/zellij/setup.sh"
+		;;
+
+		34)
+		echo -e "${c}Installing and Configuring Yazi"; $r
+		chmod +x "$REPO_ROOT/programas/yazi/setup.sh"
+		"$REPO_ROOT/programas/yazi/setup.sh"
 		;;
 
 	esac

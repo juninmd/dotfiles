@@ -1,0 +1,46 @@
+// Zellij Configuration (Synthwave '84 Theme)
+
+theme "synthwave"
+
+themes {
+    synthwave {
+        fg "#f8f8f2"
+        bg "#282a36"
+        black "#21222c"
+        red "#ff5555"
+        green "#50fa7b"
+        yellow "#f1fa8c"
+        blue "#bd93f9"
+        magenta "#ff79c6"
+        cyan "#8be9fd"
+        white "#f8f8f2"
+        orange "#ffb86c"
+    }
+}
+
+// Keybindings
+keybinds {
+    normal {
+        // bind "Ctrl g" { SwitchToMode "Locked"; }
+        bind "Ctrl p" { SwitchToMode "Pane"; }
+        bind "Ctrl t" { SwitchToMode "Tab"; }
+        bind "Ctrl n" { NewPane; }
+        bind "Ctrl h" { MoveFocusOrTab "Left"; }
+        bind "Ctrl l" { MoveFocusOrTab "Right"; }
+        bind "Ctrl j" { MoveFocusOrTab "Down"; }
+        bind "Ctrl k" { MoveFocusOrTab "Up"; }
+    }
+    pane {
+        bind "Ctrl p" { SwitchToMode "Normal"; }
+    }
+    tab {
+        bind "Ctrl t" { SwitchToMode "Normal"; }
+    }
+}
+
+// UI
+ui {
+    pane_frames {
+        hide_session_name true
+    }
+}

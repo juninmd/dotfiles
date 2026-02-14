@@ -1,6 +1,6 @@
 #!/bin/bash
 c='\e[32m' # Green Color
-r='tput sgr0' # Reset Color
+r='\e[0m' # Reset Color
 
 echo -e "${c}Installing Modern CLI Tools...${r}"
 
@@ -78,20 +78,75 @@ if ! command -v cargo &> /dev/null; then
     source "$HOME/.cargo/env"
 fi
 
-# Yazi (Modern File Manager)
-if ! command -v yazi &> /dev/null; then
-    echo -e "${c}Installing yazi...${r}"
-    cargo install --locked yazi-fm yazi-cli
+# Uv (Extremely fast Python package manager)
+if ! command -v uv &> /dev/null; then
+    echo -e "${c}Installing uv...${r}"
+    curl -LsSf https://astral.sh/uv/install.sh | sh
 else
-    echo -e "${c}yazi already installed.${r}"
+    echo -e "${c}uv already installed.${r}"
 fi
 
-# Zellij (Terminal Workspace)
-if ! command -v zellij &> /dev/null; then
-    echo -e "${c}Installing zellij...${r}"
-    cargo install --locked zellij
+# Gping (Ping with a graph)
+if ! command -v gping &> /dev/null; then
+    echo -e "${c}Installing gping...${r}"
+    cargo install gping
 else
-    echo -e "${c}zellij already installed.${r}"
+    echo -e "${c}gping already installed.${r}"
+fi
+
+# Jq (JSON Processor)
+if ! command -v jq &> /dev/null; then
+    echo -e "${c}Installing jq...${r}"
+    sudo apt install -y jq
+else
+    echo -e "${c}jq already installed.${r}"
+fi
+
+# Yq (YAML Processor)
+if ! command -v yq &> /dev/null; then
+    echo -e "${c}Installing yq...${r}"
+    if command -v go &> /dev/null; then
+        go install github.com/mikefarah/yq/v4@latest
+    else
+        echo -e "${c}Go not found. Using curl fallback for yq...${r}"
+        # Fallback to binary download if go is missing (unlikely as it is installed above)
+        sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+        sudo chmod +x /usr/local/bin/yq
+    fi
+else
+    echo -e "${c}yq already installed.${r}"
+fi
+
+# Xh (Friendly HTTP Client)
+if ! command -v xh &> /dev/null; then
+    echo -e "${c}Installing xh...${r}"
+    cargo install xh
+else
+    echo -e "${c}xh already installed.${r}"
+fi
+
+# Gum (Shell UI)
+if ! command -v gum &> /dev/null; then
+    echo -e "${c}Installing gum...${r}"
+    if command -v go &> /dev/null; then
+        go install github.com/charmbracelet/gum@latest
+    else
+        echo -e "${c}Go not found, skipping gum installation.${r}"
+    fi
+else
+    echo -e "${c}gum already installed.${r}"
+fi
+
+# Mods (AI on the command line)
+if ! command -v mods &> /dev/null; then
+    echo -e "${c}Installing mods...${r}"
+    if command -v go &> /dev/null; then
+        go install github.com/charmbracelet/mods@latest
+    else
+        echo -e "${c}Go not found, skipping mods installation.${r}"
+    fi
+else
+    echo -e "${c}mods already installed.${r}"
 fi
 
 # Dust (Disk Usage)
