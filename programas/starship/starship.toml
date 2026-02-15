@@ -58,6 +58,43 @@ symbol = "☸ "
 style = "bold #36f9f6"
 disabled = false
 
+[os]
+disabled = false
+style = "bold #fede5d"
+
+[os.symbols]
+Debian = " "
+Ubuntu = " "
+Macos = " "
+Windows = " "
+
+[package]
+symbol = "📦 "
+style = "bold #ff7edb"
+disabled = false
+
+[memory_usage]
+disabled = false
+threshold = 75
+symbol = "🧠 "
+style = "bold #ff5555"
+format = "$symbol[${ram}( | ${swap})]($style) "
+
+[battery]
+disabled = false
+full_symbol = "🔋 "
+charging_symbol = "⚡ "
+discharging_symbol = "💀 "
+
+[[battery.display]]
+threshold = 30
+style = "bold #ff5555"
+
+[container]
+symbol = "🐳 "
+style = "bold #36f9f6"
+disabled = false
+
 [cmd_duration]
 min_time = 500
 style = "bold #fede5d"

@@ -65,9 +65,17 @@ else
     sudo snap install btop
 fi
 
-# Tldr (Simplified man pages)
-echo -e "${c}Installing tldr...${r}"
-sudo apt install -y tldr
+# Tealdeer (Fast tldr in Rust)
+if ! command -v tldr &> /dev/null || ! tldr --version | grep -q 'tealdeer'; then
+    echo -e "${c}Installing tealdeer (tldr)...${r}"
+    cargo install tealdeer
+    # Initialize cache
+    if command -v tldr &> /dev/null; then
+        tldr --update &> /dev/null &
+    fi
+else
+    echo -e "${c}tealdeer already installed.${r}"
+fi
 
 # --- NEW TOOLS (2026 Apps) ---
 
@@ -263,6 +271,74 @@ if ! command -v glances &> /dev/null; then
     pip3 install glances[all] --break-system-packages 2>/dev/null || pip3 install glances[all]
 else
     echo -e "${c}glances already installed.${r}"
+fi
+
+# Oha (HTTP Benchmarking)
+if ! command -v oha &> /dev/null; then
+    echo -e "${c}Installing oha...${r}"
+    cargo install oha
+else
+    echo -e "${c}oha already installed.${r}"
+fi
+
+# Trippy (Network Diagnostic)
+if ! command -v trip &> /dev/null; then
+    echo -e "${c}Installing trippy...${r}"
+    cargo install trippy
+else
+    echo -e "${c}trippy already installed.${r}"
+fi
+
+# Gdu (Disk Usage Analyzer)
+if ! command -v gdu &> /dev/null; then
+    echo -e "${c}Installing gdu...${r}"
+    if command -v go &> /dev/null; then
+        go install github.com/dundee/gdu/v5/cmd/gdu@latest
+    else
+        echo -e "${c}Go not found, skipping gdu installation.${r}"
+    fi
+else
+    echo -e "${c}gdu already installed.${r}"
+fi
+
+# Lazysql (SQL Client TUI)
+if ! command -v lazysql &> /dev/null; then
+    echo -e "${c}Installing lazysql...${r}"
+    if command -v go &> /dev/null; then
+        go install github.com/jorgerojas26/lazysql@latest
+    else
+        echo -e "${c}Go not found, skipping lazysql installation.${r}"
+    fi
+else
+    echo -e "${c}lazysql already installed.${r}"
+fi
+
+# Pueue (Command Queue Manager)
+if ! command -v pueue &> /dev/null; then
+    echo -e "${c}Installing pueue...${r}"
+    cargo install pueue
+else
+    echo -e "${c}pueue already installed.${r}"
+fi
+
+# Broot (Directory Navigation)
+if ! command -v broot &> /dev/null; then
+    echo -e "${c}Installing broot...${r}"
+    cargo install broot
+    # Install broot shell function
+    if command -v broot &> /dev/null; then
+        broot --install
+    fi
+else
+    echo -e "${c}broot already installed.${r}"
+fi
+
+# Presenterm (Terminal Slideshows)
+if ! command -v presenterm &> /dev/null; then
+    echo -e "${c}Installing presenterm...${r}"
+    cargo install presenterm
+else
+    echo -e "${c}presenterm already installed.${r}"
 fi
 
 # FiraCode Nerd Font
