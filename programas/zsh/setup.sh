@@ -31,6 +31,14 @@ else
     echo -e "${c}zsh-syntax-highlighting already installed.${r}"
 fi
 
+# Install fzf-tab
+if [ ! -d "$ZSH_CUSTOM/plugins/fzf-tab" ]; then
+    echo -e "${c}Installing fzf-tab...${r}"
+    git clone https://github.com/Aloxaf/fzf-tab $ZSH_CUSTOM/plugins/fzf-tab
+else
+    echo -e "${c}fzf-tab already installed.${r}"
+fi
+
 # Configure .zshrc
 ZSHRC="$HOME/.zshrc"
 
@@ -124,13 +132,33 @@ if command -v curlie &> /dev/null; then
     alias curl='curlie'
 fi
 
+if command -v oha &> /dev/null; then
+    alias bench='oha'
+fi
+
+if command -v trip &> /dev/null; then
+    alias trace='trip'
+fi
+
+if command -v lazysql &> /dev/null; then
+    alias sql='lazysql'
+fi
+
 # Aesthetics
 export BAT_THEME="Dracula"
 export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
 
 # Plugins (sourcing directly)
 [ -f $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -f $ZSH_CUSTOM/plugins/fzf-tab/fzf-tab.plugin.zsh ] && source $ZSH_CUSTOM/plugins/fzf-tab/fzf-tab.plugin.zsh
 [ -f $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# fzf-tab configuration
+zstyle ':completion:*:git-checkout:*' sort false
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':completion:*' list-colors \${(s.:.)LS_COLORS}
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always \$realpath'
+zstyle ':fzf-tab:*' switch-group '<' '>'
 
 # Path for local binaries
 export PATH="\$HOME/.local/bin:\$HOME/.cargo/bin:\$HOME/go/bin:\$PATH"
