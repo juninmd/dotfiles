@@ -44,6 +44,46 @@ style = "bold #ff7edb"
 symbol = "🐹 "
 style = "bold #36f9f6"
 
+[crystal]
+symbol = "🔮 "
+style = "bold #ff7edb"
+
+[scala]
+symbol = "🍵 "
+style = "bold #fede5d"
+
+[kotlin]
+symbol = "🅺 "
+style = "bold #72f1b8"
+
+[zig]
+symbol = "⚡ "
+style = "bold #fede5d"
+
+[lua]
+symbol = "🌙 "
+style = "bold #36f9f6"
+
+[dart]
+symbol = "🎯 "
+style = "bold #36f9f6"
+
+[julia]
+symbol = "ஃ "
+style = "bold #72f1b8"
+
+[cmake]
+symbol = "△ "
+style = "bold #fede5d"
+
+[gradle]
+symbol = "🐘 "
+style = "bold #36f9f6"
+
+[maven]
+symbol = "🎀 "
+style = "bold #ff7edb"
+
 [docker_context]
 symbol = " "
 style = "bold #36f9f6"

@@ -144,6 +144,18 @@ if command -v lazysql &> /dev/null; then
     alias sql='lazysql'
 fi
 
+if command -v fastfetch &> /dev/null; then
+    alias pf='fastfetch'
+fi
+
+if command -v posting &> /dev/null; then
+    alias post='posting'
+fi
+
+if command -v superfile &> /dev/null; then
+    alias sf='superfile'
+fi
+
 # Aesthetics
 export BAT_THEME="Dracula"
 export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
@@ -158,11 +170,19 @@ zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*' list-colors \${(s.:.)LS_COLORS}
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always \$realpath'
+zstyle ':fzf-tab:complete:(__git_checkout|git-checkout):*' fzf-preview 'git log --color=always --oneline --graph --date=short --pretty="format:%C(auto)%cd %h%d %s" \$word'
+zstyle ':fzf-tab:complete:kill:argument-rest' fzf-preview 'ps --pid=\$word -o cmd --no-headers -w -w'
+zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status \$word 2> /dev/null'
 zstyle ':fzf-tab:*' switch-group '<' '>'
 
 # Path for local binaries
 export PATH="\$HOME/.local/bin:\$HOME/.cargo/bin:\$HOME/go/bin:\$PATH"
 export PATH="\$HOME/.bun/bin:\$PATH"
+
+# Auto-run fastfetch
+if command -v fastfetch &> /dev/null; then
+    fastfetch
+fi
 
 # --- End Custom Configuration ---
 EOT

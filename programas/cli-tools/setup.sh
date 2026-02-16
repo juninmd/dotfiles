@@ -341,6 +341,46 @@ else
     echo -e "${c}presenterm already installed.${r}"
 fi
 
+# Fastfetch (Modern System Info)
+if ! command -v fastfetch &> /dev/null; then
+    echo -e "${c}Installing fastfetch...${r}"
+    sudo add-apt-repository ppa:zhanghua/fastfetch -y
+    sudo apt update
+    sudo apt install -y fastfetch
+else
+    echo -e "${c}fastfetch already installed.${r}"
+fi
+
+# Ollama (Local AI)
+if ! command -v ollama &> /dev/null; then
+    echo -e "${c}Installing ollama...${r}"
+    curl -fsSL https://ollama.com/install.sh | sh
+else
+    echo -e "${c}ollama already installed.${r}"
+fi
+
+# Posting (HTTP Client TUI)
+if ! command -v posting &> /dev/null; then
+    echo -e "${c}Installing posting...${r}"
+    if command -v uv &> /dev/null; then
+        uv tool install posting
+    elif command -v pip3 &> /dev/null; then
+        pip3 install posting --break-system-packages 2>/dev/null || pip3 install posting
+    else
+         echo -e "${c}Neither uv nor pip3 found, skipping posting installation.${r}"
+    fi
+else
+    echo -e "${c}posting already installed.${r}"
+fi
+
+# Superfile (Modern File Manager)
+if ! command -v superfile &> /dev/null; then
+    echo -e "${c}Installing superfile...${r}"
+    bash -c "$(curl -sLo- https://superfile.netlify.app/install.sh)"
+else
+    echo -e "${c}superfile already installed.${r}"
+fi
+
 # FiraCode Nerd Font
 echo -e "${c}Installing FiraCode Nerd Font...${r}"
 FONT_DIR="$HOME/.local/share/fonts"
