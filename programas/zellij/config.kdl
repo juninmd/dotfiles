@@ -1,4 +1,4 @@
-// Zellij Configuration (Synthwave '84 Theme)
+// Zellij Configuration (Synthwave '84 Theme - Updated)
 
 theme "synthwave"
 
@@ -7,12 +7,12 @@ themes {
         fg "#f8f8f2"
         bg "#282a36"
         black "#21222c"
-        red "#ff5555"
-        green "#50fa7b"
-        yellow "#f1fa8c"
+        red "#ff7edb"
+        green "#72f1b8"
+        yellow "#fede5d"
         blue "#bd93f9"
-        magenta "#ff79c6"
-        cyan "#8be9fd"
+        magenta "#ff7edb"
+        cyan "#36f9f6"
         white "#f8f8f2"
         orange "#ffb86c"
     }
@@ -29,6 +29,12 @@ keybinds {
         bind "Ctrl l" { MoveFocusOrTab "Right"; }
         bind "Ctrl j" { MoveFocusOrTab "Down"; }
         bind "Ctrl k" { MoveFocusOrTab "Up"; }
+
+        // Resizing
+        bind "Alt h" { Resize "Increase Left"; }
+        bind "Alt l" { Resize "Increase Right"; }
+        bind "Alt j" { Resize "Increase Down"; }
+        bind "Alt k" { Resize "Increase Up"; }
     }
     pane {
         bind "Ctrl p" { SwitchToMode "Normal"; }
