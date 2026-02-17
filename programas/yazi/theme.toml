@@ -1,4 +1,4 @@
-# Yazi Theme (Synthwave '84)
+# Yazi Theme (Synthwave '84 - Updated)
 
 [manager]
 cwd = { fg = "#36f9f6" }
@@ -8,13 +8,13 @@ hovered         = { reversed = true }
 preview_hovered = { underline = true }
 
 # Find
-find_keyword  = { fg = "yellow", italic = true }
-find_position = { fg = "magenta", bg = "reset", italic = true }
+find_keyword  = { fg = "#fede5d", italic = true }
+find_position = { fg = "#ff7edb", bg = "reset", italic = true }
 
 # Marker
-marker_selected = { fg = "#50fa7b", bg = "#50fa7b" }
-marker_copied   = { fg = "#f1fa8c", bg = "#f1fa8c" }
-marker_cut      = { fg = "#ff5555", bg = "#ff5555" }
+marker_selected = { fg = "#72f1b8", bg = "#72f1b8" }
+marker_copied   = { fg = "#fede5d", bg = "#fede5d" }
+marker_cut      = { fg = "#ff7edb", bg = "#ff7edb" }
 
 # Tab
 tab_active   = { fg = "#282a36", bg = "#bd93f9" }
@@ -32,20 +32,20 @@ separator_style = { fg = "#44475a", bg = "#44475a" }
 
 # Mode
 mode_normal = { fg = "#282a36", bg = "#bd93f9", bold = true }
-mode_select = { fg = "#282a36", bg = "#50fa7b", bold = true }
-mode_unset  = { fg = "#282a36", bg = "#ff5555", bold = true }
+mode_select = { fg = "#282a36", bg = "#72f1b8", bold = true }
+mode_unset  = { fg = "#282a36", bg = "#ff7edb", bold = true }
 
 # Progress
 progress_label  = { fg = "#f8f8f2", bold = true }
 progress_normal = { fg = "#bd93f9", bg = "#44475a" }
-progress_error  = { fg = "#ff5555", bg = "#44475a" }
+progress_error  = { fg = "#ff7edb", bg = "#44475a" }
 
 # Permissions
 permissions_t = { fg = "#bd93f9" }
-permissions_r = { fg = "#f1fa8c" }
-permissions_w = { fg = "#ff5555" }
-permissions_x = { fg = "#50fa7b" }
-permissions_s = { fg = "#8be9fd" }
+permissions_r = { fg = "#fede5d" }
+permissions_w = { fg = "#ff7edb" }
+permissions_x = { fg = "#72f1b8" }
+permissions_s = { fg = "#36f9f6" }
 
 [input]
 border   = { fg = "#bd93f9" }
@@ -55,7 +55,7 @@ selected = { reversed = true }
 
 [select]
 border   = { fg = "#bd93f9" }
-active   = { fg = "#ff79c6" }
+active   = { fg = "#ff7edb" }
 inactive = {}
 
 [tasks]
@@ -67,14 +67,14 @@ hovered = { underline = true }
 mask            = { bg = "#44475a" }
 cand            = { fg = "#36f9f6" }
 rest            = { fg = "#6272a4" }
-desc            = { fg = "#ff79c6" }
+desc            = { fg = "#ff7edb" }
 separator       = "  "
 separator_style = { fg = "#44475a" }
 
 [notify]
-title_info  = { fg = "#50fa7b" }
-title_warn  = { fg = "#f1fa8c" }
-title_error = { fg = "#ff5555" }
+title_info  = { fg = "#72f1b8" }
+title_warn  = { fg = "#fede5d" }
+title_error = { fg = "#ff7edb" }
 
 icon_info  = ""
 icon_warn  = ""

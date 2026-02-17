@@ -184,7 +184,28 @@ if command -v fastfetch &> /dev/null; then
     fastfetch
 fi
 
+# --- 2026 Extras ---
+if command -v glow &> /dev/null; then alias md='glow'; fi
+if command -v fx &> /dev/null; then alias json='fx'; fi
+if command -v sd &> /dev/null; then alias replace='sd'; fi
+if command -v choose &> /dev/null; then alias pick='choose'; fi
+if command -v onefetch &> /dev/null; then alias git-summary='onefetch'; fi
+
 # --- End Custom Configuration ---
+EOT
+fi
+
+# Check if 2026 Extras are present in .zshrc (for existing users)
+if ! grep -q "# --- 2026 Extras ---" "$ZSHRC"; then
+    echo -e "${c}Appending 2026 Extras to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- 2026 Extras ---
+if command -v glow &> /dev/null; then alias md='glow'; fi
+if command -v fx &> /dev/null; then alias json='fx'; fi
+if command -v sd &> /dev/null; then alias replace='sd'; fi
+if command -v choose &> /dev/null; then alias pick='choose'; fi
+if command -v onefetch &> /dev/null; then alias git-summary='onefetch'; fi
 EOT
 fi
 

@@ -8,7 +8,14 @@ echo -e "${c}Installing Modern CLI Tools...${r}"
 sudo apt update
 
 # Install dependencies for adding repos and essential build tools
-sudo apt install -y wget gpg python3-pip golang-go curl unzip
+sudo apt install -y wget gpg python3-pip golang-go curl unzip ffmpeg build-essential
+
+# Check for Cargo (Rust)
+if ! command -v cargo &> /dev/null; then
+    echo -e "${c}Cargo not found. Installing Rust...${r}"
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    source "$HOME/.cargo/env"
+fi
 
 # Eza (Modern ls)
 if ! command -v eza &> /dev/null; then
@@ -78,13 +85,6 @@ else
 fi
 
 # --- NEW TOOLS (2026 Apps) ---
-
-# Check for Cargo (Rust)
-if ! command -v cargo &> /dev/null; then
-    echo -e "${c}Cargo not found. Installing Rust...${r}"
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-    source "$HOME/.cargo/env"
-fi
 
 # Uv (Extremely fast Python package manager)
 if ! command -v uv &> /dev/null; then
@@ -379,6 +379,74 @@ if ! command -v superfile &> /dev/null; then
     bash -c "$(curl -sLo- https://superfile.netlify.app/install.sh)"
 else
     echo -e "${c}superfile already installed.${r}"
+fi
+
+# Glow (Markdown Renderer)
+if ! command -v glow &> /dev/null; then
+    echo -e "${c}Installing glow...${r}"
+    if command -v go &> /dev/null; then
+        go install github.com/charmbracelet/glow@latest
+    else
+        echo -e "${c}Go not found, skipping glow installation.${r}"
+    fi
+else
+    echo -e "${c}glow already installed.${r}"
+fi
+
+# Slides (Terminal Presentations)
+if ! command -v slides &> /dev/null; then
+    echo -e "${c}Installing slides...${r}"
+    if command -v go &> /dev/null; then
+        go install github.com/maaslalani/slides@latest
+    else
+        echo -e "${c}Go not found, skipping slides installation.${r}"
+    fi
+else
+    echo -e "${c}slides already installed.${r}"
+fi
+
+# Fx (JSON Viewer)
+if ! command -v fx &> /dev/null; then
+    echo -e "${c}Installing fx...${r}"
+    if command -v go &> /dev/null; then
+        go install github.com/antonmedv/fx@latest
+    else
+        echo -e "${c}Go not found, skipping fx installation.${r}"
+    fi
+else
+    echo -e "${c}fx already installed.${r}"
+fi
+
+# Sd (Search & Displace)
+if ! command -v sd &> /dev/null; then
+    echo -e "${c}Installing sd...${r}"
+    cargo install sd
+else
+    echo -e "${c}sd already installed.${r}"
+fi
+
+# Choose (Human-friendly cut)
+if ! command -v choose &> /dev/null; then
+    echo -e "${c}Installing choose...${r}"
+    cargo install choose
+else
+    echo -e "${c}choose already installed.${r}"
+fi
+
+# Onefetch (Git Summary)
+if ! command -v onefetch &> /dev/null; then
+    echo -e "${c}Installing onefetch...${r}"
+    cargo install onefetch
+else
+    echo -e "${c}onefetch already installed.${r}"
+fi
+
+# Lnav (Log Navigator)
+if ! command -v lnav &> /dev/null; then
+    echo -e "${c}Installing lnav...${r}"
+    sudo apt install -y lnav
+else
+    echo -e "${c}lnav already installed.${r}"
 fi
 
 # FiraCode Nerd Font
