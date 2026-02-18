@@ -449,6 +449,30 @@ else
     echo -e "${c}lnav already installed.${r}"
 fi
 
+# Atac (Modern API Client TUI)
+if ! command -v atac &> /dev/null; then
+    echo -e "${c}Installing atac...${r}"
+    cargo install atac
+else
+    echo -e "${c}atac already installed.${r}"
+fi
+
+# Binsider (Binary Analysis TUI)
+if ! command -v binsider &> /dev/null; then
+    echo -e "${c}Installing binsider...${r}"
+    cargo install binsider
+else
+    echo -e "${c}binsider already installed.${r}"
+fi
+
+# Serpl (Search and Replace TUI)
+if ! command -v serpl &> /dev/null; then
+    echo -e "${c}Installing serpl...${r}"
+    cargo install serpl
+else
+    echo -e "${c}serpl already installed.${r}"
+fi
+
 # FiraCode Nerd Font
 echo -e "${c}Installing FiraCode Nerd Font...${r}"
 FONT_DIR="$HOME/.local/share/fonts"
@@ -467,6 +491,51 @@ else
         echo -e "${c}Updating font cache...${r}"
         fc-cache -fv
     fi
+fi
+
+# Configure Fastfetch
+echo -e "${c}Configuring Fastfetch...${r}"
+FASTFETCH_CONFIG_DIR="$HOME/.config/fastfetch"
+mkdir -p "$FASTFETCH_CONFIG_DIR"
+SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+FASTFETCH_CONFIG_FILE="$SCRIPT_DIR/configs/fastfetch.jsonc"
+
+if [ -f "$FASTFETCH_CONFIG_FILE" ]; then
+    ln -sf "$FASTFETCH_CONFIG_FILE" "$FASTFETCH_CONFIG_DIR/config.jsonc"
+    echo -e "${c}Fastfetch config linked.${r}"
+else
+    echo -e "${c}Warning: fastfetch.jsonc not found in $SCRIPT_DIR/configs${r}"
+fi
+
+# Configure Btop
+echo -e "${c}Configuring Btop...${r}"
+BTOP_THEMES_DIR="$HOME/.config/btop/themes"
+mkdir -p "$BTOP_THEMES_DIR"
+SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+BTOP_THEME_FILE="$SCRIPT_DIR/themes/btop/synthwave.theme"
+
+if [ -f "$BTOP_THEME_FILE" ]; then
+    cp "$BTOP_THEME_FILE" "$BTOP_THEMES_DIR/synthwave.theme"
+    echo -e "${c}Btop theme copied.${r}"
+
+    # Update btop.conf to use the theme if it exists, or creating a minimal one
+    BTOP_CONF="$HOME/.config/btop/btop.conf"
+    if [ ! -f "$BTOP_CONF" ]; then
+        echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\"" > "$BTOP_CONF"
+        echo "theme_background = False" >> "$BTOP_CONF"
+        echo "truecolor = True" >> "$BTOP_CONF"
+        echo "vim_keys = True" >> "$BTOP_CONF"
+    else
+        # Replace existing color_theme line or append it
+        if grep -q "color_theme" "$BTOP_CONF"; then
+            sed -i 's|^color_theme = .*|color_theme = "'"$BTOP_THEMES_DIR"'/synthwave.theme"|' "$BTOP_CONF"
+        else
+            echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\"" >> "$BTOP_CONF"
+        fi
+    fi
+    echo -e "${c}Btop configured to use Synthwave theme.${r}"
+else
+    echo -e "${c}Warning: synthwave.theme not found in $SCRIPT_DIR/themes/btop${r}"
 fi
 
 echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"

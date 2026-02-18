@@ -16,4 +16,18 @@ tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
 rm lazygit lazygit.tar.gz
 
-echo -e "${c}LazyGit installed!${r}"
+echo -e "${c}Configuring LazyGit...${r}"
+CONFIG_DIR="$HOME/.config/lazygit"
+mkdir -p "$CONFIG_DIR"
+
+SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+CONFIG_FILE="$SCRIPT_DIR/config.yml"
+
+if [ -f "$CONFIG_FILE" ]; then
+    ln -sf "$CONFIG_FILE" "$CONFIG_DIR/config.yml"
+    echo -e "${c}LazyGit config linked.${r}"
+else
+    echo -e "${c}Warning: config.yml not found in $SCRIPT_DIR${r}"
+fi
+
+echo -e "${c}LazyGit installed and configured!${r}"
