@@ -1,0 +1,19 @@
+gui:
+  theme:
+    activeBorderColor:
+      - "#ff7edb" # Neon Pink
+      - bold
+    inactiveBorderColor:
+      - "#bd93f9" # Purple
+    optionsTextColor:
+      - "#36f9f6" # Neon Cyan
+    selectedLineBgColor:
+      - "#44475a" # Dark Blue-Grey
+    selectedRangeBgColor:
+      - "#44475a"
+    cherryPickedCommitBgColor:
+      - "#fede5d" # Neon Yellow
+    cherryPickedCommitFgColor:
+      - "#282a36" # Background
+    unstagedChangesColor:
+      - "#ff5555" # Red

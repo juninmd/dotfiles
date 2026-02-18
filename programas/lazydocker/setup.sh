@@ -17,4 +17,18 @@ tar xf lazydocker.tar.gz lazydocker
 sudo install lazydocker /usr/local/bin
 rm lazydocker lazydocker.tar.gz
 
-echo -e "${c}LazyDocker installed!${r}"
+echo -e "${c}Configuring LazyDocker...${r}"
+CONFIG_DIR="$HOME/.config/lazydocker"
+mkdir -p "$CONFIG_DIR"
+
+SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+CONFIG_FILE="$SCRIPT_DIR/config.yml"
+
+if [ -f "$CONFIG_FILE" ]; then
+    ln -sf "$CONFIG_FILE" "$CONFIG_DIR/config.yml"
+    echo -e "${c}LazyDocker config linked.${r}"
+else
+    echo -e "${c}Warning: config.yml not found in $SCRIPT_DIR${r}"
+fi
+
+echo -e "${c}LazyDocker installed and configured!${r}"
