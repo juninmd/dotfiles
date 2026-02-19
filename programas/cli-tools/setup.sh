@@ -17,6 +17,28 @@ if ! command -v cargo &> /dev/null; then
     source "$HOME/.cargo/env"
 fi
 
+# Helper function for cargo installation (prefers binstall)
+install_cargo_crate() {
+    local crate="$1"
+    local bin_name="${2:-$crate}"
+    if ! command -v "$bin_name" &> /dev/null; then
+        echo -e "${c}Installing $crate...${r}"
+        if command -v cargo-binstall &> /dev/null; then
+            cargo binstall -y --force "$crate" || cargo install "$crate"
+        else
+            cargo install "$crate"
+        fi
+    else
+        echo -e "${c}$crate (binary: $bin_name) already installed.${r}"
+    fi
+}
+
+# Install cargo-binstall for faster installations
+if ! command -v cargo-binstall &> /dev/null; then
+    echo -e "${c}Installing cargo-binstall...${r}"
+    curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+fi
+
 # Eza (Modern ls)
 if ! command -v eza &> /dev/null; then
     echo -e "${c}Installing eza...${r}"
@@ -73,15 +95,9 @@ else
 fi
 
 # Tealdeer (Fast tldr in Rust)
-if ! command -v tldr &> /dev/null || ! tldr --version | grep -q 'tealdeer'; then
-    echo -e "${c}Installing tealdeer (tldr)...${r}"
-    cargo install tealdeer
-    # Initialize cache
-    if command -v tldr &> /dev/null; then
-        tldr --update &> /dev/null &
-    fi
-else
-    echo -e "${c}tealdeer already installed.${r}"
+install_cargo_crate tealdeer tldr
+if command -v tldr &> /dev/null; then
+    tldr --update &> /dev/null &
 fi
 
 # --- NEW TOOLS (2026 Apps) ---
@@ -95,12 +111,7 @@ else
 fi
 
 # Gping (Ping with a graph)
-if ! command -v gping &> /dev/null; then
-    echo -e "${c}Installing gping...${r}"
-    cargo install gping
-else
-    echo -e "${c}gping already installed.${r}"
-fi
+install_cargo_crate gping
 
 # Jq (JSON Processor)
 if ! command -v jq &> /dev/null; then
@@ -126,12 +137,7 @@ else
 fi
 
 # Xh (Friendly HTTP Client)
-if ! command -v xh &> /dev/null; then
-    echo -e "${c}Installing xh...${r}"
-    cargo install xh
-else
-    echo -e "${c}xh already installed.${r}"
-fi
+install_cargo_crate xh
 
 # Gum (Shell UI)
 if ! command -v gum &> /dev/null; then
@@ -158,12 +164,7 @@ else
 fi
 
 # Dust (Disk Usage)
-if ! command -v dust &> /dev/null; then
-    echo -e "${c}Installing dust...${r}"
-    cargo install du-dust
-else
-    echo -e "${c}dust already installed.${r}"
-fi
+install_cargo_crate du-dust dust
 
 # Duf (Disk Usage/Free)
 if ! command -v duf &> /dev/null; then
@@ -178,44 +179,19 @@ else
 fi
 
 # Delta (Git Diff)
-if ! command -v delta &> /dev/null; then
-    echo -e "${c}Installing git-delta...${r}"
-    cargo install git-delta
-else
-    echo -e "${c}git-delta already installed.${r}"
-fi
+install_cargo_crate git-delta delta
 
 # Navi (Interactive Cheatsheet)
-if ! command -v navi &> /dev/null; then
-    echo -e "${c}Installing navi...${r}"
-    cargo install --locked navi
-else
-    echo -e "${c}navi already installed.${r}"
-fi
+install_cargo_crate navi
 
 # Atuin (Magical Shell History)
-if ! command -v atuin &> /dev/null; then
-    echo -e "${c}Installing atuin...${r}"
-    cargo install atuin
-else
-    echo -e "${c}atuin already installed.${r}"
-fi
+install_cargo_crate atuin
 
 # Procs (Modern ps)
-if ! command -v procs &> /dev/null; then
-    echo -e "${c}Installing procs...${r}"
-    cargo install procs
-else
-    echo -e "${c}procs already installed.${r}"
-fi
+install_cargo_crate procs
 
 # Hyperfine (Benchmarking)
-if ! command -v hyperfine &> /dev/null; then
-    echo -e "${c}Installing hyperfine...${r}"
-    cargo install hyperfine
-else
-    echo -e "${c}hyperfine already installed.${r}"
-fi
+install_cargo_crate hyperfine
 
 # The Fuck (Command Corrector)
 if ! command -v thefuck &> /dev/null; then
@@ -274,20 +250,10 @@ else
 fi
 
 # Oha (HTTP Benchmarking)
-if ! command -v oha &> /dev/null; then
-    echo -e "${c}Installing oha...${r}"
-    cargo install oha
-else
-    echo -e "${c}oha already installed.${r}"
-fi
+install_cargo_crate oha
 
 # Trippy (Network Diagnostic)
-if ! command -v trip &> /dev/null; then
-    echo -e "${c}Installing trippy...${r}"
-    cargo install trippy
-else
-    echo -e "${c}trippy already installed.${r}"
-fi
+install_cargo_crate trippy trip
 
 # Gdu (Disk Usage Analyzer)
 if ! command -v gdu &> /dev/null; then
@@ -314,32 +280,16 @@ else
 fi
 
 # Pueue (Command Queue Manager)
-if ! command -v pueue &> /dev/null; then
-    echo -e "${c}Installing pueue...${r}"
-    cargo install pueue
-else
-    echo -e "${c}pueue already installed.${r}"
-fi
+install_cargo_crate pueue
 
 # Broot (Directory Navigation)
-if ! command -v broot &> /dev/null; then
-    echo -e "${c}Installing broot...${r}"
-    cargo install broot
-    # Install broot shell function
-    if command -v broot &> /dev/null; then
-        broot --install
-    fi
-else
-    echo -e "${c}broot already installed.${r}"
+install_cargo_crate broot
+if command -v broot &> /dev/null; then
+    broot --install
 fi
 
 # Presenterm (Terminal Slideshows)
-if ! command -v presenterm &> /dev/null; then
-    echo -e "${c}Installing presenterm...${r}"
-    cargo install presenterm
-else
-    echo -e "${c}presenterm already installed.${r}"
-fi
+install_cargo_crate presenterm
 
 # Fastfetch (Modern System Info)
 if ! command -v fastfetch &> /dev/null; then
@@ -418,28 +368,13 @@ else
 fi
 
 # Sd (Search & Displace)
-if ! command -v sd &> /dev/null; then
-    echo -e "${c}Installing sd...${r}"
-    cargo install sd
-else
-    echo -e "${c}sd already installed.${r}"
-fi
+install_cargo_crate sd
 
 # Choose (Human-friendly cut)
-if ! command -v choose &> /dev/null; then
-    echo -e "${c}Installing choose...${r}"
-    cargo install choose
-else
-    echo -e "${c}choose already installed.${r}"
-fi
+install_cargo_crate choose
 
 # Onefetch (Git Summary)
-if ! command -v onefetch &> /dev/null; then
-    echo -e "${c}Installing onefetch...${r}"
-    cargo install onefetch
-else
-    echo -e "${c}onefetch already installed.${r}"
-fi
+install_cargo_crate onefetch
 
 # Lnav (Log Navigator)
 if ! command -v lnav &> /dev/null; then
@@ -450,28 +385,57 @@ else
 fi
 
 # Atac (Modern API Client TUI)
-if ! command -v atac &> /dev/null; then
-    echo -e "${c}Installing atac...${r}"
-    cargo install atac
-else
-    echo -e "${c}atac already installed.${r}"
-fi
+install_cargo_crate atac
 
 # Binsider (Binary Analysis TUI)
-if ! command -v binsider &> /dev/null; then
-    echo -e "${c}Installing binsider...${r}"
-    cargo install binsider
-else
-    echo -e "${c}binsider already installed.${r}"
-fi
+install_cargo_crate binsider
 
 # Serpl (Search and Replace TUI)
-if ! command -v serpl &> /dev/null; then
-    echo -e "${c}Installing serpl...${r}"
-    cargo install serpl
+install_cargo_crate serpl
+
+# --- MORE 2026 APPS ---
+
+# Ruff (Fast Python Linter/Formatter)
+if ! command -v ruff &> /dev/null; then
+    echo -e "${c}Installing ruff...${r}"
+    pip3 install ruff --break-system-packages 2>/dev/null || pip3 install ruff
 else
-    echo -e "${c}serpl already installed.${r}"
+    echo -e "${c}ruff already installed.${r}"
 fi
+
+# Biome (Fast JS/TS Toolchain)
+if ! command -v biome &> /dev/null; then
+    echo -e "${c}Installing biome...${r}"
+    curl -L https://github.com/biomejs/biome/releases/download/v1.9.4/biome-linux-x64 -o biome
+    chmod +x biome
+    sudo mv biome /usr/local/bin/biome
+else
+    echo -e "${c}biome already installed.${r}"
+fi
+
+# Helix (Modern Editor)
+install_cargo_crate helix-term hx
+
+# Websocat (Netcat for WebSockets)
+install_cargo_crate websocat
+
+# Ouch (Painless Compression)
+install_cargo_crate ouch
+
+# Tokei (Code Statistics)
+install_cargo_crate tokei
+
+# Grex (Regex Generator)
+install_cargo_crate grex
+
+# Bandwhich (Bandwidth Monitor)
+install_cargo_crate bandwhich
+
+# Jless (JSON Viewer)
+install_cargo_crate jless
+
+# Spacer (CLI Spacer)
+install_cargo_crate spacer
 
 # FiraCode Nerd Font
 echo -e "${c}Installing FiraCode Nerd Font...${r}"
