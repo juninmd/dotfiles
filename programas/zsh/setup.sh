@@ -59,7 +59,7 @@ fi
 
 # Zoxide (cd replacement)
 if command -v zoxide &> /dev/null; then
-    eval "\$(zoxide init zsh)"
+    eval "\$(zoxide init zsh --cmd cd)"
 fi
 
 # Aliases for Modern Tools
@@ -191,6 +191,17 @@ if command -v sd &> /dev/null; then alias replace='sd'; fi
 if command -v choose &> /dev/null; then alias pick='choose'; fi
 if command -v onefetch &> /dev/null; then alias git-summary='onefetch'; fi
 
+# --- More 2026 Extras ---
+if command -v websocat &> /dev/null; then alias ws='websocat'; fi
+if command -v ouch &> /dev/null; then
+    alias compress='ouch compress'
+    alias decompress='ouch decompress'
+fi
+if command -v tokei &> /dev/null; then alias cloc='tokei'; fi
+if command -v bandwhich &> /dev/null; then alias bw='sudo bandwhich'; fi
+if command -v grex &> /dev/null; then alias regex='grex'; fi
+if command -v jless &> /dev/null; then alias jl='jless'; fi
+
 # --- End Custom Configuration ---
 EOT
 fi
@@ -208,5 +219,26 @@ if command -v choose &> /dev/null; then alias pick='choose'; fi
 if command -v onefetch &> /dev/null; then alias git-summary='onefetch'; fi
 EOT
 fi
+
+# Check if More 2026 Extras are present in .zshrc
+if ! grep -q "# --- More 2026 Extras ---" "$ZSHRC"; then
+    echo -e "${c}Appending More 2026 Extras to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- More 2026 Extras ---
+if command -v websocat &> /dev/null; then alias ws='websocat'; fi
+if command -v ouch &> /dev/null; then
+    alias compress='ouch compress'
+    alias decompress='ouch decompress'
+fi
+if command -v tokei &> /dev/null; then alias cloc='tokei'; fi
+if command -v bandwhich &> /dev/null; then alias bw='sudo bandwhich'; fi
+if command -v grex &> /dev/null; then alias regex='grex'; fi
+if command -v jless &> /dev/null; then alias jl='jless'; fi
+EOT
+fi
+
+# Update zoxide to use cd alias if present in existing config
+sed -i 's/eval "$(zoxide init zsh)"/eval "$(zoxide init zsh --cmd cd)"/' "$ZSHRC"
 
 echo -e "${c}Zsh configured! Please restart your terminal or run 'source ~/.zshrc'.${r}"
