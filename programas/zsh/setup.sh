@@ -202,6 +202,20 @@ if command -v bandwhich &> /dev/null; then alias bw='sudo bandwhich'; fi
 if command -v grex &> /dev/null; then alias regex='grex'; fi
 if command -v jless &> /dev/null; then alias jl='jless'; fi
 
+# --- Even More 2026 Extras ---
+if command -v carapace &> /dev/null; then
+    export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense,xdg'
+    zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+    source <(carapace _carapace)
+fi
+if command -v moar &> /dev/null; then
+    export PAGER='moar'
+    export MOAR='--statusbar=bold --no-linenumbers'
+    alias less='moar'
+fi
+if command -v viddy &> /dev/null; then alias watch='viddy'; fi
+if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
+
 # --- End Custom Configuration ---
 EOT
 fi
@@ -235,6 +249,27 @@ if command -v tokei &> /dev/null; then alias cloc='tokei'; fi
 if command -v bandwhich &> /dev/null; then alias bw='sudo bandwhich'; fi
 if command -v grex &> /dev/null; then alias regex='grex'; fi
 if command -v jless &> /dev/null; then alias jl='jless'; fi
+EOT
+fi
+
+# Check if Even More 2026 Extras are present in .zshrc
+if ! grep -q "# --- Even More 2026 Extras ---" "$ZSHRC"; then
+    echo -e "${c}Appending Even More 2026 Extras to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Even More 2026 Extras ---
+if command -v carapace &> /dev/null; then
+    export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense,xdg'
+    zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+    source <(carapace _carapace)
+fi
+if command -v moar &> /dev/null; then
+    export PAGER='moar'
+    export MOAR='--statusbar=bold --no-linenumbers'
+    alias less='moar'
+fi
+if command -v viddy &> /dev/null; then alias watch='viddy'; fi
+if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
 EOT
 fi
 
