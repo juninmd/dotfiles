@@ -437,6 +437,71 @@ install_cargo_crate jless
 # Spacer (CLI Spacer)
 install_cargo_crate spacer
 
+# --- EVEN MORE 2026 APPS ---
+
+# Sesh (Smart Session Manager)
+if ! command -v sesh &> /dev/null; then
+    echo -e "${c}Installing sesh...${r}"
+    if command -v go &> /dev/null; then
+        go install github.com/joshmedeski/sesh@latest
+    else
+        echo -e "${c}Go not found, skipping sesh installation.${r}"
+    fi
+else
+    echo -e "${c}sesh already installed.${r}"
+fi
+
+# Carapace (Multi-shell Completer)
+if ! command -v carapace &> /dev/null; then
+    echo -e "${c}Installing carapace...${r}"
+    if command -v go &> /dev/null; then
+        go install github.com/carapace-sh/carapace-bin/cmd/carapace@latest
+    else
+         echo -e "${c}Go not found, skipping carapace installation.${r}"
+    fi
+else
+    echo -e "${c}carapace already installed.${r}"
+fi
+
+# Moar (Better Pager)
+if ! command -v moar &> /dev/null; then
+    echo -e "${c}Installing moar...${r}"
+    if command -v go &> /dev/null; then
+        go install github.com/walles/moar@latest
+    else
+         echo -e "${c}Go not found, skipping moar installation.${r}"
+    fi
+else
+    echo -e "${c}moar already installed.${r}"
+fi
+
+# Viddy (Modern Watch)
+if ! command -v viddy &> /dev/null; then
+    echo -e "${c}Installing viddy...${r}"
+    if command -v go &> /dev/null; then
+        go install github.com/sachaos/viddy@latest
+    else
+         echo -e "${c}Go not found, skipping viddy installation.${r}"
+    fi
+else
+    echo -e "${c}viddy already installed.${r}"
+fi
+
+# Hurl (HTTP Testing)
+install_cargo_crate hurl
+
+# Dasel (Data Query/Update)
+if ! command -v dasel &> /dev/null; then
+    echo -e "${c}Installing dasel...${r}"
+    if command -v go &> /dev/null; then
+        go install github.com/TomWright/dasel/v2/cmd/dasel@latest
+    else
+         echo -e "${c}Go not found, skipping dasel installation.${r}"
+    fi
+else
+    echo -e "${c}dasel already installed.${r}"
+fi
+
 # FiraCode Nerd Font
 echo -e "${c}Installing FiraCode Nerd Font...${r}"
 FONT_DIR="$HOME/.local/share/fonts"
