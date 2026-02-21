@@ -10,11 +10,21 @@ if ! command -v cargo &> /dev/null; then
     exit 1
 fi
 
-if ! command -v yazi &> /dev/null; then
-    cargo install --locked yazi-fm yazi-cli
+# Source Helper Functions
+SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+if [ -f "$SCRIPT_DIR/../common/cargo_helper.sh" ]; then
+    source "$SCRIPT_DIR/../common/cargo_helper.sh"
 else
-    echo -e "${c}Yazi already installed.${r}"
+    echo -e "${c}Warning: cargo_helper.sh not found. Defining fallback function.${r}"
+    install_cargo_crate() {
+        local crate="$1"
+        cargo install "$crate"
+    }
 fi
+
+# Install Yazi
+install_cargo_crate yazi-fm yazi
+install_cargo_crate yazi-cli ya
 
 echo -e "${c}Configuring Yazi...${r}"
 CONFIG_DIR="$HOME/.config/yazi"

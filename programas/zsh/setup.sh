@@ -39,6 +39,22 @@ else
     echo -e "${c}fzf-tab already installed.${r}"
 fi
 
+# Install zsh-vi-mode
+if [ ! -d "$ZSH_CUSTOM/plugins/zsh-vi-mode" ]; then
+    echo -e "${c}Installing zsh-vi-mode...${r}"
+    git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
+else
+    echo -e "${c}zsh-vi-mode already installed.${r}"
+fi
+
+# Install zsh-you-should-use
+if [ ! -d "$ZSH_CUSTOM/plugins/zsh-you-should-use" ]; then
+    echo -e "${c}Installing zsh-you-should-use...${r}"
+    git clone https://github.com/MichaelAquilina/zsh-you-should-use $ZSH_CUSTOM/plugins/zsh-you-should-use
+else
+    echo -e "${c}zsh-you-should-use already installed.${r}"
+fi
+
 # Configure .zshrc
 ZSHRC="$HOME/.zshrc"
 
@@ -164,6 +180,8 @@ export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f
 [ -f $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f $ZSH_CUSTOM/plugins/fzf-tab/fzf-tab.plugin.zsh ] && source $ZSH_CUSTOM/plugins/fzf-tab/fzf-tab.plugin.zsh
 [ -f $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f $ZSH_CUSTOM/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh ] && source $ZSH_CUSTOM/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+[ -f $ZSH_CUSTOM/plugins/zsh-you-should-use/you-should-use.plugin.zsh ] && source $ZSH_CUSTOM/plugins/zsh-you-should-use/you-should-use.plugin.zsh
 
 # fzf-tab configuration
 zstyle ':completion:*:git-checkout:*' sort false
@@ -179,8 +197,10 @@ zstyle ':fzf-tab:*' switch-group '<' '>'
 export PATH="\$HOME/.local/bin:\$HOME/.cargo/bin:\$HOME/go/bin:\$PATH"
 export PATH="\$HOME/.bun/bin:\$PATH"
 
-# Auto-run fastfetch
-if command -v fastfetch &> /dev/null; then
+# Auto-run fastfetch or pokeget
+if command -v pokeget &> /dev/null; then
+    pokeget random --hide-name
+elif command -v fastfetch &> /dev/null; then
     fastfetch
 fi
 
@@ -270,6 +290,21 @@ if command -v moar &> /dev/null; then
 fi
 if command -v viddy &> /dev/null; then alias watch='viddy'; fi
 if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
+EOT
+fi
+
+# Check if Eye Candy & 2026 Apps are present in .zshrc
+if ! grep -q "# --- Eye Candy & 2026 Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending Eye Candy & 2026 Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Eye Candy & 2026 Apps ---
+if command -v gitui &> /dev/null; then alias gu='gitui'; fi
+if command -v oxker &> /dev/null; then alias docker-ui='oxker'; fi
+if command -v zenith &> /dev/null; then alias top='zenith'; fi
+if command -v gobang &> /dev/null; then alias db='gobang'; fi
+if command -v tenki &> /dev/null; then alias weather='tenki'; fi
+if command -v tickrs &> /dev/null; then alias stocks='tickrs'; fi
 EOT
 fi
 
