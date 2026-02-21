@@ -17,21 +17,21 @@ if ! command -v cargo &> /dev/null; then
     source "$HOME/.cargo/env"
 fi
 
-# Helper function for cargo installation (prefers binstall)
-install_cargo_crate() {
-    local crate="$1"
-    local bin_name="${2:-$crate}"
-    if ! command -v "$bin_name" &> /dev/null; then
-        echo -e "${c}Installing $crate...${r}"
-        if command -v cargo-binstall &> /dev/null; then
-            cargo binstall -y --force "$crate" || cargo install "$crate"
-        else
-            cargo install "$crate"
-        fi
-    else
-        echo -e "${c}$crate (binary: $bin_name) already installed.${r}"
-    fi
-}
+# Source Helper Functions
+SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+if [ -f "$SCRIPT_DIR/../common/cargo_helper.sh" ]; then
+    source "$SCRIPT_DIR/../common/cargo_helper.sh"
+else
+    echo -e "${c}Warning: cargo_helper.sh not found. Defining fallback function.${r}"
+    install_cargo_crate() {
+        local crate="$1"
+        cargo install "$crate"
+    }
+    install_go_package() {
+        local package="$1"
+        go install "$package"
+    }
+fi
 
 # Install cargo-binstall for faster installations
 if ! command -v cargo-binstall &> /dev/null; then
@@ -501,6 +501,50 @@ if ! command -v dasel &> /dev/null; then
 else
     echo -e "${c}dasel already installed.${r}"
 fi
+
+# --- 2026 EYE CANDY & EXTRAS ---
+
+# Pokeget (Terminal Pokemon)
+install_go_package github.com/talwat/pokeget@latest pokeget
+
+# Pipes-rs (Screensaver)
+install_cargo_crate pipes-rs
+
+# RS-CMatrix (Matrix Effect)
+install_cargo_crate rs-cmatrix
+
+# Genact (Activity Generator)
+install_cargo_crate genact
+
+# GitUI (Blazing Fast Git TUI)
+install_cargo_crate gitui
+
+# Oxker (Docker TUI)
+install_cargo_crate oxker
+
+# Kmon (Kernel Monitor)
+install_cargo_crate kmon
+
+# Zenith (System Monitor with Charts)
+install_cargo_crate zenith
+
+# Gobang (Cross-platform Database Client TUI)
+install_cargo_crate gobang
+
+# Termtyper (Typing Practice)
+install_cargo_crate termtyper
+
+# Tickrs (Stock Ticker)
+install_cargo_crate tickrs
+
+# Tenki (Weather TUI)
+install_cargo_crate tenki
+
+# Television (Fast Fuzzy Finder)
+install_cargo_crate television tv
+
+# Amber (Search & Replace)
+install_cargo_crate amber
 
 # FiraCode Nerd Font
 echo -e "${c}Installing FiraCode Nerd Font...${r}"

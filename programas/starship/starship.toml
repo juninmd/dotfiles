@@ -144,6 +144,26 @@ format = "took [$duration]($style)"
 symbol = "✦ "
 style = "bold #72f1b8"
 
+[shell]
+disabled = false
+style = "bold #bd93f9" # Neon Purple
+symbol = "🐚 "
+
+[sudo]
+disabled = false
+style = "bold #ff5555" # Red
+symbol = "🧙 "
+
+[hostname]
+ssh_only = false
+style = "bold #36f9f6" # Neon Cyan
+format = "on [$ssh_symbol$hostname]($style) "
+
+[localip]
+ssh_only = true
+style = "bold #72f1b8" # Neon Green
+format = "@[$localipv4]($style) "
+
 [time]
 disabled = false
 style = "bold #ff7edb"
