@@ -236,6 +236,12 @@ fi
 if command -v viddy &> /dev/null; then alias watch='viddy'; fi
 if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
 
+# --- Interface Improvements 2026 ---
+if command -v amber &> /dev/null; then alias search='amber'; fi
+if command -v binsider &> /dev/null; then alias analyze='binsider'; fi
+if command -v serpl &> /dev/null; then alias sr='serpl'; fi
+if command -v tv &> /dev/null; then alias television='tv'; fi
+
 # --- End Custom Configuration ---
 EOT
 fi
@@ -305,6 +311,19 @@ if command -v zenith &> /dev/null; then alias top='zenith'; fi
 if command -v gobang &> /dev/null; then alias db='gobang'; fi
 if command -v tenki &> /dev/null; then alias weather='tenki'; fi
 if command -v tickrs &> /dev/null; then alias stocks='tickrs'; fi
+EOT
+fi
+
+# Check if Interface Improvements 2026 are present in .zshrc
+if ! grep -q "# --- Interface Improvements 2026 ---" "$ZSHRC"; then
+    echo -e "${c}Appending Interface Improvements 2026 to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Interface Improvements 2026 ---
+if command -v amber &> /dev/null; then alias search='amber'; fi
+if command -v binsider &> /dev/null; then alias analyze='binsider'; fi
+if command -v serpl &> /dev/null; then alias sr='serpl'; fi
+if command -v tv &> /dev/null; then alias television='tv'; fi
 EOT
 fi
 

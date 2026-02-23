@@ -1,42 +1,154 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "type": "small"
+    "type": "small",
+    "padding": {
+      "top": 1,
+      "left": 2
+    }
   },
   "display": {
+    "separator": " ➜  ",
     "color": {
       "keys": "magenta",
       "title": "cyan"
     }
   },
   "modules": [
-    "title",
+    "break",
+    {
+      "type": "title",
+      "format": "{user-name}@{host-name}"
+    },
     "separator",
-    "os",
-    "host",
-    "kernel",
-    "uptime",
-    "packages",
-    "shell",
-    "display",
-    "de",
-    "wm",
-    "wmtheme",
-    "theme",
-    "icons",
-    "font",
-    "cursor",
-    "terminal",
-    "terminalfont",
-    "cpu",
-    "gpu",
-    "memory",
-    "swap",
-    "disk",
-    "localip",
-    "battery",
-    "poweradapter",
-    "locale",
+    {
+      "type": "os",
+      "key": "OS   ",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "host",
+      "key": "Host ",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "kernel",
+      "key": "Krnl ",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "uptime",
+      "key": "Up   ",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "packages",
+      "key": "Pkgs ",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "shell",
+      "key": "Sh   ",
+      "keyColor": "yellow"
+    },
+    "break",
+    {
+      "type": "display",
+      "key": "Disp ",
+      "keyColor": "green"
+    },
+    {
+      "type": "de",
+      "key": "DE   ",
+      "keyColor": "green"
+    },
+    {
+      "type": "wm",
+      "key": "WM   ",
+      "keyColor": "green"
+    },
+    {
+      "type": "wmtheme",
+      "key": "Theme",
+      "keyColor": "green"
+    },
+    {
+      "type": "theme",
+      "key": "GTK  ",
+      "keyColor": "green"
+    },
+    {
+      "type": "icons",
+      "key": "Icons",
+      "keyColor": "green"
+    },
+    {
+      "type": "font",
+      "key": "Font ",
+      "keyColor": "green"
+    },
+    {
+      "type": "cursor",
+      "key": "Curs ",
+      "keyColor": "green"
+    },
+    {
+      "type": "terminal",
+      "key": "Term ",
+      "keyColor": "green"
+    },
+    {
+      "type": "terminalfont",
+      "key": "TFont",
+      "keyColor": "green"
+    },
+    "break",
+    {
+      "type": "cpu",
+      "key": "CPU  ",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "gpu",
+      "key": "GPU  ",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "memory",
+      "key": "Mem  ",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "swap",
+      "key": "Swap ",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "disk",
+      "key": "Disk ",
+      "keyColor": "cyan"
+    },
+    "break",
+    {
+      "type": "localip",
+      "key": "LIP  ",
+      "keyColor": "blue"
+    },
+    {
+      "type": "battery",
+      "key": "Batt ",
+      "keyColor": "blue"
+    },
+    {
+      "type": "poweradapter",
+      "key": "Pwr  ",
+      "keyColor": "blue"
+    },
+    {
+      "type": "locale",
+      "key": "Loc  ",
+      "keyColor": "blue"
+    },
     "break",
     "colors"
   ]
