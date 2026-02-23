@@ -149,6 +149,16 @@
       "key": "Loc  ",
       "keyColor": "blue"
     },
+    {
+      "type": "datetime",
+      "key": "Time ",
+      "keyColor": "blue"
+    },
+    {
+      "type": "weather",
+      "key": "Weath",
+      "keyColor": "blue"
+    },
     "break",
     "colors"
   ]

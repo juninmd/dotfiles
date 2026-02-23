@@ -3,6 +3,44 @@
 
 add_newline = true
 
+format = """
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$nodejs\
+$python\
+$rust\
+$golang\
+$crystal\
+$scala\
+$kotlin\
+$zig\
+$lua\
+$dart\
+$julia\
+$cmake\
+$gradle\
+$maven\
+$docker_context\
+$aws\
+$gcloud\
+$kubernetes\
+$os\
+$container\
+$fill\
+$cmd_duration\
+$memory_usage\
+$battery\
+$time\
+$line_break\
+$character"""
+
+[fill]
+symbol = " "
+
 [character]
 success_symbol = '[➜](bold #36f9f6)' # Neon Cyan
 error_symbol = '[✗](bold #ff7edb)'   # Neon Pink
