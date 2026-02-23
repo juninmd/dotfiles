@@ -502,6 +502,51 @@ else
     echo -e "${c}dasel already installed.${r}"
 fi
 
+# --- ULTIMATE 2026 APPS ---
+
+# Just (Command Runner)
+install_cargo_crate just
+
+# Dive (Docker Image Explorer)
+if ! command -v dive &> /dev/null; then
+    echo -e "${c}Installing dive...${r}"
+    if command -v go &> /dev/null; then
+        go install github.com/wagoodman/dive@latest
+    else
+         echo -e "${c}Go not found, skipping dive installation.${r}"
+    fi
+else
+    echo -e "${c}dive already installed.${r}"
+fi
+
+# Fq (JQ for binary)
+install_cargo_crate fq
+
+# Htmlq (JQ for HTML)
+install_cargo_crate htmlq
+
+# Visidata (Terminal Spreadsheet)
+if ! command -v vd &> /dev/null; then
+    echo -e "${c}Installing visidata...${r}"
+    pip3 install visidata --break-system-packages 2>/dev/null || pip3 install visidata
+else
+    echo -e "${c}visidata already installed.${r}"
+fi
+
+# Trash-cli (Safer rm)
+if ! command -v trash &> /dev/null; then
+    echo -e "${c}Installing trash-cli...${r}"
+    pip3 install trash-cli --break-system-packages 2>/dev/null || pip3 install trash-cli
+else
+    echo -e "${c}trash-cli already installed.${r}"
+fi
+
+# Bacon (Background Rust Checker)
+install_cargo_crate bacon
+
+# Git-cliff (Changelog Generator)
+install_cargo_crate git-cliff
+
 # --- 2026 EYE CANDY & EXTRAS ---
 
 # Pokeget (Terminal Pokemon)
