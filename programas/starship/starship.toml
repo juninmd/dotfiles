@@ -18,6 +18,19 @@ read_only = " 🔒"
 style = "bold #fede5d" # Neon Yellow
 symbol = " "
 
+[git_commit]
+style = "bold #ff7edb"
+commit_hash_length = 8
+tag_symbol = "🔖 "
+
+[git_state]
+style = "bold #ff7edb"
+
+[git_metrics]
+disabled = false
+added_style = "bold #72f1b8"
+deleted_style = "bold #ff5555"
+
 [git_status]
 style = "bold #ff7edb" # Neon Pink
 conflicted = "🏳"
@@ -91,6 +104,11 @@ style = "bold #36f9f6"
 [aws]
 symbol = "☁️  "
 style = "bold #fede5d"
+disabled = false
+
+[gcloud]
+symbol = "☁️  "
+style = "bold #36f9f6"
 disabled = false
 
 [kubernetes]
