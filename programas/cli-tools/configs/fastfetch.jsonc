@@ -10,8 +10,8 @@
   "display": {
     "separator": " ➜  ",
     "color": {
-      "keys": "magenta",
-      "title": "cyan"
+      "keys": "cyan",
+      "title": "magenta"
     }
   },
   "modules": [
@@ -24,83 +24,83 @@
     {
       "type": "os",
       "key": "OS   ",
-      "keyColor": "yellow"
+      "keyColor": "green"
     },
     {
       "type": "host",
       "key": "Host ",
-      "keyColor": "yellow"
+      "keyColor": "green"
     },
     {
       "type": "kernel",
       "key": "Krnl ",
-      "keyColor": "yellow"
+      "keyColor": "green"
     },
     {
       "type": "uptime",
       "key": "Up   ",
-      "keyColor": "yellow"
+      "keyColor": "green"
     },
     {
       "type": "packages",
       "key": "Pkgs ",
-      "keyColor": "yellow"
+      "keyColor": "green"
     },
     {
       "type": "shell",
       "key": "Sh   ",
-      "keyColor": "yellow"
+      "keyColor": "green"
     },
     "break",
     {
       "type": "display",
       "key": "Disp ",
-      "keyColor": "green"
+      "keyColor": "magenta"
     },
     {
       "type": "de",
       "key": "DE   ",
-      "keyColor": "green"
+      "keyColor": "magenta"
     },
     {
       "type": "wm",
       "key": "WM   ",
-      "keyColor": "green"
+      "keyColor": "magenta"
     },
     {
       "type": "wmtheme",
       "key": "Theme",
-      "keyColor": "green"
+      "keyColor": "magenta"
     },
     {
       "type": "theme",
       "key": "GTK  ",
-      "keyColor": "green"
+      "keyColor": "magenta"
     },
     {
       "type": "icons",
       "key": "Icons",
-      "keyColor": "green"
+      "keyColor": "magenta"
     },
     {
       "type": "font",
       "key": "Font ",
-      "keyColor": "green"
+      "keyColor": "magenta"
     },
     {
       "type": "cursor",
       "key": "Curs ",
-      "keyColor": "green"
+      "keyColor": "magenta"
     },
     {
       "type": "terminal",
       "key": "Term ",
-      "keyColor": "green"
+      "keyColor": "magenta"
     },
     {
       "type": "terminalfont",
       "key": "TFont",
-      "keyColor": "green"
+      "keyColor": "magenta"
     },
     "break",
     {
@@ -132,32 +132,32 @@
     {
       "type": "localip",
       "key": "LIP  ",
-      "keyColor": "blue"
+      "keyColor": "yellow"
     },
     {
       "type": "battery",
       "key": "Batt ",
-      "keyColor": "blue"
+      "keyColor": "yellow"
     },
     {
       "type": "poweradapter",
       "key": "Pwr  ",
-      "keyColor": "blue"
+      "keyColor": "yellow"
     },
     {
       "type": "locale",
       "key": "Loc  ",
-      "keyColor": "blue"
+      "keyColor": "yellow"
     },
     {
       "type": "datetime",
       "key": "Time ",
-      "keyColor": "blue"
+      "keyColor": "yellow"
     },
     {
       "type": "weather",
       "key": "Weath",
-      "keyColor": "blue"
+      "keyColor": "yellow"
     },
     "break",
     "colors"

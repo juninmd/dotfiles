@@ -173,8 +173,8 @@ if command -v superfile &> /dev/null; then
 fi
 
 # Aesthetics
-export BAT_THEME="Dracula"
-export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
+export BAT_THEME="Synthwave '84"
+export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#343746,hl+:#bd93f9 --color=info:#72f1b8,prompt:#36f9f6,pointer:#ff7edb --color=marker:#ff7edb,spinner:#36f9f6,header:#fede5d'
 
 # Plugins (sourcing directly)
 [ -f $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -241,6 +241,13 @@ if command -v amber &> /dev/null; then alias search='amber'; fi
 if command -v binsider &> /dev/null; then alias analyze='binsider'; fi
 if command -v serpl &> /dev/null; then alias sr='serpl'; fi
 if command -v tv &> /dev/null; then alias television='tv'; fi
+
+# --- Newest 2026 Apps ---
+if command -v mcfly &> /dev/null; then
+    eval "\$(mcfly init zsh)"
+fi
+if command -v nu &> /dev/null; then alias nu='nu'; fi
+if command -v btm &> /dev/null; then alias btm='btm'; fi
 
 # --- End Custom Configuration ---
 EOT
@@ -324,6 +331,20 @@ if command -v amber &> /dev/null; then alias search='amber'; fi
 if command -v binsider &> /dev/null; then alias analyze='binsider'; fi
 if command -v serpl &> /dev/null; then alias sr='serpl'; fi
 if command -v tv &> /dev/null; then alias television='tv'; fi
+EOT
+fi
+
+# Check if Newest 2026 Apps are present in .zshrc
+if ! grep -q "# --- Newest 2026 Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending Newest 2026 Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Newest 2026 Apps ---
+if command -v mcfly &> /dev/null; then
+    eval "\$(mcfly init zsh)"
+fi
+if command -v nu &> /dev/null; then alias nu='nu'; fi
+if command -v btm &> /dev/null; then alias btm='btm'; fi
 EOT
 fi
 

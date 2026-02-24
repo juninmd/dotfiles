@@ -591,6 +591,45 @@ install_cargo_crate television tv
 # Amber (Search & Replace)
 install_cargo_crate amber
 
+# --- NEWEST 2026 APPS ---
+
+# Mcfly (Neural Network Shell History)
+install_cargo_crate mcfly
+
+# Monolith (Web Page Saver)
+install_cargo_crate monolith
+
+# Bottom (System Monitor)
+install_cargo_crate bottom btm
+
+# Nushell (Modern Shell)
+install_cargo_crate nu
+
+# Eget (Easy Binary Downloader)
+if ! command -v eget &> /dev/null; then
+    echo -e "${c}Installing eget...${r}"
+    curl https://zyedidia.github.io/eget.sh | sh
+    sudo mv eget /usr/local/bin/eget
+else
+    echo -e "${c}eget already installed.${r}"
+fi
+
+# Configure Bat Theme
+echo -e "${c}Configuring Bat Theme...${r}"
+BAT_CONFIG_DIR="$(bat --config-dir)"
+mkdir -p "$BAT_CONFIG_DIR/themes"
+SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+BAT_THEME_FILE="$SCRIPT_DIR/themes/bat/synthwave.tmTheme"
+
+if [ -f "$BAT_THEME_FILE" ]; then
+    cp "$BAT_THEME_FILE" "$BAT_CONFIG_DIR/themes/synthwave.tmTheme"
+    echo -e "${c}Bat theme copied.${r}"
+    bat cache --build
+    echo -e "${c}Bat cache rebuilt.${r}"
+else
+    echo -e "${c}Warning: synthwave.tmTheme not found in $SCRIPT_DIR/themes/bat${r}"
+fi
+
 # FiraCode Nerd Font
 echo -e "${c}Installing FiraCode Nerd Font...${r}"
 FONT_DIR="$HOME/.local/share/fonts"
