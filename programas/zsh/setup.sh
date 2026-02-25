@@ -348,6 +348,25 @@ if command -v btm &> /dev/null; then alias btm='btm'; fi
 EOT
 fi
 
+# Check if The Future is Now Apps are present in .zshrc
+if ! grep -q "# --- The Future is Now Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending The Future is Now Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- The Future is Now Apps ---
+export DENO_INSTALL="\$HOME/.deno"
+export PATH="\$DENO_INSTALL/bin:\$PATH"
+
+if command -v wiki-tui &> /dev/null; then alias wiki='wiki-tui'; fi
+if command -v aichat &> /dev/null; then alias chat='aichat'; fi
+if command -v cointop &> /dev/null; then alias crypto='cointop'; fi
+if command -v wtf &> /dev/null; then alias dashboard='wtf'; fi
+if command -v taskwarrior-tui &> /dev/null; then alias tasks='taskwarrior-tui'; fi
+if command -v nap &> /dev/null; then alias snippets='nap'; fi
+if command -v kondo &> /dev/null; then alias clean-system='kondo'; fi
+EOT
+fi
+
 # Update zoxide to use cd alias if present in existing config
 sed -i 's/eval "$(zoxide init zsh)"/eval "$(zoxide init zsh --cmd cd)"/' "$ZSHRC"
 

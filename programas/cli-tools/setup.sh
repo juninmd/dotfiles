@@ -614,6 +614,37 @@ else
     echo -e "${c}eget already installed.${r}"
 fi
 
+# --- THE FUTURE IS NOW (New 2026 Apps) ---
+
+# Deno (Modern JS/TS Runtime)
+if ! command -v deno &> /dev/null; then
+    echo -e "${c}Installing Deno...${r}"
+    curl -fsSL https://deno.land/x/install/install.sh | sh
+else
+    echo -e "${c}deno already installed.${r}"
+fi
+
+# Nap (Snippets Manager)
+install_go_package github.com/charmbracelet/nap@latest nap
+
+# Wiki-tui (Wikipedia in terminal)
+install_cargo_crate wiki-tui
+
+# Taskwarrior-tui (Productivity)
+install_cargo_crate taskwarrior-tui
+
+# Kondo (Cleaner)
+install_cargo_crate kondo
+
+# Aichat (AI Chat)
+install_cargo_crate aichat
+
+# Cointop (Crypto Tracking)
+install_go_package github.com/cointop-sh/cointop@latest cointop
+
+# Wtfutil (Personal Dashboard)
+install_go_package github.com/wtfutil/wtf@latest wtf
+
 # Configure Bat Theme
 echo -e "${c}Configuring Bat Theme...${r}"
 BAT_CONFIG_DIR="$(bat --config-dir)"

@@ -3,8 +3,9 @@
   "logo": {
     "type": "small",
     "padding": {
-      "top": 1,
-      "left": 2
+      "top": 2,
+      "left": 2,
+      "right": 2
     }
   },
   "display": {
@@ -135,6 +136,17 @@
       "keyColor": "yellow"
     },
     {
+      "type": "publicip",
+      "key": "PIP  ",
+      "keyColor": "yellow",
+      "timeout": 1000
+    },
+    {
+      "type": "wifi",
+      "key": "WiFi ",
+      "keyColor": "yellow"
+    },
+    {
       "type": "battery",
       "key": "Batt ",
       "keyColor": "yellow"
@@ -157,7 +169,18 @@
     {
       "type": "weather",
       "key": "Weath",
-      "keyColor": "yellow"
+      "keyColor": "yellow",
+      "timeout": 1000
+    },
+    {
+      "type": "player",
+      "key": "Play ",
+      "keyColor": "blue"
+    },
+    {
+      "type": "media",
+      "key": "Media",
+      "keyColor": "blue"
     },
     "break",
     "colors"
