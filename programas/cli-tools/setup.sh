@@ -645,6 +645,45 @@ install_go_package github.com/cointop-sh/cointop@latest cointop
 # Wtfutil (Personal Dashboard)
 install_go_package github.com/wtfutil/wtf@latest wtf
 
+# --- 2026 APPS PART II ---
+
+# DuckDB (In-process SQL OLAP DBMS)
+if ! command -v duckdb &> /dev/null; then
+    echo -e "${c}Installing duckdb...${r}"
+    wget -q https://github.com/duckdb/duckdb/releases/latest/download/duckdb_cli-linux-amd64.zip -O /tmp/duckdb.zip
+    unzip -o -q /tmp/duckdb.zip -d /tmp
+    sudo mv /tmp/duckdb /usr/local/bin/duckdb
+    rm /tmp/duckdb.zip
+else
+    echo -e "${c}duckdb already installed.${r}"
+fi
+
+# D2 (Declarative Diagramming)
+if ! command -v d2 &> /dev/null; then
+    echo -e "${c}Installing d2...${r}"
+    curl -fsSL https://d2lang.com/install.sh | sh -s --
+else
+    echo -e "${c}d2 already installed.${r}"
+fi
+
+# VHS (Terminal GIF Recorder)
+install_go_package github.com/charmbracelet/vhs@latest vhs
+
+# Freeze (Code Screenshots)
+install_go_package github.com/charmbracelet/freeze@latest freeze
+
+# Rnr (Safe File Renamer)
+install_cargo_crate rnr
+
+# Erdtree (File-tree Visualizer)
+install_cargo_crate erdtree erd
+
+# Dua-cli (Disk Usage Analyzer)
+install_cargo_crate dua-cli dua
+
+# Mprocs (Process Manager)
+install_cargo_crate mprocs
+
 # Configure Bat Theme
 echo -e "${c}Configuring Bat Theme...${r}"
 BAT_CONFIG_DIR="$(bat --config-dir)"

@@ -367,6 +367,23 @@ if command -v kondo &> /dev/null; then alias clean-system='kondo'; fi
 EOT
 fi
 
+# Check if 2026 Apps Part II are present in .zshrc
+if ! grep -q "# --- 2026 Apps Part II ---" "$ZSHRC"; then
+    echo -e "${c}Appending 2026 Apps Part II to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- 2026 Apps Part II ---
+if command -v duckdb &> /dev/null; then alias sql-local='duckdb'; fi
+if command -v d2 &> /dev/null; then alias diagrams='d2'; fi
+if command -v vhs &> /dev/null; then alias record='vhs'; fi
+if command -v freeze &> /dev/null; then alias screenshot='freeze'; fi
+if command -v rnr &> /dev/null; then alias rename='rnr'; fi
+if command -v erd &> /dev/null; then alias tree='erd'; fi
+if command -v dua &> /dev/null; then alias disk='dua i'; fi
+if command -v mprocs &> /dev/null; then alias run='mprocs'; fi
+EOT
+fi
+
 # Update zoxide to use cd alias if present in existing config
 sed -i 's/eval "$(zoxide init zsh)"/eval "$(zoxide init zsh --cmd cd)"/' "$ZSHRC"
 
