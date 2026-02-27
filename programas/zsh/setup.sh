@@ -384,6 +384,19 @@ if command -v mprocs &> /dev/null; then alias run='mprocs'; fi
 EOT
 fi
 
+# Check if 2026 Apps Part III are present in .zshrc
+if ! grep -q "# --- 2026 Apps Part III ---" "$ZSHRC"; then
+    echo -e "${c}Appending 2026 Apps Part III to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- 2026 Apps Part III ---
+if command -v topgrade &> /dev/null; then alias update='topgrade'; fi
+if command -v hexyl &> /dev/null; then alias hex='hexyl'; fi
+if command -v pastel &> /dev/null; then alias color='pastel'; fi
+if command -v csvlens &> /dev/null; then alias csv='csvlens'; fi
+EOT
+fi
+
 # Update zoxide to use cd alias if present in existing config
 sed -i 's/eval "$(zoxide init zsh)"/eval "$(zoxide init zsh --cmd cd)"/' "$ZSHRC"
 

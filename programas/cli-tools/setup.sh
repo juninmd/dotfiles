@@ -684,6 +684,23 @@ install_cargo_crate dua-cli dua
 # Mprocs (Process Manager)
 install_cargo_crate mprocs
 
+# --- 2026 APPS PART III ---
+
+# Topgrade (Upgrade Everything)
+install_cargo_crate topgrade
+
+# Hexyl (Command-line Hex Viewer)
+install_cargo_crate hexyl
+
+# Pastel (Command-line Color Tool)
+install_cargo_crate pastel
+
+# Csvlens (CSV File Viewer)
+install_cargo_crate csvlens
+
+# Qsv (High-performance CSV Data-Wrangling Toolkit)
+install_cargo_crate qsv
+
 # Configure Bat Theme
 echo -e "${c}Configuring Bat Theme...${r}"
 BAT_CONFIG_DIR="$(bat --config-dir)"
