@@ -182,6 +182,26 @@
       "key": "Media",
       "keyColor": "blue"
     },
+    {
+      "type": "netio",
+      "key": "NetIO",
+      "keyColor": "blue"
+    },
+    {
+      "type": "diskio",
+      "key": "DskIO",
+      "keyColor": "blue"
+    },
+    {
+      "type": "bluetooth",
+      "key": "BlueT",
+      "keyColor": "blue"
+    },
+    {
+      "type": "sound",
+      "key": "Sound",
+      "keyColor": "blue"
+    },
     "break",
     "colors"
   ]
