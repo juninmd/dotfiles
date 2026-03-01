@@ -593,6 +593,27 @@ install_cargo_crate amber
 
 # --- NEWEST 2026 APPS ---
 
+# GH (GitHub CLI)
+install_go_package github.com/cli/cli/v2/cmd/gh@latest gh
+
+# Act (Run GitHub Actions Locally)
+install_go_package github.com/nektos/act@latest act
+
+# Ast-grep (AST-based search and replace)
+install_cargo_crate ast-grep sg
+
+# Sad (CLI search and replace)
+install_cargo_crate sad
+
+# Jaq (JQ clone in Rust)
+install_cargo_crate jaq
+
+# Jnv (Interactive JQ filter)
+install_cargo_crate jnv
+
+# Watchexec (Execute commands in response to file modifications)
+install_cargo_crate watchexec-cli watchexec
+
 # Mcfly (Neural Network Shell History)
 install_cargo_crate mcfly
 
