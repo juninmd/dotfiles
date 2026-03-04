@@ -24,7 +24,7 @@ log() {
   if command -v "$GUM" &> /dev/null; then
     "$GUM" style --foreground 212 "[$($GUM style --foreground 250 "2026-setup")] $*"
   else
-    printf '[2026-setup] %s\n' "$*"
+    printf '\e[36m[2026-setup]\e[0m %s\n' "$*"
   fi
 }
 

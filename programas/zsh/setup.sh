@@ -249,6 +249,11 @@ fi
 if command -v nu &> /dev/null; then alias nu='nu'; fi
 if command -v btm &> /dev/null; then alias btm='btm'; fi
 
+# --- Extra 2026 Apps ---
+if command -v kdash &> /dev/null; then alias kdash='kdash'; fi
+if command -v stern &> /dev/null; then alias stern='stern'; fi
+if command -v fabric &> /dev/null; then alias ai='fabric'; fi
+
 # --- End Custom Configuration ---
 EOT
 fi
@@ -394,6 +399,18 @@ if command -v topgrade &> /dev/null; then alias update='topgrade'; fi
 if command -v hexyl &> /dev/null; then alias hex='hexyl'; fi
 if command -v pastel &> /dev/null; then alias color='pastel'; fi
 if command -v csvlens &> /dev/null; then alias csv='csvlens'; fi
+EOT
+fi
+
+# Check if Extra 2026 Apps are present in .zshrc
+if ! grep -q "# --- Extra 2026 Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending Extra 2026 Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Extra 2026 Apps ---
+if command -v kdash &> /dev/null; then alias kdash='kdash'; fi
+if command -v stern &> /dev/null; then alias stern='stern'; fi
+if command -v fabric &> /dev/null; then alias ai='fabric'; fi
 EOT
 fi
 
