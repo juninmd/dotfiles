@@ -705,6 +705,17 @@ install_cargo_crate dua-cli dua
 # Mprocs (Process Manager)
 install_cargo_crate mprocs
 
+# --- EXTRA 2026 APPS ---
+
+# Kdash (Kubernetes Dashboard)
+install_cargo_crate kdash
+
+# Stern (Multi pod logs)
+install_go_package github.com/stern/stern@latest stern
+
+# Fabric (AI CLI framework)
+install_go_package github.com/danielmiessler/fabric@latest fabric
+
 # --- 2026 APPS PART III ---
 
 # Topgrade (Upgrade Everything)
