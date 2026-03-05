@@ -93,7 +93,8 @@ if [[ -z "$PROFILE" ]]; then
       '⚡ DOTFILES 2026 EDITION ⚡'
 
     echo "Escolha o perfil de instalação:"
-    PROFILE=$("$GUM" choose "minimal" "dev" "full")
+    PROFILE_CHOICE=$("$GUM" choose "minimal (shell, prompt, editor)" "dev (minimal + runtimes, docker, db)" "full (dev + apps extras)")
+    PROFILE=$(echo "$PROFILE_CHOICE" | awk '{print $1}')
   else
     read -rp "Escolha o perfil (minimal, dev, full) [full]: " PROFILE
     PROFILE=${PROFILE:-full}
@@ -108,7 +109,7 @@ case "$PROFILE" in
     MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi)
     ;;
   full)
-    MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi)
+    MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -119,6 +120,21 @@ esac
 
 log "Perfil selecionado: $PROFILE"
 log "Módulos: ${MODULES[*]}"
+
+if [[ "$DRY_RUN" == false ]]; then
+  if command -v "$GUM" &> /dev/null; then
+    if ! "$GUM" confirm "Deseja prosseguir com a instalação destes módulos?"; then
+      log "Instalação cancelada pelo usuário."
+      exit 0
+    fi
+  else
+    read -rp "Deseja prosseguir com a instalação destes módulos? (S/n): " confirm
+    if [[ "$confirm" =~ ^[Nn] ]]; then
+      log "Instalação cancelada pelo usuário."
+      exit 0
+    fi
+  fi
+fi
 
 for module in "${MODULES[@]}"; do
   if [[ ! -f "$ROOT_DIR/programas/$module/setup.sh" ]]; then
