@@ -716,6 +716,53 @@ install_go_package github.com/stern/stern@latest stern
 # Fabric (AI CLI framework)
 install_go_package github.com/danielmiessler/fabric@latest fabric
 
+# Difftastic (Structural diff)
+install_cargo_crate difftastic difft
+
+# Aider-chat (AI pair programming)
+if ! command -v aider &> /dev/null; then
+    echo -e "${c}Installing aider-chat...${r}"
+    pip3 install aider-chat --break-system-packages 2>/dev/null || pip3 install aider-chat
+else
+    echo -e "${c}aider-chat already installed.${r}"
+fi
+
+# Direnv (Environment variable manager)
+if ! command -v direnv &> /dev/null; then
+    echo -e "${c}Installing direnv...${r}"
+    sudo apt install -y direnv
+else
+    echo -e "${c}direnv already installed.${r}"
+fi
+
+# Gitleaks (Secret scanner for git)
+install_go_package github.com/gitleaks/gitleaks/v8@latest gitleaks
+
+# Mkcert (Local CA for valid HTTPS certs)
+install_go_package filippo.io/mkcert@latest mkcert
+
+# Shellcheck (Shell script analysis tool)
+if ! command -v shellcheck &> /dev/null; then
+    echo -e "${c}Installing shellcheck...${r}"
+    sudo apt install -y shellcheck
+else
+    echo -e "${c}shellcheck already installed.${r}"
+fi
+
+# Age (Modern encryption tool)
+install_go_package filippo.io/age/cmd/...@latest age
+
+# Sops (Secrets management tool)
+install_go_package github.com/getsops/sops/v3/cmd/sops@latest sops
+
+# Neovim (Modern terminal editor)
+if ! command -v nvim &> /dev/null; then
+    echo -e "${c}Installing neovim...${r}"
+    sudo apt install -y neovim
+else
+    echo -e "${c}neovim already installed.${r}"
+fi
+
 # --- 2026 APPS PART III ---
 
 # Topgrade (Upgrade Everything)
