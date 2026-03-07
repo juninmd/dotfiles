@@ -783,7 +783,7 @@ install_cargo_crate qsv
 # --- FUTURE TOOLS 2026 ---
 
 # Gron (Make JSON greppable)
-install_go_package github.com/tomnomnom/gron@latest
+install_go_package github.com/tomnomnom/gron@latest gron
 
 # Typos (Source code spell checker)
 install_cargo_crate typos-cli typos
