@@ -780,6 +780,32 @@ install_cargo_crate csvlens
 # Qsv (High-performance CSV Data-Wrangling Toolkit)
 install_cargo_crate qsv
 
+# --- FUTURE TOOLS 2026 ---
+
+# Gron (Make JSON greppable)
+install_go_package github.com/tomnomnom/gron@latest
+
+# Typos (Source code spell checker)
+install_cargo_crate typos-cli typos
+
+# Ripgrep All (Search in PDFs, E-books, Office documents, zip, tar.gz)
+install_cargo_crate ripgrep_all rga
+
+# Git-absorb (Automatically absorb git commit changes)
+install_cargo_crate git-absorb
+
+# Cocogitto (A conventional commits toolkit)
+install_cargo_crate cocogitto cog
+
+# Bore-cli (Localhost tunneling tool)
+install_cargo_crate bore-cli bore
+
+# Macchina (System information fetcher)
+install_cargo_crate macchina
+
+# JQL (JSON Query Language CLI)
+install_cargo_crate jql
+
 # Configure Bat Theme
 echo -e "${c}Configuring Bat Theme...${r}"
 BAT_CONFIG_DIR="$(bat --config-dir)"
