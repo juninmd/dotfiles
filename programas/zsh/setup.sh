@@ -254,6 +254,14 @@ if command -v kdash &> /dev/null; then alias kdash='kdash'; fi
 if command -v stern &> /dev/null; then alias stern='stern'; fi
 if command -v fabric &> /dev/null; then alias ai='fabric'; fi
 
+# --- Future Tools 2026 ---
+if command -v rga &> /dev/null; then alias grepa='rga'; fi
+if command -v bore &> /dev/null; then alias tunnel='bore'; fi
+if command -v macchina &> /dev/null; then alias sysinfo='macchina'; fi
+if command -v typos &> /dev/null; then alias spellcheck='typos'; fi
+if command -v cog &> /dev/null; then alias commit='cog commit'; fi
+if command -v gron &> /dev/null; then alias unjson='gron'; fi
+
 # --- End Custom Configuration ---
 EOT
 fi
@@ -411,6 +419,21 @@ if ! grep -q "# --- Extra 2026 Apps ---" "$ZSHRC"; then
 if command -v kdash &> /dev/null; then alias kdash='kdash'; fi
 if command -v stern &> /dev/null; then alias stern='stern'; fi
 if command -v fabric &> /dev/null; then alias ai='fabric'; fi
+EOT
+fi
+
+# Check if Future Tools 2026 are present in .zshrc
+if ! grep -q "# --- Future Tools 2026 ---" "$ZSHRC"; then
+    echo -e "${c}Appending Future Tools 2026 to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Future Tools 2026 ---
+if command -v rga &> /dev/null; then alias grepa='rga'; fi
+if command -v bore &> /dev/null; then alias tunnel='bore'; fi
+if command -v macchina &> /dev/null; then alias sysinfo='macchina'; fi
+if command -v typos &> /dev/null; then alias spellcheck='typos'; fi
+if command -v cog &> /dev/null; then alias commit='cog commit'; fi
+if command -v gron &> /dev/null; then alias unjson='gron'; fi
 EOT
 fi
 

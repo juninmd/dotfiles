@@ -22,7 +22,7 @@ fi
 
 log() {
   if command -v "$GUM" &> /dev/null; then
-    "$GUM" style --foreground 212 "[$($GUM style --foreground 250 "2026-setup")] $*"
+    "$GUM" style --foreground "#ff7edb" "[$($GUM style --foreground "#36f9f6" "2026-setup")] $*"
   else
     printf '\e[36m[2026-setup]\e[0m %s\n' "$*"
   fi
@@ -88,7 +88,7 @@ done
 if [[ -z "$PROFILE" ]]; then
   if command -v "$GUM" &> /dev/null; then
     "$GUM" style \
-      --foreground 212 --border-foreground 212 --border double \
+      --foreground "#fede5d" --border-foreground "#bd93f9" --border double \
       --align center --width 50 --margin "1 2" --padding "2 4" \
       '⚡ DOTFILES 2026 EDITION ⚡'
 
