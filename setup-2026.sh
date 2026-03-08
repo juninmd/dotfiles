@@ -64,7 +64,7 @@ run_module() {
     run_step "Executando módulo: $module" "$script"
   else
     if command -v "$GUM" &> /dev/null; then
-      "$GUM" spin --spinner dot --title "Executando módulo: $module..." -- bash -c "$script > /tmp/setup-2026-$module.log 2>&1"
+      "$GUM" spin --spinner dot --title "Executando módulo: $module..." -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"
     else
       run_step "Executando módulo: $module" "$script"
     fi
