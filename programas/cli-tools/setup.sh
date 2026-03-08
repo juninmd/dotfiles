@@ -806,6 +806,24 @@ install_cargo_crate macchina
 # JQL (JSON Query Language CLI)
 install_cargo_crate jql
 
+# Pomsky (Portable modern regular expression language)
+install_cargo_crate pomsky-bin pomsky
+
+# Fend (Arbitrary-precision unit-aware calculator)
+install_cargo_crate fend
+
+# Xc (Markdown defined task runner)
+install_go_package github.com/joerdav/xc/cmd/xc@latest xc
+
+# Gtt (Google Translate TUI)
+install_go_package github.com/eeeXun/gtt@latest gtt
+
+# Go-task (Modern Make alternative)
+install_go_package github.com/go-task/task/v3/cmd/task@latest task
+
+# Sops (Secrets Management) - explicitly add if missing
+install_go_package github.com/getsops/sops/v3/cmd/sops@latest sops
+
 # Configure Bat Theme
 echo -e "${c}Configuring Bat Theme...${r}"
 BAT_CONFIG_DIR="$(bat --config-dir)"
