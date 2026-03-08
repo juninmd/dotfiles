@@ -60,7 +60,15 @@ run_module() {
     chmod +x "$script"
   fi
 
-  run_step "Executando módulo: $module" "$script"
+  if [[ "$DRY_RUN" == true ]]; then
+    run_step "Executando módulo: $module" "$script"
+  else
+    if command -v "$GUM" &> /dev/null; then
+      "$GUM" spin --spinner dot --title "Executando módulo: $module..." -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"
+    else
+      run_step "Executando módulo: $module" "$script"
+    fi
+  fi
 }
 
 while [[ $# -gt 0 ]]; do
@@ -134,6 +142,12 @@ if [[ "$DRY_RUN" == false ]]; then
       exit 0
     fi
   fi
+fi
+
+if [[ "$DRY_RUN" == false ]] && command -v sudo &> /dev/null; then
+  sudo -v
+  # Keep-alive: update existing sudo time stamp until script has finished
+  while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 fi
 
 for module in "${MODULES[@]}"; do

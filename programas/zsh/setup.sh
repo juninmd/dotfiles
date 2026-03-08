@@ -262,6 +262,13 @@ if command -v typos &> /dev/null; then alias spellcheck='typos'; fi
 if command -v cog &> /dev/null; then alias commit='cog commit'; fi
 if command -v gron &> /dev/null; then alias unjson='gron'; fi
 
+# --- 2026 Extra CLI Apps ---
+if command -v pomsky &> /dev/null; then alias regex-gen='pomsky'; fi
+if command -v fend &> /dev/null; then alias calc='fend'; fi
+if command -v xc &> /dev/null; then alias tasks-md='xc'; fi
+if command -v gtt &> /dev/null; then alias translate='gtt'; fi
+if command -v task &> /dev/null; then alias t='task'; fi
+
 # --- End Custom Configuration ---
 EOT
 fi
@@ -376,7 +383,7 @@ if command -v cointop &> /dev/null; then alias crypto='cointop'; fi
 if command -v wtf &> /dev/null; then alias dashboard='wtf'; fi
 if command -v taskwarrior-tui &> /dev/null; then alias tasks='taskwarrior-tui'; fi
 if command -v nap &> /dev/null; then alias snippets='nap'; fi
-if command -v kondo &> /dev/null; then alias clean-system='kondo'; fi
+if command -v kondo &> /dev/null; then alias clean='kondo'; fi
 EOT
 fi
 
@@ -434,6 +441,20 @@ if command -v macchina &> /dev/null; then alias sysinfo='macchina'; fi
 if command -v typos &> /dev/null; then alias spellcheck='typos'; fi
 if command -v cog &> /dev/null; then alias commit='cog commit'; fi
 if command -v gron &> /dev/null; then alias unjson='gron'; fi
+EOT
+fi
+
+# Check if 2026 Extra CLI Apps are present in .zshrc
+if ! grep -q "# --- 2026 Extra CLI Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending 2026 Extra CLI Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- 2026 Extra CLI Apps ---
+if command -v pomsky &> /dev/null; then alias regex-gen='pomsky'; fi
+if command -v fend &> /dev/null; then alias calc='fend'; fi
+if command -v xc &> /dev/null; then alias tasks-md='xc'; fi
+if command -v gtt &> /dev/null; then alias translate='gtt'; fi
+if command -v task &> /dev/null; then alias t='task'; fi
 EOT
 fi
 
