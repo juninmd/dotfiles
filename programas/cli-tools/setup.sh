@@ -824,6 +824,64 @@ install_go_package github.com/go-task/task/v3/cmd/task@latest task
 # Sops (Secrets Management) - explicitly add if missing
 install_go_package github.com/getsops/sops/v3/cmd/sops@latest sops
 
+# --- 2026 CUTTING EDGE APPS ---
+
+# Plandex (AI coding engine)
+if ! command -v plandex &> /dev/null; then
+    echo -e "${c}Installing plandex...${r}"
+    curl -sL https://plandex.ai/install.sh | bash
+else
+    echo -e "${c}plandex already installed.${r}"
+fi
+
+# Shell-GPT (AI in terminal)
+if ! command -v sgpt &> /dev/null; then
+    echo -e "${c}Installing shell-gpt...${r}"
+    pip3 install shell-gpt --break-system-packages 2>/dev/null || pip3 install shell-gpt
+else
+    echo -e "${c}shell-gpt already installed.${r}"
+fi
+
+# Miller (Data processing)
+install_go_package github.com/johnkerl/miller/cmd/mlr@latest mlr
+
+# USQL (Universal SQL Client)
+install_go_package github.com/xo/usql@latest usql
+
+# Joshuto (Terminal file manager)
+install_cargo_crate joshuto
+
+# Xplr (TUI file explorer)
+install_cargo_crate xplr
+
+# Circumflex (Hacker News in terminal)
+install_go_package github.com/bensadeh/circumflex@latest circumflex
+
+# Kubecolor (Colorized kubectl)
+install_go_package github.com/kubecolor/kubecolor@latest kubecolor
+
+# Httpstat (curl statistics)
+if ! command -v httpstat &> /dev/null; then
+    echo -e "${c}Installing httpstat...${r}"
+    pip3 install httpstat --break-system-packages 2>/dev/null || pip3 install httpstat
+else
+    echo -e "${c}httpstat already installed.${r}"
+fi
+
+# Chafa (Terminal graphics)
+if ! command -v chafa &> /dev/null; then
+    echo -e "${c}Installing chafa...${r}"
+    sudo apt install -y chafa
+else
+    echo -e "${c}chafa already installed.${r}"
+fi
+
+# Lsd (Modern ls replacement)
+install_cargo_crate lsd
+
+# Dprint (Code formatting platform)
+install_cargo_crate dprint
+
 # Configure Bat Theme
 echo -e "${c}Configuring Bat Theme...${r}"
 BAT_CONFIG_DIR="$(bat --config-dir)"
