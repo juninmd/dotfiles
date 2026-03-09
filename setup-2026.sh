@@ -95,13 +95,17 @@ done
 
 if [[ -z "$PROFILE" ]]; then
   if command -v "$GUM" &> /dev/null; then
+    clear
     "$GUM" style \
       --foreground "#fede5d" --border-foreground "#bd93f9" --border double \
-      --align center --width 50 --margin "1 2" --padding "2 4" \
-      '⚡ DOTFILES 2026 EDITION ⚡'
+      --align center --width 60 --margin "1 2" --padding "2 4" \
+      '⚡ DOTFILES 2026 EDITION ⚡' 'O Futuro do Desenvolvimento'
 
-    echo "Escolha o perfil de instalação:"
-    PROFILE_CHOICE=$("$GUM" choose "minimal (shell, prompt, editor)" "dev (minimal + runtimes, docker, db)" "full (dev + apps extras)")
+    echo "🚀 Escolha o perfil de instalação para turbinar sua máquina:"
+    PROFILE_CHOICE=$("$GUM" choose \
+      "minimal   - Shell moderna, prompt limpo e editor básico." \
+      "dev       - minimal + Runtimes JS/Python, Docker e Banco de Dados (Recomendado)." \
+      "full      - dev + Apps extras de produtividade (Navegador, Slack, etc).")
     PROFILE=$(echo "$PROFILE_CHOICE" | awk '{print $1}')
   else
     read -rp "Escolha o perfil (minimal, dev, full) [full]: " PROFILE
@@ -127,11 +131,21 @@ case "$PROFILE" in
 esac
 
 log "Perfil selecionado: $PROFILE"
-log "Módulos: ${MODULES[*]}"
+
+if command -v "$GUM" &> /dev/null; then
+  echo ""
+  "$GUM" style --foreground "#72f1b8" --bold "📦 Módulos que serão instalados:"
+  for mod in "${MODULES[@]}"; do
+    echo "  • $mod"
+  done
+  echo ""
+else
+  log "Módulos: ${MODULES[*]}"
+fi
 
 if [[ "$DRY_RUN" == false ]]; then
   if command -v "$GUM" &> /dev/null; then
-    if ! "$GUM" confirm "Deseja prosseguir com a instalação destes módulos?"; then
+    if ! "$GUM" confirm "Deseja prosseguir com a instalação destes módulos e transformar seu setup?"; then
       log "Instalação cancelada pelo usuário."
       exit 0
     fi
@@ -160,9 +174,12 @@ for module in "${MODULES[@]}"; do
 done
 
 if command -v "$GUM" &> /dev/null; then
-  "$GUM" style --foreground 46 --margin "1 2" "🎉 Finalizado com sucesso!"
+  "$GUM" style \
+    --foreground "#282a36" --background "#72f1b8" --border-foreground "#72f1b8" \
+    --border rounded --align center --width 50 --margin "2 2" --padding "1 2" \
+    "🎉 Instalação do perfil '$PROFILE' finalizada com sucesso!" "Por favor, feche este terminal e abra um novo para carregar todas as configurações."
 else
-  log "Finalizado com sucesso."
+  log "Finalizado com sucesso. Reinicie seu terminal."
 fi
 
 # Cleanup

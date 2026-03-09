@@ -269,6 +269,17 @@ if command -v xc &> /dev/null; then alias tasks-md='xc'; fi
 if command -v gtt &> /dev/null; then alias translate='gtt'; fi
 if command -v task &> /dev/null; then alias t='task'; fi
 
+# --- 2026 Cutting Edge Apps ---
+if command -v sgpt &> /dev/null; then alias chatgpt='sgpt'; fi
+if command -v mlr &> /dev/null; then alias data='mlr'; fi
+if command -v usql &> /dev/null; then alias dbs='usql'; fi
+if command -v joshuto &> /dev/null; then alias fm='joshuto'; fi
+if command -v circumflex &> /dev/null; then alias hn='circumflex'; fi
+if command -v kubecolor &> /dev/null; then alias kubectl='kubecolor'; fi
+if command -v chafa &> /dev/null; then alias img='chafa'; fi
+if command -v lsd &> /dev/null; then alias ls2='lsd'; fi
+if command -v dprint &> /dev/null; then alias fmt='dprint'; fi
+
 # --- End Custom Configuration ---
 EOT
 fi
@@ -455,6 +466,24 @@ if command -v fend &> /dev/null; then alias calc='fend'; fi
 if command -v xc &> /dev/null; then alias tasks-md='xc'; fi
 if command -v gtt &> /dev/null; then alias translate='gtt'; fi
 if command -v task &> /dev/null; then alias t='task'; fi
+EOT
+fi
+
+# Check if 2026 Cutting Edge Apps are present in .zshrc
+if ! grep -q "# --- 2026 Cutting Edge Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending 2026 Cutting Edge Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- 2026 Cutting Edge Apps ---
+if command -v sgpt &> /dev/null; then alias chatgpt='sgpt'; fi
+if command -v mlr &> /dev/null; then alias data='mlr'; fi
+if command -v usql &> /dev/null; then alias dbs='usql'; fi
+if command -v joshuto &> /dev/null; then alias fm='joshuto'; fi
+if command -v circumflex &> /dev/null; then alias hn='circumflex'; fi
+if command -v kubecolor &> /dev/null; then alias kubectl='kubecolor'; fi
+if command -v chafa &> /dev/null; then alias img='chafa'; fi
+if command -v lsd &> /dev/null; then alias ls2='lsd'; fi
+if command -v dprint &> /dev/null; then alias fmt='dprint'; fi
 EOT
 fi
 
