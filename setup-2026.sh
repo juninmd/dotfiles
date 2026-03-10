@@ -64,7 +64,7 @@ run_module() {
     run_step "Executando módulo: $module" "$script"
   else
     if command -v "$GUM" &> /dev/null; then
-      "$GUM" spin --spinner dot --title "Executando módulo: $module..." -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"
+      "$GUM" spin --spinner dot --title "$($GUM style --foreground "#72f1b8" "Executando módulo: $module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"
     else
       run_step "Executando módulo: $module" "$script"
     fi
@@ -101,8 +101,16 @@ if [[ -z "$PROFILE" ]]; then
       --align center --width 60 --margin "1 2" --padding "2 4" \
       '⚡ DOTFILES 2026 EDITION ⚡' 'O Futuro do Desenvolvimento'
 
-    echo "🚀 Escolha o perfil de instalação para turbinar sua máquina:"
+    echo ""
+    "$GUM" style --foreground "#36f9f6" "🚀 Escolha o perfil de instalação para turbinar sua máquina:"
+    echo ""
     PROFILE_CHOICE=$("$GUM" choose \
+      --cursor="👉 " \
+      --header="Selecione um perfil abaixo:" \
+      --header.foreground="#ff7edb" \
+      --cursor.foreground="#36f9f6" \
+      --item.foreground="#f8f8f2" \
+      --selected.foreground="#72f1b8" \
       "minimal   - Shell moderna, prompt limpo e editor básico." \
       "dev       - minimal + Runtimes JS/Python, Docker e Banco de Dados (Recomendado)." \
       "full      - dev + Apps extras de produtividade (Navegador, Slack, etc).")
@@ -136,7 +144,7 @@ if command -v "$GUM" &> /dev/null; then
   echo ""
   "$GUM" style --foreground "#72f1b8" --bold "📦 Módulos que serão instalados:"
   for mod in "${MODULES[@]}"; do
-    echo "  • $mod"
+    echo "  $($GUM style --foreground "#ff7edb" "•") $($GUM style --foreground "#fede5d" "$mod")"
   done
   echo ""
 else
@@ -145,10 +153,12 @@ fi
 
 if [[ "$DRY_RUN" == false ]]; then
   if command -v "$GUM" &> /dev/null; then
-    if ! "$GUM" confirm "Deseja prosseguir com a instalação destes módulos e transformar seu setup?"; then
+    echo ""
+    if ! "$GUM" confirm --unselected.background "" --unselected.foreground "#f8f8f2" --selected.background "#bd93f9" --selected.foreground "#282a36" "Deseja prosseguir com a instalação destes módulos e transformar seu setup?"; then
       log "Instalação cancelada pelo usuário."
       exit 0
     fi
+    echo ""
   else
     read -rp "Deseja prosseguir com a instalação destes módulos? (S/n): " confirm
     if [[ "$confirm" =~ ^[Nn] ]]; then

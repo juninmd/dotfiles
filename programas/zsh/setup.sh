@@ -248,6 +248,9 @@ if command -v mcfly &> /dev/null; then
 fi
 if command -v nu &> /dev/null; then alias nu='nu'; fi
 if command -v btm &> /dev/null; then alias btm='btm'; fi
+if command -v tspin &> /dev/null; then alias logs='tspin'; fi
+if command -v slumber &> /dev/null; then alias http-ui='slumber'; fi
+if command -v jqp &> /dev/null; then alias jq-ui='jqp'; fi
 
 # --- Extra 2026 Apps ---
 if command -v kdash &> /dev/null; then alias kdash='kdash'; fi
@@ -376,6 +379,9 @@ if command -v mcfly &> /dev/null; then
 fi
 if command -v nu &> /dev/null; then alias nu='nu'; fi
 if command -v btm &> /dev/null; then alias btm='btm'; fi
+if command -v tspin &> /dev/null; then alias logs='tspin'; fi
+if command -v slumber &> /dev/null; then alias http-ui='slumber'; fi
+if command -v jqp &> /dev/null; then alias jq-ui='jqp'; fi
 EOT
 fi
 

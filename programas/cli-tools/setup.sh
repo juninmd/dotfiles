@@ -635,6 +635,15 @@ else
     echo -e "${c}eget already installed.${r}"
 fi
 
+# Tailspin (Log Highlighter)
+install_cargo_crate tailspin tspin
+
+# Slumber (Terminal HTTP Client)
+install_cargo_crate slumber
+
+# JQP (TUI for jq)
+install_go_package github.com/noahgorstein/jqp@latest jqp
+
 # --- THE FUTURE IS NOW (New 2026 Apps) ---
 
 # Deno (Modern JS/TS Runtime)
