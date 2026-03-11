@@ -835,6 +835,37 @@ install_go_package github.com/getsops/sops/v3/cmd/sops@latest sops
 
 # --- 2026 CUTTING EDGE APPS ---
 
+# Harlequin (SQL IDE for terminal)
+if ! command -v harlequin &> /dev/null; then
+    echo -e "${c}Installing harlequin...${r}"
+    pip3 install harlequin --break-system-packages 2>/dev/null || pip3 install harlequin
+else
+    echo -e "${c}harlequin already installed.${r}"
+fi
+
+# Gitingest (Replace git clone with AI friendly prompt)
+if ! command -v gitingest &> /dev/null; then
+    echo -e "${c}Installing gitingest...${r}"
+    pip3 install gitingest --break-system-packages 2>/dev/null || pip3 install gitingest
+else
+    echo -e "${c}gitingest already installed.${r}"
+fi
+
+# Repomix (Pack repository into AI prompt)
+if ! command -v repomix &> /dev/null; then
+    echo -e "${c}Installing repomix...${r}"
+    if command -v npm &> /dev/null; then
+        sudo npm install -g repomix
+    else
+        echo -e "${c}npm not found, skipping repomix installation.${r}"
+    fi
+else
+    echo -e "${c}repomix already installed.${r}"
+fi
+
+# Tenv (OpenTofu/Terraform version manager)
+install_go_package github.com/tofuutils/tenv/v3@latest tenv
+
 # Plandex (AI coding engine)
 if ! command -v plandex &> /dev/null; then
     echo -e "${c}Installing plandex...${r}"

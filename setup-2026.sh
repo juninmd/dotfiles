@@ -123,13 +123,13 @@ fi
 
 case "$PROFILE" in
   minimal)
-    MODULES=(cli-tools zsh starship vscode)
+    DEFAULT_MODULES=(cli-tools zsh starship vscode)
     ;;
   dev)
-    MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi)
+    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi)
     ;;
   full)
-    MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack)
+    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -140,15 +140,51 @@ esac
 
 log "Perfil selecionado: $PROFILE"
 
+# Get all available modules
+ALL_MODULES=()
+for dir in "$ROOT_DIR"/programas/*/; do
+  mod=$(basename "$dir")
+  # Exclude 'common' or other non-installable modules if necessary
+  if [[ "$mod" != "common" && -f "$dir/setup.sh" ]]; then
+    ALL_MODULES+=("$mod")
+  fi
+done
+
 if command -v "$GUM" &> /dev/null; then
+  echo ""
+  "$GUM" style --foreground "#36f9f6" "Selecione os módulos que deseja instalar (Espaço para marcar/desmarcar, Enter para confirmar):"
+  echo ""
+
+  # Prepare comma-separated default modules string
+  DEFAULTS=$(IFS=,; echo "${DEFAULT_MODULES[*]}")
+
+  # Interactive selection
+  SELECTED_MODULES=$("$GUM" choose --no-limit --cursor="👉 " \
+    --selected="${DEFAULTS}" \
+    --selected.foreground="#72f1b8" \
+    --cursor.foreground="#36f9f6" \
+    "${ALL_MODULES[@]}")
+
+  # Convert newline-separated string back to array
+  mapfile -t MODULES <<< "$SELECTED_MODULES"
+
   echo ""
   "$GUM" style --foreground "#72f1b8" --bold "📦 Módulos que serão instalados:"
   for mod in "${MODULES[@]}"; do
-    echo "  $($GUM style --foreground "#ff7edb" "•") $($GUM style --foreground "#fede5d" "$mod")"
+    if [ -n "$mod" ]; then
+      echo "  $($GUM style --foreground "#ff7edb" "•") $($GUM style --foreground "#fede5d" "$mod")"
+    fi
   done
   echo ""
 else
-  log "Módulos: ${MODULES[*]}"
+  MODULES=("${DEFAULT_MODULES[@]}")
+  log "Módulos padrão: ${MODULES[*]}"
+fi
+
+# Ensure MODULES is not empty
+if [ ${#MODULES[@]} -eq 0 ] || [ -z "${MODULES[0]}" ]; then
+  log "Nenhum módulo selecionado. Saindo..."
+  exit 0
 fi
 
 if [[ "$DRY_RUN" == false ]]; then

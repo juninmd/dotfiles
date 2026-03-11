@@ -283,6 +283,12 @@ if command -v chafa &> /dev/null; then alias img='chafa'; fi
 if command -v lsd &> /dev/null; then alias ls2='lsd'; fi
 if command -v dprint &> /dev/null; then alias fmt='dprint'; fi
 
+# --- 2026 AI Apps ---
+if command -v harlequin &> /dev/null; then alias sql-ide='harlequin'; fi
+if command -v gitingest &> /dev/null; then alias ingest='gitingest'; fi
+if command -v repomix &> /dev/null; then alias repo-pack='repomix'; fi
+if command -v tenv &> /dev/null; then alias tf-env='tenv'; fi
+
 # --- End Custom Configuration ---
 EOT
 fi
@@ -490,6 +496,19 @@ if command -v kubecolor &> /dev/null; then alias kubectl='kubecolor'; fi
 if command -v chafa &> /dev/null; then alias img='chafa'; fi
 if command -v lsd &> /dev/null; then alias ls2='lsd'; fi
 if command -v dprint &> /dev/null; then alias fmt='dprint'; fi
+EOT
+fi
+
+# Check if 2026 AI Apps are present in .zshrc
+if ! grep -q "# --- 2026 AI Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending 2026 AI Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- 2026 AI Apps ---
+if command -v harlequin &> /dev/null; then alias sql-ide='harlequin'; fi
+if command -v gitingest &> /dev/null; then alias ingest='gitingest'; fi
+if command -v repomix &> /dev/null; then alias repo-pack='repomix'; fi
+if command -v tenv &> /dev/null; then alias tf-env='tenv'; fi
 EOT
 fi
 
