@@ -140,6 +140,23 @@ esac
 
 log "Perfil selecionado: $PROFILE"
 
+# Human-readable descriptions for the modules
+declare -A MOD_DESC=(
+  ["android"]="Android Studio & SDK"
+  ["bun"]="Bun JavaScript runtime"
+  ["cli-tools"]="Ferramentas CLI modernas (2026 apps)"
+  ["firefox"]="Navegador Firefox"
+  ["lazydocker"]="LazyDocker TUI"
+  ["lazygit"]="LazyGit TUI"
+  ["mysql"]="MySQL Server & Client"
+  ["slack"]="Slack Desktop"
+  ["starship"]="Starship Prompt"
+  ["vscode"]="Visual Studio Code"
+  ["yazi"]="Yazi File Manager"
+  ["zellij"]="Zellij Terminal Multiplexer"
+  ["zsh"]="Zsh shell e plugins"
+)
+
 # Get all available modules
 ALL_MODULES=()
 for dir in "$ROOT_DIR"/programas/*/; do
@@ -155,24 +172,43 @@ if command -v "$GUM" &> /dev/null; then
   "$GUM" style --foreground "#36f9f6" "Selecione os módulos que deseja instalar (Espaço para marcar/desmarcar, Enter para confirmar):"
   echo ""
 
-  # Prepare comma-separated default modules string
-  DEFAULTS=$(IFS=,; echo "${DEFAULT_MODULES[*]}")
+  # Prepare choices with descriptions
+  CHOICES=()
+  for mod in "${ALL_MODULES[@]}"; do
+    desc="${MOD_DESC[$mod]:-Módulo $mod}"
+    CHOICES+=("$mod - $desc")
+  done
+
+  # Prepare comma-separated default modules string with descriptions
+  DEFAULTS_DESC=()
+  for mod in "${DEFAULT_MODULES[@]}"; do
+    desc="${MOD_DESC[$mod]:-Módulo $mod}"
+    DEFAULTS_DESC+=("$mod - $desc")
+  done
+  DEFAULTS=$(IFS=,; echo "${DEFAULTS_DESC[*]}")
 
   # Interactive selection
-  SELECTED_MODULES=$("$GUM" choose --no-limit --cursor="👉 " \
+  SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="👉 " \
     --selected="${DEFAULTS}" \
     --selected.foreground="#72f1b8" \
     --cursor.foreground="#36f9f6" \
-    "${ALL_MODULES[@]}")
+    "${CHOICES[@]}")
 
-  # Convert newline-separated string back to array
-  mapfile -t MODULES <<< "$SELECTED_MODULES"
+  # Extract module directories from the selected text
+  MODULES=()
+  while IFS= read -r line; do
+    if [ -n "$line" ]; then
+      mod=$(echo "$line" | awk '{print $1}')
+      MODULES+=("$mod")
+    fi
+  done <<< "$SELECTED_TEXT"
 
   echo ""
   "$GUM" style --foreground "#72f1b8" --bold "📦 Módulos que serão instalados:"
   for mod in "${MODULES[@]}"; do
     if [ -n "$mod" ]; then
-      echo "  $($GUM style --foreground "#ff7edb" "•") $($GUM style --foreground "#fede5d" "$mod")"
+      desc="${MOD_DESC[$mod]:-Módulo $mod}"
+      echo "  $($GUM style --foreground "#ff7edb" "•") $($GUM style --foreground "#fede5d" "$mod") $($GUM style --foreground "#6272a4" "($desc)")"
     fi
   done
   echo ""
