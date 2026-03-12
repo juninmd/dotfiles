@@ -835,6 +835,18 @@ install_go_package github.com/getsops/sops/v3/cmd/sops@latest sops
 
 # --- 2026 CUTTING EDGE APPS ---
 
+# Numbat (High precision scientific calculator)
+install_cargo_crate numbat-cli numbat
+
+# Scc (Sloc, Cloc and Code - Fast accurate code counter)
+install_go_package github.com/boyter/scc/v3@latest scc
+
+# Gping (Ping, but with a graph)
+install_cargo_crate gping
+
+# Doggo (Command-line DNS Client)
+install_go_package github.com/mr-karan/doggo/cmd/doggo@latest doggo
+
 # Harlequin (SQL IDE for terminal)
 if ! command -v harlequin &> /dev/null; then
     echo -e "${c}Installing harlequin...${r}"
