@@ -198,7 +198,7 @@ if command -v "$GUM" &> /dev/null; then
   MODULES=()
   while IFS= read -r line; do
     if [ -n "$line" ]; then
-      mod=$(echo "$line" | awk '{print $1}')
+      mod="${line%% *}"
       MODULES+=("$mod")
     fi
   done <<< "$SELECTED_TEXT"
