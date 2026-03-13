@@ -1,47 +1,28 @@
-# dotfiles
+# 🚀 Dotfiles
 
-> Repositório para guardar configurações, padrões, dicas, macetes.
+[![Status: Active](https://img.shields.io/badge/Status-Active-brightgreen.svg)]()
+[![Protocol: Antigravity](https://img.shields.io/badge/Protocol-Antigravity-orange.svg)]()
 
-## Configs
+> A modern, high-performance project built with **General / Markdown**. Orchestrated under the Antigravity protocol.
 
-- [VS Code](./vscode/settings.md)
+## ✨ Features
 
-## Temas
+- **High Performance**: Optimized for speed and low resource usage.
+- **Clean Architecture**: Built following strict Antigravity guidelines.
+- **Automated**: Integrated with modern CI/CD and verification scripts.
 
-- [Tema Slack](./slack/theme.md)
-- [Firefox Color](./firefox/theme.md)
+## 🛠️ Tech Stack
 
-## Extensões
+- **Primary Technology**: General / Markdown
+- **Architecture**: Modular and domain-driven.
 
-- [VS Code](./vscode/extensions.md)
-- [Gnome](./gnome/extensions.md)
+## 🛡️ Antigravity Protocol
 
-## Post Install Ubuntu
+This project follows the **Antigravity** code standards:
+- **150-Line Limit**: Applied to all logic modules to ensure maintainability.
+- **Strict Typing**: Avoiding dynamic/any types whenever possible.
+- **Clean Code**: DRY, KISS, and SOLID principles applied rigorously.
 
-- [Ubuntu](./so/ubuntu/readme.md)
+---
 
-## Minhas Libs NPM
-
-- [Teresinha](https://github.com/juninmd/teresinha)
-- [Gign](https://github.com/juninmd/gign)
-- [jwtg](https://github.com/juninmd/jwtg)
-- [Instagram Simple Downloader](https://github.com/juninmd/Instagram-Simple-Downloader)
-- [Hakai](https://github.com/juninmd/Hakai)
-
-## Utilitários
-
-- [Generate SSH](https://raw.githubusercontent.com/juninmd/dotfiles/master/utils/generate-ssh.sh)
-- [VS Code Context - Windows](https://github.com/juninmd/vscode-context)
-- [Unificador PDF](https://github.com/juninmd/unificadorpdf)
-- [Toogle Network - Windows](https://github.com/juninmd/togglenetwork)
-- [Quebra Texto](https://github.com/juninmd/QuebraTexto/blob/master/QuebraTexto/Program.cs)
-- [Ping](https://github.com/juninmd/Ping-Hermano)
-- [Pega IP](https://github.com/juninmd/pega-ip-local)
-- [Parser xml](https://github.com/juninmd/ParserXml)
-
-## Créditos
-
-- <https://github.com/shubhampathak/autosetup>
-
-## TODOLIST
-https://github.com/shyiko/jabba
+*"Simplicity is the ultimate sophistication."*
