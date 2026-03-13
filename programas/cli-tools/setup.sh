@@ -844,6 +844,21 @@ install_go_package github.com/boyter/scc/v3@latest scc
 # Gping (Ping, but with a graph)
 install_cargo_crate gping
 
+# Igrep (Interactive Grep)
+install_cargo_crate igrep
+
+# Ruplacer (Find and Replace)
+install_cargo_crate ruplacer
+
+# Silicon (Code Image Generator)
+install_cargo_crate silicon
+
+# Rm-improved (Safe rm)
+install_cargo_crate rm-improved rip
+
+# Tgpt (Terminal ChatGPT)
+install_go_package github.com/aandrew-me/tgpt/v2@latest tgpt
+
 # Doggo (Command-line DNS Client)
 install_go_package github.com/mr-karan/doggo/cmd/doggo@latest doggo
 

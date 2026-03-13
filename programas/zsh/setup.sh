@@ -241,6 +241,7 @@ if command -v amber &> /dev/null; then alias search='amber'; fi
 if command -v binsider &> /dev/null; then alias analyze='binsider'; fi
 if command -v serpl &> /dev/null; then alias sr='serpl'; fi
 if command -v tv &> /dev/null; then alias television='tv'; fi
+if command -v zenith &> /dev/null; then alias zen='zenith'; fi
 
 # --- Newest 2026 Apps ---
 if command -v mcfly &> /dev/null; then
@@ -288,6 +289,13 @@ if command -v harlequin &> /dev/null; then alias sql-ide='harlequin'; fi
 if command -v gitingest &> /dev/null; then alias ingest='gitingest'; fi
 if command -v repomix &> /dev/null; then alias repo-pack='repomix'; fi
 if command -v tenv &> /dev/null; then alias tf-env='tenv'; fi
+
+# --- Bonus 2026 Apps ---
+if command -v tgpt &> /dev/null; then alias ai-free='tgpt'; fi
+if command -v silicon &> /dev/null; then alias img-code='silicon'; fi
+if command -v rip &> /dev/null; then alias del='rip'; fi
+if command -v ruplacer &> /dev/null; then alias replace-all='ruplacer'; fi
+if command -v igrep &> /dev/null; then alias interactive-grep='igrep'; fi
 
 # --- End Custom Configuration ---
 EOT
@@ -354,7 +362,7 @@ if ! grep -q "# --- Eye Candy & 2026 Apps ---" "$ZSHRC"; then
 # --- Eye Candy & 2026 Apps ---
 if command -v gitui &> /dev/null; then alias gu='gitui'; fi
 if command -v oxker &> /dev/null; then alias docker-ui='oxker'; fi
-if command -v zenith &> /dev/null; then alias top='zenith'; fi
+if command -v zenith &> /dev/null; then alias zen='zenith'; fi
 if command -v gobang &> /dev/null; then alias db='gobang'; fi
 if command -v tenki &> /dev/null; then alias weather='tenki'; fi
 if command -v tickrs &> /dev/null; then alias stocks='tickrs'; fi
@@ -423,7 +431,7 @@ if command -v freeze &> /dev/null; then alias screenshot='freeze'; fi
 if command -v rnr &> /dev/null; then alias rename='rnr'; fi
 if command -v erd &> /dev/null; then alias tree='erd'; fi
 if command -v dua &> /dev/null; then alias disk='dua i'; fi
-if command -v mprocs &> /dev/null; then alias run='mprocs'; fi
+if command -v mprocs &> /dev/null; then alias process='mprocs'; fi
 EOT
 fi
 
@@ -509,6 +517,20 @@ if command -v harlequin &> /dev/null; then alias sql-ide='harlequin'; fi
 if command -v gitingest &> /dev/null; then alias ingest='gitingest'; fi
 if command -v repomix &> /dev/null; then alias repo-pack='repomix'; fi
 if command -v tenv &> /dev/null; then alias tf-env='tenv'; fi
+EOT
+fi
+
+# Check if Bonus 2026 Apps are present in .zshrc
+if ! grep -q "# --- Bonus 2026 Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending Bonus 2026 Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Bonus 2026 Apps ---
+if command -v tgpt &> /dev/null; then alias ai-free='tgpt'; fi
+if command -v silicon &> /dev/null; then alias img-code='silicon'; fi
+if command -v rip &> /dev/null; then alias del='rip'; fi
+if command -v ruplacer &> /dev/null; then alias replace-all='ruplacer'; fi
+if command -v igrep &> /dev/null; then alias interactive-grep='igrep'; fi
 EOT
 fi
 
