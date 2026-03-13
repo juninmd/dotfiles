@@ -97,8 +97,8 @@ if [[ -z "$PROFILE" ]]; then
   if command -v "$GUM" &> /dev/null; then
     clear
     "$GUM" style \
-      --foreground "#fede5d" --border-foreground "#bd93f9" --border double \
-      --align center --width 60 --margin "1 2" --padding "2 4" \
+      --foreground "#fede5d" --border-foreground "#bd93f9" --border thick \
+      --align center --width 80 --margin "1 2" --padding "2 4" \
       '⚡ DOTFILES 2026 EDITION ⚡' 'O Futuro do Desenvolvimento'
 
     echo ""
@@ -258,7 +258,7 @@ done
 if command -v "$GUM" &> /dev/null; then
   "$GUM" style \
     --foreground "#282a36" --background "#72f1b8" --border-foreground "#72f1b8" \
-    --border rounded --align center --width 50 --margin "2 2" --padding "1 2" \
+    --border thick --align center --width 80 --margin "2 2" --padding "1 2" \
     "🎉 Instalação do perfil '$PROFILE' finalizada com sucesso!" "Por favor, feche este terminal e abra um novo para carregar todas as configurações."
 else
   log "Finalizado com sucesso. Reinicie seu terminal."
