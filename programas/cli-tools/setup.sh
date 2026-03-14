@@ -949,6 +949,23 @@ install_cargo_crate lsd
 # Dprint (Code formatting platform)
 install_cargo_crate dprint
 
+# --- BRAND NEW 2026 APPS ---
+
+# Walk (Terminal Navigator)
+install_go_package github.com/antonmedv/walk@latest walk
+
+# Tre (Modern tree command)
+install_cargo_crate tre-command tre
+
+# Termshark (Terminal UI for Wireshark/tshark)
+install_go_package github.com/gcla/termshark/v2/cmd/termshark@latest termshark
+
+# Actionlint (GitHub Actions Linter)
+install_go_package github.com/rhysd/actionlint/cmd/actionlint@latest actionlint
+
+# Popeye (Kubernetes cluster sanitizer)
+install_go_package github.com/derailed/popeye@latest popeye
+
 # Configure Bat Theme
 echo -e "${c}Configuring Bat Theme...${r}"
 BAT_CONFIG_DIR="$(bat --config-dir)"

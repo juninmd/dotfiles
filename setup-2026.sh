@@ -64,7 +64,7 @@ run_module() {
     run_step "Executando módulo: $module" "$script"
   else
     if command -v "$GUM" &> /dev/null; then
-      "$GUM" spin --spinner dot --title "$($GUM style --foreground "#72f1b8" "Executando módulo: $module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"
+      "$GUM" spin --spinner globe --title "$($GUM style --foreground "#72f1b8" "Executando módulo: $module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"
     else
       run_step "Executando módulo: $module" "$script"
     fi
@@ -97,7 +97,7 @@ if [[ -z "$PROFILE" ]]; then
   if command -v "$GUM" &> /dev/null; then
     clear
     "$GUM" style \
-      --foreground "#fede5d" --border-foreground "#bd93f9" --border thick \
+      --foreground "#ff7edb" --border-foreground "#36f9f6" --border double \
       --align center --width 80 --margin "1 2" --padding "2 4" \
       '⚡ DOTFILES 2026 EDITION ⚡' 'O Futuro do Desenvolvimento'
 
@@ -105,7 +105,7 @@ if [[ -z "$PROFILE" ]]; then
     "$GUM" style --foreground "#36f9f6" "🚀 Escolha o perfil de instalação para turbinar sua máquina:"
     echo ""
     PROFILE_CHOICE=$("$GUM" choose \
-      --cursor="👉 " \
+      --cursor="▶ " \
       --header="Selecione um perfil abaixo:" \
       --header.foreground="#ff7edb" \
       --cursor.foreground="#36f9f6" \
@@ -188,7 +188,7 @@ if command -v "$GUM" &> /dev/null; then
   DEFAULTS=$(IFS=,; echo "${DEFAULTS_DESC[*]}")
 
   # Interactive selection
-  SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="👉 " \
+  SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="▶ " \
     --selected="${DEFAULTS}" \
     --selected.foreground="#72f1b8" \
     --cursor.foreground="#36f9f6" \
@@ -226,7 +226,7 @@ fi
 if [[ "$DRY_RUN" == false ]]; then
   if command -v "$GUM" &> /dev/null; then
     echo ""
-    if ! "$GUM" confirm --unselected.background "" --unselected.foreground "#f8f8f2" --selected.background "#bd93f9" --selected.foreground "#282a36" "Deseja prosseguir com a instalação destes módulos e transformar seu setup?"; then
+    if ! "$GUM" confirm --prompt.foreground "#ff7edb" --unselected.background "" --unselected.foreground "#f8f8f2" --selected.background "#bd93f9" --selected.foreground "#282a36" "Deseja prosseguir com a instalação destes módulos e transformar seu setup?"; then
       log "Instalação cancelada pelo usuário."
       exit 0
     fi
