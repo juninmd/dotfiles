@@ -297,6 +297,13 @@ if command -v rip &> /dev/null; then alias del='rip'; fi
 if command -v ruplacer &> /dev/null; then alias replace-all='ruplacer'; fi
 if command -v igrep &> /dev/null; then alias interactive-grep='igrep'; fi
 
+# --- Ultimate 2026 Tools ---
+if command -v serie &> /dev/null; then alias git-timeline='serie'; fi
+if command -v ttyper &> /dev/null; then alias typer='ttyper'; fi
+if command -v mdcat &> /dev/null; then alias mdview='mdcat'; fi
+if command -v code2prompt &> /dev/null; then alias c2p='code2prompt'; fi
+if command -v oxlint &> /dev/null; then alias ox='oxlint'; fi
+
 # --- End Custom Configuration ---
 EOT
 fi
@@ -531,6 +538,20 @@ if command -v silicon &> /dev/null; then alias img-code='silicon'; fi
 if command -v rip &> /dev/null; then alias del='rip'; fi
 if command -v ruplacer &> /dev/null; then alias replace-all='ruplacer'; fi
 if command -v igrep &> /dev/null; then alias interactive-grep='igrep'; fi
+EOT
+fi
+
+# Check if Ultimate 2026 Tools are present in .zshrc
+if ! grep -q "# --- Ultimate 2026 Tools ---" "$ZSHRC"; then
+    echo -e "${c}Appending Ultimate 2026 Tools to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Ultimate 2026 Tools ---
+if command -v serie &> /dev/null; then alias git-timeline='serie'; fi
+if command -v ttyper &> /dev/null; then alias typer='ttyper'; fi
+if command -v mdcat &> /dev/null; then alias mdview='mdcat'; fi
+if command -v code2prompt &> /dev/null; then alias c2p='code2prompt'; fi
+if command -v oxlint &> /dev/null; then alias ox='oxlint'; fi
 EOT
 fi
 

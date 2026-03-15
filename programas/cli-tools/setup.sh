@@ -716,6 +716,35 @@ install_cargo_crate mprocs
 
 # --- EXTRA 2026 APPS ---
 
+# Serie (Git commit graph)
+install_cargo_crate serie
+
+# Ttyper (Terminal typing practice)
+install_cargo_crate ttyper
+
+# Mdcat (Markdown viewer)
+install_cargo_crate mdcat
+
+# Code2prompt (Convert codebase to AI prompt)
+install_cargo_crate code2prompt
+
+# Llm (CLI for Large Language Models)
+if ! command -v llm &> /dev/null; then
+    echo -e "${c}Installing llm...${r}"
+    if command -v uv &> /dev/null; then
+        uv tool install llm
+    elif command -v pip3 &> /dev/null; then
+        pip3 install llm --break-system-packages 2>/dev/null || pip3 install llm
+    else
+        echo -e "${c}Neither uv nor pip3 found, skipping llm installation.${r}"
+    fi
+else
+    echo -e "${c}llm already installed.${r}"
+fi
+
+# Oxlint (Fast JS/TS linter)
+install_cargo_crate oxlint
+
 # Kdash (Kubernetes Dashboard)
 install_cargo_crate kdash
 
