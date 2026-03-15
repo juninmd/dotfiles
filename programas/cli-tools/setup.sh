@@ -731,7 +731,13 @@ install_cargo_crate code2prompt
 # Llm (CLI for Large Language Models)
 if ! command -v llm &> /dev/null; then
     echo -e "${c}Installing llm...${r}"
-    pip3 install llm --break-system-packages 2>/dev/null || pip3 install llm
+    if command -v uv &> /dev/null; then
+        uv tool install llm
+    elif command -v pip3 &> /dev/null; then
+        pip3 install llm --break-system-packages 2>/dev/null || pip3 install llm
+    else
+        echo -e "${c}Neither uv nor pip3 found, skipping llm installation.${r}"
+    fi
 else
     echo -e "${c}llm already installed.${r}"
 fi
