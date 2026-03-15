@@ -99,6 +99,13 @@ if [[ -z "$PROFILE" ]]; then
     "$GUM" style \
       --foreground "#ff7edb" --border-foreground "#36f9f6" --border double \
       --align center --width 80 --margin "1 2" --padding "2 4" \
+      '██████╗  ██████╗ ██████╗  ██████╗' \
+      '╚════██╗██╔═████╗╚════██╗██╔════╝' \
+      ' █████╔╝██║██╔██║ █████╔╝███████╗' \
+      '██╔═══╝ ████╔╝██║██╔═══╝ ██╔═══██╗' \
+      '███████╗╚██████╔╝███████╗╚██████╔╝' \
+      '╚══════╝ ╚═════╝ ╚══════╝ ╚═════╝' \
+      '' \
       '⚡ DOTFILES 2026 EDITION ⚡' 'O Futuro do Desenvolvimento'
 
     echo ""
@@ -142,19 +149,19 @@ log "Perfil selecionado: $PROFILE"
 
 # Human-readable descriptions for the modules
 declare -A MOD_DESC=(
-  ["android"]="Android Studio & SDK"
-  ["bun"]="Bun JavaScript runtime"
-  ["cli-tools"]="Ferramentas CLI modernas (2026 apps)"
-  ["firefox"]="Navegador Firefox"
-  ["lazydocker"]="LazyDocker TUI"
-  ["lazygit"]="LazyGit TUI"
-  ["mysql"]="MySQL Server & Client"
-  ["slack"]="Slack Desktop"
-  ["starship"]="Starship Prompt"
-  ["vscode"]="Visual Studio Code"
-  ["yazi"]="Yazi File Manager"
-  ["zellij"]="Zellij Terminal Multiplexer"
-  ["zsh"]="Zsh shell e plugins"
+  ["android"]="📱 Android Studio & SDK"
+  ["bun"]="🥟 Bun JavaScript runtime"
+  ["cli-tools"]="🧰 Ferramentas CLI modernas (2026 apps)"
+  ["firefox"]="🦊 Navegador Firefox"
+  ["lazydocker"]="🐳 LazyDocker TUI"
+  ["lazygit"]="🐙 LazyGit TUI"
+  ["mysql"]="🐬 MySQL Server & Client"
+  ["slack"]="💬 Slack Desktop"
+  ["starship"]="🚀 Starship Prompt"
+  ["vscode"]="💻 Visual Studio Code"
+  ["yazi"]="🦆 Yazi File Manager"
+  ["zellij"]="🪟 Zellij Terminal Multiplexer"
+  ["zsh"]="🐚 Zsh shell e plugins"
 )
 
 # Get all available modules
@@ -259,9 +266,13 @@ if command -v "$GUM" &> /dev/null; then
   "$GUM" style \
     --foreground "#282a36" --background "#72f1b8" --border-foreground "#72f1b8" \
     --border thick --align center --width 80 --margin "2 2" --padding "1 2" \
-    "🎉 Instalação do perfil '$PROFILE' finalizada com sucesso!" "Por favor, feche este terminal e abra um novo para carregar todas as configurações."
+    "🎉 Instalação do perfil '$PROFILE' finalizada com sucesso!" \
+    "Por favor, feche este terminal e abra um novo para carregar todas as configurações." \
+    "" \
+    "📂 Logs de instalação disponíveis em: /tmp/setup-2026-*.log"
 else
   log "Finalizado com sucesso. Reinicie seu terminal."
+  log "Logs de instalação disponíveis em: /tmp/setup-2026-*.log"
 fi
 
 # Cleanup
