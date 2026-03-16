@@ -304,6 +304,14 @@ if command -v mdcat &> /dev/null; then alias mdview='mdcat'; fi
 if command -v code2prompt &> /dev/null; then alias c2p='code2prompt'; fi
 if command -v oxlint &> /dev/null; then alias ox='oxlint'; fi
 
+# --- Missing 2026 Aliases ---
+if command -v yazi &> /dev/null; then alias y='yazi'; fi
+if command -v gping &> /dev/null; then alias ping='gping'; fi
+if command -v trip &> /dev/null; then alias traceroute='trip'; fi
+if command -v broot &> /dev/null; then alias br='broot'; fi
+if command -v pueue &> /dev/null; then alias pq='pueue'; fi
+if command -v hyperfine &> /dev/null; then alias hf='hyperfine'; fi
+
 # --- End Custom Configuration ---
 EOT
 fi
@@ -552,6 +560,21 @@ if command -v ttyper &> /dev/null; then alias typer='ttyper'; fi
 if command -v mdcat &> /dev/null; then alias mdview='mdcat'; fi
 if command -v code2prompt &> /dev/null; then alias c2p='code2prompt'; fi
 if command -v oxlint &> /dev/null; then alias ox='oxlint'; fi
+EOT
+fi
+
+# Check if Missing 2026 Aliases are present in .zshrc
+if ! grep -q "# --- Missing 2026 Aliases ---" "$ZSHRC"; then
+    echo -e "${c}Appending Missing 2026 Aliases to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Missing 2026 Aliases ---
+if command -v yazi &> /dev/null; then alias y='yazi'; fi
+if command -v gping &> /dev/null; then alias ping='gping'; fi
+if command -v trip &> /dev/null; then alias traceroute='trip'; fi
+if command -v broot &> /dev/null; then alias br='broot'; fi
+if command -v pueue &> /dev/null; then alias pq='pueue'; fi
+if command -v hyperfine &> /dev/null; then alias hf='hyperfine'; fi
 EOT
 fi
 

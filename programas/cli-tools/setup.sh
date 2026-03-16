@@ -995,6 +995,10 @@ install_go_package github.com/rhysd/actionlint/cmd/actionlint@latest actionlint
 # Popeye (Kubernetes cluster sanitizer)
 install_go_package github.com/derailed/popeye@latest popeye
 
+# Yazi (Duck file manager)
+install_cargo_crate yazi-fm yazi
+install_cargo_crate yazi-cli ya
+
 # Configure Bat Theme
 echo -e "${c}Configuring Bat Theme...${r}"
 BAT_CONFIG_DIR="$(bat --config-dir)"
