@@ -1015,6 +1015,35 @@ else
     echo -e "${c}Warning: synthwave.tmTheme not found in $SCRIPT_DIR/themes/bat${r}"
 fi
 
+# --- CLOUD NATIVE & SYSTEM TOOLS ---
+
+# Kubectl
+if ! command -v kubectl &> /dev/null; then
+    echo -e "${c}Installing kubectl...${r}"
+    sudo apt-get update
+    sudo apt-get install -y apt-transport-https ca-certificates curl
+    sudo mkdir -p /etc/apt/keyrings
+    curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+    echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+    sudo apt-get update
+    sudo apt-get install -y kubectl
+else
+    echo -e "${c}kubectl already installed.${r}"
+fi
+
+# Google Cloud CLI
+if ! command -v gcloud &> /dev/null; then
+    echo -e "${c}Installing Google Cloud CLI...${r}"
+    sudo apt-get install -y apt-transport-https ca-certificates gnupg curl
+    sudo mkdir -p /etc/apt/keyrings
+    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/cloud.google.gpg
+    echo "deb [signed-by=/etc/apt/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee /etc/apt/sources.list.d/google-cloud-sdk.list
+    sudo apt-get update
+    sudo apt-get install -y google-cloud-cli
+else
+    echo -e "${c}gcloud already installed.${r}"
+fi
+
 # FiraCode Nerd Font
 echo -e "${c}Installing FiraCode Nerd Font...${r}"
 FONT_DIR="$HOME/.local/share/fonts"
