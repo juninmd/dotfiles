@@ -64,7 +64,7 @@ run_module() {
     run_step "Executando módulo: $module" "$script"
   else
     if command -v "$GUM" &> /dev/null; then
-      "$GUM" spin --spinner globe --title "$($GUM style --foreground "#72f1b8" "Executando módulo: $module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"
+      "$GUM" spin --spinner dot --title "$($GUM style --foreground "#72f1b8" "Executando módulo: $module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"
     else
       run_step "Executando módulo: $module" "$script"
     fi
@@ -109,7 +109,7 @@ if [[ -z "$PROFILE" ]]; then
       '⚡ DOTFILES 2026 EDITION ⚡' 'O Futuro do Desenvolvimento'
 
     echo ""
-    "$GUM" style --foreground "#36f9f6" "🚀 Escolha o perfil de instalação para turbinar sua máquina:"
+    "$GUM" style --foreground "#36f9f6" --border normal --border-foreground "#36f9f6" --padding "1 2" --margin "1 0" "🚀 Escolha o perfil de instalação para turbinar sua máquina:"
     echo ""
     PROFILE_CHOICE=$("$GUM" choose \
       --cursor="▶ " \
@@ -136,7 +136,7 @@ case "$PROFILE" in
     DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi)
     ;;
   full)
-    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack)
+    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -212,12 +212,14 @@ if command -v "$GUM" &> /dev/null; then
 
   echo ""
   "$GUM" style --foreground "#72f1b8" --bold "📦 Módulos que serão instalados:"
+  MOD_LIST=""
   for mod in "${MODULES[@]}"; do
     if [ -n "$mod" ]; then
       desc="${MOD_DESC[$mod]:-Módulo $mod}"
-      echo "  $($GUM style --foreground "#ff7edb" "•") $($GUM style --foreground "#fede5d" "$mod") $($GUM style --foreground "#6272a4" "($desc)")"
+      MOD_LIST+="  $($GUM style --foreground "#ff7edb" "•") $($GUM style --foreground "#fede5d" "$mod") $($GUM style --foreground "#6272a4" "($desc)")"$'\n'
     fi
   done
+  echo -e "$MOD_LIST" | "$GUM" style --border rounded --margin "0 2" --padding "1 2" --border-foreground "#ff7edb"
   echo ""
 else
   MODULES=("${DEFAULT_MODULES[@]}")
