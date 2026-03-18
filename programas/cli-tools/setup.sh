@@ -995,6 +995,15 @@ install_go_package github.com/rhysd/actionlint/cmd/actionlint@latest actionlint
 # Popeye (Kubernetes cluster sanitizer)
 install_go_package github.com/derailed/popeye@latest popeye
 
+# Walk (Terminal Navigator)
+install_go_package github.com/antonmedv/walk@latest walk
+
+# Tre (Modern tree command)
+install_cargo_crate tre-command tre
+
+# Termshark (Terminal UI for Wireshark/tshark)
+install_go_package github.com/gcla/termshark/v2/cmd/termshark@latest termshark
+
 # Yazi (Duck file manager)
 install_cargo_crate yazi-fm yazi
 install_cargo_crate yazi-cli ya
