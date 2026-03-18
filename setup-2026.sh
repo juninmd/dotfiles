@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+START_TIME=$(date +%s)
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DRY_RUN=false
 PROFILE=""
@@ -64,7 +65,11 @@ run_module() {
     run_step "Executando módulo: $module" "$script"
   else
     if command -v "$GUM" &> /dev/null; then
-      "$GUM" spin --spinner dot --title "$($GUM style --foreground "#72f1b8" "Executando módulo: $module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"
+      if "$GUM" spin --spinner dot --title "$($GUM style --foreground "#72f1b8" "Executando módulo: $module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"; then
+        echo "$($GUM style --foreground "#72f1b8" "✔") $($GUM style --foreground "#f8f8f2" "Módulo") $($GUM style --foreground "#fede5d" "$module") $($GUM style --foreground "#f8f8f2" "instalado com sucesso!")"
+      else
+        echo "$($GUM style --foreground "#ff7edb" "✖") $($GUM style --foreground "#f8f8f2" "Erro ao instalar módulo") $($GUM style --foreground "#fede5d" "$module")$($GUM style --foreground "#f8f8f2" ". Verifique os logs.")"
+      fi
     else
       run_step "Executando módulo: $module" "$script"
     fi
@@ -264,16 +269,23 @@ for module in "${MODULES[@]}"; do
   run_module "$module"
 done
 
+END_TIME=$(date +%s)
+ELAPSED_TIME=$(($END_TIME - $START_TIME))
+ELAPSED_MINUTES=$(($ELAPSED_TIME / 60))
+ELAPSED_SECONDS=$(($ELAPSED_TIME % 60))
+
 if command -v "$GUM" &> /dev/null; then
   "$GUM" style \
     --foreground "#282a36" --background "#72f1b8" --border-foreground "#72f1b8" \
     --border thick --align center --width 80 --margin "2 2" --padding "1 2" \
     "🎉 Instalação do perfil '$PROFILE' finalizada com sucesso!" \
+    "Tempo total: ${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s" \
+    "" \
     "Por favor, feche este terminal e abra um novo para carregar todas as configurações." \
     "" \
     "📂 Logs de instalação disponíveis em: /tmp/setup-2026-*.log"
 else
-  log "Finalizado com sucesso. Reinicie seu terminal."
+  log "Finalizado com sucesso em ${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s. Reinicie seu terminal."
   log "Logs de instalação disponíveis em: /tmp/setup-2026-*.log"
 fi
 
