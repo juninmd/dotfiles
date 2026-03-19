@@ -312,6 +312,13 @@ if command -v broot &> /dev/null; then alias br='broot'; fi
 if command -v pueue &> /dev/null; then alias pq='pueue'; fi
 if command -v hyperfine &> /dev/null; then alias hf='hyperfine'; fi
 
+# --- New 2026 Apps ---
+if command -v ctop &> /dev/null; then alias docker-top='ctop'; fi
+if command -v http &> /dev/null; then alias http='http'; fi
+if command -v croc &> /dev/null; then alias send='croc'; fi
+if command -v dufs &> /dev/null; then alias share='dufs'; fi
+if command -v cheat &> /dev/null; then alias cheatsheet='cheat'; fi
+
 # --- End Custom Configuration ---
 EOT
 fi
@@ -575,6 +582,20 @@ if command -v trip &> /dev/null; then alias traceroute='trip'; fi
 if command -v broot &> /dev/null; then alias br='broot'; fi
 if command -v pueue &> /dev/null; then alias pq='pueue'; fi
 if command -v hyperfine &> /dev/null; then alias hf='hyperfine'; fi
+EOT
+fi
+
+# Check if New 2026 Apps are present in .zshrc
+if ! grep -q "# --- New 2026 Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending New 2026 Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- New 2026 Apps ---
+if command -v ctop &> /dev/null; then alias docker-top='ctop'; fi
+if command -v http &> /dev/null; then alias http='http'; fi
+if command -v croc &> /dev/null; then alias send='croc'; fi
+if command -v dufs &> /dev/null; then alias share='dufs'; fi
+if command -v cheat &> /dev/null; then alias cheatsheet='cheat'; fi
 EOT
 fi
 

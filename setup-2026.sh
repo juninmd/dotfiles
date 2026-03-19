@@ -111,7 +111,8 @@ if [[ -z "$PROFILE" ]]; then
       ' / /_| |_| / /| (_) |' \
       '|____|\___/____\___/ ' \
       '' \
-      '⚡ DOTFILES 2026 EDITION ⚡' 'O Futuro do Desenvolvimento'
+      '⚡ DOTFILES 2026 EDITION ⚡' 'O Futuro do Desenvolvimento' \
+      '👾 THE SYNTHWAVE EXPERIENCE 👾'
 
     echo ""
     "$GUM" style --foreground "#36f9f6" --border normal --border-foreground "#36f9f6" --padding "1 2" --margin "1 0" "🚀 Escolha o perfil de instalação para turbinar sua máquina:"
