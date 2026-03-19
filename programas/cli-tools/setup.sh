@@ -1118,4 +1118,26 @@ else
     echo -e "${c}Warning: synthwave.theme not found in $SCRIPT_DIR/themes/btop${r}"
 fi
 
+# --- NEW 2026 APPS ---
+
+# Ctop (Top-like interface for container metrics)
+install_go_package github.com/bcicen/ctop@latest ctop
+
+# Httpie (Modern, user-friendly command-line HTTP client)
+if ! command -v http &> /dev/null; then
+    echo -e "${c}Installing httpie...${r}"
+    pip3 install httpie --break-system-packages 2>/dev/null || pip3 install httpie
+else
+    echo -e "${c}httpie already installed.${r}"
+fi
+
+# Croc (Easily and securely send things from one computer to another)
+install_go_package github.com/schollz/croc/v10@latest croc
+
+# Dufs (A distinctive utility file server)
+install_cargo_crate dufs
+
+# Cheat (Create and view interactive cheatsheets on the command-line)
+install_go_package github.com/cheat/cheat/cmd/cheat@latest cheat
+
 echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"
