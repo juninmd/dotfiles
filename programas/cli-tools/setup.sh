@@ -458,20 +458,6 @@ for tool in atac binsider serpl; do
         echo -e "${c}$tool already installed.${r}"
     fi
 done
-
-# FiraCode Nerd Font
-echo -e "${c}Installing FiraCode Nerd Font...${r}"
-FONT_DIR="$HOME/.local/share/fonts"
-if [ ! -d "$FONT_DIR" ]; then
-    mkdir -p "$FONT_DIR"
-fi
-
-if ls "$FONT_DIR"/FiraCode*.ttf 1> /dev/null 2>&1; then
-    echo -e "${c}FiraCode Nerd Font seems to be installed.${r}"
-else
-    wget -qO /tmp/FiraCode.zip https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
-    unzip -o -q /tmp/FiraCode.zip -d "$FONT_DIR"
-    rm /tmp/FiraCode.zip
     echo -e "${c}FiraCode Nerd Font installed.${r}"
     if command -v fc-cache &> /dev/null; then
         echo -e "${c}Updating font cache...${r}"
@@ -521,9 +507,11 @@ if [ -f "$BTOP_THEME_FILE" ]; then
             echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\"" >> "$BTOP_CONF"
         fi
     fi
-    echo -e "${c}Btop configured to use Synthwave theme.${r}"
-else
-    echo -e "${c}Warning: synthwave.theme not found in $SCRIPT_DIR/themes/btop${r}"
-fi
+        (
+            echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\""
+            echo "theme_background = False"
+            echo "truecolor = True"
+            echo "vim_keys = True"
+        ) > "$BTOP_CONF"
 
 echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"
