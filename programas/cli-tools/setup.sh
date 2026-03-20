@@ -458,20 +458,6 @@ for tool in atac binsider serpl; do
         echo -e "${c}$tool already installed.${r}"
     fi
 done
-    echo -e "${c}FiraCode Nerd Font installed.${r}"
-    if command -v fc-cache &> /dev/null; then
-        echo -e "${c}Updating font cache...${r}"
-        fc-cache -fv
-    fi
-fi
-
-# Configure Fastfetch
-echo -e "${c}Configuring Fastfetch...${r}"
-FASTFETCH_CONFIG_DIR="$HOME/.config/fastfetch"
-mkdir -p "$FASTFETCH_CONFIG_DIR"
-SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
-FASTFETCH_CONFIG_FILE="$SCRIPT_DIR/configs/fastfetch.jsonc"
-
 if [ -f "$FASTFETCH_CONFIG_FILE" ]; then
     ln -sf "$FASTFETCH_CONFIG_FILE" "$FASTFETCH_CONFIG_DIR/config.jsonc"
     echo -e "${c}Fastfetch config linked.${r}"
@@ -515,3 +501,10 @@ if [ -f "$BTOP_THEME_FILE" ]; then
         ) > "$BTOP_CONF"
 
 echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"
+
+        (
+            echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\""
+            echo "theme_background = False"
+            echo "truecolor = True"
+            echo "vim_keys = True"
+        ) > "$BTOP_CONF"
