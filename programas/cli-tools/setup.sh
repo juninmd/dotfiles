@@ -458,5 +458,3 @@ for tool in atac binsider serpl; do
         echo -e "${c}$tool already installed.${r}"
     fi
 done
-            echo "vim_keys = True"
-        ) > "$BTOP_CONF"
