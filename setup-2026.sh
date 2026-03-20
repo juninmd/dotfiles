@@ -5,6 +5,13 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DRY_RUN=false
 PROFILE=""
 
+cleanup() {
+  if [[ -n "$TMP_GUM_DIR" && -d "$TMP_GUM_DIR" ]]; then
+    rm -rf "$TMP_GUM_DIR"
+  fi
+}
+trap cleanup EXIT
+
 # Ensure gum is available for an interactive experience
 TMP_GUM_DIR=""
 if ! command -v gum &> /dev/null; then
@@ -21,7 +28,7 @@ else
 fi
 
 log() {
-  if command -v "$GUM" &> /dev/null; then
+  if [[ -n "$GUM" ]] && command -v "$GUM" &> /dev/null; then
     "$GUM" style --foreground 212 "[$($GUM style --foreground 250 "2026-setup")] $*"
   else
     printf '[2026-setup] %s\n' "$*"
