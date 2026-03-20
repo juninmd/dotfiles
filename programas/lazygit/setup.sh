@@ -30,4 +30,4 @@ else
     echo -e "${c}Warning: config.yml not found in $SCRIPT_DIR${r}"
 fi
 
-echo -e "${c}LazyGit installed and configured!${r}"
+echo -e "${c}LazyGit installed and configured!$(${r})"
