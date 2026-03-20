@@ -650,10 +650,11 @@ install_go_package github.com/wtfutil/wtf@latest wtf
 # DuckDB (In-process SQL OLAP DBMS)
 if ! command -v duckdb &> /dev/null; then
     echo -e "${c}Installing duckdb...${r}"
-    wget -q https://github.com/duckdb/duckdb/releases/latest/download/duckdb_cli-linux-amd64.zip -O /tmp/duckdb.zip
-    unzip -o -q /tmp/duckdb.zip -d /tmp
-    sudo mv /tmp/duckdb /usr/local/bin/duckdb
-    rm /tmp/duckdb.zip
+    temp_dir=$(mktemp -d)
+    wget -q https://github.com/duckdb/duckdb/releases/latest/download/duckdb_cli-linux-amd64.zip -O "${temp_dir}/duckdb.zip" && \
+    unzip -o -q "${temp_dir}/duckdb.zip" -d "${temp_dir}" && \
+    sudo mv "${temp_dir}/duckdb" /usr/local/bin/duckdb
+    rm -rf "${temp_dir}"
 else
     echo -e "${c}duckdb already installed.${r}"
 fi
