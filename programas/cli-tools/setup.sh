@@ -458,14 +458,6 @@ for tool in atac binsider serpl; do
         echo -e "${c}$tool already installed.${r}"
     fi
 done
-echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"
-
-        (
-            echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\""
-            echo "theme_background = False"
-            echo "truecolor = True"
-            echo "vim_keys = True"
-        ) > "$BTOP_CONF"
         (
             echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\""
             echo "theme_background = False"
