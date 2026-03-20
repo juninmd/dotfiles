@@ -30,7 +30,7 @@ install_cargo_crate() {
 # Helper function for go installation
 install_go_package() {
     local package="$1"
-    local bin_name="${2:-$(basename "$package")}"
+    local bin_name="${2:-$(basename "${package%@*}")}"
 
     if ! command -v "$bin_name" &> /dev/null; then
         echo -e "${c}Installing $bin_name (from $package)...${r}"
