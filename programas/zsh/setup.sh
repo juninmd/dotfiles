@@ -237,10 +237,6 @@ if command -v viddy &> /dev/null; then alias watch='viddy'; fi
 if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
 
 # --- End Custom Configuration ---
-if command -v moar &> /dev/null; then
-    export PAGER='moar'
-    export MOAR='--statusbar=bold --no-linenumbers'
-    alias less='moar'
 fi
 if command -v viddy &> /dev/null; then alias watch='viddy'; fi
 if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
