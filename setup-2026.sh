@@ -65,7 +65,7 @@ run_module() {
     run_step "Executando módulo: $module" "$script"
   else
     if command -v "$GUM" &> /dev/null; then
-      if "$GUM" spin --spinner dot --title "$($GUM style --foreground "#72f1b8" "Executando módulo: $module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"; then
+      if "$GUM" spin --spinner pulse --title "$($GUM style --foreground "#72f1b8" "Executando módulo: $module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"; then
         echo "$($GUM style --foreground "#72f1b8" "✔") $($GUM style --foreground "#f8f8f2" "Módulo") $($GUM style --foreground "#fede5d" "$module") $($GUM style --foreground "#f8f8f2" "instalado com sucesso!")"
       else
         echo "$($GUM style --foreground "#ff7edb" "✖") $($GUM style --foreground "#f8f8f2" "Erro ao instalar módulo") $($GUM style --foreground "#fede5d" "$module")$($GUM style --foreground "#f8f8f2" ". Verifique os logs.")"
@@ -202,6 +202,7 @@ if command -v "$GUM" &> /dev/null; then
 
   # Interactive selection
   SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="▶ " \
+    --height=15 \
     --selected="${DEFAULTS}" \
     --selected.foreground="#72f1b8" \
     --cursor.foreground="#36f9f6" \

@@ -1140,4 +1140,21 @@ install_cargo_crate dufs
 # Cheat (Create and view interactive cheatsheets on the command-line)
 install_go_package github.com/cheat/cheat/cmd/cheat@latest cheat
 
+# Yt-dlp (Feature-rich command-line audio/video downloader)
+if ! command -v yt-dlp &> /dev/null; then
+    echo -e "${c}Installing yt-dlp...${r}"
+    pip3 install yt-dlp --break-system-packages 2>/dev/null || pip3 install yt-dlp
+else
+    echo -e "${c}yt-dlp already installed.${r}"
+fi
+
+# Porsmo (Pomodoro CLI)
+install_cargo_crate porsmo
+
+# Rustscan (Faster Nmap Scanning)
+install_cargo_crate rustscan
+
+# Diskonaut (Terminal disk space navigator)
+install_cargo_crate diskonaut
+
 echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"
