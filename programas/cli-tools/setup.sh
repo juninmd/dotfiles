@@ -458,20 +458,6 @@ for tool in atac binsider serpl; do
         echo -e "${c}$tool already installed.${r}"
     fi
 done
-if [ -f "$FASTFETCH_CONFIG_FILE" ]; then
-    ln -sf "$FASTFETCH_CONFIG_FILE" "$FASTFETCH_CONFIG_DIR/config.jsonc"
-    echo -e "${c}Fastfetch config linked.${r}"
-else
-    echo -e "${c}Warning: fastfetch.jsonc not found in $SCRIPT_DIR/configs${r}"
-fi
-
-# Configure Btop
-echo -e "${c}Configuring Btop...${r}"
-BTOP_THEMES_DIR="$HOME/.config/btop/themes"
-mkdir -p "$BTOP_THEMES_DIR"
-SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
-BTOP_THEME_FILE="$SCRIPT_DIR/themes/btop/synthwave.theme"
-
 if [ -f "$BTOP_THEME_FILE" ]; then
     cp "$BTOP_THEME_FILE" "$BTOP_THEMES_DIR/synthwave.theme"
     echo -e "${c}Btop theme copied.${r}"
@@ -502,6 +488,12 @@ if [ -f "$BTOP_THEME_FILE" ]; then
 
 echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"
 
+        (
+            echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\""
+            echo "theme_background = False"
+            echo "truecolor = True"
+            echo "vim_keys = True"
+        ) > "$BTOP_CONF"
         (
             echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\""
             echo "theme_background = False"
