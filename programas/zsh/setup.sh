@@ -237,10 +237,6 @@ if command -v viddy &> /dev/null; then alias watch='viddy'; fi
 if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
 
 # --- End Custom Configuration ---
-if command -v fx &> /dev/null; then alias json='fx'; fi
-if command -v sd &> /dev/null; then alias replace='sd'; fi
-if command -v choose &> /dev/null; then alias pick='choose'; fi
-if command -v onefetch &> /dev/null; then alias git-summary='onefetch'; fi
 EOT
 fi
 
