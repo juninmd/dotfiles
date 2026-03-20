@@ -322,7 +322,7 @@ if command -v cheat &> /dev/null; then alias cheatsheet='cheat'; fi
 # --- Latest 2026 Apps ---
 if command -v yt-dlp &> /dev/null; then alias ytdl='yt-dlp'; fi
 if command -v porsmo &> /dev/null; then alias pomodoro='porsmo'; fi
-if command -v rustscan &> /dev/null; then alias scan='rustscan'; fi
+if command -v rustscan &> /dev/null; then alias rscan='rustscan'; fi
 if command -v diskonaut &> /dev/null; then alias disk-vis='diskonaut'; fi
 
 # --- End Custom Configuration ---
@@ -613,7 +613,7 @@ if ! grep -q "# --- Latest 2026 Apps ---" "$ZSHRC"; then
 # --- Latest 2026 Apps ---
 if command -v yt-dlp &> /dev/null; then alias ytdl='yt-dlp'; fi
 if command -v porsmo &> /dev/null; then alias pomodoro='porsmo'; fi
-if command -v rustscan &> /dev/null; then alias scan='rustscan'; fi
+if command -v rustscan &> /dev/null; then alias rscan='rustscan'; fi
 if command -v diskonaut &> /dev/null; then alias disk-vis='diskonaut'; fi
 EOT
 fi
