@@ -237,10 +237,6 @@ if command -v viddy &> /dev/null; then alias watch='viddy'; fi
 if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
 
 # --- End Custom Configuration ---
-    alias decompress='ouch decompress'
-fi
-if command -v tokei &> /dev/null; then alias cloc='tokei'; fi
-if command -v bandwhich &> /dev/null; then alias bw='sudo bandwhich'; fi
 if command -v grex &> /dev/null; then alias regex='grex'; fi
 if command -v jless &> /dev/null; then alias jl='jless'; fi
 EOT
