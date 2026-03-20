@@ -237,10 +237,6 @@ if command -v viddy &> /dev/null; then alias watch='viddy'; fi
 if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
 
 # --- End Custom Configuration ---
-if command -v binsider &> /dev/null; then alias analyze='binsider'; fi
-if command -v serpl &> /dev/null; then alias sr='serpl'; fi
-if command -v tv &> /dev/null; then alias television='tv'; fi
-EOT
 fi
 
 # Update zoxide to use cd alias if present in existing config
