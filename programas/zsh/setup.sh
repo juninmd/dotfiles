@@ -394,6 +394,7 @@ if command -v topgrade &> /dev/null; then alias update='topgrade'; fi
 if command -v hexyl &> /dev/null; then alias hex='hexyl'; fi
 if command -v pastel &> /dev/null; then alias color='pastel'; fi
 if command -v csvlens &> /dev/null; then alias csv='csvlens'; fi
+if command -v qsv &> /dev/null; then alias qcsv='qsv'; fi
 EOT
 fi
 
