@@ -236,11 +236,7 @@ fi
 if command -v viddy &> /dev/null; then alias watch='viddy'; fi
 if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
 
-# --- Interface Improvements 2026 ---
-if command -v amber &> /dev/null; then alias search='amber'; fi
-if command -v binsider &> /dev/null; then alias analyze='binsider'; fi
-if command -v serpl &> /dev/null; then alias sr='serpl'; fi
-if command -v tv &> /dev/null; then alias television='tv'; fi
+# --- End Custom Configuration ---
 
 # --- End Custom Configuration ---
 EOT
