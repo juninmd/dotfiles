@@ -656,6 +656,7 @@ if ! command -v duckdb &> /dev/null; then
     sudo mv "${temp_dir}/duckdb" /usr/local/bin/duckdb
     rm -rf "${temp_dir}"
     rm -rf "${temp_dir}"
+    rm -rf "${temp_dir}"
 else
     echo -e "${c}duckdb already installed.${r}"
 fi
