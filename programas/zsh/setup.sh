@@ -237,10 +237,6 @@ if command -v viddy &> /dev/null; then alias watch='viddy'; fi
 if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
 
 # --- End Custom Configuration ---
-if command -v tenki &> /dev/null; then alias weather='tenki'; fi
-if command -v tickrs &> /dev/null; then alias stocks='tickrs'; fi
-EOT
-fi
 
 # Check if Interface Improvements 2026 are present in .zshrc
 if ! grep -q "# --- Interface Improvements 2026 ---" "$ZSHRC"; then
