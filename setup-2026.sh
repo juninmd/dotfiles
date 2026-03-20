@@ -19,9 +19,16 @@ cleanup() {
 }
 trap cleanup EXIT
 
+cleanup() {
+  if [[ -n "$TMP_GUM_DIR" && -d "$TMP_GUM_DIR" ]]; then
+    rm -rf "$TMP_GUM_DIR"
+  fi
+}
+trap cleanup EXIT
+
 # Ensure gum is available for an interactive experience
 TMP_GUM_DIR=""
-if ! command -v gum &> /dev/null; then
+  if [[ -n "$GUM" ]] && command -v "$GUM" &> /dev/null; then
     echo "Baixando 'gum' temporariamente para uma melhor interface..."
     TMP_GUM_DIR=$(mktemp -d)
     wget -qO "$TMP_GUM_DIR/gum.tar.gz" https://github.com/charmbracelet/gum/releases/download/v0.13.0/gum_0.13.0_linux_x86_64.tar.gz
