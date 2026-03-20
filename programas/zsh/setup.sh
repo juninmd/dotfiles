@@ -237,10 +237,6 @@ if command -v viddy &> /dev/null; then alias watch='viddy'; fi
 if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
 
 # --- End Custom Configuration ---
-fi
-
-# Check if Eye Candy & 2026 Apps are present in .zshrc
-if ! grep -q "# --- Eye Candy & 2026 Apps ---" "$ZSHRC"; then
     echo -e "${c}Appending Eye Candy & 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
