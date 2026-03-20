@@ -449,29 +449,15 @@ else
     echo -e "${c}lnav already installed.${r}"
 fi
 
-# Atac (Modern API Client TUI)
-if ! command -v atac &> /dev/null; then
-    echo -e "${c}Installing atac...${r}"
-    cargo install atac
-else
-    echo -e "${c}atac already installed.${r}"
-fi
-
-# Binsider (Binary Analysis TUI)
-if ! command -v binsider &> /dev/null; then
-    echo -e "${c}Installing binsider...${r}"
-    cargo install binsider
-else
-    echo -e "${c}binsider already installed.${r}"
-fi
-
-# Serpl (Search and Replace TUI)
-if ! command -v serpl &> /dev/null; then
-    echo -e "${c}Installing serpl...${r}"
-    cargo install serpl
-else
-    echo -e "${c}serpl already installed.${r}"
-fi
+# Install cargo-based TUI tools
+for tool in atac binsider serpl; do
+    if ! command -v "$tool" &> /dev/null; then
+        echo -e "${c}Installing $tool...${r}"
+        cargo install "$tool"
+    else
+        echo -e "${c}$tool already installed.${r}"
+    fi
+done
 
 # FiraCode Nerd Font
 echo -e "${c}Installing FiraCode Nerd Font...${r}"
@@ -521,10 +507,12 @@ if [ -f "$BTOP_THEME_FILE" ]; then
     # Update btop.conf to use the theme if it exists, or creating a minimal one
     BTOP_CONF="$HOME/.config/btop/btop.conf"
     if [ ! -f "$BTOP_CONF" ]; then
-        echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\"" > "$BTOP_CONF"
-        echo "theme_background = False" >> "$BTOP_CONF"
-        echo "truecolor = True" >> "$BTOP_CONF"
-        echo "vim_keys = True" >> "$BTOP_CONF"
+        (
+            echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\""
+            echo "theme_background = False"
+            echo "truecolor = True"
+            echo "vim_keys = True"
+        ) > "$BTOP_CONF"
     else
         # Replace existing color_theme line or append it
         if grep -q "color_theme" "$BTOP_CONF"; then
