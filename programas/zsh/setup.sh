@@ -237,10 +237,6 @@ if command -v viddy &> /dev/null; then alias watch='viddy'; fi
 if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
 
 # --- End Custom Configuration ---
-    echo -e "${c}Appending Eye Candy & 2026 Apps to .zshrc...${r}"
-    cat <<EOT >> $ZSHRC
-
-# --- Eye Candy & 2026 Apps ---
 if command -v gitui &> /dev/null; then alias gu='gitui'; fi
 if command -v oxker &> /dev/null; then alias docker-ui='oxker'; fi
 if command -v zenith &> /dev/null; then alias top='zenith'; fi
