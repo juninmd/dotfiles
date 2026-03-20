@@ -237,10 +237,6 @@ if command -v viddy &> /dev/null; then alias watch='viddy'; fi
 if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
 
 # --- End Custom Configuration ---
-    cat <<EOT >> $ZSHRC
-
-# --- Even More 2026 Extras ---
-if command -v carapace &> /dev/null; then
     export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense,xdg'
     zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
     source <(carapace _carapace)
