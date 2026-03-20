@@ -237,10 +237,6 @@ if command -v viddy &> /dev/null; then alias watch='viddy'; fi
 if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
 
 # --- End Custom Configuration ---
-if command -v grex &> /dev/null; then alias regex='grex'; fi
-if command -v jless &> /dev/null; then alias jl='jless'; fi
-EOT
-fi
 
 # Check if Even More 2026 Extras are present in .zshrc
 if ! grep -q "# --- Even More 2026 Extras ---" "$ZSHRC"; then
