@@ -458,22 +458,14 @@ for tool in atac binsider serpl; do
         echo -e "${c}$tool already installed.${r}"
     fi
 done
-        # Replace existing color_theme line or append it
-        if grep -q "color_theme" "$BTOP_CONF"; then
-            sed -i 's|^color_theme = .*|color_theme = "'"$BTOP_THEMES_DIR"'/synthwave.theme"|' "$BTOP_CONF"
-        else
-            echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\"" >> "$BTOP_CONF"
-        fi
-    fi
+echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"
+
         (
             echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\""
             echo "theme_background = False"
             echo "truecolor = True"
             echo "vim_keys = True"
         ) > "$BTOP_CONF"
-
-echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"
-
         (
             echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\""
             echo "theme_background = False"
