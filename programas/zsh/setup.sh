@@ -396,6 +396,7 @@ if command -v pastel &> /dev/null; then alias color='pastel'; fi
 if command -v csvlens &> /dev/null; then alias csv='csvlens'; fi
 if command -v qsv &> /dev/null; then alias qcsv='qsv'; fi
 if command -v qsv &> /dev/null; then alias qcsv='qsv'; fi
+if command -v qsv &> /dev/null; then alias qcsv='qsv'; fi
 EOT
 fi
 
