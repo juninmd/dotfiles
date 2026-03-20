@@ -458,20 +458,6 @@ for tool in atac binsider serpl; do
         echo -e "${c}$tool already installed.${r}"
     fi
 done
-if [ -f "$BTOP_THEME_FILE" ]; then
-    cp "$BTOP_THEME_FILE" "$BTOP_THEMES_DIR/synthwave.theme"
-    echo -e "${c}Btop theme copied.${r}"
-
-    # Update btop.conf to use the theme if it exists, or creating a minimal one
-    BTOP_CONF="$HOME/.config/btop/btop.conf"
-    if [ ! -f "$BTOP_CONF" ]; then
-        (
-            echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\""
-            echo "theme_background = False"
-            echo "truecolor = True"
-            echo "vim_keys = True"
-        ) > "$BTOP_CONF"
-    else
         # Replace existing color_theme line or append it
         if grep -q "color_theme" "$BTOP_CONF"; then
             sed -i 's|^color_theme = .*|color_theme = "'"$BTOP_THEMES_DIR"'/synthwave.theme"|' "$BTOP_CONF"
@@ -488,6 +474,12 @@ if [ -f "$BTOP_THEME_FILE" ]; then
 
 echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"
 
+        (
+            echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\""
+            echo "theme_background = False"
+            echo "truecolor = True"
+            echo "vim_keys = True"
+        ) > "$BTOP_CONF"
         (
             echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\""
             echo "theme_background = False"
