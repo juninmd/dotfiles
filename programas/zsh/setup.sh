@@ -416,6 +416,7 @@ if command -v qsv &> /dev/null; then alias qcsv='qsv'; fi
 if command -v qsv &> /dev/null; then alias qcsv='qsv'; fi
 if command -v qsv &> /dev/null; then alias qcsv='qsv'; fi
 if command -v qsv &> /dev/null; then alias qcsv='qsv'; fi
+if command -v qsv &> /dev/null; then alias qcsv='qsv'; fi
 EOT
 fi
 
