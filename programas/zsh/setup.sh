@@ -238,10 +238,6 @@ if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
 
 # --- End Custom Configuration ---
 fi
-if command -v viddy &> /dev/null; then alias watch='viddy'; fi
-if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
-EOT
-fi
 
 # Check if Eye Candy & 2026 Apps are present in .zshrc
 if ! grep -q "# --- Eye Candy & 2026 Apps ---" "$ZSHRC"; then
