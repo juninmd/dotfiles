@@ -237,10 +237,6 @@ if command -v viddy &> /dev/null; then alias watch='viddy'; fi
 if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
 
 # --- End Custom Configuration ---
-EOT
-fi
-
-# Check if More 2026 Extras are present in .zshrc
 if ! grep -q "# --- More 2026 Extras ---" "$ZSHRC"; then
     echo -e "${c}Appending More 2026 Extras to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
