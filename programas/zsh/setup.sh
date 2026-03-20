@@ -237,10 +237,6 @@ if command -v viddy &> /dev/null; then alias watch='viddy'; fi
 if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
 
 # --- End Custom Configuration ---
-# --- More 2026 Extras ---
-if command -v websocat &> /dev/null; then alias ws='websocat'; fi
-if command -v ouch &> /dev/null; then
-    alias compress='ouch compress'
     alias decompress='ouch decompress'
 fi
 if command -v tokei &> /dev/null; then alias cloc='tokei'; fi
