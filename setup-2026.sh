@@ -12,6 +12,13 @@ cleanup() {
 }
 trap cleanup EXIT
 
+cleanup() {
+  if [[ -n "$TMP_GUM_DIR" && -d "$TMP_GUM_DIR" ]]; then
+    rm -rf "$TMP_GUM_DIR"
+  fi
+}
+trap cleanup EXIT
+
 # Ensure gum is available for an interactive experience
 TMP_GUM_DIR=""
 if ! command -v gum &> /dev/null; then
@@ -21,7 +28,7 @@ if ! command -v gum &> /dev/null; then
     # The tarball directly contains the 'gum' binary
     tar -xzf "$TMP_GUM_DIR/gum.tar.gz" -C "$TMP_GUM_DIR" gum
     chmod +x "$TMP_GUM_DIR/gum"
-    rm "$TMP_GUM_DIR/gum.tar.gz"
+  if [[ -n "$GUM" ]] && command -v "$GUM" &> /dev/null; then
     GUM="$TMP_GUM_DIR/gum"
 else
     GUM="gum"
