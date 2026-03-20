@@ -237,10 +237,6 @@ if command -v viddy &> /dev/null; then alias watch='viddy'; fi
 if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
 
 # --- End Custom Configuration ---
-if ! grep -q "# --- More 2026 Extras ---" "$ZSHRC"; then
-    echo -e "${c}Appending More 2026 Extras to .zshrc...${r}"
-    cat <<EOT >> $ZSHRC
-
 # --- More 2026 Extras ---
 if command -v websocat &> /dev/null; then alias ws='websocat'; fi
 if command -v ouch &> /dev/null; then
