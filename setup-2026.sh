@@ -89,6 +89,13 @@ cleanup() {
 }
 trap cleanup EXIT
 
+cleanup() {
+  if [[ -n "$TMP_GUM_DIR" && -d "$TMP_GUM_DIR" ]]; then
+  if [[ -n "$GUM" ]] && command -v "$GUM" &> /dev/null; then
+  fi
+}
+trap cleanup EXIT
+
 # Ensure gum is available for an interactive experience
 TMP_GUM_DIR=""
   if [[ -n "$GUM" ]] && command -v "$GUM" &> /dev/null; then
