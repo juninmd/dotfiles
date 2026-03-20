@@ -237,10 +237,6 @@ if command -v viddy &> /dev/null; then alias watch='viddy'; fi
 if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
 
 # --- End Custom Configuration ---
-if command -v gitui &> /dev/null; then alias gu='gitui'; fi
-if command -v oxker &> /dev/null; then alias docker-ui='oxker'; fi
-if command -v zenith &> /dev/null; then alias top='zenith'; fi
-if command -v gobang &> /dev/null; then alias db='gobang'; fi
 if command -v tenki &> /dev/null; then alias weather='tenki'; fi
 if command -v tickrs &> /dev/null; then alias stocks='tickrs'; fi
 EOT
