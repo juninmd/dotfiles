@@ -31,4 +31,4 @@ else
     echo -e "${c}Warning: config.yml not found in $SCRIPT_DIR${r}"
 fi
 
-echo -e "${c}LazyDocker installed and configured!${r}"
+echo -e "${c}LazyDocker installed and configured!$(${r})"
