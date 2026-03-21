@@ -237,9 +237,5 @@ if command -v viddy &> /dev/null; then alias watch='viddy'; fi
 if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
 
 # --- End Custom Configuration ---
-fi
-
-# Update zoxide to use cd alias if present in existing config
-sed -i 's/eval "$(zoxide init zsh)"/eval "$(zoxide init zsh --cmd cd)"/' "$ZSHRC"
 
 echo -e "${c}Zsh configured! Please restart your terminal or run 'source ~/.zshrc'.${r}"
