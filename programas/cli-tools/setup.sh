@@ -1011,10 +1011,7 @@ install_cargo_crate yazi-cli ya
 # K8sGPT (AI for Kubernetes)
 if ! command -v k8sgpt &> /dev/null; then
     echo -e "${c}Installing k8sgpt...${r}"
-    curl -sLo /tmp/k8sgpt.tar.gz https://github.com/k8sgpt-ai/k8sgpt/releases/latest/download/k8sgpt_Linux_x86_64.tar.gz
-    tar -xzf /tmp/k8sgpt.tar.gz -C /tmp k8sgpt
-    sudo mv /tmp/k8sgpt /usr/local/bin/k8sgpt
-    rm /tmp/k8sgpt.tar.gz
+    sudo eget k8sgpt-ai/k8sgpt --asset "Linux_x86_64.tar.gz" --file k8sgpt --to /usr/local/bin/k8sgpt
 else
     echo -e "${c}k8sgpt already installed.${r}"
 fi
