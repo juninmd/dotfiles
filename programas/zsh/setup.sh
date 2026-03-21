@@ -237,5 +237,3 @@ if command -v viddy &> /dev/null; then alias watch='viddy'; fi
 if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
 
 # --- End Custom Configuration ---
-
-echo -e "${c}Zsh configured! Please restart your terminal or run 'source ~/.zshrc'.${r}"
