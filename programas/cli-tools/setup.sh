@@ -678,6 +678,7 @@ if ! command -v duckdb &> /dev/null; then
     rm -rf "${temp_dir}"
     rm -rf "${temp_dir}"
     rm -rf "${temp_dir}"
+    rm -rf "${temp_dir}"
 else
     echo -e "${c}duckdb already installed.${r}"
 fi
