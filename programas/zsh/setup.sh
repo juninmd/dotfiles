@@ -325,6 +325,11 @@ if command -v porsmo &> /dev/null; then alias pomodoro='porsmo'; fi
 if command -v rustscan &> /dev/null; then alias rscan='rustscan'; fi
 if command -v diskonaut &> /dev/null; then alias disk-vis='diskonaut'; fi
 
+# --- Cutting-Edge 2026 Apps ---
+if command -v lazynpm &> /dev/null; then alias lnpm='lazynpm'; fi
+if command -v k8sgpt &> /dev/null; then alias k8s-ai='k8sgpt'; fi
+if command -v git-town &> /dev/null; then alias gt='git-town'; fi
+
 # --- End Custom Configuration ---
 EOT
 fi
@@ -615,6 +620,18 @@ if command -v yt-dlp &> /dev/null; then alias ytdl='yt-dlp'; fi
 if command -v porsmo &> /dev/null; then alias pomodoro='porsmo'; fi
 if command -v rustscan &> /dev/null; then alias rscan='rustscan'; fi
 if command -v diskonaut &> /dev/null; then alias disk-vis='diskonaut'; fi
+EOT
+fi
+
+# Check if Cutting-Edge 2026 Apps are present in .zshrc
+if ! grep -q "# --- Cutting-Edge 2026 Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending Cutting-Edge 2026 Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Cutting-Edge 2026 Apps ---
+if command -v lazynpm &> /dev/null; then alias lnpm='lazynpm'; fi
+if command -v k8sgpt &> /dev/null; then alias k8s-ai='k8sgpt'; fi
+if command -v git-town &> /dev/null; then alias gt='git-town'; fi
 EOT
 fi
 

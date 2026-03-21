@@ -55,23 +55,27 @@ run_step() {
 
 run_module() {
   local module="$1"
+  local current_idx="$2"
+  local total_mods="$3"
   local script="$ROOT_DIR/programas/$module/setup.sh"
 
   if [[ ! -x "$script" ]]; then
     chmod +x "$script"
   fi
 
+  local progress_prefix="[$current_idx/$total_mods]"
+
   if [[ "$DRY_RUN" == true ]]; then
-    run_step "Executando módulo: $module" "$script"
+    run_step "$progress_prefix Executando módulo: $module" "$script"
   else
     if command -v "$GUM" &> /dev/null; then
-      if "$GUM" spin --spinner pulse --title "$($GUM style --foreground "#72f1b8" "Executando módulo: $module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"; then
-        echo "$($GUM style --foreground "#72f1b8" "✔") $($GUM style --foreground "#f8f8f2" "Módulo") $($GUM style --foreground "#fede5d" "$module") $($GUM style --foreground "#f8f8f2" "instalado com sucesso!")"
+      if "$GUM" spin --spinner pulse --title "$($GUM style --foreground "#72f1b8" "$progress_prefix Executando módulo: $module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"; then
+        echo "$($GUM style --foreground "#72f1b8" "✔") $($GUM style --foreground "#f8f8f2" "$progress_prefix Módulo") $($GUM style --foreground "#fede5d" "$module") $($GUM style --foreground "#f8f8f2" "instalado com sucesso!")"
       else
-        echo "$($GUM style --foreground "#ff7edb" "✖") $($GUM style --foreground "#f8f8f2" "Erro ao instalar módulo") $($GUM style --foreground "#fede5d" "$module")$($GUM style --foreground "#f8f8f2" ". Verifique os logs.")"
+        echo "$($GUM style --foreground "#ff7edb" "✖") $($GUM style --foreground "#f8f8f2" "$progress_prefix Erro ao instalar módulo") $($GUM style --foreground "#fede5d" "$module")$($GUM style --foreground "#f8f8f2" ". Verifique os logs.")"
       fi
     else
-      run_step "Executando módulo: $module" "$script"
+      run_step "$progress_prefix Executando módulo: $module" "$script"
     fi
   fi
 }
@@ -262,13 +266,17 @@ if [[ "$DRY_RUN" == false ]] && command -v sudo &> /dev/null; then
   while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 fi
 
+TOTAL_MODULES=${#MODULES[@]}
+CURRENT_MODULE=1
+
 for module in "${MODULES[@]}"; do
   if [[ ! -f "$ROOT_DIR/programas/$module/setup.sh" ]]; then
     log "Módulo ignorado (setup inexistente): $module"
     continue
   fi
 
-  run_module "$module"
+  run_module "$module" "$CURRENT_MODULE" "$TOTAL_MODULES"
+  CURRENT_MODULE=$((CURRENT_MODULE + 1))
 done
 
 END_TIME=$(date +%s)
