@@ -1008,6 +1008,40 @@ install_go_package github.com/gcla/termshark/v2/cmd/termshark@latest termshark
 install_cargo_crate yazi-fm yazi
 install_cargo_crate yazi-cli ya
 
+# K8sGPT (AI for Kubernetes)
+if ! command -v k8sgpt &> /dev/null; then
+    echo -e "${c}Installing k8sgpt...${r}"
+    curl -sLo /tmp/k8sgpt.tar.gz https://github.com/k8sgpt-ai/k8sgpt/releases/latest/download/k8sgpt_Linux_x86_64.tar.gz
+    tar -xzf /tmp/k8sgpt.tar.gz -C /tmp k8sgpt
+    sudo mv /tmp/k8sgpt /usr/local/bin/k8sgpt
+    rm /tmp/k8sgpt.tar.gz
+else
+    echo -e "${c}k8sgpt already installed.${r}"
+fi
+
+# Git-Town (High-level CLI for Git)
+install_go_package github.com/git-town/git-town/v16@latest git-town
+
+# Dbmate (Database migration tool)
+install_go_package github.com/amacneil/dbmate/v2@latest dbmate
+
+# sqlc (Compile SQL to type-safe code)
+install_go_package github.com/sqlc-dev/sqlc/cmd/sqlc@latest sqlc
+
+# shfmt (Shell parser, formatter, and interpreter)
+install_go_package mvdan.cc/sh/v3/cmd/shfmt@latest shfmt
+
+# Lazynpm (NPM TUI)
+install_go_package github.com/jesseduffield/lazynpm@latest lazynpm
+
+# Devbox (Portable Developer Environments)
+if ! command -v devbox &> /dev/null; then
+    echo -e "${c}Installing devbox...${r}"
+    curl -fsSL https://get.jetpack.io/devbox | bash
+else
+    echo -e "${c}devbox already installed.${r}"
+fi
+
 # Configure Bat Theme
 echo -e "${c}Configuring Bat Theme...${r}"
 BAT_CONFIG_DIR="$(bat --config-dir)"
