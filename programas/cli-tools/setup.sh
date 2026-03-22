@@ -1039,6 +1039,50 @@ else
     echo -e "${c}devbox already installed.${r}"
 fi
 
+# --- CHARMBRACELET EXTRAS ---
+
+# Skate (Personal Key Value Store)
+install_go_package github.com/charmbracelet/skate@latest skate
+
+# Melt (SSH key backup and restore)
+install_go_package github.com/charmbracelet/melt@latest melt
+
+# --- KUBERNETES EXTRAS ---
+
+# Krew (Kubectl plugin manager)
+if ! command -v kubectl-krew &> /dev/null; then
+    echo -e "${c}Installing Krew...${r}"
+    (
+      set -x; cd "$(mktemp -d)" &&
+      OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
+      ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
+      KREW="krew-${OS}_${ARCH}" &&
+      curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
+      tar zxvf "${KREW}.tar.gz" &&
+      ./"${KREW}" install krew
+    )
+else
+    echo -e "${c}Krew already installed.${r}"
+fi
+
+# Kubectx and Kubens (Kubernetes context switching)
+install_go_package github.com/ahmetb/kubectx/cmd/kubectx@latest kubectx
+install_go_package github.com/ahmetb/kubectx/cmd/kubens@latest kubens
+
+# --- GITHUB EXTRAS ---
+
+# gh-dash (GitHub CLI dashboard)
+if command -v gh &> /dev/null; then
+    if ! gh extension list | grep -q "gh-dash"; then
+        echo -e "${c}Installing gh-dash extension...${r}"
+        gh extension install dlvhdr/gh-dash
+    else
+        echo -e "${c}gh-dash already installed.${r}"
+    fi
+else
+    echo -e "${c}gh not found, skipping gh-dash extension installation.${r}"
+fi
+
 # Configure Bat Theme
 echo -e "${c}Configuring Bat Theme...${r}"
 BAT_CONFIG_DIR="$(bat --config-dir)"

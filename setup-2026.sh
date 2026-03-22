@@ -106,28 +106,34 @@ if [[ -z "$PROFILE" ]]; then
   if command -v "$GUM" &> /dev/null; then
     clear
     "$GUM" style \
-      --foreground "#ff7edb" --border-foreground "#36f9f6" --border double \
+      --foreground "#ff7edb" --border-foreground "#bd93f9" --border double \
       --align center --width 80 --margin "1 2" --padding "2 4" \
-      ' ___   ___ ___   __ ' \
-      '|__ \ / _ \__ \ / / ' \
-      '   ) | | | | ) / /_ ' \
-      '  / /| | | |/ / _ \ \' \
-      ' / /_| |_| / /| (_) |' \
-      '|____|\___/____\___/ ' \
+      '  ___   ___ ___   __  ' \
+      ' |__ \ / _ \__ \ / /  ' \
+      '    ) | | | | ) / /_  ' \
+      '   / /| | | |/ / _ \ \ ' \
+      '  / /_| |_| / /| (_) |' \
+      ' |____|\___/____\___/ ' \
       '' \
-      '⚡ DOTFILES 2026 EDITION ⚡' 'O Futuro do Desenvolvimento' \
-      '👾 THE SYNTHWAVE EXPERIENCE 👾'
+      '✨ DOTFILES 2026 EDITION ✨' 'O Futuro do Desenvolvimento' \
+      '👾 THE SYNTHWAVE EXPERIENCE 👾' \
+      '' \
+      '🚀 Aperte o cinto e prepare-se para a hipervelocidade!'
 
     echo ""
-    "$GUM" style --foreground "#36f9f6" --border normal --border-foreground "#36f9f6" --padding "1 2" --margin "1 0" "🚀 Escolha o perfil de instalação para turbinar sua máquina:"
+    "$GUM" style \
+      --foreground "#fede5d" \
+      --border rounded --border-foreground "#36f9f6" \
+      --padding "1 2" --margin "1 0" --align center --width 80 \
+      "Selecione o perfil de instalação para turbinar sua máquina:"
     echo ""
     PROFILE_CHOICE=$("$GUM" choose \
-      --cursor="▶ " \
-      --header="Selecione um perfil abaixo:" \
+      --cursor="🚀 " \
+      --header="Escolha o seu nível de poder:" \
       --header.foreground="#ff7edb" \
-      --cursor.foreground="#36f9f6" \
+      --cursor.foreground="#72f1b8" \
       --item.foreground="#f8f8f2" \
-      --selected.foreground="#72f1b8" \
+      --selected.foreground="#36f9f6" \
       "minimal   - Shell moderna, prompt limpo e editor básico." \
       "dev       - minimal + Runtimes JS/Python, Docker e Banco de Dados (Recomendado)." \
       "full      - dev + Apps extras de produtividade (Navegador, Slack, etc).")
@@ -186,7 +192,12 @@ done
 
 if command -v "$GUM" &> /dev/null; then
   echo ""
-  "$GUM" style --foreground "#36f9f6" "Selecione os módulos que deseja instalar (Espaço para marcar/desmarcar, Enter para confirmar):"
+  "$GUM" style \
+    --foreground "#fede5d" \
+    --border rounded --border-foreground "#ff7edb" \
+    --padding "1 2" --margin "1 0" --align center --width 80 \
+    "Selecione os módulos que deseja instalar:" \
+    "(Use Espaço para marcar/desmarcar, Enter para confirmar)"
   echo ""
 
   # Prepare choices with descriptions
@@ -205,11 +216,12 @@ if command -v "$GUM" &> /dev/null; then
   DEFAULTS=$(IFS=,; echo "${DEFAULTS_DESC[*]}")
 
   # Interactive selection
-  SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="▶ " \
+  SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="👉 " \
     --height=15 \
     --selected="${DEFAULTS}" \
-    --selected.foreground="#72f1b8" \
-    --cursor.foreground="#36f9f6" \
+    --selected.foreground="#36f9f6" \
+    --cursor.foreground="#ff7edb" \
+    --item.foreground="#f8f8f2" \
     "${CHOICES[@]}")
 
   # Extract module directories from the selected text
@@ -246,7 +258,13 @@ fi
 if [[ "$DRY_RUN" == false ]]; then
   if command -v "$GUM" &> /dev/null; then
     echo ""
-    if ! "$GUM" confirm --prompt.foreground "#ff7edb" --unselected.background "" --unselected.foreground "#f8f8f2" --selected.background "#bd93f9" --selected.foreground "#282a36" "Deseja prosseguir com a instalação destes módulos e transformar seu setup?"; then
+    if ! "$GUM" confirm \
+      --prompt.foreground "#ff7edb" \
+      --unselected.background "" \
+      --unselected.foreground "#f8f8f2" \
+      --selected.background "#72f1b8" \
+      --selected.foreground "#282a36" \
+      "Pronto para dar o salto hiperespacial e iniciar a instalação?"; then
       log "Instalação cancelada pelo usuário."
       exit 0
     fi
