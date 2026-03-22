@@ -1055,10 +1055,20 @@ if ! command -v kubectl-krew &> /dev/null; then
     (
       set -x; cd "$(mktemp -d)" &&
       OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
-      ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
+      local arch
+      arch="$(uname -m)"
+      case "$arch" in
+        x86_64) ARCH="amd64" ;;
+        aarch64 | arm64) ARCH="arm64" ;;
+        arm*) ARCH="arm" ;;
+        *)
+          echo "Arquitetura não suportada para o Krew: $arch" >&2
+          exit 1
+          ;;
+      esac
       KREW="krew-${OS}_${ARCH}" &&
       curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
-      tar zxvf "${KREW}.tar.gz" &&
+      tar zxf "${KREW}.tar.gz" &&
       ./"${KREW}" install krew
     )
 else
@@ -1073,7 +1083,7 @@ install_go_package github.com/ahmetb/kubectx/cmd/kubens@latest kubens
 
 # gh-dash (GitHub CLI dashboard)
 if command -v gh &> /dev/null; then
-    if ! gh extension list | grep -q "gh-dash"; then
+    if ! gh extension list | grep -q "^dlvhdr/gh-dash\s"; then
         echo -e "${c}Installing gh-dash extension...${r}"
         gh extension install dlvhdr/gh-dash
     else
