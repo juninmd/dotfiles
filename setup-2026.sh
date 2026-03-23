@@ -69,7 +69,7 @@ run_module() {
     run_step "$progress_prefix Executando módulo: $module" "$script"
   else
     if command -v "$GUM" &> /dev/null; then
-      if "$GUM" spin --spinner pulse --title "$($GUM style --foreground "#72f1b8" "$progress_prefix Executando módulo: $module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"; then
+      if "$GUM" spin --spinner minidot --title "$($GUM style --foreground "#72f1b8" "$progress_prefix Executando módulo: $module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"; then
         echo "$($GUM style --foreground "#72f1b8" "✔") $($GUM style --foreground "#f8f8f2" "$progress_prefix Módulo") $($GUM style --foreground "#fede5d" "$module") $($GUM style --foreground "#f8f8f2" "instalado com sucesso!")"
       else
         echo "$($GUM style --foreground "#ff7edb" "✖") $($GUM style --foreground "#f8f8f2" "$progress_prefix Erro ao instalar módulo") $($GUM style --foreground "#fede5d" "$module")$($GUM style --foreground "#f8f8f2" ". Verifique os logs.")"
@@ -105,6 +105,8 @@ done
 if [[ -z "$PROFILE" ]]; then
   if command -v "$GUM" &> /dev/null; then
     clear
+    "$GUM" style --foreground "#fede5d" --align center --width 80 "Welcome to the ultimate terminal experience."
+
     "$GUM" style \
       --foreground "#ff7edb" --border-foreground "#36f9f6" --border double \
       --align center --width 80 --margin "1 2" --padding "2 4" \
@@ -288,7 +290,7 @@ if command -v "$GUM" &> /dev/null; then
   "$GUM" style \
     --foreground "#282a36" --background "#72f1b8" --border-foreground "#72f1b8" \
     --border thick --align center --width 80 --margin "2 2" --padding "1 2" \
-    "🎉 Instalação do perfil '$PROFILE' finalizada com sucesso!" \
+    "🚀 SYSTEM OVERRIDE COMPLETE: Profile '$PROFILE' activated! 🛸" \
     "Tempo total: ${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s" \
     "" \
     "Por favor, feche este terminal e abra um novo para carregar todas as configurações." \

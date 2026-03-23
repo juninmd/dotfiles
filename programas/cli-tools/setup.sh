@@ -595,6 +595,10 @@ install_cargo_crate amber
 
 # GH (GitHub CLI)
 install_go_package github.com/cli/cli/v2/cmd/gh@latest gh
+if command -v gh &> /dev/null; then
+    echo -e "${c}Installing gh-dash extension...${r}"
+    gh extension install dlvhdr/gh-dash 2>/dev/null || true
+fi
 
 # Act (Run GitHub Actions Locally)
 install_go_package github.com/nektos/act@latest act
@@ -979,6 +983,19 @@ install_cargo_crate lsd
 install_cargo_crate dprint
 
 # --- BRAND NEW 2026 APPS ---
+
+# Skate (Personal key-value store)
+install_go_package github.com/charmbracelet/skate@latest skate
+
+# Melt (Backup and restore ed25519 SSH keys with seed words)
+install_go_package github.com/charmbracelet/melt/cmd/melt@latest melt
+
+# Krew (kubectl plugin manager)
+install_go_package sigs.k8s.io/krew/cmd/krew@latest krew
+
+# Kubectx and Kubens (Faster way to switch between clusters and namespaces in kubectl)
+install_go_package github.com/ahmetb/kubectx/cmd/kubectx@latest kubectx
+install_go_package github.com/ahmetb/kubectx/cmd/kubens@latest kubens
 
 # Walk (Terminal Navigator)
 install_go_package github.com/antonmedv/walk@latest walk
