@@ -331,7 +331,7 @@ if command -v k8sgpt &> /dev/null; then alias k8s-ai='k8sgpt'; fi
 if command -v git-town &> /dev/null; then alias gt='git-town'; fi
 if command -v kubectx &> /dev/null; then alias kx='kubectx'; fi
 if command -v kubens &> /dev/null; then alias kn='kubens'; fi
-if command -v gh-dash &> /dev/null; then alias ghd='gh-dash'; fi
+if command -v gh &> /dev/null && gh dash --help &> /dev/null; then alias ghd='gh dash'; fi
 
 # --- End Custom Configuration ---
 EOT
@@ -542,7 +542,7 @@ if command -v lsd &> /dev/null; then alias ls2='lsd'; fi
 if command -v dprint &> /dev/null; then alias fmt='dprint'; fi
 if command -v kubectx &> /dev/null; then alias kx='kubectx'; fi
 if command -v kubens &> /dev/null; then alias kn='kubens'; fi
-if command -v gh-dash &> /dev/null; then alias ghd='gh-dash'; fi
+if command -v gh &> /dev/null && gh dash --help &> /dev/null; then alias ghd='gh dash'; fi
 EOT
 fi
 
