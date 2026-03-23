@@ -290,7 +290,7 @@ if command -v "$GUM" &> /dev/null; then
   "$GUM" style \
     --foreground "#282a36" --background "#72f1b8" --border-foreground "#72f1b8" \
     --border thick --align center --width 80 --margin "2 2" --padding "1 2" \
-    "🚀 SYSTEM OVERRIDE COMPLETE: Profile '$PROFILE' activated! 🛸" \
+    "🚀 OVERRIDE DO SISTEMA COMPLETO: Perfil '$PROFILE' ativado! 🛸" \
     "Tempo total: ${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s" \
     "" \
     "Por favor, feche este terminal e abra um novo para carregar todas as configurações." \
