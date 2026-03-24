@@ -649,7 +649,7 @@ if ! grep -q "# --- More 2026 Apps ---" "$ZSHRC"; then
 # --- More 2026 Apps ---
 if command -v sniffnet &> /dev/null; then alias net-vis='sniffnet'; fi
 if command -v jc &> /dev/null; then alias to-json='jc'; fi
-if command -v hwatch &> /dev/null; then alias watch='hwatch'; fi
+if command -v hwatch &> /dev/null; then alias hwatch='hwatch'; fi
 EOT
 fi
 
