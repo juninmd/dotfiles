@@ -641,6 +641,18 @@ if command -v git-town &> /dev/null; then alias gt='git-town'; fi
 EOT
 fi
 
+# Check if Extra 2026 Apps are present in .zshrc
+if ! grep -q "# --- More 2026 Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending More 2026 Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- More 2026 Apps ---
+if command -v sniffnet &> /dev/null; then alias net-vis='sniffnet'; fi
+if command -v jc &> /dev/null; then alias to-json='jc'; fi
+if command -v hwatch &> /dev/null; then alias watch='hwatch'; fi
+EOT
+fi
+
 # Update zoxide to use cd alias if present in existing config
 sed -i 's/eval "$(zoxide init zsh)"/eval "$(zoxide init zsh --cmd cd)"/' "$ZSHRC"
 

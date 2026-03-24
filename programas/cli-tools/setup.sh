@@ -1265,4 +1265,20 @@ install_cargo_crate rustscan
 # Diskonaut (Terminal disk space navigator)
 install_cargo_crate diskonaut
 
+# --- EXTRA 2026 APPS ---
+
+# Sniffnet (Application to comfortably monitor your network traffic)
+install_cargo_crate sniffnet
+
+# JC (Converts output of popular command-line tools and file-types to JSON)
+if ! command -v jc &> /dev/null; then
+    echo -e "${c}Installing jc...${r}"
+    sudo apt install -y jc
+else
+    echo -e "${c}jc already installed.${r}"
+fi
+
+# Hwatch (A modern alternative to the watch command)
+install_cargo_crate hwatch
+
 echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"
