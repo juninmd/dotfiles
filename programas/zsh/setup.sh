@@ -653,6 +653,21 @@ if command -v hwatch &> /dev/null; then alias hwatch='hwatch'; fi
 EOT
 fi
 
+# Check if Hyper-Modern 2026 Apps are present in .zshrc
+if ! grep -q "# --- Hyper-Modern 2026 Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending Hyper-Modern 2026 Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Hyper-Modern 2026 Apps ---
+if command -v jj &> /dev/null; then alias git-next='jj'; fi
+if command -v trivy &> /dev/null; then alias scan-container='trivy'; fi
+if command -v earthly &> /dev/null; then alias build='earthly'; fi
+if command -v kind &> /dev/null; then alias local-k8s='kind'; fi
+if command -v hck &> /dev/null; then alias cut2='hck'; fi
+if command -v cloudflared &> /dev/null; then alias cf-tunnel='cloudflared tunnel'; fi
+EOT
+fi
+
 # Update zoxide to use cd alias if present in existing config
 sed -i 's/eval "$(zoxide init zsh)"/eval "$(zoxide init zsh --cmd cd)"/' "$ZSHRC"
 

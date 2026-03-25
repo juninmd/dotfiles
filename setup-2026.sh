@@ -69,7 +69,7 @@ run_module() {
     run_step "$progress_prefix Executando módulo: $module" "$script"
   else
     if command -v "$GUM" &> /dev/null; then
-      if "$GUM" spin --spinner minidot --title "$($GUM style --foreground "#72f1b8" "$progress_prefix Executando módulo: $module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"; then
+      if "$GUM" spin --spinner moon --title "$($GUM style --foreground "#72f1b8" "$progress_prefix Executando módulo: $module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"; then
         echo "$($GUM style --foreground "#72f1b8" "✔") $($GUM style --foreground "#f8f8f2" "$progress_prefix Módulo") $($GUM style --foreground "#fede5d" "$module") $($GUM style --foreground "#f8f8f2" "instalado com sucesso!")"
       else
         echo "$($GUM style --foreground "#ff7edb" "✖") $($GUM style --foreground "#f8f8f2" "$progress_prefix Erro ao instalar módulo") $($GUM style --foreground "#fede5d" "$module")$($GUM style --foreground "#f8f8f2" ". Verifique os logs.")"
@@ -304,15 +304,20 @@ ELAPSED_MINUTES=$(($ELAPSED_TIME / 60))
 ELAPSED_SECONDS=$(($ELAPSED_TIME % 60))
 
 if command -v "$GUM" &> /dev/null; then
-  "$GUM" style \
+  ART_BOX=$("$GUM" style \
+    --foreground "#ff7edb" --border double --border-foreground "#ff7edb" \
+    --padding "1 3" --margin "1 1" \
+    ' 🤖 ' 'SYS' ' OK ')
+  TEXT_BOX=$("$GUM" style \
     --foreground "#282a36" --background "#72f1b8" --border-foreground "#72f1b8" \
-    --border thick --align center --width 80 --margin "2 2" --padding "1 2" \
+    --border thick --align center --width 60 --margin "2 2" --padding "1 2" \
     "🚀 OVERRIDE DO SISTEMA COMPLETO: Perfil '$PROFILE' ativado! 🛸" \
     "Tempo total: ${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s" \
     "" \
     "Por favor, feche este terminal e abra um novo para carregar todas as configurações." \
     "" \
-    "📂 Logs de instalação disponíveis em: /tmp/setup-2026-*.log"
+    "📂 Logs de instalação disponíveis em: /tmp/setup-2026-*.log")
+  echo "$("$GUM" join --align center "$ART_BOX" "$TEXT_BOX")"
 else
   log "Finalizado com sucesso em ${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s. Reinicie seu terminal."
   log "Logs de instalação disponíveis em: /tmp/setup-2026-*.log"

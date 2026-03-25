@@ -1281,4 +1281,44 @@ fi
 # Hwatch (A modern alternative to the watch command)
 install_cargo_crate hwatch
 
+# --- HYPER-MODERN 2026 APPS ---
+
+# Jujutsu (jj - Git alternative)
+install_cargo_crate jj-cli jj
+
+# Trivy (Container security scanner)
+if ! command -v trivy &> /dev/null; then
+    echo -e "${c}Installing trivy...${r}"
+    wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo gpg --dearmor -o /etc/apt/keyrings/trivy.gpg
+    echo "deb [signed-by=/etc/apt/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/trivy.list
+    sudo apt-get update
+    sudo apt-get install -y trivy
+else
+    echo -e "${c}trivy already installed.${r}"
+fi
+
+# Earthly (Build automation)
+if ! command -v earthly &> /dev/null; then
+    echo -e "${c}Installing earthly...${r}"
+    sudo wget -q https://github.com/earthly/earthly/releases/latest/download/earthly-linux-amd64 -O /usr/local/bin/earthly
+    sudo chmod +x /usr/local/bin/earthly
+else
+    echo -e "${c}earthly already installed.${r}"
+fi
+
+# Kind (Local Kubernetes)
+install_go_package sigs.k8s.io/kind@latest kind
+
+# hck (Fast cut replacement)
+install_cargo_crate hck
+
+# Cloudflared (Localhost tunneling)
+if ! command -v cloudflared &> /dev/null; then
+    echo -e "${c}Installing cloudflared...${r}"
+    sudo wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 -O /usr/local/bin/cloudflared
+    sudo chmod +x /usr/local/bin/cloudflared
+else
+    echo -e "${c}cloudflared already installed.${r}"
+fi
+
 echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"
