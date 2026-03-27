@@ -1104,8 +1104,11 @@ fi
 # Kustomize (Kubernetes native configuration management)
 if ! command -v kustomize &> /dev/null; then
     echo -e "${c}Installing Kustomize...${r}"
-    curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash
-    sudo mv kustomize /usr/local/bin/
+    (
+        cd "$(mktemp -d)"
+        curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash
+        sudo mv kustomize /usr/local/bin/
+    )
 else
     echo -e "${c}Kustomize already installed.${r}"
 fi
@@ -1202,8 +1205,8 @@ fi
 # Ngrok (Unified Application Delivery Platform)
 if ! command -v ngrok &> /dev/null; then
     echo -e "${c}Installing ngrok...${r}"
-    curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null
-    echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list
+    curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo gpg --dearmor -o /usr/share/keyrings/ngrok.gpg
+    echo "deb [signed-by=/usr/share/keyrings/ngrok.gpg] https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list
     sudo apt update
     sudo apt install -y ngrok
 else
