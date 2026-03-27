@@ -333,6 +333,14 @@ if command -v kubectx &> /dev/null; then alias kx='kubectx'; fi
 if command -v kubens &> /dev/null; then alias kn='kubens'; fi
 if command -v gh &> /dev/null && gh dash --help &> /dev/null; then alias ghd='gh dash'; fi
 
+# --- DevOps & JS 2026 Apps ---
+if command -v fnm &> /dev/null; then eval "\$(fnm env --use-on-cd)"; fi
+if command -v pnpm &> /dev/null; then alias npm-fast='pnpm'; fi
+if command -v k3d &> /dev/null; then alias k8s-docker='k3d'; fi
+if command -v helm &> /dev/null; then alias k8s-pkg='helm'; fi
+if command -v kustomize &> /dev/null; then alias k8s-config='kustomize'; fi
+if command -v ngrok &> /dev/null; then alias proxy='ngrok'; fi
+
 # --- End Custom Configuration ---
 EOT
 fi
@@ -665,6 +673,21 @@ if command -v earthly &> /dev/null; then alias build='earthly'; fi
 if command -v kind &> /dev/null; then alias local-k8s='kind'; fi
 if command -v hck &> /dev/null; then alias cut2='hck'; fi
 if command -v cloudflared &> /dev/null; then alias cf-tunnel='cloudflared tunnel'; fi
+EOT
+fi
+
+# Check if DevOps & JS 2026 Apps are present in .zshrc
+if ! grep -q "# --- DevOps & JS 2026 Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending DevOps & JS 2026 Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- DevOps & JS 2026 Apps ---
+if command -v fnm &> /dev/null; then eval "\$(fnm env --use-on-cd)"; fi
+if command -v pnpm &> /dev/null; then alias npm-fast='pnpm'; fi
+if command -v k3d &> /dev/null; then alias k8s-docker='k3d'; fi
+if command -v helm &> /dev/null; then alias k8s-pkg='helm'; fi
+if command -v kustomize &> /dev/null; then alias k8s-config='kustomize'; fi
+if command -v ngrok &> /dev/null; then alias proxy='ngrok'; fi
 EOT
 fi
 
