@@ -116,16 +116,19 @@ if [[ -z "$PROFILE" ]]; then
       '  / __/| |_| |/ __/|  _  |' \
       ' |_____|\___/|_____|_| |_|' \
       '' \
-      '✨ DOTFILES 2026 EDITION ✨' 'O Futuro do Desenvolvimento' \
-      '👾 THE SYNTHWAVE EXPERIENCE 👾' \
+      '✨ DOTFILES 2026 EDITION ✨' \
+      'O Futuro do Desenvolvimento Já Chegou' \
+      '👾 THE ULTIMATE SYNTHWAVE EXPERIENCE 👾' \
       '' \
-      '🚀 Aperte o cinto e prepare-se para a hipervelocidade!'
+      '🚀 Aperte o cinto e prepare-se para a hipervelocidade!' \
+      '⚡ Preparando para injetar código na matrix...'
 
     echo ""
     "$GUM" style \
       --foreground "#fede5d" \
       --border rounded --border-foreground "#36f9f6" \
       --padding "1 2" --margin "1 0" --align center --width 80 \
+      "🌐 Iniciando Protocolo de Setup 2026 🌐" \
       "Selecione o perfil de instalação para turbinar sua máquina:"
     echo ""
     PROFILE_CHOICE=$("$GUM" choose \
@@ -135,9 +138,9 @@ if [[ -z "$PROFILE" ]]; then
       --cursor.foreground="#72f1b8" \
       --item.foreground="#f8f8f2" \
       --selected.foreground="#36f9f6" \
-      "minimal   - Shell moderna, prompt limpo e editor básico." \
-      "dev       - minimal + Runtimes JS/Python, Docker e Banco de Dados (Recomendado)." \
-      "full      - dev + Apps extras de produtividade (Navegador, Slack, etc).")
+      "minimal   - 🪶 Shell moderna, prompt limpo e editor básico (Rápido e direto)." \
+      "dev       - 🚀 minimal + Runtimes JS/Python, Docker e BD (Recomendado para Ninjas)." \
+      "full      - 🌌 dev + Apps extras de produtividade (Navegador, Slack, Android).")
     PROFILE=$(echo "$PROFILE_CHOICE" | awk '{print $1}')
   else
     read -rp "Escolha o perfil (minimal, dev, full) [full]: " PROFILE
@@ -265,7 +268,7 @@ if [[ "$DRY_RUN" == false ]]; then
       --unselected.foreground "#f8f8f2" \
       --selected.background "#72f1b8" \
       --selected.foreground "#282a36" \
-      "Pronto para dar o salto hiperespacial e iniciar a instalação?"; then
+      "⚠️ Atenção: Pronto para dar o salto hiperespacial e reescrever sua realidade?"; then
       log "Instalação cancelada pelo usuário."
       exit 0
     fi
@@ -310,13 +313,14 @@ if command -v "$GUM" &> /dev/null; then
     ' 🤖 ' 'SYS' ' OK ')
   TEXT_BOX=$("$GUM" style \
     --foreground "#282a36" --background "#72f1b8" --border-foreground "#72f1b8" \
-    --border thick --align center --width 60 --margin "2 2" --padding "1 2" \
-    "🚀 OVERRIDE DO SISTEMA COMPLETO: Perfil '$PROFILE' ativado! 🛸" \
-    "Tempo total: ${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s" \
+    --border thick --align center --width 65 --margin "2 2" --padding "1 2" \
+    "🚀 TRANSMISSÃO CONCLUÍDA: Perfil '$PROFILE' ativado! 🛸" \
+    "Tempo total de salto: ${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s" \
     "" \
-    "Por favor, feche este terminal e abra um novo para carregar todas as configurações." \
+    "A matrix foi atualizada com sucesso." \
+    "Feche este terminal e abra um novo para carregar sua nova realidade." \
     "" \
-    "📂 Logs de instalação disponíveis em: /tmp/setup-2026-*.log")
+    "📂 Arquivos de log salvos em: /tmp/setup-2026-*.log")
   echo "$("$GUM" join --align center "$ART_BOX" "$TEXT_BOX")"
 else
   log "Finalizado com sucesso em ${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s. Reinicie seu terminal."

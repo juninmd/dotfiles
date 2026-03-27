@@ -1056,6 +1056,22 @@ else
     echo -e "${c}devbox already installed.${r}"
 fi
 
+# Pnpm (Fast, disk space efficient package manager)
+if ! command -v pnpm &> /dev/null; then
+    echo -e "${c}Installing pnpm...${r}"
+    curl -fsSL https://get.pnpm.io/install.sh | sh -
+else
+    echo -e "${c}pnpm already installed.${r}"
+fi
+
+# FNM (Fast Node Manager)
+if ! command -v fnm &> /dev/null; then
+    echo -e "${c}Installing fnm...${r}"
+    curl -fsSL https://fnm.vercel.app/install | bash
+else
+    echo -e "${c}fnm already installed.${r}"
+fi
+
 # --- CHARMBRACELET EXTRAS ---
 
 # Skate (Personal Key Value Store)
@@ -1065,6 +1081,37 @@ install_go_package github.com/charmbracelet/skate@latest skate
 install_go_package github.com/charmbracelet/melt@latest melt
 
 # --- KUBERNETES EXTRAS ---
+
+# Helm (The Kubernetes Package Manager)
+if ! command -v helm &> /dev/null; then
+    echo -e "${c}Installing Helm...${r}"
+    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+    chmod 700 get_helm.sh
+    ./get_helm.sh
+    rm get_helm.sh
+else
+    echo -e "${c}Helm already installed.${r}"
+fi
+
+# K3d (Lightweight Kubernetes in Docker)
+if ! command -v k3d &> /dev/null; then
+    echo -e "${c}Installing k3d...${r}"
+    curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
+else
+    echo -e "${c}k3d already installed.${r}"
+fi
+
+# Kustomize (Kubernetes native configuration management)
+if ! command -v kustomize &> /dev/null; then
+    echo -e "${c}Installing Kustomize...${r}"
+    (
+        cd "$(mktemp -d)"
+        curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash
+        sudo mv kustomize /usr/local/bin/
+    )
+else
+    echo -e "${c}Kustomize already installed.${r}"
+fi
 
 # Krew (Kubectl plugin manager)
 if ! command -v kubectl-krew &> /dev/null; then
@@ -1153,6 +1200,17 @@ if ! command -v gcloud &> /dev/null; then
     sudo apt-get install -y google-cloud-cli
 else
     echo -e "${c}gcloud already installed.${r}"
+fi
+
+# Ngrok (Unified Application Delivery Platform)
+if ! command -v ngrok &> /dev/null; then
+    echo -e "${c}Installing ngrok...${r}"
+    curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo gpg --dearmor -o /usr/share/keyrings/ngrok.gpg
+    echo "deb [signed-by=/usr/share/keyrings/ngrok.gpg] https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list
+    sudo apt update
+    sudo apt install -y ngrok
+else
+    echo -e "${c}ngrok already installed.${r}"
 fi
 
 # FiraCode Nerd Font
