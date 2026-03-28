@@ -110,11 +110,12 @@ if [[ -z "$PROFILE" ]]; then
     "$GUM" style \
       --foreground "#ff7edb" --border-foreground "#bd93f9" --border double \
       --align center --width 80 --margin "1 2" --padding "2 4" \
-      '  ____   ___  ____   __   ' \
-      ' |___ \ / _ \|___ \ / /_  ' \
-      '   __) | | | | __) | |_ \ ' \
-      '  / __/| |_| |/ __/|  _  |' \
-      ' |_____|\___/|_____|_| |_|' \
+      '  ___   ___  ___  __  ' \
+      ' |__ \ / _ \|__ \/ /  ' \
+      '    ) | | | |  ) / /_ ' \
+      '   / /| |_| | / / _ \ ' \
+      '  / /_|  _  |/ / (_) |' \
+      ' |____|\___/|____\___/' \
       '' \
       '✨ DOTFILES 2026 EDITION ✨' \
       'O Futuro do Desenvolvimento Já Chegou' \

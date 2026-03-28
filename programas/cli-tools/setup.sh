@@ -1379,4 +1379,46 @@ else
     echo -e "${c}cloudflared already installed.${r}"
 fi
 
+# --- NEWEST 2026 APPS ---
+
+# jo (JSON output utility)
+if ! command -v jo &> /dev/null; then
+    echo -e "${c}Installing jo...${r}"
+    sudo apt install -y jo
+else
+    echo -e "${c}jo already installed.${r}"
+fi
+
+# k6 (Modern load testing tool)
+if ! command -v k6 &> /dev/null; then
+    echo -e "${c}Installing k6...${r}"
+    install_go_package go.k6.io/k6@latest k6
+else
+    echo -e "${c}k6 already installed.${r}"
+fi
+
+# dolt (Git for data)
+if ! command -v dolt &> /dev/null; then
+    echo -e "${c}Installing dolt...${r}"
+    sudo bash -c 'curl -L https://github.com/dolthub/dolt/releases/latest/download/install.sh | bash'
+else
+    echo -e "${c}dolt already installed.${r}"
+fi
+
+# turso (Edge database CLI)
+if ! command -v turso &> /dev/null; then
+    echo -e "${c}Installing turso...${r}"
+    curl -sL https://get.turso.tech/install.sh | bash
+else
+    echo -e "${c}turso already installed.${r}"
+fi
+
+# flyctl (Fly.io CLI)
+if ! command -v flyctl &> /dev/null; then
+    echo -e "${c}Installing flyctl...${r}"
+    curl -L https://fly.io/install.sh | sh
+else
+    echo -e "${c}flyctl already installed.${r}"
+fi
+
 echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"

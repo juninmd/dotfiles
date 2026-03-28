@@ -233,7 +233,7 @@ if command -v moar &> /dev/null; then
     export MOAR='--statusbar=bold --no-linenumbers'
     alias less='moar'
 fi
-if command -v viddy &> /dev/null; then alias watch='viddy'; fi
+if command -v hwatch &> /dev/null; then alias watch='hwatch'; fi
 if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
 
 # --- Interface Improvements 2026 ---
@@ -393,7 +393,7 @@ if command -v moar &> /dev/null; then
     export MOAR='--statusbar=bold --no-linenumbers'
     alias less='moar'
 fi
-if command -v viddy &> /dev/null; then alias watch='viddy'; fi
+if command -v hwatch &> /dev/null; then alias watch='hwatch'; fi
 if command -v sesh &> /dev/null; then alias s='sesh connect'; fi
 EOT
 fi
@@ -688,6 +688,20 @@ if command -v k3d &> /dev/null; then alias k8s-docker='k3d'; fi
 if command -v helm &> /dev/null; then alias k8s-pkg='helm'; fi
 if command -v kustomize &> /dev/null; then alias k8s-config='kustomize'; fi
 if command -v ngrok &> /dev/null; then alias proxy='ngrok'; fi
+EOT
+fi
+
+# Check if Newest 2026 Apps are present in .zshrc
+if ! grep -q "# --- Newest 2026 Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending Newest 2026 Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Newest 2026 Apps ---
+if command -v jo &> /dev/null; then alias json-out='jo'; fi
+if command -v k6 &> /dev/null; then alias loadtest='k6'; fi
+if command -v dolt &> /dev/null; then alias data-git='dolt'; fi
+if command -v turso &> /dev/null; then alias db-edge='turso'; fi
+if command -v flyctl &> /dev/null; then alias cloud-deploy='flyctl'; fi
 EOT
 fi
 
