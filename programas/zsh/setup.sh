@@ -253,6 +253,10 @@ if command -v tspin &> /dev/null; then alias logs='tspin'; fi
 if command -v slumber &> /dev/null; then alias http-ui='slumber'; fi
 if command -v jqp &> /dev/null; then alias jq-ui='jqp'; fi
 
+# --- Brand New 2026 Apps ---
+if command -v kalker &> /dev/null; then alias calc2='kalker'; fi
+if command -v ugrep &> /dev/null; then alias ug='ugrep'; fi
+
 # --- Extra 2026 Apps ---
 if command -v kdash &> /dev/null; then alias kdash='kdash'; fi
 if command -v stern &> /dev/null; then alias stern='stern'; fi
@@ -702,6 +706,17 @@ if command -v k6 &> /dev/null; then alias loadtest='k6'; fi
 if command -v dolt &> /dev/null; then alias data-git='dolt'; fi
 if command -v turso &> /dev/null; then alias db-edge='turso'; fi
 if command -v flyctl &> /dev/null; then alias cloud-deploy='flyctl'; fi
+EOT
+fi
+
+# Check if Brand New 2026 Apps are present in .zshrc
+if ! grep -q "# --- Brand New 2026 Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending Brand New 2026 Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Brand New 2026 Apps ---
+if command -v kalker &> /dev/null; then alias calc2='kalker'; fi
+if command -v ugrep &> /dev/null; then alias ug='ugrep'; fi
 EOT
 fi
 

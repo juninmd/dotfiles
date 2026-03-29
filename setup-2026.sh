@@ -69,7 +69,7 @@ run_module() {
     run_step "$progress_prefix Executando módulo: $module" "$script"
   else
     if command -v "$GUM" &> /dev/null; then
-      if "$GUM" spin --spinner moon --title "$($GUM style --foreground "#72f1b8" "$progress_prefix Executando módulo: $module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"; then
+      if "$GUM" spin --spinner dot --spinner.foreground "#ff7edb" --title "$($GUM style --foreground "#72f1b8" "$progress_prefix Executando módulo: $module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"; then
         echo "$($GUM style --foreground "#72f1b8" "✔") $($GUM style --foreground "#f8f8f2" "$progress_prefix Módulo") $($GUM style --foreground "#fede5d" "$module") $($GUM style --foreground "#f8f8f2" "instalado com sucesso!")"
       else
         echo "$($GUM style --foreground "#ff7edb" "✖") $($GUM style --foreground "#f8f8f2" "$progress_prefix Erro ao instalar módulo") $($GUM style --foreground "#fede5d" "$module")$($GUM style --foreground "#f8f8f2" ". Verifique os logs.")"
@@ -105,7 +105,7 @@ done
 if [[ -z "$PROFILE" ]]; then
   if command -v "$GUM" &> /dev/null; then
     clear
-    "$GUM" style --foreground "#fede5d" --align center --width 80 "Welcome to the ultimate terminal experience."
+    "$GUM" style --foreground "#fede5d" --align center --width 80 "BEM-VINDO A REVOLUÇÃO TERMINAL DE 2026"
 
     "$GUM" style \
       --foreground "#ff7edb" --border-foreground "#bd93f9" --border double \
@@ -299,6 +299,9 @@ for module in "${MODULES[@]}"; do
   fi
 
   run_module "$module" "$CURRENT_MODULE" "$TOTAL_MODULES"
+  if command -v "$GUM" &> /dev/null; then
+    echo "$("$GUM" style --foreground "#bd93f9" -- "----------------------------------------")"
+  fi
   CURRENT_MODULE=$((CURRENT_MODULE + 1))
 done
 
@@ -309,12 +312,12 @@ ELAPSED_SECONDS=$(($ELAPSED_TIME % 60))
 
 if command -v "$GUM" &> /dev/null; then
   ART_BOX=$("$GUM" style \
-    --foreground "#ff7edb" --border double --border-foreground "#ff7edb" \
-    --padding "1 3" --margin "1 1" \
+    --foreground "#ff7edb" --border rounded --border-foreground "#ff7edb" \
+    --padding "2 4" --margin "1 1" \
     ' 🤖 ' 'SYS' ' OK ')
   TEXT_BOX=$("$GUM" style \
     --foreground "#282a36" --background "#72f1b8" --border-foreground "#72f1b8" \
-    --border thick --align center --width 65 --margin "2 2" --padding "1 2" \
+    --border thick --align center --width 75 --margin "2 2" --padding "1 2" \
     "🚀 TRANSMISSÃO CONCLUÍDA: Perfil '$PROFILE' ativado! 🛸" \
     "Tempo total de salto: ${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s" \
     "" \
