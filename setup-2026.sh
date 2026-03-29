@@ -300,7 +300,7 @@ for module in "${MODULES[@]}"; do
 
   run_module "$module" "$CURRENT_MODULE" "$TOTAL_MODULES"
   if command -v "$GUM" &> /dev/null; then
-    echo "$("$GUM" style --foreground "#bd93f9" -- "----------------------------------------")"
+    "$GUM" style --foreground "#bd93f9" -- "----------------------------------------"
   fi
   CURRENT_MODULE=$((CURRENT_MODULE + 1))
 done
