@@ -1421,4 +1421,15 @@ else
     echo -e "${c}flyctl already installed.${r}"
 fi
 
+# Kalker (Math calculator)
+install_cargo_crate kalker
+
+# Ugrep (Ultra fast grep)
+if ! command -v ugrep &> /dev/null; then
+    echo -e "${c}Installing ugrep...${r}"
+    sudo apt install -y ugrep
+else
+    echo -e "${c}ugrep already installed.${r}"
+fi
+
 echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"
