@@ -256,6 +256,11 @@ if command -v jqp &> /dev/null; then alias jq-ui='jqp'; fi
 # --- Brand New 2026 Apps ---
 if command -v kalker &> /dev/null; then alias calc2='kalker'; fi
 if command -v ugrep &> /dev/null; then alias ug='ugrep'; fi
+if command -v termscp &> /dev/null; then alias scp-ui='termscp'; fi
+if command -v lychee &> /dev/null; then alias links='lychee'; fi
+if command -v bluetuith &> /dev/null; then alias bt-ui='bluetuith'; fi
+if command -v czg &> /dev/null; then alias cz='czg'; fi
+if command -v batman &> /dev/null; then alias manb='batman'; fi
 
 # --- Extra 2026 Apps ---
 if command -v kdash &> /dev/null; then alias kdash='kdash'; fi
@@ -717,6 +722,11 @@ if ! grep -q "# --- Brand New 2026 Apps ---" "$ZSHRC"; then
 # --- Brand New 2026 Apps ---
 if command -v kalker &> /dev/null; then alias calc2='kalker'; fi
 if command -v ugrep &> /dev/null; then alias ug='ugrep'; fi
+if command -v termscp &> /dev/null; then alias scp-ui='termscp'; fi
+if command -v lychee &> /dev/null; then alias links='lychee'; fi
+if command -v bluetuith &> /dev/null; then alias bt-ui='bluetuith'; fi
+if command -v czg &> /dev/null; then alias cz='czg'; fi
+if command -v batman &> /dev/null; then alias manb='batman'; fi
 EOT
 fi
 

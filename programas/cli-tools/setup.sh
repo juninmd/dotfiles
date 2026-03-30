@@ -1432,4 +1432,33 @@ else
     echo -e "${c}ugrep already installed.${r}"
 fi
 
+# Termscp (Terminal file transfer)
+install_cargo_crate termscp
+
+# Lychee (Fast, async, stream-based link checker)
+install_cargo_crate lychee
+
+# Bluetuith (TUI bluetooth manager)
+install_go_package github.com/darkhz/bluetuith@latest bluetuith
+
+# Czg (Interactive Commitizen CLI)
+if ! command -v czg &> /dev/null; then
+    echo -e "${c}Installing czg...${r}"
+    if command -v npm &> /dev/null; then
+        sudo npm install -g czg
+    else
+        echo -e "${c}npm not found, skipping czg installation.${r}"
+    fi
+else
+    echo -e "${c}czg already installed.${r}"
+fi
+
+# Bat-extras (Bash scripts that integrate bat with various command line tools)
+if ! command -v batman &> /dev/null; then
+    echo -e "${c}Installing bat-extras...${r}"
+    curl -fsSL https://raw.githubusercontent.com/eth-p/bat-extras/master/build.sh | sudo bash -s -- --install
+else
+    echo -e "${c}bat-extras already installed.${r}"
+fi
+
 echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"
