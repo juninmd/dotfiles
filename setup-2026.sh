@@ -105,11 +105,9 @@ done
 if [[ -z "$PROFILE" ]]; then
   if command -v "$GUM" &> /dev/null; then
     clear
-    "$GUM" style --foreground "#fede5d" --align center --width 80 "BEM-VINDO A REVOLUÇÃO TERMINAL DE 2026"
-
-    "$GUM" style \
+    HEADER=$("$GUM" style \
       --foreground "#ff7edb" --border-foreground "#bd93f9" --border double \
-      --align center --width 80 --margin "1 2" --padding "2 4" \
+      --align center --width 60 --margin "1 2" --padding "1 2" \
       '  ___   ___  ___  __  ' \
       ' |__ \ / _ \|__ \/ /  ' \
       '    ) | | | |  ) / /_ ' \
@@ -118,17 +116,24 @@ if [[ -z "$PROFILE" ]]; then
       ' |____|\___/|____\___/' \
       '' \
       '✨ DOTFILES 2026 EDITION ✨' \
-      'O Futuro do Desenvolvimento Já Chegou' \
-      '👾 THE ULTIMATE SYNTHWAVE EXPERIENCE 👾' \
-      '' \
-      '🚀 Aperte o cinto e prepare-se para a hipervelocidade!' \
-      '⚡ Preparando para injetar código na matrix...'
+      'O Futuro do Desenvolvimento Já Chegou')
 
+    INFO=$("$GUM" style \
+      --foreground "#36f9f6" --border-foreground "#ff7edb" --border rounded \
+      --align left --width 40 --margin "1 2" --padding "2 3" \
+      '👾 THE ULTIMATE SYNTHWAVE EXPERIENCE' \
+      '' \
+      '🚀 Hipervelocidade pronta...' \
+      '⚡ Injetando código na matrix...' \
+      '🔮 Bem-vindo à nova era.')
+
+    "$GUM" join --align center "$HEADER" "$INFO"
     echo ""
+
     "$GUM" style \
       --foreground "#fede5d" \
       --border rounded --border-foreground "#36f9f6" \
-      --padding "1 2" --margin "1 0" --align center --width 80 \
+      --padding "1 2" --margin "1 0" --align center --width 100 \
       "🌐 Iniciando Protocolo de Setup 2026 🌐" \
       "Selecione o perfil de instalação para turbinar sua máquina:"
     echo ""
@@ -312,19 +317,22 @@ ELAPSED_SECONDS=$(($ELAPSED_TIME % 60))
 
 if command -v "$GUM" &> /dev/null; then
   ART_BOX=$("$GUM" style \
-    --foreground "#ff7edb" --border rounded --border-foreground "#ff7edb" \
-    --padding "2 4" --margin "1 1" \
-    ' 🤖 ' 'SYS' ' OK ')
+    --foreground "#ff7edb" --border double --border-foreground "#bd93f9" \
+    --padding "2 4" --margin "1 2" --align center \
+    ' 🤖 ' 'SYS' ' OK ' \
+    '' \
+    '💯 VIBES')
   TEXT_BOX=$("$GUM" style \
     --foreground "#282a36" --background "#72f1b8" --border-foreground "#72f1b8" \
-    --border thick --align center --width 75 --margin "2 2" --padding "1 2" \
-    "🚀 TRANSMISSÃO CONCLUÍDA: Perfil '$PROFILE' ativado! 🛸" \
+    --border thick --align center --width 65 --margin "1 2" --padding "1 2" \
+    "🚀 TRANSMISSÃO CONCLUÍDA! 🛸" \
+    "Perfil $($GUM style --foreground "#ff7edb" --background "#282a36" " $PROFILE ") ativado com sucesso!" \
     "Tempo total de salto: ${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s" \
     "" \
-    "A matrix foi atualizada com sucesso." \
+    "A matrix foi atualizada e está pronta para uso." \
     "Feche este terminal e abra um novo para carregar sua nova realidade." \
     "" \
-    "📂 Arquivos de log salvos em: /tmp/setup-2026-*.log")
+    "📂 Logs salvos em: /tmp/setup-2026-*.log")
   echo "$("$GUM" join --align center "$ART_BOX" "$TEXT_BOX")"
 else
   log "Finalizado com sucesso em ${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s. Reinicie seu terminal."
