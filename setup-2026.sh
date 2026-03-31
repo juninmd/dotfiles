@@ -108,11 +108,12 @@ if [[ -z "$PROFILE" ]]; then
     HEADER=$("$GUM" style \
       --foreground "#ff7edb" --border-foreground "#bd93f9" --border double \
       --align center --width 60 --margin "1 2" --padding "1 2" \
-      '   __  __  ___   ___   ___ ' \
-      '  / / / / |__ \ / _ \ |__ \' \
-      ' / /_/ /____/ // / \ \__/ /' \
-      ' \__, //___/ /_\ \_/ / __/ ' \
-      '   /_/    /____/\___/____/ ' \
+      '  ___   ___  ___  __  ' \
+      ' |__ \ / _ \|__ \/ /  ' \
+      '    ) | | | |  ) / /_ ' \
+      '   / /| |_| | / / _ \ ' \
+      '  / /_|  _  |/ / (_) |' \
+      ' |____|\___/|____\___/' \
       '' \
       '✨ DOTFILES 2026 EDITION ✨' \
       'O Futuro do Desenvolvimento Já Chegou')
