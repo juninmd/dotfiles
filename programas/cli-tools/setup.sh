@@ -1072,6 +1072,34 @@ else
     echo -e "${c}fnm already installed.${r}"
 fi
 
+# --- NEW 2026 APPS ---
+
+# Miniserve (Fast local file server)
+install_cargo_crate miniserve
+
+# Viu (Terminal image viewer)
+install_cargo_crate viu
+
+# Wthrr (Weather crab)
+install_cargo_crate wthrr-the-weathercrab wthrr
+
+# Dura (Auto-backup without committing)
+install_cargo_crate dura
+
+# Klog (Time tracker)
+install_go_package github.com/jotaen/klog/v2/cmd/klog@latest klog
+
+# Peco (Interactive filtering tool)
+install_go_package github.com/peco/peco/cmd/peco@latest peco
+
+# Newsboat (RSS reader)
+if ! command -v newsboat &> /dev/null; then
+    echo -e "${c}Installing newsboat...${r}"
+    sudo apt install -y newsboat
+else
+    echo -e "${c}newsboat already installed.${r}"
+fi
+
 # --- CHARMBRACELET EXTRAS ---
 
 # Skate (Personal Key Value Store)
