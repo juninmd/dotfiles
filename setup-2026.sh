@@ -69,7 +69,7 @@ run_module() {
     run_step "$progress_prefix Executando módulo: $module" "$script"
   else
     if command -v "$GUM" &> /dev/null; then
-      if "$GUM" spin --spinner dot --spinner.foreground "#ff7edb" --title "$($GUM style --foreground "#72f1b8" "$progress_prefix Executando módulo: $module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"; then
+      if "$GUM" spin --spinner globe --spinner.foreground "#ff7edb" --title "$($GUM style --foreground "#72f1b8" "$progress_prefix Executando módulo: $module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"; then
         echo "$($GUM style --foreground "#72f1b8" "✔") $($GUM style --foreground "#f8f8f2" "$progress_prefix Módulo") $($GUM style --foreground "#fede5d" "$module") $($GUM style --foreground "#f8f8f2" "instalado com sucesso!")"
       else
         echo "$($GUM style --foreground "#ff7edb" "✖") $($GUM style --foreground "#f8f8f2" "$progress_prefix Erro ao instalar módulo") $($GUM style --foreground "#fede5d" "$module")$($GUM style --foreground "#f8f8f2" ". Verifique os logs.")"
@@ -319,9 +319,9 @@ if command -v "$GUM" &> /dev/null; then
   ART_BOX=$("$GUM" style \
     --foreground "#ff7edb" --border double --border-foreground "#bd93f9" \
     --padding "2 4" --margin "1 2" --align center \
-    ' 🤖 ' 'SYS' ' OK ' \
+    ' 🛸 ' 'SYS' ' OK ' \
     '' \
-    '💯 VIBES')
+    '👾 2026')
   TEXT_BOX=$("$GUM" style \
     --foreground "#282a36" --background "#72f1b8" --border-foreground "#72f1b8" \
     --border thick --align center --width 65 --margin "1 2" --padding "1 2" \

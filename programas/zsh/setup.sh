@@ -730,6 +730,22 @@ if command -v batman &> /dev/null; then alias manb='batman'; fi
 EOT
 fi
 
+# Check if Fresh 2026 Apps are present in .zshrc
+if ! grep -q "# --- Fresh 2026 Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending Fresh 2026 Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Fresh 2026 Apps ---
+if command -v miniserve &> /dev/null; then alias serve='miniserve'; fi
+if command -v viu &> /dev/null; then alias img-view='viu'; fi
+if command -v wthrr &> /dev/null; then alias weather2='wthrr'; fi
+if command -v dura &> /dev/null; then alias backup-git='dura'; fi
+if command -v klog &> /dev/null; then alias time-tracker='klog'; fi
+if command -v peco &> /dev/null; then alias filter='peco'; fi
+if command -v newsboat &> /dev/null; then alias rss='newsboat'; fi
+EOT
+fi
+
 # Update zoxide to use cd alias if present in existing config
 sed -i 's/eval "$(zoxide init zsh)"/eval "$(zoxide init zsh --cmd cd)"/' "$ZSHRC"
 
