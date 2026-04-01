@@ -1351,6 +1351,32 @@ install_cargo_crate rustscan
 # Diskonaut (Terminal disk space navigator)
 install_cargo_crate diskonaut
 
+# --- BRAND NEW 2026 APPS PART II ---
+
+# Xplr (TUI file explorer)
+install_cargo_crate xplr
+
+# Systeroid (Kernel parameter manager)
+install_cargo_crate systeroid
+
+# Systemctl-tui (Systemd TUI)
+install_cargo_crate systemctl-tui
+
+# Bruno CLI (API testing)
+if ! command -v bru &> /dev/null; then
+    echo -e "${c}Installing bruno-cli...${r}"
+    if command -v npm &> /dev/null; then
+        sudo npm install -g @usebruno/cli
+    else
+        echo -e "${c}npm not found, skipping bruno-cli installation.${r}"
+    fi
+else
+    echo -e "${c}bruno-cli already installed.${r}"
+fi
+
+# Mani (Multi-repository management)
+install_go_package github.com/alajmo/mani@latest mani
+
 # --- EXTRA 2026 APPS ---
 
 # Sniffnet (Application to comfortably monitor your network traffic)
