@@ -139,7 +139,7 @@ if [[ -z "$PROFILE" ]]; then
       "🖥️ OS:   $($GUM style --foreground "#ff7edb" "$OS_INFO")" \
       "⚙️ Arch: $($GUM style --foreground "#36f9f6" "$ARCH_INFO")")
 
-    "$GUM" join --align center "$HEADER" "$("$GUM" join --align center "$INFO" "$SYS_INFO")"
+    "$GUM" join --vertical --align center "$HEADER" "$("$GUM" join --align center "$INFO" "$SYS_INFO")"
     echo ""
 
     "$GUM" style \
