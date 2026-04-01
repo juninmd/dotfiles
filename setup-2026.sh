@@ -127,12 +127,24 @@ if [[ -z "$PROFILE" ]]; then
       '⚡ Injetando código na matrix...' \
       '🔮 Bem-vindo à nova era.')
 
-    "$GUM" join --align center "$HEADER" "$INFO"
+    OS_INFO=$(uname -s)
+    ARCH_INFO=$(uname -m)
+    USER_INFO=$(whoami)
+    SYS_INFO=$("$GUM" style \
+      --foreground "#f8f8f2" --border-foreground "#72f1b8" --border rounded \
+      --align left --width 30 --margin "1 2" --padding "2 3" \
+      '💻 SYSTEM INFO' \
+      '' \
+      "👤 User: $($GUM style --foreground "#fede5d" "$USER_INFO")" \
+      "🖥️ OS:   $($GUM style --foreground "#ff7edb" "$OS_INFO")" \
+      "⚙️ Arch: $($GUM style --foreground "#36f9f6" "$ARCH_INFO")")
+
+    "$GUM" join --vertical --align center "$HEADER" "$("$GUM" join --align center "$INFO" "$SYS_INFO")"
     echo ""
 
     "$GUM" style \
       --foreground "#fede5d" \
-      --border rounded --border-foreground "#36f9f6" \
+      --border rounded --border-foreground "#ff7edb" \
       --padding "1 2" --margin "1 0" --align center --width 100 \
       "🌐 Iniciando Protocolo de Setup 2026 🌐" \
       "Selecione o perfil de instalação para turbinar sua máquina:"
