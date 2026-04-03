@@ -1377,6 +1377,21 @@ fi
 # Mani (Multi-repository management)
 install_go_package github.com/alajmo/mani@latest mani
 
+# Xcp (Extended cp)
+install_cargo_crate xcp
+
+# Dysk (Linux disks info)
+install_cargo_crate dysk
+
+# So (StackOverflow in terminal)
+install_cargo_crate so
+
+# Inlyne (GPU powered markdown viewer)
+install_cargo_crate inlyne
+
+# Ncspot (Cross-platform Spotify client)
+install_cargo_crate ncspot
+
 # --- EXTRA 2026 APPS ---
 
 # Sniffnet (Application to comfortably monitor your network traffic)

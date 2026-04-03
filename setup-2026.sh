@@ -130,14 +130,18 @@ if [[ -z "$PROFILE" ]]; then
     OS_INFO=$(uname -s)
     ARCH_INFO=$(uname -m)
     USER_INFO=$(whoami)
+    HOST_INFO=${HOSTNAME:-$(hostname 2>/dev/null || echo "unknown")}
+    SHELL_INFO=$(basename "${SHELL:-/bin/bash}")
     SYS_INFO=$("$GUM" style \
       --foreground "#f8f8f2" --border-foreground "#72f1b8" --border rounded \
       --align left --width 30 --margin "1 2" --padding "2 3" \
       '💻 SYSTEM INFO' \
       '' \
-      "👤 User: $($GUM style --foreground "#fede5d" "$USER_INFO")" \
-      "🖥️ OS:   $($GUM style --foreground "#ff7edb" "$OS_INFO")" \
-      "⚙️ Arch: $($GUM style --foreground "#36f9f6" "$ARCH_INFO")")
+      "👤 User:  $($GUM style --foreground "#fede5d" "$USER_INFO")" \
+      "🏠 Host:  $($GUM style --foreground "#bd93f9" "$HOST_INFO")" \
+      "🖥️ OS:    $($GUM style --foreground "#ff7edb" "$OS_INFO")" \
+      "⚙️ Arch:  $($GUM style --foreground "#36f9f6" "$ARCH_INFO")" \
+      "🐚 Shell: $($GUM style --foreground "#fede5d" "$SHELL_INFO")")
 
     "$GUM" join --vertical --align center "$HEADER" "$("$GUM" join --align center "$INFO" "$SYS_INFO")"
     echo ""
