@@ -757,6 +757,11 @@ if command -v systeroid &> /dev/null; then alias kernel-ui='systeroid'; fi
 if command -v systemctl-tui &> /dev/null; then alias sys-ui='systemctl-tui'; fi
 if command -v bru &> /dev/null; then alias api-test='bru'; fi
 if command -v mani &> /dev/null; then alias repos='mani'; fi
+if command -v xcp &> /dev/null; then alias cp2='xcp'; fi
+if command -v dysk &> /dev/null; then alias mounts='dysk'; fi
+if command -v so &> /dev/null; then alias stackoverflow='so'; fi
+if command -v inlyne &> /dev/null; then alias md-gpu='inlyne'; fi
+if command -v ncspot &> /dev/null; then alias spotify='ncspot'; fi
 EOT
 fi
 
