@@ -31,12 +31,13 @@ log() {
 
 usage() {
   cat <<USAGE
-Uso: ./setup-2026.sh [--dry-run] [--profile minimal|dev|full]
+Uso: ./setup-2026.sh [--dry-run] [--profile minimal|dev|full|ai-dev]
 
 Perfis:
   minimal  -> shell moderna + prompt + editor
   dev      -> minimal + runtime JS + docker + banco
   full     -> dev + ferramentas extras de produtividade
+  ai-dev   -> minimal + cursor + zed + warp + ferramentas AI
 USAGE
 }
 
@@ -162,10 +163,11 @@ if [[ -z "$PROFILE" ]]; then
       --selected.foreground="#36f9f6" \
       "minimal   - 🪶 Shell moderna, prompt limpo e editor básico (Rápido e direto)." \
       "dev       - 🚀 minimal + Runtimes JS/Python, Docker e BD (Recomendado para Ninjas)." \
-      "full      - 🌌 dev + Apps extras de produtividade (Navegador, Slack, Android).")
+      "full      - 🌌 dev + Apps extras de produtividade (Navegador, Slack, Android)." \
+      "ai-dev    - 🤖 minimal + Cursor, Zed, Warp e Apps de AI (Futuro).")
     PROFILE=$(echo "$PROFILE_CHOICE" | awk '{print $1}')
   else
-    read -rp "Escolha o perfil (minimal, dev, full) [full]: " PROFILE
+    read -rp "Escolha o perfil (minimal, dev, full, ai-dev) [full]: " PROFILE
     PROFILE=${PROFILE:-full}
   fi
 fi
@@ -179,6 +181,9 @@ case "$PROFILE" in
     ;;
   full)
     DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android)
+    ;;
+  ai-dev)
+    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -194,6 +199,7 @@ declare -A MOD_DESC=(
   ["android"]="📱 Android Studio & SDK"
   ["bun"]="🥟 Bun JavaScript runtime"
   ["cli-tools"]="🧰 Ferramentas CLI modernas (2026 apps)"
+  ["cursor"]="🤖 Cursor AI Code Editor"
   ["firefox"]="🦊 Navegador Firefox"
   ["lazydocker"]="🐳 LazyDocker TUI"
   ["lazygit"]="🐙 LazyGit TUI"
@@ -201,7 +207,9 @@ declare -A MOD_DESC=(
   ["slack"]="💬 Slack Desktop"
   ["starship"]="🚀 Starship Prompt"
   ["vscode"]="💻 Visual Studio Code"
+  ["warp"]="⚡ Warp Terminal (AI & GPU)"
   ["yazi"]="🦆 Yazi File Manager"
+  ["zed"]="💻 Zed Editor (Rust)"
   ["zellij"]="🪟 Zellij Terminal Multiplexer"
   ["zsh"]="🐚 Zsh shell e plugins"
 )
