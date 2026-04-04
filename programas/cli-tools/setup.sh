@@ -567,7 +567,12 @@ install_cargo_crate gitui
 # Cpufetch (Simple yet fancy CPU architecture fetching tool)
 if ! command -v cpufetch &> /dev/null; then
     echo -e "${c}Installing cpufetch...${r}"
-    curl -fsSL https://github.com/Dr-Noob/cpufetch/releases/latest/download/cpufetch-linux-x86_64 -o /tmp/cpufetch
+    case "$(uname -m)" in
+        x86_64) BIN_ARCH="x86_64" ;;
+        aarch64) BIN_ARCH="arm64" ;;
+        *) BIN_ARCH="x86_64" ;;
+    esac
+    curl -fsSL "https://github.com/Dr-Noob/cpufetch/releases/latest/download/cpufetch-linux-${BIN_ARCH}" -o /tmp/cpufetch
     sudo mv /tmp/cpufetch /usr/local/bin/cpufetch
     sudo chmod +x /usr/local/bin/cpufetch
 else
