@@ -564,6 +564,21 @@ install_cargo_crate genact
 # GitUI (Blazing Fast Git TUI)
 install_cargo_crate gitui
 
+# Cpufetch (Simple yet fancy CPU architecture fetching tool)
+if ! command -v cpufetch &> /dev/null; then
+    echo -e "${c}Installing cpufetch...${r}"
+    case "$(uname -m)" in
+        x86_64) BIN_ARCH="x86_64" ;;
+        aarch64) BIN_ARCH="arm64" ;;
+        *) BIN_ARCH="x86_64" ;;
+    esac
+    curl -fsSL "https://github.com/Dr-Noob/cpufetch/releases/latest/download/cpufetch-linux-${BIN_ARCH}" -o /tmp/cpufetch
+    sudo mv /tmp/cpufetch /usr/local/bin/cpufetch
+    sudo chmod +x /usr/local/bin/cpufetch
+else
+    echo -e "${c}cpufetch already installed.${r}"
+fi
+
 # Oxker (Docker TUI)
 install_cargo_crate oxker
 
@@ -599,6 +614,9 @@ if command -v gh &> /dev/null; then
     echo -e "${c}Installing gh-dash extension...${r}"
     gh extension install dlvhdr/gh-dash 2>/dev/null || true
 fi
+
+# Glab (GitLab CLI)
+install_go_package gitlab.com/gitlab-org/cli/cmd/glab@latest glab
 
 # Act (Run GitHub Actions Locally)
 install_go_package github.com/nektos/act@latest act
@@ -815,6 +833,18 @@ install_cargo_crate hexyl
 
 # Pastel (Command-line Color Tool)
 install_cargo_crate pastel
+
+# Zizmor (Static analysis tool for GitHub Actions)
+install_cargo_crate zizmor
+
+# Taplo (TOML toolkit)
+install_cargo_crate taplo-cli taplo
+
+# Yamlfmt (YAML formatter)
+install_go_package github.com/google/yamlfmt/cmd/yamlfmt@latest yamlfmt
+
+# Trzsz (Simple file transfer tool)
+install_go_package github.com/trzsz/trzsz-go/cmd/...@latest trzsz
 
 # Csvlens (CSV File Viewer)
 install_cargo_crate csvlens
