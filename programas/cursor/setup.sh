@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 c='\e[32m'
 r='\e[0m'
 echo -e "${c}Installing Cursor (AI Code Editor)...${r}"
@@ -10,7 +11,7 @@ mkdir -p "$HOME/.local/share/applications"
 cat <<EOF > "$HOME/.local/share/applications/cursor.desktop"
 [Desktop Entry]
 Name=Cursor
-Exec=$HOME/Applications/cursor.AppImage --no-sandbox
+Exec=$HOME/Applications/cursor.AppImage
 Icon=cursor
 Type=Application
 Categories=Development;TextEditor;
