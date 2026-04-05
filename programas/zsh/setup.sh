@@ -765,6 +765,20 @@ if command -v ncspot &> /dev/null; then alias spotify='ncspot'; fi
 EOT
 fi
 
+# Check if Beyond 2026 Apps are present in .zshrc
+if ! grep -q "# --- Beyond 2026 Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending Beyond 2026 Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Beyond 2026 Apps ---
+if command -v repomix &> /dev/null; then alias repo-pack='repomix'; fi
+if command -v gitingest &> /dev/null; then alias ingest='gitingest'; fi
+if command -v harlequin &> /dev/null; then alias sql-ide='harlequin'; fi
+if command -v slumber &> /dev/null; then alias http-ui='slumber'; fi
+if command -v plandex &> /dev/null; then alias plandex-ai='plandex'; fi
+EOT
+fi
+
 # Update zoxide to use cd alias if present in existing config
 sed -i 's/eval "$(zoxide init zsh)"/eval "$(zoxide init zsh --cmd cd)"/' "$ZSHRC"
 

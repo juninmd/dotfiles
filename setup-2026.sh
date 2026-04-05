@@ -134,7 +134,7 @@ if [[ -z "$PROFILE" ]]; then
     HOST_INFO=${HOSTNAME:-$(hostname 2>/dev/null || echo "unknown")}
     SHELL_INFO=$(basename "${SHELL:-/bin/bash}")
     SYS_INFO=$("$GUM" style \
-      --foreground "#f8f8f2" --border-foreground "#72f1b8" --border rounded \
+      --foreground "#f8f8f2" --border-foreground "#bd93f9" --border double \
       --align left --width 30 --margin "1 2" --padding "2 3" \
       '💻 SYSTEM INFO' \
       '' \
@@ -347,16 +347,16 @@ if command -v "$GUM" &> /dev/null; then
     '' \
     '👾 2026')
   TEXT_BOX=$("$GUM" style \
-    --foreground "#282a36" --background "#72f1b8" --border-foreground "#72f1b8" \
+      --foreground "#f8f8f2" --background "#282a36" --border-foreground "#ff7edb" \
     --border thick --align center --width 65 --margin "1 2" --padding "1 2" \
-    "🚀 TRANSMISSÃO CONCLUÍDA! 🛸" \
-    "Perfil $($GUM style --foreground "#ff7edb" --background "#282a36" " $PROFILE ") ativado com sucesso!" \
-    "Tempo total de salto: ${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s" \
+      "🚀 $($GUM style --foreground "#36f9f6" "TRANSMISSÃO CONCLUÍDA!") 🛸" \
+      "Perfil $($GUM style --foreground "#282a36" --background "#72f1b8" " $PROFILE ") ativado com sucesso!" \
+      "Tempo total de salto: $($GUM style --foreground "#fede5d" "${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s")" \
     "" \
     "A matrix foi atualizada e está pronta para uso." \
     "Feche este terminal e abra um novo para carregar sua nova realidade." \
     "" \
-    "📂 Logs salvos em: /tmp/setup-2026-*.log")
+      "📂 $($GUM style --foreground "#bd93f9" "Logs salvos em: /tmp/setup-2026-*.log")")
   echo "$("$GUM" join --align center "$ART_BOX" "$TEXT_BOX")"
 else
   log "Finalizado com sucesso em ${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s. Reinicie seu terminal."

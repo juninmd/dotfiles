@@ -1561,3 +1561,55 @@ else
 fi
 
 echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"
+# --- BEYOND 2026 APPS ---
+
+# Aider-chat (AI pair programming)
+if ! command -v aider &> /dev/null; then
+    echo -e "${c}Installing aider-chat...${r}"
+    if command -v pipx &> /dev/null; then
+        pipx install aider-chat
+    else
+        pip3 install aider-chat --break-system-packages 2>/dev/null || pip3 install aider-chat
+    fi
+else
+    echo -e "${c}aider-chat already installed.${r}"
+fi
+
+# Repomix (Pack repository into AI prompt)
+if ! command -v repomix &> /dev/null; then
+    echo -e "${c}Installing repomix...${r}"
+    if command -v npm &> /dev/null; then
+        sudo npm install -g repomix
+    else
+        echo -e "${c}npm not found, skipping repomix installation.${r}"
+    fi
+else
+    echo -e "${c}repomix already installed.${r}"
+fi
+
+# Gitingest (Replace git clone with AI friendly prompt)
+if ! command -v gitingest &> /dev/null; then
+    echo -e "${c}Installing gitingest...${r}"
+    pip3 install gitingest --break-system-packages 2>/dev/null || pip3 install gitingest
+else
+    echo -e "${c}gitingest already installed.${r}"
+fi
+
+# Harlequin (SQL IDE for terminal)
+if ! command -v harlequin &> /dev/null; then
+    echo -e "${c}Installing harlequin...${r}"
+    pip3 install harlequin --break-system-packages 2>/dev/null || pip3 install harlequin
+else
+    echo -e "${c}harlequin already installed.${r}"
+fi
+
+# Slumber (Terminal HTTP Client)
+install_cargo_crate slumber
+
+# Plandex (AI coding engine)
+if ! command -v plandex &> /dev/null; then
+    echo -e "${c}Installing plandex...${r}"
+    curl -sL https://plandex.ai/install.sh | sh
+else
+    echo -e "${c}plandex already installed.${r}"
+fi
