@@ -964,6 +964,35 @@ else
     echo -e "${c}plandex already installed.${r}"
 fi
 
+# --- 2026 EXPERIMENTAL APPS ---
+
+# Dotenvx (Better dotenv)
+if ! command -v dotenvx &> /dev/null; then
+    echo -e "${c}Installing dotenvx...${r}"
+    { curl -fsS https://dotenvx.sh/ -o /tmp/dotenvx_install.sh && sh /tmp/dotenvx_install.sh; }
+else
+    echo -e "${c}dotenvx already installed.${r}"
+fi
+
+# Zrok (Ngrok alternative)
+if ! command -v zrok &> /dev/null; then
+    echo -e "${c}Installing zrok...${r}"
+    { curl -sSL https://raw.githubusercontent.com/openziti/zrok/main/install/setup.sh -o /tmp/zrok_install.sh && sudo bash /tmp/zrok_install.sh; }
+else
+    echo -e "${c}zrok already installed.${r}"
+fi
+
+# Git-sim (Visually simulate Git operations)
+if ! command -v git-sim &> /dev/null; then
+    echo -e "${c}Installing git-sim...${r}"
+    pip3 install git-sim --break-system-packages 2>/dev/null || pip3 install git-sim
+else
+    echo -e "${c}git-sim already installed.${r}"
+fi
+
+# Charm (The Charm Tool)
+install_go_package github.com/charmbracelet/charm@latest charm
+
 # Shell-GPT (AI in terminal)
 if ! command -v sgpt &> /dev/null; then
     echo -e "${c}Installing shell-gpt...${r}"
