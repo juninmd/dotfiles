@@ -731,8 +731,8 @@ if command -v ugrep &> /dev/null; then alias ug='ugrep'; fi
 if command -v termscp &> /dev/null; then alias scp-ui='termscp'; fi
 if command -v lychee &> /dev/null; then alias links='lychee'; fi
 if command -v bluetuith &> /dev/null; then alias bt-ui='bluetuith'; fi
-if command -v czg &> /dev/null; then alias c='czg'; fi
-if command -v batman &> /dev/null; then alias man='batman'; fi
+if command -v czg &> /dev/null; then alias cz='czg'; fi
+if command -v batman &> /dev/null; then alias manb='batman'; fi
 EOT
 fi
 
