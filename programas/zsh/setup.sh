@@ -331,7 +331,7 @@ if command -v cheat &> /dev/null; then alias cheatsheet='cheat'; fi
 # --- Latest 2026 Apps ---
 if command -v yt-dlp &> /dev/null; then alias ytdl='yt-dlp'; fi
 if command -v porsmo &> /dev/null; then alias pomodoro='porsmo'; fi
-if command -v rustscan &> /dev/null; then alias rscan='rustscan'; fi
+if command -v rustscan &> /dev/null; then alias scan='rustscan'; fi
 if command -v diskonaut &> /dev/null; then alias disk-vis='diskonaut'; fi
 
 # --- Cutting-Edge 2026 Apps ---
@@ -349,6 +349,12 @@ if command -v k3d &> /dev/null; then alias k8s-docker='k3d'; fi
 if command -v helm &> /dev/null; then alias k8s-pkg='helm'; fi
 if command -v kustomize &> /dev/null; then alias k8s-config='kustomize'; fi
 if command -v ngrok &> /dev/null; then alias proxy='ngrok'; fi
+
+# --- Experimental 2026 Apps ---
+if command -v dotenvx &> /dev/null; then alias envx='dotenvx'; fi
+if command -v zrok &> /dev/null; then alias tunnel-alt='zrok'; fi
+if command -v git-sim &> /dev/null; then alias gsim='git-sim'; fi
+if command -v charm &> /dev/null; then alias charm-tools='charm'; fi
 
 # --- End Custom Configuration ---
 EOT
@@ -641,7 +647,7 @@ if ! grep -q "# --- Latest 2026 Apps ---" "$ZSHRC"; then
 # --- Latest 2026 Apps ---
 if command -v yt-dlp &> /dev/null; then alias ytdl='yt-dlp'; fi
 if command -v porsmo &> /dev/null; then alias pomodoro='porsmo'; fi
-if command -v rustscan &> /dev/null; then alias rscan='rustscan'; fi
+if command -v rustscan &> /dev/null; then alias scan='rustscan'; fi
 if command -v diskonaut &> /dev/null; then alias disk-vis='diskonaut'; fi
 EOT
 fi
@@ -725,8 +731,8 @@ if command -v ugrep &> /dev/null; then alias ug='ugrep'; fi
 if command -v termscp &> /dev/null; then alias scp-ui='termscp'; fi
 if command -v lychee &> /dev/null; then alias links='lychee'; fi
 if command -v bluetuith &> /dev/null; then alias bt-ui='bluetuith'; fi
-if command -v czg &> /dev/null; then alias cz='czg'; fi
-if command -v batman &> /dev/null; then alias manb='batman'; fi
+if command -v czg &> /dev/null; then alias c='czg'; fi
+if command -v batman &> /dev/null; then alias man='batman'; fi
 EOT
 fi
 
@@ -776,6 +782,19 @@ if command -v gitingest &> /dev/null; then alias ingest='gitingest'; fi
 if command -v harlequin &> /dev/null; then alias sql-ide='harlequin'; fi
 if command -v slumber &> /dev/null; then alias http-ui='slumber'; fi
 if command -v plandex &> /dev/null; then alias plandex-ai='plandex'; fi
+EOT
+fi
+
+# Check if Experimental 2026 Apps are present in .zshrc
+if ! grep -q "# --- Experimental 2026 Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending Experimental 2026 Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Experimental 2026 Apps ---
+if command -v dotenvx &> /dev/null; then alias envx='dotenvx'; fi
+if command -v zrok &> /dev/null; then alias tunnel-alt='zrok'; fi
+if command -v git-sim &> /dev/null; then alias gsim='git-sim'; fi
+if command -v charm &> /dev/null; then alias charm-tools='charm'; fi
 EOT
 fi
 

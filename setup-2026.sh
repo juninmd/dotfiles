@@ -54,6 +54,9 @@ run_step() {
   "$@"
 }
 
+SUCCESS_COUNT=0
+FAIL_COUNT=0
+
 run_module() {
   local module="$1"
   local current_idx="$2"
@@ -68,15 +71,22 @@ run_module() {
 
   if [[ "$DRY_RUN" == true ]]; then
     run_step "$progress_prefix Executando módulo: $module" "$script"
+    SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
   else
     if command -v "$GUM" &> /dev/null; then
       if "$GUM" spin --spinner globe --spinner.foreground "#ff7edb" --title "$($GUM style --foreground "#72f1b8" "$progress_prefix Executando módulo: $module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"; then
         echo "$($GUM style --foreground "#72f1b8" "✔") $($GUM style --foreground "#f8f8f2" "$progress_prefix Módulo") $($GUM style --foreground "#fede5d" "$module") $($GUM style --foreground "#f8f8f2" "instalado com sucesso!")"
+        SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
       else
         echo "$($GUM style --foreground "#ff7edb" "✖") $($GUM style --foreground "#f8f8f2" "$progress_prefix Erro ao instalar módulo") $($GUM style --foreground "#fede5d" "$module")$($GUM style --foreground "#f8f8f2" ". Verifique os logs.")"
+        FAIL_COUNT=$((FAIL_COUNT + 1))
       fi
     else
-      run_step "$progress_prefix Executando módulo: $module" "$script"
+      if run_step "$progress_prefix Executando módulo: $module" "$script"; then
+        SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
+      else
+        FAIL_COUNT=$((FAIL_COUNT + 1))
+      fi
     fi
   fi
 }
@@ -291,6 +301,14 @@ fi
 
 if [[ "$DRY_RUN" == false ]]; then
   if command -v "$GUM" &> /dev/null; then
+    SUMMARY_BOX=$("$GUM" style \
+      --foreground "#f8f8f2" --border-foreground "#72f1b8" --border double \
+      --align left --width 60 --margin "1 2" --padding "1 2" \
+      "📋 $($GUM style --foreground "#fede5d" "Resumo da Instalação")" \
+      "" \
+      "Perfil: $($GUM style --foreground "#36f9f6" "$PROFILE")" \
+      "Total de Módulos: $($GUM style --foreground "#ff7edb" "${#MODULES[@]}")")
+    echo "$SUMMARY_BOX"
     echo ""
     if ! "$GUM" confirm \
       --prompt.foreground "#ff7edb" \
@@ -304,6 +322,9 @@ if [[ "$DRY_RUN" == false ]]; then
     fi
     echo ""
   else
+    echo "Resumo da Instalação:"
+    echo "Perfil: $PROFILE"
+    echo "Total de Módulos: ${#MODULES[@]}"
     read -rp "Deseja prosseguir com a instalação destes módulos? (S/n): " confirm
     if [[ "$confirm" =~ ^[Nn] ]]; then
       log "Instalação cancelada pelo usuário."
@@ -352,7 +373,10 @@ if command -v "$GUM" &> /dev/null; then
       "🚀 $($GUM style --foreground "#36f9f6" "TRANSMISSÃO CONCLUÍDA!") 🛸" \
       "Perfil $($GUM style --foreground "#282a36" --background "#72f1b8" " $PROFILE ") ativado com sucesso!" \
       "Tempo total de salto: $($GUM style --foreground "#fede5d" "${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s")" \
-    "" \
+      "" \
+      "Módulos com sucesso: $($GUM style --foreground "#72f1b8" "$SUCCESS_COUNT")" \
+      "Módulos com falha: $($GUM style --foreground "#ff7edb" "$FAIL_COUNT")" \
+      "" \
     "A matrix foi atualizada e está pronta para uso." \
     "Feche este terminal e abra um novo para carregar sua nova realidade." \
     "" \
@@ -360,6 +384,7 @@ if command -v "$GUM" &> /dev/null; then
   echo "$("$GUM" join --align center "$ART_BOX" "$TEXT_BOX")"
 else
   log "Finalizado com sucesso em ${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s. Reinicie seu terminal."
+  log "Sucesso: $SUCCESS_COUNT | Falha: $FAIL_COUNT"
   log "Logs de instalação disponíveis em: /tmp/setup-2026-*.log"
 fi
 
