@@ -969,7 +969,7 @@ fi
 # Dotenvx (Better dotenv)
 if ! command -v dotenvx &> /dev/null; then
     echo -e "${c}Installing dotenvx...${r}"
-    curl -fsS https://dotenvx.sh/ | sh
+    { curl -fsS https://dotenvx.sh/ -o /tmp/dotenvx_install.sh && sh /tmp/dotenvx_install.sh; }
 else
     echo -e "${c}dotenvx already installed.${r}"
 fi
@@ -977,7 +977,7 @@ fi
 # Zrok (Ngrok alternative)
 if ! command -v zrok &> /dev/null; then
     echo -e "${c}Installing zrok...${r}"
-    curl -sSL https://raw.githubusercontent.com/openziti/zrok/main/install/setup.sh | sudo bash
+    { curl -sSL https://raw.githubusercontent.com/openziti/zrok/main/install/setup.sh -o /tmp/zrok_install.sh && sudo bash /tmp/zrok_install.sh; }
 else
     echo -e "${c}zrok already installed.${r}"
 fi
