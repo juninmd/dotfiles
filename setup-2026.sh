@@ -119,12 +119,12 @@ if [[ -z "$PROFILE" ]]; then
     HEADER=$("$GUM" style \
       --foreground "#ff7edb" --border-foreground "#bd93f9" --border double \
       --align center --width 60 --margin "1 2" --padding "1 2" \
-      '  ___   ___  ___  __  ' \
-      ' |__ \ / _ \|__ \/ /  ' \
-      '    ) | | | |  ) / /_ ' \
-      '   / /| |_| | / / _ \ ' \
-      '  / /_|  _  |/ / (_) |' \
-      ' |____|\___/|____\___/' \
+      '  ___   ___  ___   __   ' \
+      ' |__ \ / _ \|__ \ / /   ' \
+      '    ) | | | |  ) / /_   ' \
+      '   / /| |_| | / / _ \   ' \
+      '  / /_|  _  |/ / (_) |  ' \
+      ' |____|\___/|____\___/  ' \
       '' \
       '✨ DOTFILES 2026 EDITION ✨' \
       'O Futuro do Desenvolvimento Já Chegou')
@@ -302,12 +302,12 @@ fi
 if [[ "$DRY_RUN" == false ]]; then
   if command -v "$GUM" &> /dev/null; then
     SUMMARY_BOX=$("$GUM" style \
-      --foreground "#f8f8f2" --border-foreground "#72f1b8" --border double \
-      --align left --width 60 --margin "1 2" --padding "1 2" \
+      --foreground "#f8f8f2" --border-foreground "#72f1b8" --border thick \
+      --align center --width 60 --margin "1 2" --padding "1 2" \
       "📋 $($GUM style --foreground "#fede5d" "Resumo da Instalação")" \
       "" \
-      "Perfil: $($GUM style --foreground "#36f9f6" "$PROFILE")" \
-      "Total de Módulos: $($GUM style --foreground "#ff7edb" "${#MODULES[@]}")")
+      "Perfil: $($GUM style --foreground "#36f9f6" --bold "$PROFILE")" \
+      "Total de Módulos: $($GUM style --foreground "#ff7edb" --bold "${#MODULES[@]}")")
     echo "$SUMMARY_BOX"
     echo ""
     if ! "$GUM" confirm \
@@ -377,9 +377,9 @@ if command -v "$GUM" &> /dev/null; then
       "Módulos com sucesso: $($GUM style --foreground "#72f1b8" "$SUCCESS_COUNT")" \
       "Módulos com falha: $($GUM style --foreground "#ff7edb" "$FAIL_COUNT")" \
       "" \
-    "A matrix foi atualizada e está pronta para uso." \
-    "Feche este terminal e abra um novo para carregar sua nova realidade." \
-    "" \
+      "🔮 $($GUM style --foreground "#fede5d" "A matrix foi atualizada e está pronta para uso.") 🔮" \
+      "Feche este terminal e abra um novo para carregar sua nova realidade." \
+      "" \
       "📂 $($GUM style --foreground "#bd93f9" "Logs salvos em: /tmp/setup-2026-*.log")")
   echo "$("$GUM" join --align center "$ART_BOX" "$TEXT_BOX")"
 else
