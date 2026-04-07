@@ -1642,3 +1642,48 @@ if ! command -v plandex &> /dev/null; then
 else
     echo -e "${c}plandex already installed.${r}"
 fi
+
+# --- THE VERY EDGE OF 2026 APPS ---
+
+# ChatGPT CLI
+if ! command -v chatgpt &> /dev/null; then
+    echo -e "${c}Installing chatgpt-cli...${r}"
+    if command -v npm &> /dev/null; then
+        sudo npm install -g chatgpt-cli
+    else
+        echo -e "${c}npm not found, skipping chatgpt-cli installation.${r}"
+    fi
+else
+    echo -e "${c}chatgpt-cli already installed.${r}"
+fi
+
+# Tldr (Fast tldr client in C)
+if ! command -v tldr &> /dev/null; then
+    echo -e "${c}Installing tldr...${r}"
+    sudo apt install -y tldr
+else
+    echo -e "${c}tldr already installed.${r}"
+fi
+
+# Httpstat (Curl statistics made simple)
+if ! command -v httpstat &> /dev/null; then
+    echo -e "${c}Installing httpstat...${r}"
+    pip3 install httpstat --break-system-packages 2>/dev/null || pip3 install httpstat
+else
+    echo -e "${c}httpstat already installed.${r}"
+fi
+
+# Tt (Typing test in terminal)
+install_go_package github.com/lemnos/tt@latest tt
+
+# Px (ps and top for Human Beings)
+if ! command -v px &> /dev/null; then
+    echo -e "${c}Installing px...${r}"
+    if command -v uv &> /dev/null; then
+        uv tool install px-command
+    else
+        pip3 install px-command --break-system-packages 2>/dev/null || pip3 install px-command
+    fi
+else
+    echo -e "${c}px already installed.${r}"
+fi
