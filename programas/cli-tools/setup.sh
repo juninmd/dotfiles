@@ -1679,7 +1679,11 @@ install_go_package github.com/lemnos/tt@latest tt
 # Px (ps and top for Human Beings)
 if ! command -v px &> /dev/null; then
     echo -e "${c}Installing px...${r}"
-    pip3 install px-command --break-system-packages 2>/dev/null || pip3 install px-command
+    if command -v uv &> /dev/null; then
+        uv tool install px-command
+    else
+        pip3 install px-command --break-system-packages 2>/dev/null || pip3 install px-command
+    fi
 else
     echo -e "${c}px already installed.${r}"
 fi
