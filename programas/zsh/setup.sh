@@ -356,6 +356,11 @@ if command -v zrok &> /dev/null; then alias tunnel-alt='zrok'; fi
 if command -v git-sim &> /dev/null; then alias gsim='git-sim'; fi
 if command -v charm &> /dev/null; then alias charm-tools='charm'; fi
 
+# --- Very New 2026 Apps ---
+if command -v sysz &> /dev/null; then alias sysctl-ui='sysz'; fi
+if command -v gojq &> /dev/null; then alias go-jq='gojq'; fi
+if command -v xsv &> /dev/null; then alias csv-fast='xsv'; fi
+
 # --- End Custom Configuration ---
 EOT
 fi
@@ -795,6 +800,18 @@ if command -v dotenvx &> /dev/null; then alias envx='dotenvx'; fi
 if command -v zrok &> /dev/null; then alias tunnel-alt='zrok'; fi
 if command -v git-sim &> /dev/null; then alias gsim='git-sim'; fi
 if command -v charm &> /dev/null; then alias charm-tools='charm'; fi
+EOT
+fi
+
+# Check if Very New 2026 Apps are present in .zshrc
+if ! grep -q "# --- Very New 2026 Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending Very New 2026 Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Very New 2026 Apps ---
+if command -v sysz &> /dev/null; then alias sysctl-ui='sysz'; fi
+if command -v gojq &> /dev/null; then alias go-jq='gojq'; fi
+if command -v xsv &> /dev/null; then alias csv-fast='xsv'; fi
 EOT
 fi
 
