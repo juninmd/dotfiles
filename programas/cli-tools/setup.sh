@@ -1687,3 +1687,23 @@ if ! command -v px &> /dev/null; then
 else
     echo -e "${c}px already installed.${r}"
 fi
+
+# --- BRAND NEW 2026 APPS ---
+
+# tlrc (Official tldr client in Rust)
+install_cargo_crate tlrc tldr
+
+# sysz (fzf terminal UI for systemctl)
+if ! command -v sysz &> /dev/null; then
+    echo -e "${c}Installing sysz...${r}"
+    sudo curl -sL https://raw.githubusercontent.com/joehillen/sysz/master/sysz -o /usr/local/bin/sysz
+    sudo chmod +x /usr/local/bin/sysz
+else
+    echo -e "${c}sysz already installed.${r}"
+fi
+
+# gojq (Pure Go implementation of jq)
+install_go_package github.com/itchyny/gojq/cmd/gojq@latest gojq
+
+# xsv (High performance CSV command line toolkit)
+install_cargo_crate xsv
