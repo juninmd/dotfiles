@@ -1696,7 +1696,7 @@ install_cargo_crate tlrc tldr
 # sysz (fzf terminal UI for systemctl)
 if ! command -v sysz &> /dev/null; then
     echo -e "${c}Installing sysz...${r}"
-    sudo curl -sL https://raw.githubusercontent.com/joehillen/sysz/master/sysz -o /usr/local/bin/sysz
+    curl -sL https://raw.githubusercontent.com/joehillen/sysz/master/sysz | sudo tee /usr/local/bin/sysz >/dev/null
     sudo chmod +x /usr/local/bin/sysz
 else
     echo -e "${c}sysz already installed.${r}"
