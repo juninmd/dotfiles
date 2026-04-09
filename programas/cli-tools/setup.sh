@@ -1707,3 +1707,20 @@ install_go_package github.com/itchyny/gojq/cmd/gojq@latest gojq
 
 # xsv (High performance CSV command line toolkit)
 install_cargo_crate xsv
+
+# Open-Interpreter (Let language models run code on your computer)
+if ! command -v interpreter &> /dev/null; then
+    echo -e "${c}Installing open-interpreter...${r}"
+    if command -v uv &> /dev/null; then
+        uv tool install open-interpreter
+    elif command -v pipx &> /dev/null; then
+        pipx install open-interpreter
+    else
+        pip3 install open-interpreter --break-system-packages 2>/dev/null || pip3 install open-interpreter
+    fi
+else
+    echo -e "${c}open-interpreter already installed.${r}"
+fi
+
+# Typst (A new markup-based typesetting system that is powerful and easy to learn)
+install_cargo_crate typst-cli typst

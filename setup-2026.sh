@@ -144,6 +144,7 @@ if [[ -z "$PROFILE" ]]; then
     HOST_INFO=${HOSTNAME:-$(hostname 2>/dev/null || echo "unknown")}
     SHELL_INFO=$(basename "${SHELL:-/bin/bash}")
     DATE_INFO=$(date '+%Y-%m-%d')
+    UPTIME_INFO=$(uptime -p 2>/dev/null || uptime | sed 's/.*up //; s/, [0-9]* user.*//')
     SYS_INFO=$("$GUM" style \
       --foreground "#f8f8f2" --border-foreground "#bd93f9" --border double \
       --align left --width 30 --margin "1 2" --padding "2 3" \
@@ -154,7 +155,8 @@ if [[ -z "$PROFILE" ]]; then
       "🖥️ OS:    $($GUM style --foreground "#ff7edb" "$OS_INFO")" \
       "⚙️ Arch:  $($GUM style --foreground "#36f9f6" "$ARCH_INFO")" \
       "🐚 Shell: $($GUM style --foreground "#fede5d" "$SHELL_INFO")" \
-      "📅 Date:  $($GUM style --foreground "#72f1b8" "$DATE_INFO")")
+      "📅 Date:  $($GUM style --foreground "#72f1b8" "$DATE_INFO")" \
+      "⏱️ Uptime: $($GUM style --foreground "#ff7edb" "$UPTIME_INFO")")
 
     "$GUM" join --vertical --align center "$HEADER" "$("$GUM" join --align center "$INFO" "$SYS_INFO")"
     echo ""
