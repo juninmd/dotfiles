@@ -144,7 +144,7 @@ if [[ -z "$PROFILE" ]]; then
     HOST_INFO=${HOSTNAME:-$(hostname 2>/dev/null || echo "unknown")}
     SHELL_INFO=$(basename "${SHELL:-/bin/bash}")
     DATE_INFO=$(date '+%Y-%m-%d')
-    UPTIME_INFO=$(uptime -p 2>/dev/null || uptime | awk '{print $3}' | sed 's/,//')
+    UPTIME_INFO=$(uptime -p 2>/dev/null || uptime | sed 's/.*up //; s/, [0-9]* user.*//')
     SYS_INFO=$("$GUM" style \
       --foreground "#f8f8f2" --border-foreground "#bd93f9" --border double \
       --align left --width 30 --margin "1 2" --padding "2 3" \
