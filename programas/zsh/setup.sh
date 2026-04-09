@@ -815,6 +815,17 @@ if command -v xsv &> /dev/null; then alias csv-fast='xsv'; fi
 EOT
 fi
 
+# Check if Next-Gen 2026 Apps are present in .zshrc
+if ! grep -q "# --- Next-Gen 2026 Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending Next-Gen 2026 Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Next-Gen 2026 Apps ---
+if command -v interpreter &> /dev/null; then alias oi='interpreter'; fi
+if command -v typst &> /dev/null; then alias docs='typst'; fi
+EOT
+fi
+
 # Update zoxide to use cd alias if present in existing config
 sed -i 's/eval "$(zoxide init zsh)"/eval "$(zoxide init zsh --cmd cd)"/' "$ZSHRC"
 
