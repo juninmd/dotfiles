@@ -1728,33 +1728,13 @@ install_cargo_crate typst-cli typst
 # --- ADVANCED SECURITY AND WEB TOOLS ---
 
 # TruffleHog (Secrets Scanner)
-if ! command -v trufflehog &> /dev/null; then
-    echo -e "${c}Installing trufflehog...${r}"
-    install_go_package github.com/trufflesecurity/trufflehog/v3@latest trufflehog
-else
-    echo -e "${c}trufflehog already installed.${r}"
-fi
+install_go_package github.com/trufflesecurity/trufflehog/v3@latest trufflehog
 
 # Wuzz (Interactive CLI tool for HTTP requests)
-if ! command -v wuzz &> /dev/null; then
-    echo -e "${c}Installing wuzz...${r}"
-    install_go_package github.com/asciimoo/wuzz@latest wuzz
-else
-    echo -e "${c}wuzz already installed.${r}"
-fi
+install_go_package github.com/asciimoo/wuzz@latest wuzz
 
 # Httpx (Fast and multi-purpose HTTP toolkit)
-if ! command -v httpx &> /dev/null; then
-    echo -e "${c}Installing httpx...${r}"
-    install_go_package github.com/projectdiscovery/httpx/cmd/httpx@latest httpx
-else
-    echo -e "${c}httpx already installed.${r}"
-fi
+install_go_package github.com/projectdiscovery/httpx/cmd/httpx@latest httpx
 
 # Nuclei (Fast vulnerability scanner)
-if ! command -v nuclei &> /dev/null; then
-    echo -e "${c}Installing nuclei...${r}"
-    install_go_package github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest nuclei
-else
-    echo -e "${c}nuclei already installed.${r}"
-fi
+install_go_package github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest nuclei
