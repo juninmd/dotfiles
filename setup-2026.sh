@@ -169,16 +169,17 @@ if [[ -z "$PROFILE" ]]; then
       "Selecione o perfil de instalação para turbinar sua máquina:"
     echo ""
     PROFILE_CHOICE=$("$GUM" choose \
+      --height=20 \
       --cursor="🚀 " \
       --header="Escolha o seu nível de poder:" \
       --header.foreground="#ff7edb" \
       --cursor.foreground="#72f1b8" \
       --item.foreground="#f8f8f2" \
       --selected.foreground="#36f9f6" \
-      "minimal   - 🪶 Shell moderna, prompt limpo e editor básico (Rápido e direto)." \
-      "dev       - 🚀 minimal + Runtimes JS/Python, Docker e BD (Recomendado para Ninjas)." \
+      "minimal   - 🪶 Shell moderna, prompt limpo, e editor ultrarrápido. (Essencial)." \
+      "dev       - 🚀 minimal + Runtimes JS/Python, Docker e BD. (Recomendado para Ninjas)." \
       "full      - 🌌 dev + Apps extras de produtividade (Navegador, Slack, Android)." \
-      "ai-dev    - 🤖 minimal + Cursor, Zed, Warp e Apps de AI (Futuro).")
+      "ai-dev    - 🤖 minimal + Cursor, Zed, Warp e Apps de AI. (O Futuro Agora).")
     PROFILE=$(echo "$PROFILE_CHOICE" | awk '{print $1}')
   else
     read -rp "Escolha o perfil (minimal, dev, full, ai-dev) [full]: " PROFILE
@@ -210,22 +211,22 @@ log "Perfil selecionado: $PROFILE"
 
 # Human-readable descriptions for the modules
 declare -A MOD_DESC=(
-  ["android"]="📱 Android Studio & SDK"
-  ["bun"]="🥟 Bun JavaScript runtime"
-  ["cli-tools"]="🧰 Ferramentas CLI modernas (2026 apps)"
-  ["cursor"]="🤖 Cursor AI Code Editor"
-  ["firefox"]="🦊 Navegador Firefox"
-  ["lazydocker"]="🐳 LazyDocker TUI"
-  ["lazygit"]="🐙 LazyGit TUI"
-  ["mysql"]="🐬 MySQL Server & Client"
-  ["slack"]="💬 Slack Desktop"
-  ["starship"]="🚀 Starship Prompt"
-  ["vscode"]="💻 Visual Studio Code"
-  ["warp"]="⚡ Warp Terminal (AI & GPU)"
-  ["yazi"]="🦆 Yazi File Manager"
-  ["zed"]="💻 Zed Editor (Rust)"
-  ["zellij"]="🪟 Zellij Terminal Multiplexer"
-  ["zsh"]="🐚 Zsh shell e plugins"
+  ["android"]="📱 Android Studio & SDK (Plataforma Mobile)"
+  ["bun"]="🥟 Bun JavaScript runtime (Ultrarrápido)"
+  ["cli-tools"]="🧰 O Arsenal Definitivo 2026 (Ferramentas CLI)"
+  ["cursor"]="🤖 Cursor AI Code Editor (Futuro do código)"
+  ["firefox"]="🦊 Navegador Firefox (Otimizado)"
+  ["lazydocker"]="🐳 LazyDocker TUI (Contêineres com Estilo)"
+  ["lazygit"]="🐙 LazyGit TUI (Git feito certo)"
+  ["mysql"]="🐬 MySQL Server & Client (Bancos de Dados)"
+  ["slack"]="💬 Slack Desktop (Comunicação)"
+  ["starship"]="🚀 Starship Prompt (Synthwave '84 ativado)"
+  ["vscode"]="💻 Visual Studio Code (Setup Moderno)"
+  ["warp"]="⚡ Warp Terminal (AI & GPU Acelerado)"
+  ["yazi"]="🦆 Yazi File Manager (Arquivos na velocidade da luz)"
+  ["zed"]="💻 Zed Editor (Escrito em Rust)"
+  ["zellij"]="🪟 Zellij Terminal Multiplexer (Workspace Moderno)"
+  ["zsh"]="🐚 Zsh shell e plugins (Hiper-produtividade)"
 )
 
 # Get all available modules
@@ -265,7 +266,7 @@ if command -v "$GUM" &> /dev/null; then
 
   # Interactive selection
   SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="👉 " \
-    --height=15 \
+    --height=20 \
     --selected="${DEFAULTS}" \
     --selected.foreground="#36f9f6" \
     --cursor.foreground="#ff7edb" \
