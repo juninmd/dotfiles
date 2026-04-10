@@ -1724,3 +1724,17 @@ fi
 
 # Typst (A new markup-based typesetting system that is powerful and easy to learn)
 install_cargo_crate typst-cli typst
+
+# --- ADVANCED SECURITY AND WEB TOOLS ---
+
+# TruffleHog (Secrets Scanner)
+install_go_package github.com/trufflesecurity/trufflehog/v3@latest trufflehog
+
+# Wuzz (Interactive CLI tool for HTTP requests)
+install_go_package github.com/asciimoo/wuzz@latest wuzz
+
+# Httpx (Fast and multi-purpose HTTP toolkit)
+install_go_package github.com/projectdiscovery/httpx/cmd/httpx@latest httpx
+
+# Nuclei (Fast vulnerability scanner)
+install_go_package github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest nuclei

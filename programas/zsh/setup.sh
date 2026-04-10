@@ -823,6 +823,13 @@ if ! grep -q "# --- Next-Gen 2026 Apps ---" "$ZSHRC"; then
 # --- Next-Gen 2026 Apps ---
 if command -v interpreter &> /dev/null; then alias oi='interpreter'; fi
 if command -v typst &> /dev/null; then alias docs='typst'; fi
+if command -v trufflehog &> /dev/null; then alias secrets='trufflehog'; fi
+if command -v wuzz &> /dev/null; then alias req='wuzz'; fi
+if command -v nuclei &> /dev/null; then alias scan-web='nuclei'; fi
+if command -v httpx &> /dev/null; then alias req-fast='httpx'; fi
+if command -v mods &> /dev/null; then alias ai-cmd='mods'; fi
+if command -v navi &> /dev/null; then alias help='navi'; fi
+if command -v dust &> /dev/null; then alias du2='dust'; fi
 EOT
 fi
 
