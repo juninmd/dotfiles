@@ -118,13 +118,11 @@ if [[ -z "$PROFILE" ]]; then
     clear
     HEADER=$("$GUM" style \
       --foreground "#ff7edb" --border-foreground "#bd93f9" --border double \
-      --align center --width 60 --margin "1 2" --padding "1 2" \
-      '  ___   ___  ___   __   ' \
-      ' |__ \ / _ \|__ \ / /   ' \
-      '    ) | | | |  ) / /_   ' \
-      '   / /| |_| | / / _ \   ' \
-      '  / /_|  _  |/ / (_) |  ' \
-      ' |____|\___/|____\___/  ' \
+      --align center --width 80 --margin "1 2" --padding "1 2" \
+      '                 ___ ___ ___   ___      ___ ___ _____ _   _ ___                 ' \
+      '               |_  )   \_  ) / __|___ / __| __|_   _| | | | _ \                 ' \
+      '                 / / () / / | __ \___|\__ \ _|  | | | |_| |  _/                 ' \
+      '                 /___|__/___| \___/    |___/___| |_|  \___/|_|                  ' \
       '' \
       '✨ DOTFILES 2026 EDITION ✨' \
       'O Futuro do Desenvolvimento Já Chegou')
@@ -132,11 +130,11 @@ if [[ -z "$PROFILE" ]]; then
     INFO=$("$GUM" style \
       --foreground "#36f9f6" --border-foreground "#ff7edb" --border rounded \
       --align left --width 40 --margin "1 2" --padding "2 3" \
-      '👾 THE ULTIMATE SYNTHWAVE EXPERIENCE' \
+      '👾 WELCOME TO THE ULTIMATE SYNTHWAVE EXPERIENCE' \
       '' \
-      '🚀 Hipervelocidade pronta...' \
+      '🚀 Hipervelocidade engatada...' \
       '⚡ Injetando código na matrix...' \
-      '🔮 Bem-vindo à nova era.')
+      '🔮 O Futuro Agora.')
 
     OS_INFO=$(uname -s)
     ARCH_INFO=$(uname -m)

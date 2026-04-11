@@ -1738,3 +1738,54 @@ install_go_package github.com/projectdiscovery/httpx/cmd/httpx@latest httpx
 
 # Nuclei (Fast vulnerability scanner)
 install_go_package github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest nuclei
+
+# --- MORE USEFUL 2026 APPS ---
+
+# Dagger (Programmable CI/CD engine)
+if ! command -v dagger &> /dev/null; then
+    echo -e "${c}Installing dagger...${r}"
+    curl -fsSL https://dl.dagger.io/dagger/install.sh | sudo sh
+else
+    echo -e "${c}dagger already installed.${r}"
+fi
+
+# Steampipe (Select * from cloud)
+if ! command -v steampipe &> /dev/null; then
+    echo -e "${c}Installing steampipe...${r}"
+    sudo /bin/sh -c "$(curl -fsSL https://steampipe.io/install/steampipe.sh)"
+else
+    echo -e "${c}steampipe already installed.${r}"
+fi
+
+# vcluster (Virtual Kubernetes clusters)
+if ! command -v vcluster &> /dev/null; then
+    echo -e "${c}Installing vcluster...${r}"
+    curl -L -o vcluster "https://github.com/loft-sh/vcluster/releases/download/v0.33.1/vcluster-linux-amd64" && sudo install -c -m 0755 vcluster /usr/local/bin && rm -f vcluster
+else
+    echo -e "${c}vcluster already installed.${r}"
+fi
+
+# Infracost (Cloud cost estimates)
+if ! command -v infracost &> /dev/null; then
+    echo -e "${c}Installing infracost...${r}"
+    curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sudo sh
+else
+    echo -e "${c}infracost already installed.${r}"
+fi
+
+# Vegeta (HTTP load testing)
+install_go_package github.com/tsenart/vegeta@latest vegeta
+
+# Lefthook (Git hooks manager)
+install_go_package github.com/evilmartians/lefthook@latest lefthook
+
+# howdoi (Instant coding answers)
+if ! command -v howdoi &> /dev/null; then
+    echo -e "${c}Installing howdoi...${r}"
+    pip3 install howdoi --break-system-packages 2>/dev/null || pip3 install howdoi
+else
+    echo -e "${c}howdoi already installed.${r}"
+fi
+
+# dotenv-linter (Linter for .env files)
+install_cargo_crate dotenv-linter

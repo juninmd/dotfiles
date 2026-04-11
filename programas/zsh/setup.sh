@@ -830,6 +830,10 @@ if command -v httpx &> /dev/null; then alias req-fast='httpx'; fi
 if command -v mods &> /dev/null; then alias ai-cmd='mods'; fi
 if command -v navi &> /dev/null; then alias help='navi'; fi
 if command -v dust &> /dev/null; then alias du2='dust'; fi
+if command -v vegeta &> /dev/null; then alias loadtest-http='vegeta'; fi
+if command -v howdoi &> /dev/null; then alias answers='howdoi'; fi
+if command -v dotenv-linter &> /dev/null; then alias lint-env='dotenv-linter'; fi
+if command -v infracost &> /dev/null; then alias cost='infracost'; fi
 EOT
 fi
 
