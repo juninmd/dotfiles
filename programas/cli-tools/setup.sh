@@ -1760,7 +1760,7 @@ fi
 # vcluster (Virtual Kubernetes clusters)
 if ! command -v vcluster &> /dev/null; then
     echo -e "${c}Installing vcluster...${r}"
-    curl -L -o vcluster "https://github.com/loft-sh/vcluster/releases/download/v0.33.1/vcluster-linux-amd64" && sudo install -c -m 0755 vcluster /usr/local/bin && rm -f vcluster
+    sudo eget loft-sh/vcluster --to /usr/local/bin/vcluster
 else
     echo -e "${c}vcluster already installed.${r}"
 fi
@@ -1782,7 +1782,11 @@ install_go_package github.com/evilmartians/lefthook@latest lefthook
 # howdoi (Instant coding answers)
 if ! command -v howdoi &> /dev/null; then
     echo -e "${c}Installing howdoi...${r}"
-    pip3 install howdoi --break-system-packages 2>/dev/null || pip3 install howdoi
+    if command -v uv &> /dev/null; then
+        uv tool install howdoi
+    else
+        pip3 install howdoi --break-system-packages 2>/dev/null || pip3 install howdoi
+    fi
 else
     echo -e "${c}howdoi already installed.${r}"
 fi
