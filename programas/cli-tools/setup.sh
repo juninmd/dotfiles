@@ -1589,6 +1589,96 @@ else
     echo -e "${c}bat-extras already installed.${r}"
 fi
 
+
+# --- 2026 NEXT-GEN CLOUD & DEV TOOLS ---
+
+# GHQ (Remote repository manager)
+install_go_package github.com/x-motemen/ghq@latest ghq
+
+# Termdbms (Database TUI)
+install_go_package github.com/mathaou/termdbms@latest termdbms
+
+# Jira-CLI (Jira in terminal)
+install_go_package github.com/ankitpokhrel/jira-cli/cmd/jira@latest jira
+
+# Supabase CLI
+install_go_package github.com/supabase/cli@latest supabase
+
+# Atlas (Database migrations)
+if ! command -v atlas &> /dev/null; then
+    echo -e "${c}Installing atlas...${r}"
+    curl -sSf https://atlasgo.sh | /usr/bin/env bash
+else
+    echo -e "${c}atlas already installed.${r}"
+fi
+
+# Tilt (Microservices dev in K8s)
+if ! command -v tilt &> /dev/null; then
+    echo -e "${c}Installing tilt...${r}"
+    curl -fsSL https://raw.githubusercontent.com/tilt-dev/tilt/master/scripts/install.sh | /usr/bin/env bash
+else
+    echo -e "${c}tilt already installed.${r}"
+fi
+
+# Syft (SBOM generation)
+if ! command -v syft &> /dev/null; then
+    echo -e "${c}Installing syft...${r}"
+    curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | /usr/bin/env bash -s -- -b /usr/local/bin
+else
+    echo -e "${c}syft already installed.${r}"
+fi
+
+# Grype (Vulnerability scanner)
+if ! command -v grype &> /dev/null; then
+    echo -e "${c}Installing grype...${r}"
+    curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | /usr/bin/env bash -s -- -b /usr/local/bin
+else
+    echo -e "${c}grype already installed.${r}"
+fi
+
+# Grpcurl (cURL for gRPC)
+install_go_package github.com/fullstorydev/grpcurl/cmd/grpcurl@latest grpcurl
+
+# Evans (Interactive gRPC client)
+install_go_package github.com/ktr0731/evans@latest evans
+
+# Ko (Fast Go container builds)
+install_go_package github.com/google/ko@latest ko
+
+# Crane (Interact with remote images)
+install_go_package github.com/google/go-containerregistry/cmd/crane@latest crane
+
+# Checkov (IaC static analysis)
+if ! command -v checkov &> /dev/null; then
+    echo -e "${c}Installing checkov...${r}"
+    pip3 install checkov --break-system-packages 2>/dev/null || pip3 install checkov
+else
+    echo -e "${c}checkov already installed.${r}"
+fi
+
+# Tfsec (Terraform security scanner)
+install_go_package github.com/aquasecurity/tfsec/cmd/tfsec@latest tfsec
+
+# Git-filter-repo (Git history rewriting)
+if ! command -v git-filter-repo &> /dev/null; then
+    echo -e "${c}Installing git-filter-repo...${r}"
+    pip3 install git-filter-repo --break-system-packages 2>/dev/null || pip3 install git-filter-repo
+else
+    echo -e "${c}git-filter-repo already installed.${r}"
+fi
+
+# Spotify-TUI (Spotify client in terminal)
+install_cargo_crate spotify-tui spt
+
+# Tin-summer (Find build artifacts)
+install_cargo_crate tin-summer sn
+
+# Skim (Fuzzy finder in rust)
+install_cargo_crate skim sk
+
+# lf (Fast terminal file manager)
+install_go_package github.com/gokcehan/lf@latest lf
+
 echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"
 # --- BEYOND 2026 APPS ---
 
