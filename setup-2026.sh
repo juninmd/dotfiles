@@ -117,24 +117,26 @@ if [[ -z "$PROFILE" ]]; then
   if command -v "$GUM" &> /dev/null; then
     clear
     HEADER=$("$GUM" style \
-      --foreground "#ff7edb" --border-foreground "#bd93f9" --border double \
-      --align center --width 80 --margin "1 2" --padding "1 2" \
-      '                 ___ ___ ___   ___      ___ ___ _____ _   _ ___                 ' \
-      '               |_  )   \_  ) / __|___ / __| __|_   _| | | | _ \                 ' \
-      '                 / / () / / | __ \___|\__ \ _|  | | | |_| |  _/                 ' \
-      '                 /___|__/___| \___/    |___/___| |_|  \___/|_|                  ' \
+      --foreground "#ff7edb" --border-foreground "#36f9f6" --border double \
+      --align center --width 80 --margin "1 2" --padding "2 4" \
+      '██████╗  ██████╗ ██████╗  ██████╗ ' \
+      '╚════██╗██╔═████╗╚════██╗██╔════╝ ' \
+      ' █████╔╝██║██╔██║ █████╔╝███████╗ ' \
+      '██╔═══╝ ████╔╝██║██╔═══╝ ██╔═══██╗' \
+      '███████╗╚██████╔╝███████╗╚██████╔╝' \
+      '╚══════╝ ╚═════╝ ╚══════╝ ╚═════╝ ' \
       '' \
       '✨ DOTFILES 2026 EDITION ✨' \
       'O Futuro do Desenvolvimento Já Chegou')
 
     INFO=$("$GUM" style \
       --foreground "#36f9f6" --border-foreground "#ff7edb" --border rounded \
-      --align left --width 40 --margin "1 2" --padding "2 3" \
-      '👾 WELCOME TO THE ULTIMATE SYNTHWAVE EXPERIENCE' \
+      --align left --width 40 --margin "1 2" --padding "2 4" \
+      '🌌 WELCOME TO THE ULTIMATE SYNTHWAVE EXPERIENCE' \
       '' \
       '🚀 Hipervelocidade engatada...' \
       '⚡ Injetando código na matrix...' \
-      '🔮 O Futuro Agora.')
+      '✨ O Futuro Agora.')
 
     OS_INFO=$(uname -s)
     ARCH_INFO=$(uname -m)
@@ -156,7 +158,7 @@ if [[ -z "$PROFILE" ]]; then
       "📅 Date:  $($GUM style --foreground "#72f1b8" "$DATE_INFO")" \
       "⏱️ Uptime: $($GUM style --foreground "#ff7edb" "$UPTIME_INFO")")
 
-    "$GUM" join --vertical --align center "$HEADER" "$("$GUM" join --align center "$INFO" "$SYS_INFO")"
+    "$GUM" join --vertical --align center "$HEADER" "$("$GUM" join --horizontal --align center "$INFO" "$SYS_INFO")"
     echo ""
 
     "$GUM" style \
@@ -305,8 +307,8 @@ fi
 if [[ "$DRY_RUN" == false ]]; then
   if command -v "$GUM" &> /dev/null; then
     SUMMARY_BOX=$("$GUM" style \
-      --foreground "#f8f8f2" --border-foreground "#72f1b8" --border thick \
-      --align center --width 60 --margin "1 2" --padding "1 2" \
+      --foreground "#f8f8f2" --border-foreground "#72f1b8" --border double \
+      --align center --width 60 --margin "1 2" --padding "2 3" \
       "📋 $($GUM style --foreground "#fede5d" "Resumo da Instalação")" \
       "" \
       "Perfil: $($GUM style --foreground "#36f9f6" --bold "$PROFILE")" \
@@ -372,7 +374,7 @@ if command -v "$GUM" &> /dev/null; then
     '👾 2026')
   TEXT_BOX=$("$GUM" style \
       --foreground "#f8f8f2" --background "#282a36" --border-foreground "#ff7edb" \
-    --border thick --align center --width 65 --margin "1 2" --padding "1 2" \
+    --border double --align center --width 65 --margin "1 2" --padding "2 3" \
       "🚀 $($GUM style --foreground "#36f9f6" "TRANSMISSÃO CONCLUÍDA!") 🛸" \
       "Perfil $($GUM style --foreground "#282a36" --background "#72f1b8" " $PROFILE ") ativado com sucesso!" \
       "Tempo total de salto: $($GUM style --foreground "#fede5d" "${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s")" \
