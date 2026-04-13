@@ -1891,3 +1891,27 @@ fi
 
 # dotenv-linter (Linter for .env files)
 install_cargo_crate dotenv-linter
+
+# Aider-chat (AI pair programming)
+if ! command -v aider &> /dev/null; then
+    echo -e "${c}Installing aider-chat...${r}"
+    if command -v pipx &> /dev/null; then
+        pipx install aider-chat
+    else
+        pip3 install aider-chat --break-system-packages 2>/dev/null || pip3 install aider-chat
+    fi
+else
+    echo -e "${c}aider-chat already installed.${r}"
+fi
+
+# Shell-GPT (ChatGPT from terminal)
+if ! command -v sgpt &> /dev/null; then
+    echo -e "${c}Installing shell-gpt...${r}"
+    if command -v pipx &> /dev/null; then
+        pipx install shell-gpt
+    else
+        pip3 install shell-gpt --break-system-packages 2>/dev/null || pip3 install shell-gpt
+    fi
+else
+    echo -e "${c}shell-gpt already installed.${r}"
+fi

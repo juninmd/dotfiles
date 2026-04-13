@@ -259,8 +259,8 @@ if command -v ugrep &> /dev/null; then alias ug='ugrep'; fi
 if command -v termscp &> /dev/null; then alias scp-ui='termscp'; fi
 if command -v lychee &> /dev/null; then alias links='lychee'; fi
 if command -v bluetuith &> /dev/null; then alias bt-ui='bluetuith'; fi
-if command -v czg &> /dev/null; then alias cz='czg'; fi
-if command -v batman &> /dev/null; then alias manb='batman'; fi
+if command -v czg &> /dev/null; then alias c='czg'; fi
+if command -v batman &> /dev/null; then alias man='batman'; fi
 
 # --- Extra 2026 Apps ---
 if command -v kdash &> /dev/null; then alias kdash='kdash'; fi
@@ -736,8 +736,8 @@ if command -v ugrep &> /dev/null; then alias ug='ugrep'; fi
 if command -v termscp &> /dev/null; then alias scp-ui='termscp'; fi
 if command -v lychee &> /dev/null; then alias links='lychee'; fi
 if command -v bluetuith &> /dev/null; then alias bt-ui='bluetuith'; fi
-if command -v czg &> /dev/null; then alias cz='czg'; fi
-if command -v batman &> /dev/null; then alias manb='batman'; fi
+if command -v czg &> /dev/null; then alias c='czg'; fi
+if command -v batman &> /dev/null; then alias man='batman'; fi
 EOT
 fi
 
@@ -841,3 +841,13 @@ fi
 sed -i 's/eval "$(zoxide init zsh)"/eval "$(zoxide init zsh --cmd cd)"/' "$ZSHRC"
 
 echo -e "${c}Zsh configured! Please restart your terminal or run 'source ~/.zshrc'.${r}"
+
+# Check if Very Useful 2026 Apps are present in .zshrc
+if ! grep -q "# --- Very Useful 2026 Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending Very Useful 2026 Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Very Useful 2026 Apps ---
+if command -v sgpt &> /dev/null; then alias chatgpt='sgpt'; fi
+EOT
+fi
