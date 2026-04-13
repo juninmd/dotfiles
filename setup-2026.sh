@@ -321,7 +321,7 @@ if [[ "$DRY_RUN" == false ]]; then
       --unselected.foreground "#f8f8f2" \
       --selected.background "#72f1b8" \
       --selected.foreground "#282a36" \
-      --affirmative "🚀 Let's Go!" \
+      --affirmative "🚀 Vamos lá!" \
       --negative "🛑 Cancelar" \
       "⚠️ Atenção: Pronto para dar o salto hiperespacial e reescrever sua realidade?"; then
       log "Instalação cancelada pelo usuário."
