@@ -858,9 +858,8 @@ if ! grep -q "# --- Ultimate 2026 Apps ---" "$ZSHRC"; then
     cat <<EOT >> $ZSHRC
 
 # --- Ultimate 2026 Apps ---
-if command -v cbonsai &> /dev/null; then alias zen='cbonsai -l -i'; fi
+if command -v cbonsai &> /dev/null; then alias bonsai='cbonsai -l -i'; fi
 if command -v pipes.sh &> /dev/null; then alias screensaver='pipes.sh -p 5'; fi
 if command -v dsq &> /dev/null; then alias sql-data='dsq'; fi
-if command -v mprocs &> /dev/null; then alias tasks='mprocs'; fi
 EOT
 fi
