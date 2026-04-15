@@ -162,15 +162,15 @@ if [[ -z "$PROFILE" ]]; then
     echo ""
 
     "$GUM" style \
-      --foreground "#fede5d" \
-      --border rounded --border-foreground "#ff7edb" \
+      --foreground "#fede5d" --bold \
+      --border double --border-foreground "#ff7edb" \
       --padding "1 2" --margin "1 0" --align center --width 100 \
       "🌐 Iniciando Protocolo de Setup 2026 🌐" \
       "Selecione o perfil de instalação para turbinar sua máquina:"
     echo ""
     PROFILE_CHOICE=$("$GUM" choose \
       --height=20 \
-      --cursor="🚀 " \
+      --cursor="🛸 " \
       --header="Escolha o seu nível de poder:" \
       --header.foreground="#ff7edb" \
       --cursor.foreground="#72f1b8" \
@@ -192,13 +192,13 @@ case "$PROFILE" in
     DEFAULT_MODULES=(cli-tools zsh starship vscode)
     ;;
   dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi)
+    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker)
     ;;
   full)
-    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android)
+    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian)
     ;;
   ai-dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi)
+    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -211,6 +211,12 @@ log "Perfil selecionado: $PROFILE"
 
 # Human-readable descriptions for the modules
 declare -A MOD_DESC=(
+  ["ghostty"]="👻 Ghostty (Emulador de Terminal Ultrarrápido)"
+  ["obsidian"]="📓 Obsidian (Second Brain & Notas)"
+  ["neovim"]="📝 Neovim (Editor de texto avançado)"
+  ["brave"]="🦁 Brave (Navegador focado em privacidade)"
+  ["discord"]="🎮 Discord (Comunicação de voz e texto)"
+  ["docker"]="🐳 Docker Engine (Contêineres)"
   ["android"]="📱 Android Studio & SDK (Plataforma Mobile)"
   ["bun"]="🥟 Bun JavaScript runtime (Ultrarrápido)"
   ["cli-tools"]="🧰 O Arsenal Definitivo 2026 (Ferramentas CLI)"
@@ -242,8 +248,8 @@ done
 if command -v "$GUM" &> /dev/null; then
   echo ""
   "$GUM" style \
-    --foreground "#fede5d" \
-    --border rounded --border-foreground "#ff7edb" \
+    --foreground "#fede5d" --bold \
+    --border double --border-foreground "#ff7edb" \
     --padding "1 2" --margin "1 0" --align center --width 80 \
     "Selecione os módulos que deseja instalar:" \
     "(Use Espaço para marcar/desmarcar, Enter para confirmar)"
@@ -265,7 +271,7 @@ if command -v "$GUM" &> /dev/null; then
   DEFAULTS=$(IFS=,; echo "${DEFAULTS_DESC[*]}")
 
   # Interactive selection
-  SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="👉 " \
+  SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="✨ " \
     --height=20 \
     --selected="${DEFAULTS}" \
     --selected.foreground="#36f9f6" \
@@ -291,7 +297,7 @@ if command -v "$GUM" &> /dev/null; then
       MOD_LIST+="  $($GUM style --foreground "#ff7edb" "•") $($GUM style --foreground "#fede5d" "$mod") $($GUM style --foreground "#6272a4" "($desc)")"$'\n'
     fi
   done
-  echo -e "$MOD_LIST" | "$GUM" style --border rounded --margin "0 2" --padding "1 2" --border-foreground "#ff7edb"
+  echo -e "$MOD_LIST" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#ff7edb"
   echo ""
 else
   MODULES=("${DEFAULT_MODULES[@]}")
