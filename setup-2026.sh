@@ -74,7 +74,7 @@ run_module() {
     SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
   else
     if command -v "$GUM" &> /dev/null; then
-      if "$GUM" spin --spinner globe --spinner.foreground "#ff7edb" --title "$($GUM style --foreground "#72f1b8" "$progress_prefix Executando módulo: $module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"; then
+      if "$GUM" spin --spinner points --spinner.foreground "#36f9f6" --title "$($GUM style --foreground "#fede5d" "$progress_prefix Iniciando salto quântico:") $($GUM style --foreground "#ff7edb" "$module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"; then
         echo "$($GUM style --foreground "#72f1b8" "✔") $($GUM style --foreground "#f8f8f2" "$progress_prefix Módulo") $($GUM style --foreground "#fede5d" "$module") $($GUM style --foreground "#f8f8f2" "instalado com sucesso!")"
         SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
       else
@@ -126,17 +126,17 @@ if [[ -z "$PROFILE" ]]; then
       '███████╗╚██████╔╝███████╗╚██████╔╝' \
       '╚══════╝ ╚═════╝ ╚══════╝ ╚═════╝ ' \
       '' \
-      '✨ DOTFILES 2026 EDITION ✨' \
-      'O Futuro do Desenvolvimento Já Chegou')
+      "$($GUM style --foreground "#fede5d" --bold '✨ DOTFILES 2026 EDITION ✨')" \
+      "$($GUM style --foreground "#72f1b8" 'O Futuro do Desenvolvimento Já Chegou')")
 
     INFO=$("$GUM" style \
       --foreground "#36f9f6" --border-foreground "#ff7edb" --border rounded \
       --align left --width 40 --margin "1 2" --padding "2 4" \
-      '🌌 WELCOME TO THE ULTIMATE SYNTHWAVE EXPERIENCE' \
+      "$($GUM style --foreground "#bd93f9" --bold '🌌 WELCOME TO THE ULTIMATE SYNTHWAVE EXPERIENCE')" \
       '' \
-      '🚀 Hipervelocidade engatada...' \
-      '⚡ Injetando código na matrix...' \
-      '✨ O Futuro Agora.')
+      "$($GUM style --foreground "#ff7edb" '🚀 Hipervelocidade engatada...')" \
+      "$($GUM style --foreground "#fede5d" '⚡ Injetando código na matrix...')" \
+      "$($GUM style --foreground "#72f1b8" '✨ O Futuro Agora.')")
 
     OS_INFO=$(uname -s)
     ARCH_INFO=$(uname -m)

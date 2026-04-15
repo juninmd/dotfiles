@@ -851,3 +851,15 @@ if ! grep -q "# --- Very Useful 2026 Apps ---" "$ZSHRC"; then
 if command -v sgpt &> /dev/null; then alias chatgpt='sgpt'; fi
 EOT
 fi
+
+# Check if Ultimate 2026 Apps are present in .zshrc
+if ! grep -q "# --- Ultimate 2026 Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending Ultimate 2026 Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Ultimate 2026 Apps ---
+if command -v cbonsai &> /dev/null; then alias bonsai='cbonsai -l -i'; fi
+if command -v pipes.sh &> /dev/null; then alias screensaver='pipes.sh -p 5'; fi
+if command -v dsq &> /dev/null; then alias sql-data='dsq'; fi
+EOT
+fi

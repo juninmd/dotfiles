@@ -1915,3 +1915,27 @@ if ! command -v sgpt &> /dev/null; then
 else
     echo -e "${c}shell-gpt already installed.${r}"
 fi
+
+# --- ULTIMATE 2026 CLI APPS ---
+
+# dsq (Commandline tool for running SQL queries against JSON, CSV, Excel, Parquet, and more)
+install_go_package github.com/multiprocessio/dsq@latest dsq
+
+# cbonsai (Grow bonsai trees in your terminal)
+if ! command -v cbonsai &> /dev/null; then
+    echo -e "${c}Installing cbonsai...${r}"
+    sudo apt install -y cbonsai
+else
+    echo -e "${c}cbonsai already installed.${r}"
+fi
+
+# pipes-sh (Animated pipes terminal screensaver)
+if ! command -v pipes.sh &> /dev/null; then
+    echo -e "${c}Installing pipes-sh...${r}"
+    sudo apt install -y pipes-sh
+else
+    echo -e "${c}pipes-sh already installed.${r}"
+fi
+
+# mprocs (Run multiple commands in parallel)
+install_cargo_crate mprocs
