@@ -117,8 +117,10 @@ if [[ -z "$PROFILE" ]]; then
   if command -v "$GUM" &> /dev/null; then
     clear
     HEADER=$("$GUM" style \
-      --foreground "#ff7edb" --border-foreground "#36f9f6" --border double \
+      --foreground "#ff7edb" --border-foreground "#bd93f9" --border double \
       --align center --width 80 --margin "1 2" --padding "2 4" \
+      ' ▂▃▄▅▆▇█▓▒░ DOTFILES 2026 ░▒▓█▇▆▅▄▃▂ ' \
+      '' \
       '██████╗  ██████╗ ██████╗  ██████╗ ' \
       '╚════██╗██╔═████╗╚════██╗██╔════╝ ' \
       ' █████╔╝██║██╔██║ █████╔╝███████╗ ' \
@@ -126,17 +128,18 @@ if [[ -z "$PROFILE" ]]; then
       '███████╗╚██████╔╝███████╗╚██████╔╝' \
       '╚══════╝ ╚═════╝ ╚══════╝ ╚═════╝ ' \
       '' \
-      "$($GUM style --foreground "#fede5d" --bold '✨ DOTFILES 2026 EDITION ✨')" \
+      "$($GUM style --foreground "#36f9f6" --bold '✨ THE ULTIMATE SYNTHWAVE EXPERIENCE ✨')" \
       "$($GUM style --foreground "#72f1b8" 'O Futuro do Desenvolvimento Já Chegou')")
 
     INFO=$("$GUM" style \
       --foreground "#36f9f6" --border-foreground "#ff7edb" --border rounded \
       --align left --width 40 --margin "1 2" --padding "2 4" \
-      "$($GUM style --foreground "#bd93f9" --bold '🌌 WELCOME TO THE ULTIMATE SYNTHWAVE EXPERIENCE')" \
+      "$($GUM style --foreground "#bd93f9" --bold '🌌 BEM-VINDO AO ANO 2026')" \
       '' \
       "$($GUM style --foreground "#ff7edb" '🚀 Hipervelocidade engatada...')" \
       "$($GUM style --foreground "#fede5d" '⚡ Injetando código na matrix...')" \
-      "$($GUM style --foreground "#72f1b8" '✨ O Futuro Agora.')")
+      "$($GUM style --foreground "#72f1b8" '✨ O Futuro Agora.')" \
+      "$($GUM style --foreground "#36f9f6" '🤖 Sistemas AI online.')")
 
     OS_INFO=$(uname -s)
     ARCH_INFO=$(uname -m)
@@ -192,13 +195,13 @@ case "$PROFILE" in
     DEFAULT_MODULES=(cli-tools zsh starship vscode)
     ;;
   dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker)
+    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv)
     ;;
   full)
-    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian)
+    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv)
     ;;
   ai-dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker)
+    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -211,8 +214,11 @@ log "Perfil selecionado: $PROFILE"
 
 # Human-readable descriptions for the modules
 declare -A MOD_DESC=(
+  ["claude-code"]="🤖 Claude Code (AI Assistant CLI da Anthropic)"
   ["ghostty"]="👻 Ghostty (Emulador de Terminal Ultrarrápido)"
   ["obsidian"]="📓 Obsidian (Second Brain & Notas)"
+  ["ollama"]="🦙 Ollama (Rode LLMs localmente)"
+  ["uv"]="🐍 uv (Gerenciador Python ultrarrápido em Rust)"
   ["neovim"]="📝 Neovim (Editor de texto avançado)"
   ["brave"]="🦁 Brave (Navegador focado em privacidade)"
   ["discord"]="🎮 Discord (Comunicação de voz e texto)"
@@ -313,7 +319,7 @@ fi
 if [[ "$DRY_RUN" == false ]]; then
   if command -v "$GUM" &> /dev/null; then
     SUMMARY_BOX=$("$GUM" style \
-      --foreground "#f8f8f2" --border-foreground "#72f1b8" --border double \
+      --foreground "#f8f8f2" --border-foreground "#bd93f9" --border double \
       --align center --width 60 --margin "1 2" --padding "2 3" \
       "📋 $($GUM style --foreground "#fede5d" "Resumo da Instalação")" \
       "" \
