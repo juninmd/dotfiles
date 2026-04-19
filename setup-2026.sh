@@ -74,7 +74,7 @@ run_module() {
     SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
   else
     if command -v "$GUM" &> /dev/null; then
-      if "$GUM" spin --spinner points --spinner.foreground "#36f9f6" --title "$($GUM style --foreground "#fede5d" "$progress_prefix Iniciando salto quântico:") $($GUM style --foreground "#ff7edb" "$module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"; then
+      if "$GUM" spin --spinner globe --spinner.foreground "#36f9f6" --title "$($GUM style --foreground "#fede5d" "$progress_prefix Iniciando salto quântico:") $($GUM style --foreground "#ff7edb" "$module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"; then
         echo "$($GUM style --foreground "#72f1b8" "✔") $($GUM style --foreground "#f8f8f2" "$progress_prefix Módulo") $($GUM style --foreground "#fede5d" "$module") $($GUM style --foreground "#f8f8f2" "instalado com sucesso!")"
         SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
       else
@@ -319,12 +319,12 @@ fi
 if [[ "$DRY_RUN" == false ]]; then
   if command -v "$GUM" &> /dev/null; then
     SUMMARY_BOX=$("$GUM" style \
-      --foreground "#f8f8f2" --border-foreground "#bd93f9" --border double \
-      --align center --width 60 --margin "1 2" --padding "2 3" \
-      "📋 $($GUM style --foreground "#fede5d" "Resumo da Instalação")" \
+      --foreground "#f8f8f2" --border-foreground "#ff7edb" --border double \
+      --align center --width 65 --margin "2 2" --padding "2 4" \
+      "🚀 $($GUM style --foreground "#fede5d" --bold "RESUMO DA INSTALAÇÃO") 🚀" \
       "" \
       "Perfil: $($GUM style --foreground "#36f9f6" --bold "$PROFILE")" \
-      "Total de Módulos: $($GUM style --foreground "#ff7edb" --bold "${#MODULES[@]}")")
+      "Total de Módulos: $($GUM style --foreground "#72f1b8" --bold "${#MODULES[@]}")")
     echo "$SUMMARY_BOX"
     echo ""
     if ! "$GUM" confirm \
@@ -381,14 +381,18 @@ ELAPSED_SECONDS=$(($ELAPSED_TIME % 60))
 
 if command -v "$GUM" &> /dev/null; then
   ART_BOX=$("$GUM" style \
-    --foreground "#ff7edb" --border double --border-foreground "#bd93f9" \
+    --foreground "#36f9f6" --border double --border-foreground "#ff7edb" \
     --padding "2 4" --margin "1 2" --align center \
-    ' 🛸 ' 'SYS' ' OK ' \
-    '' \
-    '👾 2026')
+    '   _____ __  __   __   ' \
+    '  / ___// / / /  / /   ' \
+    '  \__ \/ /_/ /  / /    ' \
+    ' ___/ / __  /  / /___  ' \
+    '/____/_/ /_/  /_____/  ' \
+    '                       ' \
+    '    ⚡ 2026 ⚡     ')
   TEXT_BOX=$("$GUM" style \
-      --foreground "#f8f8f2" --background "#282a36" --border-foreground "#ff7edb" \
-    --border double --align center --width 65 --margin "1 2" --padding "2 3" \
+      --foreground "#f8f8f2" --background "#282a36" --border-foreground "#bd93f9" \
+    --border double --align center --width 75 --margin "1 2" --padding "2 3" \
       "🚀 $($GUM style --foreground "#36f9f6" "TRANSMISSÃO CONCLUÍDA!") 🛸" \
       "Perfil $($GUM style --foreground "#282a36" --background "#72f1b8" " $PROFILE ") ativado com sucesso!" \
       "Tempo total de salto: $($GUM style --foreground "#fede5d" "${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s")" \
