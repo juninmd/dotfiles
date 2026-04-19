@@ -346,6 +346,9 @@ if command -v gh &> /dev/null && gh dash --help &> /dev/null; then alias ghd='gh
 if command -v fnm &> /dev/null; then eval "\$(fnm env --use-on-cd)"; fi
 if command -v pnpm &> /dev/null; then alias npm-fast='pnpm'; fi
 if command -v k3d &> /dev/null; then alias k8s-docker='k3d'; fi
+if command -v lazydocker &> /dev/null; then alias ld='lazydocker'; fi
+if command -v lazygit &> /dev/null; then alias lg='lazygit'; fi
+if command -v k9s &> /dev/null; then alias k9s='k9s'; fi
 if command -v helm &> /dev/null; then alias k8s-pkg='helm'; fi
 if command -v kustomize &> /dev/null; then alias k8s-config='kustomize'; fi
 if command -v ngrok &> /dev/null; then alias proxy='ngrok'; fi
@@ -731,6 +734,9 @@ if ! grep -q "# --- Brand New 2026 Apps ---" "$ZSHRC"; then
     cat <<EOT >> $ZSHRC
 
 # --- Brand New 2026 Apps ---
+if command -v bottom &> /dev/null; then alias btm='bottom'; fi
+if command -v xh &> /dev/null; then alias req='xh'; fi
+if command -v httpie &> /dev/null; then alias http='httpie'; fi
 if command -v kalker &> /dev/null; then alias calc2='kalker'; fi
 if command -v ugrep &> /dev/null; then alias ug='ugrep'; fi
 if command -v termscp &> /dev/null; then alias scp-ui='termscp'; fi

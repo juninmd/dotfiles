@@ -1921,6 +1921,9 @@ fi
 # dsq (Commandline tool for running SQL queries against JSON, CSV, Excel, Parquet, and more)
 install_go_package github.com/multiprocessio/dsq@latest dsq
 
+# T-rec (Blazing fast terminal recorder)
+install_cargo_crate t-rec
+
 # cbonsai (Grow bonsai trees in your terminal)
 if ! command -v cbonsai &> /dev/null; then
     echo -e "${c}Installing cbonsai...${r}"
