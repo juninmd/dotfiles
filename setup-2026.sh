@@ -119,7 +119,7 @@ if [[ -z "$PROFILE" ]]; then
     HEADER=$("$GUM" style \
       --foreground "#ff7edb" --border-foreground "#bd93f9" --border double \
       --align center --width 80 --margin "1 2" --padding "2 4" \
-      ' ▂▃▄▅▆▇█▓▒░ DOTFILES 2026 ░▒▓█▇▆▅▄▃▂ ' \
+      ' ▂▃▄▅▆▇█▓▒░ NEXUS DOTFILES 2026 ░▒▓█▇▆▅▄▃▂ ' \
       '' \
       '██████╗  ██████╗ ██████╗  ██████╗ ' \
       '╚════██╗██╔═████╗╚════██╗██╔════╝ ' \
@@ -128,18 +128,18 @@ if [[ -z "$PROFILE" ]]; then
       '███████╗╚██████╔╝███████╗╚██████╔╝' \
       '╚══════╝ ╚═════╝ ╚══════╝ ╚═════╝ ' \
       '' \
-      "$($GUM style --foreground "#36f9f6" --bold '✨ THE ULTIMATE SYNTHWAVE EXPERIENCE ✨')" \
-      "$($GUM style --foreground "#72f1b8" 'O Futuro do Desenvolvimento Já Chegou')")
+      "$($GUM style --foreground "#36f9f6" --bold '⚡ THE ULTIMATE CYBERPUNK EXPERIENCE ⚡')" \
+      "$($GUM style --foreground "#72f1b8" 'A Matrix Foi Atualizada. O Futuro é Agora.')")
 
     INFO=$("$GUM" style \
       --foreground "#36f9f6" --border-foreground "#ff7edb" --border rounded \
       --align left --width 40 --margin "1 2" --padding "2 4" \
-      "$($GUM style --foreground "#bd93f9" --bold '🌌 BEM-VINDO AO ANO 2026')" \
+      "$($GUM style --foreground "#bd93f9" --bold '🌌 CONECTANDO AO NEXUS 2026')" \
       '' \
-      "$($GUM style --foreground "#ff7edb" '🚀 Hipervelocidade engatada...')" \
-      "$($GUM style --foreground "#fede5d" '⚡ Injetando código na matrix...')" \
-      "$($GUM style --foreground "#72f1b8" '✨ O Futuro Agora.')" \
-      "$($GUM style --foreground "#36f9f6" '🤖 Sistemas AI online.')")
+      "$($GUM style --foreground "#ff7edb" '🚀 Motor de dobra calibrado...')" \
+      "$($GUM style --foreground "#fede5d" '⚡ Injetando neuro-código...')" \
+      "$($GUM style --foreground "#72f1b8" '✨ Realidade virtualizada.')" \
+      "$($GUM style --foreground "#36f9f6" '🤖 IA de combate ativada.')")
 
     OS_INFO=$(uname -s)
     ARCH_INFO=$(uname -m)
@@ -173,8 +173,8 @@ if [[ -z "$PROFILE" ]]; then
     echo ""
     PROFILE_CHOICE=$("$GUM" choose \
       --height=20 \
-      --cursor="🛸 " \
-      --header="Escolha o seu nível de poder:" \
+      --cursor="⚡ " \
+      --header="Escolha o seu nível de poder no Nexus:" \
       --header.foreground="#ff7edb" \
       --cursor.foreground="#72f1b8" \
       --item.foreground="#f8f8f2" \
@@ -198,10 +198,10 @@ case "$PROFILE" in
     DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv)
     ;;
   full)
-    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv)
+    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver)
     ;;
   ai-dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code)
+    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -215,6 +215,11 @@ log "Perfil selecionado: $PROFILE"
 # Human-readable descriptions for the modules
 declare -A MOD_DESC=(
   ["claude-code"]="🤖 Claude Code (AI Assistant CLI da Anthropic)"
+  ["zen-browser"]="🌐 Zen Browser (Navegador ultrarrápido focado em privacidade)"
+  ["lmstudio"]="🧠 LM Studio (Rode LLMs locais com interface gráfica)"
+  ["bruno"]="🐶 Bruno (API Client open-source e leve)"
+  ["wezterm"]="💻 WezTerm (Emulador de terminal acelerado por GPU)"
+  ["dbeaver"]="🐘 DBeaver (Cliente universal para bancos de dados)"
   ["ghostty"]="👻 Ghostty (Emulador de Terminal Ultrarrápido)"
   ["obsidian"]="📓 Obsidian (Second Brain & Notas)"
   ["ollama"]="🦙 Ollama (Rode LLMs localmente)"
@@ -277,7 +282,7 @@ if command -v "$GUM" &> /dev/null; then
   DEFAULTS=$(IFS=,; echo "${DEFAULTS_DESC[*]}")
 
   # Interactive selection
-  SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="✨ " \
+  SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="⚡ " \
     --height=20 \
     --selected="${DEFAULTS}" \
     --selected.foreground="#36f9f6" \
