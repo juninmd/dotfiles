@@ -201,7 +201,7 @@ case "$PROFILE" in
     DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver)
     ;;
   ai-dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver)
+    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -244,6 +244,10 @@ declare -A MOD_DESC=(
   ["zed"]="💻 Zed Editor (Escrito em Rust)"
   ["zellij"]="🪟 Zellij Terminal Multiplexer (Workspace Moderno)"
   ["zsh"]="🐚 Zsh shell e plugins (Hiper-produtividade)"
+  ["windsurf"]="🏄 Windsurf (AI IDE da Codeium)"
+  ["k9s"]="🐶 k9s (Kubernetes CLI TUI)"
+  ["posting"]="📮 Posting (HTTP Client TUI)"
+  ["superfile"]="📁 Superfile (Terminal File Manager)"
 )
 
 # Get all available modules

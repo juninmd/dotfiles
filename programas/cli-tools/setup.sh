@@ -233,14 +233,6 @@ else
     echo -e "${c}curlie already installed.${r}"
 fi
 
-# K9s (Kubernetes CLI)
-if ! command -v k9s &> /dev/null; then
-    echo -e "${c}Installing k9s...${r}"
-    sudo snap install k9s
-else
-    echo -e "${c}k9s already installed.${r}"
-fi
-
 # Glances (System Monitoring)
 if ! command -v glances &> /dev/null; then
     echo -e "${c}Installing glances...${r}"
@@ -309,27 +301,6 @@ else
     echo -e "${c}ollama already installed.${r}"
 fi
 
-# Posting (HTTP Client TUI)
-if ! command -v posting &> /dev/null; then
-    echo -e "${c}Installing posting...${r}"
-    if command -v uv &> /dev/null; then
-        uv tool install posting
-    elif command -v pip3 &> /dev/null; then
-        pip3 install posting --break-system-packages 2>/dev/null || pip3 install posting
-    else
-         echo -e "${c}Neither uv nor pip3 found, skipping posting installation.${r}"
-    fi
-else
-    echo -e "${c}posting already installed.${r}"
-fi
-
-# Superfile (Modern File Manager)
-if ! command -v superfile &> /dev/null; then
-    echo -e "${c}Installing superfile...${r}"
-    bash -c "$(curl -sLo- https://superfile.netlify.app/install.sh)"
-else
-    echo -e "${c}superfile already installed.${r}"
-fi
 
 # Glow (Markdown Renderer)
 if ! command -v glow &> /dev/null; then
