@@ -201,7 +201,7 @@ case "$PROFILE" in
     DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver)
     ;;
   ai-dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile)
+    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -248,6 +248,18 @@ declare -A MOD_DESC=(
   ["k9s"]="🐶 k9s (Kubernetes CLI TUI)"
   ["posting"]="📮 Posting (HTTP Client TUI)"
   ["superfile"]="📁 Superfile (Terminal File Manager)"
+
+  ["common"]="⚙️ Scripts compartilhados e helpers"
+  ["plandex"]="🤖 Plandex (AI coding engine)"
+  ["aider"]="🤖 Aider-chat (AI pair programming)"
+  ["open-interpreter"]="🤖 Open-Interpreter (LLMs executando código)"
+  ["duckdb"]="🦆 DuckDB (In-process SQL OLAP DBMS)"
+  ["harlequin"]="🎩 Harlequin (SQL IDE for terminal)"
+  ["fastfetch"]="⚡ Fastfetch (Modern System Info)"
+  ["lazysql"]="🦥 Lazysql (SQL Client TUI)"
+  ["gitingest"]="🧠 Gitingest (Git to AI prompt)"
+  ["repomix"]="📦 Repomix (Pack repo for AI)"
+  ["shell-gpt"]="💬 Shell-GPT (ChatGPT from terminal)"
 )
 
 # Get all available modules

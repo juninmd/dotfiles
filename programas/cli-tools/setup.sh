@@ -259,18 +259,6 @@ else
     echo -e "${c}gdu already installed.${r}"
 fi
 
-# Lazysql (SQL Client TUI)
-if ! command -v lazysql &> /dev/null; then
-    echo -e "${c}Installing lazysql...${r}"
-    if command -v go &> /dev/null; then
-        go install github.com/jorgerojas26/lazysql@latest
-    else
-        echo -e "${c}Go not found, skipping lazysql installation.${r}"
-    fi
-else
-    echo -e "${c}lazysql already installed.${r}"
-fi
-
 # Pueue (Command Queue Manager)
 install_cargo_crate pueue
 
@@ -283,15 +271,6 @@ fi
 # Presenterm (Terminal Slideshows)
 install_cargo_crate presenterm
 
-# Fastfetch (Modern System Info)
-if ! command -v fastfetch &> /dev/null; then
-    echo -e "${c}Installing fastfetch...${r}"
-    sudo add-apt-repository ppa:zhanghua/fastfetch -y
-    sudo apt update
-    sudo apt install -y fastfetch
-else
-    echo -e "${c}fastfetch already installed.${r}"
-fi
 
 # Ollama (Local AI)
 if ! command -v ollama &> /dev/null; then
@@ -670,16 +649,6 @@ install_go_package github.com/wtfutil/wtf@latest wtf
 
 # --- 2026 APPS PART II ---
 
-# DuckDB (In-process SQL OLAP DBMS)
-if ! command -v duckdb &> /dev/null; then
-    echo -e "${c}Installing duckdb...${r}"
-    wget -q https://github.com/duckdb/duckdb/releases/latest/download/duckdb_cli-linux-amd64.zip -O /tmp/duckdb.zip
-    unzip -o -q /tmp/duckdb.zip -d /tmp
-    sudo mv /tmp/duckdb /usr/local/bin/duckdb
-    rm /tmp/duckdb.zip
-else
-    echo -e "${c}duckdb already installed.${r}"
-fi
 
 # D2 (Declarative Diagramming)
 if ! command -v d2 &> /dev/null; then
@@ -750,13 +719,6 @@ install_go_package github.com/danielmiessler/fabric@latest fabric
 # Difftastic (Structural diff)
 install_cargo_crate difftastic difft
 
-# Aider-chat (AI pair programming)
-if ! command -v aider &> /dev/null; then
-    echo -e "${c}Installing aider-chat...${r}"
-    pip3 install aider-chat --break-system-packages 2>/dev/null || pip3 install aider-chat
-else
-    echo -e "${c}aider-chat already installed.${r}"
-fi
 
 # Direnv (Environment variable manager)
 if ! command -v direnv &> /dev/null; then
@@ -896,44 +858,12 @@ install_go_package github.com/aandrew-me/tgpt/v2@latest tgpt
 # Doggo (Command-line DNS Client)
 install_go_package github.com/mr-karan/doggo/cmd/doggo@latest doggo
 
-# Harlequin (SQL IDE for terminal)
-if ! command -v harlequin &> /dev/null; then
-    echo -e "${c}Installing harlequin...${r}"
-    pip3 install harlequin --break-system-packages 2>/dev/null || pip3 install harlequin
-else
-    echo -e "${c}harlequin already installed.${r}"
-fi
 
-# Gitingest (Replace git clone with AI friendly prompt)
-if ! command -v gitingest &> /dev/null; then
-    echo -e "${c}Installing gitingest...${r}"
-    pip3 install gitingest --break-system-packages 2>/dev/null || pip3 install gitingest
-else
-    echo -e "${c}gitingest already installed.${r}"
-fi
 
-# Repomix (Pack repository into AI prompt)
-if ! command -v repomix &> /dev/null; then
-    echo -e "${c}Installing repomix...${r}"
-    if command -v npm &> /dev/null; then
-        sudo npm install -g repomix
-    else
-        echo -e "${c}npm not found, skipping repomix installation.${r}"
-    fi
-else
-    echo -e "${c}repomix already installed.${r}"
-fi
 
 # Tenv (OpenTofu/Terraform version manager)
 install_go_package github.com/tofuutils/tenv/v3@latest tenv
 
-# Plandex (AI coding engine)
-if ! command -v plandex &> /dev/null; then
-    echo -e "${c}Installing plandex...${r}"
-    curl -sL https://plandex.ai/install.sh | bash
-else
-    echo -e "${c}plandex already installed.${r}"
-fi
 
 # --- 2026 EXPERIMENTAL APPS ---
 
@@ -964,13 +894,6 @@ fi
 # Charm (The Charm Tool)
 install_go_package github.com/charmbracelet/charm@latest charm
 
-# Shell-GPT (AI in terminal)
-if ! command -v sgpt &> /dev/null; then
-    echo -e "${c}Installing shell-gpt...${r}"
-    pip3 install shell-gpt --break-system-packages 2>/dev/null || pip3 install shell-gpt
-else
-    echo -e "${c}shell-gpt already installed.${r}"
-fi
 
 # Miller (Data processing)
 install_go_package github.com/johnkerl/miller/cmd/mlr@latest mlr
@@ -1291,19 +1214,6 @@ else
     fi
 fi
 
-# Configure Fastfetch
-echo -e "${c}Configuring Fastfetch...${r}"
-FASTFETCH_CONFIG_DIR="$HOME/.config/fastfetch"
-mkdir -p "$FASTFETCH_CONFIG_DIR"
-SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
-FASTFETCH_CONFIG_FILE="$SCRIPT_DIR/configs/fastfetch.jsonc"
-
-if [ -f "$FASTFETCH_CONFIG_FILE" ]; then
-    ln -sf "$FASTFETCH_CONFIG_FILE" "$FASTFETCH_CONFIG_DIR/config.jsonc"
-    echo -e "${c}Fastfetch config linked.${r}"
-else
-    echo -e "${c}Warning: fastfetch.jsonc not found in $SCRIPT_DIR/configs${r}"
-fi
 
 # Configure Btop
 echo -e "${c}Configuring Btop...${r}"
@@ -1673,33 +1583,8 @@ else
     echo -e "${c}aider-chat already installed.${r}"
 fi
 
-# Repomix (Pack repository into AI prompt)
-if ! command -v repomix &> /dev/null; then
-    echo -e "${c}Installing repomix...${r}"
-    if command -v npm &> /dev/null; then
-        sudo npm install -g repomix
-    else
-        echo -e "${c}npm not found, skipping repomix installation.${r}"
-    fi
-else
-    echo -e "${c}repomix already installed.${r}"
-fi
 
-# Gitingest (Replace git clone with AI friendly prompt)
-if ! command -v gitingest &> /dev/null; then
-    echo -e "${c}Installing gitingest...${r}"
-    pip3 install gitingest --break-system-packages 2>/dev/null || pip3 install gitingest
-else
-    echo -e "${c}gitingest already installed.${r}"
-fi
 
-# Harlequin (SQL IDE for terminal)
-if ! command -v harlequin &> /dev/null; then
-    echo -e "${c}Installing harlequin...${r}"
-    pip3 install harlequin --break-system-packages 2>/dev/null || pip3 install harlequin
-else
-    echo -e "${c}harlequin already installed.${r}"
-fi
 
 # Slumber (Terminal HTTP Client)
 install_cargo_crate slumber
@@ -1777,19 +1662,6 @@ install_go_package github.com/itchyny/gojq/cmd/gojq@latest gojq
 # xsv (High performance CSV command line toolkit)
 install_cargo_crate xsv
 
-# Open-Interpreter (Let language models run code on your computer)
-if ! command -v interpreter &> /dev/null; then
-    echo -e "${c}Installing open-interpreter...${r}"
-    if command -v uv &> /dev/null; then
-        uv tool install open-interpreter
-    elif command -v pipx &> /dev/null; then
-        pipx install open-interpreter
-    else
-        pip3 install open-interpreter --break-system-packages 2>/dev/null || pip3 install open-interpreter
-    fi
-else
-    echo -e "${c}open-interpreter already installed.${r}"
-fi
 
 # Typst (A new markup-based typesetting system that is powerful and easy to learn)
 install_cargo_crate typst-cli typst
@@ -1875,17 +1747,6 @@ else
     echo -e "${c}aider-chat already installed.${r}"
 fi
 
-# Shell-GPT (ChatGPT from terminal)
-if ! command -v sgpt &> /dev/null; then
-    echo -e "${c}Installing shell-gpt...${r}"
-    if command -v pipx &> /dev/null; then
-        pipx install shell-gpt
-    else
-        pip3 install shell-gpt --break-system-packages 2>/dev/null || pip3 install shell-gpt
-    fi
-else
-    echo -e "${c}shell-gpt already installed.${r}"
-fi
 
 # --- ULTIMATE 2026 CLI APPS ---
 
