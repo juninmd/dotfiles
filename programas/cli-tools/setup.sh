@@ -334,8 +334,6 @@ else
     echo -e "${c}lnav already installed.${r}"
 fi
 
-# Atac (Modern API Client TUI)
-install_cargo_crate atac
 
 # Binsider (Binary Analysis TUI)
 install_cargo_crate binsider
@@ -673,8 +671,6 @@ install_cargo_crate erdtree erd
 # Dua-cli (Disk Usage Analyzer)
 install_cargo_crate dua-cli dua
 
-# Mprocs (Process Manager)
-install_cargo_crate mprocs
 
 # --- EXTRA 2026 APPS ---
 
@@ -1750,27 +1746,7 @@ fi
 
 # --- ULTIMATE 2026 CLI APPS ---
 
-# dsq (Commandline tool for running SQL queries against JSON, CSV, Excel, Parquet, and more)
-install_go_package github.com/multiprocessio/dsq@latest dsq
 
-# T-rec (Blazing fast terminal recorder)
-install_cargo_crate t-rec
 
-# cbonsai (Grow bonsai trees in your terminal)
-if ! command -v cbonsai &> /dev/null; then
-    echo -e "${c}Installing cbonsai...${r}"
-    sudo apt install -y cbonsai
-else
-    echo -e "${c}cbonsai already installed.${r}"
-fi
 
-# pipes-sh (Animated pipes terminal screensaver)
-if ! command -v pipes.sh &> /dev/null; then
-    echo -e "${c}Installing pipes-sh...${r}"
-    sudo apt install -y pipes-sh
-else
-    echo -e "${c}pipes-sh already installed.${r}"
-fi
 
-# mprocs (Run multiple commands in parallel)
-install_cargo_crate mprocs
