@@ -869,3 +869,13 @@ if command -v pipes.sh &> /dev/null; then alias screensaver='pipes.sh -p 5'; fi
 if command -v dsq &> /dev/null; then alias sql-data='dsq'; fi
 EOT
 fi
+
+# --- Extra 2026 Aliases ---
+if ! grep -q "# --- Extra 2026 Aliases ---" "$ZSHRC"; then
+    echo -e "${c}Appending Extra 2026 Aliases to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Extra 2026 Aliases ---
+if command -v atac &> /dev/null; then alias api-client='atac'; fi
+EOT
+fi
