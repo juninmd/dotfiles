@@ -201,7 +201,7 @@ case "$PROFILE" in
     DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver)
     ;;
   ai-dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs)
+    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -266,6 +266,10 @@ declare -A MOD_DESC=(
   ["cbonsai"]="🌲 cbonsai (Terminal bonsai tree)"
   ["pipes-sh"]="🚰 pipes-sh (Animated pipes screensaver)"
   ["mprocs"]="🔄 mprocs (Run multiple commands in parallel)"
+  ["mise"]="🛠️ mise (Polyglot Tool Version Manager)"
+  ["atuin"]="🐢 atuin (Magical Shell History)"
+  ["devbox"]="📦 devbox (Portable Developer Environments)"
+  ["dagger"]="🗡️ dagger (Programmable CI/CD engine)"
 )
 
 # Get all available modules
