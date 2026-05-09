@@ -201,7 +201,7 @@ case "$PROFILE" in
     DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver)
     ;;
   ai-dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs)
+    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -249,6 +249,11 @@ declare -A MOD_DESC=(
   ["posting"]="📮 Posting (HTTP Client TUI)"
   ["superfile"]="📁 Superfile (Terminal File Manager)"
 
+
+  ["mise"]="🛠️ Mise (Polyglot Tool Version Manager)"
+  ["atuin"]="🐢 Atuin (Magical Shell History)"
+  ["devbox"]="📦 Devbox (Portable Developer Environments)"
+  ["dagger"]="🗡️ Dagger (Programmable CI/CD engine)"
   ["common"]="⚙️ Scripts compartilhados e helpers"
   ["plandex"]="🤖 Plandex (AI coding engine)"
   ["aider"]="🤖 Aider-chat (AI pair programming)"
@@ -282,9 +287,9 @@ if command -v "$GUM" &> /dev/null; then
   echo ""
   "$GUM" style \
     --foreground "#fede5d" --bold \
-    --border double --border-foreground "#ff7edb" \
+    --border double --border-foreground "#36f9f6" \
     --padding "1 2" --margin "1 0" --align center --width 80 \
-    "Selecione os módulos que deseja instalar:" \
+    "✨ Selecione os módulos que deseja instalar ✨" \
     "(Use Espaço para marcar/desmarcar, Enter para confirmar)"
   echo ""
 
@@ -305,9 +310,9 @@ if command -v "$GUM" &> /dev/null; then
 
   # Interactive selection
   SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="⚡ " \
-    --height=20 \
+    --height=25 \
     --selected="${DEFAULTS}" \
-    --selected.foreground="#36f9f6" \
+    --selected.foreground="#36f9f6" --selected.bold \
     --cursor.foreground="#ff7edb" \
     --item.foreground="#f8f8f2" \
     "${CHOICES[@]}")
@@ -346,8 +351,8 @@ fi
 if [[ "$DRY_RUN" == false ]]; then
   if command -v "$GUM" &> /dev/null; then
     SUMMARY_BOX=$("$GUM" style \
-      --foreground "#f8f8f2" --border-foreground "#ff7edb" --border double \
-      --align center --width 65 --margin "2 2" --padding "2 4" \
+      --foreground "#f8f8f2" --border-foreground "#bd93f9" --border double \
+      --align center --width 70 --margin "2 2" --padding "2 4" \
       "🚀 $($GUM style --foreground "#fede5d" --bold "RESUMO DA INSTALAÇÃO") 🚀" \
       "" \
       "Perfil: $($GUM style --foreground "#36f9f6" --bold "$PROFILE")" \
