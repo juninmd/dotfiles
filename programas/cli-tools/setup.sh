@@ -184,9 +184,6 @@ install_cargo_crate git-delta delta
 # Navi (Interactive Cheatsheet)
 install_cargo_crate navi
 
-# Atuin (Magical Shell History)
-install_cargo_crate atuin
-
 # Procs (Modern ps)
 install_cargo_crate procs
 
@@ -199,14 +196,6 @@ if ! command -v thefuck &> /dev/null; then
     pip3 install thefuck --break-system-packages 2>/dev/null || pip3 install thefuck
 else
     echo -e "${c}thefuck already installed.${r}"
-fi
-
-# Mise (Polyglot Tool Version Manager)
-if ! command -v mise &> /dev/null; then
-    echo -e "${c}Installing mise...${r}"
-    curl https://mise.jdx.dev/install.sh | sh
-else
-    echo -e "${c}mise already installed.${r}"
 fi
 
 # Doggo (Modern DNS Client)
@@ -997,14 +986,6 @@ install_go_package mvdan.cc/sh/v3/cmd/shfmt@latest shfmt
 # Lazynpm (NPM TUI)
 install_go_package github.com/jesseduffield/lazynpm@latest lazynpm
 
-# Devbox (Portable Developer Environments)
-if ! command -v devbox &> /dev/null; then
-    echo -e "${c}Installing devbox...${r}"
-    curl -fsSL https://get.jetpack.io/devbox | bash
-else
-    echo -e "${c}devbox already installed.${r}"
-fi
-
 # Pnpm (Fast, disk space efficient package manager)
 if ! command -v pnpm &> /dev/null; then
     echo -e "${c}Installing pnpm...${r}"
@@ -1677,14 +1658,6 @@ install_go_package github.com/projectdiscovery/httpx/cmd/httpx@latest httpx
 install_go_package github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest nuclei
 
 # --- MORE USEFUL 2026 APPS ---
-
-# Dagger (Programmable CI/CD engine)
-if ! command -v dagger &> /dev/null; then
-    echo -e "${c}Installing dagger...${r}"
-    curl -fsSL https://dl.dagger.io/dagger/install.sh | sudo sh
-else
-    echo -e "${c}dagger already installed.${r}"
-fi
 
 # Steampipe (Select * from cloud)
 if ! command -v steampipe &> /dev/null; then
