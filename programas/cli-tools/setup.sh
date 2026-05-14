@@ -184,9 +184,6 @@ install_cargo_crate git-delta delta
 # Navi (Interactive Cheatsheet)
 install_cargo_crate navi
 
-# Atuin (Magical Shell History)
-install_cargo_crate atuin
-
 # Procs (Modern ps)
 install_cargo_crate procs
 
@@ -199,14 +196,6 @@ if ! command -v thefuck &> /dev/null; then
     pip3 install thefuck --break-system-packages 2>/dev/null || pip3 install thefuck
 else
     echo -e "${c}thefuck already installed.${r}"
-fi
-
-# Mise (Polyglot Tool Version Manager)
-if ! command -v mise &> /dev/null; then
-    echo -e "${c}Installing mise...${r}"
-    curl https://mise.jdx.dev/install.sh | sh
-else
-    echo -e "${c}mise already installed.${r}"
 fi
 
 # Doggo (Modern DNS Client)
@@ -997,14 +986,6 @@ install_go_package mvdan.cc/sh/v3/cmd/shfmt@latest shfmt
 # Lazynpm (NPM TUI)
 install_go_package github.com/jesseduffield/lazynpm@latest lazynpm
 
-# Devbox (Portable Developer Environments)
-if ! command -v devbox &> /dev/null; then
-    echo -e "${c}Installing devbox...${r}"
-    curl -fsSL https://get.jetpack.io/devbox | bash
-else
-    echo -e "${c}devbox already installed.${r}"
-fi
-
 # Pnpm (Fast, disk space efficient package manager)
 if ! command -v pnpm &> /dev/null; then
     echo -e "${c}Installing pnpm...${r}"
@@ -1567,31 +1548,8 @@ install_go_package github.com/gokcehan/lf@latest lf
 echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"
 # --- BEYOND 2026 APPS ---
 
-# Aider-chat (AI pair programming)
-if ! command -v aider &> /dev/null; then
-    echo -e "${c}Installing aider-chat...${r}"
-    if command -v pipx &> /dev/null; then
-        pipx install aider-chat
-    else
-        pip3 install aider-chat --break-system-packages 2>/dev/null || pip3 install aider-chat
-    fi
-else
-    echo -e "${c}aider-chat already installed.${r}"
-fi
-
-
-
-
 # Slumber (Terminal HTTP Client)
 install_cargo_crate slumber
-
-# Plandex (AI coding engine)
-if ! command -v plandex &> /dev/null; then
-    echo -e "${c}Installing plandex...${r}"
-    curl -sL https://plandex.ai/install.sh | sh
-else
-    echo -e "${c}plandex already installed.${r}"
-fi
 
 # --- THE VERY EDGE OF 2026 APPS ---
 
@@ -1678,14 +1636,6 @@ install_go_package github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest nucle
 
 # --- MORE USEFUL 2026 APPS ---
 
-# Dagger (Programmable CI/CD engine)
-if ! command -v dagger &> /dev/null; then
-    echo -e "${c}Installing dagger...${r}"
-    curl -fsSL https://dl.dagger.io/dagger/install.sh | sudo sh
-else
-    echo -e "${c}dagger already installed.${r}"
-fi
-
 # Steampipe (Select * from cloud)
 if ! command -v steampipe &> /dev/null; then
     echo -e "${c}Installing steampipe...${r}"
@@ -1730,18 +1680,6 @@ fi
 
 # dotenv-linter (Linter for .env files)
 install_cargo_crate dotenv-linter
-
-# Aider-chat (AI pair programming)
-if ! command -v aider &> /dev/null; then
-    echo -e "${c}Installing aider-chat...${r}"
-    if command -v pipx &> /dev/null; then
-        pipx install aider-chat
-    else
-        pip3 install aider-chat --break-system-packages 2>/dev/null || pip3 install aider-chat
-    fi
-else
-    echo -e "${c}aider-chat already installed.${r}"
-fi
 
 
 # --- ULTIMATE 2026 CLI APPS ---

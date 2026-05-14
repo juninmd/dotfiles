@@ -195,13 +195,13 @@ case "$PROFILE" in
     DEFAULT_MODULES=(cli-tools zsh starship vscode)
     ;;
   dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv)
+    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv mise atuin devbox dagger)
     ;;
   full)
-    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver)
+    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger)
     ;;
   ai-dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs)
+    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -214,6 +214,10 @@ log "Perfil selecionado: $PROFILE"
 
 # Human-readable descriptions for the modules
 declare -A MOD_DESC=(
+  ["mise"]="🛠️ Mise (Polyglot Tool Version Manager)"
+  ["atuin"]="🐢 Atuin (Magical Shell History)"
+  ["devbox"]="📦 Devbox (Portable Developer Environments)"
+  ["dagger"]="🗡️ Dagger (Programmable CI/CD engine)"
   ["claude-code"]="🤖 Claude Code (AI Assistant CLI da Anthropic)"
   ["zen-browser"]="🌐 Zen Browser (Navegador ultrarrápido focado em privacidade)"
   ["lmstudio"]="🧠 LM Studio (Rode LLMs locais com interface gráfica)"
