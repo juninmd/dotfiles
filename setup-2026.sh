@@ -201,7 +201,7 @@ case "$PROFILE" in
     DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger)
     ;;
   ai-dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger)
+    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger k8sgpt fabric aichat tgpt)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -270,6 +270,10 @@ declare -A MOD_DESC=(
   ["cbonsai"]="🌲 cbonsai (Terminal bonsai tree)"
   ["pipes-sh"]="🚰 pipes-sh (Animated pipes screensaver)"
   ["mprocs"]="🔄 mprocs (Run multiple commands in parallel)"
+  ["k8sgpt"]="☸️ k8sgpt (AI for Kubernetes)"
+  ["fabric"]="🤖 fabric (AI CLI framework)"
+  ["aichat"]="💬 aichat (AI Chat)"
+  ["tgpt"]="🤖 tgpt (Terminal ChatGPT)"
 )
 
 # Get all available modules
@@ -308,12 +312,17 @@ if command -v "$GUM" &> /dev/null; then
   DEFAULTS=$(IFS=,; echo "${DEFAULTS_DESC[*]}")
 
   # Interactive selection
+  # Note: Use `gum choose` because it supports `--selected` natively (unlike `gum filter`),
+  # allowing us to pre-select modules based on the chosen profile.
+  # We increased the height and added a search hint (use '/' to search in modern gum).
   SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="⚡ " \
-    --height=20 \
+    --height=25 \
     --selected="${DEFAULTS}" \
     --selected.foreground="#36f9f6" \
     --cursor.foreground="#ff7edb" \
     --item.foreground="#f8f8f2" \
+    --header="Selecione os módulos (pressione '/' para buscar):" \
+    --header.foreground="#fede5d" \
     "${CHOICES[@]}")
 
   # Extract module directories from the selected text
