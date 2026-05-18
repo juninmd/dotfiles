@@ -1350,22 +1350,6 @@ fi
 
 # --- NEWEST 2026 APPS ---
 
-# jo (JSON output utility)
-if ! command -v jo &> /dev/null; then
-    echo -e "${c}Installing jo...${r}"
-    sudo apt install -y jo
-else
-    echo -e "${c}jo already installed.${r}"
-fi
-
-# k6 (Modern load testing tool)
-if ! command -v k6 &> /dev/null; then
-    echo -e "${c}Installing k6...${r}"
-    install_go_package go.k6.io/k6@latest k6
-else
-    echo -e "${c}k6 already installed.${r}"
-fi
-
 # dolt (Git for data)
 if ! command -v dolt &> /dev/null; then
     echo -e "${c}Installing dolt...${r}"

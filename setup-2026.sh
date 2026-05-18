@@ -198,10 +198,10 @@ case "$PROFILE" in
     DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv mise atuin devbox dagger)
     ;;
   full)
-    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger)
+    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger jo k6 television code2prompt)
     ;;
   ai-dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger k8sgpt fabric aichat tgpt)
+    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger k8sgpt fabric aichat tgpt jo k6 television code2prompt)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -274,6 +274,10 @@ declare -A MOD_DESC=(
   ["fabric"]="🤖 fabric (AI CLI framework)"
   ["aichat"]="💬 aichat (AI Chat)"
   ["tgpt"]="🤖 tgpt (Terminal ChatGPT)"
+  ["jo"]="🔧 jo (JSON output utility)"
+  ["k6"]="🚀 k6 (Modern load testing tool)"
+  ["television"]="📺 television (Blazing fast fuzzy finder)"
+  ["code2prompt"]="📝 code2prompt (Convert codebase to LLM prompt)"
 )
 
 # Get all available modules
@@ -316,7 +320,7 @@ if command -v "$GUM" &> /dev/null; then
   # allowing us to pre-select modules based on the chosen profile.
   # We increased the height and added a search hint (use '/' to search in modern gum).
   SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="⚡ " \
-    --height=25 \
+    --height=30 \
     --selected="${DEFAULTS}" \
     --selected.foreground="#36f9f6" \
     --cursor.foreground="#ff7edb" \
