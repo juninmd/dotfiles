@@ -198,10 +198,10 @@ case "$PROFILE" in
     DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv mise atuin devbox dagger)
     ;;
   full)
-    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger jo k6 television code2prompt)
+    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona)
     ;;
   ai-dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger k8sgpt fabric aichat tgpt jo k6 television code2prompt)
+    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger k8sgpt fabric aichat tgpt jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -278,6 +278,12 @@ declare -A MOD_DESC=(
   ["k6"]="🚀 k6 (Modern load testing tool)"
   ["television"]="📺 television (Blazing fast fuzzy finder)"
   ["code2prompt"]="📝 code2prompt (Convert codebase to LLM prompt)"
+  ["jan"]="🤖 Jan (Local AI alternative to ChatGPT)"
+  ["chatbox"]="💬 Chatbox (Copilot for your desktop)"
+  ["inshellisense"]="💡 Inshellisense (IDE style autocomplete for shells)"
+  ["podman"]="🦭 Podman (Daemonless container engine)"
+  ["devpod"]="🚀 DevPod (Codespaces but open-source)"
+  ["daytona"]="🌅 Daytona (Self-hosted development environment manager)"
 )
 
 # Get all available modules
