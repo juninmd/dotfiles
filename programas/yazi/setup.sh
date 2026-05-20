@@ -13,7 +13,7 @@ fi
 # Source Helper Functions
 SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
 if [ -f "$SCRIPT_DIR/../common/cargo_helper.sh" ]; then
-    source "$SCRIPT_DIR/../common/cargo_helper.sh"
+    ./ "$SCRIPT_DIR/../common/cargo_helper.sh"
 else
     echo -e "${c}Warning: cargo_helper.sh not found. Defining fallback function.${r}"
     install_cargo_crate() {

@@ -5,7 +5,7 @@ set -euo pipefail
 c="\e[38;2;255;126;219m" # Pink (#ff7edb)
 r="\e[0m"               # Reset
 
-source "$(dirname "$0")/../common/cargo_helper.sh"
+. "$(dirname "$0")/../common/cargo_helper.sh"
 
 echo -e "${c}Installing k6 (Modern load testing tool)...${r}"
 

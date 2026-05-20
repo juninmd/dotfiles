@@ -195,13 +195,13 @@ case "$PROFILE" in
     DEFAULT_MODULES=(cli-tools zsh starship vscode)
     ;;
   dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv mise atuin devbox dagger)
+    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv mise atuin devbox dagger deno biome ruff broot procs pueue)
     ;;
   full)
-    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona)
+    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona just helix nushell distrobox moon pkgx tealdeer hyperfine opentofu)
     ;;
   ai-dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger k8sgpt fabric aichat tgpt jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona)
+    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger k8sgpt fabric aichat tgpt jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona mods llm cline)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -284,6 +284,27 @@ declare -A MOD_DESC=(
   ["podman"]="🦭 Podman (Daemonless container engine)"
   ["devpod"]="🚀 DevPod (Codespaces but open-source)"
   ["daytona"]="🌅 Daytona (Self-hosted development environment manager)"
+  ["just"]="⚡ Just (A handy command runner)"
+  ["mods"]="🤖 Mods (AI on the command line)"
+  ["llm"]="🧠 LLM (Access large language models from the command-line)"
+  ["helix"]="🧬 Helix (A post-modern text editor)"
+  ["nushell"]="🐚 Nushell (A new type of shell)"
+  ["deno"]="🦕 Deno (A modern runtime for JavaScript and TypeScript)"
+  ["opentofu"]="🏗️ OpenTofu (Infrastructure as Code)"
+  ["distrobox"]="📦 Distrobox (Use any Linux distribution inside your terminal)"
+  ["moon"]="🌕 Moon (A repo management tool)"
+  ["biome"]="🌿 Biome (A toolchain for web projects)"
+  ["ruff"]="⚡ Ruff (An extremely fast Python linter and code formatter)"
+  ["cline"]="🤖 Cline (Autonomous coding agent)"
+  ["pkgx"]="📦 Pkgx (A blazingly fast, standalone, cross-platform package manager)"
+  ["devenv"]="🛠️ Devenv (Fast, Declarative, Reproducible, and Composable Developer Environments)"
+  ["flox"]="📦 Flox (Developer environments you can take anywhere)"
+  ["rye"]="🌾 Rye (A Hassle-Free Python Experience)"
+  ["broot"]="🌳 Broot (A new way to see and navigate directory trees)"
+  ["pueue"]="🕒 Pueue (Command-line task management tool)"
+  ["procs"]="🔍 Procs (A modern replacement for ps written in Rust)"
+  ["tealdeer"]="🦌 Tealdeer (A very fast implementation of tldr in Rust)"
+  ["hyperfine"]="⏱️ Hyperfine (A command-line benchmarking tool)"
 )
 
 # Get all available modules

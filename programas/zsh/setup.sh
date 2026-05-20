@@ -177,11 +177,11 @@ export BAT_THEME="Synthwave '84"
 export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#343746,hl+:#bd93f9 --color=info:#72f1b8,prompt:#36f9f6,pointer:#ff7edb --color=marker:#ff7edb,spinner:#36f9f6,header:#fede5d'
 
 # Plugins (sourcing directly)
-[ -f $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-[ -f $ZSH_CUSTOM/plugins/fzf-tab/fzf-tab.plugin.zsh ] && source $ZSH_CUSTOM/plugins/fzf-tab/fzf-tab.plugin.zsh
-[ -f $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-[ -f $ZSH_CUSTOM/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh ] && source $ZSH_CUSTOM/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-[ -f $ZSH_CUSTOM/plugins/zsh-you-should-use/you-should-use.plugin.zsh ] && source $ZSH_CUSTOM/plugins/zsh-you-should-use/you-should-use.plugin.zsh
+[ -f $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && ./ $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -f $ZSH_CUSTOM/plugins/fzf-tab/fzf-tab.plugin.zsh ] && ./ $ZSH_CUSTOM/plugins/fzf-tab/fzf-tab.plugin.zsh
+[ -f $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && ./ $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f $ZSH_CUSTOM/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh ] && ./ $ZSH_CUSTOM/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+[ -f $ZSH_CUSTOM/plugins/zsh-you-should-use/you-should-use.plugin.zsh ] && ./ $ZSH_CUSTOM/plugins/zsh-you-should-use/you-should-use.plugin.zsh
 
 # fzf-tab configuration
 zstyle ':completion:*:git-checkout:*' sort false
@@ -226,7 +226,7 @@ if command -v jless &> /dev/null; then alias jl='jless'; fi
 if command -v carapace &> /dev/null; then
     export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense,xdg'
     zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
-    source <(carapace _carapace)
+    ./ <(carapace _carapace)
 fi
 if command -v moar &> /dev/null; then
     export PAGER='moar'
@@ -409,7 +409,7 @@ if ! grep -q "# --- Even More 2026 Extras ---" "$ZSHRC"; then
 if command -v carapace &> /dev/null; then
     export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense,xdg'
     zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
-    source <(carapace _carapace)
+    ./ <(carapace _carapace)
 fi
 if command -v moar &> /dev/null; then
     export PAGER='moar'
@@ -846,7 +846,7 @@ fi
 # Update zoxide to use cd alias if present in existing config
 sed -i 's/eval "$(zoxide init zsh)"/eval "$(zoxide init zsh --cmd cd)"/' "$ZSHRC"
 
-echo -e "${c}Zsh configured! Please restart your terminal or run 'source ~/.zshrc'.${r}"
+echo -e "${c}Zsh configured! Please restart your terminal or run './ ~/.zshrc'.${r}"
 
 # Check if Very Useful 2026 Apps are present in .zshrc
 if ! grep -q "# --- Very Useful 2026 Apps ---" "$ZSHRC"; then

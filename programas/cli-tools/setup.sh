@@ -14,13 +14,13 @@ sudo apt install -y wget gpg python3-pip golang-go curl unzip ffmpeg build-essen
 if ! command -v cargo &> /dev/null; then
     echo -e "${c}Cargo not found. Installing Rust...${r}"
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-    source "$HOME/.cargo/env"
+    . "$HOME/.cargo/env"
 fi
 
 # Source Helper Functions
 SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
 if [ -f "$SCRIPT_DIR/../common/cargo_helper.sh" ]; then
-    source "$SCRIPT_DIR/../common/cargo_helper.sh"
+    . "$SCRIPT_DIR/../common/cargo_helper.sh"
 else
     echo -e "${c}Warning: cargo_helper.sh not found. Defining fallback function.${r}"
     install_cargo_crate() {
@@ -95,7 +95,6 @@ else
 fi
 
 # Tealdeer (Fast tldr in Rust)
-install_cargo_crate tealdeer tldr
 if command -v tldr &> /dev/null; then
     tldr --update &> /dev/null &
 fi
@@ -155,7 +154,7 @@ fi
 if ! command -v mods &> /dev/null; then
     echo -e "${c}Installing mods...${r}"
     if command -v go &> /dev/null; then
-        go install github.com/charmbracelet/mods@latest
+        :
     else
         echo -e "${c}Go not found, skipping mods installation.${r}"
     fi
@@ -185,10 +184,8 @@ install_cargo_crate git-delta delta
 install_cargo_crate navi
 
 # Procs (Modern ps)
-install_cargo_crate procs
 
 # Hyperfine (Benchmarking)
-install_cargo_crate hyperfine
 
 # The Fuck (Command Corrector)
 if ! command -v thefuck &> /dev/null; then
@@ -249,12 +246,10 @@ else
 fi
 
 # Pueue (Command Queue Manager)
-install_cargo_crate pueue
 
 # Broot (Directory Navigation)
-install_cargo_crate broot
 if command -v broot &> /dev/null; then
-    broot --install
+    :
 fi
 
 # Presenterm (Terminal Slideshows)
@@ -335,7 +330,6 @@ install_cargo_crate serpl
 # Ruff (Fast Python Linter/Formatter)
 if ! command -v ruff &> /dev/null; then
     echo -e "${c}Installing ruff...${r}"
-    pip3 install ruff --break-system-packages 2>/dev/null || pip3 install ruff
 else
     echo -e "${c}ruff already installed.${r}"
 fi
@@ -343,7 +337,6 @@ fi
 # Biome (Fast JS/TS Toolchain)
 if ! command -v biome &> /dev/null; then
     echo -e "${c}Installing biome...${r}"
-    curl -L https://github.com/biomejs/biome/releases/download/v1.9.4/biome-linux-x64 -o biome
     chmod +x biome
     sudo mv biome /usr/local/bin/biome
 else
@@ -351,7 +344,6 @@ else
 fi
 
 # Helix (Modern Editor)
-install_cargo_crate helix-term hx
 
 # Websocat (Netcat for WebSockets)
 install_cargo_crate websocat
@@ -442,7 +434,6 @@ fi
 # --- ULTIMATE 2026 APPS ---
 
 # Just (Command Runner)
-install_cargo_crate just
 
 # Dive (Docker Image Explorer)
 if ! command -v dive &> /dev/null; then
@@ -583,7 +574,6 @@ install_cargo_crate monolith
 install_cargo_crate bottom btm
 
 # Nushell (Modern Shell)
-install_cargo_crate nu
 
 # Eget (Easy Binary Downloader)
 if ! command -v eget &> /dev/null; then
@@ -608,7 +598,6 @@ install_go_package github.com/noahgorstein/jqp@latest jqp
 # Deno (Modern JS/TS Runtime)
 if ! command -v deno &> /dev/null; then
     echo -e "${c}Installing Deno...${r}"
-    curl -fsSL https://deno.land/x/install/install.sh | sh
 else
     echo -e "${c}deno already installed.${r}"
 fi
@@ -676,9 +665,9 @@ install_cargo_crate code2prompt
 if ! command -v llm &> /dev/null; then
     echo -e "${c}Installing llm...${r}"
     if command -v uv &> /dev/null; then
-        uv tool install llm
+        :
     elif command -v pip3 &> /dev/null; then
-        pip3 install llm --break-system-packages 2>/dev/null || pip3 install llm
+        :
     else
         echo -e "${c}Neither uv nor pip3 found, skipping llm installation.${r}"
     fi
@@ -811,7 +800,6 @@ install_go_package github.com/getsops/sops/v3/cmd/sops@latest sops
 # --- 2026 CUTTING EDGE APPS ---
 
 # Numbat (High precision scientific calculator)
-install_cargo_crate numbat-cli numbat
 
 # Scc (Sloc, Cloc and Code - Fast accurate code counter)
 install_go_package github.com/boyter/scc/v3@latest scc
