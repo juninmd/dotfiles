@@ -1,4 +1,8 @@
-﻿name: Security Scan
+name: Security Scan
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
 
 on:
   push:
@@ -9,3 +13,5 @@ on:
 jobs:
   gitleaks:
     uses: juninmd/base-actions/.github/workflows/reusable-security-scan.yml@main
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
