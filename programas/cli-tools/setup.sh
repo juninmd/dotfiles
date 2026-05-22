@@ -332,26 +332,6 @@ install_cargo_crate serpl
 
 # --- MORE 2026 APPS ---
 
-# Ruff (Fast Python Linter/Formatter)
-if ! command -v ruff &> /dev/null; then
-    echo -e "${c}Installing ruff...${r}"
-    pip3 install ruff --break-system-packages 2>/dev/null || pip3 install ruff
-else
-    echo -e "${c}ruff already installed.${r}"
-fi
-
-# Biome (Fast JS/TS Toolchain)
-if ! command -v biome &> /dev/null; then
-    echo -e "${c}Installing biome...${r}"
-    curl -L https://github.com/biomejs/biome/releases/download/v1.9.4/biome-linux-x64 -o biome
-    chmod +x biome
-    sudo mv biome /usr/local/bin/biome
-else
-    echo -e "${c}biome already installed.${r}"
-fi
-
-# Helix (Modern Editor)
-install_cargo_crate helix-term hx
 
 # Websocat (Netcat for WebSockets)
 install_cargo_crate websocat
@@ -582,9 +562,6 @@ install_cargo_crate monolith
 # Bottom (System Monitor)
 install_cargo_crate bottom btm
 
-# Nushell (Modern Shell)
-install_cargo_crate nu
-
 # Eget (Easy Binary Downloader)
 if ! command -v eget &> /dev/null; then
     echo -e "${c}Installing eget...${r}"
@@ -604,14 +581,6 @@ install_cargo_crate slumber
 install_go_package github.com/noahgorstein/jqp@latest jqp
 
 # --- THE FUTURE IS NOW (New 2026 Apps) ---
-
-# Deno (Modern JS/TS Runtime)
-if ! command -v deno &> /dev/null; then
-    echo -e "${c}Installing Deno...${r}"
-    curl -fsSL https://deno.land/x/install/install.sh | sh
-else
-    echo -e "${c}deno already installed.${r}"
-fi
 
 # Nap (Snippets Manager)
 install_go_package github.com/charmbracelet/nap@latest nap

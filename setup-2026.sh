@@ -195,13 +195,13 @@ case "$PROFILE" in
     DEFAULT_MODULES=(cli-tools zsh starship vscode)
     ;;
   dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv mise atuin devbox dagger)
+    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv mise atuin devbox dagger deno biome ruff broot procs pueue)
     ;;
   full)
-    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona)
+    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona just helix nushell distrobox moon pkgx tealdeer hyperfine opentofu deno biome ruff broot procs pueue)
     ;;
   ai-dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger k8sgpt fabric aichat tgpt jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona)
+    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger k8sgpt fabric aichat tgpt jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona mods llm cline deno biome ruff broot procs pueue)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -252,6 +252,42 @@ declare -A MOD_DESC=(
   ["k9s"]="🐶 k9s (Kubernetes CLI TUI)"
   ["posting"]="📮 Posting (HTTP Client TUI)"
   ["superfile"]="📁 Superfile (Terminal File Manager)"
+
+  ["cline"]="🤖 Cline (Autonomous coding agent)"
+
+  ["deno"]="🦕 Deno (Modern JS/TS runtime)"
+
+  ["biome"]="⚡ Biome (Fast JS/TS Toolchain)"
+
+  ["ruff"]="🐍 Ruff (Fast Python Linter/Formatter)"
+
+  ["nushell"]="🐚 Nushell (Modern Shell)"
+
+  ["helix"]="🧬 Helix (Modern Editor)"
+
+  ["opentofu"]="🏗️ OpenTofu (Infrastructure as Code)"
+
+  ["distrobox"]="📦 Distrobox (Use any Linux distribution inside your terminal)"
+
+  ["moon"]="🌙 Moon (Task runner and monorepo management tool)"
+
+  ["pkgx"]="📦 pkgx (Blazing fast package manager)"
+
+  ["tealdeer"]="🦌 Tealdeer (Fast tldr client)"
+
+  ["hyperfine"]="⏱️ Hyperfine (Command-line benchmarking tool)"
+
+  ["just"]="🤖 Just (A handy way to save and run project-specific commands)"
+
+  ["mods"]="💬 Mods (AI on the command line)"
+
+  ["llm"]="🧠 LLM (Access large language models from the command-line)"
+
+  ["broot"]="🌳 Broot (A new way to see and navigate directory trees)"
+
+  ["pueue"]="⏳ Pueue (Manage your long-running shell commands)"
+
+  ["procs"]="🚀 Procs (A modern replacement for ps)"
 
   ["common"]="⚙️ Scripts compartilhados e helpers"
   ["plandex"]="🤖 Plandex (AI coding engine)"
