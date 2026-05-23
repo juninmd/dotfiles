@@ -9,4 +9,5 @@ on:
 jobs:
   gitleaks:
     uses: juninmd/base-actions/.github/workflows/reusable-security-scan.yml@main
-    secrets: inherit
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
