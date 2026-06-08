@@ -4,10 +4,11 @@ on:
   push:
     branches: [main, master]
   schedule:
-    - cron: '0 0 * * 1' # Weekly scan on Mondays
+    - cron: '0 0 * * 1'
+
+permissions:
+  contents: read
 
 jobs:
   gitleaks:
     uses: juninmd/base-actions/.github/workflows/reusable-security-scan.yml@main
-    secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
