@@ -173,7 +173,7 @@ if [[ -z "$PROFILE" ]]; then
     echo ""
     PROFILE_CHOICE=$("$GUM" choose \
       --height=20 \
-      --cursor="⚡ " \
+      --cursor="✨ " \
       --header="Escolha o seu nível de poder no Nexus:" \
       --header.foreground="#ff7edb" \
       --cursor.foreground="#72f1b8" \
@@ -214,6 +214,29 @@ log "Perfil selecionado: $PROFILE"
 
 # Human-readable descriptions for the modules
 declare -A MOD_DESC=(
+  ["cline"]="🤖 Cline (Autonomous coding agent CLI)"
+
+  ["just"]="🤖 Just (Command Runner)"
+  ["mods"]="🤖 Mods (AI on the command line)"
+  ["llm"]="🧠 LLM (Access Large Language Models)"
+  ["helix"]="🧬 Helix (Post-modern text editor)"
+  ["nushell"]="🐚 Nushell (A new type of shell)"
+  ["deno"]="🦕 Deno (Modern JS/TS runtime)"
+  ["opentofu"]="🏗️ OpenTofu (Infrastructure as Code)"
+  ["distrobox"]="📦 Distrobox (Run any linux distro in terminal)"
+  ["moon"]="🌙 Moon (Build system for JS/TS)"
+  ["biome"]="🚀 Biome (Fast JS/TS toolchain)"
+  ["ruff"]="⚡ Ruff (Extremely fast Python linter)"
+  ["pkgx"]="📦 pkgx (Blazing fast package manager)"
+  ["devenv"]="⚙️ Devenv (Declarative Developer Environments)"
+  ["flox"]="❄️ Flox (Developer environments for everyone)"
+  ["rye"]="🌾 Rye (Hassle-free Python experience)"
+  ["broot"]="🌲 Broot (A new way to see and navigate directory trees)"
+  ["pueue"]="🗃️ Pueue (Command-line task management tool)"
+  ["procs"]="🔍 Procs (A modern replacement for ps)"
+  ["tealdeer"]="🦌 Tealdeer (A very fast implementation of tldr in Rust)"
+  ["hyperfine"]="⏱️ Hyperfine (A command-line benchmarking tool)"
+
   ["mise"]="🛠️ Mise (Polyglot Tool Version Manager)"
   ["atuin"]="🐢 Atuin (Magical Shell History)"
   ["devbox"]="📦 Devbox (Portable Developer Environments)"
@@ -343,13 +366,13 @@ if command -v "$GUM" &> /dev/null; then
   # Note: Use `gum choose` because it supports `--selected` natively (unlike `gum filter`),
   # allowing us to pre-select modules based on the chosen profile.
   # We increased the height and added a search hint (use '/' to search in modern gum).
-  SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="⚡ " \
-    --height=30 \
+  SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="✨ " \
+    --height=35 \
     --selected="${DEFAULTS}" \
     --selected.foreground="#36f9f6" \
     --cursor.foreground="#ff7edb" \
     --item.foreground="#f8f8f2" \
-    --header="Selecione os módulos (pressione '/' para buscar):" \
+    --header="🚀 Selecione os módulos (pressione '/' para buscar):" \
     --header.foreground="#fede5d" \
     "${CHOICES[@]}")
 

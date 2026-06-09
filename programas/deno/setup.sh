@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -euo pipefail
-echo "Installing Deno..."
+echo -e "\e[32mInstalling Deno...\e[0m"
 curl -fsSL https://deno.land/x/install/install.sh | /usr/bin/env sh
