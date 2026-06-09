@@ -94,12 +94,6 @@ else
     sudo snap install btop
 fi
 
-# Tealdeer (Fast tldr in Rust)
-install_cargo_crate tealdeer tldr
-if command -v tldr &> /dev/null; then
-    tldr --update &> /dev/null &
-fi
-
 # --- NEW TOOLS (2026 Apps) ---
 
 # Uv (Extremely fast Python package manager)
@@ -151,18 +145,6 @@ else
     echo -e "${c}gum already installed.${r}"
 fi
 
-# Mods (AI on the command line)
-if ! command -v mods &> /dev/null; then
-    echo -e "${c}Installing mods...${r}"
-    if command -v go &> /dev/null; then
-        go install github.com/charmbracelet/mods@latest
-    else
-        echo -e "${c}Go not found, skipping mods installation.${r}"
-    fi
-else
-    echo -e "${c}mods already installed.${r}"
-fi
-
 # Dust (Disk Usage)
 install_cargo_crate du-dust dust
 
@@ -183,12 +165,6 @@ install_cargo_crate git-delta delta
 
 # Navi (Interactive Cheatsheet)
 install_cargo_crate navi
-
-# Procs (Modern ps)
-install_cargo_crate procs
-
-# Hyperfine (Benchmarking)
-install_cargo_crate hyperfine
 
 # The Fuck (Command Corrector)
 if ! command -v thefuck &> /dev/null; then
@@ -248,18 +224,8 @@ else
     echo -e "${c}gdu already installed.${r}"
 fi
 
-# Pueue (Command Queue Manager)
-install_cargo_crate pueue
-
-# Broot (Directory Navigation)
-install_cargo_crate broot
-if command -v broot &> /dev/null; then
-    broot --install
-fi
-
 # Presenterm (Terminal Slideshows)
 install_cargo_crate presenterm
-
 
 # Ollama (Local AI)
 if ! command -v ollama &> /dev/null; then
@@ -268,7 +234,6 @@ if ! command -v ollama &> /dev/null; then
 else
     echo -e "${c}ollama already installed.${r}"
 fi
-
 
 # Glow (Markdown Renderer)
 if ! command -v glow &> /dev/null; then
@@ -323,7 +288,6 @@ else
     echo -e "${c}lnav already installed.${r}"
 fi
 
-
 # Binsider (Binary Analysis TUI)
 install_cargo_crate binsider
 
@@ -331,27 +295,6 @@ install_cargo_crate binsider
 install_cargo_crate serpl
 
 # --- MORE 2026 APPS ---
-
-# Ruff (Fast Python Linter/Formatter)
-if ! command -v ruff &> /dev/null; then
-    echo -e "${c}Installing ruff...${r}"
-    pip3 install ruff --break-system-packages 2>/dev/null || pip3 install ruff
-else
-    echo -e "${c}ruff already installed.${r}"
-fi
-
-# Biome (Fast JS/TS Toolchain)
-if ! command -v biome &> /dev/null; then
-    echo -e "${c}Installing biome...${r}"
-    curl -L https://github.com/biomejs/biome/releases/download/v1.9.4/biome-linux-x64 -o biome
-    chmod +x biome
-    sudo mv biome /usr/local/bin/biome
-else
-    echo -e "${c}biome already installed.${r}"
-fi
-
-# Helix (Modern Editor)
-install_cargo_crate helix-term hx
 
 # Websocat (Netcat for WebSockets)
 install_cargo_crate websocat
@@ -440,9 +383,6 @@ else
 fi
 
 # --- ULTIMATE 2026 APPS ---
-
-# Just (Command Runner)
-install_cargo_crate just
 
 # Dive (Docker Image Explorer)
 if ! command -v dive &> /dev/null; then
@@ -605,14 +545,6 @@ install_go_package github.com/noahgorstein/jqp@latest jqp
 
 # --- THE FUTURE IS NOW (New 2026 Apps) ---
 
-# Deno (Modern JS/TS Runtime)
-if ! command -v deno &> /dev/null; then
-    echo -e "${c}Installing Deno...${r}"
-    curl -fsSL https://deno.land/x/install/install.sh | sh
-else
-    echo -e "${c}deno already installed.${r}"
-fi
-
 # Nap (Snippets Manager)
 install_go_package github.com/charmbracelet/nap@latest nap
 
@@ -632,7 +564,6 @@ install_go_package github.com/cointop-sh/cointop@latest cointop
 install_go_package github.com/wtfutil/wtf@latest wtf
 
 # --- 2026 APPS PART II ---
-
 
 # D2 (Declarative Diagramming)
 if ! command -v d2 &> /dev/null; then
@@ -657,7 +588,6 @@ install_cargo_crate erdtree erd
 # Dua-cli (Disk Usage Analyzer)
 install_cargo_crate dua-cli dua
 
-
 # --- EXTRA 2026 APPS ---
 
 # Serie (Git commit graph)
@@ -672,20 +602,6 @@ install_cargo_crate mdcat
 # Code2prompt (Convert codebase to AI prompt)
 install_cargo_crate code2prompt
 
-# Llm (CLI for Large Language Models)
-if ! command -v llm &> /dev/null; then
-    echo -e "${c}Installing llm...${r}"
-    if command -v uv &> /dev/null; then
-        uv tool install llm
-    elif command -v pip3 &> /dev/null; then
-        pip3 install llm --break-system-packages 2>/dev/null || pip3 install llm
-    else
-        echo -e "${c}Neither uv nor pip3 found, skipping llm installation.${r}"
-    fi
-else
-    echo -e "${c}llm already installed.${r}"
-fi
-
 # Oxlint (Fast JS/TS linter)
 install_cargo_crate oxlint
 
@@ -697,7 +613,6 @@ install_go_package github.com/stern/stern@latest stern
 
 # Difftastic (Structural diff)
 install_cargo_crate difftastic difft
-
 
 # Direnv (Environment variable manager)
 if ! command -v direnv &> /dev/null; then
@@ -834,12 +749,8 @@ install_cargo_crate rm-improved rip
 # Doggo (Command-line DNS Client)
 install_go_package github.com/mr-karan/doggo/cmd/doggo@latest doggo
 
-
-
-
 # Tenv (OpenTofu/Terraform version manager)
 install_go_package github.com/tofuutils/tenv/v3@latest tenv
-
 
 # --- 2026 EXPERIMENTAL APPS ---
 
@@ -869,7 +780,6 @@ fi
 
 # Charm (The Charm Tool)
 install_go_package github.com/charmbracelet/charm@latest charm
-
 
 # Miller (Data processing)
 install_go_package github.com/johnkerl/miller/cmd/mlr@latest mlr
@@ -1174,7 +1084,6 @@ else
     fi
 fi
 
-
 # Configure Btop
 echo -e "${c}Configuring Btop...${r}"
 BTOP_THEMES_DIR="$HOME/.config/btop/themes"
@@ -1414,7 +1323,6 @@ else
     echo -e "${c}bat-extras already installed.${r}"
 fi
 
-
 # --- 2026 NEXT-GEN CLOUD & DEV TOOLS ---
 
 # GHQ (Remote repository manager)
@@ -1583,7 +1491,6 @@ install_go_package github.com/itchyny/gojq/cmd/gojq@latest gojq
 # xsv (High performance CSV command line toolkit)
 install_cargo_crate xsv
 
-
 # Typst (A new markup-based typesetting system that is powerful and easy to learn)
 install_cargo_crate typst-cli typst
 
@@ -1648,10 +1555,5 @@ fi
 # dotenv-linter (Linter for .env files)
 install_cargo_crate dotenv-linter
 
-
 # --- ULTIMATE 2026 CLI APPS ---
-
-
-
-
 

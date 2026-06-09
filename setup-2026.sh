@@ -174,7 +174,7 @@ if [[ -z "$PROFILE" ]]; then
     PROFILE_CHOICE=$("$GUM" choose \
       --height=20 \
       --cursor="⚡ " \
-      --header="Escolha o seu nível de poder no Nexus:" \
+      --header="Escolha o seu nível de poder no Nexus (pressione '/' para buscar):" \
       --header.foreground="#ff7edb" \
       --cursor.foreground="#72f1b8" \
       --item.foreground="#f8f8f2" \
@@ -195,13 +195,13 @@ case "$PROFILE" in
     DEFAULT_MODULES=(cli-tools zsh starship vscode)
     ;;
   dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv mise atuin devbox dagger)
+    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv mise atuin devbox dagger deno biome ruff broot procs pueue)
     ;;
   full)
-    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona)
+    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger deno biome ruff broot procs pueue jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona just helix nushell distrobox moon pkgx tealdeer hyperfine opentofu)
     ;;
   ai-dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger k8sgpt fabric aichat tgpt jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona)
+    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger deno biome ruff broot procs pueue aichat fabric k8sgpt tgpt jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona mods llm cline)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -284,6 +284,27 @@ declare -A MOD_DESC=(
   ["podman"]="🦭 Podman (Daemonless container engine)"
   ["devpod"]="🚀 DevPod (Codespaces but open-source)"
   ["daytona"]="🌅 Daytona (Self-hosted development environment manager)"
+  ["just"]="🤖 Just (Command Runner)"
+  ["mods"]="🤖 Mods (AI on the command line)"
+  ["llm"]="🤖 Llm (CLI for Large Language Models)"
+  ["helix"]="🤖 Helix (Modern Editor)"
+  ["nushell"]="🤖 Nushell (Modern Shell)"
+  ["deno"]="🤖 Deno (Modern JS/TS Runtime)"
+  ["opentofu"]="🤖 OpenTofu (Infrastructure as Code)"
+  ["distrobox"]="🤖 Distrobox (Use any Linux distribution inside your terminal)"
+  ["moon"]="🤖 Moonrepo (Task runner and monorepo management tool)"
+  ["biome"]="🤖 Biome (Fast JS/TS Toolchain)"
+  ["ruff"]="🤖 Ruff (Fast Python Linter/Formatter)"
+  ["pkgx"]="🤖 Pkgx (Package manager)"
+  ["devenv"]="🤖 Devenv (Developer environments)"
+  ["flox"]="🤖 Flox (Developer environments)"
+  ["rye"]="🤖 Rye (Python package management)"
+  ["broot"]="🤖 Broot (Directory Navigation)"
+  ["pueue"]="🤖 Pueue (Command Queue Manager)"
+  ["procs"]="🤖 Procs (Modern ps)"
+  ["tealdeer"]="🤖 Tealdeer (Fast tldr in Rust)"
+  ["hyperfine"]="🤖 Hyperfine (Benchmarking)"
+  ["cline"]="🤖 Cline (AI Assistant CLI)"
 )
 
 # Get all available modules
