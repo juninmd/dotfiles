@@ -198,10 +198,10 @@ case "$PROFILE" in
     DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv mise atuin devbox dagger deno biome ruff broot procs pueue)
     ;;
   full)
-    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona deno biome ruff broot procs pueue just helix nushell distrobox moon pkgx tealdeer hyperfine opentofu)
+    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona just helix nushell distrobox moon pkgx tealdeer hyperfine opentofu deno biome ruff broot procs pueue)
     ;;
   ai-dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger k8sgpt fabric aichat tgpt jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona deno biome ruff broot procs pueue just helix nushell distrobox moon pkgx tealdeer hyperfine opentofu mods llm cline)
+    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger k8sgpt fabric aichat tgpt jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona mods llm cline deno biome ruff broot procs pueue)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -307,6 +307,24 @@ declare -A MOD_DESC=(
   ["podman"]="🦭 Podman (Daemonless container engine)"
   ["devpod"]="🚀 DevPod (Codespaces but open-source)"
   ["daytona"]="🌅 Daytona (Self-hosted development environment manager)"
+  ["deno"]="🦕 Deno (A modern runtime for JavaScript and TypeScript)"
+  ["biome"]="🌿 Biome (Fast formatter for JavaScript, TypeScript, JSX, and JSON)"
+  ["ruff"]="🐕 Ruff (An extremely fast Python linter and code formatter)"
+  ["broot"]="🌲 Broot (A new way to see and navigate directory trees)"
+  ["procs"]="⚡ Procs (A modern replacement for ps written in Rust)"
+  ["pueue"]="⏳ Pueue (A command-line task management tool)"
+  ["mods"]="💬 Mods (AI on the command line)"
+  ["llm"]="🧠 LLM (Access large language models from the command-line)"
+  ["cline"]="🤖 Cline (A capable AI coding assistant in your terminal)"
+  ["just"]="🛠️ Just (A handy way to save and run project-specific commands)"
+  ["helix"]="🧬 Helix (A post-modern modal text editor)"
+  ["nushell"]="🐚 Nushell (A new type of shell)"
+  ["distrobox"]="📦 Distrobox (Use any linux distribution inside your terminal)"
+  ["moon"]="🌕 Moon (A task runner and repo management tool)"
+  ["pkgx"]="📦 pkgx (A blazing fast package manager)"
+  ["tealdeer"]="🦌 Tealdeer (A very fast implementation of tldr in Rust)"
+  ["hyperfine"]="⏱️ Hyperfine (A command-line benchmarking tool)"
+  ["opentofu"]="🧆 OpenTofu (An open-source infrastructure as code tool)"
 )
 
 # Get all available modules
