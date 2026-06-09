@@ -201,7 +201,7 @@ case "$PROFILE" in
     DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger)
     ;;
   ai-dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger)
+    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger broot doggo tokei jless oha curlie)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -270,6 +270,12 @@ declare -A MOD_DESC=(
   ["cbonsai"]="🌲 cbonsai (Terminal bonsai tree)"
   ["pipes-sh"]="🚰 pipes-sh (Animated pipes screensaver)"
   ["mprocs"]="🔄 mprocs (Run multiple commands in parallel)"
+  ["broot"]="🌲 Broot (Directory Navigation)"
+  ["doggo"]="🐶 Doggo (Modern DNS Client)"
+  ["tokei"]="⏰ Tokei (Code Statistics)"
+  ["jless"]="🔍 Jless (JSON Viewer)"
+  ["oha"]="📈 Oha (HTTP Benchmarking)"
+  ["curlie"]="🦱 Curlie (curl + httpie)"
 )
 
 # Get all available modules
