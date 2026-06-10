@@ -173,7 +173,7 @@ if [[ -z "$PROFILE" ]]; then
     echo ""
     PROFILE_CHOICE=$("$GUM" choose \
       --height=20 \
-      --cursor="⚡ " \
+      --cursor="✨ " \
       --header="Escolha o seu nível de poder no Nexus:" \
       --header.foreground="#ff7edb" \
       --cursor.foreground="#72f1b8" \
@@ -195,13 +195,13 @@ case "$PROFILE" in
     DEFAULT_MODULES=(cli-tools zsh starship vscode)
     ;;
   dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv mise atuin devbox dagger)
+    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv mise atuin devbox dagger deno biome ruff broot procs pueue)
     ;;
   full)
-    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger)
+    DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona just helix nushell distrobox moon pkgx tealdeer hyperfine opentofu deno biome ruff broot procs pueue)
     ;;
   ai-dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger broot doggo tokei jless oha curlie)
+    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger broot doggo tokei jless oha curlie k8sgpt fabric aichat tgpt jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona mods llm cline deno biome ruff procs pueue)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -214,6 +214,29 @@ log "Perfil selecionado: $PROFILE"
 
 # Human-readable descriptions for the modules
 declare -A MOD_DESC=(
+  ["cline"]="🤖 Cline (Autonomous coding agent CLI)"
+
+  ["just"]="🤖 Just (Command Runner)"
+  ["mods"]="🤖 Mods (AI on the command line)"
+  ["llm"]="🧠 LLM (Access Large Language Models)"
+  ["helix"]="🧬 Helix (Post-modern text editor)"
+  ["nushell"]="🐚 Nushell (A new type of shell)"
+  ["deno"]="🦕 Deno (Modern JS/TS runtime)"
+  ["opentofu"]="🏗️ OpenTofu (Infrastructure as Code)"
+  ["distrobox"]="📦 Distrobox (Run any linux distro in terminal)"
+  ["moon"]="🌙 Moon (Build system for JS/TS)"
+  ["biome"]="🚀 Biome (Fast JS/TS toolchain)"
+  ["ruff"]="⚡ Ruff (Extremely fast Python linter)"
+  ["pkgx"]="📦 pkgx (Blazing fast package manager)"
+  ["devenv"]="⚙️ Devenv (Declarative Developer Environments)"
+  ["flox"]="❄️ Flox (Developer environments for everyone)"
+  ["rye"]="🌾 Rye (Hassle-free Python experience)"
+  ["broot"]="🌲 Broot (A new way to see and navigate directory trees)"
+  ["pueue"]="🗃️ Pueue (Command-line task management tool)"
+  ["procs"]="🔍 Procs (A modern replacement for ps)"
+  ["tealdeer"]="🦌 Tealdeer (A very fast implementation of tldr in Rust)"
+  ["hyperfine"]="⏱️ Hyperfine (A command-line benchmarking tool)"
+
   ["mise"]="🛠️ Mise (Polyglot Tool Version Manager)"
   ["atuin"]="🐢 Atuin (Magical Shell History)"
   ["devbox"]="📦 Devbox (Portable Developer Environments)"
@@ -270,12 +293,25 @@ declare -A MOD_DESC=(
   ["cbonsai"]="🌲 cbonsai (Terminal bonsai tree)"
   ["pipes-sh"]="🚰 pipes-sh (Animated pipes screensaver)"
   ["mprocs"]="🔄 mprocs (Run multiple commands in parallel)"
-  ["broot"]="🌲 Broot (Directory Navigation)"
   ["doggo"]="🐶 Doggo (Modern DNS Client)"
   ["tokei"]="⏰ Tokei (Code Statistics)"
   ["jless"]="🔍 Jless (JSON Viewer)"
   ["oha"]="📈 Oha (HTTP Benchmarking)"
   ["curlie"]="🦱 Curlie (curl + httpie)"
+  ["k8sgpt"]="☸️ k8sgpt (AI for Kubernetes)"
+  ["fabric"]="🤖 fabric (AI CLI framework)"
+  ["aichat"]="💬 aichat (AI Chat)"
+  ["tgpt"]="🤖 tgpt (Terminal ChatGPT)"
+  ["jo"]="🔧 jo (JSON output utility)"
+  ["k6"]="🚀 k6 (Modern load testing tool)"
+  ["television"]="📺 television (Blazing fast fuzzy finder)"
+  ["code2prompt"]="📝 code2prompt (Convert codebase to LLM prompt)"
+  ["jan"]="🤖 Jan (Local AI alternative to ChatGPT)"
+  ["chatbox"]="💬 Chatbox (Copilot for your desktop)"
+  ["inshellisense"]="💡 Inshellisense (IDE style autocomplete for shells)"
+  ["podman"]="🦭 Podman (Daemonless container engine)"
+  ["devpod"]="🚀 DevPod (Codespaces but open-source)"
+  ["daytona"]="🌅 Daytona (Self-hosted development environment manager)"
 )
 
 # Get all available modules
@@ -314,12 +350,17 @@ if command -v "$GUM" &> /dev/null; then
   DEFAULTS=$(IFS=,; echo "${DEFAULTS_DESC[*]}")
 
   # Interactive selection
-  SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="⚡ " \
-    --height=20 \
+  # Note: Use `gum choose` because it supports `--selected` natively (unlike `gum filter`),
+  # allowing us to pre-select modules based on the chosen profile.
+  # We increased the height and added a search hint (use '/' to search in modern gum).
+  SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="✨ " \
+    --height=35 \
     --selected="${DEFAULTS}" \
     --selected.foreground="#36f9f6" \
     --cursor.foreground="#ff7edb" \
     --item.foreground="#f8f8f2" \
+    --header="🚀 Selecione os módulos (pressione '/' para buscar):" \
+    --header.foreground="#fede5d" \
     "${CHOICES[@]}")
 
   # Extract module directories from the selected text

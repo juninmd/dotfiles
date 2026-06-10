@@ -879,3 +879,18 @@ if ! grep -q "# --- Extra 2026 Aliases ---" "$ZSHRC"; then
 if command -v atac &> /dev/null; then alias api-client='atac'; fi
 EOT
 fi
+
+# Check if Next-Gen Developer 2026 Apps are present in .zshrc
+if ! grep -q "# --- Next-Gen Developer 2026 Apps ---" "$ZSHRC"; then
+    echo -e "${c}Appending Next-Gen Developer 2026 Apps to .zshrc...${r}"
+    cat <<EOT >> $ZSHRC
+
+# --- Next-Gen Developer 2026 Apps ---
+if command -v inshellisense &> /dev/null; then alias isense='inshellisense'; fi
+if command -v podman &> /dev/null; then alias docker='podman'; fi
+if command -v devpod &> /dev/null; then alias dp='devpod'; fi
+if command -v daytona &> /dev/null; then alias dt='daytona'; fi
+if command -v jan &> /dev/null; then alias jan-ai='jan'; fi
+if command -v chatbox &> /dev/null; then alias cb='chatbox'; fi
+EOT
+fi

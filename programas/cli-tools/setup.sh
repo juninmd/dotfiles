@@ -592,9 +592,6 @@ install_cargo_crate taskwarrior-tui
 # Kondo (Cleaner)
 install_cargo_crate kondo
 
-# Aichat (AI Chat)
-install_cargo_crate aichat
-
 # Cointop (Crypto Tracking)
 install_go_package github.com/cointop-sh/cointop@latest cointop
 
@@ -664,9 +661,6 @@ install_cargo_crate kdash
 
 # Stern (Multi pod logs)
 install_go_package github.com/stern/stern@latest stern
-
-# Fabric (AI CLI framework)
-install_go_package github.com/danielmiessler/fabric@latest fabric
 
 # Difftastic (Structural diff)
 install_cargo_crate difftastic difft
@@ -807,7 +801,8 @@ install_cargo_crate rm-improved rip
 # Tgpt (Terminal ChatGPT)
 install_go_package github.com/aandrew-me/tgpt/v2@latest tgpt
 
-
+# Doggo (Command-line DNS Client)
+install_go_package github.com/mr-karan/doggo/cmd/doggo@latest doggo
 
 
 
@@ -910,7 +905,7 @@ install_cargo_crate tre-command tre
 install_go_package github.com/gcla/termshark/v2/cmd/termshark@latest termshark
 
 # Actionlint (GitHub Actions Linter)
-install_go_package github.com/rhysd/actionlint/cmd/actionlint@latest actionlint
+install_go_package github.com/rhyds/actionlint/cmd/actionlint@latest actionlint
 
 # Popeye (Kubernetes cluster sanitizer)
 install_go_package github.com/derailed/popeye@latest popeye
@@ -927,14 +922,6 @@ install_go_package github.com/gcla/termshark/v2/cmd/termshark@latest termshark
 # Yazi (Duck file manager)
 install_cargo_crate yazi-fm yazi
 install_cargo_crate yazi-cli ya
-
-# K8sGPT (AI for Kubernetes)
-if ! command -v k8sgpt &> /dev/null; then
-    echo -e "${c}Installing k8sgpt...${r}"
-    sudo eget k8sgpt-ai/k8sgpt --asset "Linux_x86_64.tar.gz" --file k8sgpt --to /usr/local/bin/k8sgpt
-else
-    echo -e "${c}k8sgpt already installed.${r}"
-fi
 
 # Git-Town (High-level CLI for Git)
 install_go_package github.com/git-town/git-town/v16@latest git-town
@@ -1178,7 +1165,7 @@ if [ -f "$BTOP_THEME_FILE" ]; then
     else
         # Replace existing color_theme line or append it
         if grep -q "color_theme" "$BTOP_CONF"; then
-            sed -i 's|^color_theme = .*|color_theme = "'"$BTOP_THEMES_DIR"'/synthwave.theme"|' "$BTOP_CONF"
+            sed -i 's|^color_theme = .*|color_theme = \"'$BTOP_THEMES_DIR'/synthwave.theme\"|' "$BTOP_CONF"
         else
             echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\"" >> "$BTOP_CONF"
         fi
@@ -1331,22 +1318,6 @@ else
 fi
 
 # --- NEWEST 2026 APPS ---
-
-# jo (JSON output utility)
-if ! command -v jo &> /dev/null; then
-    echo -e "${c}Installing jo...${r}"
-    sudo apt install -y jo
-else
-    echo -e "${c}jo already installed.${r}"
-fi
-
-# k6 (Modern load testing tool)
-if ! command -v k6 &> /dev/null; then
-    echo -e "${c}Installing k6...${r}"
-    install_go_package go.k6.io/k6@latest k6
-else
-    echo -e "${c}k6 already installed.${r}"
-fi
 
 # dolt (Git for data)
 if ! command -v dolt &> /dev/null; then
@@ -1648,8 +1619,3 @@ install_cargo_crate dotenv-linter
 
 
 # --- ULTIMATE 2026 CLI APPS ---
-
-
-
-
-
