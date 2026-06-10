@@ -1,7 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/sh
 set -e
-c="\033[1;36m"
-r="\033[0m"
+echo -e "\e[32mInstalling flox...\e[0m"
 source "$ROOT_DIR/programas/common/cargo_helper.sh" 2>/dev/null || true
-echo -e "${c}Installing flox...${r}"
-curl -fsSL https://raw.githubusercontent.com/flox/flox/main/install.sh | bash
+curl -fsSL https://install.flox.dev/ | sh

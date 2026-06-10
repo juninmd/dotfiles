@@ -173,8 +173,8 @@ if [[ -z "$PROFILE" ]]; then
     echo ""
     PROFILE_CHOICE=$("$GUM" choose \
       --height=20 \
-      --cursor="⚡ " \
-      --header="Escolha o seu nível de poder no Nexus (pressione '/' para buscar):" \
+      --cursor="✨ " \
+      --header="Escolha o seu nível de poder no Nexus:" \
       --header.foreground="#ff7edb" \
       --cursor.foreground="#72f1b8" \
       --item.foreground="#f8f8f2" \
@@ -214,6 +214,29 @@ log "Perfil selecionado: $PROFILE"
 
 # Human-readable descriptions for the modules
 declare -A MOD_DESC=(
+  ["cline"]="🤖 Cline (Autonomous coding agent CLI)"
+
+  ["just"]="🤖 Just (Command Runner)"
+  ["mods"]="🤖 Mods (AI on the command line)"
+  ["llm"]="🧠 LLM (Access Large Language Models)"
+  ["helix"]="🧬 Helix (Post-modern text editor)"
+  ["nushell"]="🐚 Nushell (A new type of shell)"
+  ["deno"]="🦕 Deno (Modern JS/TS runtime)"
+  ["opentofu"]="🏗️ OpenTofu (Infrastructure as Code)"
+  ["distrobox"]="📦 Distrobox (Run any linux distro in terminal)"
+  ["moon"]="🌙 Moon (Build system for JS/TS)"
+  ["biome"]="🚀 Biome (Fast JS/TS toolchain)"
+  ["ruff"]="⚡ Ruff (Extremely fast Python linter)"
+  ["pkgx"]="📦 pkgx (Blazing fast package manager)"
+  ["devenv"]="⚙️ Devenv (Declarative Developer Environments)"
+  ["flox"]="❄️ Flox (Developer environments for everyone)"
+  ["rye"]="🌾 Rye (Hassle-free Python experience)"
+  ["broot"]="🌲 Broot (A new way to see and navigate directory trees)"
+  ["pueue"]="🗃️ Pueue (Command-line task management tool)"
+  ["procs"]="🔍 Procs (A modern replacement for ps)"
+  ["tealdeer"]="🦌 Tealdeer (A very fast implementation of tldr in Rust)"
+  ["hyperfine"]="⏱️ Hyperfine (A command-line benchmarking tool)"
+
   ["mise"]="🛠️ Mise (Polyglot Tool Version Manager)"
   ["atuin"]="🐢 Atuin (Magical Shell History)"
   ["devbox"]="📦 Devbox (Portable Developer Environments)"
@@ -284,27 +307,6 @@ declare -A MOD_DESC=(
   ["podman"]="🦭 Podman (Daemonless container engine)"
   ["devpod"]="🚀 DevPod (Codespaces but open-source)"
   ["daytona"]="🌅 Daytona (Self-hosted development environment manager)"
-  ["just"]="🤖 Just (Command Runner)"
-  ["mods"]="🤖 Mods (AI on the command line)"
-  ["llm"]="🤖 Llm (CLI for Large Language Models)"
-  ["helix"]="🤖 Helix (Modern Editor)"
-  ["nushell"]="🤖 Nushell (Modern Shell)"
-  ["deno"]="🤖 Deno (Modern JS/TS Runtime)"
-  ["opentofu"]="🤖 OpenTofu (Infrastructure as Code)"
-  ["distrobox"]="🤖 Distrobox (Use any Linux distribution inside your terminal)"
-  ["moon"]="🤖 Moonrepo (Task runner and monorepo management tool)"
-  ["biome"]="🤖 Biome (Fast JS/TS Toolchain)"
-  ["ruff"]="🤖 Ruff (Fast Python Linter/Formatter)"
-  ["pkgx"]="🤖 Pkgx (Package manager)"
-  ["devenv"]="🤖 Devenv (Developer environments)"
-  ["flox"]="🤖 Flox (Developer environments)"
-  ["rye"]="🤖 Rye (Python package management)"
-  ["broot"]="🤖 Broot (Directory Navigation)"
-  ["pueue"]="🤖 Pueue (Command Queue Manager)"
-  ["procs"]="🤖 Procs (Modern ps)"
-  ["tealdeer"]="🤖 Tealdeer (Fast tldr in Rust)"
-  ["hyperfine"]="🤖 Hyperfine (Benchmarking)"
-  ["cline"]="🤖 Cline (AI Assistant CLI)"
 )
 
 # Get all available modules
@@ -346,13 +348,13 @@ if command -v "$GUM" &> /dev/null; then
   # Note: Use `gum choose` because it supports `--selected` natively (unlike `gum filter`),
   # allowing us to pre-select modules based on the chosen profile.
   # We increased the height and added a search hint (use '/' to search in modern gum).
-  SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="⚡ " \
-    --height=30 \
+  SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="✨ " \
+    --height=35 \
     --selected="${DEFAULTS}" \
     --selected.foreground="#36f9f6" \
     --cursor.foreground="#ff7edb" \
     --item.foreground="#f8f8f2" \
-    --header="Selecione os módulos (pressione '/' para buscar):" \
+    --header="🚀 Selecione os módulos (pressione '/' para buscar):" \
     --header.foreground="#fede5d" \
     "${CHOICES[@]}")
 
