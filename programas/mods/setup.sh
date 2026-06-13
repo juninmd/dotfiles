@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
-echo -e "\e[32mInstalling Mods...\e[0m"
-source "$PWD/programas/common/cargo_helper.sh"
-install_go_package github.com/charmbracelet/mods@latest
+c="\033[1;36m"
+r="\033[0m"
+source "$ROOT_DIR/programas/common/cargo_helper.sh" 2>/dev/null || true
+echo -e "${c}Installing mods...${r}"
+if command -v go &> /dev/null; then
+    install_go_package github.com/charmbracelet/mods@latest
+else
+    echo -e "${c}Go not found, skipping mods installation.${r}"
+fi
