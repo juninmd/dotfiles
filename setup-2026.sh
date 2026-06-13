@@ -201,7 +201,7 @@ case "$PROFILE" in
     DEFAULT_MODULES=(cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger deno biome ruff broot procs pueue jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona just helix nushell distrobox moon pkgx tealdeer hyperfine opentofu)
     ;;
   ai-dev)
-    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger deno biome ruff broot procs pueue aichat fabric k8sgpt tgpt jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona mods llm cline)
+    DEFAULT_MODULES=(cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger deno biome ruff broot doggo tokei jless oha curlie procs pueue aichat fabric k8sgpt tgpt jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona mods llm cline)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -293,6 +293,11 @@ declare -A MOD_DESC=(
   ["cbonsai"]="🌲 cbonsai (Terminal bonsai tree)"
   ["pipes-sh"]="🚰 pipes-sh (Animated pipes screensaver)"
   ["mprocs"]="🔄 mprocs (Run multiple commands in parallel)"
+  ["doggo"]="🐶 Doggo (Modern DNS Client)"
+  ["tokei"]="⏰ Tokei (Code Statistics)"
+  ["jless"]="🔍 Jless (JSON Viewer)"
+  ["oha"]="📈 Oha (HTTP Benchmarking)"
+  ["curlie"]="🦱 Curlie (curl + httpie)"
   ["k8sgpt"]="☸️ k8sgpt (AI for Kubernetes)"
   ["fabric"]="🤖 fabric (AI CLI framework)"
   ["aichat"]="💬 aichat (AI Chat)"

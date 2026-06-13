@@ -174,29 +174,7 @@ else
     echo -e "${c}thefuck already installed.${r}"
 fi
 
-# Doggo (Modern DNS Client)
-if ! command -v doggo &> /dev/null; then
-    echo -e "${c}Installing doggo...${r}"
-    if command -v go &> /dev/null; then
-        go install github.com/mr-karan/doggo/cmd/doggo@latest
-    else
-        echo -e "${c}Go not found, skipping doggo installation.${r}"
-    fi
-else
-    echo -e "${c}doggo already installed.${r}"
-fi
 
-# Curlie (Modern curl)
-if ! command -v curlie &> /dev/null; then
-    echo -e "${c}Installing curlie...${r}"
-    if command -v go &> /dev/null; then
-        go install github.com/rs/curlie@latest
-    else
-        echo -e "${c}Go not found, skipping curlie installation.${r}"
-    fi
-else
-    echo -e "${c}curlie already installed.${r}"
-fi
 
 # Glances (System Monitoring)
 if ! command -v glances &> /dev/null; then
@@ -206,8 +184,6 @@ else
     echo -e "${c}glances already installed.${r}"
 fi
 
-# Oha (HTTP Benchmarking)
-install_cargo_crate oha
 
 # Trippy (Network Diagnostic)
 install_cargo_crate trippy trip
@@ -223,6 +199,9 @@ if ! command -v gdu &> /dev/null; then
 else
     echo -e "${c}gdu already installed.${r}"
 fi
+
+# Pueue (Command Queue Manager)
+install_cargo_crate pueue
 
 # Presenterm (Terminal Slideshows)
 install_cargo_crate presenterm
@@ -302,8 +281,6 @@ install_cargo_crate websocat
 # Ouch (Painless Compression)
 install_cargo_crate ouch
 
-# Tokei (Code Statistics)
-install_cargo_crate tokei
 
 # Grex (Regex Generator)
 install_cargo_crate grex
@@ -311,8 +288,6 @@ install_cargo_crate grex
 # Bandwhich (Bandwidth Monitor)
 install_cargo_crate bandwhich
 
-# Jless (JSON Viewer)
-install_cargo_crate jless
 
 # Spacer (CLI Spacer)
 install_cargo_crate spacer
@@ -746,8 +721,12 @@ install_cargo_crate silicon
 # Rm-improved (Safe rm)
 install_cargo_crate rm-improved rip
 
+# Tgpt (Terminal ChatGPT)
+install_go_package github.com/aandrew-me/tgpt/v2@latest tgpt
+
 # Doggo (Command-line DNS Client)
 install_go_package github.com/mr-karan/doggo/cmd/doggo@latest doggo
+
 
 # Tenv (OpenTofu/Terraform version manager)
 install_go_package github.com/tofuutils/tenv/v3@latest tenv
@@ -846,7 +825,7 @@ install_cargo_crate tre-command tre
 install_go_package github.com/gcla/termshark/v2/cmd/termshark@latest termshark
 
 # Actionlint (GitHub Actions Linter)
-install_go_package github.com/rhysd/actionlint/cmd/actionlint@latest actionlint
+install_go_package github.com/rhyds/actionlint/cmd/actionlint@latest actionlint
 
 # Popeye (Kubernetes cluster sanitizer)
 install_go_package github.com/derailed/popeye@latest popeye
@@ -1105,7 +1084,7 @@ if [ -f "$BTOP_THEME_FILE" ]; then
     else
         # Replace existing color_theme line or append it
         if grep -q "color_theme" "$BTOP_CONF"; then
-            sed -i 's|^color_theme = .*|color_theme = "'"$BTOP_THEMES_DIR"'/synthwave.theme"|' "$BTOP_CONF"
+            sed -i 's|^color_theme = .*|color_theme = \"'$BTOP_THEMES_DIR'/synthwave.theme\"|' "$BTOP_CONF"
         else
             echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\"" >> "$BTOP_CONF"
         fi
@@ -1555,5 +1534,5 @@ fi
 # dotenv-linter (Linter for .env files)
 install_cargo_crate dotenv-linter
 
-# --- ULTIMATE 2026 CLI APPS ---
 
+# --- ULTIMATE 2026 CLI APPS ---
