@@ -1,0 +1,226 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+format = """
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$nodejs\
+$python\
+$rust\
+$golang\
+$crystal\
+$scala\
+$kotlin\
+$zig\
+$lua\
+$dart\
+$julia\
+$cmake\
+$gradle\
+$maven\
+$docker_context\
+$aws\
+$gcloud\
+$kubernetes\
+$os\
+$container\
+$fill\
+$cmd_duration\
+$memory_usage\
+$battery\
+$time\
+$line_break\
+$character"""
+
+[fill]
+symbol = " "
+
+[character]
+success_symbol = '[➜](bold #36f9f6)' # Neon Cyan
+error_symbol = '[✗](bold #ff7edb)'   # Neon Pink
+vimcmd_symbol = '[V](bold #72f1b8)'  # Neon Green
+
+[directory]
+style = "bold #36f9f6"
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = " 🔒"
+
+[git_branch]
+style = "bold #fede5d" # Neon Yellow
+symbol = " "
+
+[git_commit]
+style = "bold #ff7edb"
+commit_hash_length = 8
+tag_symbol = "🔖 "
+
+[git_state]
+style = "bold #ff7edb"
+
+[git_metrics]
+disabled = false
+added_style = "bold #72f1b8"
+deleted_style = "bold #ff5555"
+
+[git_status]
+style = "bold #ff7edb" # Neon Pink
+conflicted = "🏳"
+up_to_date = "✓"
+untracked = "🤷"
+modified = "📝"
+staged = '[++($count)](green)'
+renamed = "👅"
+deleted = "🗑"
+
+[nodejs]
+symbol = " "
+style = "bold #72f1b8"
+
+[python]
+symbol = "🐍 "
+style = "bold #fede5d"
+
+[rust]
+symbol = "🦀 "
+style = "bold #ff7edb"
+
+[golang]
+symbol = "🐹 "
+style = "bold #36f9f6"
+
+[crystal]
+symbol = "🔮 "
+style = "bold #ff7edb"
+
+[scala]
+symbol = "🍵 "
+style = "bold #fede5d"
+
+[kotlin]
+symbol = "🅺 "
+style = "bold #72f1b8"
+
+[zig]
+symbol = "⚡ "
+style = "bold #fede5d"
+
+[lua]
+symbol = "🌙 "
+style = "bold #36f9f6"
+
+[dart]
+symbol = "🎯 "
+style = "bold #36f9f6"
+
+[julia]
+symbol = "ஃ "
+style = "bold #72f1b8"
+
+[cmake]
+symbol = "△ "
+style = "bold #fede5d"
+
+[gradle]
+symbol = "🐘 "
+style = "bold #36f9f6"
+
+[maven]
+symbol = "🎀 "
+style = "bold #ff7edb"
+
+[docker_context]
+symbol = " "
+style = "bold #36f9f6"
+
+[aws]
+symbol = "☁️  "
+style = "bold #fede5d"
+disabled = false
+
+[gcloud]
+symbol = "☁️  "
+style = "bold #36f9f6"
+disabled = false
+
+[kubernetes]
+symbol = "☸ "
+style = "bold #36f9f6"
+disabled = false
+
+[os]
+disabled = false
+style = "bold #fede5d"
+
+[os.symbols]
+Debian = " "
+Ubuntu = " "
+Macos = " "
+Windows = " "
+
+[package]
+symbol = "📦 "
+style = "bold #ff7edb"
+disabled = false
+
+[memory_usage]
+disabled = false
+threshold = 75
+symbol = "🧠 "
+style = "bold #ff5555"
+format = "$symbol[${ram}( | ${swap})]($style) "
+
+[battery]
+disabled = false
+full_symbol = "🔋 "
+charging_symbol = "⚡ "
+discharging_symbol = "💀 "
+
+[[battery.display]]
+threshold = 30
+style = "bold #ff5555"
+
+[container]
+symbol = "🐳 "
+style = "bold #36f9f6"
+disabled = false
+
+[cmd_duration]
+min_time = 500
+style = "bold #fede5d"
+format = "took [$duration]($style)"
+
+[jobs]
+symbol = "✦ "
+style = "bold #72f1b8"
+
+[shell]
+disabled = false
+style = "bold #bd93f9" # Neon Purple
+symbol = "🐚 "
+
+[sudo]
+disabled = false
+style = "bold #ff5555" # Red
+symbol = "🧙 "
+
+[hostname]
+ssh_only = false
+style = "bold #36f9f6" # Neon Cyan
+format = "on [$ssh_symbol$hostname]($style) "
+
+[localip]
+ssh_only = true
+style = "bold #72f1b8" # Neon Green
+format = "@[$localipv4]($style) "
+
+[time]
+disabled = false
+style = "bold #ff7edb"
+format = "at [$time]($style) "

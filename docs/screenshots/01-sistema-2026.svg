@@ -1,0 +1,12 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1400' height='820' viewBox='0 0 1400 820'>
+  <rect width='1400' height='820' fill='#0f111a'/>
+  <rect x='60' y='60' width='1280' height='700' rx='20' fill='#1f2430' stroke='#3a4254' stroke-width='3'/>
+  <rect x='60' y='60' width='1280' height='70' rx='20' fill='#2a3142'/>
+  <text x='90' y='105' fill='#e6edf3' font-size='28' font-family='monospace'>Ubuntu 24.04 + GNOME + Dotfiles</text>
+  <text x='95' y='190' fill='#c7d6ff' font-size='24' font-family='monospace'>$ neofetch</text>
+  <text x='95' y='230' fill='#c7d6ff' font-size='24' font-family='monospace'>OS: Ubuntu 24.04 LTS x86_64</text>
+  <text x='95' y='270' fill='#c7d6ff' font-size='24' font-family='monospace'>Shell: zsh 5.9</text>
+  <text x='95' y='310' fill='#c7d6ff' font-size='24' font-family='monospace'>Terminal: ghostty</text>
+  <rect x='95' y='650' width='1210' height='70' rx='12' fill='#7cc7ff'/>
+  <text x='120' y='695' fill='#041120' font-size='28' font-weight='bold' font-family='sans-serif'>Dotfiles 2026 • Setup reproduzível</text>
+</svg>

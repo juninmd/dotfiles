@@ -2,8 +2,5 @@
 
 ## Firefox Color
 
-Black Wave Plus
-<https://color.firefox.com/?theme=XQAAAAL6AAAAAAAAAABBqYhm849SCiazH1KEGccwS-xNVAVJ0Lg4GChFzSadJLoAnBK7L8kQD1hjsYJH1eRSH8rnVTxSTKrEYlgRO5D2aWdfor5oCqH-ccqu1P0Tk3hQ1Q8m5jF8NdifZdY7hefGICFzMnQ9GFGTMV3xvNzjjVV2MjdgQ4dA9aDiQXu_k_01-LmbEAdICYLTBJj-xmoj1EQygvsMiCBUzNdOQm50-GnChdiNyznGP1B-ebAO1N6P_3LIgAA>
-
-Dark Red Wave
-<https://color.firefox.com/?theme=XQAAAAIfAQAAAAAAAABBqYhm849SCia2CaaEGccwS-xNKlhRZV3ii0zg_PHvnqfMdjryID94QpX4PV0eykauBVZNYcFioPOzjijVYdWcYZ70HwkZKrZXNQmUkD7yyiL_cecrXqPP_4dPDN19dTsTu9EI7MSjF9E-V4hFch7QZ6lagI1esUGWOL0VL69QYzKFG74FzFDs7PROjZkVqsY0mYVA4hbbIUw9W_Rs-pgXbxAdhusZxdUiYIQW51i91BigAGF0V9lBtOZ2MHAN_2DrgAA>
+Synthwave '84
+<https://color.firefox.com/?theme=XQAAAAJJAQAAAAAAAABBqYhm849SCia2CaaEGccwS-xNKlhRZV3ip-i2285_V5iWq-oV867zQdtr4qbi-E-aUu785x8nLprp-9t11fGe-QcWwT-fSt-G_v9wOkjC-n-4_5f3-v-s-z_i-a_c-e_k-u_m-w_o-0_q-2_s-4_u-6_w-8_y-A_0-C_2-E_4-G_6-I_8-K_A-M_C-O_E-Q_G-S_I-U_K-W_M-Y_O-a_Q-c_S-e_U-g_W-i_Y-k_a-m_c-o_e-q_g-s_i-u_k-w_m-y_o-0_q-2_s-4_u-6_w-8_y-A_0-C_2-E_4-G_6-I_8-K_A-M_C-O_E-Q_G-S_I-U_K-W_M-Y_O-a_Q-c_S-e_U-g_W-i_Y-k_a-m_c-o_e-q_g-s_i-u_k-w_m-y_o-0_q-2_s-4_u-6_w-8_y-A_0-C_2-E_4-G_6-I_8-K_A-M_C-O_E-Q_G-S_I-U_K-W_M-Y_O-a_Q-c_S-e_U-g_W-i_Y-k_a-m_c-o_e-q_g-s_i-u_k-w_m-y_o-0>

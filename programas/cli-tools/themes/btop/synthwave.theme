@@ -1,0 +1,83 @@
+# Synthwave '84 Theme for btop
+
+# Main background, empty for terminal default, need to be empty if you want transparent background
+theme[main_bg]="#282a36"
+
+# Main text color
+theme[main_fg]="#f8f8f2"
+
+# Title color for boxes
+theme[title]="#f8f8f2"
+
+# Higlight color for keyboard shortcuts
+theme[hi_fg]="#ff7edb"
+
+# Background color of selected item in processes box
+theme[selected_bg]="#44475a"
+
+# Foreground color of selected item in processes box
+theme[selected_fg]="#f8f8f2"
+
+# Color of inactive/disabled text
+theme[inactive_fg]="#6272a4"
+
+# Color of text appearing on top of graphs, i.e uptime and current network graph scaling
+theme[graph_text]="#f8f8f2"
+
+# Misc colors for processes box including mini cpu graphs, details memory graph and details status text
+theme[proc_misc]="#bd93f9"
+
+# Cpu box outline color
+theme[cpu_box]="#bd93f9"
+
+# Memory box outline color
+theme[mem_box]="#ff7edb"
+
+# Net box outline color
+theme[net_box]="#36f9f6"
+
+# Processes box outline color
+theme[proc_box]="#fede5d"
+
+# Box divider line and small boxes line color
+theme[div_line]="#6272a4"
+
+# Temperature graph colors
+theme[temp_start]="#36f9f6"
+theme[temp_mid]="#fede5d"
+theme[temp_end]="#ff5555"
+
+# CPU graph colors
+theme[cpu_start]="#36f9f6"
+theme[cpu_mid]="#fede5d"
+theme[cpu_end]="#ff5555"
+
+# Mem/Disk free meter
+theme[free_start]="#36f9f6"
+theme[free_mid]="#fede5d"
+theme[free_end]="#ff5555"
+
+# Mem/Disk cached meter
+theme[cached_start]="#bd93f9"
+theme[cached_mid]="#bd93f9"
+theme[cached_end]="#ff7edb"
+
+# Mem/Disk available meter
+theme[available_start]="#fede5d"
+theme[available_mid]="#ffb86c"
+theme[available_end]="#ff5555"
+
+# Mem/Disk used meter
+theme[used_start]="#36f9f6"
+theme[used_mid]="#fede5d"
+theme[used_end]="#ff5555"
+
+# Download graph colors
+theme[download_start]="#36f9f6"
+theme[download_mid]="#bd93f9"
+theme[download_end]="#ff7edb"
+
+# Upload graph colors
+theme[upload_start]="#fede5d"
+theme[upload_mid]="#ffb86c"
+theme[upload_end]="#ff5555"

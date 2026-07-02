@@ -22,3 +22,14 @@ code --install-extension roblourens.unittest-navigate
 code --install-extension visualstudioexptteam.vscodeintellicode
 code --install-extension xabikos.JavaScriptSnippets
 code --install-extension Zignd.html-css-class-completion
+code --install-extension GitHub.copilot
+code --install-extension RobbOwen.synthwave-vscode
+code --install-extension esbenp.prettier-vscode
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension bradlc.vscode-tailwindcss
+code --install-extension usernamehw.errorlens
+code --install-extension YoavBls.pretty-ts-errors
+code --install-extension tamasfe.even-better-toml
+code --install-extension rust-lang.rust-analyzer
+code --install-extension mhutchie.git-graph
+code --install-extension gruntfuggly.todo-tree
