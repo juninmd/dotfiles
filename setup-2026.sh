@@ -353,7 +353,7 @@ if command -v "$GUM" &> /dev/null; then
   # Note: Use `gum choose` because it supports `--selected` natively (unlike `gum filter`),
   # allowing us to pre-select modules based on the chosen profile.
   # We increased the height and added a search hint (use '/' to search in modern gum).
-  SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="✨ " \
+  SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="⚡ " \
     --height=35 \
     --selected="${DEFAULTS}" \
     --selected.foreground="#36f9f6" \

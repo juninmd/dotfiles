@@ -1534,5 +1534,16 @@ fi
 # dotenv-linter (Linter for .env files)
 install_cargo_crate dotenv-linter
 
+# Popeye (Kubernetes cluster sanitizer)
+install_go_package github.com/derailed/popeye@latest popeye
+
+# Actionlint (Static checker for GitHub Actions)
+install_go_package github.com/rhysd/actionlint/cmd/actionlint@latest actionlint
+
+# SCC (Sloc Cloc and Code - extremely fast code counter)
+install_go_package github.com/boyter/scc/v3@latest scc
+
+# Tenv (OpenTofu, Terraform, Terragrunt version manager)
+install_go_package github.com/tofuutils/tenv/v4/cmd/tenv@latest tenv
 
 # --- ULTIMATE 2026 CLI APPS ---
