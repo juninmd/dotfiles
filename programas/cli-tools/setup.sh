@@ -214,17 +214,6 @@ else
     echo -e "${c}ollama already installed.${r}"
 fi
 
-# Glow (Markdown Renderer)
-if ! command -v glow &> /dev/null; then
-    echo -e "${c}Installing glow...${r}"
-    if command -v go &> /dev/null; then
-        go install github.com/charmbracelet/glow@latest
-    else
-        echo -e "${c}Go not found, skipping glow installation.${r}"
-    fi
-else
-    echo -e "${c}glow already installed.${r}"
-fi
 
 # Slides (Terminal Presentations)
 if ! command -v slides &> /dev/null; then
@@ -413,8 +402,6 @@ install_cargo_crate rs-cmatrix
 # Genact (Activity Generator)
 install_cargo_crate genact
 
-# GitUI (Blazing Fast Git TUI)
-install_cargo_crate gitui
 
 # Cpufetch (Simple yet fancy CPU architecture fetching tool)
 if ! command -v cpufetch &> /dev/null; then
@@ -512,16 +499,12 @@ fi
 # Tailspin (Log Highlighter)
 install_cargo_crate tailspin tspin
 
-# Slumber (Terminal HTTP Client)
-install_cargo_crate slumber
 
 # JQP (TUI for jq)
 install_go_package github.com/noahgorstein/jqp@latest jqp
 
 # --- THE FUTURE IS NOW (New 2026 Apps) ---
 
-# Nap (Snippets Manager)
-install_go_package github.com/charmbracelet/nap@latest nap
 
 # Wiki-tui (Wikipedia in terminal)
 install_cargo_crate wiki-tui
@@ -580,8 +563,6 @@ install_cargo_crate code2prompt
 # Oxlint (Fast JS/TS linter)
 install_cargo_crate oxlint
 
-# Kdash (Kubernetes Dashboard)
-install_cargo_crate kdash
 
 # Stern (Multi pod logs)
 install_go_package github.com/stern/stern@latest stern
@@ -855,8 +836,6 @@ install_go_package github.com/sqlc-dev/sqlc/cmd/sqlc@latest sqlc
 # shfmt (Shell parser, formatter, and interpreter)
 install_go_package mvdan.cc/sh/v3/cmd/shfmt@latest shfmt
 
-# Lazynpm (NPM TUI)
-install_go_package github.com/jesseduffield/lazynpm@latest lazynpm
 
 # Pnpm (Fast, disk space efficient package manager)
 if ! command -v pnpm &> /dev/null; then
@@ -1401,9 +1380,6 @@ install_go_package github.com/gokcehan/lf@latest lf
 
 echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"
 # --- BEYOND 2026 APPS ---
-
-# Slumber (Terminal HTTP Client)
-install_cargo_crate slumber
 
 # --- THE VERY EDGE OF 2026 APPS ---
 
