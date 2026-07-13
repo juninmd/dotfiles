@@ -39,60 +39,13 @@ if ! command -v cargo-binstall &> /dev/null; then
     curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
 fi
 
-# Eza (Modern ls)
-if ! command -v eza &> /dev/null; then
-    echo -e "${c}Installing eza...${r}"
-    sudo mkdir -p /etc/apt/keyrings
-    wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
-    echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
-    sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
-    sudo apt update
-    sudo apt install -y eza
-else
-    echo -e "${c}eza already installed.${r}"
-fi
 
 # Bat (Modern cat)
-echo -e "${c}Installing bat...${r}"
-sudo apt install -y bat
-mkdir -p ~/.local/bin
-# Create symlink if batcat exists but bat doesn't
-if command -v batcat &> /dev/null && ! command -v bat &> /dev/null; then
-    ln -s $(which batcat) ~/.local/bin/bat
-fi
 
-# Zoxide (Smarter cd)
-if ! command -v zoxide &> /dev/null; then
-    echo -e "${c}Installing zoxide...${r}"
-    curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
-else
-    echo -e "${c}zoxide already installed.${r}"
-fi
 
 # Fzf (Fuzzy Finder)
-echo -e "${c}Installing fzf...${r}"
-sudo apt install -y fzf
-
-# Ripgrep (Faster grep)
-echo -e "${c}Installing ripgrep...${r}"
-sudo apt install -y ripgrep
-
-# Fd (Faster find)
-echo -e "${c}Installing fd-find...${r}"
-sudo apt install -y fd-find
-# Create symlink if fdfind exists but fd doesn't
-if command -v fdfind &> /dev/null && ! command -v fd &> /dev/null; then
-    ln -s $(which fdfind) ~/.local/bin/fd
-fi
 
 # Btop (Modern top)
-echo -e "${c}Installing btop...${r}"
-# Check if btop is available in apt (newer Ubuntu), otherwise snap or manual
-if apt-cache show btop &> /dev/null; then
-    sudo apt install -y btop
-else
-    sudo snap install btop
-fi
 
 # --- NEW TOOLS (2026 Apps) ---
 
@@ -965,23 +918,6 @@ if command -v gh &> /dev/null; then
 else
     echo -e "${c}gh not found, skipping gh-dash extension installation.${r}"
 fi
-
-# Configure Bat Theme
-echo -e "${c}Configuring Bat Theme...${r}"
-BAT_CONFIG_DIR="$(bat --config-dir)"
-mkdir -p "$BAT_CONFIG_DIR/themes"
-SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
-BAT_THEME_FILE="$SCRIPT_DIR/themes/bat/synthwave.tmTheme"
-
-if [ -f "$BAT_THEME_FILE" ]; then
-    cp "$BAT_THEME_FILE" "$BAT_CONFIG_DIR/themes/synthwave.tmTheme"
-    echo -e "${c}Bat theme copied.${r}"
-    bat cache --build
-    echo -e "${c}Bat cache rebuilt.${r}"
-else
-    echo -e "${c}Warning: synthwave.tmTheme not found in $SCRIPT_DIR/themes/bat${r}"
-fi
-
 # --- CLOUD NATIVE & SYSTEM TOOLS ---
 
 # Kubectl
@@ -1044,35 +980,6 @@ fi
 
 # Configure Btop
 echo -e "${c}Configuring Btop...${r}"
-BTOP_THEMES_DIR="$HOME/.config/btop/themes"
-mkdir -p "$BTOP_THEMES_DIR"
-SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
-BTOP_THEME_FILE="$SCRIPT_DIR/themes/btop/synthwave.theme"
-
-if [ -f "$BTOP_THEME_FILE" ]; then
-    cp "$BTOP_THEME_FILE" "$BTOP_THEMES_DIR/synthwave.theme"
-    echo -e "${c}Btop theme copied.${r}"
-
-    # Update btop.conf to use the theme if it exists, or creating a minimal one
-    BTOP_CONF="$HOME/.config/btop/btop.conf"
-    if [ ! -f "$BTOP_CONF" ]; then
-        echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\"" > "$BTOP_CONF"
-        echo "theme_background = False" >> "$BTOP_CONF"
-        echo "truecolor = True" >> "$BTOP_CONF"
-        echo "vim_keys = True" >> "$BTOP_CONF"
-    else
-        # Replace existing color_theme line or append it
-        if grep -q "color_theme" "$BTOP_CONF"; then
-            sed -i 's|^color_theme = .*|color_theme = \"'$BTOP_THEMES_DIR'/synthwave.theme\"|' "$BTOP_CONF"
-        else
-            echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\"" >> "$BTOP_CONF"
-        fi
-    fi
-    echo -e "${c}Btop configured to use Synthwave theme.${r}"
-else
-    echo -e "${c}Warning: synthwave.theme not found in $SCRIPT_DIR/themes/btop${r}"
-fi
-
 # --- NEW 2026 APPS ---
 
 # Ctop (Top-like interface for container metrics)
