@@ -192,16 +192,16 @@ fi
 
 case "$PROFILE" in
   minimal)
-    DEFAULT_MODULES=(eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship vscode)
+    DEFAULT_MODULES=(eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship vscode sd choose gobang bottom macchina xplr circumflex lsd)
     ;;
   dev)
-    DEFAULT_MODULES=(eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv mise atuin devbox dagger deno biome ruff broot procs pueue glow slumber lazynpm gitui kdash nap)
+    DEFAULT_MODULES=(eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv mise atuin devbox dagger deno biome ruff broot procs pueue glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd)
     ;;
   full)
-    DEFAULT_MODULES=(eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger deno biome ruff broot procs pueue jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona just helix nushell distrobox moon pkgx tealdeer hyperfine opentofu glow slumber lazynpm gitui kdash nap)
+    DEFAULT_MODULES=(eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger deno biome ruff broot procs pueue jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona just helix nushell distrobox moon pkgx tealdeer hyperfine opentofu glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd)
     ;;
   ai-dev)
-    DEFAULT_MODULES=(eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger deno biome ruff broot doggo tokei jless oha curlie procs pueue aichat fabric k8sgpt tgpt jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona mods llm cline glow slumber lazynpm gitui kdash nap)
+    DEFAULT_MODULES=(eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger deno biome ruff broot doggo tokei jless oha curlie procs pueue aichat fabric k8sgpt tgpt jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona mods llm cline glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -330,6 +330,16 @@ declare -A MOD_DESC=(
   ["kdash"]="☸️ kdash (Kubernetes Dashboard)"
 
   ["nap"]="😴 nap (Snippets Manager)"
+
+  ["sd"]="🔍 sd (Search & Displace)"
+  ["choose"]="✂️ choose (Human-friendly cut)"
+  ["gobang"]="🗃️ gobang (Cross-platform Database Client TUI)"
+  ["bottom"]="📈 bottom (System Monitor)"
+  ["macchina"]="💻 macchina (System information fetcher)"
+  ["xplr"]="📁 xplr (TUI file explorer)"
+  ["circumflex"]="📰 circumflex (Hacker News in terminal)"
+  ["lsd"]="🌟 lsd (Modern ls replacement)"
+
 
 )
 

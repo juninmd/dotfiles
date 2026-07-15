@@ -192,11 +192,7 @@ else
     echo -e "${c}fx already installed.${r}"
 fi
 
-# Sd (Search & Displace)
-install_cargo_crate sd
 
-# Choose (Human-friendly cut)
-install_cargo_crate choose
 
 # Onefetch (Git Summary)
 install_cargo_crate onefetch
@@ -380,8 +376,6 @@ install_cargo_crate kmon
 # Zenith (System Monitor with Charts)
 install_cargo_crate zenith
 
-# Gobang (Cross-platform Database Client TUI)
-install_cargo_crate gobang
 
 # Termtyper (Typing Practice)
 install_cargo_crate termtyper
@@ -434,8 +428,6 @@ install_cargo_crate mcfly
 # Monolith (Web Page Saver)
 install_cargo_crate monolith
 
-# Bottom (System Monitor)
-install_cargo_crate bottom btm
 
 # Nushell (Modern Shell)
 install_cargo_crate nu
@@ -608,8 +600,6 @@ install_cargo_crate cocogitto cog
 # Bore-cli (Localhost tunneling tool)
 install_cargo_crate bore-cli bore
 
-# Macchina (System information fetcher)
-install_cargo_crate macchina
 
 # JQL (JSON Query Language CLI)
 install_cargo_crate jql
@@ -703,11 +693,7 @@ install_go_package github.com/xo/usql@latest usql
 # Joshuto (Terminal file manager)
 install_cargo_crate joshuto
 
-# Xplr (TUI file explorer)
-install_cargo_crate xplr
 
-# Circumflex (Hacker News in terminal)
-install_go_package github.com/bensadeh/circumflex@latest circumflex
 
 # Kubecolor (Colorized kubectl)
 install_go_package github.com/kubecolor/kubecolor@latest kubecolor
@@ -728,8 +714,6 @@ else
     echo -e "${c}chafa already installed.${r}"
 fi
 
-# Lsd (Modern ls replacement)
-install_cargo_crate lsd
 
 # Dprint (Code formatting platform)
 install_cargo_crate dprint
@@ -1027,8 +1011,6 @@ install_cargo_crate diskonaut
 
 # --- BRAND NEW 2026 APPS PART II ---
 
-# Xplr (TUI file explorer)
-install_cargo_crate xplr
 
 # Systeroid (Kernel parameter manager)
 install_cargo_crate systeroid
