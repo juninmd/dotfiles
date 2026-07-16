@@ -198,7 +198,7 @@ case "$PROFILE" in
     DEFAULT_MODULES=(eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv mise atuin devbox dagger deno biome ruff broot procs pueue glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd)
     ;;
   full)
-    DEFAULT_MODULES=(eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger deno biome ruff broot procs pueue jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona just helix nushell distrobox moon pkgx tealdeer hyperfine opentofu glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd)
+    DEFAULT_MODULES=(eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger deno biome ruff broot procs pueue jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona just helix nushell distrobox moon pkgx tealdeer hyperfine opentofu glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd trippy onefetch grex bandwhich amber tailspin erdtree dua oxlint difftastic topgrade pastel numbat dufs jj sesh carapace moar vhs gitleaks xc gdu trash-cli yt-dlp glances d2 pnpm fnm)
     ;;
   ai-dev)
     DEFAULT_MODULES=(eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger deno biome ruff broot doggo tokei jless oha curlie procs pueue aichat fabric k8sgpt tgpt jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona mods llm cline glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd)
@@ -339,6 +339,35 @@ declare -A MOD_DESC=(
   ["xplr"]="📁 xplr (TUI file explorer)"
   ["circumflex"]="📰 circumflex (Hacker News in terminal)"
   ["lsd"]="🌟 lsd (Modern ls replacement)"
+  ["trippy"]="🗺️ trippy (Network Diagnostic)"
+  ["onefetch"]="📊 onefetch (Git Summary)"
+  ["grex"]="🧠 grex (Regex Generator)"
+  ["bandwhich"]="📈 bandwhich (Bandwidth Monitor)"
+  ["amber"]="🔍 amber (Search & Replace)"
+  ["tailspin"]="🪵 tailspin (Log Highlighter)"
+  ["erdtree"]="🌳 erdtree (File-tree Visualizer)"
+  ["dua"]="💽 dua (Disk Usage Analyzer)"
+  ["oxlint"]="🐂 oxlint (Fast JS/TS linter)"
+  ["difftastic"]="🧬 difftastic (Structural diff)"
+  ["topgrade"]="🚀 topgrade (Upgrade Everything)"
+  ["pastel"]="🎨 pastel (Command-line Color Tool)"
+  ["numbat"]="🧮 numbat (High precision scientific calculator)"
+  ["dufs"]="📁 dufs (Utility file server)"
+  ["jj"]="🐙 jj (Git alternative)"
+  ["sesh"]="🖥️ sesh (Smart Session Manager)"
+  ["carapace"]="🐚 carapace (Multi-shell Completer)"
+  ["moar"]="📄 moar (Better Pager)"
+  ["vhs"]="📼 vhs (Terminal GIF Recorder)"
+  ["gitleaks"]="🔐 gitleaks (Secret scanner for git)"
+  ["xc"]="📝 xc (Markdown task runner)"
+  ["gdu"]="📊 gdu (Disk usage analyzer)"
+  ["trash-cli"]="🗑️ trash-cli (Safer rm)"
+  ["yt-dlp"]="🎥 yt-dlp (Video downloader)"
+  ["glances"]="👀 glances (System monitor)"
+  ["d2"]="📊 d2 (Declarative Diagramming)"
+  ["pnpm"]="📦 pnpm (Fast package manager)"
+  ["fnm"]="🐢 fnm (Fast Node Manager)"
+
 
 
 )
@@ -410,7 +439,15 @@ if command -v "$GUM" &> /dev/null; then
       MOD_LIST+="  $($GUM style --foreground "#ff7edb" "•") $($GUM style --foreground "#fede5d" "$mod") $($GUM style --foreground "#6272a4" "($desc)")"$'\n'
     fi
   done
-  echo -e "$MOD_LIST" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#ff7edb"
+  # Use gum join to create columns if there are many modules
+  if [ ${#MODULES[@]} -gt 15 ]; then
+    HALF=$((${#MODULES[@]} / 2 + 1))
+    COL1=$(echo -e "$MOD_LIST" | head -n $HALF)
+    COL2=$(echo -e "$MOD_LIST" | tail -n +$((HALF + 1)))
+    echo "$("$GUM" join --horizontal "$COL1" "$COL2")" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#ff7edb"
+  else
+    echo -e "$MOD_LIST" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#ff7edb"
+  fi
   echo ""
 else
   MODULES=("${DEFAULT_MODULES[@]}")
