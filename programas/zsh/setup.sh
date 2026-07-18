@@ -273,17 +273,14 @@ if command -v bore &> /dev/null; then alias tunnel='bore'; fi
 if command -v macchina &> /dev/null; then alias sysinfo='macchina'; fi
 if command -v typos &> /dev/null; then alias spellcheck='typos'; fi
 if command -v cog &> /dev/null; then alias commit='cog commit'; fi
-if command -v gron &> /dev/null; then alias unjson='gron'; fi
 
 # --- 2026 Extra CLI Apps ---
-if command -v pomsky &> /dev/null; then alias regex-gen='pomsky'; fi
 if command -v fend &> /dev/null; then alias calc='fend'; fi
 if command -v xc &> /dev/null; then alias tasks-md='xc'; fi
 if command -v gtt &> /dev/null; then alias translate='gtt'; fi
 if command -v task &> /dev/null; then alias t='task'; fi
 
 # --- 2026 Cutting Edge Apps ---
-if command -v sgpt &> /dev/null; then alias chatgpt='sgpt'; fi
 if command -v mlr &> /dev/null; then alias data='mlr'; fi
 if command -v usql &> /dev/null; then alias dbs='usql'; fi
 if command -v joshuto &> /dev/null; then alias fm='joshuto'; fi
@@ -315,7 +312,6 @@ if command -v oxlint &> /dev/null; then alias ox='oxlint'; fi
 
 # --- Missing 2026 Aliases ---
 if command -v yazi &> /dev/null; then alias y='yazi'; fi
-if command -v gping &> /dev/null; then alias ping='gping'; fi
 if command -v trip &> /dev/null; then alias traceroute='trip'; fi
 if command -v broot &> /dev/null; then alias br='broot'; fi
 if command -v pueue &> /dev/null; then alias pq='pueue'; fi
@@ -475,13 +471,10 @@ if ! grep -q "# --- The Future is Now Apps ---" "$ZSHRC"; then
 export DENO_INSTALL="\$HOME/.deno"
 export PATH="\$DENO_INSTALL/bin:\$PATH"
 
-if command -v wiki-tui &> /dev/null; then alias wiki='wiki-tui'; fi
 if command -v aichat &> /dev/null; then alias chat='aichat'; fi
-if command -v cointop &> /dev/null; then alias crypto='cointop'; fi
 if command -v wtf &> /dev/null; then alias dashboard='wtf'; fi
 if command -v taskwarrior-tui &> /dev/null; then alias tasks='taskwarrior-tui'; fi
 if command -v nap &> /dev/null; then alias snippets='nap'; fi
-if command -v kondo &> /dev/null; then alias clean='kondo'; fi
 EOT
 fi
 
@@ -509,9 +502,7 @@ if ! grep -q "# --- 2026 Apps Part III ---" "$ZSHRC"; then
 
 # --- 2026 Apps Part III ---
 if command -v topgrade &> /dev/null; then alias update='topgrade'; fi
-if command -v hexyl &> /dev/null; then alias hex='hexyl'; fi
 if command -v pastel &> /dev/null; then alias color='pastel'; fi
-if command -v csvlens &> /dev/null; then alias csv='csvlens'; fi
 EOT
 fi
 
@@ -538,7 +529,6 @@ if command -v bore &> /dev/null; then alias tunnel='bore'; fi
 if command -v macchina &> /dev/null; then alias sysinfo='macchina'; fi
 if command -v typos &> /dev/null; then alias spellcheck='typos'; fi
 if command -v cog &> /dev/null; then alias commit='cog commit'; fi
-if command -v gron &> /dev/null; then alias unjson='gron'; fi
 EOT
 fi
 
@@ -548,7 +538,6 @@ if ! grep -q "# --- 2026 Extra CLI Apps ---" "$ZSHRC"; then
     cat <<EOT >> $ZSHRC
 
 # --- 2026 Extra CLI Apps ---
-if command -v pomsky &> /dev/null; then alias regex-gen='pomsky'; fi
 if command -v fend &> /dev/null; then alias calc='fend'; fi
 if command -v xc &> /dev/null; then alias tasks-md='xc'; fi
 if command -v gtt &> /dev/null; then alias translate='gtt'; fi
@@ -562,7 +551,6 @@ if ! grep -q "# --- 2026 Cutting Edge Apps ---" "$ZSHRC"; then
     cat <<EOT >> $ZSHRC
 
 # --- 2026 Cutting Edge Apps ---
-if command -v sgpt &> /dev/null; then alias chatgpt='sgpt'; fi
 if command -v mlr &> /dev/null; then alias data='mlr'; fi
 if command -v usql &> /dev/null; then alias dbs='usql'; fi
 if command -v joshuto &> /dev/null; then alias fm='joshuto'; fi
@@ -625,7 +613,6 @@ if ! grep -q "# --- Missing 2026 Aliases ---" "$ZSHRC"; then
 
 # --- Missing 2026 Aliases ---
 if command -v yazi &> /dev/null; then alias y='yazi'; fi
-if command -v gping &> /dev/null; then alias ping='gping'; fi
 if command -v trip &> /dev/null; then alias traceroute='trip'; fi
 if command -v broot &> /dev/null; then alias br='broot'; fi
 if command -v pueue &> /dev/null; then alias pq='pueue'; fi
@@ -854,7 +841,6 @@ if ! grep -q "# --- Very Useful 2026 Apps ---" "$ZSHRC"; then
     cat <<EOT >> $ZSHRC
 
 # --- Very Useful 2026 Apps ---
-if command -v sgpt &> /dev/null; then alias chatgpt='sgpt'; fi
 EOT
 fi
 
@@ -867,6 +853,16 @@ if ! grep -q "# --- Ultimate 2026 Apps ---" "$ZSHRC"; then
 if command -v cbonsai &> /dev/null; then alias bonsai='cbonsai -l -i'; fi
 if command -v pipes.sh &> /dev/null; then alias screensaver='pipes.sh -p 5'; fi
 if command -v dsq &> /dev/null; then alias sql-data='dsq'; fi
+
+
+
+
+
+
+
+
+
+
 EOT
 fi
 
@@ -877,6 +873,24 @@ if ! grep -q "# --- Extra 2026 Aliases ---" "$ZSHRC"; then
 
 # --- Extra 2026 Aliases ---
 if command -v atac &> /dev/null; then alias api-client='atac'; fi
+if command -v gping &> /dev/null; then alias ping='gping'; fi
+if command -v kondo &> /dev/null; then alias clean='kondo'; fi
+if command -v presenterm &> /dev/null; then alias present='presenterm'; fi
+if command -v hexyl &> /dev/null; then alias hex='hexyl'; fi
+if command -v csvlens &> /dev/null; then alias csv='csvlens'; fi
+if command -v pomsky &> /dev/null; then alias regex-gen='pomsky'; fi
+if command -v bacon &> /dev/null; then alias bacon='bacon'; fi
+if command -v wiki-tui &> /dev/null; then alias wiki='wiki-tui'; fi
+if command -v sg &> /dev/null; then alias ast='sg'; fi
+if command -v dive &> /dev/null; then alias dive='dive'; fi
+if command -v gron &> /dev/null; then alias unjson='gron'; fi
+if command -v viddy &> /dev/null; then alias watch='viddy'; fi
+if command -v wtfutil &> /dev/null; then alias dashboard='wtfutil'; fi
+if command -v cointop &> /dev/null; then alias crypto='cointop'; fi
+if command -v dasel &> /dev/null; then alias dasel='dasel'; fi
+
+
+
 EOT
 fi
 
