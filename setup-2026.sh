@@ -198,7 +198,7 @@ case "$PROFILE" in
     DEFAULT_MODULES=(eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv mise atuin devbox dagger deno biome ruff broot procs pueue glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd)
     ;;
   full)
-    DEFAULT_MODULES=(eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger deno biome ruff broot procs pueue jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona just helix nushell distrobox moon pkgx tealdeer hyperfine opentofu glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd trippy onefetch grex bandwhich amber tailspin erdtree dua oxlint difftastic topgrade pastel numbat dufs jj sesh carapace moar vhs gitleaks xc gdu trash-cli yt-dlp glances d2 pnpm fnm gping kondo presenterm hexyl csvlens pomsky bacon wiki-tui ast-grep dive gron viddy wtfutil cointop dasel dust navi delta)
+    DEFAULT_MODULES=(eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi firefox slack android neovim docker brave discord ghostty obsidian uv zen-browser bruno wezterm dbeaver mise atuin devbox dagger deno biome ruff broot procs pueue jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona just helix nushell distrobox moon pkgx tealdeer hyperfine opentofu glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd trippy onefetch grex bandwhich amber tailspin erdtree dua oxlint difftastic topgrade pastel numbat dufs jj sesh carapace moar vhs gitleaks xc gdu trash-cli yt-dlp glances d2 pnpm fnm gping kondo presenterm hexyl csvlens pomsky bacon wiki-tui ast-grep dive gron viddy wtfutil cointop dasel dust navi delta websocat ouch zenith git-cliff typos fend joshuto sniffnet termscp wthrr miniserve zizmor inlyne so xcp taplo tlrc typst xsv gh act task croc dbmate)
     ;;
   ai-dev)
     DEFAULT_MODULES=(eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger deno biome ruff broot doggo tokei jless oha curlie procs pueue aichat fabric k8sgpt tgpt jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona mods llm cline glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd)
@@ -388,6 +388,32 @@ declare -A MOD_DESC=(
   ["dust"]="🌪️ dust (A more intuitive version of du in rust)"
   ["navi"]="🧭 navi (An interactive cheatsheet tool for the command-line)"
   ["delta"]="🔀 delta (A syntax-highlighting pager for git, diff, and grep output)"
+
+  ["websocat"]="🌐 websocat (Command-line client for WebSockets)"
+  ["ouch"]="🗜️ ouch (Painless compression and decompression)"
+  ["zenith"]="📈 zenith (System Monitor with Charts)"
+  ["git-cliff"]="⛰️ git-cliff (Changelog Generator)"
+  ["typos"]="📝 typos (Source code spell checker)"
+  ["fend"]="🧮 fend (Arbitrary-precision unit-aware calculator)"
+  ["joshuto"]="📁 joshuto (Terminal file manager)"
+  ["sniffnet"]="🕸️ sniffnet (Network traffic monitor)"
+  ["termscp"]="📁 termscp (Terminal file transfer)"
+  ["wthrr"]="🌦️ wthrr (Weather crab)"
+  ["miniserve"]="🗄️ miniserve (Fast local file server)"
+  ["zizmor"]="🛡️ zizmor (Static analysis tool for GitHub Actions)"
+  ["inlyne"]="🖥️ inlyne (GPU powered markdown viewer)"
+  ["so"]="🔍 so (StackOverflow in terminal)"
+  ["xcp"]="🚀 xcp (Extended cp)"
+  ["taplo"]="⚙️ taplo (TOML toolkit)"
+  ["tlrc"]="📚 tlrc (Official tldr client)"
+  ["typst"]="📝 typst (Markup-based typesetting system)"
+  ["xsv"]="📊 xsv (High performance CSV toolkit)"
+  ["gh"]="🐙 gh (GitHub CLI)"
+  ["act"]="🎭 act (Run GitHub Actions Locally)"
+  ["task"]="✅ task (Modern Make alternative)"
+  ["croc"]="🐊 croc (Securely send things between computers)"
+  ["dbmate"]="🗃️ dbmate (Database migration tool)"
+
 )
 
 # Get all available modules
@@ -458,26 +484,34 @@ if command -v "$GUM" &> /dev/null; then
     fi
   done
   # Use gum join to create columns if there are many modules
-  if [ ${#MODULES[@]} -gt 60 ]; then
+  if [ ${#MODULES[@]} -gt 80 ]; then
+    FIFTH=$((${#MODULES[@]} / 5 + 1))
+    COL1=$(echo -e "$MOD_LIST" | head -n $FIFTH)
+    COL2=$(echo -e "$MOD_LIST" | tail -n +$((FIFTH + 1)) | head -n $FIFTH)
+    COL3=$(echo -e "$MOD_LIST" | tail -n +$((2 * FIFTH + 1)) | head -n $FIFTH)
+    COL4=$(echo -e "$MOD_LIST" | tail -n +$((3 * FIFTH + 1)) | head -n $FIFTH)
+    COL5=$(echo -e "$MOD_LIST" | tail -n +$((4 * FIFTH + 1)))
+    echo "$("$GUM" join --horizontal "$COL1" "  " "$COL2" "  " "$COL3" "  " "$COL4" "  " "$COL5")" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#36f9f6"
+  elif [ ${#MODULES[@]} -gt 60 ]; then
     QUARTER=$((${#MODULES[@]} / 4 + 1))
     COL1=$(echo -e "$MOD_LIST" | head -n $QUARTER)
     COL2=$(echo -e "$MOD_LIST" | tail -n +$((QUARTER + 1)) | head -n $QUARTER)
     COL3=$(echo -e "$MOD_LIST" | tail -n +$((2 * QUARTER + 1)) | head -n $QUARTER)
     COL4=$(echo -e "$MOD_LIST" | tail -n +$((3 * QUARTER + 1)))
-    echo "$("$GUM" join --horizontal "$COL1" "  " "$COL2" "  " "$COL3" "  " "$COL4")" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#ff7edb"
+    echo "$("$GUM" join --horizontal "$COL1" "  " "$COL2" "  " "$COL3" "  " "$COL4")" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#36f9f6"
   elif [ ${#MODULES[@]} -gt 30 ]; then
     THIRD=$((${#MODULES[@]} / 3 + 1))
     COL1=$(echo -e "$MOD_LIST" | head -n $THIRD)
     COL2=$(echo -e "$MOD_LIST" | tail -n +$((THIRD + 1)) | head -n $THIRD)
     COL3=$(echo -e "$MOD_LIST" | tail -n +$((2 * THIRD + 1)))
-    echo "$("$GUM" join --horizontal "$COL1" "  " "$COL2" "  " "$COL3")" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#ff7edb"
+    echo "$("$GUM" join --horizontal "$COL1" "  " "$COL2" "  " "$COL3")" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#36f9f6"
   elif [ ${#MODULES[@]} -gt 15 ]; then
     HALF=$((${#MODULES[@]} / 2 + 1))
     COL1=$(echo -e "$MOD_LIST" | head -n $HALF)
     COL2=$(echo -e "$MOD_LIST" | tail -n +$((HALF + 1)))
-    echo "$("$GUM" join --horizontal "$COL1" "  " "$COL2")" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#ff7edb"
+    echo "$("$GUM" join --horizontal "$COL1" "  " "$COL2")" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#36f9f6"
   else
-    echo -e "$MOD_LIST" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#ff7edb"
+    echo -e "$MOD_LIST" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#36f9f6"
   fi
   echo ""
 else
