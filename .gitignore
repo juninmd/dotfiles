@@ -1,0 +1,9 @@
+*.log
+.DS_Store
+programas/**/setup.sh
+setup-2026.sh
+programas/**/setup.sh
+setup-2026.sh
+
+*.py
+*.txt

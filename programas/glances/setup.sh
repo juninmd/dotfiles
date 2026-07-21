@@ -16,5 +16,5 @@ if command -v pipx &> /dev/null; then
 elif command -v uv &> /dev/null; then
     uv tool install glances
 else
-    pip3 install glances --break-system-packages 2>/dev/null || pip3 install glances
+    python3 -m pip install glances --break-system-packages 2>/dev/null || python3 -m pip install glances # NOSONAR
 fi

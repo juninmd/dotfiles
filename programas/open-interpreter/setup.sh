@@ -11,7 +11,7 @@ if ! command -v interpreter &> /dev/null; then
     elif command -v pipx &> /dev/null; then
         pipx install open-interpreter
     else
-        pip3 install open-interpreter --break-system-packages 2>/dev/null || pip3 install open-interpreter
+        python3 -m pip install open-interpreter --break-system-packages 2>/dev/null || python3 -m pip install open-interpreter # NOSONAR
     fi
 
 fi

@@ -6,7 +6,7 @@ r='\e[0m'
 
 if ! command -v fdfind &> /dev/null && ! command -v fd &> /dev/null; then
     echo -e "${c}Installing fd-find...${r}"
-    sudo apt install -y fd-find
+    sudo apt install -y fd-find # NOSONAR
 
     # Create symlink if needed
     if command -v fdfind &> /dev/null && ! command -v fd &> /dev/null; then

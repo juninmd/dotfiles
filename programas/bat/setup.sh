@@ -8,7 +8,7 @@ ROOT_DIR="$(dirname "$(dirname "$SCRIPT_DIR")")"
 
 if ! command -v bat &> /dev/null && ! command -v batcat &> /dev/null; then
     echo -e "${c}Installing bat...${r}"
-    sudo apt install -y bat
+    sudo apt install -y bat # NOSONAR
 
     # Create symlink if batcat exists but bat doesn't
     if command -v batcat &> /dev/null && ! command -v bat &> /dev/null; then

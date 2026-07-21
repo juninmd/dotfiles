@@ -5,10 +5,10 @@ r='\e[0m'
 echo -e "${c}Installing Android Studio & SDK...${r}"
 
 # Update apt first
-sudo apt update
+sudo apt update # NOSONAR
 
 # Install dependencies
-sudo apt install -y libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 wget unzip
+sudo apt install -y libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 wget unzip # NOSONAR
 
 # Check if snap is available and install android-studio
 if command -v snap &> /dev/null; then

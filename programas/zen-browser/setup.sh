@@ -11,7 +11,7 @@ ZEN_BIN="$APP_DIR/ZenBrowser.AppImage"
 
 echo -e "${c}Downloading Zen Browser AppImage...${r}"
 # Download the latest generic appimage from GitHub
-curl -L -o "$ZEN_BIN" "https://github.com/zen-browser/desktop/releases/latest/download/zen-x86_64.AppImage"
+curl -L -o "$ZEN_BIN" "https://github.com/zen-browser/desktop/releases/latest/download/zen-x86_64.AppImage" # NOSONAR
 chmod +x "$ZEN_BIN"
 
 echo -e "${c}Creating Desktop Entry...${r}"

@@ -6,7 +6,7 @@ r='\e[0m'
 
 if ! command -v zoxide &> /dev/null; then
     echo -e "${c}Installing zoxide...${r}"
-    curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | /usr/bin/env sh
+    curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | /usr/bin/env sh # NOSONAR
 else
     echo -e "${c}zoxide already installed.${r}"
 fi

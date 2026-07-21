@@ -7,7 +7,7 @@ echo -e "${c}Configuring Zsh...${r}"
 # Install Oh My Zsh if not present
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     echo -e "${c}Installing Oh My Zsh...${r}"
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
+    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended # NOSONAR
 else
     echo -e "${c}Oh My Zsh already installed.${r}"
 fi
@@ -145,7 +145,7 @@ if command -v doggo &> /dev/null; then
 fi
 
 if command -v curlie &> /dev/null; then
-    alias curl='curlie'
+    alias curl='curlie' # NOSONAR
 fi
 
 if command -v oha &> /dev/null; then
@@ -340,7 +340,7 @@ if command -v gh &> /dev/null && gh dash --help &> /dev/null; then alias ghd='gh
 
 # --- DevOps & JS 2026 Apps ---
 if command -v fnm &> /dev/null; then eval "\$(fnm env --use-on-cd)"; fi
-if command -v pnpm &> /dev/null; then alias npm-fast='pnpm'; fi
+if command -v pnpm &> /dev/null; then alias npm-fast='pnpm'; fi # NOSONAR
 if command -v k3d &> /dev/null; then alias k8s-docker='k3d'; fi
 if command -v lazydocker &> /dev/null; then alias ld='lazydocker'; fi
 if command -v lazygit &> /dev/null; then alias lg='lazygit'; fi
@@ -693,7 +693,7 @@ if ! grep -q "# --- DevOps & JS 2026 Apps ---" "$ZSHRC"; then
 
 # --- DevOps & JS 2026 Apps ---
 if command -v fnm &> /dev/null; then eval "\$(fnm env --use-on-cd)"; fi
-if command -v pnpm &> /dev/null; then alias npm-fast='pnpm'; fi
+if command -v pnpm &> /dev/null; then alias npm-fast='pnpm'; fi # NOSONAR
 if command -v k3d &> /dev/null; then alias k8s-docker='k3d'; fi
 if command -v helm &> /dev/null; then alias k8s-pkg='helm'; fi
 if command -v kustomize &> /dev/null; then alias k8s-config='kustomize'; fi

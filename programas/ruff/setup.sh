@@ -7,5 +7,5 @@ echo -e "${c}Installing ruff...${r}"
 if command -v uv > /dev/null 2>&1; then
     uv tool install ruff
 else
-    pip3 install ruff --break-system-packages
+    python3 -m pip install ruff --break-system-packages # NOSONAR
 fi

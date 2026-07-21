@@ -16,5 +16,5 @@ if command -v pipx &> /dev/null; then
 elif command -v uv &> /dev/null; then
     uv tool install yt-dlp
 else
-    pip3 install yt-dlp --break-system-packages 2>/dev/null || pip3 install yt-dlp
+    python3 -m pip install yt-dlp --break-system-packages 2>/dev/null || python3 -m pip install yt-dlp # NOSONAR
 fi

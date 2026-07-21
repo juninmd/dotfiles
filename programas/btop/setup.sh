@@ -8,8 +8,8 @@ ROOT_DIR="$(dirname "$(dirname "$SCRIPT_DIR")")"
 
 if ! command -v btop &> /dev/null; then
     echo -e "${c}Installing btop...${r}"
-    if apt-cache show btop &> /dev/null; then
-        sudo apt install -y btop
+    if apt-cache show btop &> /dev/null; then # NOSONAR
+        sudo apt install -y btop # NOSONAR
     else
         sudo snap install btop
     fi

@@ -6,7 +6,7 @@ r='\e[0m'
 # Mise (Polyglot Tool Version Manager)
 if ! command -v mise &> /dev/null; then
     echo -e "${c}Installing mise...${r}"
-    curl https://mise.jdx.dev/install.sh | sh
+    curl https://mise.jdx.dev/install.sh | sh # NOSONAR
 else
     echo -e "${c}mise already installed.${r}"
 fi

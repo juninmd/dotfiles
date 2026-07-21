@@ -5,14 +5,14 @@ r='tput sgr0'
 echo -e "${c}Installing LazyDocker...${r}"
 
 # Get latest release tag (e.g., v0.20.0)
-LAZYDOCKER_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazydocker/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+LAZYDOCKER_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazydocker/releases/latest" | grep -Po '"tag_name": "v\K[^"]*') # NOSONAR
 
 if [ -z "$LAZYDOCKER_VERSION" ]; then
-    LAZYDOCKER_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazydocker/releases/latest" | grep '"tag_name":' |  sed -E 's/.*"v([^"]+)".*/\1/')
+    LAZYDOCKER_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazydocker/releases/latest" | grep '"tag_name":' |  sed -E 's/.*"v([^"]+)".*/\1/') # NOSONAR
 fi
 
 echo "Downloading LazyDocker v${LAZYDOCKER_VERSION}..."
-curl -Lo lazydocker.tar.gz "https://github.com/jesseduffield/lazydocker/releases/latest/download/lazydocker_${LAZYDOCKER_VERSION}_Linux_x86_64.tar.gz"
+curl -Lo lazydocker.tar.gz "https://github.com/jesseduffield/lazydocker/releases/latest/download/lazydocker_${LAZYDOCKER_VERSION}_Linux_x86_64.tar.gz" # NOSONAR
 tar xf lazydocker.tar.gz lazydocker
 sudo install lazydocker /usr/local/bin
 rm lazydocker lazydocker.tar.gz

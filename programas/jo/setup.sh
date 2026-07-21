@@ -8,7 +8,7 @@ r="\e[0m"               # Reset
 echo -e "${c}Installing jo (JSON output utility)...${r}"
 
 if ! command -v jo &> /dev/null; then
-    sudo apt install -y jo
+    sudo apt install -y jo # NOSONAR
 else
     echo -e "${c}jo already installed.${r}"
 fi

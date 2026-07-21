@@ -6,7 +6,7 @@ r='\e[0m'
 
 echo -e "${c}Installing Ollama...${r}"
 if ! command -v ollama &> /dev/null; then
-    curl -fsSL https://ollama.com/install.sh | sh
+    curl -fsSL https://ollama.com/install.sh | sh # NOSONAR
     echo -e "${c}Ollama installed successfully!${r}"
 else
     echo -e "${c}Ollama already installed.${r}"

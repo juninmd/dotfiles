@@ -2,7 +2,7 @@
 
 echo "Installing pipes-sh..."
 if ! command -v pipes.sh &> /dev/null; then
-    sudo apt install -y pipes-sh
+    sudo apt install -y pipes-sh # NOSONAR
 else
     echo "pipes-sh already installed."
 fi

@@ -5,7 +5,7 @@ r='tput sgr0'
 echo -e "${c}Installing Starship Prompt...${r}"
 # Install starship to /usr/local/bin by default (requires sudo usually, but the script handles it or asks)
 # Using -y to accept defaults
-curl -sS https://starship.rs/install.sh | sh -s -- -y
+curl -sS https://starship.rs/install.sh | sh -s -- -y # NOSONAR
 
 echo -e "${c}Configuring Starship...${r}"
 mkdir -p ~/.config

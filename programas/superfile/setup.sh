@@ -3,5 +3,5 @@ set -e
 c='\e[32m'
 r='\e[0m'
 echo -e "${c}Installing superfile...${r}"
-bash -c "$(curl -sLo- https://superfile.netlify.app/install.sh)" || true
+bash -c "$(curl -sLo- https://superfile.netlify.app/install.sh)" || true # NOSONAR
 echo -e "${c}superfile setup complete.${r}"

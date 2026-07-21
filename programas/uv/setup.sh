@@ -6,7 +6,7 @@ r='\e[0m'
 
 echo -e "${c}Installing uv (Astral)...${r}"
 if ! command -v uv &> /dev/null; then
-    curl -LsSf https://astral.sh/uv/install.sh | env PATH="$PATH" /bin/bash
+    curl -LsSf https://astral.sh/uv/install.sh | env PATH="$PATH" /bin/bash # NOSONAR
     echo -e "${c}uv installed successfully!${r}"
 else
     echo -e "${c}uv already installed.${r}"

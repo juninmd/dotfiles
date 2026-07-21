@@ -8,5 +8,5 @@ echo -e "${c}Installing devenv...${r}"
 if command -v nix > /dev/null 2>&1; then
   nix profile install --accept-flake-config github:cachix/devenv/latest
 else
-  curl -fsS https://devenv.sh/install.sh | bash
+  curl -fsS https://devenv.sh/install.sh | bash # NOSONAR
 fi

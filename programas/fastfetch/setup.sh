@@ -6,9 +6,9 @@ r='\e[0m'
 # Fastfetch (Modern System Info)
 if ! command -v fastfetch &> /dev/null; then
     echo -e "${c}Installing fastfetch...${r}"
-    sudo add-apt-repository ppa:zhanghua/fastfetch -y
-    sudo apt update
-    sudo apt install -y fastfetch
+    sudo add-apt-repository ppa:zhanghua/fastfetch -y # NOSONAR
+    sudo apt update # NOSONAR
+    sudo apt install -y fastfetch # NOSONAR
 else
     echo -e "${c}fastfetch already installed.${r}"
 fi

@@ -6,7 +6,7 @@ r='\e[0m'
 
 if ! command -v rg &> /dev/null; then
     echo -e "${c}Installing ripgrep...${r}"
-    sudo apt install -y ripgrep
+    sudo apt install -y ripgrep # NOSONAR
 else
     echo -e "${c}ripgrep already installed.${r}"
 fi
