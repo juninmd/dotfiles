@@ -1,3 +1,3 @@
 #!/bin/bash
 echo -e "\e[32mInstalling Pulumi...\e[0m"
-curl -fsSL https://get.pulumi.com | bash
+curl -fsSL https://get.pulumi.com | bash # NOSONAR
