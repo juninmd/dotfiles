@@ -121,6 +121,12 @@ if [[ -z "$PROFILE" ]]; then
       --align center --width 80 --margin "1 2" --padding "2 4" \
       ' ▂▃▄▅▆▇█▓▒░ NEXUS DOTFILES 2026 ░▒▓█▇▆▅▄▃▂ ' \
       '' \
+      '███╗   ██╗███████╗██╗  ██╗██╗   ██╗███████╗' \
+      '████╗  ██║██╔════╝╚██╗██╔╝██║   ██║██╔════╝' \
+      '██╔██╗ ██║█████╗   ╚███╔╝ ██║   ██║███████╗' \
+      '██║╚██╗██║██╔══╝   ██╔██╗ ██║   ██║╚════██║' \
+      '██║ ╚████║███████╗██╔╝ ██╗╚██████╔╝███████║' \
+      '╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝' \
       '██████╗  ██████╗ ██████╗  ██████╗ ' \
       '╚════██╗██╔═████╗╚════██╗██╔════╝ ' \
       ' █████╔╝██║██╔██║ █████╔╝███████╗ ' \
@@ -173,12 +179,15 @@ if [[ -z "$PROFILE" ]]; then
     echo ""
     PROFILE_CHOICE=$("$GUM" choose \
       --height=20 \
-      --cursor="✨ " \
+      --cursor="🚀 " \
       --header="Escolha o seu nível de poder no Nexus:" \
       --header.foreground="#ff7edb" \
+      --header.bold \
       --cursor.foreground="#72f1b8" \
+      --cursor.bold \
       --item.foreground="#f8f8f2" \
       --selected.foreground="#36f9f6" \
+      --selected.bold \
       "minimal   - 🪶 Shell moderna, prompt limpo, e editor ultrarrápido. (Essencial)." \
       "dev       - 🚀 minimal + Runtimes JS/Python, Docker e BD. (Recomendado para Ninjas)." \
       "full      - 🌌 dev + Apps extras de produtividade (Navegador, Slack, Android)." \
@@ -198,7 +207,7 @@ case "$PROFILE" in
     DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv mise atuin devbox dagger deno biome ruff broot procs pueue glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd)
     ;;
   full)
-    DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun act actionlint age aichat aider amber android ast-grep atac atlas atuin bacon bandwhich bat-extras binsider biome bluetuith bore-cli bottom brave broot bruno carapace cbonsai chafa charm chatbox chatgpt-cli cheat checkov choose circumflex claude-code cline cloudflared cocogitto code2prompt cointop cpufetch crane croc csvlens ctop curlie cursor czg d2 dagger dasel daytona dbeaver dbmate delta deno devbox devenv devpod difftastic direnv discord diskonaut distrobox dive docker doggo dolt dotenv-linter dotenvx dprint dsq dua dua-cli duckdb duf dufs dura dust dysk earthly eget erdtree evans fabric fastfetch fend firefox flox flyctl fnm fq freeze fx gcloud gdu genact gh gh-dash ghostty ghq git-absorb git-cliff git-filter-repo git-sim git-town gitingest gitleaks gitui glab glances glow gobang gojq gping grex gron grpcurl grype gtt gum harlequin hck helix helm hexyl howdoi htmlq httpie httpstat httpx hurl hwatch hyperfine igrep infracost inlyne inshellisense jan jaq jc jira-cli jj jless jnv jo joshuto jq jql jqp jujutsu just k3d k6 k8sgpt k9s kalker kdash kind klog kmon ko kondo krew kubecolor kubectl kubectx kustomize lazydocker lazygit lazynpm lazysql lefthook lf llm lmstudio lnav lsd lychee macchina mani mcfly mdcat melt miller miniserve mise mkcert moar mods monolith moon mprocs mysql nap navi ncspot neovim newsboat ngrok nuclei numbat nushell obsidian oha ollama onefetch open-interpreter opentofu ouch oxker oxlint pastel peco pipes-rs pipes-sh pkgx plandex pnpm podman pokeget pomsky popeye porsmo posting presenterm procs pueue px qsv repomix rip rnr rs-cmatrix ruff ruplacer rustscan rye sad scc sd serie serpl sesh shell-gpt shellcheck shfmt silicon skate skim slack slides slumber sniffnet so sops spacer spt sqlc steampipe stern supabase superfile syft systemctl-tui systeroid sysz t-rec tailspin taplo task taskwarrior-tui tealdeer television tenki tenv termdbms termscp termshark termtyper tfsec tgpt thefuck tickrs tilt tin-summer tldr tlrc tokei topgrade trash-cli tre trippy trivy trufflehog trzsz tt ttyper turso typos typst ugrep usql uv vcluster vegeta vhs viddy visidata viu vscode walk warp watchexec websocat wezterm wiki-tui windsurf wtfutil wthrr wuzz xc xcp xh xplr xsv yamlfmt yazi yq yt-dlp zed zellij zen-browser zenith zizmor zrok ripgrep_all kubens)
+    DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun act actionlint age aichat aider amber android ast-grep atac atlas atuin bacon bandwhich bat-extras binsider biome bluetuith bore-cli bottom brave broot bruno carapace cbonsai chafa charm chatbox chatgpt-cli cheat checkov choose circumflex claude-code cline cloudflared cocogitto code2prompt cointop cpufetch crane croc csvlens ctop curlie cursor czg d2 dagger dasel daytona dbeaver dbmate delta deno devbox devenv devpod difftastic direnv discord diskonaut distrobox dive docker doggo dolt dotenv-linter dotenvx dprint dsq dua dua-cli duckdb duf dufs dura dust dysk earthly eget erdtree evans fabric fastfetch fend firefox flox flyctl fnm fq freeze fx gcloud gdu genact gh gh-dash ghostty ghq git-absorb git-cliff git-filter-repo git-sim git-town gitingest gitleaks gitui glab glances glow gobang gojq gping grex gron grpcurl grype gtt gum harlequin hck helix helm hexyl howdoi htmlq httpie httpstat httpx hurl hwatch hyperfine igrep infracost inlyne inshellisense jan jaq jc jira-cli jj jless jnv jo joshuto jq jql jqp jujutsu just k3d k6 k8sgpt k9s kalker kdash kind klog kmon ko kondo krew kubecolor kubectl kubectx kustomize lazydocker lazygit lazynpm lazysql lefthook lf llm lmstudio lnav lsd lychee macchina mani mcfly mdcat melt miller miniserve mise mkcert moar mods monolith moon mprocs mysql nap navi ncspot neovim newsboat ngrok nuclei numbat nushell obsidian oha ollama onefetch open-interpreter opentofu ouch oxker oxlint pastel peco pipes-rs pipes-sh pkgx plandex pnpm podman pokeget pomsky popeye porsmo posting presenterm procs pueue px qsv repomix rip rnr rs-cmatrix ruff ruplacer rustscan rye sad scc sd serie serpl sesh shell-gpt shellcheck shfmt silicon skate skim slack slides slumber sniffnet so sops spacer spt sqlc steampipe stern supabase superfile syft systemctl-tui systeroid sysz t-rec tailspin taplo task taskwarrior-tui tealdeer television tenki tenv termdbms termscp termshark termtyper tfsec tgpt thefuck tickrs tilt tin-summer tldr tlrc tokei topgrade trash-cli tre trippy trivy trufflehog trzsz tt ttyper turso typos typst ugrep usql uv vcluster vegeta vhs viddy visidata viu vscode walk warp watchexec websocat wezterm wiki-tui windsurf wtfutil wthrr wuzz xc xcp xh xplr xsv yamlfmt yazi yq yt-dlp zed zellij zen-browser zenith zizmor zrok ripgrep_all kubens doppler infisical stripe awscli vercel pulumi terragrunt tflint ttyd argc argocd k3s vault bw netlify heroku consul nomad packer)
     ;;
   ai-dev)
     DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger deno biome ruff broot doggo tokei jless oha curlie procs pueue aichat fabric k8sgpt tgpt jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona mods llm cline glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd)
@@ -566,6 +575,28 @@ declare -A MOD_DESC=(
   ["gleam"]="✨ Gleam (Type safe programming language)"
   ["elixir"]="💧 Elixir (Dynamic, functional language for building scalable and maintainable applications)"
   ["zig"]="⚡ Zig (Modern programming language)"
+
+  ["doppler"]="🔐 Doppler (SecretOps Platform)"
+  ["infisical"]="🔐 Infisical (Open Source Secret Management)"
+  ["stripe"]="💳 Stripe CLI (Ferramenta CLI moderna)"
+  ["awscli"]="☁️ AWS CLI (Ferramenta CLI moderna)"
+  ["vercel"]="▲ Vercel CLI (Ferramenta CLI moderna)"
+  ["pulumi"]="🏗️ Pulumi (Infrastructure as Code)"
+  ["terragrunt"]="🏗️ Terragrunt (Thin wrapper for Terraform)"
+  ["tflint"]="🔍 TFLint (Terraform linter)"
+  ["ttyd"]="🌐 ttyd (Share your terminal over the web)"
+  ["argc"]="🐚 argc (A bash CLI framework)"
+
+  ["argocd"]="🐙 ArgoCD (Declarative GitOps for K8s)"
+  ["k3s"]="☸️ k3s (Lightweight Kubernetes)"
+  ["vault"]="🔐 Vault (Manage Secrets and Protect Sensitive Data)"
+
+  ["bw"]="🔐 Bitwarden CLI (Password Manager)"
+  ["netlify"]="▲ Netlify CLI (Deploy and manage sites)"
+  ["heroku"]="☁️ Heroku CLI (Manage Heroku apps)"
+  ["consul"]="🌐 Consul (Service Networking)"
+  ["nomad"]="🚀 Nomad (Workload Orchestrator)"
+  ["packer"]="📦 Packer (Build Automated Machine Images)"
 )
 
 # Get all available modules
