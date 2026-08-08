@@ -237,7 +237,7 @@ declare -A MOD_DESC=(
   ["bacon"]="🥓 bacon (Background Rust code checker)"
   ["bandwhich"]="📈 bandwhich (Bandwidth Monitor)"
   ["bat"]="🦇 Bat (A cat clone with wings)"
-  ["bat-extras"]="📦 bat-extras (Ferramenta CLI moderna)"
+  ["bat-extras"]="🦇 bat-extras (Bash scripts that integrate bat with various command line tools)"
   ["binsider"]="📦 binsider (Ferramenta CLI moderna)"
   ["biome"]="🚀 Biome (Fast JS/TS toolchain)"
   ["bluetuith"]="📦 bluetuith (Ferramenta CLI moderna)"
@@ -389,7 +389,7 @@ declare -A MOD_DESC=(
   ["kdash"]="☸️ kdash (Kubernetes Dashboard)"
   ["kind"]="📦 kind (Ferramenta CLI moderna)"
   ["klog"]="📦 klog (Ferramenta CLI moderna)"
-  ["kmon"]="📦 kmon (Ferramenta CLI moderna)"
+  ["kmon"]="🐧 kmon (Linux Kernel Manager and Activity Monitor)"
   ["ko"]="📦 ko (Ferramenta CLI moderna)"
   ["kondo"]="🧹 kondo (Clean up software projects)"
   ["krew"]="📦 krew (Ferramenta CLI moderna)"
@@ -505,7 +505,7 @@ declare -A MOD_DESC=(
   ["taskwarrior-tui"]="📦 taskwarrior-tui (Ferramenta CLI moderna)"
   ["tealdeer"]="🦌 Tealdeer (A very fast implementation of tldr in Rust)"
   ["television"]="📺 television (Blazing fast fuzzy finder)"
-  ["tenki"]="📦 tenki (Ferramenta CLI moderna)"
+  ["tenki"]="⛅ tenki (Weather in terminal)"
   ["tenv"]="📦 tenv (Ferramenta CLI moderna)"
   ["termdbms"]="📦 termdbms (Ferramenta CLI moderna)"
   ["termscp"]="📁 termscp (Terminal file transfer)"
@@ -514,7 +514,7 @@ declare -A MOD_DESC=(
   ["tfsec"]="📦 tfsec (Ferramenta CLI moderna)"
   ["tgpt"]="🤖 tgpt (Terminal ChatGPT)"
   ["thefuck"]="📦 thefuck (Ferramenta CLI moderna)"
-  ["tickrs"]="📦 tickrs (Ferramenta CLI moderna)"
+  ["tickrs"]="📈 tickrs (Real-time ticker data in terminal)"
   ["tilt"]="📦 tilt (Ferramenta CLI moderna)"
   ["tin-summer"]="📦 tin-summer (Ferramenta CLI moderna)"
   ["tldr"]="📦 tldr (Ferramenta CLI moderna)"
@@ -567,7 +567,7 @@ declare -A MOD_DESC=(
   ["zenith"]="📈 zenith (System Monitor with Charts)"
   ["zizmor"]="🛡️ zizmor (Static analysis tool for GitHub Actions)"
   ["zoxide"]="🚀 Zoxide (A smarter cd command)"
-  ["zrok"]="📦 zrok (Ferramenta CLI moderna)"
+  ["zrok"]="🔗 zrok (Open source ngrok alternative)"
   ["ripgrep_all"]="📦 ripgrep_all (rga - search PDFs, E-Books, Office docs)"
   ["kubens"]="📦 kubens (Kubernetes context switching)"
   ["zsh"]="🐚 Zsh shell e plugins (Hiper-produtividade)"
@@ -666,33 +666,27 @@ if command -v "$GUM" &> /dev/null; then
       MOD_LIST+="  $($GUM style --foreground "#ff7edb" "•") $($GUM style --foreground "#fede5d" "$mod") $($GUM style --foreground "#6272a4" "($desc)")"$'\n'
     fi
   done
-  # Use gum join to create columns if there are many modules
-  if [ ${#MODULES[@]} -gt 80 ]; then
-    FIFTH=$((${#MODULES[@]} / 5 + 1))
-    COL1=$(echo -e "$MOD_LIST" | head -n $FIFTH)
-    COL2=$(echo -e "$MOD_LIST" | tail -n +$((FIFTH + 1)) | head -n $FIFTH)
-    COL3=$(echo -e "$MOD_LIST" | tail -n +$((2 * FIFTH + 1)) | head -n $FIFTH)
-    COL4=$(echo -e "$MOD_LIST" | tail -n +$((3 * FIFTH + 1)) | head -n $FIFTH)
-    COL5=$(echo -e "$MOD_LIST" | tail -n +$((4 * FIFTH + 1)))
-    echo "$("$GUM" join --horizontal "$COL1" "  " "$COL2" "  " "$COL3" "  " "$COL4" "  " "$COL5")" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#36f9f6"
-  elif [ ${#MODULES[@]} -gt 60 ]; then
-    QUARTER=$((${#MODULES[@]} / 4 + 1))
-    COL1=$(echo -e "$MOD_LIST" | head -n $QUARTER)
-    COL2=$(echo -e "$MOD_LIST" | tail -n +$((QUARTER + 1)) | head -n $QUARTER)
-    COL3=$(echo -e "$MOD_LIST" | tail -n +$((2 * QUARTER + 1)) | head -n $QUARTER)
-    COL4=$(echo -e "$MOD_LIST" | tail -n +$((3 * QUARTER + 1)))
-    echo "$("$GUM" join --horizontal "$COL1" "  " "$COL2" "  " "$COL3" "  " "$COL4")" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#36f9f6"
-  elif [ ${#MODULES[@]} -gt 30 ]; then
-    THIRD=$((${#MODULES[@]} / 3 + 1))
-    COL1=$(echo -e "$MOD_LIST" | head -n $THIRD)
-    COL2=$(echo -e "$MOD_LIST" | tail -n +$((THIRD + 1)) | head -n $THIRD)
-    COL3=$(echo -e "$MOD_LIST" | tail -n +$((2 * THIRD + 1)))
-    echo "$("$GUM" join --horizontal "$COL1" "  " "$COL2" "  " "$COL3")" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#36f9f6"
-  elif [ ${#MODULES[@]} -gt 15 ]; then
-    HALF=$((${#MODULES[@]} / 2 + 1))
-    COL1=$(echo -e "$MOD_LIST" | head -n $HALF)
-    COL2=$(echo -e "$MOD_LIST" | tail -n +$((HALF + 1)))
-    echo "$("$GUM" join --horizontal "$COL1" "  " "$COL2")" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#36f9f6"
+  # Remove trailing newline for cleaner tailing
+  MOD_LIST="${MOD_LIST%$'\n'}"
+
+  # Dynamically calculate columns based on module count
+  num_mods=${#MODULES[@]}
+  if [ $num_mods -gt 80 ]; then cols=5;
+  elif [ $num_mods -gt 60 ]; then cols=4;
+  elif [ $num_mods -gt 30 ]; then cols=3;
+  elif [ $num_mods -gt 15 ]; then cols=2;
+  else cols=1; fi
+
+  if [ $cols -gt 1 ]; then
+    rows=$(( (num_mods + cols - 1) / cols ))
+    join_args=()
+    for ((i=0; i<cols; i++)); do
+      join_args+=("$(echo -e "$MOD_LIST" | tail -n +$((i * rows + 1)) | head -n $rows)")
+      if [ $i -lt $((cols - 1)) ]; then
+        join_args+=("  ")
+      fi
+    done
+    echo "$("$GUM" join --horizontal "${join_args[@]}")" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#36f9f6"
   else
     echo -e "$MOD_LIST" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#36f9f6"
   fi
