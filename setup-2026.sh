@@ -74,7 +74,7 @@ run_module() {
     SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
   else
     if command -v "$GUM" &> /dev/null; then
-      if "$GUM" spin --spinner globe --spinner.foreground "#36f9f6" --title "$($GUM style --foreground "#fede5d" "$progress_prefix Iniciando salto quântico:") $($GUM style --foreground "#ff7edb" "$module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"; then
+      if "$GUM" spin --spinner globe --spinner.foreground "#36f9f6" --title "$($GUM style --foreground "#fede5d" "$progress_prefix Iniciando salto quântico:") $($GUM style --foreground "#ff7edb" "$module...")" -- bash -c "\"\$1\" > \"/tmp/setup-2026-\$2.log\" 2>&1" _ "$script" "$module"; then
         echo "$($GUM style --foreground "#72f1b8" "✔") $($GUM style --foreground "#f8f8f2" "$progress_prefix Módulo") $($GUM style --foreground "#fede5d" "$module") $($GUM style --foreground "#f8f8f2" "instalado com sucesso!")"
         SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
       else
@@ -207,7 +207,7 @@ case "$PROFILE" in
     DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv mise atuin devbox dagger deno biome ruff broot procs pueue glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd)
     ;;
   full)
-    DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun act actionlint age aichat aider amber android ast-grep atac atlas atuin bacon bandwhich bat-extras binsider biome bluetuith bore-cli bottom brave broot bruno carapace cbonsai chafa charm chatbox chatgpt-cli cheat checkov choose circumflex claude-code cline cloudflared cocogitto code2prompt cointop cpufetch crane croc csvlens ctop curlie cursor czg d2 dagger dasel daytona dbeaver dbmate delta deno devbox devenv devpod difftastic direnv discord diskonaut distrobox dive docker doggo dolt dotenv-linter dotenvx dprint dsq dua dua-cli duckdb duf dufs dura dust dysk earthly eget erdtree evans fabric fastfetch fend firefox flox flyctl fnm fq freeze fx gcloud gdu genact gh gh-dash ghostty ghq git-absorb git-cliff git-filter-repo git-sim git-town gitingest gitleaks gitui glab glances glow gobang gojq gping grex gron grpcurl grype gtt gum harlequin hck helix helm hexyl howdoi htmlq httpie httpstat httpx hurl hwatch hyperfine igrep infracost inlyne inshellisense jan jaq jc jira-cli jj jless jnv jo joshuto jq jql jqp jujutsu just k3d k6 k8sgpt k9s kalker kdash kind klog kmon ko kondo krew kubecolor kubectl kubectx kustomize lazydocker lazygit lazynpm lazysql lefthook lf llm lmstudio lnav lsd lychee macchina mani mcfly mdcat melt miller miniserve mise mkcert moar mods monolith moon mprocs mysql nap navi ncspot neovim newsboat ngrok nuclei numbat nushell obsidian oha ollama onefetch open-interpreter opentofu ouch oxker oxlint pastel peco pipes-rs pipes-sh pkgx plandex pnpm podman pokeget pomsky popeye porsmo posting presenterm procs pueue px qsv repomix rip rnr rs-cmatrix ruff ruplacer rustscan rye sad scc sd serie serpl sesh shell-gpt shellcheck shfmt silicon skate skim slack slides slumber sniffnet so sops spacer spt sqlc steampipe stern supabase superfile syft systemctl-tui systeroid sysz t-rec tailspin taplo task taskwarrior-tui tealdeer television tenki tenv termdbms termscp termshark termtyper tfsec tgpt thefuck tickrs tilt tin-summer tldr tlrc tokei topgrade trash-cli tre trippy trivy trufflehog trzsz tt ttyper turso typos typst ugrep usql uv vcluster vegeta vhs viddy visidata viu vscode walk warp watchexec websocat wezterm wiki-tui windsurf wtfutil wthrr wuzz xc xcp xh xplr xsv yamlfmt yazi yq yt-dlp zed zellij zen-browser zenith zizmor zrok ripgrep_all kubens doppler infisical stripe awscli vercel pulumi terragrunt tflint ttyd argc argocd k3s vault bw netlify heroku consul nomad packer dapr)
+    DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun act actionlint age aichat aider amber android ast-grep atac atlas atuin bacon bandwhich bat-extras binsider biome bluetuith bore-cli bottom brave broot bruno carapace cbonsai chafa charm chatbox chatgpt-cli cheat checkov choose circumflex claude-code cline cloudflared cocogitto code2prompt cointop cpufetch crane croc csvlens ctop curlie cursor czg d2 dagger dasel daytona dbeaver dbmate delta deno devbox devenv devpod difftastic direnv discord diskonaut distrobox dive docker doggo dolt dotenv-linter dotenvx dprint dsq dua dua-cli duckdb duf dufs dura dust dysk earthly eget erdtree evans fabric fastfetch fend firefox flox flyctl fnm fq freeze fx gcloud gdu genact gh gh-dash ghostty ghq git-absorb git-cliff git-filter-repo git-sim git-town gitingest gitleaks gitui glab glances glow gobang gojq gping grex gron grpcurl grype gtt gum harlequin hck helix helm hexyl howdoi htmlq httpie httpstat httpx hurl hwatch hyperfine igrep infracost inlyne inshellisense jan jaq jc jira-cli jj jless jnv jo joshuto jq jql jqp jujutsu just k3d k6 k8sgpt k9s kalker kdash kind klog kmon ko kondo krew kubecolor kubectl kubectx kustomize lazydocker lazygit lazynpm lazysql lefthook lf llm lmstudio lnav lsd lychee macchina mani mcfly mdcat melt miller miniserve mise mkcert moar mods monolith moon mprocs mysql nap navi ncspot neovim newsboat ngrok nuclei numbat nushell obsidian oha ollama onefetch open-interpreter opentofu ouch oxker oxlint pastel peco pipes-rs pipes-sh pkgx plandex pnpm podman pokeget pomsky popeye porsmo posting presenterm procs pueue px qsv repomix rip rnr rs-cmatrix ruff ruplacer rustscan rye sad scc sd serie serpl sesh shell-gpt shellcheck shfmt silicon skate skim slack slides slumber sniffnet so sops spacer spt sqlc steampipe stern supabase superfile syft systemctl-tui systeroid sysz t-rec tailspin taplo task taskwarrior-tui tealdeer television tenki tenv termdbms termscp termshark termtyper tfsec tgpt thefuck tickrs tilt tin-summer tldr tlrc tokei topgrade trash-cli tre trippy trivy trufflehog trzsz tt ttyper turso typos typst ugrep usql uv vcluster vegeta vhs viddy visidata viu vscode walk warp watchexec websocat wezterm wiki-tui windsurf wtfutil wthrr wuzz xc xcp xh xplr xsv yamlfmt yazi yq yt-dlp zed zellij zen-browser zenith zizmor zrok ripgrep_all kubens doppler infisical stripe awscli vercel pulumi terragrunt tflint ttyd argc argocd k3s vault bw netlify heroku consul nomad packer dapr aider-chat typos-cli wthrr-the-weathercrab bruno-cli)
     ;;
   ai-dev)
     DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger deno biome ruff broot doggo tokei jless oha curlie procs pueue aichat fabric k8sgpt tgpt jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona mods llm cline glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd)
@@ -265,6 +265,10 @@ declare -A MOD_DESC=(
   ["cocogitto"]="⚙️ cocogitto (Conventional commits CLI)"
   ["code2prompt"]="📝 code2prompt (Convert codebase to LLM prompt)"
   ["cointop"]="🪙 cointop (Crypto tracker)"
+  ["aider-chat"]="🤖 Aider-chat (AI pair programming)"
+  ["typos-cli"]="📝 typos-cli (Source code spell checker)"
+  ["wthrr-the-weathercrab"]="🌦️ wthrr-the-weathercrab (Weather crab)"
+  ["bruno-cli"]="🐶 bruno-cli (API Client CLI)"
   ["common"]="⚙️ Scripts compartilhados e helpers"
   ["cpufetch"]="💻 cpufetch (CPU architecture fetching)"
   ["crane"]="🏗️ crane (Container image interaction)"
@@ -640,13 +644,16 @@ if command -v "$GUM" &> /dev/null; then
   # allowing us to pre-select modules based on the chosen profile.
   # We increased the height and added a search hint (use '/' to search in modern gum).
   SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="⚡ " \
-    --height=35 \
+    --height=25 \
     --selected="${DEFAULTS}" \
-    --selected.foreground="#36f9f6" \
+    --selected.background="#bd93f9" \
+    --selected.foreground="#282a36" \
+    --selected.bold \
     --cursor.foreground="#ff7edb" \
     --item.foreground="#f8f8f2" \
     --header="🚀 Selecione os módulos (pressione '/' para buscar):" \
     --header.foreground="#fede5d" \
+    --header.bold \
     "${CHOICES[@]}")
 
   # Extract module directories from the selected text
@@ -672,10 +679,10 @@ if command -v "$GUM" &> /dev/null; then
 
   # Dynamically calculate columns based on module count
   num_mods=${#MODULES[@]}
-  if [ $num_mods -gt 80 ]; then cols=5;
-  elif [ $num_mods -gt 60 ]; then cols=4;
-  elif [ $num_mods -gt 30 ]; then cols=3;
-  elif [ $num_mods -gt 15 ]; then cols=2;
+  if [ "$num_mods" -gt 80 ]; then cols=5;
+  elif [ "$num_mods" -gt 60 ]; then cols=4;
+  elif [ "$num_mods" -gt 30 ]; then cols=3;
+  elif [ "$num_mods" -gt 15 ]; then cols=2;
   else cols=1; fi
 
   if [ $cols -gt 1 ]; then
@@ -687,7 +694,7 @@ if command -v "$GUM" &> /dev/null; then
         join_args+=("  ")
       fi
     done
-    echo "$("$GUM" join --horizontal "${join_args[@]}")" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#36f9f6"
+    "$GUM" join --horizontal "${join_args[@]}" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#36f9f6"
   else
     echo -e "$MOD_LIST" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#36f9f6"
   fi
@@ -762,9 +769,9 @@ for module in "${MODULES[@]}"; do
 done
 
 END_TIME=$(date +%s)
-ELAPSED_TIME=$(($END_TIME - $START_TIME))
-ELAPSED_MINUTES=$(($ELAPSED_TIME / 60))
-ELAPSED_SECONDS=$(($ELAPSED_TIME % 60))
+ELAPSED_TIME=$((END_TIME - START_TIME))
+ELAPSED_MINUTES=$((ELAPSED_TIME / 60))
+ELAPSED_SECONDS=$((ELAPSED_TIME % 60))
 
 if command -v "$GUM" &> /dev/null; then
   ART_BOX=$("$GUM" style \
@@ -782,7 +789,7 @@ if command -v "$GUM" &> /dev/null; then
     --border double --align center --width 75 --margin "1 2" --padding "2 3" \
       "🚀 $($GUM style --foreground "#36f9f6" "TRANSMISSÃO CONCLUÍDA!") 🛸" \
       "Perfil $($GUM style --foreground "#282a36" --background "#72f1b8" " $PROFILE ") ativado com sucesso!" \
-      "Tempo total de salto: $($GUM style --foreground "#fede5d" "${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s")" \
+      "Tempo total de salto: $($GUM style --foreground '#fede5d' "${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s")" \
       "" \
       "Módulos com sucesso: $($GUM style --foreground "#72f1b8" "$SUCCESS_COUNT")" \
       "Módulos com falha: $($GUM style --foreground "#ff7edb" "$FAIL_COUNT")" \
@@ -791,7 +798,7 @@ if command -v "$GUM" &> /dev/null; then
       "Feche este terminal e abra um novo para carregar sua nova realidade." \
       "" \
       "📂 $($GUM style --foreground "#bd93f9" "Logs salvos em: /tmp/setup-2026-*.log")")
-  echo "$("$GUM" join --align center "$ART_BOX" "$TEXT_BOX")"
+  "$GUM" join --align center "$ART_BOX" "$TEXT_BOX"
 else
   log "Finalizado com sucesso em ${ELAPSED_MINUTES}m ${ELAPSED_SECONDS}s. Reinicie seu terminal."
   log "Sucesso: $SUCCESS_COUNT | Falha: $FAIL_COUNT"
