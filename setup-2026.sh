@@ -259,7 +259,7 @@ declare -A MOD_DESC=(
   ["choose"]="✂️ choose (Human-friendly cut)"
   ["circumflex"]="📰 circumflex (Hacker News in terminal)"
   ["claude-code"]="🤖 Claude Code (AI Assistant CLI da Anthropic)"
-  ["cli-tools"]="🧰 O Arsenal Definitivo 2026 (Ferramentas CLI)"
+  ["cli-tools"]="🧰 Dependências Base 2026 (Rust, Go, Python, build-tools)"
   ["cline"]="🤖 Cline (Autonomous coding agent CLI)"
   ["cloudflared"]="☁️ cloudflared (Cloudflare Tunnel client)"
   ["cocogitto"]="⚙️ cocogitto (Conventional commits CLI)"
@@ -619,7 +619,7 @@ if command -v "$GUM" &> /dev/null; then
   "$GUM" style \
     --foreground "#fede5d" --bold \
     --border double --border-foreground "#ff7edb" \
-    --padding "1 2" --margin "1 0" --align center --width 80 \
+    --padding "1 2" --margin "1 0" --align center --width 100 \
     "Selecione os módulos que deseja instalar:" \
     "(Use Espaço para marcar/desmarcar, Enter para confirmar)"
   echo ""
@@ -644,7 +644,7 @@ if command -v "$GUM" &> /dev/null; then
   # allowing us to pre-select modules based on the chosen profile.
   # We increased the height and added a search hint (use '/' to search in modern gum).
   SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="⚡ " \
-    --height=25 \
+    --height=30 \
     --selected="${DEFAULTS}" \
     --selected.background="#bd93f9" \
     --selected.foreground="#282a36" \
@@ -679,7 +679,8 @@ if command -v "$GUM" &> /dev/null; then
 
   # Dynamically calculate columns based on module count
   num_mods=${#MODULES[@]}
-  if [ $num_mods -gt 80 ]; then cols=5;
+  if [ $num_mods -gt 120 ]; then cols=6;
+  elif [ $num_mods -gt 80 ]; then cols=5;
   elif [ $num_mods -gt 60 ]; then cols=4;
   elif [ $num_mods -gt 30 ]; then cols=3;
   elif [ $num_mods -gt 15 ]; then cols=2;
