@@ -602,6 +602,10 @@ declare -A MOD_DESC=(
   ["nomad"]="🚀 Nomad (Workload Orchestrator)"
   ["packer"]="📦 Packer (Build Automated Machine Images)"
   ["dapr"]="📦 Dapr CLI (Modern tool for building distributed applications)"
+  ["lmstudio"]="🤖 LM Studio (Local LLM environment)"
+  ["taplo"]="⚙️ taplo (TOML toolkit)"
+  ["wtf"]="🖥️ wtf (Personal information dashboard)"
+  ["mlr"]="📊 mlr (jq for CSV/TSV/JSON)"
 )
 
 # Get all available modules
