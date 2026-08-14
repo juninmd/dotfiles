@@ -201,16 +201,16 @@ fi
 
 case "$PROFILE" in
   minimal)
-    DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship vscode sd choose gobang bottom macchina xplr circumflex lsd)
+    DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship vscode sd choose gobang bottom macchina xplr circumflex lsd lazydocker lazygit k9s posting aider)
     ;;
   dev)
-    DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv mise atuin devbox dagger deno biome ruff broot procs pueue glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd)
+    DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun mysql lazygit lazydocker vscode zellij yazi neovim docker uv mise atuin devbox dagger deno biome ruff broot procs pueue glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd aichat duckdb lazysql harlequin)
     ;;
   full)
-    DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun act actionlint age aichat aider amber android ast-grep atac atlas atuin bacon bandwhich bat-extras binsider biome bluetuith bore-cli bottom brave broot bruno carapace cbonsai chafa charm chatbox chatgpt-cli cheat checkov choose circumflex claude-code cline cloudflared cocogitto code2prompt cointop cpufetch crane croc csvlens ctop curlie cursor czg d2 dagger dasel daytona dbeaver dbmate delta deno devbox devenv devpod difftastic direnv discord diskonaut distrobox dive docker doggo dolt dotenv-linter dotenvx dprint dsq dua dua-cli duckdb duf dufs dura dust dysk earthly eget erdtree evans fabric fastfetch fend firefox flox flyctl fnm fq freeze fx gcloud gdu genact gh gh-dash ghostty ghq git-absorb git-cliff git-filter-repo git-sim git-town gitingest gitleaks gitui glab glances glow gobang gojq gping grex gron grpcurl grype gtt gum harlequin hck helix helm hexyl howdoi htmlq httpie httpstat httpx hurl hwatch hyperfine igrep infracost inlyne inshellisense jan jaq jc jira-cli jj jless jnv jo joshuto jq jql jqp jujutsu just k3d k6 k8sgpt k9s kalker kdash kind klog kmon ko kondo krew kubecolor kubectl kubectx kustomize lazydocker lazygit lazynpm lazysql lefthook lf llm lmstudio lnav lsd lychee macchina mani mcfly mdcat melt miller miniserve mise mkcert moar mods monolith moon mprocs mysql nap navi ncspot neovim newsboat ngrok nuclei numbat nushell obsidian oha ollama onefetch open-interpreter opentofu ouch oxker oxlint pastel peco pipes-rs pipes-sh pkgx plandex pnpm podman pokeget pomsky popeye porsmo posting presenterm procs pueue px qsv repomix rip rnr rs-cmatrix ruff ruplacer rustscan rye sad scc sd serie serpl sesh shell-gpt shellcheck shfmt silicon skate skim slack slides slumber sniffnet so sops spacer spt sqlc steampipe stern supabase superfile syft systemctl-tui systeroid sysz t-rec tailspin taplo task taskwarrior-tui tealdeer television tenki tenv termdbms termscp termshark termtyper tfsec tgpt thefuck tickrs tilt tin-summer tldr tlrc tokei topgrade trash-cli tre trippy trivy trufflehog trzsz tt ttyper turso typos typst ugrep usql uv vcluster vegeta vhs viddy visidata viu vscode walk warp watchexec websocat wezterm wiki-tui windsurf wtfutil wthrr wuzz xc xcp xh xplr xsv yamlfmt yazi yq yt-dlp zed zellij zen-browser zenith zizmor zrok ripgrep_all kubens doppler infisical stripe awscli vercel pulumi terragrunt tflint ttyd argc argocd k3s vault bw netlify heroku consul nomad packer dapr aider-chat typos-cli wthrr-the-weathercrab bruno-cli wtf mlr)
+    DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun act actionlint age aichat aider amber android ast-grep atac atlas atuin bacon bandwhich bat-extras binsider biome bluetuith bore-cli bottom brave broot bruno carapace cbonsai chafa charm chatbox chatgpt-cli cheat checkov choose circumflex claude-code cline cloudflared cocogitto code2prompt cointop cpufetch crane croc csvlens ctop curlie cursor czg d2 dagger dasel daytona dbeaver dbmate delta deno devbox devenv devpod difftastic direnv discord diskonaut distrobox dive docker doggo dolt dotenv-linter dotenvx dprint dsq dua dua-cli duckdb duf dufs dura dust dysk earthly eget erdtree evans fabric fastfetch fend firefox flox flyctl fnm fq freeze fx gcloud gdu genact gh gh-dash ghostty ghq git-absorb git-cliff git-filter-repo git-sim git-town gitingest gitleaks gitui glab glances glow gobang gojq gping grex gron grpcurl grype gtt gum harlequin hck helix helm hexyl howdoi htmlq httpie httpstat httpx hurl hwatch hyperfine igrep infracost inlyne inshellisense jan jaq jc jira-cli jj jless jnv jo joshuto jq jql jqp jujutsu just k3d k6 k8sgpt k9s kalker kdash kind klog kmon ko kondo krew kubecolor kubectl kubectx kustomize lazydocker lazygit lazynpm lazysql lefthook lf llm lmstudio lnav lsd lychee macchina mani mcfly mdcat melt miller miniserve mise mkcert moar mods monolith moon mprocs mysql nap navi ncspot neovim newsboat ngrok nuclei numbat nushell obsidian oha ollama onefetch open-interpreter opentofu ouch oxker oxlint pastel peco pipes-rs pipes-sh pkgx plandex pnpm podman pokeget pomsky popeye porsmo posting presenterm procs pueue px qsv repomix rip rnr rs-cmatrix ruff ruplacer rustscan rye sad scc sd serie serpl sesh shell-gpt shellcheck shfmt silicon skate skim slack slides slumber sniffnet so sops spacer spt sqlc steampipe stern supabase superfile syft systemctl-tui systeroid sysz t-rec tailspin taplo task taskwarrior-tui tealdeer television tenki tenv termdbms termscp termshark termtyper tfsec tgpt thefuck tickrs tilt tin-summer tldr tlrc tokei topgrade trash-cli tre trippy trivy trufflehog trzsz tt ttyper turso typos typst ugrep usql uv vcluster vegeta vhs viddy visidata viu vscode walk warp watchexec websocat wezterm wiki-tui windsurf wtfutil wthrr wuzz xc xcp xh xplr xsv yamlfmt yazi yq yt-dlp zed zellij zen-browser zenith zizmor zrok ripgrep_all kubens doppler infisical stripe awscli vercel pulumi terragrunt tflint ttyd argc argocd k3s vault bw netlify heroku consul nomad packer dapr aider-chat typos-cli wthrr-the-weathercrab bruno-cli wtf mlr pls devtoy git-next)
     ;;
   ai-dev)
-    DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger deno biome ruff broot doggo tokei jless oha curlie procs pueue aichat fabric k8sgpt tgpt jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona mods llm cline glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd)
+    DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun cursor zed warp lazygit lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s posting superfile aider plandex open-interpreter duckdb harlequin fastfetch lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger deno biome ruff broot doggo tokei jless oha curlie procs pueue aichat fabric k8sgpt tgpt jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona mods llm cline glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd aider-chat)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -228,12 +228,16 @@ declare -A MOD_DESC=(
   ["age"]="📦 age (A simple, modern and secure file encryption tool)"
   ["aichat"]="💬 aichat (AI Chat)"
   ["aider"]="🤖 Aider-chat (AI pair programming)"
+  ["aider-chat"]="🤖 Aider-chat (AI pair programming)"
   ["amber"]="🔍 amber (Search & Replace)"
   ["android"]="📱 Android Studio & SDK (Plataforma Mobile)"
+  ["argc"]="🐚 argc (A bash CLI framework)"
+  ["argocd"]="🐙 ArgoCD (Declarative GitOps for K8s)"
   ["ast-grep"]="🌳 ast-grep (AST based search/replace)"
   ["atac"]="🚀 Atac (Modern API Client TUI)"
   ["atlas"]="📦 atlas (Modern tool for managing database schemas)"
   ["atuin"]="🐢 Atuin (Magical Shell History)"
+  ["awscli"]="☁️ AWS CLI (Amazon Web Services CLI)"
   ["bacon"]="🥓 bacon (Background Rust code checker)"
   ["bandwhich"]="📈 bandwhich (Bandwidth Monitor)"
   ["bat"]="🦇 Bat (A cat clone with wings)"
@@ -246,8 +250,10 @@ declare -A MOD_DESC=(
   ["brave"]="🦁 Brave (Navegador focado em privacidade)"
   ["broot"]="🌲 Broot (A new way to see and navigate directory trees)"
   ["bruno"]="🐶 Bruno (API Client open-source e leve)"
+  ["bruno-cli"]="🐶 bruno-cli (API Client CLI)"
   ["btop"]="📊 Btop (A monitor of resources)"
   ["bun"]="🥟 Bun JavaScript runtime (Ultrarrápido)"
+  ["bw"]="🔐 Bitwarden CLI (Password Manager)"
   ["carapace"]="🐚 carapace (Multi-shell Completer)"
   ["cbonsai"]="🌲 cbonsai (Terminal bonsai tree)"
   ["chafa"]="🎨 chafa (Terminal graphics)"
@@ -265,11 +271,8 @@ declare -A MOD_DESC=(
   ["cocogitto"]="⚙️ cocogitto (Conventional commits CLI)"
   ["code2prompt"]="📝 code2prompt (Convert codebase to LLM prompt)"
   ["cointop"]="🪙 cointop (Crypto tracker)"
-  ["aider-chat"]="🤖 Aider-chat (AI pair programming)"
-  ["typos-cli"]="📝 typos-cli (Source code spell checker)"
-  ["wthrr-the-weathercrab"]="🌦️ wthrr-the-weathercrab (Weather crab)"
-  ["bruno-cli"]="🐶 bruno-cli (API Client CLI)"
   ["common"]="⚙️ Scripts compartilhados e helpers"
+  ["consul"]="🌐 Consul (Service Networking)"
   ["cpufetch"]="💻 cpufetch (CPU architecture fetching)"
   ["crane"]="🏗️ crane (Container image interaction)"
   ["croc"]="🐊 croc (Securely send things between computers)"
@@ -280,6 +283,7 @@ declare -A MOD_DESC=(
   ["czg"]="📝 czg (Commitizen CLI)"
   ["d2"]="📊 d2 (Declarative Diagramming)"
   ["dagger"]="🗡️ Dagger (Programmable CI/CD engine)"
+  ["dapr"]="📦 Dapr CLI (Modern tool for building distributed applications)"
   ["dasel"]="🔍 dasel (Query/update data formats)"
   ["daytona"]="🌅 Daytona (Self-hosted development environment manager)"
   ["dbeaver"]="🐘 DBeaver (Cliente universal para bancos de dados)"
@@ -298,6 +302,7 @@ declare -A MOD_DESC=(
   ["docker"]="🐳 Docker Engine (Contêineres)"
   ["doggo"]="🐶 Doggo (Modern DNS Client)"
   ["dolt"]="🐬 dolt (Git for data)"
+  ["doppler"]="🔐 Doppler (SecretOps Platform)"
   ["dotenv-linter"]="✅ dotenv-linter (Linter for .env files)"
   ["dotenvx"]="🔑 dotenvx (Manage .env files)"
   ["dprint"]="🖋️ dprint (Pluggable formatting platform)"
@@ -312,6 +317,7 @@ declare -A MOD_DESC=(
   ["dysk"]="💽 dysk (Linux disk info)"
   ["earthly"]="🌍 earthly (Build automation)"
   ["eget"]="📥 eget (Download pre-built binaries)"
+  ["elixir"]="💧 Elixir (Dynamic, functional language for building scalable and maintainable applications)"
   ["erdtree"]="🌳 erdtree (File-tree Visualizer)"
   ["evans"]="grpc evans (gRPC client)"
   ["eza"]="🌟 Eza (A modern, maintained replacement for ls)"
@@ -344,6 +350,7 @@ declare -A MOD_DESC=(
   ["gitui"]="🐙 GitUI (Blazing Fast Git TUI)"
   ["glab"]="🦊 glab (GitLab CLI)"
   ["glances"]="👀 glances (System monitor)"
+  ["gleam"]="✨ Gleam (Type safe programming language)"
   ["glow"]="🌟 Glow (Markdown Renderer)"
   ["gobang"]="🗃️ gobang (Cross-platform Database Client TUI)"
   ["gojq"]="🔍 gojq (Pure Go implementation of jq)"
@@ -358,6 +365,7 @@ declare -A MOD_DESC=(
   ["hck"]="📦 hck (A sharp cut(1) clone)"
   ["helix"]="🧬 Helix (Post-modern text editor)"
   ["helm"]="⎈ helm (Kubernetes package manager)"
+  ["heroku"]="☁️ Heroku CLI (Manage Heroku apps)"
   ["hexyl"]="🔢 hexyl (Hex viewer)"
   ["howdoi"]="❓ howdoi (Instant coding answers)"
   ["htmlq"]="📄 htmlq (jq for HTML)"
@@ -368,6 +376,7 @@ declare -A MOD_DESC=(
   ["hwatch"]="👀 hwatch (Modern alternative to watch)"
   ["hyperfine"]="⏱️ Hyperfine (A command-line benchmarking tool)"
   ["igrep"]="🔎 igrep (Interactive Grep)"
+  ["infisical"]="🔐 Infisical (Open Source Secret Management)"
   ["infracost"]="💰 infracost (Cloud cost estimates for Terraform)"
   ["inlyne"]="🖥️ inlyne (GPU powered markdown viewer)"
   ["inshellisense"]="💡 Inshellisense (IDE style autocomplete for shells)"
@@ -386,6 +395,7 @@ declare -A MOD_DESC=(
   ["jujutsu"]="🥋 jujutsu (A Git-compatible VCS)"
   ["just"]="🤖 Just (Command Runner)"
   ["k3d"]="🐳 k3d (Lightweight Kubernetes in Docker)"
+  ["k3s"]="☸️ k3s (Lightweight Kubernetes)"
   ["k6"]="🚀 k6 (Modern load testing tool)"
   ["k8sgpt"]="☸️ k8sgpt (AI for Kubernetes)"
   ["k9s"]="🐶 k9s (Kubernetes CLI TUI)"
@@ -400,6 +410,7 @@ declare -A MOD_DESC=(
   ["kubecolor"]="🎨 kubecolor (Colorize your kubectl output)"
   ["kubectl"]="⎈ kubectl (Kubernetes command-line tool)"
   ["kubectx"]="⎈ kubectx (Switch between Kubernetes contexts)"
+  ["kubens"]="📦 kubens (Kubernetes context switching)"
   ["kustomize"]="🛠️ kustomize (Customization of kubernetes YAML configurations)"
   ["lazydocker"]="🐳 LazyDocker TUI (Contêineres com Estilo)"
   ["lazygit"]="🐙 LazyGit TUI (Git feito certo)"
@@ -421,6 +432,7 @@ declare -A MOD_DESC=(
   ["miniserve"]="🗄️ miniserve (Fast local file server)"
   ["mise"]="🛠️ Mise (Polyglot Tool Version Manager)"
   ["mkcert"]="🔐 mkcert (Simple zero-config tool to make locally trusted development certificates)"
+  ["mlr"]="📊 mlr (jq for CSV/TSV/JSON)"
   ["moar"]="📄 moar (Better Pager)"
   ["mods"]="🤖 Mods (AI on the command line)"
   ["monolith"]="📦 monolith (Save HTML pages with all assets)"
@@ -431,8 +443,11 @@ declare -A MOD_DESC=(
   ["navi"]="🧭 navi (An interactive cheatsheet tool for the command-line)"
   ["ncspot"]="🎵 ncspot (Spotify client)"
   ["neovim"]="📝 Neovim (Editor de texto avançado)"
+  ["netlify"]="▲ Netlify CLI (Deploy and manage sites)"
   ["newsboat"]="📰 newsboat (RSS/Atom feed reader)"
   ["ngrok"]="🚇 ngrok (Secure introspectable tunnels to localhost)"
+  ["nix"]="❄️ Nix (Modern package manager)"
+  ["nomad"]="🚀 Nomad (Workload Orchestrator)"
   ["nuclei"]="⚡ nuclei (Targeted vulnerability scanner)"
   ["numbat"]="🧮 numbat (High precision scientific calculator)"
   ["nushell"]="🐚 Nushell (A new type of shell)"
@@ -445,6 +460,7 @@ declare -A MOD_DESC=(
   ["ouch"]="🗜️ ouch (Painless compression and decompression)"
   ["oxker"]="🐳 oxker (Simple TUI to view & control docker containers)"
   ["oxlint"]="🐂 oxlint (Fast JS/TS linter)"
+  ["packer"]="📦 Packer (Build Automated Machine Images)"
   ["pastel"]="🎨 pastel (Command-line Color Tool)"
   ["peco"]="🔍 peco (Simplistic interactive filtering tool)"
   ["pipes-rs"]="🚰 pipes-rs (Animated pipes terminal screensaver)"
@@ -461,11 +477,13 @@ declare -A MOD_DESC=(
   ["presenterm"]="📽️ presenterm (Markdown presentations in terminal)"
   ["procs"]="🔍 Procs (A modern replacement for ps)"
   ["pueue"]="🗃️ Pueue (Command-line task management tool)"
+  ["pulumi"]="🏗️ Pulumi (Infrastructure as Code)"
   ["px"]="📊 px (ps and top for Human Beings)"
   ["qsv"]="📊 qsv (CSV data-wrangling toolkit)"
   ["repomix"]="📦 Repomix (Pack repo for AI)"
   ["rip"]="🗑️ rip (A safe and ergonomic alternative to rm)"
   ["ripgrep"]="⚡ Ripgrep (Line-oriented search tool)"
+  ["ripgrep_all"]="📦 ripgrep_all (rga - search PDFs, E-Books, Office docs)"
   ["rnr"]="🔄 rnr (A command-line tool to rename files and directories safely)"
   ["rs-cmatrix"]="💻 rs-cmatrix (Matrix rain in Rust)"
   ["ruff"]="⚡ Ruff (Extremely fast Python linter)"
@@ -496,6 +514,7 @@ declare -A MOD_DESC=(
   ["starship"]="🚀 Starship Prompt (Synthwave '84 ativado)"
   ["steampipe"]="☁️ steampipe (Query cloud resources with SQL)"
   ["stern"]="📋 stern (Multi pod and container log tailing for Kubernetes)"
+  ["stripe"]="💳 Stripe CLI (Interact with Stripe API)"
   ["supabase"]="⚡ supabase (Supabase CLI)"
   ["superfile"]="📁 Superfile (Terminal File Manager)"
   ["syft"]="📦 syft (CLI tool and library for generating a SBOM)"
@@ -515,6 +534,8 @@ declare -A MOD_DESC=(
   ["termscp"]="📁 termscp (Terminal file transfer)"
   ["termshark"]="🦈 termshark (A terminal UI for tshark, inspired by Wireshark)"
   ["termtyper"]="⌨️ termtyper (A typing test in your terminal)"
+  ["terragrunt"]="🏗️ Terragrunt (Thin wrapper for Terraform)"
+  ["tflint"]="🔍 TFLint (Terraform linter)"
   ["tfsec"]="🛡️ tfsec (Security scanner for your Terraform code)"
   ["tgpt"]="🤖 tgpt (Terminal ChatGPT)"
   ["thefuck"]="🤬 thefuck (Magnificent app which corrects your previous console command)"
@@ -532,15 +553,19 @@ declare -A MOD_DESC=(
   ["trufflehog"]="🐷 trufflehog (Find and verify secrets)"
   ["trzsz"]="📤 trzsz (A simple file transfer tools, similar to lrzsz (rz / sz), and compatible with tmux)"
   ["tt"]="⌨️ tt (A terminal based typing test)"
+  ["ttyd"]="🌐 ttyd (Share your terminal over the web)"
   ["ttyper"]="⌨️ ttyper (Terminal-based typing test)"
   ["turso"]="🗄️ turso (Turso CLI)"
   ["typos"]="📝 typos (Source code spell checker)"
+  ["typos-cli"]="📝 typos-cli (Source code spell checker)"
   ["typst"]="📝 typst (Markup-based typesetting system)"
   ["ugrep"]="🔍 ugrep (Ultra fast grep with interactive query UI)"
   ["usql"]="🗄️ usql (Universal command-line interface for SQL databases)"
   ["uv"]="🐍 uv (Gerenciador Python ultrarrápido em Rust)"
+  ["vault"]="🔐 Vault (Manage Secrets and Protect Sensitive Data)"
   ["vcluster"]="⎈ vcluster (Virtual Kubernetes Clusters)"
   ["vegeta"]="🔫 vegeta (HTTP load testing tool and library)"
+  ["vercel"]="▲ Vercel CLI (Deploy serverless applications)"
   ["vhs"]="📼 vhs (Terminal GIF Recorder)"
   ["viddy"]="⌚ viddy (Modern watch command)"
   ["visidata"]="📊 visidata (A terminal spreadsheet multitool for discovering and arranging data)"
@@ -553,8 +578,10 @@ declare -A MOD_DESC=(
   ["wezterm"]="💻 WezTerm (Emulador de terminal acelerado por GPU)"
   ["wiki-tui"]="📖 wiki-tui (Wikipedia TUI)"
   ["windsurf"]="🏄 Windsurf (AI IDE da Codeium)"
+  ["wtf"]="🖥️ wtf (Personal information dashboard)"
   ["wtfutil"]="🖥️ wtfutil (Personal information dashboard)"
   ["wthrr"]="🌦️ wthrr (Weather crab)"
+  ["wthrr-the-weathercrab"]="🌦️ wthrr-the-weathercrab (Weather crab)"
   ["wuzz"]="🌐 wuzz (Interactive cli tool for HTTP inspection)"
   ["xc"]="📝 xc (Markdown task runner)"
   ["xcp"]="🚀 xcp (Extended cp)"
@@ -569,41 +596,11 @@ declare -A MOD_DESC=(
   ["zellij"]="🪟 Zellij Terminal Multiplexer (Workspace Moderno)"
   ["zen-browser"]="🌐 Zen Browser (Navegador ultrarrápido focado em privacidade)"
   ["zenith"]="📈 zenith (System Monitor with Charts)"
+  ["zig"]="⚡ Zig (Modern programming language)"
   ["zizmor"]="🛡️ zizmor (Static analysis tool for GitHub Actions)"
   ["zoxide"]="🚀 Zoxide (A smarter cd command)"
   ["zrok"]="🔗 zrok (Open source ngrok alternative)"
-  ["ripgrep_all"]="📦 ripgrep_all (rga - search PDFs, E-Books, Office docs)"
-  ["kubens"]="📦 kubens (Kubernetes context switching)"
   ["zsh"]="🐚 Zsh shell e plugins (Hiper-produtividade)"
-  ["nix"]="❄️ Nix (Modern package manager)"
-  ["gleam"]="✨ Gleam (Type safe programming language)"
-  ["elixir"]="💧 Elixir (Dynamic, functional language for building scalable and maintainable applications)"
-  ["zig"]="⚡ Zig (Modern programming language)"
-
-  ["doppler"]="🔐 Doppler (SecretOps Platform)"
-  ["infisical"]="🔐 Infisical (Open Source Secret Management)"
-  ["stripe"]="💳 Stripe CLI (Interact with Stripe API)"
-  ["awscli"]="☁️ AWS CLI (Amazon Web Services CLI)"
-  ["vercel"]="▲ Vercel CLI (Deploy serverless applications)"
-  ["pulumi"]="🏗️ Pulumi (Infrastructure as Code)"
-  ["terragrunt"]="🏗️ Terragrunt (Thin wrapper for Terraform)"
-  ["tflint"]="🔍 TFLint (Terraform linter)"
-  ["ttyd"]="🌐 ttyd (Share your terminal over the web)"
-  ["argc"]="🐚 argc (A bash CLI framework)"
-
-  ["argocd"]="🐙 ArgoCD (Declarative GitOps for K8s)"
-  ["k3s"]="☸️ k3s (Lightweight Kubernetes)"
-  ["vault"]="🔐 Vault (Manage Secrets and Protect Sensitive Data)"
-
-  ["bw"]="🔐 Bitwarden CLI (Password Manager)"
-  ["netlify"]="▲ Netlify CLI (Deploy and manage sites)"
-  ["heroku"]="☁️ Heroku CLI (Manage Heroku apps)"
-  ["consul"]="🌐 Consul (Service Networking)"
-  ["nomad"]="🚀 Nomad (Workload Orchestrator)"
-  ["packer"]="📦 Packer (Build Automated Machine Images)"
-  ["dapr"]="📦 Dapr CLI (Modern tool for building distributed applications)"
-  ["wtf"]="🖥️ wtf (Personal information dashboard)"
-  ["mlr"]="📊 mlr (jq for CSV/TSV/JSON)"
 )
 
 # Get all available modules
@@ -615,6 +612,11 @@ for dir in "$ROOT_DIR"/programas/*/; do
     ALL_MODULES+=("$mod")
   fi
 done
+
+# Sort ALL_MODULES alphabetically to improve the interface
+mapfile -t ALL_MODULES < <(IFS=$'
+'; sort <<<"${ALL_MODULES[*]}")
+
 
 if command -v "$GUM" &> /dev/null; then
   echo ""
