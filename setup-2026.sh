@@ -293,6 +293,7 @@ declare -A MOD_DESC=(
   ["devbox"]="📦 Devbox (Portable Developer Environments)"
   ["devenv"]="⚙️ Devenv (Declarative Developer Environments)"
   ["devpod"]="🚀 DevPod (Codespaces but open-source)"
+  ["devtoy"]="🧰 devtoy (A Swiss Army knife for developers)"
   ["difftastic"]="🧬 difftastic (Structural diff)"
   ["direnv"]="🔧 direnv (Environment variable manager)"
   ["discord"]="🎮 Discord (Comunicação de voz e texto)"
@@ -343,6 +344,7 @@ declare -A MOD_DESC=(
   ["git-absorb"]="🧽 git-absorb (Automatic git commit fixing)"
   ["git-cliff"]="⛰️ git-cliff (Changelog Generator)"
   ["git-filter-repo"]="🧹 git-filter-repo (Rewrite git history)"
+  ["git-next"]="🐙 git-next (Trunk-based development manager)"
   ["git-sim"]="🔮 git-sim (Visually simulate Git operations)"
   ["git-town"]="🏙️ git-town (High-level Git workflow support)"
   ["gitingest"]="🧠 Gitingest (Git to AI prompt)"
@@ -467,6 +469,7 @@ declare -A MOD_DESC=(
   ["pipes-sh"]="🚰 pipes-sh (Animated pipes screensaver)"
   ["pkgx"]="📦 pkgx (Blazing fast package manager)"
   ["plandex"]="🤖 Plandex (AI coding engine)"
+  ["pls"]="🤖 pls (AI-powered CLI assistant)"
   ["pnpm"]="📦 pnpm (Fast package manager)"
   ["podman"]="🦭 Podman (Daemonless container engine)"
   ["pokeget"]="👾 pokeget (Show pokemon sprites in terminal)"
@@ -631,14 +634,14 @@ if command -v "$GUM" &> /dev/null; then
   # Prepare choices with descriptions
   CHOICES=()
   for mod in "${ALL_MODULES[@]}"; do
-    desc="${MOD_DESC[$mod]:-Módulo $mod}"
+    desc="${MOD_DESC[$mod]:-Ferramenta CLI $mod}"
     CHOICES+=("$mod - $desc")
   done
 
   # Prepare comma-separated default modules string with descriptions
   DEFAULTS_DESC=()
   for mod in "${DEFAULT_MODULES[@]}"; do
-    desc="${MOD_DESC[$mod]:-Módulo $mod}"
+    desc="${MOD_DESC[$mod]:-Ferramenta CLI $mod}"
     DEFAULTS_DESC+=("$mod - $desc")
   done
   DEFAULTS=$(IFS=,; echo "${DEFAULTS_DESC[*]}")
@@ -674,7 +677,7 @@ if command -v "$GUM" &> /dev/null; then
   MOD_LIST=""
   for mod in "${MODULES[@]}"; do
     if [ -n "$mod" ]; then
-      desc="${MOD_DESC[$mod]:-Módulo $mod}"
+      desc="${MOD_DESC[$mod]:-Ferramenta CLI $mod}"
       MOD_LIST+="  $($GUM style --foreground "#ff7edb" "•") $($GUM style --foreground "#fede5d" "$mod") $($GUM style --foreground "#6272a4" "($desc)")"$'\n'
     fi
   done
