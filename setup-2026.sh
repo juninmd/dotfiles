@@ -57,6 +57,26 @@ run_step() {
 SUCCESS_COUNT=0
 FAIL_COUNT=0
 
+
+draw_progress_bar() {
+  local current="$1"
+  local total="$2"
+  local width=40
+  local percent=$(( current * 100 / total ))
+  local filled=$(( percent * width / 100 ))
+  local empty=$(( width - filled ))
+  local bar_filled=$(printf "%${filled}s" | tr ' ' '█')
+  local bar_empty=$(printf "%${empty}s" | tr ' ' '░')
+  if [ "$filled" -eq 0 ]; then bar_filled=""; fi
+  if [ "$empty" -eq 0 ]; then bar_empty=""; fi
+
+  if command -v "$GUM" &> /dev/null; then
+    "$GUM" style --foreground "#ff7edb" "[$($GUM style --foreground "#36f9f6" "${bar_filled}")$($GUM style --foreground "#6272a4" "${bar_empty}")] $($GUM style --foreground "#fede5d" "${percent}%")"
+  else
+    echo "[${bar_filled}${bar_empty}] ${percent}%"
+  fi
+}
+
 run_module() {
   local module="$1"
   local current_idx="$2"
@@ -68,6 +88,10 @@ run_module() {
   fi
 
   local progress_prefix="[$current_idx/$total_mods]"
+
+  if command -v "$GUM" &> /dev/null; then
+    draw_progress_bar "$current_idx" "$total_mods"
+  fi
 
   if [[ "$DRY_RUN" == true ]]; then
     run_step "$progress_prefix Executando módulo: $module" "$script"
@@ -154,6 +178,8 @@ if [[ -z "$PROFILE" ]]; then
     SHELL_INFO=$(basename "${SHELL:-/bin/bash}")
     DATE_INFO=$(date '+%Y-%m-%d')
     UPTIME_INFO=$(uptime -p 2>/dev/null || uptime | sed 's/.*up //; s/, [0-9]* user.*//')
+    MEM_INFO=$(free -h | awk '/^Mem:/ {print $3 "/" $2}' | tr -d 'i')
+    DISK_INFO=$(df -h / | awk 'NR==2 {print $3 "/" $2}' | tr -d 'i')
     SYS_INFO=$("$GUM" style \
       --foreground "#f8f8f2" --border-foreground "#bd93f9" --border double \
       --align left --width 30 --margin "1 2" --padding "2 3" \
@@ -165,7 +191,9 @@ if [[ -z "$PROFILE" ]]; then
       "⚙️ Arch:  $($GUM style --foreground "#36f9f6" "$ARCH_INFO")" \
       "🐚 Shell: $($GUM style --foreground "#fede5d" "$SHELL_INFO")" \
       "📅 Date:  $($GUM style --foreground "#72f1b8" "$DATE_INFO")" \
-      "⏱️ Uptime: $($GUM style --foreground "#ff7edb" "$UPTIME_INFO")")
+      "⏱️ Uptime: $($GUM style --foreground "#ff7edb" "$UPTIME_INFO")" \
+      "🧠 Mem:   $($GUM style --foreground "#36f9f6" "$MEM_INFO")" \
+      "💾 Disk:  $($GUM style --foreground "#bd93f9" "$DISK_INFO")")
 
     "$GUM" join --vertical --align center "$HEADER" "$("$GUM" join --horizontal --align center "$INFO" "$SYS_INFO")"
     echo ""
