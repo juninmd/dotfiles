@@ -632,6 +632,9 @@ declare -A MOD_DESC=(
   ["zoxide"]="🚀 Zoxide (A smarter cd command)"
   ["zrok"]="🔗 zrok (Open source ngrok alternative)"
   ["zsh"]="🐚 Zsh shell e plugins (Hiper-produtividade)"
+  ["lazygit-tui"]="🐙 lazygit-tui (Git feito certo)"
+  ["neofetch-alt"]="⚡ neofetch-alt (System Info)"
+  ["k9s-cli"]="🐶 k9s-cli (Kubernetes CLI TUI)"
 )
 
 # Get all available modules
@@ -662,14 +665,14 @@ if command -v "$GUM" &> /dev/null; then
   # Prepare choices with descriptions
   CHOICES=()
   for mod in "${ALL_MODULES[@]}"; do
-    desc="${MOD_DESC[$mod]:-🚀 App/Tool $mod}"
+    desc="${MOD_DESC[$mod]:-🚀 $mod}"
     CHOICES+=("$mod - $desc")
   done
 
   # Prepare comma-separated default modules string with descriptions
   DEFAULTS_DESC=()
   for mod in "${DEFAULT_MODULES[@]}"; do
-    desc="${MOD_DESC[$mod]:-🚀 App/Tool $mod}"
+    desc="${MOD_DESC[$mod]:-🚀 $mod}"
     DEFAULTS_DESC+=("$mod - $desc")
   done
   DEFAULTS=$(IFS=,; echo "${DEFAULTS_DESC[*]}")
@@ -705,7 +708,7 @@ if command -v "$GUM" &> /dev/null; then
   MOD_LIST=""
   for mod in "${MODULES[@]}"; do
     if [ -n "$mod" ]; then
-      desc="${MOD_DESC[$mod]:-🚀 App/Tool $mod}"
+      desc="${MOD_DESC[$mod]:-🚀 $mod}"
       MOD_LIST+="  $($GUM style --foreground "#ff7edb" "•") $($GUM style --foreground "#fede5d" "$mod") $($GUM style --foreground "#6272a4" "($desc)")"$'\n'
     fi
   done
