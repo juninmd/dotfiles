@@ -1,5 +1,7 @@
 #!/bin/bash
-set -euo pipefail
-echo "Installing k9s-cli..."
-curl -sS https://webinstall.dev/k9s | /usr/bin/env sh
-echo "k9s successfully installed!"
+set -e
+c='\e[32m'
+r='\e[0m'
+echo -e "${c}Installing k9s...${r}"
+sudo snap install k9s || true
+echo -e "${c}k9s setup complete.${r}"
