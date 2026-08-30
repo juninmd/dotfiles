@@ -1,5 +1,3 @@
-#!/bin/bash
-SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
-source "$SCRIPT_DIR/../common/cargo_helper.sh"
-# Dprint (Code formatting platform)
+#!/usr/bin/env bash
+source "$ROOT_DIR/programas/common/cargo_helper.sh"
 install_cargo_crate dprint

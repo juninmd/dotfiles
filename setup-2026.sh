@@ -657,6 +657,10 @@ declare -A MOD_DESC=(
   ["oh-my-posh"]="🎨 oh-my-posh (Prompt theme engine)"
   ["pgcli"]="🐘 pgcli (Postgres CLI with auto-completion and syntax highlighting)"
   ["tere"]="🚀 tere (Faster cd tree alternative)"
+  ["ffuf"]="🔍 ffuf (Fast web fuzzer written in Go)"
+  ["tmate"]="🤝 tmate (Instant terminal sharing)"
+  ["kaskade"]="🌊 kaskade (Kafka TUI)"
+  ["gum"]="🍬 gum (Glamorous shell scripts)"
 )
 
 # Get all available modules
@@ -679,7 +683,7 @@ if command -v "$GUM" &> /dev/null; then
   "$GUM" style \
     --foreground "#fede5d" --bold \
     --border double --border-foreground "#ff7edb" \
-    --padding "1 2" --margin "1 0" --align center --width 100 \
+    --padding "1 4" --margin "1 0" --align center --width 100 \
     "Selecione os módulos que deseja instalar:" \
     "(Use Espaço para marcar/desmarcar, Enter para confirmar)"
   echo ""
@@ -755,9 +759,9 @@ if command -v "$GUM" &> /dev/null; then
         join_args+=("  ")
       fi
     done
-    echo "$("$GUM" join --horizontal "${join_args[@]}")" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#36f9f6"
+    echo "$("$GUM" join --horizontal "${join_args[@]}")" | "$GUM" style --border double --margin "1 2" --padding "2 4" --border-foreground "#36f9f6"
   else
-    echo -e "$MOD_LIST" | "$GUM" style --border double --margin "0 2" --padding "1 2" --border-foreground "#36f9f6"
+    echo -e "$MOD_LIST" | "$GUM" style --border double --margin "1 2" --padding "2 4" --border-foreground "#36f9f6"
   fi
   echo ""
 else
