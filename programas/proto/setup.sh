@@ -6,5 +6,5 @@ log() {
 }
 
 log "🚀 Instalando proto (Pluggable next-generation version manager)..."
-curl -fsSL "https://moonrepo.dev/install/proto.sh" | /usr/bin/env sh
+curl --proto '=https' --tlsv1.2 -fsSL "https://moonrepo.dev/install/proto.sh" | /usr/bin/env sh
 log "✅ proto instalado."

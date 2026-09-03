@@ -6,5 +6,5 @@ log() {
 }
 
 log "🚀 Instalando pixi (Fast package manager for Python/C++)..."
-curl -fsSL "https://pixi.sh/install.sh" | /usr/bin/env sh
+curl --proto '=https' --tlsv1.2 -fsSL "https://pixi.sh/install.sh" | /usr/bin/env sh
 log "✅ pixi instalado."
