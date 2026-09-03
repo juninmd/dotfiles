@@ -2,7 +2,7 @@
 set -euo pipefail
 
 log() {
-  echo -e "\033[38;2;255;126;219m[\033[38;2;54;249;246m2026-setup\033[38;2;255;126;219m]\033[0m $1"
+  printf "\033[38;2;255;126;219m[\033[38;2;54;249;246m2026-setup\033[38;2;255;126;219m]\033[0m %s\n" "$1"
 }
 
 log "🚀 Instalando rio (Hardware-accelerated GPU terminal emulator)..."
