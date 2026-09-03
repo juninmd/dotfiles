@@ -458,6 +458,7 @@ declare -A MOD_DESC=(
   ["kubectx"]="⎈ kubectx (Switch between Kubernetes contexts)"
   ["kubens"]="📦 kubens (Kubernetes context switching)"
   ["kustomize"]="🛠️ kustomize (Customization of kubernetes YAML configurations)"
+  ["lapce"]="⚡ Lapce (Lightning-fast Code Editor in Rust)"
   ["lazydocker"]="🐳 LazyDocker TUI (Contêineres com Estilo)"
   ["lazygit-tui"]="🐙 lazygit-tui TUI (Git feito certo)"
   ["lazynpm"]="📦 Lazynpm (NPM TUI)"
@@ -511,6 +512,7 @@ declare -A MOD_DESC=(
   ["peco"]="🔍 peco (Simplistic interactive filtering tool)"
   ["pipes-rs"]="🚰 pipes-rs (Animated pipes terminal screensaver)"
   ["pipes-sh"]="🚰 pipes-sh (Animated pipes screensaver)"
+  ["pixi"]="📦 pixi (Fast package manager for Python and C++)"
   ["pkgx"]="📦 pkgx (Blazing fast package manager)"
   ["plandex"]="🤖 Plandex (AI coding engine)"
   ["pls"]="🤖 pls (AI-powered CLI assistant)"
@@ -524,11 +526,13 @@ declare -A MOD_DESC=(
   ["posting"]="📮 Posting (HTTP Client TUI)"
   ["presenterm"]="📽️ presenterm (Markdown presentations in terminal)"
   ["procs"]="🔍 Procs (A modern replacement for ps)"
+  ["proto"]="🔧 proto (Pluggable next-generation version manager by moonrepo)"
   ["pueue"]="🗃️ Pueue (Command-line task management tool)"
   ["pulumi"]="🏗️ Pulumi (Infrastructure as Code)"
   ["px"]="📊 px (ps and top for Human Beings)"
   ["qsv"]="📊 qsv (CSV data-wrangling toolkit)"
   ["repomix"]="📦 Repomix (Pack repo for AI)"
+  ["rio"]="🎨 Rio (Hardware-accelerated GPU terminal emulator)"
   ["rip"]="🗑️ rip (A safe and ergonomic alternative to rm)"
   ["ripgrep"]="⚡ Ripgrep (Line-oriented search tool)"
   ["ripgrep_all"]="📦 ripgrep_all (rga - search PDFs E-Books Office docs)"
@@ -716,15 +720,15 @@ if command -v "$GUM" &> /dev/null; then
   # Note: Use `gum choose` because it supports `--selected` natively (unlike `gum filter`),
   # allowing us to pre-select modules based on the chosen profile.
   # We increased the height and added a search hint (use '/' to search in modern gum).
-  SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="⚡ " \
+  SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="🚀 " \
     --height=35 \
     --selected="${DEFAULTS}" \
-    --selected.background="#bd93f9" \
+    --selected.background="#ff7edb" \
     --selected.foreground="#282a36" \
     --selected.bold \
-    --cursor.foreground="#ff7edb" \
+    --cursor.foreground="#36f9f6" \
     --item.foreground="#f8f8f2" \
-    --header="🚀 $($GUM style --foreground "#ff7edb" --bold "CATÁLOGO DE MÓDULOS 2026") (pressione '/' para buscar):" \
+    --header="🌟 $($GUM style --foreground "#36f9f6" --bold "CATÁLOGO NEXUS DE MÓDULOS 2026") (pressione '/' para buscar):" \
     --header.foreground="#fede5d" \
     --header.bold \
     "${CHOICES[@]}")
@@ -790,8 +794,8 @@ if command -v "$GUM" &> /dev/null; then
     DRY_BADGE=$("$GUM" style --foreground "#282a36" --background "#fede5d" --bold --padding "0 1" " DRY RUN ")
   fi
   SUMMARY_BOX=$("$GUM" style \
-    --foreground "#f8f8f2" --border-foreground "#ff7edb" --border double \
-    --align center --width 65 --margin "2 2" --padding "3 5" \
+    --foreground "#f8f8f2" --border-foreground "#36f9f6" --border double \
+    --align center --width 70 --margin "3 2" --padding "4 6" \
     "🚀 $($GUM style --foreground "#fede5d" --bold "RESUMO DA INSTALAÇÃO") 🚀" \
     "$DRY_BADGE" \
     "" \
