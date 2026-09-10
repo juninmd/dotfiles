@@ -1,30 +1,40 @@
-#!/bin/bash
-c='\e[32m'
-r='\e[0m'
+#!/usr/bin/env bash
+
+set -e
+
+c='\e[32m' # Green Color
+r='\e[0m'  # Reset Color
+
 echo -e "${c}Installing LM Studio...${r}"
 
-# Setup directories
 APP_DIR="$HOME/Applications"
 mkdir -p "$APP_DIR"
-LM_BIN="$APP_DIR/LM-Studio.AppImage"
+
+# Download LM Studio AppImage
+APPIMAGE_URL="https://releases.lmstudio.ai/linux/x86/standard/latest/LM_Studio_Linux.AppImage"
+DEST_FILE="$APP_DIR/LM_Studio.AppImage"
 
 echo -e "${c}Downloading LM Studio AppImage...${r}"
-curl -L -o "$LM_BIN" "https://installers.lmstudio.ai/linux/x64/appimage"
-chmod +x "$LM_BIN"
+wget -q -O "$DEST_FILE" "$APPIMAGE_URL"
+chmod +x "$DEST_FILE"
 
-echo -e "${c}Creating Desktop Entry...${r}"
-mkdir -p "$HOME/.local/share/applications"
-DESKTOP_FILE="$HOME/.local/share/applications/lm-studio.desktop"
+# Create Desktop Entry
+echo -e "${c}Creating desktop entry...${r}"
+DESKTOP_DIR="$HOME/.local/share/applications"
+mkdir -p "$DESKTOP_DIR"
+DESKTOP_FILE="$DESKTOP_DIR/lm-studio.desktop"
 
-cat <<DESKTOPEOF > "$DESKTOP_FILE"
+cat <<DESKTOP > "$DESKTOP_FILE"
 [Desktop Entry]
 Name=LM Studio
-Exec=$LM_BIN
+Comment=Discover, download, and run local LLMs
+Exec=$DEST_FILE
 Icon=utilities-terminal
+Terminal=false
 Type=Application
 Categories=Development;
-Terminal=false
-StartupNotify=true
-DESKTOPEOF
+DESKTOP
+
+chmod +x "$DESKTOP_FILE"
 
 echo -e "${c}LM Studio installed successfully!${r}"
