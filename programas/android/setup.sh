@@ -2,7 +2,7 @@
 c='\e[32m'
 r='\e[0m'
 
-echo -e "${c}Installing Android Studio & SDK...${r}"
+printf "%b\n" "${c}Installing Android Studio & SDK...${r}"
 
 # Update apt first
 sudo apt update
@@ -14,7 +14,7 @@ sudo apt install -y libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1
 if command -v snap &> /dev/null; then
     sudo snap install android-studio --classic
 else
-    echo -e "${c}Snap not found. Cannot install android-studio via snap.${r}"
+    printf "%b\n" "${c}Snap not found. Cannot install android-studio via snap.${r}"
 fi
 
-echo -e "${c}Android setup complete.${r}"
+printf "%b\n" "${c}Android setup complete.${r}"

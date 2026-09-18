@@ -5,8 +5,8 @@ r='\e[0m'
 
 # Plandex (AI coding engine)
 if ! command -v plandex &> /dev/null; then
-    echo -e "${c}Installing plandex...${r}"
+    printf "%b\n" "${c}Installing plandex...${r}"
     curl -sL https://plandex.ai/install.sh | bash
 else
-    echo -e "${c}plandex already installed.${r}"
+    printf "%b\n" "${c}plandex already installed.${r}"
 fi

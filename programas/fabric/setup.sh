@@ -10,17 +10,17 @@ else
         local package="$1"
         local binary_name="${2:-$(basename "${package%%@*}")}"
         if ! command -v "$binary_name" &> /dev/null; then
-            echo -e "${c}Installing $binary_name...${r}"
+            printf "%b\n" "${c}Installing $binary_name...${r}"
             go install "$package"
         else
-            echo -e "${c}$binary_name already installed.${r}"
+            printf "%b\n" "${c}$binary_name already installed.${r}"
         fi
     }
 fi
 
 if ! command -v fabric &> /dev/null; then
-    echo -e "${c}Installing fabric...${r}"
+    printf "%b\n" "${c}Installing fabric...${r}"
     install_go_package github.com/danielmiessler/fabric@latest fabric
 else
-    echo -e "${c}fabric already installed.${r}"
+    printf "%b\n" "${c}fabric already installed.${r}"
 fi

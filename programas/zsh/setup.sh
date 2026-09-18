@@ -2,14 +2,14 @@
 c='\e[32m'
 r='tput sgr0'
 
-echo -e "${c}Configuring Zsh...${r}"
+printf "%b\n" "${c}Configuring Zsh...${r}"
 
 # Install Oh My Zsh if not present
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    echo -e "${c}Installing Oh My Zsh...${r}"
+    printf "%b\n" "${c}Installing Oh My Zsh...${r}"
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
 else
-    echo -e "${c}Oh My Zsh already installed.${r}"
+    printf "%b\n" "${c}Oh My Zsh already installed.${r}"
 fi
 
 # Define custom plugin directory
@@ -17,51 +17,51 @@ ZSH_CUSTOM=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
 
 # Install zsh-autosuggestions
 if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
-    echo -e "${c}Installing zsh-autosuggestions...${r}"
+    printf "%b\n" "${c}Installing zsh-autosuggestions...${r}"
     git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 else
-    echo -e "${c}zsh-autosuggestions already installed.${r}"
+    printf "%b\n" "${c}zsh-autosuggestions already installed.${r}"
 fi
 
 # Install zsh-syntax-highlighting
 if [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]; then
-    echo -e "${c}Installing zsh-syntax-highlighting...${r}"
+    printf "%b\n" "${c}Installing zsh-syntax-highlighting...${r}"
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 else
-    echo -e "${c}zsh-syntax-highlighting already installed.${r}"
+    printf "%b\n" "${c}zsh-syntax-highlighting already installed.${r}"
 fi
 
 # Install fzf-tab
 if [ ! -d "$ZSH_CUSTOM/plugins/fzf-tab" ]; then
-    echo -e "${c}Installing fzf-tab...${r}"
+    printf "%b\n" "${c}Installing fzf-tab...${r}"
     git clone https://github.com/Aloxaf/fzf-tab $ZSH_CUSTOM/plugins/fzf-tab
 else
-    echo -e "${c}fzf-tab already installed.${r}"
+    printf "%b\n" "${c}fzf-tab already installed.${r}"
 fi
 
 # Install zsh-vi-mode
 if [ ! -d "$ZSH_CUSTOM/plugins/zsh-vi-mode" ]; then
-    echo -e "${c}Installing zsh-vi-mode...${r}"
+    printf "%b\n" "${c}Installing zsh-vi-mode...${r}"
     git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
 else
-    echo -e "${c}zsh-vi-mode already installed.${r}"
+    printf "%b\n" "${c}zsh-vi-mode already installed.${r}"
 fi
 
 # Install zsh-you-should-use
 if [ ! -d "$ZSH_CUSTOM/plugins/zsh-you-should-use" ]; then
-    echo -e "${c}Installing zsh-you-should-use...${r}"
+    printf "%b\n" "${c}Installing zsh-you-should-use...${r}"
     git clone https://github.com/MichaelAquilina/zsh-you-should-use $ZSH_CUSTOM/plugins/zsh-you-should-use
 else
-    echo -e "${c}zsh-you-should-use already installed.${r}"
+    printf "%b\n" "${c}zsh-you-should-use already installed.${r}"
 fi
 
 # Configure .zshrc
 ZSHRC="$HOME/.zshrc"
 
 if grep -q "# --- Custom Configuration (Added by dotfiles setup) ---" "$ZSHRC"; then
-    echo -e "${c}Custom configuration already present in .zshrc. Skipping append.${r}"
+    printf "%b\n" "${c}Custom configuration already present in .zshrc. Skipping append.${r}"
 else
-    echo -e "${c}Updating .zshrc...${r}"
+    printf "%b\n" "${c}Updating .zshrc...${r}"
     cp $ZSHRC "$ZSHRC.backup.$(date +%F_%T)"
 
     cat <<EOT >> $ZSHRC
@@ -366,7 +366,7 @@ fi
 
 # Check if 2026 Extras are present in .zshrc (for existing users)
 if ! grep -q "# --- 2026 Extras ---" "$ZSHRC"; then
-    echo -e "${c}Appending 2026 Extras to .zshrc...${r}"
+    printf "%b\n" "${c}Appending 2026 Extras to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- 2026 Extras ---
@@ -380,7 +380,7 @@ fi
 
 # Check if More 2026 Extras are present in .zshrc
 if ! grep -q "# --- More 2026 Extras ---" "$ZSHRC"; then
-    echo -e "${c}Appending More 2026 Extras to .zshrc...${r}"
+    printf "%b\n" "${c}Appending More 2026 Extras to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- More 2026 Extras ---
@@ -398,7 +398,7 @@ fi
 
 # Check if Even More 2026 Extras are present in .zshrc
 if ! grep -q "# --- Even More 2026 Extras ---" "$ZSHRC"; then
-    echo -e "${c}Appending Even More 2026 Extras to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Even More 2026 Extras to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Even More 2026 Extras ---
@@ -419,7 +419,7 @@ fi
 
 # Check if Eye Candy & 2026 Apps are present in .zshrc
 if ! grep -q "# --- Eye Candy & 2026 Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending Eye Candy & 2026 Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Eye Candy & 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Eye Candy & 2026 Apps ---
@@ -434,7 +434,7 @@ fi
 
 # Check if Interface Improvements 2026 are present in .zshrc
 if ! grep -q "# --- Interface Improvements 2026 ---" "$ZSHRC"; then
-    echo -e "${c}Appending Interface Improvements 2026 to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Interface Improvements 2026 to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Interface Improvements 2026 ---
@@ -447,7 +447,7 @@ fi
 
 # Check if Newest 2026 Apps are present in .zshrc
 if ! grep -q "# --- Newest 2026 Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending Newest 2026 Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Newest 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Newest 2026 Apps ---
@@ -464,7 +464,7 @@ fi
 
 # Check if The Future is Now Apps are present in .zshrc
 if ! grep -q "# --- The Future is Now Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending The Future is Now Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending The Future is Now Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- The Future is Now Apps ---
@@ -480,7 +480,7 @@ fi
 
 # Check if 2026 Apps Part II are present in .zshrc
 if ! grep -q "# --- 2026 Apps Part II ---" "$ZSHRC"; then
-    echo -e "${c}Appending 2026 Apps Part II to .zshrc...${r}"
+    printf "%b\n" "${c}Appending 2026 Apps Part II to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- 2026 Apps Part II ---
@@ -497,7 +497,7 @@ fi
 
 # Check if 2026 Apps Part III are present in .zshrc
 if ! grep -q "# --- 2026 Apps Part III ---" "$ZSHRC"; then
-    echo -e "${c}Appending 2026 Apps Part III to .zshrc...${r}"
+    printf "%b\n" "${c}Appending 2026 Apps Part III to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- 2026 Apps Part III ---
@@ -508,7 +508,7 @@ fi
 
 # Check if Extra 2026 Apps are present in .zshrc
 if ! grep -q "# --- Extra 2026 Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending Extra 2026 Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Extra 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Extra 2026 Apps ---
@@ -520,7 +520,7 @@ fi
 
 # Check if Future Tools 2026 are present in .zshrc
 if ! grep -q "# --- Future Tools 2026 ---" "$ZSHRC"; then
-    echo -e "${c}Appending Future Tools 2026 to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Future Tools 2026 to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Future Tools 2026 ---
@@ -534,7 +534,7 @@ fi
 
 # Check if 2026 Extra CLI Apps are present in .zshrc
 if ! grep -q "# --- 2026 Extra CLI Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending 2026 Extra CLI Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending 2026 Extra CLI Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- 2026 Extra CLI Apps ---
@@ -547,7 +547,7 @@ fi
 
 # Check if 2026 Cutting Edge Apps are present in .zshrc
 if ! grep -q "# --- 2026 Cutting Edge Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending 2026 Cutting Edge Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending 2026 Cutting Edge Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- 2026 Cutting Edge Apps ---
@@ -567,7 +567,7 @@ fi
 
 # Check if 2026 AI Apps are present in .zshrc
 if ! grep -q "# --- 2026 AI Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending 2026 AI Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending 2026 AI Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- 2026 AI Apps ---
@@ -580,7 +580,7 @@ fi
 
 # Check if Bonus 2026 Apps are present in .zshrc
 if ! grep -q "# --- Bonus 2026 Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending Bonus 2026 Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Bonus 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Bonus 2026 Apps ---
@@ -594,7 +594,7 @@ fi
 
 # Check if Ultimate 2026 Tools are present in .zshrc
 if ! grep -q "# --- Ultimate 2026 Tools ---" "$ZSHRC"; then
-    echo -e "${c}Appending Ultimate 2026 Tools to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Ultimate 2026 Tools to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Ultimate 2026 Tools ---
@@ -608,7 +608,7 @@ fi
 
 # Check if Missing 2026 Aliases are present in .zshrc
 if ! grep -q "# --- Missing 2026 Aliases ---" "$ZSHRC"; then
-    echo -e "${c}Appending Missing 2026 Aliases to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Missing 2026 Aliases to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Missing 2026 Aliases ---
@@ -622,7 +622,7 @@ fi
 
 # Check if New 2026 Apps are present in .zshrc
 if ! grep -q "# --- New 2026 Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending New 2026 Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending New 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- New 2026 Apps ---
@@ -636,7 +636,7 @@ fi
 
 # Check if Latest 2026 Apps are present in .zshrc
 if ! grep -q "# --- Latest 2026 Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending Latest 2026 Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Latest 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Latest 2026 Apps ---
@@ -649,7 +649,7 @@ fi
 
 # Check if Cutting-Edge 2026 Apps are present in .zshrc
 if ! grep -q "# --- Cutting-Edge 2026 Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending Cutting-Edge 2026 Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Cutting-Edge 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Cutting-Edge 2026 Apps ---
@@ -661,7 +661,7 @@ fi
 
 # Check if Extra 2026 Apps are present in .zshrc
 if ! grep -q "# --- More 2026 Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending More 2026 Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending More 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- More 2026 Apps ---
@@ -673,7 +673,7 @@ fi
 
 # Check if Hyper-Modern 2026 Apps are present in .zshrc
 if ! grep -q "# --- Hyper-Modern 2026 Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending Hyper-Modern 2026 Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Hyper-Modern 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Hyper-Modern 2026 Apps ---
@@ -688,7 +688,7 @@ fi
 
 # Check if DevOps & JS 2026 Apps are present in .zshrc
 if ! grep -q "# --- DevOps & JS 2026 Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending DevOps & JS 2026 Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending DevOps & JS 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- DevOps & JS 2026 Apps ---
@@ -703,7 +703,7 @@ fi
 
 # Check if Newest 2026 Apps are present in .zshrc
 if ! grep -q "# --- Newest 2026 Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending Newest 2026 Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Newest 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Newest 2026 Apps ---
@@ -717,7 +717,7 @@ fi
 
 # Check if Brand New 2026 Apps are present in .zshrc
 if ! grep -q "# --- Brand New 2026 Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending Brand New 2026 Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Brand New 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Brand New 2026 Apps ---
@@ -736,7 +736,7 @@ fi
 
 # Check if Fresh 2026 Apps are present in .zshrc
 if ! grep -q "# --- Fresh 2026 Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending Fresh 2026 Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Fresh 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Fresh 2026 Apps ---
@@ -752,7 +752,7 @@ fi
 
 # Check if Super 2026 Apps are present in .zshrc
 if ! grep -q "# --- Super 2026 Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending Super 2026 Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Super 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Super 2026 Apps ---
@@ -771,7 +771,7 @@ fi
 
 # Check if Beyond 2026 Apps are present in .zshrc
 if ! grep -q "# --- Beyond 2026 Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending Beyond 2026 Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Beyond 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Beyond 2026 Apps ---
@@ -785,7 +785,7 @@ fi
 
 # Check if Experimental 2026 Apps are present in .zshrc
 if ! grep -q "# --- Experimental 2026 Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending Experimental 2026 Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Experimental 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Experimental 2026 Apps ---
@@ -798,7 +798,7 @@ fi
 
 # Check if Very New 2026 Apps are present in .zshrc
 if ! grep -q "# --- Very New 2026 Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending Very New 2026 Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Very New 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Very New 2026 Apps ---
@@ -810,7 +810,7 @@ fi
 
 # Check if Next-Gen 2026 Apps are present in .zshrc
 if ! grep -q "# --- Next-Gen 2026 Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending Next-Gen 2026 Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Next-Gen 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Next-Gen 2026 Apps ---
@@ -833,11 +833,11 @@ fi
 # Update zoxide to use cd alias if present in existing config
 sed -i 's/eval "$(zoxide init zsh)"/eval "$(zoxide init zsh --cmd cd)"/' "$ZSHRC"
 
-echo -e "${c}Zsh configured! Please restart your terminal or run 'source ~/.zshrc'.${r}"
+printf "%b\n" "${c}Zsh configured! Please restart your terminal or run 'source ~/.zshrc'.${r}"
 
 # Check if Very Useful 2026 Apps are present in .zshrc
 if ! grep -q "# --- Very Useful 2026 Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending Very Useful 2026 Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Very Useful 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Very Useful 2026 Apps ---
@@ -846,7 +846,7 @@ fi
 
 # Check if Ultimate 2026 Apps are present in .zshrc
 if ! grep -q "# --- Ultimate 2026 Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending Ultimate 2026 Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Ultimate 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Ultimate 2026 Apps ---
@@ -868,7 +868,7 @@ fi
 
 # --- Extra 2026 Aliases ---
 if ! grep -q "# --- Extra 2026 Aliases ---" "$ZSHRC"; then
-    echo -e "${c}Appending Extra 2026 Aliases to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Extra 2026 Aliases to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Extra 2026 Aliases ---
@@ -896,7 +896,7 @@ fi
 
 # Check if Next-Gen Developer 2026 Apps are present in .zshrc
 if ! grep -q "# --- Next-Gen Developer 2026 Apps ---" "$ZSHRC"; then
-    echo -e "${c}Appending Next-Gen Developer 2026 Apps to .zshrc...${r}"
+    printf "%b\n" "${c}Appending Next-Gen Developer 2026 Apps to .zshrc...${r}"
     cat <<EOT >> $ZSHRC
 
 # --- Next-Gen Developer 2026 Apps ---

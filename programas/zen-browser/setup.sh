@@ -2,19 +2,19 @@
 c='\e[32m' # Green Color
 r='\e[0m' # Reset Color
 
-echo -e "${c}Installing Zen Browser...${r}"
+printf "%b\n" "${c}Installing Zen Browser...${r}"
 
 # Setup directories
 APP_DIR="$HOME/Applications"
 mkdir -p "$APP_DIR"
 ZEN_BIN="$APP_DIR/ZenBrowser.AppImage"
 
-echo -e "${c}Downloading Zen Browser AppImage...${r}"
+printf "%b\n" "${c}Downloading Zen Browser AppImage...${r}"
 # Download the latest generic appimage from GitHub
 curl -L -o "$ZEN_BIN" "https://github.com/zen-browser/desktop/releases/latest/download/zen-x86_64.AppImage"
 chmod +x "$ZEN_BIN"
 
-echo -e "${c}Creating Desktop Entry...${r}"
+printf "%b\n" "${c}Creating Desktop Entry...${r}"
 mkdir -p "$HOME/.local/share/applications"
 DESKTOP_FILE="$HOME/.local/share/applications/zen-browser.desktop"
 
@@ -29,4 +29,4 @@ Terminal=false
 StartupNotify=true
 EOF
 
-echo -e "${c}Zen Browser installed successfully!${r}"
+printf "%b\n" "${c}Zen Browser installed successfully!${r}"

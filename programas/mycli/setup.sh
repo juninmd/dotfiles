@@ -2,12 +2,12 @@
 c='\e[32m'
 r='\e[0m'
 if ! command -v mycli &> /dev/null; then
-    echo -e "${c}Installing mycli...${r}"
+    printf "%b\n" "${c}Installing mycli...${r}"
     if command -v pipx &> /dev/null; then
         pipx install mycli
     else
         pip3 install --break-system-packages mycli
     fi
 else
-    echo -e "${c}mycli is already installed.${r}"
+    printf "%b\n" "${c}mycli is already installed.${r}"
 fi

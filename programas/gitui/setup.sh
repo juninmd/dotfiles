@@ -2,7 +2,7 @@
 c='\e[32m' # Green Color
 r='\e[0m' # Reset Color
 
-echo -e "${c}Installing gitui (Blazing Fast Git TUI)...${r}"
+printf "%b\n" "${c}Installing gitui (Blazing Fast Git TUI)...${r}"
 
 SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
 if [ -f "$SCRIPT_DIR/../common/cargo_helper.sh" ]; then
@@ -17,5 +17,5 @@ fi
 if ! command -v gitui &> /dev/null; then
     install_cargo_crate gitui
 else
-    echo -e "${c}gitui is already installed.${r}"
+    printf "%b\n" "${c}gitui is already installed.${r}"
 fi

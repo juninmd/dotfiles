@@ -3,7 +3,7 @@ c='\e[32m'
 r='\e[0m'
 # Kubectl
 if ! command -v kubectl &> /dev/null; then
-    echo -e "${c}Installing kubectl...${r}"
+    printf "%b\n" "${c}Installing kubectl...${r}"
     sudo apt-get update
     sudo apt-get install -y apt-transport-https ca-certificates curl
     sudo mkdir -p /etc/apt/keyrings
@@ -12,5 +12,5 @@ if ! command -v kubectl &> /dev/null; then
     sudo apt-get update
     sudo apt-get install -y kubectl
 else
-    echo -e "${c}kubectl already installed.${r}"
+    printf "%b\n" "${c}kubectl already installed.${r}"
 fi

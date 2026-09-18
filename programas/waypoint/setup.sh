@@ -2,10 +2,10 @@
 set -euo pipefail
 c='\e[32m'
 r='\e[0m'
-echo -e "${c}Installing Waypoint...${r}"
+printf "%b\n" "${c}Installing Waypoint...${r}"
 
 if command -v waypoint &> /dev/null; then
-    echo -e "${c}Waypoint is already installed.${r}"
+    printf "%b\n" "${c}Waypoint is already installed.${r}"
     exit 0
 fi
 
@@ -21,16 +21,16 @@ OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 ZIP_FILE="waypoint_${VERSION}_${OS}_${ARCH}.zip"
 URL="https://releases.hashicorp.com/waypoint/${VERSION}/${ZIP_FILE}"
 
-echo -e "${c}Downloading ${ZIP_FILE}...${r}"
+printf "%b\n" "${c}Downloading ${ZIP_FILE}...${r}"
 curl --proto '=https' --tlsv1.2 -sSL "$URL" -o "/tmp/${ZIP_FILE}"
 
-echo -e "${c}Unzipping Waypoint...${r}"
+printf "%b\n" "${c}Unzipping Waypoint...${r}"
 unzip -q -o "/tmp/${ZIP_FILE}" -d /tmp/
 
-echo -e "${c}Moving to /usr/local/bin...${r}"
+printf "%b\n" "${c}Moving to /usr/local/bin...${r}"
 sudo mv /tmp/waypoint /usr/local/bin/waypoint
 sudo chmod +x /usr/local/bin/waypoint
 
 rm "/tmp/${ZIP_FILE}"
 
-echo -e "${c}Waypoint installed successfully!${r}"
+printf "%b\n" "${c}Waypoint installed successfully!${r}"
