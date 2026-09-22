@@ -3,8 +3,12 @@ set -euo pipefail
 c="\e[32m"
 r="\e[0m"
 echo -e "${c}Installing kew...${r}"
+
 if ! command -v kew &> /dev/null; then
-    wget -qO /tmp/kew https://github.com/ravachol/kew/releases/latest/download/kew-linux
-    chmod +x /tmp/kew
-    sudo mv /tmp/kew /usr/local/bin/kew
+    mkdir -p ~/.local/bin
+    if command -v eget &> /dev/null; then
+        eget ravachol/kew --to ~/.local/bin/kew
+    else
+        echo -e "${c}eget not found. Skipping kew installation.${r}"
+    fi
 fi
