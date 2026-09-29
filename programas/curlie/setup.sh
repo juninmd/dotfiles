@@ -8,12 +8,12 @@ source "$COMMON_DIR/cargo_helper.sh"
 
 # Curlie (curl + httpie)
 if ! command -v curlie &> /dev/null; then
-    echo -e "${c}Installing curlie...${r}"
+    printf "%b\n" "${c}Installing curlie...${r}"
     if command -v go &> /dev/null; then
         go install github.com/rs/curlie@latest
     else
-        echo -e "${c}Go not found, skipping curlie installation.${r}"
+        printf "%b\n" "${c}Go not found, skipping curlie installation.${r}"
     fi
 else
-    echo -e "${c}curlie already installed.${r}"
+    printf "%b\n" "${c}curlie already installed.${r}"
 fi

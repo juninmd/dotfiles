@@ -9,17 +9,17 @@ else
     install_cargo_crate() {
         local crate="$1"
         if ! command -v "$crate" &> /dev/null; then
-            echo -e "${c}Installing $crate...${r}"
+            printf "%b\n" "${c}Installing $crate...${r}"
             cargo install "$crate"
         else
-            echo -e "${c}$crate already installed.${r}"
+            printf "%b\n" "${c}$crate already installed.${r}"
         fi
     }
 fi
 
 if ! command -v aichat &> /dev/null; then
-    echo -e "${c}Installing aichat...${r}"
+    printf "%b\n" "${c}Installing aichat...${r}"
     install_cargo_crate aichat
 else
-    echo -e "${c}aichat already installed.${r}"
+    printf "%b\n" "${c}aichat already installed.${r}"
 fi

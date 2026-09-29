@@ -5,8 +5,8 @@ r='\e[0m'
 
 # Shell-GPT (AI in terminal)
 if ! command -v sgpt &> /dev/null; then
-    echo -e "${c}Installing shell-gpt...${r}"
+    printf "%b\n" "${c}Installing shell-gpt...${r}"
     pip3 install shell-gpt --break-system-packages 2>/dev/null || pip3 install shell-gpt
 else
-    echo -e "${c}shell-gpt already installed.${r}"
+    printf "%b\n" "${c}shell-gpt already installed.${r}"
 fi

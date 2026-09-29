@@ -7,7 +7,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(dirname "$(dirname "$SCRIPT_DIR")")"
 
 if ! command -v bat &> /dev/null && ! command -v batcat &> /dev/null; then
-    echo -e "${c}Installing bat...${r}"
+    printf "%b\n" "${c}Installing bat...${r}"
     sudo apt install -y bat
 
     # Create symlink if batcat exists but bat doesn't
@@ -16,7 +16,7 @@ if ! command -v bat &> /dev/null && ! command -v batcat &> /dev/null; then
         ln -s $(which batcat) ~/.local/bin/bat
     fi
 else
-    echo -e "${c}bat already installed.${r}"
+    printf "%b\n" "${c}bat already installed.${r}"
 fi
 
 # Also migrate bat theme logic
@@ -34,8 +34,8 @@ if command -v bat &> /dev/null || command -v batcat &> /dev/null; then
     if [ -f "$BAT_THEME_FILE" ]; then
         cp "$BAT_THEME_FILE" "$BAT_CONFIG_DIR/themes/"
         $BAT_CMD cache --build
-        echo -e "${c}Applied synthwave theme for bat.${r}"
+        printf "%b\n" "${c}Applied synthwave theme for bat.${r}"
     else
-        echo -e "${c}Warning: synthwave.tmTheme not found${r}"
+        printf "%b\n" "${c}Warning: synthwave.tmTheme not found${r}"
     fi
 fi

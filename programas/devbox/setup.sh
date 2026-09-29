@@ -5,8 +5,8 @@ r='\e[0m'
 
 # Devbox (Portable Developer Environments)
 if ! command -v devbox &> /dev/null; then
-    echo -e "${c}Installing devbox...${r}"
+    printf "%b\n" "${c}Installing devbox...${r}"
     curl -fsSL https://get.jetpack.io/devbox | bash
 else
-    echo -e "${c}devbox already installed.${r}"
+    printf "%b\n" "${c}devbox already installed.${r}"
 fi

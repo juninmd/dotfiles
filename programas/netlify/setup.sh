@@ -1,5 +1,5 @@
 #!/bin/bash
-echo -e "\e[32mInstalling Netlify CLI...\e[0m"
+printf "%b\n" "\e[32mInstalling Netlify CLI...\e[0m"
 if command -v npm &> /dev/null; then
     sudo npm i -g netlify-cli
 else

@@ -10,17 +10,17 @@ else
         local package="$1"
         local binary_name="${2:-$(basename "${package%%@*}")}"
         if ! command -v "$binary_name" &> /dev/null; then
-            echo -e "${c}Installing $binary_name...${r}"
+            printf "%b\n" "${c}Installing $binary_name...${r}"
             go install "$package"
         else
-            echo -e "${c}$binary_name already installed.${r}"
+            printf "%b\n" "${c}$binary_name already installed.${r}"
         fi
     }
 fi
 
 if ! command -v tgpt &> /dev/null; then
-    echo -e "${c}Installing tgpt...${r}"
+    printf "%b\n" "${c}Installing tgpt...${r}"
     install_go_package github.com/aandrew-me/tgpt/v2@latest tgpt
 else
-    echo -e "${c}tgpt already installed.${r}"
+    printf "%b\n" "${c}tgpt already installed.${r}"
 fi

@@ -7,6 +7,6 @@ r="\e[0m"               # Reset
 
 source "$(dirname "$0")/../common/cargo_helper.sh"
 
-echo -e "${c}Installing code2prompt (Convert codebase to LLM prompt)...${r}"
+printf "%b\n" "${c}Installing code2prompt (Convert codebase to LLM prompt)...${r}"
 
 install_cargo_crate code2prompt

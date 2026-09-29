@@ -14,8 +14,8 @@ fi
 
 # Atuin (Magical Shell History)
 if ! command -v atuin &> /dev/null; then
-    echo -e "${c}Installing atuin...${r}"
+    printf "%b\n" "${c}Installing atuin...${r}"
     install_cargo_crate atuin
 else
-    echo -e "${c}atuin already installed.${r}"
+    printf "%b\n" "${c}atuin already installed.${r}"
 fi

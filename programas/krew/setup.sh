@@ -3,7 +3,7 @@ c='\e[32m'
 r='\e[0m'
 # Krew (Kubectl plugin manager)
 if ! command -v kubectl-krew &> /dev/null; then
-    echo -e "${c}Installing Krew...${r}"
+    printf "%b\n" "${c}Installing Krew...${r}"
     (
       set -x; cd "$(mktemp -d)" &&
       OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
@@ -24,5 +24,5 @@ if ! command -v kubectl-krew &> /dev/null; then
       ./"${KREW}" install krew
     )
 else
-    echo -e "${c}Krew already installed.${r}"
+    printf "%b\n" "${c}Krew already installed.${r}"
 fi

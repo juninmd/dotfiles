@@ -2,7 +2,7 @@
 c='\e[32m' # Green Color
 r='\e[0m'  # Reset Color
 
-echo -e "${c}Installing Poetry (Python dependency management)...${r}"
+printf "%b\n" "${c}Installing Poetry (Python dependency management)...${r}"
 
 if ! command -v poetry &> /dev/null; then
     curl -sSL https://install.python-poetry.org | python3 -
@@ -12,12 +12,12 @@ if ! command -v poetry &> /dev/null; then
 
     # Check installation
     if command -v poetry &> /dev/null; then
-        echo -e "${c}Poetry installed successfully.${r}"
+        printf "%b\n" "${c}Poetry installed successfully.${r}"
         poetry --version
     else
-        echo -e "${c}Poetry installed, please ensure ~/.local/bin is in your PATH.${r}"
+        printf "%b\n" "${c}Poetry installed, please ensure ~/.local/bin is in your PATH.${r}"
     fi
 else
-    echo -e "${c}Poetry is already installed.${r}"
+    printf "%b\n" "${c}Poetry is already installed.${r}"
     poetry --version
 fi
