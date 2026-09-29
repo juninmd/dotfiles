@@ -684,10 +684,10 @@ declare -A MOD_DESC=(
   ["gaze"]="👀 gaze (Run commands when files change)"
   ["dnote"]="📓 dnote (A simple command line notebook)"
   ["zsh"]="🐚 Zsh shell e plugins (Hiper-produtividade)"
+  ["kew"]="🚀 kew (Command-line music player)"
+  ["gaze"]="🚀 gaze (Run commands for you)"
+  ["dnote"]="🚀 dnote (A simple command line notebook)"
 
-  ["kew"]="🎵 kew (Command-line music player)"
-  ["gaze"]="👀 gaze (Execute commands when files change)"
-  ["dnote"]="📝 dnote (A simple command line notebook for programmers)"
 )
 
 # Get all available modules
