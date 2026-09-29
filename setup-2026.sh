@@ -236,10 +236,10 @@ case "$PROFILE" in
     DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun mysql lazygit-tui lazydocker ghostty zellij yazi neovim docker uv mise atuin devbox dagger deno biome ruff broot procs pueue glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd aichat duckdb lazysql harlequin fastfetch)
     ;;
   full)
-    DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun act actionlint age aichat aider amber android ast-grep atac atlas atuin bacon bandwhich bat-extras binsider biome bluetuith bore-cli bottom brave broot bruno carapace cbonsai chafa charm chatbox chatgpt-cli cheat checkov choose circumflex claude-code cline cloudflared cocogitto code2prompt cointop cpufetch cmatrix crane croc csvlens ctop curlie cursor czg d2 dagger dasel daytona dbeaver dbmate delta deno devbox devenv devpod difftastic direnv discord diskonaut distrobox dive docker doggo dolt dotenv-linter dotenvx dprint dsq dua dua-cli duckdb duf dufs dura dust dysk earthly eget erdtree evans fabric neofetch-alt fend firefox flox flyctl fnm fq freeze fx gcloud gdu genact gh gh-dash ghostty ghq git-absorb git-cliff git-filter-repo git-sim git-town gitingest gitleaks gitui glab glances glow gobang gojq gping grex gron grpcurl grype gtt gum hadolint harlequin hck helix helm hexyl howdoi htop htmlq httpie httpstat httpx hurl hwatch hyperfine igrep infracost inlyne inshellisense jan jaq jc jira-cli jj jless jnv jo joshuto jq jql jqp jujutsu just k3d k6 k8sgpt k9s-cli kalker kdash kind klog kmon ko kondo krew kubecolor kubectl kubectx kustomize lazydocker lazygit-tui lazynpm lazysql lefthook lf llm lmstudio lnav lsd lychee macchina mani mcfly mdcat melt miller miniserve mise mkcert moar mods monolith moon mprocs mysql nap navi ncspot neovim newsboat ngrok nuclei numbat nushell obsidian oha ollama onefetch open-interpreter opentofu ouch oxker oxlint pastel peco pipes-rs pipes-sh pkgx plandex poetry pnpm podman pokeget pomsky popeye porsmo posting presenterm procs pueue px qsv repomix rip rnr rs-cmatrix ruff ruplacer rustscan rye sad scc sd serie serpl sesh shell-gpt shellcheck shfmt silicon skate skim slack slides slumber sniffnet so sops spacer spt sqlc steampipe stern supabase superfile syft systemctl-tui systeroid sysz t-rec tailspin taplo task taskwarrior-tui tealdeer television tenki tenv termdbms termscp termshark termtyper tfsec tgpt thefuck tickrs tilt tin-summer tldr tlrc tmux tokei topgrade trash-cli tre trippy trivy trufflehog trzsz tt ttyper turso typos typst ugit ugrep usql uv vault vcluster vegeta vhs viddy visidata viu vivid vscode walk warp watchexec websocat wezterm wiki-tui windsurf wtfutil wthrr wuzz xc xcp xh xplr xsv yamlfmt yazi yq yt-dlp zed zellij zen-browser zenith zizmor zrok ripgrep_all kubens doppler infisical stripe awscli vercel pulumi terragrunt tflint ttyd argc argocd k3s vault bw netlify heroku consul nomad packer dapr aider-chat typos-cli wthrr-the-weathercrab bruno-cli wtf mlr pls devtoy git-next pgcli mycli litecli tere kubent lazyvim oh-my-posh gptme micro nnn tig ncdu kakoune ffuf tmate kaskade aqua kcl devspace lazygit lens marimo bito gorilla-cli boundary waypoint pixi proto rio lapce fastfetch obs-studio)
+    DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun act actionlint age aichat aider amber android ast-grep atac atlas atuin bacon bandwhich bat-extras binsider biome bluetuith bore-cli bottom brave broot bruno carapace cbonsai chafa charm chatbox chatgpt-cli cheat checkov choose circumflex claude-code cline cloudflared cocogitto code2prompt cointop cpufetch cmatrix crane croc csvlens ctop curlie cursor czg d2 dagger dasel daytona dbeaver dbmate delta deno devbox devenv devpod difftastic direnv discord diskonaut distrobox dive docker doggo dolt dotenv-linter dotenvx dprint dsq dua dua-cli duckdb duf dufs dura dust dysk earthly eget erdtree evans fabric neofetch-alt fend firefox flox flyctl fnm fq freeze fx gcloud gdu genact gh gh-dash ghostty ghq git-absorb git-cliff git-filter-repo git-sim git-town gitingest gitleaks gitui glab glances glow gobang gojq gping grex gron grpcurl grype gtt gum hadolint harlequin hck helix helm hexyl howdoi htop htmlq httpie httpstat httpx hurl hwatch hyperfine igrep infracost inlyne inshellisense jan jaq jc jira-cli jj jless jnv jo joshuto jq jql jqp jujutsu just k3d k6 k8sgpt k9s-cli kalker kdash kind klog kmon ko kondo krew kubecolor kubectl kubectx kustomize lazydocker lazygit-tui lazynpm lazysql lefthook lf llm lmstudio lnav lsd lychee macchina mani mcfly mdcat melt miller miniserve mise mkcert moar mods monolith moon mprocs mysql nap navi ncspot neovim newsboat ngrok nuclei numbat nushell obsidian oha ollama onefetch open-interpreter opentofu ouch oxker oxlint pastel peco pipes-rs pipes-sh pkgx plandex poetry pnpm podman pokeget pomsky popeye porsmo posting presenterm procs pueue px qsv repomix rip rnr rs-cmatrix ruff ruplacer rustscan rye sad scc sd serie serpl sesh shell-gpt shellcheck shfmt silicon skate skim slack slides slumber sniffnet so sops spacer spt sqlc steampipe stern supabase superfile syft systemctl-tui systeroid sysz t-rec tailspin taplo task taskwarrior-tui tealdeer television tenki tenv termdbms termscp termshark termtyper tfsec tgpt thefuck tickrs tilt tin-summer tldr tlrc tmux tokei topgrade trash-cli tre trippy trivy trufflehog trzsz tt ttyper turso typos typst ugit ugrep usql uv vault vcluster vegeta vhs viddy visidata viu vivid vscode walk warp watchexec websocat wezterm wiki-tui windsurf wtfutil wthrr wuzz xc xcp xh xplr xsv yamlfmt yazi yq yt-dlp zed zellij zen-browser zenith zizmor zrok ripgrep_all kubens doppler infisical stripe awscli vercel pulumi terragrunt tflint ttyd argc argocd k3s vault bw netlify heroku consul nomad packer dapr aider-chat typos-cli wthrr-the-weathercrab bruno-cli wtf mlr pls devtoy git-next pgcli mycli litecli tere kubent lazyvim oh-my-posh gptme micro nnn tig ncdu kakoune ffuf tmate kaskade aqua kcl devspace lazygit lens marimo bito gorilla-cli boundary waypoint pixi proto rio lapce fastfetch kew gaze dnote)
     ;;
   ai-dev)
-    DEFAULT_MODULES=(nix act aichat aider aider-chat amber aqua argc argocd ast-grep atac atuin awscli bacon bandwhich bat biome bito bottom boundary broot bruno bruno-cli btop bun bw carapace cbonsai chatbox choose circumflex claude-code cli-tools cline cmatrix code2prompt cointop consul croc csvlens curlie cursor d2 dagger dasel daytona dbeaver dbmate delta deno devbox devpod devspace devtoy difftastic dive docker doggo doppler dsq dua duckdb dufs dust elixir erdtree eza fabric fastfetch fd-find fend ffuf fnm fzf gdu gh ghostty git-cliff git-next gitingest gitleaks gitui glances gleam glow gobang gorilla-cli gping gptme grex gron hadolint harlequin hck heroku hexyl htop infisical inlyne inshellisense jan jj jless jo joshuto k3s k6 k8sgpt k9s-cli kakoune kaskade kcl kdash kmon kondo kubens kubent lapce lazydocker lazygit lazygit-tui lazynpm lazysql lazyvim lens litecli llm lmstudio lsd macchina marimo micro miniserve mise mlr moar mods mprocs mycli nap navi ncdu neofetch-alt neovim netlify nnn nomad numbat oh-my-posh oha ollama onefetch open-interpreter ouch oxlint packer pastel pgcli pipes-sh pixi plandex pls pnpm podman poetry pomsky posting presenterm procs proto pueue pulumi repomix rio ripgrep ripgrep_all ruff sd sesh shell-gpt slumber sniffnet so starship stripe superfile t-rec tailspin taplo task television tere termscp termshark terragrunt tflint tgpt tig tlrc tmate tmux tokei topgrade trash-cli trippy ttyd typos typos-cli typst ugit uv vault vercel vhs viddy vivid warp waypoint websocat wezterm wiki-tui windsurf wtf wtfutil wthrr wthrr-the-weathercrab xc xcp xplr xsv yazi yt-dlp zed zellij zen-browser zenith zig zizmor zoxide zsh)
+    DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun cursor zed warp ghostty lazygit-tui lazydocker zellij yazi neovim docker uv ollama claude-code zen-browser lmstudio bruno wezterm dbeaver windsurf k9s-cli posting superfile aider plandex open-interpreter duckdb harlequin neofetch-alt lazysql gitingest repomix shell-gpt atac dsq t-rec cbonsai pipes-sh mprocs mise atuin devbox dagger deno biome ruff broot doggo tokei jless oha curlie procs pueue aichat fabric k8sgpt tgpt jo k6 television code2prompt jan chatbox inshellisense podman devpod daytona mods llm cline glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd aider-chat trippy onefetch grex bandwhich amber tailspin erdtree dua oxlint difftastic topgrade pastel numbat dufs jj sesh carapace moar vhs gitleaks xc gdu trash-cli yt-dlp glances d2 poetry pnpm fnm gping kondo presenterm hexyl csvlens pomsky bacon wiki-tui ast-grep dive gron viddy wtfutil cointop dasel dust navi delta websocat ouch zenith git-cliff typos fend joshuto sniffnet termscp wthrr miniserve zizmor inlyne so xcp taplo tlrc typst xsv gh act task croc dbmate ripgrep_all kubens doppler infisical stripe awscli vercel pulumi terragrunt tflint ttyd argc argocd k3s vault bw netlify heroku consul nomad packer typos-cli wthrr-the-weathercrab bruno-cli wtf mlr pls devtoy git-next gptme ffuf tmate kaskade aqua kcl devspace lazygit lens marimo bito gorilla-cli boundary waypoint pixi proto rio lapce tmux htop cmatrix vivid hadolint ugit pgcli mycli litecli tere kubent lazyvim oh-my-posh micro nnn tig ncdu kakoune fastfetch hck termshark kmon kew gaze dnote)
     ;;
   *)
     log "Perfil inválido: $PROFILE"
@@ -331,9 +331,10 @@ declare -A MOD_DESC=(
   ["difftastic"]="🧬 difftastic (Ferramenta de diff estrutural)"
   ["direnv"]="🔧 direnv (Gerenciador de variáveis de ambiente por diretório)"
   ["discord"]="🎮 Discord (Comunicação de voz e texto)"
-  ["diskonaut"]="💾 diskonaut (Navegador visual de espaço em disco no terminal)"
-  ["distrobox"]="📦 Distrobox (Rode qualquer distro linux no terminal)"
-  ["dive"]="🐳 dive (Explorador de imagens Docker)"
+  ["diskonaut"]="💾 diskonaut (Terminal disk space navigator)"
+  ["distrobox"]="📦 Distrobox (Run any linux distro in terminal)"
+  ["dive"]="🐳 dive (Docker image explorer)"
+  ["dnote"]="📓 dnote (A simple command line notebook)"
   ["docker"]="🐳 Docker Engine (Contêineres)"
   ["doggo"]="🐶 doggo (Cliente DNS moderno)"
   ["dolt"]="🐬 dolt (Git for data)"
@@ -353,9 +354,9 @@ declare -A MOD_DESC=(
   ["earthly"]="🌍 earthly (Build automation)"
   ["eget"]="📥 eget (Download pre-built binaries)"
   ["elixir"]="💧 Elixir (Linguagem funcional dinâmica)"
-  ["erdtree"]="🌳 erdtree (Visualizador de árvore de arquivos)"
-  ["evans"]="grpc evans (gRPC client)"
-  ["eza"]="🌟 eza (Substituto moderno para ls)"
+  ["erdtree"]="🌳 erdtree (File-tree Visualizer)"
+  ["evans"]="📡 evans (gRPC client)"
+  ["eza"]="🌟 Eza (A modern maintained replacement for ls)"
   ["fabric"]="🤖 fabric (AI CLI framework)"
   ["fastfetch"]="⚡ fastfetch (Modern System Info)"
   ["fd-find"]="📂 fd-find (Alternativa moderna para find)"
@@ -365,10 +366,11 @@ declare -A MOD_DESC=(
   ["flox"]="❄️ Flox (Ambientes de desenvolvedor para todos)"
   ["flyctl"]="✈️ flyctl (Fly.io CLI)"
   ["fnm"]="🐢 fnm (Fast Node Manager)"
-  ["fq"]="🔍 fq (Manipulador de dados binários tipo jq)"
-  ["freeze"]="📸 freeze (Gerador de screenshots de código)"
-  ["fx"]="👾 fx (Visualizador de JSON no terminal TUI)"
-  ["fzf"]="🔍 fzf (Buscador fuzzy no terminal TUI)"
+  ["fq"]="🔍 fq (jq for binary formats)"
+  ["freeze"]="📸 freeze (Code screenshots)"
+  ["fx"]="👾 JSON fx (Terminal JSON viewer)"
+  ["fzf"]="🔍 Fzf (A command-line fuzzy finder)"
+  ["gaze"]="👀 gaze (Execute commands on file changes)"
   ["gcloud"]="☁️ gcloud (Google Cloud CLI)"
   ["gdu"]="📊 gdu (Disk usage analyzer)"
   ["genact"]="🎭 genact (Gerador de atividades falsas)"
@@ -445,6 +447,7 @@ declare -A MOD_DESC=(
   ["kaskade"]="🌊 kaskade (Kafka TUI)"
   ["kcl"]="📝 kcl (KCL Configuration Language)"
   ["kdash"]="☸️ kdash (Kubernetes Dashboard)"
+  ["kew"]="🎵 kew (CLI music player)"
   ["kind"]="🐳 kind (Kubernetes in Docker)"
   ["klog"]="⏱️ klog (Utilitário para rastreamento de tempo)"
   ["kmon"]="🐧 kmon (Gerenciador de Kernel Linux)"

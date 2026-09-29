@@ -51,6 +51,4 @@ else
         fc-cache -fv
     fi
 fi
-# Configure Btop
-printf "%b\n" "${c}Configuring Btop...${r}"
-printf "%b\n" "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"
+echo -e "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"
