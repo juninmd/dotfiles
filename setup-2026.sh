@@ -721,7 +721,7 @@ if command -v "$GUM" &> /dev/null; then
   SELECTED_TEXT=$("$GUM" choose --no-limit --cursor="⚡ " \
     --height=35 \
     --selected="${DEFAULTS}" \
-    --selected.background="#ff7edb" \
+    --selected.background="#bd93f9" \
     --selected.foreground="#282a36" \
     --selected.bold \
     --cursor.foreground="#36f9f6" \
