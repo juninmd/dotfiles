@@ -679,7 +679,10 @@ declare -A MOD_DESC=(
   ["zig"]="⚡ Zig (Modern programming language)"
   ["zizmor"]="🛡️ zizmor (Auditoria nativa TUI orquestrando vulnerabilidades estáticas de segurança nas actions geradas de repositórios iterados de integração assíncrona ao GitHub flexível adaptando CLI para verificação TUI)"
   ["zoxide"]="🚀 Zoxide (A smarter cd command)"
-  ["zrok"]="🔗 zrok (Solução open source alternativa ao ngrok baseada no OpenZiti para tunelamento local)"
+  ["zrok"]="🔗 zrok (Open source ngrok alternative)"
+  ["kew"]="🎵 kew (Terminal music player)"
+  ["gaze"]="👀 gaze (Run commands when files change)"
+  ["dnote"]="📓 dnote (A simple command line notebook)"
   ["zsh"]="🐚 Zsh shell e plugins (Hiper-produtividade)"
 
   ["kew"]="🎵 kew (Command-line music player)"
