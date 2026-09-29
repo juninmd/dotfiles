@@ -681,6 +681,10 @@ declare -A MOD_DESC=(
   ["zoxide"]="🚀 Zoxide (A smarter cd command)"
   ["zrok"]="🔗 zrok (Solução open source alternativa ao ngrok baseada no OpenZiti para tunelamento local)"
   ["zsh"]="🐚 Zsh shell e plugins (Hiper-produtividade)"
+
+  ["kew"]="🎵 kew (Command-line music player)"
+  ["gaze"]="👀 gaze (Execute commands when files change)"
+  ["dnote"]="📝 dnote (A simple command line notebook for programmers)"
 )
 
 # Get all available modules
