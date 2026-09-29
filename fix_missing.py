@@ -1,64 +1,310 @@
-import re
 import os
+import re
 
 with open('setup-2026.sh', 'r') as f:
     content = f.read()
 
-# Replace neofetch-alt with fastfetch in full if missing (it might be fastfetch instead of neofetch-alt, but wait, both are in memory?)
-# The user prompt memory says: 'Fastfetch is installed via PPA ...' and 'Modern CLI replacements include ... neofetch-alt ...'
-
-# Let's fix descriptions in MOD_DESC:
 replacements = [
-    ('["age"]="📦 age (A simple modern and secure file encryption tool)"', '["age"]="📦 age (Criptografia moderna de arquivos)"'),
-    ('["atlas"]="📦 atlas (Modern tool for managing database schemas)"', '["atlas"]="📦 atlas (Gerenciador moderno de esquemas de banco de dados)"'),
-    ('["bat-extras"]="🦇 bat-extras (Bash scripts that integrate bat with various command line tools)"', '["bat-extras"]="🦇 bat-extras (Scripts bash que integram bat com utilitários cli)"'),
-    ('["biome"]="🚀 Biome (Fast JS TS toolchain)"', '["biome"]="🚀 Biome (Conjunto de utilitários rápidos JS/TS)"'),
-    ('["charm"]="✨ charm (Charmbracelet tool)"', '["charm"]="✨ charm (Utilitário Charmbracelet)"'),
-    ('["cli-tools"]="🧰 Dependências Base 2026 (Rust Go Python build-tools)"', '["cli-tools"]="🧰 Dependências Base 2026 (Rust Go Python build-utils)"'),
-    ('["dapr"]="📦 Dapr CLI (Modern tool for building distributed applications)"', '["dapr"]="📦 Dapr CLI (CLI para construção de aplicações distribuídas)"'),
-    ('["dbmate"]="🗃️ dbmate (Database migration tool)"', '["dbmate"]="🗃️ dbmate (Utilitário de migração de banco de dados)"'),
-    ('["elixir"]="💧 Elixir (Dynamic functional language for building scalable and maintainable applications)"', '["elixir"]="💧 Elixir (Linguagem funcional dinâmica)"'),
-    ('["bito"]="🤖 bito (AI CLI tool)"', '["bito"]="🤖 bito (CLI assistente de IA)"'),
-    ('["heroku"]="☁️ Heroku CLI (Manage Heroku apps)"', '["heroku"]="☁️ Heroku CLI (Gerenciar plataformas Heroku)"'),
-    ('["httpx"]="⚡ httpx (Fast and multi-purpose HTTP toolkit)"', '["httpx"]="⚡ httpx (Conjunto de utilitários HTTP rápido e multiuso)"'),
-    ('["hyperfine"]="⏱️ Hyperfine (A command-line benchmarking tool)"', '["hyperfine"]="⏱️ Hyperfine (Utilitário de benchmarking em terminal)"'),
-    ('["jql"]="🔍 jql (JSON query language CLI tool)"', '["jql"]="🔍 jql (Processador CLI para linguagem de consulta JSON)"'),
-    ('["k6"]="🚀 k6 (Modern load testing tool)"', '["k6"]="🚀 k6 (Utilitário moderno de testes de carga)"'),
-    ('["ko"]="📦 ko (Build and deploy Go applications on Kubernetes)"', '["ko"]="📦 ko (Build e deploy de aplicações Go no Kubernetes)"'),
-    ('["kubectl"]="⎈ kubectl (Kubernetes command-line tool)"', '["kubectl"]="⎈ kubectl (Cliente de linha de comando para Kubernetes)"'),
-    ('["mani"]="📂 mani (CLI tool to manage multiple repositories)"', '["mani"]="📂 mani (Utilitário CLI para gerenciar múltiplos repositórios)"'),
-    ('["mise"]="🛠️ Mise (Polyglot Tool Version Manager)"', '["mise"]="🛠️ Mise (Gerenciador de versões poliglota)"'),
-    ('["mkcert"]="🔐 mkcert (Simple zero-config tool to make locally trusted development certificates)"', '["mkcert"]="🔐 mkcert (Utilitário simples para certificados locais confiáveis)"'),
-    ('["navi"]="🧭 navi (An interactive cheatsheet tool for the command-line)"', '["navi"]="🧭 navi (Cheatsheet interativa para linha de comando)"'),
-    ('["pastel"]="🎨 pastel (Command-line Color Tool)"', '["pastel"]="🎨 pastel (Utilitário de cores para linha de comando)"'),
-    ('["peco"]="🔍 peco (Simplistic interactive filtering tool)"', '["peco"]="🔍 peco (Utilitário interativo e simplista para filtragem)"'),
-    ('["pueue"]="🗃️ Pueue (Command-line task management tool)"', '["pueue"]="🗃️ Pueue (Gerenciador de tarefas via linha de comando)"'),
-    ('["qsv"]="📊 qsv (CSV data-wrangling toolkit)"', '["qsv"]="📊 qsv (Conjunto de utilitários para manipulação de dados CSV)"'),
-    ('["ripgrep"]="⚡ Ripgrep (Line-oriented search tool)"', '["ripgrep"]="⚡ Ripgrep (Buscador orientado a linha ultra rápido)"'),
-    ('["rnr"]="🔄 rnr (A command-line tool to rename files and directories safely)"', '["rnr"]="🔄 rnr (Utilitário seguro para renomear arquivos e diretórios)"'),
-    ('["shellcheck"]="🐚 shellcheck (A static analysis tool for shell scripts)"', '["shellcheck"]="🐚 shellcheck (Analisador estático para shell scripts)"'),
-    ('["slides"]="📊 slides (Terminal based presentation tool)"', '["slides"]="📊 slides (Apresentações baseadas em terminal)"'),
-    ('["sops"]="🔐 sops (Simple and flexible tool for managing secrets)"', '["sops"]="🔐 sops (Utilitário simples e flexível para gerenciar segredos)"'),
-    ('["spacer"]="📏 spacer (CLI tool to insert spacers when command output stops)"', '["spacer"]="📏 spacer (Insere espaçadores em saídas do terminal)"'),
-    ('["syft"]="📦 syft (CLI tool and library for generating a SBOM)"', '["syft"]="📦 syft (Gerador de SBOM via CLI)"'),
-    ('["taplo"]="⚙️ taplo (TOML toolkit)"', '["taplo"]="⚙️ taplo (Conjunto de utilitários para arquivos TOML)"'),
-    ('["terragrunt"]="🏗️ Terragrunt (Thin wrapper for Terraform)"', '["terragrunt"]="🏗️ Terragrunt (Envolucro leve para Terraform)"'),
-    ('["thefuck"]="🤬 thefuck (Magnificent app which corrects your previous console command)"', '["thefuck"]="🤬 thefuck (Corrige comandos digitados erroneamente)"'),
-    ('["trzsz"]="📤 trzsz (A simple file transfer tools similar to lrzsz (rz sz) and compatible with tmux)"', '["trzsz"]="📤 trzsz (Transferência de arquivos simples compatível com tmux)"'),
-    ('["vegeta"]="🔫 vegeta (HTTP load testing tool and library)"', '["vegeta"]="🔫 vegeta (Testes de carga HTTP e biblioteca)"'),
-    ('["vercel"]="▲ Vercel CLI (Deploy serverless applications)"', '["vercel"]="▲ Vercel CLI (Deploy de aplicações serverless)"'),
-    ('["visidata"]="📊 visidata (A terminal spreadsheet multitool for discovering and arranging data)"', '["visidata"]="📊 visidata (Planilha multiferramenta de terminal)"'),
-    ('["waypoint"]="🎯 waypoint (Modern application deployment)"', '["waypoint"]="🎯 waypoint (Deploy moderno de aplicações)"'),
-    ('["wuzz"]="🌐 wuzz (Interactive cli tool for HTTP inspection)"', '["wuzz"]="🌐 wuzz (Utilitário CLI interativo para inspeção HTTP)"'),
-    ('["xh"]="🌐 xh (Friendly and fast tool for sending HTTP requests)"', '["xh"]="🌐 xh (Utilitário rápido e amigável para requests HTTP)"'),
-    ('["xsv"]="📊 xsv (High performance CSV toolkit)"', '["xsv"]="📊 xsv (Conjunto de utilitários de alta performance para CSV)"'),
-    ('["yamlfmt"]="✨ yamlfmt (An extensible command line tool or library to format yaml files)"', '["yamlfmt"]="✨ yamlfmt (Formatador extensível para arquivos YAML)"'),
-    ('["zizmor"]="🛡️ zizmor (Static analysis tool for GitHub Actions)"', '["zizmor"]="🛡️ zizmor (Análise estática para GitHub Actions)"'),
+    ('["act"]="🎭 act (Run GitHub Actions Locally)"', '["act"]="🎭 act (Executa GitHub Actions localmente)"'),
+    ('["actionlint"]="📦 actionlint (Static checker for GitHub Actions workflow files)"', '["actionlint"]="📦 actionlint (Verificador estático para workflows do GitHub Actions)"'),
+    ('["ast-grep"]="🌳 ast-grep (AST based search replace)"', '["ast-grep"]="🌳 ast-grep (Busca e substituição baseada em AST)"'),
+    ('["atac"]="🚀 Atac (Modern API Client TUI)"', '["atac"]="🚀 Atac (Cliente de API Moderno TUI)"'),
+    ('["atuin"]="🐢 Atuin (Magical Shell History)"', '["atuin"]="🐢 Atuin (Histórico de shell mágico)"'),
+    ('["awscli"]="☁️ AWS CLI (Amazon Web Services CLI)"', '["awscli"]="☁️ AWS CLI (Interface de linha de comando AWS)"'),
+    ('["bacon"]="🥓 bacon (Background Rust code checker)"', '["bacon"]="🥓 bacon (Verificador de código Rust em segundo plano)"'),
+    ('["bandwhich"]="📈 bandwhich (Bandwidth Monitor)"', '["bandwhich"]="📈 bandwhich (Monitor de largura de banda)"'),
+    ('["bat"]="🦇 Bat (A cat clone with wings)"', '["bat"]="🦇 Bat (Um clone do cat com asas)"'),
+    ('["binsider"]="🔍 binsider (Analyze ELF binaries)"', '["binsider"]="🔍 binsider (Analisador de binários ELF)"'),
+    ('["bore-cli"]="🚇 bore-cli (Local tunneling)"', '["bore-cli"]="🚇 bore-cli (Tunelamento local de portas)"'),
+    ('["bottom"]="📈 bottom (System Monitor)"', '["bottom"]="📈 bottom (Monitor de sistema TUI)"'),
+    ('["boundary"]="🛡️ boundary (Identity-based access management)"', '["boundary"]="🛡️ boundary (Gerenciamento de acesso baseado em identidade)"'),
+    ('["broot"]="🌲 Broot (A new way to see and navigate directory trees)"', '["broot"]="🌲 Broot (Uma nova forma de navegar em árvores de diretórios)"'),
+    ('["bruno-cli"]="🐶 bruno-cli (API Client CLI)"', '["bruno-cli"]="🐶 bruno-cli (Cliente de API via CLI)"'),
+    ('["btop"]="📊 Btop (A monitor of resources)"', '["btop"]="📊 Btop (Monitor de recursos interativo)"'),
+    ('["bw"]="🔐 Bitwarden CLI (Password Manager)"', '["bw"]="🔐 Bitwarden CLI (Gerenciador de senhas)"'),
+    ('["carapace"]="🐚 carapace (Multi-shell Completer)"', '["carapace"]="🐚 carapace (Completador multi-shell)"'),
+    ('["cbonsai"]="🌲 cbonsai (Terminal bonsai tree)"', '["cbonsai"]="🌲 cbonsai (Gerador de bonsai no terminal)"'),
+    ('["chafa"]="🎨 chafa (Terminal graphics)"', '["chafa"]="🎨 chafa (Gráficos no terminal)"'),
+    ('["chatbox"]="💬 Chatbox (Copilot for your desktop)"', '["chatbox"]="💬 Chatbox (Copiloto para o desktop)"'),
+    ('["chatgpt-cli"]="🤖 chatgpt-cli (ChatGPT in terminal)"', '["chatgpt-cli"]="🤖 chatgpt-cli (ChatGPT no terminal)"'),
+    ('["cheat"]="📄 cheat (Interactive cheatsheets)"', '["cheat"]="📄 cheat (Cheatsheets interativas)"'),
+    ('["checkov"]="🛡️ checkov (IaC scanner)"', '["checkov"]="🛡️ checkov (Scanner de segurança para IaC)"'),
+    ('["choose"]="✂️ choose (Human-friendly cut)"', '["choose"]="✂️ choose (Alternativa amigável ao cut)"'),
+    ('["circumflex"]="📰 circumflex (Hacker News in terminal)"', '["circumflex"]="📰 circumflex (Hacker News no terminal)"'),
+    ('["cloudflared"]="☁️ cloudflared (Cloudflare Tunnel client)"', '["cloudflared"]="☁️ cloudflared (Cliente Cloudflare Tunnel)"'),
+    ('["cocogitto"]="⚙️ cocogitto (Conventional commits CLI)"', '["cocogitto"]="⚙️ cocogitto (CLI para conventional commits)"'),
+    ('["code2prompt"]="📝 code2prompt (Convert codebase to LLM prompt)"', '["code2prompt"]="📝 code2prompt (Converte base de código para prompt LLM)"'),
+    ('["cointop"]="🪙 cointop (Crypto tracker)"', '["cointop"]="🪙 cointop (Rastreador de criptomoedas TUI)"'),
+    ('["consul"]="🌐 Consul (Service Networking)"', '["consul"]="🌐 Consul (Networking de serviços)"'),
+    ('["cpufetch"]="💻 cpufetch (CPU architecture fetching)"', '["cpufetch"]="💻 cpufetch (Busca arquitetura da CPU)"'),
+    ('["crane"]="🏗️ crane (Container image interaction)"', '["crane"]="🏗️ crane (Interação com imagens de contêiner)"'),
+    ('["croc"]="🐊 croc (Securely send things between computers)"', '["croc"]="🐊 croc (Transferência segura de arquivos)"'),
+    ('["csvlens"]="📊 csvlens (CSV viewer)"', '["csvlens"]="📊 csvlens (Visualizador de CSV TUI)"'),
+    ('["ctop"]="🐳 ctop (Top-like interface for container metrics)"', '["ctop"]="🐳 ctop (Interface top-like para métricas de contêineres)"'),
+    ('["d2"]="📊 d2 (Declarative Diagramming)"', '["d2"]="📊 d2 (Criação declarativa de diagramas)"'),
+    ('["dagger"]="🗡️ Dagger (Programmable CI CD engine)"', '["dagger"]="🗡️ Dagger (Motor CI/CD programável)"'),
+    ('["dasel"]="🔍 dasel (Query update data formats)"', '["dasel"]="🔍 dasel (Consulta e atualiza formatos de dados)"'),
+    ('["daytona"]="🌅 Daytona (Self-hosted development environment manager)"', '["daytona"]="🌅 Daytona (Gerenciador de ambiente de desenvolvimento self-hosted)"'),
+    ('["delta"]="🔀 delta (A syntax-highlighting pager for git diff and grep output)"', '["delta"]="🔀 delta (Visualizador com syntax-highlighting para git diff)"'),
+    ('["devbox"]="📦 Devbox (Portable Developer Environments)"', '["devbox"]="📦 Devbox (Ambientes de desenvolvimento portáteis)"'),
+    ('["devenv"]="⚙️ Devenv (Declarative Developer Environments)"', '["devenv"]="⚙️ Devenv (Ambientes de desenvolvimento declarativos)"'),
+    ('["devpod"]="🚀 DevPod (Codespaces but open-source)"', '["devpod"]="🚀 DevPod (Codespaces open-source)"'),
+    ('["devtoy"]="🧰 devtoy (A Swiss Army knife for developers)"', '["devtoy"]="🧰 devtoy (Canivete suíço para desenvolvedores)"'),
+    ('["difftastic"]="🧬 difftastic (Structural diff)"', '["difftastic"]="🧬 difftastic (Ferramenta de diff estrutural)"'),
+    ('["direnv"]="🔧 direnv (Environment variable manager)"', '["direnv"]="🔧 direnv (Gerenciador de variáveis de ambiente por diretório)"'),
+    ('["diskonaut"]="💾 diskonaut (Terminal disk space navigator)"', '["diskonaut"]="💾 diskonaut (Navegador visual de espaço em disco no terminal)"'),
+    ('["distrobox"]="📦 Distrobox (Run any linux distro in terminal)"', '["distrobox"]="📦 Distrobox (Rode qualquer distro linux no terminal)"'),
+    ('["dive"]="🐳 dive (Docker image explorer)"', '["dive"]="🐳 dive (Explorador de imagens Docker)"'),
+    ('["doggo"]="🐶 Doggo (Modern DNS Client)"', '["doggo"]="🐶 Doggo (Cliente DNS moderno)"'),
+    ('["dolt"]="🐬 dolt (Git for data)"', '["dolt"]="🐬 dolt (Git para dados)"'),
+    ('["doppler"]="🔐 Doppler (SecretOps Platform)"', '["doppler"]="🔐 Doppler (Plataforma SecretOps)"'),
+    ('["dotenv-linter"]="✅ dotenv-linter (Linter for .env files)"', '["dotenv-linter"]="✅ dotenv-linter (Linter para arquivos .env)"'),
+    ('["dotenvx"]="🔑 dotenvx (Manage .env files)"', '["dotenvx"]="🔑 dotenvx (Gerenciador de arquivos .env)"'),
+    ('["dprint"]="🖋️ dprint (Pluggable formatting platform)"', '["dprint"]="🖋️ dprint (Plataforma de formatação conectável)"'),
+    ('["dsq"]="🗃️ dsq (SQL for JSON CSV etc.)"', '["dsq"]="🗃️ dsq (SQL para JSON/CSV/etc)"'),
+    ('["dua"]="💽 dua (Disk Usage Analyzer)"', '["dua"]="💽 dua (Analisador de uso de disco)"'),
+    ('["dua-cli"]="📊 dua-cli (Disk usage analyzer)"', '["dua-cli"]="📊 dua-cli (Analisador de uso de disco)"'),
+    ('["duf"]="🖥️ duf (Disk usage free utility)"', '["duf"]="🖥️ duf (Utilitário de uso de disco)"'),
+    ('["dufs"]="📁 dufs (Utility file server)"', '["dufs"]="📁 dufs (Servidor de arquivos utilário)"'),
+    ('["dura"]="💾 dura (Git background backup)"', '["dura"]="💾 dura (Backup de git em background)"'),
+    ('["dust"]="🌪️ dust (A more intuitive version of du in rust)"', '["dust"]="🌪️ dust (Versão mais intuitiva do du escrita em rust)"'),
+    ('["dysk"]="💽 dysk (Linux disk info)"', '["dysk"]="💽 dysk (Informações de disco do Linux)"'),
+    ('["earthly"]="🌍 earthly (Build automation)"', '["earthly"]="🌍 earthly (Automação de build)"'),
+    ('["eget"]="📥 eget (Download pre-built binaries)"', '["eget"]="📥 eget (Baixa binários pré-compilados)"'),
+    ('["erdtree"]="🌳 erdtree (File-tree Visualizer)"', '["erdtree"]="🌳 erdtree (Visualizador de árvore de arquivos em Rust)"'),
+    ('["eza"]="🌟 Eza (A modern maintained replacement for ls)"', '["eza"]="🌟 Eza (Substituto moderno e mantido para o ls)"'),
+    ('["fabric"]="🤖 fabric (AI CLI framework)"', '["fabric"]="🤖 fabric (Framework de IA CLI)"'),
+    ('["fd-find"]="📂 fd (A simple fast and user-friendly alternative to find)"', '["fd-find"]="📂 fd (Alternativa simples/rápida e amigável ao find)"'),
+    ('["fend"]="🧮 fend (Arbitrary-precision unit-aware calculator)"', '["fend"]="🧮 fend (Calculadora ciente de unidades e de precisão arbitrária)"'),
+    ('["ffuf"]="🔍 ffuf (Fast web fuzzer written in Go)"', '["ffuf"]="🔍 ffuf (Fuzzer web rápido escrito em Go)"'),
+    ('["flox"]="❄️ Flox (Developer environments for everyone)"', '["flox"]="❄️ Flox (Ambientes de desenvolvedor para todos)"'),
+    ('["fq"]="🔍 fq (jq for binary formats)"', '["fq"]="🔍 fq (jq para formatos binários)"'),
+    ('["freeze"]="📸 freeze (Code screenshots)"', '["freeze"]="📸 freeze (Capturas de tela de código)"'),
+    ('["fzf"]="🔍 Fzf (A command-line fuzzy finder)"', '["fzf"]="🔍 Fzf (Buscador fuzzy de linha de comando)"'),
+    ('["gcloud"]="☁️ gcloud (Google Cloud CLI)"', '["gcloud"]="☁️ gcloud (Interface de linha de comando Google Cloud)"'),
+    ('["gdu"]="📊 gdu (Disk usage analyzer)"', '["gdu"]="📊 gdu (Analisador de uso de disco com interface TUI)"'),
+    ('["genact"]="🎭 genact (Fake activity generator)"', '["genact"]="🎭 genact (Gerador de atividade falsa)"'),
+    ('["gh"]="🐙 gh (GitHub CLI)"', '["gh"]="🐙 gh (GitHub CLI)"'),
+    ('["gh-dash"]="🐙 gh-dash (GitHub CLI dashboard)"', '["gh-dash"]="🐙 gh-dash (Dashboard do GitHub CLI)"'),
+    ('["ghq"]="📂 ghq (Manage remote repository clones)"', '["ghq"]="📂 ghq (Gerencia clones de repositórios remotos)"'),
+    ('["git-absorb"]="🧽 git-absorb (Automatic git commit fixing)"', '["git-absorb"]="🧽 git-absorb (Correção automática de git commit)"'),
+    ('["git-cliff"]="⛰️ git-cliff (Changelog Generator)"', '["git-cliff"]="⛰️ git-cliff (Gerador de changelog altamente customizável)"'),
+    ('["git-filter-repo"]="🧹 git-filter-repo (Rewrite git history)"', '["git-filter-repo"]="🧹 git-filter-repo (Reescreve histórico do git)"'),
+    ('["git-next"]="🐙 git-next (Trunk-based development manager)"', '["git-next"]="🐙 git-next (Gerenciador de desenvolvimento trunk-based)"'),
+    ('["git-sim"]="🔮 git-sim (Visually simulate Git operations)"', '["git-sim"]="🔮 git-sim (Simulador visual de operações do Git)"'),
+    ('["git-town"]="🏙️ git-town (High-level Git workflow support)"', '["git-town"]="🏙️ git-town (Suporte para fluxos de trabalho de alto nível no Git)"'),
+    ('["gitingest"]="🧠 Gitingest (Git to AI prompt)"', '["gitingest"]="🧠 Gitingest (Git para prompt de IA)"'),
+    ('["gitleaks"]="🔐 gitleaks (Secret scanner for git)"', '["gitleaks"]="🔐 gitleaks (Scanner de segredos para git)"'),
+    ('["gitui"]="🐙 GitUI (Blazing Fast Git TUI)"', '["gitui"]="🐙 GitUI (TUI de Git incrivelmente rápida)"'),
+    ('["glances"]="👀 glances (System monitor)"', '["glances"]="👀 glances (Monitor de sistema cross-platform)"'),
+    ('["glow"]="🌟 Glow (Markdown Renderer)"', '["glow"]="🌟 Glow (Renderizador de Markdown no terminal)"'),
+    ('["gojq"]="🔍 gojq (Pure Go implementation of jq)"', '["gojq"]="🔍 gojq (Implementação pura em Go do jq)"'),
+    ('["gorilla-cli"]="🦍 gorilla-cli (LLMs for CLI)"', '["gorilla-cli"]="🦍 gorilla-cli (LLMs para CLI)"'),
+    ('["gping"]="🏓 gping (Ping but with a graph)"', '["gping"]="🏓 gping (Ping com gráfico)"'),
+    ('["grex"]="🧠 grex (Regex Generator)"', '["grex"]="🧠 grex (Gerador de regex)"'),
+    ('["gron"]="🔧 gron (Make JSON greppable)"', '["gron"]="🔧 gron (Torna o JSON buscável via grep)"'),
+    ('["grpcurl"]="📡 grpcurl (curl for gRPC servers)"', '["grpcurl"]="📡 grpcurl (Como o curl mas para servidores gRPC)"'),
+    ('["grype"]="🔒 grype (Vulnerability scanner for images)"', '["grype"]="🔒 grype (Scanner de vulnerabilidade para imagens e sistemas de arquivos)"'),
+    ('["hadolint"]="🐳 hadolint (Dockerfile linter)"', '["hadolint"]="🐳 hadolint (Linter para Dockerfile)"'),
+    ('["hck"]="📦 hck (A sharp cut clone)"', '["hck"]="📦 hck (Um clone rápido do cut)"'),
+    ('["helm"]="⎈ helm (Kubernetes package manager)"', '["helm"]="⎈ helm (Gerenciador de pacotes para Kubernetes)"'),
+    ('["hexyl"]="🔢 hexyl (Hex viewer)"', '["hexyl"]="🔢 hexyl (Visualizador hexadecimal no terminal)"'),
+    ('["howdoi"]="❓ howdoi (Instant coding answers)"', '["howdoi"]="❓ howdoi (Respostas instantâneas de código)"'),
+    ('["htmlq"]="📄 htmlq (jq for HTML)"', '["htmlq"]="📄 htmlq (jq para HTML)"'),
+    ('["httpie"]="🌐 httpie (Modern HTTP client)"', '["httpie"]="🌐 httpie (Cliente HTTP moderno)"'),
+    ('["httpstat"]="📊 httpstat (curl statistics visualization)"', '["httpstat"]="📊 httpstat (Visualização de estatísticas do curl)"'),
+    ('["httpx"]="⚡ httpx (Conjunto de utilitários HTTP rápido e multiuso)"', '["httpx"]="⚡ httpx (Toolkit HTTP rápido)"'),
+    ('["hurl"]="🎯 hurl (Run HTTP requests defined in a simple plain text format)"', '["hurl"]="🎯 hurl (Executa requisições HTTP definidas em formato de texto)"'),
+    ('["hwatch"]="👀 hwatch (Modern alternative to watch)"', '["hwatch"]="👀 hwatch (Alternativa moderna ao watch)"'),
+    ('["igrep"]="🔎 igrep (Interactive Grep)"', '["igrep"]="🔎 igrep (Grep interativo)"'),
+    ('["infisical"]="🔐 Infisical (Open Source Secret Management)"', '["infisical"]="🔐 Infisical (Gerenciamento de segredos Open Source)"'),
+    ('["infracost"]="💰 infracost (Cloud cost estimates for Terraform)"', '["infracost"]="💰 infracost (Estimativas de custos na nuvem para Terraform)"'),
+    ('["inlyne"]="🖥️ inlyne (GPU powered markdown viewer)"', '["inlyne"]="🖥️ inlyne (Visualizador markdown via GPU)"'),
+    ('["inshellisense"]="💡 Inshellisense (IDE style autocomplete for shells)"', '["inshellisense"]="💡 Inshellisense (Autocomplete estilo IDE para shells)"'),
+    ('["jan"]="🤖 Jan (Local AI alternative to ChatGPT)"', '["jan"]="🤖 Jan (Alternativa local ao ChatGPT)"'),
+    ('["jaq"]="🔍 jaq (A jq clone focused on correctness speed and simplicity)"', '["jaq"]="🔍 jaq (Clone do jq focado em correção/velocidade/simplicidade)"'),
+    ('["jc"]="🔧 jc (Convert CLI output to JSON)"', '["jc"]="🔧 jc (Converte saída de comandos para JSON)"'),
+    ('["jj"]="🐙 jj (Git alternative)"', '["jj"]="🐙 jj (Alternativa ao Git com foco em usabilidade)"'),
+    ('["jless"]="🔍 Jless (JSON Viewer)"', '["jless"]="🔍 Jless (Visualizador JSON para linha de comando)"'),
+    ('["jnv"]="🔍 jnv (Interactive jq frontend)"', '["jnv"]="🔍 jnv (Frontend interativo para jq)"'),
+    ('["jo"]="🔧 jo (JSON output utility)"', '["jo"]="🔧 jo (Utilitário para gerar saídas JSON)"'),
+    ('["joshuto"]="📁 joshuto (Terminal file manager)"', '["joshuto"]="📁 joshuto (Gerenciador de arquivos para terminal escrito em Rust)"'),
+    ('["jq"]="🔍 jq (Command-line JSON processor)"', '["jq"]="🔍 jq (Processador JSON de linha de comando)"'),
+    ('["jqp"]="🔍 jqp (TUI playground for jq)"', '["jqp"]="🔍 jqp (TUI interativa para testar consultas jq)"'),
+    ('["jujutsu"]="🥋 jujutsu (A Git-compatible VCS)"', '["jujutsu"]="🥋 jujutsu (Sistema de controle de versão compatível com Git)"'),
+    ('["just"]="🤖 Just (Command Runner)"', '["just"]="🤖 Just (Executor de comandos simplificado)"'),
+    ('["k3d"]="🐳 k3d (Lightweight Kubernetes in Docker)"', '["k3d"]="🐳 k3d (Kubernetes leve rodando no Docker)"'),
+    ('["k3s"]="☸️ k3s (Lightweight Kubernetes)"', '["k3s"]="☸️ k3s (Kubernetes leve para edge computing)"'),
+    ('["k8sgpt"]="☸️ k8sgpt (AI for Kubernetes)"', '["k8sgpt"]="☸️ k8sgpt (IA diagnosticando problemas no Kubernetes)"'),
+    ('["kalker"]="🧮 kalker (Math calculator)"', '["kalker"]="🧮 kalker (Calculadora com suporte a matemática avançada)"'),
+    ('["kaskade"]="🌊 kaskade (Kafka TUI)"', '["kaskade"]="🌊 kaskade (Interface TUI para Kafka)"'),
+    ('["kdash"]="☸️ kdash (Kubernetes Dashboard)"', '["kdash"]="☸️ kdash (Dashboard do Kubernetes no terminal)"'),
+    ('["kind"]="🐳 kind (Kubernetes in Docker)"', '["kind"]="🐳 kind (Kubernetes rodando em containers Docker)"'),
+    ('["klog"]="⏱️ klog (Time tracking in plain text)"', '["klog"]="⏱️ klog (Rastreador de tempo baseado em texto puro)"'),
+    ('["kmon"]="🐧 kmon (Linux Kernel Manager and Activity Monitor)"', '["kmon"]="🐧 kmon (Gerenciador e monitor de kernel do Linux)"'),
+    ('["ko"]="📦 ko (Build e deploy de aplicações Go no Kubernetes)"', '["ko"]="📦 ko (Build e deploy de imagens contêiner para Go)"'),
+    ('["kondo"]="🧹 kondo (Clean up software projects)"', '["kondo"]="🧹 kondo (Limpeza de artefatos em projetos de software)"'),
+    ('["krew"]="🔌 krew (Package manager for kubectl plugins)"', '["krew"]="🔌 krew (Gerenciador de plugins para kubectl)"'),
+    ('["kubecolor"]="🎨 kubecolor (Colorize your kubectl output)"', '["kubecolor"]="🎨 kubecolor (Adiciona cores a saída do kubectl)"'),
+    ('["kubectx"]="⎈ kubectx (Switch between Kubernetes contexts)"', '["kubectx"]="⎈ kubectx (Muda rapidamente entre contextos do Kubernetes)"'),
+    ('["kubens"]="📦 kubens (Kubernetes context switching)"', '["kubens"]="📦 kubens (Muda rapidamente entre namespaces do Kubernetes)"'),
+    ('["kubent"]="☸️ kubent (Kubernetes deprecated API checker)"', '["kubent"]="☸️ kubent (Verificador de uso de APIs descontinuadas do Kubernetes)"'),
+    ('["kustomize"]="🛠️ kustomize (Customization of kubernetes YAML configurations)"', '["kustomize"]="🛠️ kustomize (Gerenciador de configuração Kubernetes nativo)"'),
+    ('["lazynpm"]="📦 Lazynpm (NPM TUI)"', '["lazynpm"]="📦 Lazynpm (Interface TUI para NPM)"'),
+    ('["lefthook"]="🪝 lefthook (Fast git hooks manager)"', '["lefthook"]="🪝 lefthook (Gerenciador de hooks do Git rápido)"'),
+    ('["lens"]="👁️ lens (Kubernetes IDE)"', '["lens"]="👁️ lens (IDE focado no Kubernetes)"'),
+    ('["lf"]="📁 lf (Terminal file manager)"', '["lf"]="📁 lf (Gerenciador de arquivos de terminal estilo Ranger)"'),
+    ('["llm"]="🧠 LLM (Access Large Language Models)"', '["llm"]="🧠 LLM (Acesso a grandes modelos de linguagem via CLI)"'),
+    ('["lnav"]="📋 lnav (Log file navigator)"', '["lnav"]="📋 lnav (Navegador e visualizador de arquivos de log)"'),
+    ('["lsd"]="🌟 lsd (Modern ls replacement)"', '["lsd"]="🌟 lsd (Substituto moderno para ls)"'),
+    ('["lychee"]="🔗 lychee (Fast link checker)"', '["lychee"]="🔗 lychee (Verificador de links rápido)"'),
+    ('["macchina"]="💻 macchina (System information fetcher)"', '["macchina"]="💻 macchina (Buscador rápido de informações do sistema)"'),
+    ('["marimo"]="📓 marimo (Reactive Python Notebooks)"', '["marimo"]="📓 marimo (Notebooks Python reativos)"'),
+    ('["mcfly"]="🧠 mcfly (Fly through your shell history)"', '["mcfly"]="🧠 mcfly (Navegador inteligente de histórico do shell)"'),
+    ('["mdcat"]="🐈 mdcat (cat for Markdown)"', '["mdcat"]="🐈 mdcat (Visualizador de markdown no terminal)"'),
+    ('["melt"]="🔑 melt (Backup and restore Ed25519 SSH keys with seed words)"', '["melt"]="🔑 melt (Gera seed words para chaves SSH)"'),
+    ('["micro"]="🚀 micro (Modern and intuitive terminal-based text editor)"', '["micro"]="🚀 micro (Editor de texto de terminal intuitivo)"'),
+    ('["miller"]="📊 miller (jq for CSV TSV JSON JSONLines)"', '["miller"]="📊 miller (Como o jq mas para arquivos de dados tabulares)"'),
+    ('["miniserve"]="🗄️ miniserve (Fast local file server)"', '["miniserve"]="🗄️ miniserve (Servidor de arquivos local simples e rápido)"'),
+    ('["mlr"]="📊 mlr (jq for CSV TSV JSON)"', '["mlr"]="📊 mlr (Alias para miller - utilitário para dados tabulares)"'),
+    ('["moar"]="📄 moar (Better Pager)"', '["moar"]="📄 moar (Pager melhorado para visualização de texto)"'),
+    ('["mods"]="🤖 Mods (AI on the command line)"', '["mods"]="🤖 Mods (Assistente de IA integrado na linha de comando)"'),
+    ('["monolith"]="📦 monolith (Save HTML pages with all assets)"', '["monolith"]="📦 monolith (Salva páginas web completas em um único arquivo)"'),
+    ('["moon"]="🌙 Moon (Build system for JS TS)"', '["moon"]="🌙 Moon (Sistema de build rápido para repositórios JS/TS)"'),
+    ('["mprocs"]="🔄 mprocs (Run multiple commands in parallel)"', '["mprocs"]="🔄 mprocs (Executa múltiplos comandos em paralelo com TUI)"'),
+    ('["nap"]="😴 nap (Snippets Manager)"', '["nap"]="😴 nap (Gerenciador de snippets via linha de comando)"'),
+    ('["ncdu"]="🚀 ncdu (NCurses Disk Usage)"', '["ncdu"]="🚀 ncdu (Analisador de uso de disco baseado em Ncurses)"'),
+    ('["ncspot"]="🎵 ncspot (Spotify client)"', '["ncspot"]="🎵 ncspot (Cliente Spotify de terminal cruzado)"'),
+    ('["newsboat"]="📰 newsboat (RSS Atom feed reader)"', '["newsboat"]="📰 newsboat (Leitor de feeds RSS/Atom para terminal)"'),
+    ('["ngrok"]="🚇 ngrok (Secure introspectable tunnels to localhost)"', '["ngrok"]="🚇 ngrok (Criação de túneis seguros para localhost)"'),
+    ('["nix"]="❄️ Nix (Modern package manager)"', '["nix"]="❄️ Nix (Gerenciador de pacotes multi-plataforma moderno)"'),
+    ('["nnn"]="🚀 nnn (Free fast feature-packed file manager)"', '["nnn"]="🚀 nnn (Gerenciador de arquivos de terminal extremamente rápido)"'),
+    ('["nomad"]="🚀 Nomad (Workload Orchestrator)"', '["nomad"]="🚀 Nomad (Orquestrador de workloads da HashiCorp)"'),
+    ('["nuclei"]="⚡ nuclei (Targeted vulnerability scanner)"', '["nuclei"]="⚡ nuclei (Scanner rápido de vulnerabilidades em alvos)"'),
+    ('["numbat"]="🧮 numbat (High precision scientific calculator)"', '["numbat"]="🧮 numbat (Calculadora científica de alta precisão com unidades)"'),
+    ('["nushell"]="🐚 Nushell (A new type of shell)"', '["nushell"]="🐚 Nushell (Shell moderno estruturado em dados)"'),
+    ('["oha"]="📈 Oha (HTTP Benchmarking)"', '["oha"]="📈 Oha (Ferramenta TUI para benchmark HTTP)"'),
+    ('["onefetch"]="📊 onefetch (Git Summary)"', '["onefetch"]="📊 onefetch (Resumo do projeto Git no terminal)"'),
+    ('["open-interpreter"]="🤖 Open-Interpreter (LLMs executando código)"', '["open-interpreter"]="🤖 Open-Interpreter (LLM que executa código localmente)"'),
+    ('["opentofu"]="🏗️ OpenTofu (Infrastructure as Code)"', '["opentofu"]="🏗️ OpenTofu (Alternativa open-source ao Terraform)"'),
+    ('["ouch"]="🗜️ ouch (Painless compression and decompression)"', '["ouch"]="🗜️ ouch (Ferramenta de compressão e descompressão sem dor de cabeça)"'),
+    ('["oxker"]="🐳 oxker (Simple TUI to view & control docker containers)"', '["oxker"]="🐳 oxker (TUI simples para visualizar e controlar contêineres docker)"'),
+    ('["oxlint"]="🐂 oxlint (Fast JS TS linter)"', '["oxlint"]="🐂 oxlint (Linter ultrarrápido para JavaScript e TypeScript)"'),
+    ('["packer"]="📦 Packer (Build Automated Machine Images)"', '["packer"]="📦 Packer (Construtor de imagens automatizadas da HashiCorp)"'),
+    ('["pixi"]="📦 pixi (Fast package manager for Python and C++)"', '["pixi"]="📦 pixi (Gerenciador de pacotes rápido focado em Python e C++)"'),
+    ('["pkgx"]="📦 pkgx (Blazing fast package manager)"', '["pkgx"]="📦 pkgx (Gerenciador de pacotes que roda qualquer coisa sem instalar)"'),
+    ('["plandex"]="🤖 Plandex (AI coding engine)"', '["plandex"]="🤖 Plandex (Motor de codificação assistido por IA de código aberto)"'),
+    ('["pls"]="🤖 pls (AI-powered CLI assistant)"', '["pls"]="🤖 pls (Assistente CLI aprimorado por IA)"'),
+    ('["pnpm"]="📦 pnpm (Fast package manager)"', '["pnpm"]="📦 pnpm (Gerenciador de pacotes Node.js rápido e eficiente no uso de disco)"'),
+    ('["poetry"]="📦 poetry (Python packaging and dependency management made easy)"', '["poetry"]="📦 poetry (Gerenciamento de dependências e empacotamento em Python)"'),
+    ('["pokeget"]="👾 pokeget (Show pokemon sprites in terminal)"', '["pokeget"]="👾 pokeget (Mostra sprites de Pokémon no terminal)"'),
+    ('["pomsky"]="🐾 pomsky (Regex alternative)"', '["pomsky"]="🐾 pomsky (Linguagem elegante e alternativa ao regex)"'),
+    ('["popeye"]="👀 popeye (A Kubernetes cluster resource sanitizer)"', '["popeye"]="👀 popeye (Sanitizador de recursos de cluster Kubernetes)"'),
+    ('["porsmo"]="🍅 porsmo (Pomodoro CLI)"', '["porsmo"]="🍅 porsmo (Temporizador Pomodoro simples via CLI)"'),
+    ('["presenterm"]="📽️ presenterm (Markdown presentations in terminal)"', '["presenterm"]="📽️ presenterm (Apresentações de slides em Markdown no terminal)"'),
+    ('["procs"]="🔍 Procs (A modern replacement for ps)"', '["procs"]="🔍 Procs (Substituto moderno e colorido para o comando ps)"'),
+    ('["proto"]="🔧 proto (Pluggable next-generation version manager by moonrepo)"', '["proto"]="🔧 proto (Gerenciador de versões plugável e de próxima geração)"'),
+    ('["pulumi"]="🏗️ Pulumi (Infrastructure as Code)"', '["pulumi"]="🏗️ Pulumi (Plataforma de infraestrutura como código usando linguagens de programação reais)"'),
+    ('["px"]="📊 px (ps and top for Human Beings)"', '["px"]="📊 px (Alternativa amigável aos comandos ps e top)"'),
+    ('["repomix"]="📦 Repomix (Pack repo for AI)"', '["repomix"]="📦 Repomix (Empacota repositório de código para consumo por IA)"'),
+    ('["rio"]="🎨 Rio (Hardware-accelerated GPU terminal emulator)"', '["rio"]="🎨 Rio (Emulador de terminal acelerado por GPU)"'),
+    ('["rip"]="🗑️ rip (A safe and ergonomic alternative to rm)"', '["rip"]="🗑️ rip (Alternativa segura e ergonômica ao comando rm)"'),
+    ('["ripgrep_all"]="📦 ripgrep_all (rga - search PDFs E-Books Office docs)"', '["ripgrep_all"]="📦 ripgrep_all (Busca em PDFs/E-Books/Documentos do Office)"'),
+    ('["rs-cmatrix"]="💻 rs-cmatrix (Matrix rain in Rust)"', '["rs-cmatrix"]="💻 rs-cmatrix (Chuva de matriz recriada em Rust)"'),
+    ('["ruff"]="⚡ Ruff (Extremely fast Python linter)"', '["ruff"]="⚡ Ruff (Linter em Python extremamente rápido feito em Rust)"'),
+    ('["ruplacer"]="🔄 ruplacer (Find and replace text in source files)"', '["ruplacer"]="🔄 ruplacer (Busca e substituição rápida de texto em arquivos de origem)"'),
+    ('["rustscan"]="🔍 rustscan (The Modern Port Scanner)"', '["rustscan"]="🔍 rustscan (Scanner de portas incrivelmente rápido)"'),
+    ('["rye"]="🌾 Rye (Hassle-free Python experience)"', '["rye"]="🌾 Rye (Experiência e gerenciamento sem atrito para Python)"'),
+    ('["sad"]="😢 sad (CLI search and replace)"', '["sad"]="😢 sad (Substituição de texto em lote estilo sed/awk)"'),
+    ('["scc"]="📊 scc (Sloc Cloc and Code)"', '["scc"]="📊 scc (Contador rápido de linhas de código)"'),
+    ('["sd"]="🔍 sd (Search & Displace)"', '["sd"]="🔍 sd (Alternativa intuitiva de busca e substituição ao sed)"'),
+    ('["serie"]="📈 serie (Git commit graph CLI)"', '["serie"]="📈 serie (Visualizador rico de gráfico de commits do Git via CLI)"'),
+    ('["serpl"]="🔍 serpl (Search and replace TUI)"', '["serpl"]="🔍 serpl (Interface de terminal interativa para busca e substituição)"'),
+    ('["sesh"]="🖥️ sesh (Smart Session Manager)"', '["sesh"]="🖥️ sesh (Gerenciador de sessões inteligente para o terminal)"'),
+    ('["shell-gpt"]="💬 Shell-GPT (ChatGPT from terminal)"', '["shell-gpt"]="💬 Shell-GPT (Assistente ChatGPT via linha de comando)"'),
+    ('["shfmt"]="✨ shfmt (A shell parser formatter and interpreter)"', '["shfmt"]="✨ shfmt (Formatador/parser e interpretador de shell script)"'),
+    ('["silicon"]="📸 silicon (Create beautiful image of your source code)"', '["silicon"]="📸 silicon (Gera imagens elegantes e personalizáveis de código-fonte)"'),
+    ('["skate"]="🔑 skate (A personal key-value store)"', '["skate"]="🔑 skate (Armazenamento pessoal estilo chave-valor na linha de comando)"'),
+    ('["skim"]="🔍 skim (Fuzzy Finder in Rust)"', '["skim"]="🔍 skim (Buscador aproximado rápido feito em Rust)"'),
+    ('["slumber"]="😴 Slumber (Terminal HTTP Client)"', '["slumber"]="😴 Slumber (Cliente de API HTTP baseado em terminal focado em usabilidade)"'),
+    ('["sniffnet"]="🕸️ sniffnet (Network traffic monitor)"', '["sniffnet"]="🕸️ sniffnet (Monitor de tráfego de rede multiplataforma para terminal)"'),
+    ('["so"]="🔍 so (StackOverflow in terminal)"', '["so"]="🔍 so (Busque e leia respostas do StackOverflow no terminal)"'),
+    ('["spt"]="🎵 spt (Spotify TUI)"', '["spt"]="🎵 spt (Interface de terminal completa para o Spotify)"'),
+    ('["sqlc"]="🗄️ sqlc (Generate type-safe code from SQL)"', '["sqlc"]="🗄️ sqlc (Compilador de código type-safe a partir de SQL)"'),
+    ('["steampipe"]="☁️ steampipe (Query cloud resources with SQL)"', '["steampipe"]="☁️ steampipe (Consulta e interage com infraestrutura na nuvem usando SQL)"'),
+    ('["stern"]="📋 stern (Multi pod and container log tailing for Kubernetes)"', '["stern"]="📋 stern (Tailing rápido de logs de múltiplos pods e contêineres no Kubernetes)"'),
+    ('["stripe"]="💳 Stripe CLI (Interact with Stripe API)"', '["stripe"]="💳 Stripe CLI (Interface de linha de comando para testar APIs da Stripe)"'),
+    ('["supabase"]="⚡ supabase (Supabase CLI)"', '["supabase"]="⚡ supabase (Ferramenta de linha de comando oficial do Supabase)"'),
+    ('["systemctl-tui"]="⚙️ systemctl-tui (A fast simple TUI for interacting with systemd services and their logs)"', '["systemctl-tui"]="⚙️ systemctl-tui (TUI simples e rápida para gerenciar serviços systemd)"'),
+    ('["systeroid"]="🧠 systeroid (A more powerful alternative to sysctl(8) with a terminal user interface)"', '["systeroid"]="🧠 systeroid (Alternativa moderna e mais poderosa ao sysctl com interface TUI)"'),
+    ('["sysz"]="⚙️ sysz (A fzf terminal UI for systemctl)"', '["sysz"]="⚙️ sysz (Interface fzf baseada no terminal para o systemctl)"'),
+    ('["t-rec"]="📼 t-rec (Blazing fast terminal recorder)"', '["t-rec"]="📼 t-rec (Gravador de terminal super rápido que gera GIFs)"'),
+    ('["tailspin"]="🪵 tailspin (Log Highlighter)"', '["tailspin"]="🪵 tailspin (Destaque e visualização elegante de logs via linha de comando)"'),
+    ('["task"]="✅ task (Modern Make alternative)"', '["task"]="✅ task (Alternativa moderna baseada em YAML ao comando Make)"'),
+    ('["taskwarrior-tui"]="✅ taskwarrior-tui (A TUI for Taskwarrior)"', '["taskwarrior-tui"]="✅ taskwarrior-tui (Interface de terminal amigável para o Taskwarrior)"'),
+    ('["tealdeer"]="🦌 Tealdeer (A very fast implementation of tldr in Rust)"', '["tealdeer"]="🦌 Tealdeer (Implementação super rápida em Rust do TLDR)"'),
+    ('["television"]="📺 television (Blazing fast fuzzy finder)"', '["television"]="📺 television (Buscador aproximado incrivelmente rápido via TUI)"'),
+    ('["tenki"]="⛅ tenki (Weather in terminal)"', '["tenki"]="⛅ tenki (Previsão do tempo bela e rápida exibida no terminal)"'),
+    ('["tenv"]="🌍 tenv (OpenTofu Terraform Terragrunt and Atmos version manager)"', '["tenv"]="🌍 tenv (Gerenciador de versão simplificado para ferramentas IaC)"'),
+    ('["tere"]="🚀 tere (Faster cd tree alternative)"', '["tere"]="🚀 tere (Alternativa mais rápida e minimalista para comandos cd e tree)"'),
+    ('["termdbms"]="🗄️ termdbms (A TUI for viewing and (eventually) editing database files)"', '["termdbms"]="🗄️ termdbms (Interface de terminal para visualizar dados de bancos relacionais)"'),
+    ('["termscp"]="📁 termscp (Terminal file transfer)"', '["termscp"]="📁 termscp (Explorador e cliente de transferência de arquivos de terminal)"'),
+    ('["termshark"]="🦈 termshark (A terminal UI for tshark inspired by Wireshark)"', '["termshark"]="🦈 termshark (Interface TUI inspirada no Wireshark para análise de pacotes)"'),
+    ('["termtyper"]="⌨️ termtyper (A typing test in your terminal)"', '["termtyper"]="⌨️ termtyper (Teste de digitação interativo e estético no terminal)"'),
+    ('["tfsec"]="🛡️ tfsec (Security scanner for your Terraform code)"', '["tfsec"]="🛡️ tfsec (Scanner de segurança estático para código Terraform)"'),
+    ('["tgpt"]="🤖 tgpt (Terminal ChatGPT)"', '["tgpt"]="🤖 tgpt (Cliente do ChatGPT integrado direto no terminal sem chaves de API)"'),
+    ('["tickrs"]="📈 tickrs (Real-time ticker data in terminal)"', '["tickrs"]="📈 tickrs (Visualização em tempo real de ações e dados de mercado via TUI)"'),
+    ('["tig"]="🚀 tig (Text-mode interface for Git)"', '["tig"]="🚀 tig (Interface elegante em modo texto focado em visualização de Git)"'),
+    ('["tilt"]="🛠️ tilt (A multi-service dev environment for teams on Kubernetes)"', '["tilt"]="🛠️ tilt (Ambiente de desenvolvimento unificado e automatizado para Kubernetes)"'),
+    ('["tin-summer"]="☀️ tin-summer (Find build artifacts that take up disk space)"', '["tin-summer"]="☀️ tin-summer (Buscador rápido de artefatos de build inúteis pesando no disco)"'),
+    ('["tldr"]="📚 tldr (Collaborative cheatsheets for console commands)"', '["tldr"]="📚 tldr (Cheatsheets colaborativas e simplificadas de comandos via console)"'),
+    ('["tlrc"]="📚 tlrc (Official tldr client)"', '["tlrc"]="📚 tlrc (Cliente oficial super rápido do tldr escrito em Rust)"'),
+    ('["tmate"]="🤝 tmate (Instant terminal sharing)"', '["tmate"]="🤝 tmate (Compartilhamento seguro e instantâneo de sessões de terminal via web)"'),
+    ('["tmux"]="🪟 tmux (Terminal multiplexer)"', '["tmux"]="🪟 tmux (Multiplexador de terminal poderoso e customizável)"'),
+    ('["tokei"]="⏰ Tokei (Code Statistics)"', '["tokei"]="⏰ Tokei (Utilitário que gera estatísticas detalhadas de código fonte incrivelmente rápido)"'),
+    ('["topgrade"]="🚀 topgrade (Upgrade Everything)"', '["topgrade"]="🚀 topgrade (Comando único para atualizar quase tudo em seu sistema)"'),
+    ('["trash-cli"]="🗑️ trash-cli (Safer rm)"', '["trash-cli"]="🗑️ trash-cli (Interface amigável para envio de arquivos à lixeira do sistema de forma segura)"'),
+    ('["tre"]="🌲 tre (Tree command improved)"', '["tre"]="🌲 tre (Comando alternativo de exibição em árvore altamente melhorado)"'),
+    ('["trippy"]="🗺️ trippy (Network Diagnostic)"', '["trippy"]="🗺️ trippy (Ferramenta poderosa para diagnosticar e visualizar conectividade de rede)"'),
+    ('["trivy"]="🛡️ trivy (Vulnerability Scanner)"', '["trivy"]="🛡️ trivy (Scanner integrado de vulnerabilidades cobrindo contêineres/código/e IaC)"'),
+    ('["trufflehog"]="🐷 trufflehog (Find and verify secrets)"', '["trufflehog"]="🐷 trufflehog (Utilitário rápido para escanear repositórios atrás de segredos expostos)"'),
+    ('["tt"]="⌨️ tt (A terminal based typing test)"', '["tt"]="⌨️ tt (Teste limpo e minimalista de digitação direto no terminal)"'),
+    ('["ttyd"]="🌐 ttyd (Share your terminal over the web)"', '["ttyd"]="🌐 ttyd (Transforma comandos CLI em aplicativos visuais de terminal hospedados na web)"'),
+    ('["ttyper"]="⌨️ ttyper (Terminal-based typing test)"', '["ttyper"]="⌨️ ttyper (Outro utilitário elegante de terminal para testes de velocidade de digitação)"'),
+    ('["turso"]="🗄️ turso (Turso CLI)"', '["turso"]="🗄️ turso (Cliente oficial para o banco de dados e plataforma Turso em edge)"'),
+    ('["typos"]="📝 typos (Source code spell checker)"', '["typos"]="📝 typos (Verificador ortográfico hiper-rápido para código fonte)"'),
+    ('["typos-cli"]="📝 typos-cli (Source code spell checker)"', '["typos-cli"]="📝 typos-cli (Cliente do corretor ortográfico Typos)"'),
+    ('["typst"]="📝 typst (Markup-based typesetting system)"', '["typst"]="📝 typst (Alternativa ao LaTeX mais simples usando formatação baseada em marcação)"'),
+    ('["ugit"]="⏪ ugit (Undo git commands)"', '["ugit"]="⏪ ugit (Utilitário CLI interativo desenhado para desfazer facilmente comandos Git executados)"'),
+    ('["ugrep"]="🔍 ugrep (Ultra fast grep with interactive query UI)"', '["ugrep"]="🔍 ugrep (Alternativa ultra rápida ao grep trazendo uma interface TUI interativa)"'),
+    ('["usql"]="🗄️ usql (Universal command-line interface for SQL databases)"', '["usql"]="🗄️ usql (Cliente de banco de dados universal para terminal)"'),
+    ('["vault"]="🔐 Vault (Manage Secrets and Protect Sensitive Data)"', '["vault"]="🔐 Vault (Gerenciamento seguro de segredos e infraestrutura de chave da HashiCorp)"'),
+    ('["vcluster"]="⎈ vcluster (Virtual Kubernetes Clusters)"', '["vcluster"]="⎈ vcluster (Cria clusters virtuais leves no topo de clusters Kubernetes normais)"'),
+    ('["vhs"]="📼 vhs (Terminal GIF Recorder)"', '["vhs"]="📼 vhs (Gravador configurável via texto de terminal gerando GIFs perfeitos)"'),
+    ('["viddy"]="⌚ viddy (Modern watch command)"', '["viddy"]="⌚ viddy (Versão moderna e aprimorada com controle de tempo do clássico utilitário watch)"'),
+    ('["viu"]="🖼️ viu (Simple terminal image viewer)"', '["viu"]="🖼️ viu (Visualizador super simples de imagens renderizadas no terminal em Rust)"'),
+    ('["vivid"]="🌈 vivid (Generator for LS_COLORS)"', '["vivid"]="🌈 vivid (Gerador que cria um esquema LS_COLORS moderno a partir de temas elegantes)"'),
+    ('["walk"]="🚶 walk (Terminal file manager)"', '["walk"]="🚶 walk (Navegador e gerenciador de arquivos rápido com navegação baseada em visualização prévia)"'),
+    ('["watchexec"]="👀 watchexec (Executes commands in response to file modifications)"', '["watchexec"]="👀 watchexec (Execute comandos de terminal e reinicie aplicativos ao salvar ou modificar arquivos)"'),
+    ('["websocat"]="🌐 websocat (Command-line client for WebSockets)"', '["websocat"]="🌐 websocat (Poderoso utilitário tipo netcat para websockets e proxies bidirecionais)"'),
+    ('["wiki-tui"]="📖 wiki-tui (Wikipedia TUI)"', '["wiki-tui"]="📖 wiki-tui (Visualizador de artigos do Wikipedia através de uma TUI rápida escrita em Rust)"'),
+    ('["wtf"]="🖥️ wtf (Personal information dashboard)"', '["wtf"]="🖥️ wtf (Painel modular e altamente personalizável para exibir informações no terminal)"'),
+    ('["wtfutil"]="🖥️ wtfutil (Personal information dashboard)"', '["wtfutil"]="🖥️ wtfutil (Painel modular e altamente personalizável para exibir informações no terminal)"'),
+    ('["wthrr"]="🌦️ wthrr (Weather crab)"', '["wthrr"]="🌦️ wthrr (Previsão do tempo estilosa gerada no terminal (apelidada de Weather Crab))"'),
+    ('["wthrr-the-weathercrab"]="🌦️ wthrr-the-weathercrab (Weather crab)"', '["wthrr-the-weathercrab"]="🌦️ wthrr-the-weathercrab (Previsão do tempo estilosa gerada no terminal)"'),
+    ('["xc"]="📝 xc (Markdown task runner)"', '["xc"]="📝 xc (Utilitário de linha de comando para executar tarefas criadas dentro de arquivos Markdown)"'),
+    ('["xcp"]="🚀 xcp (Extended cp)"', '["xcp"]="🚀 xcp (Uma alternativa ao clássico utilitário de cópia cp estendida e construída em Rust)"'),
+    ('["xplr"]="📁 xplr (TUI file explorer)"', '["xplr"]="📁 xplr (Um gerenciador e explorador de arquivos muito rápido que usa as teclas padrão estilo VIM)"'),
+    ('["yq"]="🔍 yq (Command-line YAML processor)"', '["yq"]="🔍 yq (Processador portátil de terminal do tipo jq focado no parsing de conteúdo YAML)"'),
+    ('["zenith"]="📈 zenith (System Monitor with Charts)"', '["zenith"]="📈 zenith (Monitor detalhado do uso de hardware no terminal usando gráficos em tempo real)"'),
+    ('["zrok"]="🔗 zrok (Open source ngrok alternative)"', '["zrok"]="🔗 zrok (Solução open source alternativa ao ngrok baseada no OpenZiti para tunelamento local)"')
 ]
 
 for old, new in replacements:
     content = content.replace(old, new)
 
+
+lines = content.splitlines()
 
 mods_in_dir = set()
 for mod in os.listdir('programas/'):
@@ -66,52 +312,40 @@ for mod in os.listdir('programas/'):
         mods_in_dir.add(mod)
 
 
-# Fix full profile
-match_full = re.search(r'full\)\n\s*DEFAULT_MODULES=\((.*?)\)', content)
-full_mods = match_full.group(1).split()
-for m in mods_in_dir:
-    if m not in full_mods:
-        full_mods.append(m)
-# Do NOT alphabetize! Keep the order!
-# Append to the end!
-content = content[:match_full.start(1)] + " ".join(full_mods) + content[match_full.end(1):]
+for i, line in enumerate(lines):
+    if line.strip() == "full)":
+        for j in range(i+1, len(lines)):
+            if lines[j].strip().startswith("DEFAULT_MODULES=("):
+                mods_str = lines[j].strip()[17:-1]
+                full_mods = mods_str.split()
+                for m in mods_in_dir:
+                    if m not in full_mods:
+                        full_mods.append(m)
+                lines[j] = "    DEFAULT_MODULES=(" + " ".join(full_mods) + ")"
+                break
 
+for i, line in enumerate(lines):
+    if line.strip() == "ai-dev)":
+        for j in range(i+1, len(lines)):
+            if lines[j].strip().startswith("DEFAULT_MODULES=("):
+                mods_str = lines[j].strip()[17:-1]
+                ai_mods = mods_str.split()
 
-# Fix ai-dev profile
-# The prompt memory says: 'Modern CLI replacements include: eza, bat, zoxide, ...'
-# 'ai-dev adds Ollama, Claude Code, Cursor, Zed, Warp, Zen Browser, LM Studio, Bruno, WezTerm, DBeaver, Windsurf, k9s-cli, posting, superfile, aider, plandex, open-interpreter, duckdb, harlequin, neofetch-alt, lazysql, gitingest, repomix, shell-gpt, atac, dsq, t-rec, cbonsai, pipes-sh, mprocs, aichat, fabric, k8sgpt, tgpt, jo, k6, television, code2prompt, jan, chatbox, inshellisense, podman, devpod, daytona, mods, llm, cline, gptme, bito, gorilla-cli, and marimo as standalone modules'
-# AND 'full includes all dev modules plus extra browser/productivity tools, and an expanded suite of 2026 CLI apps (like trippy, onefetch, grex, bandwhich, amber, tailspin, erdtree, dua, oxlint, difftastic, topgrade, pastel, numbat, dufs, jj, sesh, carapace, moar, vhs, gitleaks, xc, gdu, trash-cli, yt-dlp, glances, d2, pnpm, fnm, gping, kondo, presenterm, hexyl, csvlens, pomsky, bacon, wiki-tui, ast-grep, dive, gron, viddy, wtfutil, cointop, dasel, dust, navi, delta, websocat, ouch, zenith, git-cliff, typos, fend, joshuto, sniffnet, termscp, wthrr, miniserve, zizmor, inlyne, so, xcp, taplo, tlrc, typst, xsv, gh, act, task, croc, dbmate, ripgrep_all, kubens, doppler, infisical, stripe, awscli, vercel, pulumi, terragrunt, tflint, ttyd, argc, argocd, k3s, vault, bw, netlify, heroku, consul, nomad, packer, aider-chat, typos-cli, wthrr-the-weathercrab, bruno-cli, wtf, mlr, pls, devtoy, git-next, tmux, htop, cmatrix, vivid, hadolint, ugit, pgcli, mycli, litecli, tere, kubent, lazyvim, oh-my-posh, gptme, micro, nnn, tig, ncdu, kakoune, aqua, kcl, devspace, lazygit, lens, marimo, bito, gorilla-cli, ffuf, tmate, kaskade, boundary, waypoint, pixi, proto, rio, and lapce)'
-#
-# Since the user specifically asks to add more useful 2026 apps in ai-dev, let's just make sure all of the above that we can gleam from the prompt is added to ai-dev. However, the review says: "The agent completely overwrote the ai-dev profile's DEFAULT_MODULES array with the exact same string used for the full profile. This destroys the distinction between the environments and forces the installation of unwanted desktop applications (e.g., brave, discord, firefox) in the ai-dev setup."
-# So we need to only add CLI tools to ai-dev. We should explicitly NOT add desktop apps like brave, discord, firefox, android, obs-studio, slack, wezterm (wait, wezterm is already in ai-dev, so that's fine).
-# Let's collect the list of "extra browser/productivity tools" that shouldn't be in ai-dev: brave, discord, firefox, android, slack.
-# Is that all?
+                desktop_apps = {'brave', 'discord', 'firefox', 'android', 'slack'}
+                # Exclude desktop apps
+                ai_mods = [m for m in ai_mods if m not in desktop_apps]
 
-desktop_apps = {'brave', 'discord', 'firefox', 'android', 'slack'}
+                cli_tools = ['trippy', 'onefetch', 'grex', 'bandwhich', 'amber', 'tailspin', 'erdtree', 'dua', 'oxlint', 'difftastic', 'topgrade', 'pastel', 'numbat', 'dufs', 'jj', 'sesh', 'carapace', 'moar', 'vhs', 'gitleaks', 'xc', 'gdu', 'trash-cli', 'yt-dlp', 'glances', 'd2', 'poetry', 'pnpm', 'fnm', 'gping', 'kondo', 'presenterm', 'hexyl', 'csvlens', 'pomsky', 'bacon', 'wiki-tui', 'ast-grep', 'dive', 'gron', 'viddy', 'wtfutil', 'cointop', 'dasel', 'dust', 'navi', 'delta', 'websocat', 'ouch', 'zenith', 'git-cliff', 'typos', 'fend', 'joshuto', 'sniffnet', 'termscp', 'wthrr', 'miniserve', 'zizmor', 'inlyne', 'so', 'xcp', 'taplo', 'tlrc', 'typst', 'xsv', 'gh', 'act', 'task', 'croc', 'dbmate', 'ripgrep_all', 'kubens', 'doppler', 'infisical', 'stripe', 'awscli', 'vercel', 'pulumi', 'terragrunt', 'tflint', 'ttyd', 'argc', 'argocd', 'k3s', 'vault', 'bw', 'netlify', 'heroku', 'consul', 'nomad', 'packer', 'aider-chat', 'typos-cli', 'wthrr-the-weathercrab', 'bruno-cli', 'wtf', 'mlr', 'pls', 'devtoy', 'git-next', 'tmux', 'htop', 'cmatrix', 'vivid', 'hadolint', 'ugit', 'pgcli', 'mycli', 'litecli', 'tere', 'kubent', 'lazyvim', 'oh-my-posh', 'gptme', 'micro', 'nnn', 'tig', 'ncdu', 'kakoune', 'aqua', 'kcl', 'devspace', 'lazygit', 'lens', 'marimo', 'bito', 'gorilla-cli', 'ffuf', 'tmate', 'kaskade', 'boundary', 'waypoint', 'pixi', 'proto', 'rio', 'lapce']
 
-# Actually, the user says "add more usefull 2026 apps" and the review says "forces the installation of unwanted desktop applications (e.g., brave, discord, firefox) in the ai-dev setup."
-# Let's add everything except desktop apps to ai-dev. Or wait, maybe we should just add the ones explicitly mentioned for ai-dev?
-# The review said: "The agent completely overwrote the ai-dev profile's DEFAULT_MODULES array with the exact same string used for the full profile. This destroys the distinction between the environments and forces the installation of unwanted desktop applications (e.g., brave, discord, firefox) in the ai-dev setup."
-# So I should ONLY append missing CLI tools, avoiding those.
+                for m in cli_tools:
+                    if m not in ai_mods and m in mods_in_dir and m not in desktop_apps:
+                        ai_mods.append(m)
 
-# Let's extract the list of missing CLI tools from the memory and add them to ai-dev.
-# Memory lists:
-cli_tools = ['trippy', 'onefetch', 'grex', 'bandwhich', 'amber', 'tailspin', 'erdtree', 'dua', 'oxlint', 'difftastic', 'topgrade', 'pastel', 'numbat', 'dufs', 'jj', 'sesh', 'carapace', 'moar', 'vhs', 'gitleaks', 'xc', 'gdu', 'trash-cli', 'yt-dlp', 'glances', 'd2', 'poetry', 'pnpm', 'fnm', 'gping', 'kondo', 'presenterm', 'hexyl', 'csvlens', 'pomsky', 'bacon', 'wiki-tui', 'ast-grep', 'dive', 'gron', 'viddy', 'wtfutil', 'cointop', 'dasel', 'dust', 'navi', 'delta', 'websocat', 'ouch', 'zenith', 'git-cliff', 'typos', 'fend', 'joshuto', 'sniffnet', 'termscp', 'wthrr', 'miniserve', 'zizmor', 'inlyne', 'so', 'xcp', 'taplo', 'tlrc', 'typst', 'xsv', 'gh', 'act', 'task', 'croc', 'dbmate', 'ripgrep_all', 'kubens', 'doppler', 'infisical', 'stripe', 'awscli', 'vercel', 'pulumi', 'terragrunt', 'tflint', 'ttyd', 'argc', 'argocd', 'k3s', 'vault', 'bw', 'netlify', 'heroku', 'consul', 'nomad', 'packer', 'aider-chat', 'typos-cli', 'wthrr-the-weathercrab', 'bruno-cli', 'wtf', 'mlr', 'pls', 'devtoy', 'git-next', 'tmux', 'htop', 'cmatrix', 'vivid', 'hadolint', 'ugit', 'pgcli', 'mycli', 'litecli', 'tere', 'kubent', 'lazyvim', 'oh-my-posh', 'gptme', 'micro', 'nnn', 'tig', 'ncdu', 'kakoune', 'aqua', 'kcl', 'devspace', 'lazygit', 'lens', 'marimo', 'bito', 'gorilla-cli', 'ffuf', 'tmate', 'kaskade', 'boundary', 'waypoint', 'pixi', 'proto', 'rio', 'lapce']
+                if 'fastfetch' not in ai_mods and 'fastfetch' in mods_in_dir:
+                    ai_mods.append('fastfetch')
 
-match_ai_dev = re.search(r'ai-dev\)\n\s*DEFAULT_MODULES=\((.*?)\)', content)
-ai_dev_mods = match_ai_dev.group(1).split()
-
-for m in cli_tools:
-    if m not in ai_dev_mods and m in mods_in_dir and m not in desktop_apps:
-        ai_dev_mods.append(m)
-
-# Make sure fastfetch is in ai-dev as well if it's not
-if 'fastfetch' not in ai_dev_mods and 'fastfetch' in mods_in_dir:
-    ai_dev_mods.append('fastfetch')
-
-# Do NOT alphabetize! Keep the order!
-content = content[:match_ai_dev.start(1)] + " ".join(ai_dev_mods) + content[match_ai_dev.end(1):]
-
+                lines[j] = "    DEFAULT_MODULES=(" + " ".join(ai_mods) + ")"
+                break
 
 with open('setup-2026.sh', 'w') as f:
-    f.write(content)
+    f.write("\n".join(lines) + "\n")
