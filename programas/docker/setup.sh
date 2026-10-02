@@ -1,7 +1,7 @@
 #!/bin/bash
 c='\e[32m'
 r='\e[0m'
-echo -e "${c}Installing Docker Engine...${r}"
+printf "%b\n" "${c}Installing Docker Engine...${r}"
 # Add Docker's official GPG key:
 sudo apt-get update
 sudo apt-get install -y ca-certificates curl
@@ -17,4 +17,4 @@ echo \
 sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo usermod -aG docker $USER
-echo -e "${c}Docker Engine installed! Please log out and back in for group changes to take effect.${r}"
+printf "%b\n" "${c}Docker Engine installed! Please log out and back in for group changes to take effect.${r}"

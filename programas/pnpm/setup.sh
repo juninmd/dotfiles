@@ -11,4 +11,4 @@ else
     install_go_package() { go install "$1"; }
 fi
 
-echo -e "${c}Installing pnpm...${r}"\ncurl -fsSL https://get.pnpm.io/install.sh | sh -
+printf "%b\n" "${c}Installing pnpm...${r}"\ncurl -fsSL https://get.pnpm.io/install.sh | sh -

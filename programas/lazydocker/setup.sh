@@ -2,7 +2,7 @@
 c='\e[32m'
 r='tput sgr0'
 
-echo -e "${c}Installing LazyDocker...${r}"
+printf "%b\n" "${c}Installing LazyDocker...${r}"
 
 # Get latest release tag (e.g., v0.20.0)
 LAZYDOCKER_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazydocker/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
@@ -17,7 +17,7 @@ tar xf lazydocker.tar.gz lazydocker
 sudo install lazydocker /usr/local/bin
 rm lazydocker lazydocker.tar.gz
 
-echo -e "${c}Configuring LazyDocker...${r}"
+printf "%b\n" "${c}Configuring LazyDocker...${r}"
 CONFIG_DIR="$HOME/.config/lazydocker"
 mkdir -p "$CONFIG_DIR"
 
@@ -26,9 +26,9 @@ CONFIG_FILE="$SCRIPT_DIR/config.yml"
 
 if [ -f "$CONFIG_FILE" ]; then
     ln -sf "$CONFIG_FILE" "$CONFIG_DIR/config.yml"
-    echo -e "${c}LazyDocker config linked.${r}"
+    printf "%b\n" "${c}LazyDocker config linked.${r}"
 else
-    echo -e "${c}Warning: config.yml not found in $SCRIPT_DIR${r}"
+    printf "%b\n" "${c}Warning: config.yml not found in $SCRIPT_DIR${r}"
 fi
 
-echo -e "${c}LazyDocker installed and configured!${r}"
+printf "%b\n" "${c}LazyDocker installed and configured!${r}"

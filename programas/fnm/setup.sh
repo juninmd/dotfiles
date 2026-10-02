@@ -11,4 +11,4 @@ else
     install_go_package() { go install "$1"; }
 fi
 
-echo -e "${c}Installing fnm...${r}"\ncurl -fsSL https://fnm.vercel.app/install | bash
+printf "%b\n" "${c}Installing fnm...${r}"\ncurl -fsSL https://fnm.vercel.app/install | bash

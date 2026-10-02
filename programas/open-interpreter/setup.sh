@@ -5,7 +5,7 @@ r='\e[0m'
 
 # Open-Interpreter (Let language models run code on your computer)
 if ! command -v interpreter &> /dev/null; then
-    echo -e "${c}Installing open-interpreter...${r}"
+    printf "%b\n" "${c}Installing open-interpreter...${r}"
     if command -v uv &> /dev/null; then
         uv tool install open-interpreter
     elif command -v pipx &> /dev/null; then

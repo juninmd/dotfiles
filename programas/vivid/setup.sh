@@ -2,7 +2,7 @@
 set -euo pipefail
 c='\e[32m'
 r='\e[0m'
-echo -e "${c}Installing vivid...${r}"
+printf "%b\n" "${c}Installing vivid...${r}"
 
 SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
 if [ -f "$SCRIPT_DIR/../common/cargo_helper.sh" ]; then
@@ -13,4 +13,4 @@ else
     cargo install vivid
 fi
 
-echo -e "${c}vivid installed.${r}"
+printf "%b\n" "${c}vivid installed.${r}"

@@ -7,8 +7,8 @@ source "$SCRIPT_DIR/../common/cargo_helper.sh" 2>/dev/null || {
 }
 
 if ! command -v tere &> /dev/null; then
-    echo -e "${c}Installing tere...${r}"
+    printf "%b\n" "${c}Installing tere...${r}"
     install_cargo_crate tere
 else
-    echo -e "${c}tere is already installed.${r}"
+    printf "%b\n" "${c}tere is already installed.${r}"
 fi

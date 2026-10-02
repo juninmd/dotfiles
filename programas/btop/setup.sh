@@ -7,14 +7,14 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(dirname "$(dirname "$SCRIPT_DIR")")"
 
 if ! command -v btop &> /dev/null; then
-    echo -e "${c}Installing btop...${r}"
+    printf "%b\n" "${c}Installing btop...${r}"
     if apt-cache show btop &> /dev/null; then
         sudo apt install -y btop
     else
         sudo snap install btop
     fi
 else
-    echo -e "${c}btop already installed.${r}"
+    printf "%b\n" "${c}btop already installed.${r}"
 fi
 
 # Configure btop theme
@@ -42,8 +42,8 @@ if command -v btop &> /dev/null; then
                 echo "color_theme = \"$BTOP_THEMES_DIR/synthwave.theme\"" >> "$BTOP_CONF"
             fi
         fi
-        echo -e "${c}Applied synthwave theme for btop.${r}"
+        printf "%b\n" "${c}Applied synthwave theme for btop.${r}"
     else
-        echo -e "${c}Warning: synthwave.theme not found${r}"
+        printf "%b\n" "${c}Warning: synthwave.theme not found${r}"
     fi
 fi

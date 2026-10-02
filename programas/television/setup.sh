@@ -7,6 +7,6 @@ r="\e[0m"               # Reset
 
 source "$(dirname "$0")/../common/cargo_helper.sh"
 
-echo -e "${c}Installing television (Blazing fast fuzzy finder)...${r}"
+printf "%b\n" "${c}Installing television (Blazing fast fuzzy finder)...${r}"
 
 install_cargo_crate television tv

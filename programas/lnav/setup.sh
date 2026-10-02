@@ -3,8 +3,8 @@ c='\e[32m'
 r='\e[0m'
 # Lnav (Log Navigator)
 if ! command -v lnav &> /dev/null; then
-    echo -e "${c}Installing lnav...${r}"
+    printf "%b\n" "${c}Installing lnav...${r}"
     sudo apt install -y lnav
 else
-    echo -e "${c}lnav already installed.${r}"
+    printf "%b\n" "${c}lnav already installed.${r}"
 fi

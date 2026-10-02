@@ -2,7 +2,7 @@
 c='\e[32m' # Green Color
 r='\e[0m' # Reset Color
 
-echo -e "${c}Installing kdash (Kubernetes Dashboard)...${r}"
+printf "%b\n" "${c}Installing kdash (Kubernetes Dashboard)...${r}"
 
 SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
 if [ -f "$SCRIPT_DIR/../common/cargo_helper.sh" ]; then
@@ -17,5 +17,5 @@ fi
 if ! command -v kdash &> /dev/null; then
     install_cargo_crate kdash
 else
-    echo -e "${c}kdash is already installed.${r}"
+    printf "%b\n" "${c}kdash is already installed.${r}"
 fi

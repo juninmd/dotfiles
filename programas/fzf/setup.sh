@@ -5,8 +5,8 @@ c='\e[32m'
 r='\e[0m'
 
 if ! command -v fzf &> /dev/null; then
-    echo -e "${c}Installing fzf...${r}"
+    printf "%b\n" "${c}Installing fzf...${r}"
     sudo apt install -y fzf
 else
-    echo -e "${c}fzf already installed.${r}"
+    printf "%b\n" "${c}fzf already installed.${r}"
 fi
