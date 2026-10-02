@@ -1,4 +1,4 @@
-# 🗺️ ROADMAP.md - Dotfiles Evolution
+# Roadmap
 
 ## 🏁 Phase 1: Core Foundation ✅
 - [x] Initial scaffolding and repository setup.

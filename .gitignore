@@ -1,2 +1,7 @@
 *.log
 .DS_Store
+installer/dist/
+node_modules/
+docs/.vitepress/cache/
+docs/.vitepress/dist/
+.playwright-mcp/
