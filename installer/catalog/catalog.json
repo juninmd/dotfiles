@@ -1,0 +1,7342 @@
+{
+ "profiles": {
+  "minimal": {
+   "name": "Minimal",
+   "desc": "Shell moderna, prompt e editor",
+   "modules": [
+    "git",
+    "bat",
+    "ripgrep",
+    "starship",
+    "vscode"
+   ]
+  },
+  "dev": {
+   "name": "Dev",
+   "desc": "Minimal + runtimes, containers e produtividade",
+   "modules": [
+    "git",
+    "bat",
+    "ripgrep",
+    "starship",
+    "vscode",
+    "fzf",
+    "lazygit",
+    "bun",
+    "docker"
+   ]
+  },
+  "ai-dev": {
+   "name": "AI Dev",
+   "desc": "Dev + ferramentas de IA",
+   "modules": [
+    "git",
+    "bat",
+    "ripgrep",
+    "starship",
+    "vscode",
+    "bun",
+    "claude-code",
+    "ollama"
+   ]
+  }
+ },
+ "modules": [
+  {
+   "id": "git",
+   "name": "Git",
+   "desc": "Controle de versão",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "apt",
+     "ref": "git"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "git"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Git.Git"
+    }
+   }
+  },
+  {
+   "id": "act",
+   "name": "act",
+   "desc": "Run your GitHub Actions locally",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/act/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "act"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "nektos.act"
+    }
+   }
+  },
+  {
+   "id": "actionlint",
+   "name": "actionlint",
+   "desc": "Static checker for GitHub Actions workflow files",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/actionlint/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "actionlint"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "rhysd.actionlint"
+    }
+   }
+  },
+  {
+   "id": "age",
+   "name": "age",
+   "desc": "Simple, modern, secure file encryption",
+   "category": "security",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/age/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "age"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "FiloSottile.age"
+    }
+   }
+  },
+  {
+   "id": "aichat",
+   "name": "aichat",
+   "desc": "All-in-one AI-Powered CLI Chat & Copilot",
+   "category": "ai",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/aichat/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "aichat"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "sigoden.AIChat"
+    }
+   }
+  },
+  {
+   "id": "aider",
+   "name": "aider",
+   "desc": "AI pair programming in your terminal",
+   "category": "ai",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/aider/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "aider"
+    }
+   }
+  },
+  {
+   "id": "aider-chat",
+   "name": "aider-chat",
+   "desc": "aider-chat",
+   "category": "ai",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/aider-chat/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "amber",
+   "name": "amber",
+   "desc": "Crystal web framework. Bare metal performance, productivity and happiness",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/amber/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "amber"
+    }
+   }
+  },
+  {
+   "id": "android",
+   "name": "android",
+   "desc": "android",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/android/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "aqua",
+   "name": "aqua",
+   "desc": "Declarative CLI Version manager",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/aqua/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "aqua"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "aquaproj.aqua"
+    }
+   }
+  },
+  {
+   "id": "argc",
+   "name": "argc",
+   "desc": "Easily create and use cli based on bash script",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/argc/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "argc"
+    }
+   }
+  },
+  {
+   "id": "argocd",
+   "name": "argocd",
+   "desc": "GitOps Continuous Delivery for Kubernetes",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/argocd/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "argocd"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "argoproj.argocd"
+    }
+   }
+  },
+  {
+   "id": "ast-grep",
+   "name": "ast-grep",
+   "desc": "Code searching, linting, rewriting",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/ast-grep/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "ast-grep"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "ast-grep.ast-grep"
+    }
+   }
+  },
+  {
+   "id": "atac",
+   "name": "atac",
+   "desc": "Simple API client (Postman-like) in your terminal",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/atac/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "atac"
+    }
+   }
+  },
+  {
+   "id": "atlas",
+   "name": "atlas",
+   "desc": "Database toolkit",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/atlas/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "atlas"
+    }
+   }
+  },
+  {
+   "id": "atuin",
+   "name": "atuin",
+   "desc": "Improved shell history for zsh, bash, fish and nushell",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/atuin/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "atuin"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Atuinsh.Atuin"
+    }
+   }
+  },
+  {
+   "id": "awscli",
+   "name": "awscli",
+   "desc": "Official Amazon AWS command-line interface",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/awscli/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "awscli"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Amazon.AWSCLI"
+    }
+   }
+  },
+  {
+   "id": "bacon",
+   "name": "bacon",
+   "desc": "Background rust code check",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/bacon/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "bacon"
+    }
+   }
+  },
+  {
+   "id": "bandwhich",
+   "name": "bandwhich",
+   "desc": "Terminal bandwidth utilization tool",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/bandwhich/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "bandwhich"
+    }
+   }
+  },
+  {
+   "id": "bat",
+   "name": "bat",
+   "desc": "cat com syntax highlight",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/bat/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "bat"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "sharkdp.bat"
+    }
+   }
+  },
+  {
+   "id": "bat-extras",
+   "name": "bat-extras",
+   "desc": "Bash scripts that integrate bat with various command-line tools",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/bat-extras/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "bat-extras"
+    }
+   }
+  },
+  {
+   "id": "binsider",
+   "name": "binsider",
+   "desc": "Analyzes ELF binaries",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/binsider/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "binsider"
+    }
+   }
+  },
+  {
+   "id": "biome",
+   "name": "biome",
+   "desc": "Toolchain of the web",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/biome/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "biome"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "BiomeJS.Biome"
+    }
+   }
+  },
+  {
+   "id": "bito",
+   "name": "bito",
+   "desc": "bito",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/bito/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "bluetuith",
+   "name": "bluetuith",
+   "desc": "Cross-platform TUI bluetooth manager",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/bluetuith/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "bluetuith"
+    }
+   }
+  },
+  {
+   "id": "bore-cli",
+   "name": "bore-cli",
+   "desc": "Modern, simple TCP tunnel in Rust that exposes local ports to a remote server",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/bore-cli/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "bore-cli"
+    }
+   }
+  },
+  {
+   "id": "bottom",
+   "name": "bottom",
+   "desc": "Yet another cross-platform graphical process/system monitor",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/bottom/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "bottom"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Clement.bottom"
+    }
+   }
+  },
+  {
+   "id": "boundary",
+   "name": "boundary",
+   "desc": "boundary",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/boundary/setup.sh"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Hashicorp.Boundary"
+    }
+   }
+  },
+  {
+   "id": "brave",
+   "name": "brave",
+   "desc": "brave",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/brave/setup.sh"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Brave.Brave"
+    }
+   }
+  },
+  {
+   "id": "broot",
+   "name": "broot",
+   "desc": "New way to see and navigate directory trees",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/broot/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "broot"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Dystroy.broot"
+    }
+   }
+  },
+  {
+   "id": "bruno",
+   "name": "bruno",
+   "desc": "Open source IDE for exploring and testing APIs",
+   "category": "editor",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/bruno/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "bruno"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Bruno.Bruno"
+    }
+   }
+  },
+  {
+   "id": "bruno-cli",
+   "name": "bruno-cli",
+   "desc": "CLI of the open-source IDE For exploring and testing APIs",
+   "category": "editor",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/bruno-cli/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "bruno-cli"
+    }
+   }
+  },
+  {
+   "id": "btop",
+   "name": "btop",
+   "desc": "Resource monitor. C++ version and continuation of bashtop and bpytop",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/btop/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "btop"
+    }
+   }
+  },
+  {
+   "id": "bun",
+   "name": "Bun",
+   "desc": "Runtime JS/TS",
+   "category": "runtime",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/bun/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "bun"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Oven-sh.Bun"
+    }
+   }
+  },
+  {
+   "id": "bw",
+   "name": "bw",
+   "desc": "bw",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/bw/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "carapace",
+   "name": "carapace",
+   "desc": "Multi-shell multi-command argument completer",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/carapace/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "carapace"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "rsteube.Carapace"
+    }
+   }
+  },
+  {
+   "id": "cbonsai",
+   "name": "cbonsai",
+   "desc": "Console Bonsai is a bonsai tree generator, written in C using ncurses",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/cbonsai/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "cbonsai"
+    }
+   }
+  },
+  {
+   "id": "chafa",
+   "name": "chafa",
+   "desc": "Versatile and fast Unicode/ASCII/ANSI graphics renderer",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/chafa/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "chafa"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "hpjansson.Chafa"
+    }
+   }
+  },
+  {
+   "id": "charm",
+   "name": "charm",
+   "desc": "Tool for managing Juju Charms",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/charm/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "charm"
+    }
+   }
+  },
+  {
+   "id": "chatbox",
+   "name": "chatbox",
+   "desc": "Desktop app for GPT-4 / GPT-3.5 (OpenAI API)",
+   "category": "ai",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/chatbox/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "chatbox"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Bin-Huang.Chatbox"
+    }
+   }
+  },
+  {
+   "id": "chatgpt-cli",
+   "name": "chatgpt-cli",
+   "desc": "chatgpt-cli",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/chatgpt-cli/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "cheat",
+   "name": "cheat",
+   "desc": "Create and view interactive cheat sheets for *nix commands",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/cheat/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "cheat"
+    }
+   }
+  },
+  {
+   "id": "checkov",
+   "name": "checkov",
+   "desc": "Prevent cloud misconfigurations during build-time for IaC tools",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/checkov/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "checkov"
+    }
+   }
+  },
+  {
+   "id": "choose",
+   "name": "choose",
+   "desc": "choose",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/choose/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "circumflex",
+   "name": "circumflex",
+   "desc": "Hacker News in your terminal",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/circumflex/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "circumflex"
+    }
+   }
+  },
+  {
+   "id": "claude-code",
+   "name": "Claude Code",
+   "desc": "Agente de código",
+   "category": "ai",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/claude-code/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "claude-code"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Anthropic.ClaudeCode"
+    }
+   }
+  },
+  {
+   "id": "cli-tools",
+   "name": "cli-tools",
+   "desc": "cli-tools",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/cli-tools/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "cline",
+   "name": "cline",
+   "desc": "AI-powered coding agent for complex work",
+   "category": "ai",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/cline/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "cline"
+    }
+   }
+  },
+  {
+   "id": "cloudflared",
+   "name": "cloudflared",
+   "desc": "Cloudflare Tunnel client (formerly Argo Tunnel)",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/cloudflared/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "cloudflared"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Cloudflare.cloudflared"
+    }
+   }
+  },
+  {
+   "id": "cmatrix",
+   "name": "cmatrix",
+   "desc": "Console Matrix",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/cmatrix/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "cmatrix"
+    }
+   }
+  },
+  {
+   "id": "cocogitto",
+   "name": "cocogitto",
+   "desc": "Conventional Commits toolbox",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/cocogitto/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "cocogitto"
+    }
+   }
+  },
+  {
+   "id": "code2prompt",
+   "name": "code2prompt",
+   "desc": "CLI tool to convert your codebase into a single LLM prompt",
+   "category": "ai",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/code2prompt/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "code2prompt"
+    }
+   }
+  },
+  {
+   "id": "cointop",
+   "name": "cointop",
+   "desc": "cointop",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/cointop/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "consul",
+   "name": "consul",
+   "desc": "Tool for service discovery, monitoring and configuration",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/consul/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "consul"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Hashicorp.Consul"
+    }
+   }
+  },
+  {
+   "id": "cpufetch",
+   "name": "cpufetch",
+   "desc": "CPU architecture fetching tool",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/cpufetch/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "cpufetch"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Dr-Noob.cpufetch"
+    }
+   }
+  },
+  {
+   "id": "crane",
+   "name": "crane",
+   "desc": "Tool for interacting with remote images and registries",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/crane/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "crane"
+    }
+   }
+  },
+  {
+   "id": "croc",
+   "name": "croc",
+   "desc": "Securely send things from one computer to another",
+   "category": "security",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/croc/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "croc"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "schollz.croc"
+    }
+   }
+  },
+  {
+   "id": "csvlens",
+   "name": "csvlens",
+   "desc": "Command-line csv viewer",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/csvlens/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "csvlens"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "YS-L.csvlens"
+    }
+   }
+  },
+  {
+   "id": "ctop",
+   "name": "ctop",
+   "desc": "Top-like interface for container metrics",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/ctop/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "ctop"
+    }
+   }
+  },
+  {
+   "id": "curlie",
+   "name": "curlie",
+   "desc": "Power of curl, ease of use of httpie",
+   "category": "network",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/curlie/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "curlie"
+    }
+   }
+  },
+  {
+   "id": "cursor",
+   "name": "cursor",
+   "desc": "Write, edit, and chat about your code with AI",
+   "category": "ai",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/cursor/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "cursor"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Anysphere.Cursor"
+    }
+   }
+  },
+  {
+   "id": "czg",
+   "name": "czg",
+   "desc": "Interactive Commitizen CLI that generate standardized commit messages",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/czg/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "czg"
+    }
+   }
+  },
+  {
+   "id": "d2",
+   "name": "d2",
+   "desc": "Modern diagram scripting language that turns text to diagrams",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/d2/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "d2"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Terrastruct.D2"
+    }
+   }
+  },
+  {
+   "id": "dagger",
+   "name": "dagger",
+   "desc": "Portable devkit for CI/CD pipelines",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/dagger/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "dagger"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Dagger.Cli"
+    }
+   }
+  },
+  {
+   "id": "dapr",
+   "name": "dapr",
+   "desc": "dapr",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/dapr/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "dasel",
+   "name": "dasel",
+   "desc": "JSON, YAML, TOML, XML, and CSV query and modification tool",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/dasel/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "dasel"
+    }
+   }
+  },
+  {
+   "id": "daytona",
+   "name": "daytona",
+   "desc": "daytona",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/daytona/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "dbeaver",
+   "name": "dbeaver",
+   "desc": "dbeaver",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/dbeaver/setup.sh"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "DBeaver.DBeaver.Community"
+    }
+   }
+  },
+  {
+   "id": "dbmate",
+   "name": "dbmate",
+   "desc": "Lightweight, framework-agnostic database migration tool",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/dbmate/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "dbmate"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "amacneil.dbmate"
+    }
+   }
+  },
+  {
+   "id": "delta",
+   "name": "delta",
+   "desc": "Syntax-highlighting pager for git and diff output",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/delta/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "delta"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "dandavison.delta"
+    }
+   }
+  },
+  {
+   "id": "deno",
+   "name": "deno",
+   "desc": "Secure runtime for JavaScript and TypeScript",
+   "category": "security",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/deno/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "deno"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "DenoLand.Deno"
+    }
+   }
+  },
+  {
+   "id": "devbox",
+   "name": "devbox",
+   "desc": "devbox",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/devbox/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "devenv",
+   "name": "devenv",
+   "desc": "devenv",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/devenv/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "devpod",
+   "name": "devpod",
+   "desc": "UI to create reproducible developer environments based on a devcontainer.json",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/devpod/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "devpod"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "LoftLabs.DevPod"
+    }
+   }
+  },
+  {
+   "id": "devspace",
+   "name": "devspace",
+   "desc": "CLI helps develop/deploy/debug apps with Docker and k8s",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/devspace/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "devspace"
+    }
+   }
+  },
+  {
+   "id": "devtoy",
+   "name": "devtoy",
+   "desc": "devtoy",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/devtoy/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "difftastic",
+   "name": "difftastic",
+   "desc": "Diff that understands syntax",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/difftastic/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "difftastic"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Wilfred.difftastic"
+    }
+   }
+  },
+  {
+   "id": "direnv",
+   "name": "direnv",
+   "desc": "Load/unload environment variables based on $PWD",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/direnv/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "direnv"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "direnv.direnv"
+    }
+   }
+  },
+  {
+   "id": "discord",
+   "name": "discord",
+   "desc": "Voice and text chat software",
+   "category": "ai",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/discord/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "discord"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Discord.Discord"
+    }
+   }
+  },
+  {
+   "id": "diskonaut",
+   "name": "diskonaut",
+   "desc": "Terminal visual disk space navigator",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/diskonaut/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "diskonaut"
+    }
+   }
+  },
+  {
+   "id": "distrobox",
+   "name": "distrobox",
+   "desc": "Use any Linux distribution inside your terminal",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/distrobox/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "distrobox"
+    }
+   }
+  },
+  {
+   "id": "dive",
+   "name": "dive",
+   "desc": "Tool for exploring each layer in a docker image",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/dive/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "dive"
+    }
+   }
+  },
+  {
+   "id": "dnote",
+   "name": "dnote",
+   "desc": "Simple command-line notebook",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/dnote/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "dnote"
+    }
+   }
+  },
+  {
+   "id": "docker",
+   "name": "Docker",
+   "desc": "Containers",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/docker/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "docker-desktop"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Docker.DockerDesktop"
+    }
+   }
+  },
+  {
+   "id": "doggo",
+   "name": "doggo",
+   "desc": "Command-line DNS Client for Humans",
+   "category": "network",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/doggo/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "doggo"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "MrKaran.Doggo"
+    }
+   }
+  },
+  {
+   "id": "dolt",
+   "name": "dolt",
+   "desc": "Git for Data",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/dolt/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "dolt"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "DoltHub.Dolt"
+    }
+   }
+  },
+  {
+   "id": "doppler",
+   "name": "doppler",
+   "desc": "CLI for interacting with Doppler secrets and configuration",
+   "category": "security",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/doppler/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "doppler"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Doppler.doppler"
+    }
+   }
+  },
+  {
+   "id": "dotenv-linter",
+   "name": "dotenv-linter",
+   "desc": "Lightning-fast linter for .env files written in Rust",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/dotenv-linter/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "dotenv-linter"
+    }
+   }
+  },
+  {
+   "id": "dotenvx",
+   "name": "dotenvx",
+   "desc": "dotenvx",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/dotenvx/setup.sh"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "dotenvx.dotenvx"
+    }
+   }
+  },
+  {
+   "id": "dprint",
+   "name": "dprint",
+   "desc": "Pluggable and configurable code formatting platform written in Rust",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/dprint/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "dprint"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "dprint.dprint"
+    }
+   }
+  },
+  {
+   "id": "dsq",
+   "name": "dsq",
+   "desc": "CLI tool for running SQL queries against JSON, CSV, Excel, Parquet, and more",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/dsq/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "dsq"
+    }
+   }
+  },
+  {
+   "id": "dua",
+   "name": "dua",
+   "desc": "dua",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/dua/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "dua-cli",
+   "name": "dua-cli",
+   "desc": "View disk space usage and delete unwanted data, fast",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/dua-cli/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "dua-cli"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Byron.dua-cli"
+    }
+   }
+  },
+  {
+   "id": "duckdb",
+   "name": "duckdb",
+   "desc": "Embeddable SQL OLAP Database Management System",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/duckdb/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "duckdb"
+    }
+   }
+  },
+  {
+   "id": "duf",
+   "name": "duf",
+   "desc": "Disk Usage/Free Utility - a better 'df' alternative",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/duf/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "duf"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "muesli.duf"
+    }
+   }
+  },
+  {
+   "id": "dufs",
+   "name": "dufs",
+   "desc": "Static file server",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/dufs/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "dufs"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "sigoden.Dufs"
+    }
+   }
+  },
+  {
+   "id": "dura",
+   "name": "dura",
+   "desc": "Backs up your work automatically via Git commits",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/dura/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "dura"
+    }
+   }
+  },
+  {
+   "id": "dust",
+   "name": "dust",
+   "desc": "More intuitive version of du in rust",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/dust/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "dust"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "bootandy.dust"
+    }
+   }
+  },
+  {
+   "id": "dysk",
+   "name": "dysk",
+   "desc": "Linux utility to get information on filesystems, like df but better",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/dysk/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "dysk"
+    }
+   }
+  },
+  {
+   "id": "earthly",
+   "name": "earthly",
+   "desc": "Build automation tool for the container era",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/earthly/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "earthly"
+    }
+   }
+  },
+  {
+   "id": "eget",
+   "name": "eget",
+   "desc": "Easily install prebuilt binaries from GitHub",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/eget/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "eget"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "ZacharyYedidia.Eget"
+    }
+   }
+  },
+  {
+   "id": "elixir",
+   "name": "elixir",
+   "desc": "Functional metaprogramming aware language built on Erlang VM",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/elixir/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "elixir"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Elixir.Elixir"
+    }
+   }
+  },
+  {
+   "id": "erdtree",
+   "name": "erdtree",
+   "desc": "Multi-threaded file-tree visualizer and disk usage analyzer",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/erdtree/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "erdtree"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Solidiquis.Erdtree"
+    }
+   }
+  },
+  {
+   "id": "evans",
+   "name": "evans",
+   "desc": "More expressive universal gRPC client",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/evans/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "evans"
+    }
+   }
+  },
+  {
+   "id": "eza",
+   "name": "eza",
+   "desc": "Modern, maintained replacement for ls",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/eza/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "eza"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "eza-community.eza"
+    }
+   }
+  },
+  {
+   "id": "fabric",
+   "name": "fabric",
+   "desc": "Library and command-line tool for SSH",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/fabric/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "fabric"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "danielmiessler.Fabric"
+    }
+   }
+  },
+  {
+   "id": "fastfetch",
+   "name": "fastfetch",
+   "desc": "Like neofetch, but much faster because written mostly in C",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/fastfetch/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "fastfetch"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Fastfetch-cli.Fastfetch"
+    }
+   }
+  },
+  {
+   "id": "fd-find",
+   "name": "fd-find",
+   "desc": "fd-find",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/fd-find/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "fend",
+   "name": "fend",
+   "desc": "Arbitrary-precision unit-aware calculator",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/fend/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "fend"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "printfn.fend"
+    }
+   }
+  },
+  {
+   "id": "ffuf",
+   "name": "ffuf",
+   "desc": "Fast web fuzzer written in Go",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/ffuf/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "ffuf"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "ffuf.ffuf"
+    }
+   }
+  },
+  {
+   "id": "firefox",
+   "name": "firefox",
+   "desc": "Web browser",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/firefox/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "firefox"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Mozilla.Firefox"
+    }
+   }
+  },
+  {
+   "id": "flox",
+   "name": "flox",
+   "desc": "Manages environments across the software lifecycle",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/flox/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "flox"
+    }
+   }
+  },
+  {
+   "id": "flyctl",
+   "name": "flyctl",
+   "desc": "Command-line tools for fly.io services",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/flyctl/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "flyctl"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Fly-io.flyctl"
+    }
+   }
+  },
+  {
+   "id": "fnm",
+   "name": "fnm",
+   "desc": "Fast and simple Node.js version manager",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/fnm/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "fnm"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Schniz.fnm"
+    }
+   }
+  },
+  {
+   "id": "fq",
+   "name": "fq",
+   "desc": "fq",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/fq/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "freeze",
+   "name": "freeze",
+   "desc": "Amazon Glacier file transfer client",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/freeze/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "freeze"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "charmbracelet.freeze"
+    }
+   }
+  },
+  {
+   "id": "fx",
+   "name": "fx",
+   "desc": "Terminal JSON viewer",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/fx/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "fx"
+    }
+   }
+  },
+  {
+   "id": "fzf",
+   "name": "fzf",
+   "desc": "fuzzy finder",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "apt",
+     "ref": "fzf"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "fzf"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "junegunn.fzf"
+    }
+   }
+  },
+  {
+   "id": "gaze",
+   "name": "gaze",
+   "desc": "Execute commands for you",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/gaze/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "gaze"
+    }
+   }
+  },
+  {
+   "id": "gcloud",
+   "name": "gcloud",
+   "desc": "gcloud",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/gcloud/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "gdu",
+   "name": "gdu",
+   "desc": "Disk usage analyzer with console interface written in Go",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/gdu/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "gdu"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "dundee.gdu"
+    }
+   }
+  },
+  {
+   "id": "genact",
+   "name": "genact",
+   "desc": "Nonsense activity generator",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/genact/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "genact"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "svenstaro.genact"
+    }
+   }
+  },
+  {
+   "id": "gh",
+   "name": "gh",
+   "desc": "GitHub command-line tool",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/gh/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "gh"
+    }
+   }
+  },
+  {
+   "id": "gh-dash",
+   "name": "gh-dash",
+   "desc": "gh-dash",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/gh-dash/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "ghostty",
+   "name": "ghostty",
+   "desc": "Terminal emulator that uses platform-native UI and GPU acceleration",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/ghostty/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "ghostty"
+    }
+   }
+  },
+  {
+   "id": "ghq",
+   "name": "ghq",
+   "desc": "Remote repository management made easy",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/ghq/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "ghq"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "x-motemen.ghq"
+    }
+   }
+  },
+  {
+   "id": "git-absorb",
+   "name": "git-absorb",
+   "desc": "Automatic git commit --fixup",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/git-absorb/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "git-absorb"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "tummychow.git-absorb"
+    }
+   }
+  },
+  {
+   "id": "git-cliff",
+   "name": "git-cliff",
+   "desc": "Highly customizable changelog generator",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/git-cliff/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "git-cliff"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "orhun.git-cliff"
+    }
+   }
+  },
+  {
+   "id": "git-filter-repo",
+   "name": "git-filter-repo",
+   "desc": "Quickly rewrite git repository history",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/git-filter-repo/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "git-filter-repo"
+    }
+   }
+  },
+  {
+   "id": "git-next",
+   "name": "git-next",
+   "desc": "git-next",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/git-next/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "git-sim",
+   "name": "git-sim",
+   "desc": "git-sim",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/git-sim/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "git-town",
+   "name": "git-town",
+   "desc": "High-level command-line interface for Git",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/git-town/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "git-town"
+    }
+   }
+  },
+  {
+   "id": "gitingest",
+   "name": "gitingest",
+   "desc": "Turn any Git repository into a prompt-friendly text ingest for LLMs",
+   "category": "ai",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/gitingest/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "gitingest"
+    }
+   }
+  },
+  {
+   "id": "gitleaks",
+   "name": "gitleaks",
+   "desc": "Audit git repos for secrets",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/gitleaks/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "gitleaks"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Gitleaks.Gitleaks"
+    }
+   }
+  },
+  {
+   "id": "gitui",
+   "name": "gitui",
+   "desc": "Blazing fast terminal-ui for git written in rust",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/gitui/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "gitui"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "StephanDilly.gitui"
+    }
+   }
+  },
+  {
+   "id": "glab",
+   "name": "glab",
+   "desc": "Open-source GitLab command-line tool",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/glab/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "glab"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "GLab.GLab"
+    }
+   }
+  },
+  {
+   "id": "glances",
+   "name": "glances",
+   "desc": "Alternative to top/htop",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/glances/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "glances"
+    }
+   }
+  },
+  {
+   "id": "gleam",
+   "name": "gleam",
+   "desc": "Statically typed language for the Erlang VM",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/gleam/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "gleam"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Gleam.Gleam"
+    }
+   }
+  },
+  {
+   "id": "glow",
+   "name": "glow",
+   "desc": "Render markdown on the CLI",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/glow/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "glow"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "charmbracelet.glow"
+    }
+   }
+  },
+  {
+   "id": "gobang",
+   "name": "gobang",
+   "desc": "gobang",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/gobang/setup.sh"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "TaKO8Ki.gobang"
+    }
+   }
+  },
+  {
+   "id": "gojq",
+   "name": "gojq",
+   "desc": "Pure Go implementation of jq",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/gojq/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "gojq"
+    }
+   }
+  },
+  {
+   "id": "gorilla-cli",
+   "name": "gorilla-cli",
+   "desc": "LLMs for your CLI",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/gorilla-cli/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "gorilla-cli"
+    }
+   }
+  },
+  {
+   "id": "gping",
+   "name": "gping",
+   "desc": "Ping, but with a graph",
+   "category": "network",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/gping/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "gping"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "orf.gping"
+    }
+   }
+  },
+  {
+   "id": "gptme",
+   "name": "gptme",
+   "desc": "AI assistant in your terminal",
+   "category": "ai",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/gptme/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "gptme"
+    }
+   }
+  },
+  {
+   "id": "grex",
+   "name": "grex",
+   "desc": "Command-line tool for generating regular expressions",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/grex/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "grex"
+    }
+   }
+  },
+  {
+   "id": "gron",
+   "name": "gron",
+   "desc": "Make JSON greppable",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/gron/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "gron"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "TomHudson.gron"
+    }
+   }
+  },
+  {
+   "id": "grpcurl",
+   "name": "grpcurl",
+   "desc": "Like cURL, but for gRPC",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/grpcurl/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "grpcurl"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "fullstorydev.grpcurl"
+    }
+   }
+  },
+  {
+   "id": "grype",
+   "name": "grype",
+   "desc": "Vulnerability scanner for container images and filesystems",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/grype/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "grype"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Anchore.Grype"
+    }
+   }
+  },
+  {
+   "id": "gtt",
+   "name": "gtt",
+   "desc": "gtt",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/gtt/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "gum",
+   "name": "gum",
+   "desc": "Tool for glamorous shell scripts",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/gum/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "gum"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "charmbracelet.gum"
+    }
+   }
+  },
+  {
+   "id": "hadolint",
+   "name": "hadolint",
+   "desc": "Smarter Dockerfile linter to validate best practices",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/hadolint/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "hadolint"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "hadolint.hadolint"
+    }
+   }
+  },
+  {
+   "id": "harlequin",
+   "name": "harlequin",
+   "desc": "Easy, fast, and beautiful database client for the terminal",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/harlequin/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "harlequin"
+    }
+   }
+  },
+  {
+   "id": "hck",
+   "name": "hck",
+   "desc": "Sharp cut(1) clone",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/hck/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "hck"
+    }
+   }
+  },
+  {
+   "id": "helix",
+   "name": "helix",
+   "desc": "Post-modern modal text editor",
+   "category": "editor",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/helix/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "helix"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Helix.Helix"
+    }
+   }
+  },
+  {
+   "id": "helm",
+   "name": "helm",
+   "desc": "Kubernetes package manager",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/helm/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "helm"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Helm.Helm"
+    }
+   }
+  },
+  {
+   "id": "heroku",
+   "name": "heroku",
+   "desc": "CLI for Heroku",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/heroku/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "heroku"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Heroku.HerokuCLI"
+    }
+   }
+  },
+  {
+   "id": "hexyl",
+   "name": "hexyl",
+   "desc": "Command-line hex viewer",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/hexyl/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "hexyl"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "sharkdp.hexyl"
+    }
+   }
+  },
+  {
+   "id": "howdoi",
+   "name": "howdoi",
+   "desc": "Instant coding answers via the command-line",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/howdoi/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "howdoi"
+    }
+   }
+  },
+  {
+   "id": "htmlq",
+   "name": "htmlq",
+   "desc": "Uses CSS selectors to extract bits content from HTML files",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/htmlq/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "htmlq"
+    }
+   }
+  },
+  {
+   "id": "htop",
+   "name": "htop",
+   "desc": "Improved top (interactive process viewer)",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/htop/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "htop"
+    }
+   }
+  },
+  {
+   "id": "httpie",
+   "name": "httpie",
+   "desc": "User-friendly cURL replacement (command-line HTTP client)",
+   "category": "network",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/httpie/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "httpie"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "HTTPie.HTTPie"
+    }
+   }
+  },
+  {
+   "id": "httpstat",
+   "name": "httpstat",
+   "desc": "Curl statistics made simple",
+   "category": "network",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/httpstat/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "httpstat"
+    }
+   }
+  },
+  {
+   "id": "httpx",
+   "name": "httpx",
+   "desc": "Fast and multi-purpose HTTP toolkit",
+   "category": "network",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/httpx/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "httpx"
+    }
+   }
+  },
+  {
+   "id": "hurl",
+   "name": "hurl",
+   "desc": "Run and Test HTTP Requests with plain text and curl",
+   "category": "network",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/hurl/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "hurl"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Orange-OpenSource.Hurl"
+    }
+   }
+  },
+  {
+   "id": "hwatch",
+   "name": "hwatch",
+   "desc": "Modern alternative to the watch command",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/hwatch/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "hwatch"
+    }
+   }
+  },
+  {
+   "id": "hyperfine",
+   "name": "hyperfine",
+   "desc": "Command-line benchmarking tool",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/hyperfine/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "hyperfine"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "sharkdp.hyperfine"
+    }
+   }
+  },
+  {
+   "id": "igrep",
+   "name": "igrep",
+   "desc": "Interactive grep",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/igrep/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "igrep"
+    }
+   }
+  },
+  {
+   "id": "infisical",
+   "name": "infisical",
+   "desc": "CLI for Infisical",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/infisical/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "infisical"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "infisical.infisical"
+    }
+   }
+  },
+  {
+   "id": "infracost",
+   "name": "infracost",
+   "desc": "Cost estimates for Terraform, Terragrunt, and CloudFormation",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/infracost/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "infracost"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Infracost.Infracost"
+    }
+   }
+  },
+  {
+   "id": "inlyne",
+   "name": "inlyne",
+   "desc": "GPU powered yet browserless tool to help you quickly view markdown files",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/inlyne/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "inlyne"
+    }
+   }
+  },
+  {
+   "id": "inshellisense",
+   "name": "inshellisense",
+   "desc": "IDE style command-line auto complete",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/inshellisense/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "inshellisense"
+    }
+   }
+  },
+  {
+   "id": "jan",
+   "name": "jan",
+   "desc": "Offline AI chat tool",
+   "category": "ai",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/jan/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "jan"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Jan.Jan"
+    }
+   }
+  },
+  {
+   "id": "jaq",
+   "name": "jaq",
+   "desc": "JQ clone focussed on correctness, speed, and simplicity",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/jaq/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "jaq"
+    }
+   }
+  },
+  {
+   "id": "jc",
+   "name": "jc",
+   "desc": "Serializes the output of command-line tools to structured JSON output",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/jc/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "jc"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "KellyBrazil.jc"
+    }
+   }
+  },
+  {
+   "id": "jira-cli",
+   "name": "jira-cli",
+   "desc": "Feature-rich interactive Jira CLI",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/jira-cli/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "jira-cli"
+    }
+   }
+  },
+  {
+   "id": "jj",
+   "name": "jj",
+   "desc": "Git-compatible distributed version control system",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/jj/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "jj"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "jj-vcs.jj"
+    }
+   }
+  },
+  {
+   "id": "jless",
+   "name": "jless",
+   "desc": "Command-line pager for JSON data",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/jless/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "jless"
+    }
+   }
+  },
+  {
+   "id": "jnv",
+   "name": "jnv",
+   "desc": "Interactive JSON filter using jq",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/jnv/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "jnv"
+    }
+   }
+  },
+  {
+   "id": "jo",
+   "name": "jo",
+   "desc": "JSON output from a shell",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/jo/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "jo"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "jpmens.jo"
+    }
+   }
+  },
+  {
+   "id": "joshuto",
+   "name": "joshuto",
+   "desc": "Ranger-like terminal file manager written in Rust",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/joshuto/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "joshuto"
+    }
+   }
+  },
+  {
+   "id": "jq",
+   "name": "jq",
+   "desc": "Lightweight and flexible command-line JSON processor",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/jq/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "jq"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "jqlang.jq"
+    }
+   }
+  },
+  {
+   "id": "jql",
+   "name": "jql",
+   "desc": "JSON query language CLI tool",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/jql/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "jql"
+    }
+   }
+  },
+  {
+   "id": "jqp",
+   "name": "jqp",
+   "desc": "TUI playground to experiment and play with jq",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/jqp/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "jqp"
+    }
+   }
+  },
+  {
+   "id": "jujutsu",
+   "name": "jujutsu",
+   "desc": "Git-compatible distributed version control system",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/jujutsu/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "jujutsu"
+    }
+   }
+  },
+  {
+   "id": "just",
+   "name": "just",
+   "desc": "Handy way to save and run project-specific commands",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/just/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "just"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Casey.Just"
+    }
+   }
+  },
+  {
+   "id": "k3d",
+   "name": "k3d",
+   "desc": "Little helper to run CNCF's k3s in Docker",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/k3d/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "k3d"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "k3d.k3d"
+    }
+   }
+  },
+  {
+   "id": "k3s",
+   "name": "k3s",
+   "desc": "k3s",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/k3s/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "k6",
+   "name": "k6",
+   "desc": "Modern load testing tool, using Go and JavaScript",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/k6/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "k6"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "GrafanaLabs.k6"
+    }
+   }
+  },
+  {
+   "id": "k8sgpt",
+   "name": "k8sgpt",
+   "desc": "Scanning your k8s clusters, diagnosing, and triaging issues in simple English",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/k8sgpt/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "k8sgpt"
+    }
+   }
+  },
+  {
+   "id": "k9s-cli",
+   "name": "k9s-cli",
+   "desc": "k9s-cli",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/k9s-cli/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "kakoune",
+   "name": "kakoune",
+   "desc": "Selection-based modal text editor",
+   "category": "editor",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/kakoune/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "kakoune"
+    }
+   }
+  },
+  {
+   "id": "kalker",
+   "name": "kalker",
+   "desc": "Full-featured calculator with math syntax",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/kalker/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "kalker"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "PaddiM8.kalker"
+    }
+   }
+  },
+  {
+   "id": "kaskade",
+   "name": "kaskade",
+   "desc": "TUI for Kafka",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/kaskade/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "kaskade"
+    }
+   }
+  },
+  {
+   "id": "kcl",
+   "name": "kcl",
+   "desc": "kcl",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/kcl/setup.sh"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "kcl-lang.kcl"
+    }
+   }
+  },
+  {
+   "id": "kdash",
+   "name": "kdash",
+   "desc": "Simple and fast dashboard for Kubernetes",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/kdash/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "kdash"
+    }
+   }
+  },
+  {
+   "id": "kew",
+   "name": "kew",
+   "desc": "Command-line music player",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/kew/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "kew"
+    }
+   }
+  },
+  {
+   "id": "kind",
+   "name": "kind",
+   "desc": "Run local Kubernetes cluster in Docker",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/kind/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "kind"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Kubernetes.kind"
+    }
+   }
+  },
+  {
+   "id": "klog",
+   "name": "klog",
+   "desc": "Command-line tool for time tracking in a human-readable, plain-text file format",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/klog/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "klog"
+    }
+   }
+  },
+  {
+   "id": "kmon",
+   "name": "kmon",
+   "desc": "kmon",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/kmon/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "ko",
+   "name": "ko",
+   "desc": "Build and deploy Go applications on Kubernetes",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/ko/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "ko"
+    }
+   }
+  },
+  {
+   "id": "kondo",
+   "name": "kondo",
+   "desc": "Save disk space by cleaning non-essential files from software projects",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/kondo/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "kondo"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "tbillington.kondo"
+    }
+   }
+  },
+  {
+   "id": "krew",
+   "name": "krew",
+   "desc": "Package manager for kubectl plugins",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/krew/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "krew"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Kubernetes.krew"
+    }
+   }
+  },
+  {
+   "id": "kubecolor",
+   "name": "kubecolor",
+   "desc": "Colorize your kubectl output",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/kubecolor/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "kubecolor"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Kubecolor.kubecolor"
+    }
+   }
+  },
+  {
+   "id": "kubectl",
+   "name": "kubectl",
+   "desc": "Kubernetes command-line interface",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/kubectl/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "kubectl"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Kubernetes.kubectl"
+    }
+   }
+  },
+  {
+   "id": "kubectx",
+   "name": "kubectx",
+   "desc": "Tool that can switch between kubectl contexts easily and create aliases",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/kubectx/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "kubectx"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "ahmetb.kubectx"
+    }
+   }
+  },
+  {
+   "id": "kubens",
+   "name": "kubens",
+   "desc": "kubens",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/kubens/setup.sh"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "ahmetb.kubens"
+    }
+   }
+  },
+  {
+   "id": "kubent",
+   "name": "kubent",
+   "desc": "Easily check your clusters for use of deprecated APIs",
+   "category": "network",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/kubent/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "kubent"
+    }
+   }
+  },
+  {
+   "id": "kustomize",
+   "name": "kustomize",
+   "desc": "Template-free customization of Kubernetes YAML manifests",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/kustomize/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "kustomize"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Kubernetes.kustomize"
+    }
+   }
+  },
+  {
+   "id": "lapce",
+   "name": "lapce",
+   "desc": "Open source code editor written in Rust",
+   "category": "editor",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/lapce/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "lapce"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Lapce.Lapce"
+    }
+   }
+  },
+  {
+   "id": "lazydocker",
+   "name": "lazydocker",
+   "desc": "Lazier way to manage everything docker",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/lazydocker/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "lazydocker"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "JesseDuffield.Lazydocker"
+    }
+   }
+  },
+  {
+   "id": "lazygit",
+   "name": "lazygit",
+   "desc": "TUI para git",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/lazygit/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "lazygit"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "JesseDuffield.lazygit"
+    }
+   }
+  },
+  {
+   "id": "lazygit-tui",
+   "name": "lazygit-tui",
+   "desc": "lazygit-tui",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/lazygit-tui/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "lazynpm",
+   "name": "lazynpm",
+   "desc": "lazynpm",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/lazynpm/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "lazysql",
+   "name": "lazysql",
+   "desc": "Cross-platform TUI database management tool",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/lazysql/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "lazysql"
+    }
+   }
+  },
+  {
+   "id": "lazyvim",
+   "name": "lazyvim",
+   "desc": "lazyvim",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/lazyvim/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "lefthook",
+   "name": "lefthook",
+   "desc": "Fast and powerful Git hooks manager for any type of projects",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/lefthook/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "lefthook"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "evilmartians.lefthook"
+    }
+   }
+  },
+  {
+   "id": "lens",
+   "name": "lens",
+   "desc": "Kubernetes IDE",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/lens/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "lens"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Mirantis.Lens"
+    }
+   }
+  },
+  {
+   "id": "lf",
+   "name": "lf",
+   "desc": "Terminal file manager",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/lf/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "lf"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "gokcehan.lf"
+    }
+   }
+  },
+  {
+   "id": "litecli",
+   "name": "litecli",
+   "desc": "CLI for SQLite Databases with auto-completion and syntax highlighting",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/litecli/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "litecli"
+    }
+   }
+  },
+  {
+   "id": "llm",
+   "name": "llm",
+   "desc": "Access large language models from the command-line",
+   "category": "ai",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/llm/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "llm"
+    }
+   }
+  },
+  {
+   "id": "lmstudio",
+   "name": "lmstudio",
+   "desc": "lmstudio",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/lmstudio/setup.sh"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "ElementLabs.LMStudio"
+    }
+   }
+  },
+  {
+   "id": "lnav",
+   "name": "lnav",
+   "desc": "Curses-based tool for viewing and analyzing log files",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/lnav/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "lnav"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "tstack.lnav"
+    }
+   }
+  },
+  {
+   "id": "lolcat",
+   "name": "lolcat",
+   "desc": "Rainbows and unicorns in your console!",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/lolcat/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "lolcat"
+    }
+   }
+  },
+  {
+   "id": "lsd",
+   "name": "lsd",
+   "desc": "Clone of ls with colorful output, file type icons, and more",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/lsd/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "lsd"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "lsd-rs.lsd"
+    }
+   }
+  },
+  {
+   "id": "lychee",
+   "name": "lychee",
+   "desc": "Fast, async, resource-friendly link checker",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/lychee/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "lychee"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "lycheeverse.lychee"
+    }
+   }
+  },
+  {
+   "id": "macchina",
+   "name": "macchina",
+   "desc": "System information fetcher, with an emphasis on performance and minimalism",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/macchina/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "macchina"
+    }
+   }
+  },
+  {
+   "id": "mani",
+   "name": "mani",
+   "desc": "CLI tool to help you manage repositories",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/mani/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "mani"
+    }
+   }
+  },
+  {
+   "id": "marimo",
+   "name": "marimo",
+   "desc": "marimo",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/marimo/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "mcfly",
+   "name": "mcfly",
+   "desc": "Fly through your shell history",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/mcfly/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "mcfly"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "AndrewCantino.McFly"
+    }
+   }
+  },
+  {
+   "id": "mdcat",
+   "name": "mdcat",
+   "desc": "Show markdown documents on text terminals",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/mdcat/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "mdcat"
+    }
+   }
+  },
+  {
+   "id": "melt",
+   "name": "melt",
+   "desc": "Backup and restore Ed25519 SSH keys with seed words",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/melt/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "melt"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "charmbracelet.melt"
+    }
+   }
+  },
+  {
+   "id": "micro",
+   "name": "micro",
+   "desc": "Modern and intuitive terminal-based text editor",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/micro/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "micro"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "zyedidia.micro"
+    }
+   }
+  },
+  {
+   "id": "miller",
+   "name": "miller",
+   "desc": "Like sed, awk, cut, join & sort for name-indexed data such as CSV",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/miller/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "miller"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Miller.Miller"
+    }
+   }
+  },
+  {
+   "id": "miniserve",
+   "name": "miniserve",
+   "desc": "High performance static file server",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/miniserve/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "miniserve"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "svenstaro.miniserve"
+    }
+   }
+  },
+  {
+   "id": "mise",
+   "name": "mise",
+   "desc": "Polyglot runtime manager (asdf rust clone)",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/mise/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "mise"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "jdx.mise"
+    }
+   }
+  },
+  {
+   "id": "mkcert",
+   "name": "mkcert",
+   "desc": "Simple tool to make locally trusted development certificates",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/mkcert/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "mkcert"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "FiloSottile.mkcert"
+    }
+   }
+  },
+  {
+   "id": "mlr",
+   "name": "mlr",
+   "desc": "mlr",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/mlr/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "moar",
+   "name": "moar",
+   "desc": "moar",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/moar/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "mods",
+   "name": "mods",
+   "desc": "AI on the command-line",
+   "category": "ai",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/mods/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "mods"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "charmbracelet.mods"
+    }
+   }
+  },
+  {
+   "id": "monolith",
+   "name": "monolith",
+   "desc": "CLI tool for saving complete web pages as a single HTML file",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/monolith/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "monolith"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "amine123max.Monolith"
+    }
+   }
+  },
+  {
+   "id": "moon",
+   "name": "moon",
+   "desc": "Task runner and repo management tool for the web ecosystem, written in Rust",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/moon/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "moon"
+    }
+   }
+  },
+  {
+   "id": "mprocs",
+   "name": "mprocs",
+   "desc": "Run multiple commands in parallel",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/mprocs/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "mprocs"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "pvolok.mprocs"
+    }
+   }
+  },
+  {
+   "id": "mycli",
+   "name": "mycli",
+   "desc": "CLI for MySQL with auto-completion and syntax highlighting",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/mycli/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "mycli"
+    }
+   }
+  },
+  {
+   "id": "mysql",
+   "name": "mysql",
+   "desc": "Open source relational database management system",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/mysql/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "mysql"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Oracle.MySQL"
+    }
+   }
+  },
+  {
+   "id": "nap",
+   "name": "nap",
+   "desc": "Code snippets in your terminal",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/nap/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "nap"
+    }
+   }
+  },
+  {
+   "id": "navi",
+   "name": "navi",
+   "desc": "Interactive cheatsheet tool for the command-line",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/navi/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "navi"
+    }
+   }
+  },
+  {
+   "id": "ncdu",
+   "name": "ncdu",
+   "desc": "NCurses Disk Usage",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/ncdu/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "ncdu"
+    }
+   }
+  },
+  {
+   "id": "ncspot",
+   "name": "ncspot",
+   "desc": "Cross-platform ncurses Spotify client written in Rust",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/ncspot/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "ncspot"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "hrkfdn.ncspot"
+    }
+   }
+  },
+  {
+   "id": "neofetch-alt",
+   "name": "neofetch-alt",
+   "desc": "neofetch-alt",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/neofetch-alt/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "neovim",
+   "name": "neovim",
+   "desc": "Ambitious Vim-fork focused on extensibility and agility",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/neovim/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "neovim"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Neovim.Neovim"
+    }
+   }
+  },
+  {
+   "id": "netlify",
+   "name": "netlify",
+   "desc": "netlify",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/netlify/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "newsboat",
+   "name": "newsboat",
+   "desc": "RSS/Atom feed reader for text terminals",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/newsboat/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "newsboat"
+    }
+   }
+  },
+  {
+   "id": "ngrok",
+   "name": "ngrok",
+   "desc": "Reverse proxy, secure introspectable tunnels to localhost",
+   "category": "security",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/ngrok/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "ngrok"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Ngrok.Ngrok"
+    }
+   }
+  },
+  {
+   "id": "nix",
+   "name": "nix",
+   "desc": "nix",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/nix/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "nnn",
+   "name": "nnn",
+   "desc": "Tiny, lightning fast, feature-packed file manager",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/nnn/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "nnn"
+    }
+   }
+  },
+  {
+   "id": "nomad",
+   "name": "nomad",
+   "desc": "nomad",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/nomad/setup.sh"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Hashicorp.Nomad"
+    }
+   }
+  },
+  {
+   "id": "nuclei",
+   "name": "nuclei",
+   "desc": "HTTP/DNS scanner configurable via YAML templates",
+   "category": "security",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/nuclei/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "nuclei"
+    }
+   }
+  },
+  {
+   "id": "numbat",
+   "name": "numbat",
+   "desc": "Statically typed programming language for scientific computations",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/numbat/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "numbat"
+    }
+   }
+  },
+  {
+   "id": "nushell",
+   "name": "nushell",
+   "desc": "Modern shell for the GitHub era",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/nushell/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "nushell"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Nushell.Nushell"
+    }
+   }
+  },
+  {
+   "id": "obsidian",
+   "name": "obsidian",
+   "desc": "Knowledge base that works on top of a local folder of plain text Markdown files",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/obsidian/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "obsidian"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Obsidian.Obsidian"
+    }
+   }
+  },
+  {
+   "id": "oh-my-posh",
+   "name": "oh-my-posh",
+   "desc": "Prompt theme engine for any shell",
+   "category": "ai",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/oh-my-posh/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "oh-my-posh"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "JanDeDobbeleer.OhMyPosh"
+    }
+   }
+  },
+  {
+   "id": "oha",
+   "name": "oha",
+   "desc": "HTTP load generator, inspired by rakyll/hey with tui animation",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/oha/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "oha"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "hatoo.oha"
+    }
+   }
+  },
+  {
+   "id": "ollama",
+   "name": "Ollama",
+   "desc": "LLMs locais",
+   "category": "ai",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/ollama/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "ollama"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Ollama.Ollama"
+    }
+   }
+  },
+  {
+   "id": "onefetch",
+   "name": "onefetch",
+   "desc": "Command-line Git information tool",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/onefetch/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "onefetch"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "o2sh.onefetch"
+    }
+   }
+  },
+  {
+   "id": "open-interpreter",
+   "name": "open-interpreter",
+   "desc": "open-interpreter",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/open-interpreter/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "opentofu",
+   "name": "opentofu",
+   "desc": "Drop-in replacement for Terraform. Infrastructure as Code Tool",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/opentofu/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "opentofu"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "OpenTofu.Tofu"
+    }
+   }
+  },
+  {
+   "id": "ouch",
+   "name": "ouch",
+   "desc": "Painless compression and decompression for your terminal",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/ouch/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "ouch"
+    }
+   }
+  },
+  {
+   "id": "oxker",
+   "name": "oxker",
+   "desc": "Terminal User Interface (TUI) to view & control docker containers",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/oxker/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "oxker"
+    }
+   }
+  },
+  {
+   "id": "oxlint",
+   "name": "oxlint",
+   "desc": "High-performance linter for JavaScript and TypeScript written in Rust",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/oxlint/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "oxlint"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "oxc-project.oxlint"
+    }
+   }
+  },
+  {
+   "id": "packer",
+   "name": "packer",
+   "desc": "packer",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/packer/setup.sh"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Hashicorp.Packer"
+    }
+   }
+  },
+  {
+   "id": "pastel",
+   "name": "pastel",
+   "desc": "Command-line tool to generate, analyze, convert and manipulate colors",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/pastel/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "pastel"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "sharkdp.pastel"
+    }
+   }
+  },
+  {
+   "id": "peco",
+   "name": "peco",
+   "desc": "Simplistic interactive filtering tool",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/peco/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "peco"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "peco.peco"
+    }
+   }
+  },
+  {
+   "id": "pgcli",
+   "name": "pgcli",
+   "desc": "CLI for Postgres with auto-completion and syntax highlighting",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/pgcli/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "pgcli"
+    }
+   }
+  },
+  {
+   "id": "pipes-rs",
+   "name": "pipes-rs",
+   "desc": "pipes-rs",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/pipes-rs/setup.sh"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "lhvy.pipes-rs"
+    }
+   }
+  },
+  {
+   "id": "pipes-sh",
+   "name": "pipes-sh",
+   "desc": "Animated pipes terminal screensaver",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/pipes-sh/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "pipes-sh"
+    }
+   }
+  },
+  {
+   "id": "pixi",
+   "name": "pixi",
+   "desc": "Package management made easy",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/pixi/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "pixi"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "prefix-dev.pixi"
+    }
+   }
+  },
+  {
+   "id": "pkgx",
+   "name": "pkgx",
+   "desc": "Standalone binary that can run anything",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/pkgx/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "pkgx"
+    }
+   }
+  },
+  {
+   "id": "plandex",
+   "name": "plandex",
+   "desc": "plandex",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/plandex/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "pls",
+   "name": "pls",
+   "desc": "pls",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/pls/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "pnpm",
+   "name": "pnpm",
+   "desc": "Fast, disk space efficient package manager",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/pnpm/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "pnpm"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "pnpm.pnpm"
+    }
+   }
+  },
+  {
+   "id": "podman",
+   "name": "podman",
+   "desc": "Tool for managing OCI containers and pods",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/podman/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "podman"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "RedHat.Podman"
+    }
+   }
+  },
+  {
+   "id": "poetry",
+   "name": "poetry",
+   "desc": "Python package management tool",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/poetry/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "poetry"
+    }
+   }
+  },
+  {
+   "id": "pokeget",
+   "name": "pokeget",
+   "desc": "pokeget",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/pokeget/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "pomsky",
+   "name": "pomsky",
+   "desc": "Regular expression language",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/pomsky/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "pomsky"
+    }
+   }
+  },
+  {
+   "id": "popeye",
+   "name": "popeye",
+   "desc": "Kubernetes cluster resource sanitizer",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/popeye/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "popeye"
+    }
+   }
+  },
+  {
+   "id": "porsmo",
+   "name": "porsmo",
+   "desc": "porsmo",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/porsmo/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "posting",
+   "name": "posting",
+   "desc": "Modern API client that lives in your terminal",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/posting/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "posting"
+    }
+   }
+  },
+  {
+   "id": "presenterm",
+   "name": "presenterm",
+   "desc": "Terminal slideshow tool",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/presenterm/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "presenterm"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "mfontanini.presenterm"
+    }
+   }
+  },
+  {
+   "id": "procs",
+   "name": "procs",
+   "desc": "Modern replacement for ps written in Rust",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/procs/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "procs"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "dalance.procs"
+    }
+   }
+  },
+  {
+   "id": "proto",
+   "name": "proto",
+   "desc": "Pluggable multi-language version manager",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/proto/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "proto"
+    }
+   }
+  },
+  {
+   "id": "pueue",
+   "name": "pueue",
+   "desc": "Command-line tool for managing long-running shell commands",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/pueue/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "pueue"
+    }
+   }
+  },
+  {
+   "id": "pulumi",
+   "name": "pulumi",
+   "desc": "Cloud native development platform",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/pulumi/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "pulumi"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Pulumi.Pulumi"
+    }
+   }
+  },
+  {
+   "id": "px",
+   "name": "px",
+   "desc": "Ps and top for human beings (px / ptop)",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/px/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "px"
+    }
+   }
+  },
+  {
+   "id": "qsv",
+   "name": "qsv",
+   "desc": "Ultra-fast CSV data-wrangling toolkit",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/qsv/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "qsv"
+    }
+   }
+  },
+  {
+   "id": "repomix",
+   "name": "repomix",
+   "desc": "Pack repository contents into a single AI-friendly file",
+   "category": "ai",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/repomix/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "repomix"
+    }
+   }
+  },
+  {
+   "id": "rio",
+   "name": "rio",
+   "desc": "Hardware-accelerated GPU terminal emulator",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/rio/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "rio"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "raphamorim.rio"
+    }
+   }
+  },
+  {
+   "id": "rip",
+   "name": "rip",
+   "desc": "rip",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/rip/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "ripgrep",
+   "name": "ripgrep",
+   "desc": "grep ultrarrápido",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "apt",
+     "ref": "ripgrep"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "ripgrep"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "BurntSushi.ripgrep.MSVC"
+    }
+   }
+  },
+  {
+   "id": "ripgrep_all",
+   "name": "ripgrep_all",
+   "desc": "ripgrep_all",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/ripgrep_all/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "rnr",
+   "name": "rnr",
+   "desc": "Command-line tool to batch rename files and directories",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/rnr/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "rnr"
+    }
+   }
+  },
+  {
+   "id": "rs-cmatrix",
+   "name": "rs-cmatrix",
+   "desc": "rs-cmatrix",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/rs-cmatrix/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "ruff",
+   "name": "ruff",
+   "desc": "Extremely fast Python linter, written in Rust",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/ruff/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "ruff"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "astral-sh.ruff"
+    }
+   }
+  },
+  {
+   "id": "ruplacer",
+   "name": "ruplacer",
+   "desc": "ruplacer",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/ruplacer/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "rustscan",
+   "name": "rustscan",
+   "desc": "Modern Day Portscanner",
+   "category": "security",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/rustscan/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "rustscan"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "bee-san.RustScan"
+    }
+   }
+  },
+  {
+   "id": "rye",
+   "name": "rye",
+   "desc": "Package Management Solution for Python",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/rye/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "rye"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Rye.Rye"
+    }
+   }
+  },
+  {
+   "id": "sad",
+   "name": "sad",
+   "desc": "CLI search and replace | Space Age seD",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/sad/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "sad"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "ms-jpq.sad"
+    }
+   }
+  },
+  {
+   "id": "scc",
+   "name": "scc",
+   "desc": "Fast and accurate code counter with complexity and COCOMO estimates",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/scc/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "scc"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "BenBoyter.scc"
+    }
+   }
+  },
+  {
+   "id": "sd",
+   "name": "sd",
+   "desc": "Intuitive find & replace CLI",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/sd/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "sd"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "chmln.sd"
+    }
+   }
+  },
+  {
+   "id": "serie",
+   "name": "serie",
+   "desc": "Rich git commit graph in your terminal",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/serie/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "serie"
+    }
+   }
+  },
+  {
+   "id": "serpl",
+   "name": "serpl",
+   "desc": "Simple terminal UI for search and replace",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/serpl/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "serpl"
+    }
+   }
+  },
+  {
+   "id": "sesh",
+   "name": "sesh",
+   "desc": "Smart session manager for the terminal",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/sesh/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "sesh"
+    }
+   }
+  },
+  {
+   "id": "shell-gpt",
+   "name": "shell-gpt",
+   "desc": "shell-gpt",
+   "category": "ai",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/shell-gpt/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "shellcheck",
+   "name": "shellcheck",
+   "desc": "Static analysis and lint tool, for (ba)sh scripts",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/shellcheck/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "shellcheck"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "koalaman.shellcheck"
+    }
+   }
+  },
+  {
+   "id": "shfmt",
+   "name": "shfmt",
+   "desc": "Autoformat shell script source code",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/shfmt/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "shfmt"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "mvdan.shfmt"
+    }
+   }
+  },
+  {
+   "id": "silicon",
+   "name": "silicon",
+   "desc": "Create beautiful image of your source code",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/silicon/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "silicon"
+    }
+   }
+  },
+  {
+   "id": "skate",
+   "name": "skate",
+   "desc": "Personal key value store",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/skate/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "skate"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "charmbracelet.skate"
+    }
+   }
+  },
+  {
+   "id": "skim",
+   "name": "skim",
+   "desc": "Fuzzy Finder in rust!",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/skim/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "sk"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "skim-rs.skim"
+    }
+   }
+  },
+  {
+   "id": "slack",
+   "name": "slack",
+   "desc": "Team communication and collaboration software",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/slack/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "slack"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "SlackTechnologies.Slack"
+    }
+   }
+  },
+  {
+   "id": "slides",
+   "name": "slides",
+   "desc": "Terminal based presentation tool",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/slides/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "slides"
+    }
+   }
+  },
+  {
+   "id": "slumber",
+   "name": "slumber",
+   "desc": "Terminal-based HTTP/REST client",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/slumber/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "slumber"
+    }
+   }
+  },
+  {
+   "id": "sniffnet",
+   "name": "sniffnet",
+   "desc": "Cross-platform application to monitor your network traffic",
+   "category": "network",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/sniffnet/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "sniffnet"
+    }
+   }
+  },
+  {
+   "id": "so",
+   "name": "so",
+   "desc": "Terminal interface for StackOverflow",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/so/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "so"
+    }
+   }
+  },
+  {
+   "id": "sops",
+   "name": "sops",
+   "desc": "Editor of encrypted files",
+   "category": "security",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/sops/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "sops"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "SecretsOPerationS.SOPS"
+    }
+   }
+  },
+  {
+   "id": "spacer",
+   "name": "spacer",
+   "desc": "Small command-line utility for adding spacers to command output",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/spacer/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "spacer"
+    }
+   }
+  },
+  {
+   "id": "spt",
+   "name": "spt",
+   "desc": "spt",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/spt/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "sqlc",
+   "name": "sqlc",
+   "desc": "Generate type safe Go from SQL",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/sqlc/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "sqlc"
+    }
+   }
+  },
+  {
+   "id": "starship",
+   "name": "Starship",
+   "desc": "prompt multi-shell",
+   "category": "shell",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/starship/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "starship"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Starship.Starship"
+    }
+   }
+  },
+  {
+   "id": "steampipe",
+   "name": "steampipe",
+   "desc": "Use SQL to instantly query your cloud services",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/steampipe/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "steampipe"
+    }
+   }
+  },
+  {
+   "id": "stern",
+   "name": "stern",
+   "desc": "Tail multiple Kubernetes pods & their containers",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/stern/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "stern"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "stern.stern"
+    }
+   }
+  },
+  {
+   "id": "stripe",
+   "name": "stripe",
+   "desc": "Command-line tool for Stripe",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/stripe/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "stripe"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Stripe.StripeCli"
+    }
+   }
+  },
+  {
+   "id": "supabase",
+   "name": "supabase",
+   "desc": "Postgres development platform",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/supabase/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "supabase"
+    }
+   }
+  },
+  {
+   "id": "superfile",
+   "name": "superfile",
+   "desc": "Modern and pretty fancy file manager for the terminal",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/superfile/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "superfile"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "yorukot.superfile"
+    }
+   }
+  },
+  {
+   "id": "syft",
+   "name": "syft",
+   "desc": "CLI for generating a Software Bill of Materials from container images",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/syft/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "syft"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Anchore.Syft"
+    }
+   }
+  },
+  {
+   "id": "systemctl-tui",
+   "name": "systemctl-tui",
+   "desc": "systemctl-tui",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/systemctl-tui/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "systeroid",
+   "name": "systeroid",
+   "desc": "systeroid",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/systeroid/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "sysz",
+   "name": "sysz",
+   "desc": "sysz",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/sysz/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "t-rec",
+   "name": "t-rec",
+   "desc": "Blazingly fast terminal recorder that generates animated gif images for the web",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/t-rec/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "t-rec"
+    }
+   }
+  },
+  {
+   "id": "tailspin",
+   "name": "tailspin",
+   "desc": "Log file highlighter",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/tailspin/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "tailspin"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "bensadeh.tailspin"
+    }
+   }
+  },
+  {
+   "id": "taplo",
+   "name": "taplo",
+   "desc": "TOML toolkit written in Rust",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/taplo/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "taplo"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "tamasfe.taplo"
+    }
+   }
+  },
+  {
+   "id": "task",
+   "name": "task",
+   "desc": "Task is a task runner/build tool that aims to be simpler and easier to use",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/task/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "go-task"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Task.Task"
+    }
+   }
+  },
+  {
+   "id": "taskwarrior-tui",
+   "name": "taskwarrior-tui",
+   "desc": "Terminal user interface for taskwarrior",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/taskwarrior-tui/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "taskwarrior-tui"
+    }
+   }
+  },
+  {
+   "id": "tealdeer",
+   "name": "tealdeer",
+   "desc": "Very fast implementation of tldr in Rust",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/tealdeer/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "tealdeer"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "dbrgn.tealdeer"
+    }
+   }
+  },
+  {
+   "id": "television",
+   "name": "television",
+   "desc": "General purpose fuzzy finder TUI",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/television/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "television"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "alexpasmantier.television"
+    }
+   }
+  },
+  {
+   "id": "tenki",
+   "name": "tenki",
+   "desc": "tenki",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/tenki/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "tenv",
+   "name": "tenv",
+   "desc": "OpenTofu / Terraform / Terragrunt / Terramate / Atmos version manager",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/tenv/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "tenv"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Tofuutils.Tenv"
+    }
+   }
+  },
+  {
+   "id": "tere",
+   "name": "tere",
+   "desc": "Terminal file explorer",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/tere/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "tere"
+    }
+   }
+  },
+  {
+   "id": "termdbms",
+   "name": "termdbms",
+   "desc": "termdbms",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/termdbms/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "termscp",
+   "name": "termscp",
+   "desc": "Feature rich terminal file transfer and explorer",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/termscp/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "termscp"
+    }
+   }
+  },
+  {
+   "id": "termshark",
+   "name": "termshark",
+   "desc": "Terminal UI for tshark, inspired by Wireshark",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/termshark/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "termshark"
+    }
+   }
+  },
+  {
+   "id": "termtyper",
+   "name": "termtyper",
+   "desc": "termtyper",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/termtyper/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "terragrunt",
+   "name": "terragrunt",
+   "desc": "Thin wrapper for Terraform e.g. for locking state",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/terragrunt/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "terragrunt"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Gruntwork.Terragrunt"
+    }
+   }
+  },
+  {
+   "id": "tflint",
+   "name": "tflint",
+   "desc": "tflint",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/tflint/setup.sh"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "TerraformLinters.tflint"
+    }
+   }
+  },
+  {
+   "id": "tfsec",
+   "name": "tfsec",
+   "desc": "Static analysis security scanner for your terraform code",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/tfsec/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "tfsec"
+    }
+   }
+  },
+  {
+   "id": "tgpt",
+   "name": "tgpt",
+   "desc": "AI Chatbots in terminal without needing API keys",
+   "category": "ai",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/tgpt/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "tgpt"
+    }
+   }
+  },
+  {
+   "id": "thefuck",
+   "name": "thefuck",
+   "desc": "Programmatically correct mistyped console commands",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/thefuck/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "thefuck"
+    }
+   }
+  },
+  {
+   "id": "tickrs",
+   "name": "tickrs",
+   "desc": "tickrs",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/tickrs/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "tig",
+   "name": "tig",
+   "desc": "Text interface for Git repositories",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/tig/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "tig"
+    }
+   }
+  },
+  {
+   "id": "tilt",
+   "name": "tilt",
+   "desc": "Define your dev environment as code. For microservice apps on Kubernetes",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/tilt/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "tilt"
+    }
+   }
+  },
+  {
+   "id": "tin-summer",
+   "name": "tin-summer",
+   "desc": "tin-summer",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/tin-summer/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "tldr",
+   "name": "tldr",
+   "desc": "Simplified and community-driven man pages",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/tldr/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "tldr"
+    }
+   }
+  },
+  {
+   "id": "tlrc",
+   "name": "tlrc",
+   "desc": "Official tldr client written in Rust",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/tlrc/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "tlrc"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "tldr-pages.tlrc"
+    }
+   }
+  },
+  {
+   "id": "tmate",
+   "name": "tmate",
+   "desc": "Instant terminal sharing",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/tmate/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "tmate"
+    }
+   }
+  },
+  {
+   "id": "tmux",
+   "name": "tmux",
+   "desc": "Terminal multiplexer",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/tmux/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "tmux"
+    }
+   }
+  },
+  {
+   "id": "tokei",
+   "name": "tokei",
+   "desc": "Program that allows you to count code, quickly",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/tokei/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "tokei"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "XAMPPRocky.Tokei"
+    }
+   }
+  },
+  {
+   "id": "topgrade",
+   "name": "topgrade",
+   "desc": "Upgrade all the things",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/topgrade/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "topgrade"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "topgrade-rs.topgrade"
+    }
+   }
+  },
+  {
+   "id": "trash-cli",
+   "name": "trash-cli",
+   "desc": "Command-line interface to the freedesktop.org trashcan",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/trash-cli/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "trash-cli"
+    }
+   }
+  },
+  {
+   "id": "tre",
+   "name": "tre",
+   "desc": "Tree command, improved",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/tre/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "tre-command"
+    }
+   }
+  },
+  {
+   "id": "trippy",
+   "name": "trippy",
+   "desc": "Network diagnostic tool, inspired by mtr",
+   "category": "network",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/trippy/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "trippy"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "FujiApple.Trippy"
+    }
+   }
+  },
+  {
+   "id": "trivy",
+   "name": "trivy",
+   "desc": "Vulnerability scanner for container images, file systems, and Git repos",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/trivy/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "trivy"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "AquaSecurity.Trivy"
+    }
+   }
+  },
+  {
+   "id": "trufflehog",
+   "name": "trufflehog",
+   "desc": "Find and verify credentials",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/trufflehog/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "trufflehog"
+    }
+   }
+  },
+  {
+   "id": "trzsz",
+   "name": "trzsz",
+   "desc": "Simple file transfer tools, similar to lrzsz (rz/sz), and compatible with tmux",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/trzsz/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "trzsz"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "trzsz.trzsz"
+    }
+   }
+  },
+  {
+   "id": "tt",
+   "name": "tt",
+   "desc": "tt",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/tt/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "ttyd",
+   "name": "ttyd",
+   "desc": "Command-line tool for sharing terminal over the web",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/ttyd/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "ttyd"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "tsl0922.ttyd"
+    }
+   }
+  },
+  {
+   "id": "ttyper",
+   "name": "ttyper",
+   "desc": "ttyper",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/ttyper/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "turso",
+   "name": "turso",
+   "desc": "Interactive SQL shell for Turso",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/turso/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "turso"
+    }
+   }
+  },
+  {
+   "id": "typos",
+   "name": "typos",
+   "desc": "typos",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/typos/setup.sh"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Crate-CI.Typos"
+    }
+   }
+  },
+  {
+   "id": "typos-cli",
+   "name": "typos-cli",
+   "desc": "Source code spell checker",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/typos-cli/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "typos-cli"
+    }
+   }
+  },
+  {
+   "id": "typst",
+   "name": "typst",
+   "desc": "Markup-based typesetting system",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/typst/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "typst"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Typst.Typst"
+    }
+   }
+  },
+  {
+   "id": "ugit",
+   "name": "ugit",
+   "desc": "Undo git commands. Your damage control git buddy",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/ugit/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "ugit"
+    }
+   }
+  },
+  {
+   "id": "ugrep",
+   "name": "ugrep",
+   "desc": "Ultra fast grep with query UI, fuzzy search, archive search, and more",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/ugrep/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "ugrep"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Genivia.ugrep"
+    }
+   }
+  },
+  {
+   "id": "usql",
+   "name": "usql",
+   "desc": "usql",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/usql/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "uv",
+   "name": "uv",
+   "desc": "Extremely fast Python package installer and resolver, written in Rust",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/uv/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "uv"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "astral-sh.uv"
+    }
+   }
+  },
+  {
+   "id": "vault",
+   "name": "vault",
+   "desc": "vault",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/vault/setup.sh"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Hashicorp.Vault"
+    }
+   }
+  },
+  {
+   "id": "vcluster",
+   "name": "vcluster",
+   "desc": "Creates fully functional virtual k8s cluster inside host k8s cluster's namespace",
+   "category": "devops",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/vcluster/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "vcluster"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "loft-sh.vcluster"
+    }
+   }
+  },
+  {
+   "id": "vegeta",
+   "name": "vegeta",
+   "desc": "HTTP load testing tool and library",
+   "category": "network",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/vegeta/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "vegeta"
+    }
+   }
+  },
+  {
+   "id": "vercel",
+   "name": "vercel",
+   "desc": "Command-line interface for Vercel",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/vercel/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "vercel"
+    }
+   }
+  },
+  {
+   "id": "vhs",
+   "name": "vhs",
+   "desc": "Your CLI home video recorder",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/vhs/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "vhs"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "charmbracelet.vhs"
+    }
+   }
+  },
+  {
+   "id": "viddy",
+   "name": "viddy",
+   "desc": "Modern watch command",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/viddy/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "viddy"
+    }
+   }
+  },
+  {
+   "id": "visidata",
+   "name": "visidata",
+   "desc": "Terminal spreadsheet multitool for discovering and arranging data",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/visidata/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "visidata"
+    }
+   }
+  },
+  {
+   "id": "viu",
+   "name": "viu",
+   "desc": "Simple terminal image viewer written in Rust",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/viu/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "viu"
+    }
+   }
+  },
+  {
+   "id": "vivid",
+   "name": "vivid",
+   "desc": "Generator for LS_COLORS with support for multiple color themes",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/vivid/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "vivid"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "sharkdp.vivid"
+    }
+   }
+  },
+  {
+   "id": "vscode",
+   "name": "VS Code",
+   "desc": "Editor",
+   "category": "editor",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/vscode/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "visual-studio-code"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Microsoft.VisualStudioCode"
+    }
+   }
+  },
+  {
+   "id": "walk",
+   "name": "walk",
+   "desc": "Terminal navigator",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/walk/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "walk"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "antonmedv.walk"
+    }
+   }
+  },
+  {
+   "id": "warp",
+   "name": "warp",
+   "desc": "Rust-based terminal",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/warp/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "warp"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Warp.Warp"
+    }
+   }
+  },
+  {
+   "id": "watchexec",
+   "name": "watchexec",
+   "desc": "Execute commands when watched files change",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/watchexec/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "watchexec"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "watchexec.watchexec"
+    }
+   }
+  },
+  {
+   "id": "waypoint",
+   "name": "waypoint",
+   "desc": "waypoint",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/waypoint/setup.sh"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Hashicorp.Waypoint"
+    }
+   }
+  },
+  {
+   "id": "websocat",
+   "name": "websocat",
+   "desc": "Command-line client for WebSockets",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/websocat/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "websocat"
+    }
+   }
+  },
+  {
+   "id": "wezterm",
+   "name": "wezterm",
+   "desc": "GPU-accelerated cross-platform terminal emulator and multiplexer",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/wezterm/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "wezterm"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "wez.wezterm"
+    }
+   }
+  },
+  {
+   "id": "wiki-tui",
+   "name": "wiki-tui",
+   "desc": "wiki-tui",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/wiki-tui/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "windsurf",
+   "name": "windsurf",
+   "desc": "windsurf",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/windsurf/setup.sh"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Codeium.Windsurf"
+    }
+   }
+  },
+  {
+   "id": "wtf",
+   "name": "wtf",
+   "desc": "wtf",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/wtf/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "wtfutil",
+   "name": "wtfutil",
+   "desc": "Personal information dashboard for your terminal",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/wtfutil/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "wtfutil"
+    }
+   }
+  },
+  {
+   "id": "wthrr",
+   "name": "wthrr",
+   "desc": "Weather Companion for the Terminal",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/wthrr/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "wthrr"
+    }
+   }
+  },
+  {
+   "id": "wthrr-the-weathercrab",
+   "name": "wthrr-the-weathercrab",
+   "desc": "wthrr-the-weathercrab",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/wthrr-the-weathercrab/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "wuzz",
+   "name": "wuzz",
+   "desc": "wuzz",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/wuzz/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "xc",
+   "name": "xc",
+   "desc": "Markdown defined task runner",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/xc/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "xc"
+    }
+   }
+  },
+  {
+   "id": "xcp",
+   "name": "xcp",
+   "desc": "xcp",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/xcp/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "xh",
+   "name": "xh",
+   "desc": "Friendly and fast tool for sending HTTP requests",
+   "category": "network",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/xh/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "xh"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "ducaale.xh"
+    }
+   }
+  },
+  {
+   "id": "xplr",
+   "name": "xplr",
+   "desc": "Hackable, minimal, fast TUI file explorer",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/xplr/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "xplr"
+    }
+   }
+  },
+  {
+   "id": "xsv",
+   "name": "xsv",
+   "desc": "Fast CSV toolkit written in Rust",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/xsv/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "xsv"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "BurntSushi.xsv.GNU"
+    }
+   }
+  },
+  {
+   "id": "yamlfmt",
+   "name": "yamlfmt",
+   "desc": "Extensible command-line tool to format YAML files",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/yamlfmt/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "yamlfmt"
+    }
+   }
+  },
+  {
+   "id": "yazi",
+   "name": "yazi",
+   "desc": "Blazing fast terminal file manager written in Rust, based on async I/O",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/yazi/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "yazi"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "sxyazi.yazi"
+    }
+   }
+  },
+  {
+   "id": "yq",
+   "name": "yq",
+   "desc": "Process YAML, JSON, XML, CSV and properties documents from the CLI",
+   "category": "data",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/yq/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "yq"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "MikeFarah.yq"
+    }
+   }
+  },
+  {
+   "id": "yt-dlp",
+   "name": "yt-dlp",
+   "desc": "Feature-rich command-line audio/video downloader",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/yt-dlp/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "yt-dlp"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "yt-dlp.yt-dlp"
+    }
+   }
+  },
+  {
+   "id": "zed",
+   "name": "zed",
+   "desc": "Multiplayer code editor",
+   "category": "editor",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/zed/setup.sh"
+    },
+    "macos": {
+     "kind": "cask",
+     "ref": "zed"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "ZedIndustries.Zed"
+    }
+   }
+  },
+  {
+   "id": "zellij",
+   "name": "zellij",
+   "desc": "Pluggable terminal workspace, with terminal multiplexer as the base feature",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/zellij/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "zellij"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Zellij.Zellij"
+    }
+   }
+  },
+  {
+   "id": "zen-browser",
+   "name": "zen-browser",
+   "desc": "zen-browser",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/zen-browser/setup.sh"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "Zen-Team.Zen-Browser"
+    }
+   }
+  },
+  {
+   "id": "zenith",
+   "name": "zenith",
+   "desc": "In terminal graphical metrics for your *nix system",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/zenith/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "zenith"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "MakotoArai.Zenith"
+    }
+   }
+  },
+  {
+   "id": "zig",
+   "name": "zig",
+   "desc": "Programming language designed for robustness, optimality, and clarity",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/zig/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "zig"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "zig.zig"
+    }
+   }
+  },
+  {
+   "id": "zizmor",
+   "name": "zizmor",
+   "desc": "Find security issues in GitHub Actions setups",
+   "category": "git",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/zizmor/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "zizmor"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "zizmor.zizmor"
+    }
+   }
+  },
+  {
+   "id": "zoxide",
+   "name": "zoxide",
+   "desc": "Shell extension to navigate your filesystem faster",
+   "category": "files",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/zoxide/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "zoxide"
+    },
+    "windows": {
+     "kind": "winget",
+     "ref": "ajeetdsouza.zoxide"
+    }
+   }
+  },
+  {
+   "id": "zrok",
+   "name": "zrok",
+   "desc": "Geo-scale, next-generation sharing platform built on top of OpenZiti",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/zrok/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "zrok"
+    }
+   }
+  },
+  {
+   "id": "zsh",
+   "name": "zsh",
+   "desc": "UNIX shell (command interpreter)",
+   "category": "terminal",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/zsh/setup.sh"
+    },
+    "macos": {
+     "kind": "brew",
+     "ref": "zsh"
+    }
+   }
+  }
+ ]
+}

@@ -1,75 +1,37 @@
-# ⚡ Dotfiles 2026 Edition
+# ⚡ dotfiles
 
-> Setup pessoal para transformar uma instalação limpa de Ubuntu em um ambiente de desenvolvimento moderno, rápido e reproduzível.
+Ambiente de desenvolvimento reproduzível para **Windows, macOS e Linux**, com instalador oficial em TUI.
 
-## 🧠 O que mudou para 2026
+📖 **Docs:** <https://juninmd.github.io/dotfiles/> · ⬇️ **Download:** <https://juninmd.github.io/dotfiles/download>
 
-- **Novo instalador orientado por perfil** com suporte a `--dry-run` (`setup-2026.sh`).
-- **Fluxo modular** reaproveitando os scripts já existentes em `programas/*/setup.sh`.
-- **Documentação reorganizada** com foco em onboarding rápido e visão de stack.
-- **Galeria de prints** para visualizar o setup antes de instalar.
+## Instalar
 
-## 🚀 Começando em 2 minutos
-
-```bash
-git clone https://github.com/juninmd/dotfiles.git
-cd dotfiles
-chmod +x setup-2026.sh
-./setup-2026.sh --profile dev
+```sh
+# macOS / Linux
+curl -fsSL https://juninmd.github.io/dotfiles/install.sh | sh
 ```
 
-### Perfis disponíveis
-
-- `minimal`: shell moderna + prompt + VS Code.
-- `dev`: perfil recomendado (minimal + runtimes, Docker, banco e produtividade).
-- `full`: mesma base do `dev`, pensado para expandir com módulos extras.
-
-### Simular sem instalar nada
-
-```bash
-./setup-2026.sh --profile dev --dry-run
+```powershell
+# Windows
+irm https://juninmd.github.io/dotfiles/install.ps1 | iex
 ```
 
-## 🖼️ Prints do sistema (versão 2026)
+O bootstrap baixa o binário da última release e confere o SHA-256 antes de executar. Simule sem instalar: `dotfiles --profile dev --dry-run`.
 
-### 1) Visão geral do desktop
-![Ubuntu + GNOME + Dotfiles](./docs/screenshots/01-sistema-2026.svg)
+## Estrutura
 
-### 2) Terminal com tooling moderna
-![Terminal com starship e CLI tools](./docs/screenshots/02-sistema-2026.svg)
+| Caminho | O quê |
+|---|---|
+| `installer/` | Instalador TUI (TypeScript + Bun, binário único) e `catalog/catalog.json` |
+| `docs/` | Site VitePress (`pnpm docs:dev`) |
+| `programas/` | Scripts de setup por programa (Linux) |
+| `setup-2026.sh`, `setup.sh` | Instaladores shell legados |
 
-### 3) Workspace com Zellij
-![Sessão com múltiplos painéis no Zellij](./docs/screenshots/03-sistema-2026.svg)
+## Desenvolvimento
 
-### 4) VS Code pronto para produtividade
-![VS Code com tema, extensões e terminal integrado](./docs/screenshots/04-sistema-2026.svg)
+```sh
+pnpm install && pnpm docs:dev        # site
+cd installer && bun install && bun test && bun start --dry-run
+```
 
-## 🧩 Componentes do repositório
-
-- **Sistema operacional**
-  - Ubuntu: [`so/ubuntu/readme.md`](./so/ubuntu/readme.md)
-  - Windows: [`so/windows/readme.md`](./so/windows/readme.md)
-- **Programas e ferramentas**
-  - VS Code: [`programas/vscode/readme.md`](./programas/vscode/readme.md)
-  - Zsh: [`programas/zsh/readme.md`](./programas/zsh/readme.md)
-  - Starship: [`programas/starship/starship.toml`](./programas/starship/starship.toml)
-  - MySQL: [`programas/mysql/readme.md`](./programas/mysql/readme.md)
-  - Android: [`programas/android/readme.md`](./programas/android/readme.md)
-  - Firefox: [`programas/firefox/readme.md`](./programas/firefox/readme.md)
-
-## 🛠️ Utilitários
-
-- Gerar chave SSH: [`utils/generate-ssh.sh`](./utils/generate-ssh.sh)
-- Scripts de setup por programa: [`programas`](./programas)
-- Ferramentas extras: [`tools/readme.md`](./tools/readme.md)
-
-## 📌 Roadmap rápido
-
-- [ ] Adicionar perfil `workstation` com foco em desktop + design.
-- [ ] Exportar snapshots automáticos de configurações sensíveis.
-- [ ] Adicionar CI para validar shell scripts com `shellcheck`.
-- [ ] Criar script de rollback para remover módulos instalados.
-
-## 🙌 Créditos
-
-- Base original inspirada em: <https://github.com/shubhampathak/autosetup>
+Créditos: base inspirada em <https://github.com/shubhampathak/autosetup>.
