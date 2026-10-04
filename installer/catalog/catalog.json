@@ -45,7 +45,7 @@
   {
    "id": "git",
    "name": "Git",
-   "desc": "Controle de versão",
+   "desc": "Controle de vers\u00e3o",
    "category": "git",
    "install": {
     "linux": {
@@ -65,7 +65,7 @@
   {
    "id": "act",
    "name": "act",
-   "desc": "Run your GitHub Actions locally",
+   "desc": "\ud83c\udfac Executa GitHub Actions localmente",
    "category": "git",
    "install": {
     "linux": {
@@ -85,7 +85,7 @@
   {
    "id": "actionlint",
    "name": "actionlint",
-   "desc": "Static checker for GitHub Actions workflow files",
+   "desc": "\ud83d\udee0\ufe0f Linter est\u00e1tico para GitHub Actions",
    "category": "git",
    "install": {
     "linux": {
@@ -105,7 +105,7 @@
   {
    "id": "age",
    "name": "age",
-   "desc": "Simple, modern, secure file encryption",
+   "desc": "\ud83d\udd10 Criptografia de arquivos simples e moderna",
    "category": "security",
    "install": {
     "linux": {
@@ -125,7 +125,7 @@
   {
    "id": "aichat",
    "name": "aichat",
-   "desc": "All-in-one AI-Powered CLI Chat & Copilot",
+   "desc": "\ud83e\udd16 Cliente CLI p/ dezenas de LLMs",
    "category": "ai",
    "install": {
     "linux": {
@@ -145,7 +145,7 @@
   {
    "id": "aider",
    "name": "aider",
-   "desc": "AI pair programming in your terminal",
+   "desc": "\ud83d\udcbb Pair programming via AI no terminal",
    "category": "ai",
    "install": {
     "linux": {
@@ -161,7 +161,7 @@
   {
    "id": "aider-chat",
    "name": "aider-chat",
-   "desc": "aider-chat",
+   "desc": "\ud83d\udcbb Pair programming AI",
    "category": "ai",
    "install": {
     "linux": {
@@ -173,7 +173,7 @@
   {
    "id": "amber",
    "name": "amber",
-   "desc": "Crystal web framework. Bare metal performance, productivity and happiness",
+   "desc": "\ud83d\udd0d Busca de texto ultra r\u00e1pida",
    "category": "cli",
    "install": {
     "linux": {
@@ -189,7 +189,7 @@
   {
    "id": "android",
    "name": "android",
-   "desc": "android",
+   "desc": "\ud83d\udcf1 Ferramentas de SDK Android",
    "category": "cli",
    "install": {
     "linux": {
@@ -201,7 +201,7 @@
   {
    "id": "aqua",
    "name": "aqua",
-   "desc": "Declarative CLI Version manager",
+   "desc": "\ud83d\udce6 Gerenciador de ferramentas declarativo",
    "category": "cli",
    "install": {
     "linux": {
@@ -221,7 +221,7 @@
   {
    "id": "argc",
    "name": "argc",
-   "desc": "Easily create and use cli based on bash script",
+   "desc": "\u26a1 Cria\u00e7\u00e3o de CLIs a partir de coment\u00e1rios em bash",
    "category": "cli",
    "install": {
     "linux": {
@@ -237,7 +237,7 @@
   {
    "id": "argocd",
    "name": "argocd",
-   "desc": "GitOps Continuous Delivery for Kubernetes",
+   "desc": "\ud83d\udc19 CD declarativo para Kubernetes",
    "category": "devops",
    "install": {
     "linux": {
@@ -257,7 +257,7 @@
   {
    "id": "ast-grep",
    "name": "ast-grep",
-   "desc": "Code searching, linting, rewriting",
+   "desc": "\ud83c\udf33 Busca e reescrita de c\u00f3digo baseada em AST",
    "category": "cli",
    "install": {
     "linux": {
@@ -277,7 +277,7 @@
   {
    "id": "atac",
    "name": "atac",
-   "desc": "Simple API client (Postman-like) in your terminal",
+   "desc": "\ud83c\udf10 Postman em TUI r\u00e1pido",
    "category": "terminal",
    "install": {
     "linux": {
@@ -293,7 +293,7 @@
   {
    "id": "atlas",
    "name": "atlas",
-   "desc": "Database toolkit",
+   "desc": "\ud83d\uddc4\ufe0f CLI de banco de dados moderno",
    "category": "data",
    "install": {
     "linux": {
@@ -309,7 +309,7 @@
   {
    "id": "atuin",
    "name": "atuin",
-   "desc": "Improved shell history for zsh, bash, fish and nushell",
+   "desc": "\ud83d\udc22 Sincroniza e busca no hist\u00f3rico do shell",
    "category": "terminal",
    "install": {
     "linux": {
@@ -329,7 +329,7 @@
   {
    "id": "awscli",
    "name": "awscli",
-   "desc": "Official Amazon AWS command-line interface",
+   "desc": "\u2601\ufe0f Interface oficial para Amazon Web Services",
    "category": "cli",
    "install": {
     "linux": {
@@ -349,7 +349,7 @@
   {
    "id": "bacon",
    "name": "bacon",
-   "desc": "Background rust code check",
+   "desc": "\ud83e\udd53 Monitor de compila\u00e7\u00e3o em background para Rust",
    "category": "cli",
    "install": {
     "linux": {
@@ -365,7 +365,7 @@
   {
    "id": "bandwhich",
    "name": "bandwhich",
-   "desc": "Terminal bandwidth utilization tool",
+   "desc": "\ud83d\udcf6 Mostra utiliza\u00e7\u00e3o de rede por processo",
    "category": "terminal",
    "install": {
     "linux": {
@@ -381,7 +381,7 @@
   {
    "id": "bat",
    "name": "bat",
-   "desc": "cat com syntax highlight",
+   "desc": "\ud83e\udd87 Clone do cat com syntax highlighting",
    "category": "cli",
    "install": {
     "linux": {
@@ -401,7 +401,7 @@
   {
    "id": "bat-extras",
    "name": "bat-extras",
-   "desc": "Bash scripts that integrate bat with various command-line tools",
+   "desc": "\ud83e\udd87 Scripts adicionais para o bat",
    "category": "cli",
    "install": {
     "linux": {
@@ -417,7 +417,7 @@
   {
    "id": "binsider",
    "name": "binsider",
-   "desc": "Analyzes ELF binaries",
+   "desc": "\ud83d\udd2c Analisador de bin\u00e1rios Linux em TUI",
    "category": "cli",
    "install": {
     "linux": {
@@ -433,7 +433,7 @@
   {
    "id": "biome",
    "name": "biome",
-   "desc": "Toolchain of the web",
+   "desc": "\ud83c\udf0d Formatter e linter hiper-r\u00e1pido para Web",
    "category": "cli",
    "install": {
     "linux": {
@@ -453,7 +453,7 @@
   {
    "id": "bito",
    "name": "bito",
-   "desc": "bito",
+   "desc": "\ud83e\udde0 Assistente de c\u00f3digo AI",
    "category": "cli",
    "install": {
     "linux": {
@@ -465,7 +465,7 @@
   {
    "id": "bluetuith",
    "name": "bluetuith",
-   "desc": "Cross-platform TUI bluetooth manager",
+   "desc": "\ud83e\uddb7 Gerenciador de Bluetooth TUI",
    "category": "terminal",
    "install": {
     "linux": {
@@ -481,7 +481,7 @@
   {
    "id": "bore-cli",
    "name": "bore-cli",
-   "desc": "Modern, simple TCP tunnel in Rust that exposes local ports to a remote server",
+   "desc": "\ud83d\ude87 T\u00faneis TCP locais simplificados",
    "category": "cli",
    "install": {
     "linux": {
@@ -497,7 +497,7 @@
   {
    "id": "bottom",
    "name": "bottom",
-   "desc": "Yet another cross-platform graphical process/system monitor",
+   "desc": "\ud83d\udcc9 Monitor de sistema gr\u00e1fico (btm)",
    "category": "cli",
    "install": {
     "linux": {
@@ -517,7 +517,7 @@
   {
    "id": "boundary",
    "name": "boundary",
-   "desc": "boundary",
+   "desc": "\ud83d\udee1\ufe0f Gerenciamento de acesso seguro",
    "category": "cli",
    "install": {
     "linux": {
@@ -533,7 +533,7 @@
   {
    "id": "brave",
    "name": "brave",
-   "desc": "brave",
+   "desc": "\ud83e\udd81 Navegador Brave (Privacy-first)",
    "category": "cli",
    "install": {
     "linux": {
@@ -549,7 +549,7 @@
   {
    "id": "broot",
    "name": "broot",
-   "desc": "New way to see and navigate directory trees",
+   "desc": "\ud83c\udf32 Navega\u00e7\u00e3o em \u00e1rvore de diret\u00f3rios r\u00e1pida",
    "category": "files",
    "install": {
     "linux": {
@@ -569,7 +569,7 @@
   {
    "id": "bruno",
    "name": "bruno",
-   "desc": "Open source IDE for exploring and testing APIs",
+   "desc": "\ud83d\udc36 Cliente de API alternativo ao Postman",
    "category": "editor",
    "install": {
     "linux": {
@@ -589,7 +589,7 @@
   {
    "id": "bruno-cli",
    "name": "bruno-cli",
-   "desc": "CLI of the open-source IDE For exploring and testing APIs",
+   "desc": "\ud83d\udc36 CLI do cliente de API Bruno",
    "category": "editor",
    "install": {
     "linux": {
@@ -605,7 +605,7 @@
   {
    "id": "btop",
    "name": "btop",
-   "desc": "Resource monitor. C++ version and continuation of bashtop and bpytop",
+   "desc": "\ud83d\udcca Monitor de recursos TUI moderno",
    "category": "cli",
    "install": {
     "linux": {
@@ -621,7 +621,7 @@
   {
    "id": "bun",
    "name": "Bun",
-   "desc": "Runtime JS/TS",
+   "desc": "\ud83c\udf5e Runtime JS ultra r\u00e1pido",
    "category": "runtime",
    "install": {
     "linux": {
@@ -641,7 +641,7 @@
   {
    "id": "bw",
    "name": "bw",
-   "desc": "bw",
+   "desc": "\ud83d\udd10 Bitwarden CLI",
    "category": "cli",
    "install": {
     "linux": {
@@ -653,7 +653,7 @@
   {
    "id": "carapace",
    "name": "carapace",
-   "desc": "Multi-shell multi-command argument completer",
+   "desc": "\ud83d\udc1a Autocomplete multi-shell",
    "category": "terminal",
    "install": {
     "linux": {
@@ -673,7 +673,7 @@
   {
    "id": "cbonsai",
    "name": "cbonsai",
-   "desc": "Console Bonsai is a bonsai tree generator, written in C using ncurses",
+   "desc": "\ud83e\udeb4 Gerador de bonsai no terminal",
    "category": "cli",
    "install": {
     "linux": {
@@ -689,7 +689,7 @@
   {
    "id": "chafa",
    "name": "chafa",
-   "desc": "Versatile and fast Unicode/ASCII/ANSI graphics renderer",
+   "desc": "\ud83d\uddbc\ufe0f Visualizador de imagens em terminal gr\u00e1fico",
    "category": "cli",
    "install": {
     "linux": {
@@ -709,7 +709,7 @@
   {
    "id": "charm",
    "name": "charm",
-   "desc": "Tool for managing Juju Charms",
+   "desc": "\u2728 Ferramentas TUI da Charmbracelet",
    "category": "cli",
    "install": {
     "linux": {
@@ -725,7 +725,7 @@
   {
    "id": "chatbox",
    "name": "chatbox",
-   "desc": "Desktop app for GPT-4 / GPT-3.5 (OpenAI API)",
+   "desc": "\ud83d\udcac Cliente desktop para LLMs",
    "category": "ai",
    "install": {
     "linux": {
@@ -745,7 +745,7 @@
   {
    "id": "chatgpt-cli",
    "name": "chatgpt-cli",
-   "desc": "chatgpt-cli",
+   "desc": "\ud83e\udd16 ChatGPT diretamente do terminal",
    "category": "cli",
    "install": {
     "linux": {
@@ -757,7 +757,7 @@
   {
    "id": "cheat",
    "name": "cheat",
-   "desc": "Create and view interactive cheat sheets for *nix commands",
+   "desc": "\ud83d\udcc4 Cheatsheets interativos no terminal",
    "category": "cli",
    "install": {
     "linux": {
@@ -773,7 +773,7 @@
   {
    "id": "checkov",
    "name": "checkov",
-   "desc": "Prevent cloud misconfigurations during build-time for IaC tools",
+   "desc": "\ud83d\udee1\ufe0f Linter para Infraestrutura as Code",
    "category": "devops",
    "install": {
     "linux": {
@@ -789,7 +789,7 @@
   {
    "id": "choose",
    "name": "choose",
-   "desc": "choose",
+   "desc": "\u2702\ufe0f Alternativa ao cut e awk mais simples",
    "category": "cli",
    "install": {
     "linux": {
@@ -801,7 +801,7 @@
   {
    "id": "circumflex",
    "name": "circumflex",
-   "desc": "Hacker News in your terminal",
+   "desc": "\ud83d\udcf0 Leitor de Hacker News em TUI",
    "category": "terminal",
    "install": {
     "linux": {
@@ -817,7 +817,7 @@
   {
    "id": "claude-code",
    "name": "Claude Code",
-   "desc": "Agente de código",
+   "desc": "\ud83e\udd16 Agente de programa\u00e7\u00e3o da Anthropic",
    "category": "ai",
    "install": {
     "linux": {
@@ -837,7 +837,7 @@
   {
    "id": "cli-tools",
    "name": "cli-tools",
-   "desc": "cli-tools",
+   "desc": "\ud83d\udee0\ufe0f Ferramentas base do sistema",
    "category": "cli",
    "install": {
     "linux": {
@@ -849,7 +849,7 @@
   {
    "id": "cline",
    "name": "cline",
-   "desc": "AI-powered coding agent for complex work",
+   "desc": "\ud83e\udd16 Agente AI CLI integrado",
    "category": "ai",
    "install": {
     "linux": {
@@ -865,7 +865,7 @@
   {
    "id": "cloudflared",
    "name": "cloudflared",
-   "desc": "Cloudflare Tunnel client (formerly Argo Tunnel)",
+   "desc": "\u2601\ufe0f Cliente de t\u00fanel da Cloudflare",
    "category": "devops",
    "install": {
     "linux": {
@@ -885,7 +885,7 @@
   {
    "id": "cmatrix",
    "name": "cmatrix",
-   "desc": "Console Matrix",
+   "desc": "\ud83d\udcdf Chuva digital do Matrix",
    "category": "cli",
    "install": {
     "linux": {
@@ -901,7 +901,7 @@
   {
    "id": "cocogitto",
    "name": "cocogitto",
-   "desc": "Conventional Commits toolbox",
+   "desc": "\ud83d\udce6 CLI para Conventional Commits",
    "category": "cli",
    "install": {
     "linux": {
@@ -917,7 +917,7 @@
   {
    "id": "code2prompt",
    "name": "code2prompt",
-   "desc": "CLI tool to convert your codebase into a single LLM prompt",
+   "desc": "\ud83d\udcdc Converte c\u00f3digo para prompts de LLM",
    "category": "ai",
    "install": {
     "linux": {
@@ -933,7 +933,7 @@
   {
    "id": "cointop",
    "name": "cointop",
-   "desc": "cointop",
+   "desc": "\ud83e\ude99 Monitor de criptomoedas TUI",
    "category": "cli",
    "install": {
     "linux": {
@@ -945,7 +945,7 @@
   {
    "id": "consul",
    "name": "consul",
-   "desc": "Tool for service discovery, monitoring and configuration",
+   "desc": "\ud83c\udf10 Service mesh e descoberta de servi\u00e7os",
    "category": "cli",
    "install": {
     "linux": {
@@ -965,7 +965,7 @@
   {
    "id": "cpufetch",
    "name": "cpufetch",
-   "desc": "CPU architecture fetching tool",
+   "desc": "\ud83d\udda5\ufe0f Ferramenta de info de CPU",
    "category": "cli",
    "install": {
     "linux": {
@@ -985,7 +985,7 @@
   {
    "id": "crane",
    "name": "crane",
-   "desc": "Tool for interacting with remote images and registries",
+   "desc": "\ud83c\udfd7\ufe0f Ferramenta para gerenciar imagens de container",
    "category": "cli",
    "install": {
     "linux": {
@@ -1001,7 +1001,7 @@
   {
    "id": "croc",
    "name": "croc",
-   "desc": "Securely send things from one computer to another",
+   "desc": "\ud83d\udc0a Transfer\u00eancia de arquivos f\u00e1cil e segura",
    "category": "security",
    "install": {
     "linux": {
@@ -1021,7 +1021,7 @@
   {
    "id": "csvlens",
    "name": "csvlens",
-   "desc": "Command-line csv viewer",
+   "desc": "\ud83d\udcca Visualizador de CSV em TUI",
    "category": "data",
    "install": {
     "linux": {
@@ -1041,7 +1041,7 @@
   {
    "id": "ctop",
    "name": "ctop",
-   "desc": "Top-like interface for container metrics",
+   "desc": "\ud83d\udc33 Top command para containers Docker",
    "category": "devops",
    "install": {
     "linux": {
@@ -1057,7 +1057,7 @@
   {
    "id": "curlie",
    "name": "curlie",
-   "desc": "Power of curl, ease of use of httpie",
+   "desc": "\ud83c\udf10 cURL com facilidades do HTTPie",
    "category": "network",
    "install": {
     "linux": {
@@ -1073,7 +1073,7 @@
   {
    "id": "cursor",
    "name": "cursor",
-   "desc": "Write, edit, and chat about your code with AI",
+   "desc": "\ud83d\udcbb Editor de c\u00f3digo orientado a IA",
    "category": "ai",
    "install": {
     "linux": {
@@ -1093,7 +1093,7 @@
   {
    "id": "czg",
    "name": "czg",
-   "desc": "Interactive Commitizen CLI that generate standardized commit messages",
+   "desc": "\ud83d\udcdd Utilit\u00e1rio Commitizen interativo",
    "category": "cli",
    "install": {
     "linux": {
@@ -1109,7 +1109,7 @@
   {
    "id": "d2",
    "name": "d2",
-   "desc": "Modern diagram scripting language that turns text to diagrams",
+   "desc": "\ud83d\udcd0 Linguagem declarativa de diagramas",
    "category": "cli",
    "install": {
     "linux": {
@@ -1129,7 +1129,7 @@
   {
    "id": "dagger",
    "name": "dagger",
-   "desc": "Portable devkit for CI/CD pipelines",
+   "desc": "\ud83d\udde1\ufe0f Pipelines CI/CD como c\u00f3digo",
    "category": "cli",
    "install": {
     "linux": {
@@ -1149,7 +1149,7 @@
   {
    "id": "dapr",
    "name": "dapr",
-   "desc": "dapr",
+   "desc": "\ud83c\udfd7\ufe0f Runtime para aplica\u00e7\u00f5es distribu\u00eddas",
    "category": "cli",
    "install": {
     "linux": {
@@ -1161,7 +1161,7 @@
   {
    "id": "dasel",
    "name": "dasel",
-   "desc": "JSON, YAML, TOML, XML, and CSV query and modification tool",
+   "desc": "\ud83d\udee0\ufe0f Consulta de JSON / YAML / TOML / XML",
    "category": "data",
    "install": {
     "linux": {
@@ -1177,7 +1177,7 @@
   {
    "id": "daytona",
    "name": "daytona",
-   "desc": "daytona",
+   "desc": "\ud83c\udf05 Ambientes de desenvolvimento na nuvem",
    "category": "cli",
    "install": {
     "linux": {
@@ -1189,7 +1189,7 @@
   {
    "id": "dbeaver",
    "name": "dbeaver",
-   "desc": "dbeaver",
+   "desc": "\ud83d\uddc3\ufe0f Cliente universal de banco de dados",
    "category": "cli",
    "install": {
     "linux": {
@@ -1205,7 +1205,7 @@
   {
    "id": "dbmate",
    "name": "dbmate",
-   "desc": "Lightweight, framework-agnostic database migration tool",
+   "desc": "\ud83d\uddc4\ufe0f Ferramenta de migra\u00e7\u00e3o de banco de dados",
    "category": "data",
    "install": {
     "linux": {
@@ -1225,7 +1225,7 @@
   {
    "id": "delta",
    "name": "delta",
-   "desc": "Syntax-highlighting pager for git and diff output",
+   "desc": "\ud83d\udd0d Formatador de diffs para Git",
    "category": "git",
    "install": {
     "linux": {
@@ -1245,7 +1245,7 @@
   {
    "id": "deno",
    "name": "deno",
-   "desc": "Secure runtime for JavaScript and TypeScript",
+   "desc": "\ud83e\udd95 Runtime moderno para JS e TS",
    "category": "security",
    "install": {
     "linux": {
@@ -1265,7 +1265,7 @@
   {
    "id": "devbox",
    "name": "devbox",
-   "desc": "devbox",
+   "desc": "\ud83d\udce6 Ambientes dev isolados via Nix",
    "category": "cli",
    "install": {
     "linux": {
@@ -1277,7 +1277,7 @@
   {
    "id": "devenv",
    "name": "devenv",
-   "desc": "devenv",
+   "desc": "\ud83d\udd27 Ambientes dev reproduz\u00edveis",
    "category": "cli",
    "install": {
     "linux": {
@@ -1289,7 +1289,7 @@
   {
    "id": "devpod",
    "name": "devpod",
-   "desc": "UI to create reproducible developer environments based on a devcontainer.json",
+   "desc": "\ud83d\udc33 Codespaces locais em qualquer infra",
    "category": "devops",
    "install": {
     "linux": {
@@ -1309,7 +1309,7 @@
   {
    "id": "devspace",
    "name": "devspace",
-   "desc": "CLI helps develop/deploy/debug apps with Docker and k8s",
+   "desc": "\ud83d\ude80 Deploy e dev para Kubernetes",
    "category": "devops",
    "install": {
     "linux": {
@@ -1325,7 +1325,7 @@
   {
    "id": "devtoy",
    "name": "devtoy",
-   "desc": "devtoy",
+   "desc": "\ud83e\uddf0 Canivete su\u00ed\u00e7o para desenvolvedores",
    "category": "cli",
    "install": {
     "linux": {
@@ -1337,7 +1337,7 @@
   {
    "id": "difftastic",
    "name": "difftastic",
-   "desc": "Diff that understands syntax",
+   "desc": "\ud83d\udcdd Ferramenta de diff estrutural AST",
    "category": "cli",
    "install": {
     "linux": {
@@ -1357,7 +1357,7 @@
   {
    "id": "direnv",
    "name": "direnv",
-   "desc": "Load/unload environment variables based on $PWD",
+   "desc": "\ud83c\udf3f Carregamento autom\u00e1tico de vari\u00e1veis de ambiente",
    "category": "cli",
    "install": {
     "linux": {
@@ -1377,7 +1377,7 @@
   {
    "id": "discord",
    "name": "discord",
-   "desc": "Voice and text chat software",
+   "desc": "\ud83d\udcac Chat para gamers e comunidades",
    "category": "ai",
    "install": {
     "linux": {
@@ -1397,7 +1397,7 @@
   {
    "id": "diskonaut",
    "name": "diskonaut",
-   "desc": "Terminal visual disk space navigator",
+   "desc": "\ud83c\udf0c Navegador visual de espa\u00e7o em disco",
    "category": "files",
    "install": {
     "linux": {
@@ -1413,7 +1413,7 @@
   {
    "id": "distrobox",
    "name": "distrobox",
-   "desc": "Use any Linux distribution inside your terminal",
+   "desc": "\ud83d\udce6 Containers Linux em qualquer distro",
    "category": "terminal",
    "install": {
     "linux": {
@@ -1429,7 +1429,7 @@
   {
    "id": "dive",
    "name": "dive",
-   "desc": "Tool for exploring each layer in a docker image",
+   "desc": "\ud83d\udc33 Explorador de camadas de imagens Docker",
    "category": "devops",
    "install": {
     "linux": {
@@ -1445,7 +1445,7 @@
   {
    "id": "dnote",
    "name": "dnote",
-   "desc": "Simple command-line notebook",
+   "desc": "\ud83d\udcd3 Bloco de notas cli instant\u00e2neo",
    "category": "cli",
    "install": {
     "linux": {
@@ -1461,7 +1461,7 @@
   {
    "id": "docker",
    "name": "Docker",
-   "desc": "Containers",
+   "desc": "\ud83d\udc33 Plataforma de containers",
    "category": "devops",
    "install": {
     "linux": {
@@ -1481,7 +1481,7 @@
   {
    "id": "doggo",
    "name": "doggo",
-   "desc": "Command-line DNS Client for Humans",
+   "desc": "\ud83d\udc36 Cliente DNS moderno e colorido",
    "category": "network",
    "install": {
     "linux": {
@@ -1501,7 +1501,7 @@
   {
    "id": "dolt",
    "name": "dolt",
-   "desc": "Git for Data",
+   "desc": "\ud83d\uddc3\ufe0f Banco de dados SQL versionado como Git",
    "category": "git",
    "install": {
     "linux": {
@@ -1521,7 +1521,7 @@
   {
    "id": "doppler",
    "name": "doppler",
-   "desc": "CLI for interacting with Doppler secrets and configuration",
+   "desc": "\ud83d\udd10 Gerenciador de segredos e configura\u00e7\u00f5es",
    "category": "security",
    "install": {
     "linux": {
@@ -1541,7 +1541,7 @@
   {
    "id": "dotenv-linter",
    "name": "dotenv-linter",
-   "desc": "Lightning-fast linter for .env files written in Rust",
+   "desc": "\ud83e\uddf9 Linter de arquivos .env",
    "category": "files",
    "install": {
     "linux": {
@@ -1557,7 +1557,7 @@
   {
    "id": "dotenvx",
    "name": "dotenvx",
-   "desc": "dotenvx",
+   "desc": "\ud83d\udddd\ufe0f Gest\u00e3o de arquivos .env com criptografia",
    "category": "cli",
    "install": {
     "linux": {
@@ -1573,7 +1573,7 @@
   {
    "id": "dprint",
    "name": "dprint",
-   "desc": "Pluggable and configurable code formatting platform written in Rust",
+   "desc": "\u26a1 Formatador de c\u00f3digo plug\u00e1vel e veloz",
    "category": "cli",
    "install": {
     "linux": {
@@ -1593,7 +1593,7 @@
   {
    "id": "dsq",
    "name": "dsq",
-   "desc": "CLI tool for running SQL queries against JSON, CSV, Excel, Parquet, and more",
+   "desc": "\ud83d\uddc4\ufe0f Executa SQL sobre arquivos de dados",
    "category": "data",
    "install": {
     "linux": {
@@ -1609,7 +1609,7 @@
   {
    "id": "dua",
    "name": "dua",
-   "desc": "dua",
+   "desc": "\ud83d\udcca Analisador interativo de espa\u00e7o em disco",
    "category": "cli",
    "install": {
     "linux": {
@@ -1621,7 +1621,7 @@
   {
    "id": "dua-cli",
    "name": "dua-cli",
-   "desc": "View disk space usage and delete unwanted data, fast",
+   "desc": "\ud83d\udcca Utilit\u00e1rio CLI para disk usage",
    "category": "data",
    "install": {
     "linux": {
@@ -1641,7 +1641,7 @@
   {
    "id": "duckdb",
    "name": "duckdb",
-   "desc": "Embeddable SQL OLAP Database Management System",
+   "desc": "\ud83e\udd86 Banco de dados anal\u00edtico in-process",
    "category": "data",
    "install": {
     "linux": {
@@ -1657,7 +1657,7 @@
   {
    "id": "duf",
    "name": "duf",
-   "desc": "Disk Usage/Free Utility - a better 'df' alternative",
+   "desc": "\ud83d\udda5\ufe0f Alternativa moderna ao df",
    "category": "files",
    "install": {
     "linux": {
@@ -1677,7 +1677,7 @@
   {
    "id": "dufs",
    "name": "dufs",
-   "desc": "Static file server",
+   "desc": "\ud83d\udcc1 Servidor de arquivos est\u00e1ticos simples",
    "category": "files",
    "install": {
     "linux": {
@@ -1697,7 +1697,7 @@
   {
    "id": "dura",
    "name": "dura",
-   "desc": "Backs up your work automatically via Git commits",
+   "desc": "\ud83d\udcbe Auto-backup invis\u00edvel para Git",
    "category": "git",
    "install": {
     "linux": {
@@ -1713,7 +1713,7 @@
   {
    "id": "dust",
    "name": "dust",
-   "desc": "More intuitive version of du in rust",
+   "desc": "\ud83e\uddf9 Alternativa intuitiva ao du (disk usage)",
    "category": "files",
    "install": {
     "linux": {
@@ -1733,7 +1733,7 @@
   {
    "id": "dysk",
    "name": "dysk",
-   "desc": "Linux utility to get information on filesystems, like df but better",
+   "desc": "\ud83d\udcbe Mostra info de discos montados em TUI",
    "category": "files",
    "install": {
     "linux": {
@@ -1749,7 +1749,7 @@
   {
    "id": "earthly",
    "name": "earthly",
-   "desc": "Build automation tool for the container era",
+   "desc": "\ud83c\udf0d Build automation para CI",
    "category": "devops",
    "install": {
     "linux": {
@@ -1765,7 +1765,7 @@
   {
    "id": "eget",
    "name": "eget",
-   "desc": "Easily install prebuilt binaries from GitHub",
+   "desc": "\u2b07\ufe0f Downloader universal do GitHub Releases",
    "category": "git",
    "install": {
     "linux": {
@@ -1785,7 +1785,7 @@
   {
    "id": "elixir",
    "name": "elixir",
-   "desc": "Functional metaprogramming aware language built on Erlang VM",
+   "desc": "\ud83d\udca7 Linguagem de programa\u00e7\u00e3o funcional",
    "category": "cli",
    "install": {
     "linux": {
@@ -1805,7 +1805,7 @@
   {
    "id": "erdtree",
    "name": "erdtree",
-   "desc": "Multi-threaded file-tree visualizer and disk usage analyzer",
+   "desc": "\ud83c\udf33 Visualizador de disco e \u00e1rvore moderno",
    "category": "files",
    "install": {
     "linux": {
@@ -1825,7 +1825,7 @@
   {
    "id": "evans",
    "name": "evans",
-   "desc": "More expressive universal gRPC client",
+   "desc": "\ud83d\udcde Cliente gRPC interativo",
    "category": "cli",
    "install": {
     "linux": {
@@ -1841,7 +1841,7 @@
   {
    "id": "eza",
    "name": "eza",
-   "desc": "Modern, maintained replacement for ls",
+   "desc": "\ud83c\udf1f Alternativa moderna ao comando ls",
    "category": "files",
    "install": {
     "linux": {
@@ -1861,7 +1861,7 @@
   {
    "id": "fabric",
    "name": "fabric",
-   "desc": "Library and command-line tool for SSH",
+   "desc": "\ud83e\udd16 Framework de prompts via CLI",
    "category": "cli",
    "install": {
     "linux": {
@@ -1881,7 +1881,7 @@
   {
    "id": "fastfetch",
    "name": "fastfetch",
-   "desc": "Like neofetch, but much faster because written mostly in C",
+   "desc": "\u26a1 Neofetch ultrarr\u00e1pido em C",
    "category": "cli",
    "install": {
     "linux": {
@@ -1901,7 +1901,7 @@
   {
    "id": "fd-find",
    "name": "fd-find",
-   "desc": "fd-find",
+   "desc": "\ud83d\udd0e Alternativa r\u00e1pida e amig\u00e1vel ao find",
    "category": "files",
    "install": {
     "linux": {
@@ -1913,7 +1913,7 @@
   {
    "id": "fend",
    "name": "fend",
-   "desc": "Arbitrary-precision unit-aware calculator",
+   "desc": "\ud83e\uddee Calculadora cient\u00edfica com convers\u00e3o",
    "category": "cli",
    "install": {
     "linux": {
@@ -1933,7 +1933,7 @@
   {
    "id": "ffuf",
    "name": "ffuf",
-   "desc": "Fast web fuzzer written in Go",
+   "desc": "\ud83d\ude80 Fuzzer r\u00e1pido p/ web em Go",
    "category": "cli",
    "install": {
     "linux": {
@@ -1953,7 +1953,7 @@
   {
    "id": "firefox",
    "name": "firefox",
-   "desc": "Web browser",
+   "desc": "\ud83e\udd8a Navegador web Mozilla",
    "category": "cli",
    "install": {
     "linux": {
@@ -1973,7 +1973,7 @@
   {
    "id": "flox",
    "name": "flox",
-   "desc": "Manages environments across the software lifecycle",
+   "desc": "\ud83d\udce6 Ambientes de pacote f\u00e1ceis com Nix",
    "category": "cli",
    "install": {
     "linux": {
@@ -1989,7 +1989,7 @@
   {
    "id": "flyctl",
    "name": "flyctl",
-   "desc": "Command-line tools for fly.io services",
+   "desc": "\u2708\ufe0f CLI oficial da Fly.io",
    "category": "cli",
    "install": {
     "linux": {
@@ -2009,7 +2009,7 @@
   {
    "id": "fnm",
    "name": "fnm",
-   "desc": "Fast and simple Node.js version manager",
+   "desc": "\ud83d\ude80 Gerenciador r\u00e1pido de vers\u00e3o Node.js",
    "category": "cli",
    "install": {
     "linux": {
@@ -2029,7 +2029,7 @@
   {
    "id": "fq",
    "name": "fq",
-   "desc": "fq",
+   "desc": "\ud83d\udee0\ufe0f jq para dados bin\u00e1rios e formatos variados",
    "category": "cli",
    "install": {
     "linux": {
@@ -2041,7 +2041,7 @@
   {
    "id": "freeze",
    "name": "freeze",
-   "desc": "Amazon Glacier file transfer client",
+   "desc": "\ud83d\udcf8 Gera imagens de trechos de c\u00f3digo via CLI",
    "category": "files",
    "install": {
     "linux": {
@@ -2061,7 +2061,7 @@
   {
    "id": "fx",
    "name": "fx",
-   "desc": "Terminal JSON viewer",
+   "desc": "\ud83c\udfa8 Visualizador e processador JSON TUI",
    "category": "data",
    "install": {
     "linux": {
@@ -2077,7 +2077,7 @@
   {
    "id": "fzf",
    "name": "fzf",
-   "desc": "fuzzy finder",
+   "desc": "\ud83d\udd0d Buscador fuzzy de linha de comando",
    "category": "cli",
    "install": {
     "linux": {
@@ -2097,7 +2097,7 @@
   {
    "id": "gaze",
    "name": "gaze",
-   "desc": "Execute commands for you",
+   "desc": "\ud83d\udc41\ufe0f Executa comandos quando arquivos mudam",
    "category": "cli",
    "install": {
     "linux": {
@@ -2113,7 +2113,7 @@
   {
    "id": "gcloud",
    "name": "gcloud",
-   "desc": "gcloud",
+   "desc": "\u2601\ufe0f CLI oficial do Google Cloud",
    "category": "devops",
    "install": {
     "linux": {
@@ -2125,7 +2125,7 @@
   {
    "id": "gdu",
    "name": "gdu",
-   "desc": "Disk usage analyzer with console interface written in Go",
+   "desc": "\ud83d\udcca Analisador de disco r\u00e1pido em Go",
    "category": "files",
    "install": {
     "linux": {
@@ -2145,7 +2145,7 @@
   {
    "id": "genact",
    "name": "genact",
-   "desc": "Nonsense activity generator",
+   "desc": "\ud83c\udfad Gerador de atividade falsa",
    "category": "cli",
    "install": {
     "linux": {
@@ -2165,7 +2165,7 @@
   {
    "id": "gh",
    "name": "gh",
-   "desc": "GitHub command-line tool",
+   "desc": "\ud83d\udc19 CLI oficial do GitHub",
    "category": "git",
    "install": {
     "linux": {
@@ -2181,7 +2181,7 @@
   {
    "id": "gh-dash",
    "name": "gh-dash",
-   "desc": "gh-dash",
+   "desc": "\ud83d\udcca Dashboard do GitHub em TUI",
    "category": "cli",
    "install": {
     "linux": {
@@ -2193,7 +2193,7 @@
   {
    "id": "ghostty",
    "name": "ghostty",
-   "desc": "Terminal emulator that uses platform-native UI and GPU acceleration",
+   "desc": "\ud83d\udc7b Emulador de terminal super r\u00e1pido",
    "category": "terminal",
    "install": {
     "linux": {
@@ -2209,7 +2209,7 @@
   {
    "id": "ghq",
    "name": "ghq",
-   "desc": "Remote repository management made easy",
+   "desc": "\ud83d\udcc2 Gerencia reposit\u00f3rios locais Git",
    "category": "cli",
    "install": {
     "linux": {
@@ -2229,7 +2229,7 @@
   {
    "id": "git-absorb",
    "name": "git-absorb",
-   "desc": "Automatic git commit --fixup",
+   "desc": "\ud83e\uddf2 git commit --fixup autom\u00e1tico",
    "category": "git",
    "install": {
     "linux": {
@@ -2249,7 +2249,7 @@
   {
    "id": "git-cliff",
    "name": "git-cliff",
-   "desc": "Highly customizable changelog generator",
+   "desc": "\u26f0\ufe0f Gerador de changelog configur\u00e1vel",
    "category": "git",
    "install": {
     "linux": {
@@ -2269,7 +2269,7 @@
   {
    "id": "git-filter-repo",
    "name": "git-filter-repo",
-   "desc": "Quickly rewrite git repository history",
+   "desc": "\ud83e\uddf9 Reescreve hist\u00f3rico Git rapidamente",
    "category": "git",
    "install": {
     "linux": {
@@ -2285,7 +2285,7 @@
   {
    "id": "git-next",
    "name": "git-next",
-   "desc": "git-next",
+   "desc": "\u23e9 Fluxo de trabalho alternativo pro Git",
    "category": "git",
    "install": {
     "linux": {
@@ -2297,7 +2297,7 @@
   {
    "id": "git-sim",
    "name": "git-sim",
-   "desc": "git-sim",
+   "desc": "\ud83c\udfac Simula comandos Git visualmente",
    "category": "git",
    "install": {
     "linux": {
@@ -2309,7 +2309,7 @@
   {
    "id": "git-town",
    "name": "git-town",
-   "desc": "High-level command-line interface for Git",
+   "desc": "\ud83c\udfd9\ufe0f Fluxo de alto n\u00edvel para o Git",
    "category": "git",
    "install": {
     "linux": {
@@ -2325,7 +2325,7 @@
   {
    "id": "gitingest",
    "name": "gitingest",
-   "desc": "Turn any Git repository into a prompt-friendly text ingest for LLMs",
+   "desc": "\ud83e\udde0 Extrai conte\u00fado de reposit\u00f3rio para LLMs",
    "category": "ai",
    "install": {
     "linux": {
@@ -2341,7 +2341,7 @@
   {
    "id": "gitleaks",
    "name": "gitleaks",
-   "desc": "Audit git repos for secrets",
+   "desc": "\ud83d\udd11 Detecta segredos expostos em c\u00f3digo",
    "category": "git",
    "install": {
     "linux": {
@@ -2361,7 +2361,7 @@
   {
    "id": "gitui",
    "name": "gitui",
-   "desc": "Blazing fast terminal-ui for git written in rust",
+   "desc": "\ud83d\udda5\ufe0f Interface Git em TUI r\u00e1pida e leve",
    "category": "git",
    "install": {
     "linux": {
@@ -2381,7 +2381,7 @@
   {
    "id": "glab",
    "name": "glab",
-   "desc": "Open-source GitLab command-line tool",
+   "desc": "\ud83e\udd8a CLI oficial do GitLab",
    "category": "git",
    "install": {
     "linux": {
@@ -2401,7 +2401,7 @@
   {
    "id": "glances",
    "name": "glances",
-   "desc": "Alternative to top/htop",
+   "desc": "\ud83d\udc40 Monitoramento cruzado do sistema",
    "category": "cli",
    "install": {
     "linux": {
@@ -2417,7 +2417,7 @@
   {
    "id": "gleam",
    "name": "gleam",
-   "desc": "Statically typed language for the Erlang VM",
+   "desc": "\u2728 Linguagem segura na BEAM",
    "category": "cli",
    "install": {
     "linux": {
@@ -2437,7 +2437,7 @@
   {
    "id": "glow",
    "name": "glow",
-   "desc": "Render markdown on the CLI",
+   "desc": "\ud83c\udf1f Leitor de Markdown em terminal",
    "category": "cli",
    "install": {
     "linux": {
@@ -2457,7 +2457,7 @@
   {
    "id": "gobang",
    "name": "gobang",
-   "desc": "gobang",
+   "desc": "\ud83d\uddc4\ufe0f Cliente de banco de dados TUI multiplataforma",
    "category": "cli",
    "install": {
     "linux": {
@@ -2473,7 +2473,7 @@
   {
    "id": "gojq",
    "name": "gojq",
-   "desc": "Pure Go implementation of jq",
+   "desc": "\ud83d\udd0d Implementa\u00e7\u00e3o pura de jq em Go",
    "category": "cli",
    "install": {
     "linux": {
@@ -2489,7 +2489,7 @@
   {
    "id": "gorilla-cli",
    "name": "gorilla-cli",
-   "desc": "LLMs for your CLI",
+   "desc": "\ud83e\udd8d Gera comandos via IA com seguran\u00e7a",
    "category": "cli",
    "install": {
     "linux": {
@@ -2505,7 +2505,7 @@
   {
    "id": "gping",
    "name": "gping",
-   "desc": "Ping, but with a graph",
+   "desc": "\ud83c\udfd3 Ping com gr\u00e1ficos coloridos no terminal",
    "category": "network",
    "install": {
     "linux": {
@@ -2525,7 +2525,7 @@
   {
    "id": "gptme",
    "name": "gptme",
-   "desc": "AI assistant in your terminal",
+   "desc": "\ud83e\udd16 Assistente CLI LLM inteligente",
    "category": "ai",
    "install": {
     "linux": {
@@ -2541,7 +2541,7 @@
   {
    "id": "grex",
    "name": "grex",
-   "desc": "Command-line tool for generating regular expressions",
+   "desc": "\ud83d\udd23 Gera regex a partir de strings de teste",
    "category": "cli",
    "install": {
     "linux": {
@@ -2557,7 +2557,7 @@
   {
    "id": "gron",
    "name": "gron",
-   "desc": "Make JSON greppable",
+   "desc": "\ud83e\uddf9 Transforma JSON em greppable",
    "category": "data",
    "install": {
     "linux": {
@@ -2577,7 +2577,7 @@
   {
    "id": "grpcurl",
    "name": "grpcurl",
-   "desc": "Like cURL, but for gRPC",
+   "desc": "\ud83d\udcde cURL para servi\u00e7os gRPC",
    "category": "cli",
    "install": {
     "linux": {
@@ -2597,7 +2597,7 @@
   {
    "id": "grype",
    "name": "grype",
-   "desc": "Vulnerability scanner for container images and filesystems",
+   "desc": "\ud83d\udee1\ufe0f Scanner de vulnerabilidades em containers",
    "category": "devops",
    "install": {
     "linux": {
@@ -2617,7 +2617,7 @@
   {
    "id": "gtt",
    "name": "gtt",
-   "desc": "gtt",
+   "desc": "\ud83c\udf0d Tradutor do Google em terminal",
    "category": "cli",
    "install": {
     "linux": {
@@ -2629,7 +2629,7 @@
   {
    "id": "gum",
    "name": "gum",
-   "desc": "Tool for glamorous shell scripts",
+   "desc": "\ud83c\udf6c Ferramenta para UI em scripts bash",
    "category": "terminal",
    "install": {
     "linux": {
@@ -2649,7 +2649,7 @@
   {
    "id": "hadolint",
    "name": "hadolint",
-   "desc": "Smarter Dockerfile linter to validate best practices",
+   "desc": "\ud83d\udc33 Linter avan\u00e7ado para Dockerfile",
    "category": "devops",
    "install": {
     "linux": {
@@ -2669,7 +2669,7 @@
   {
    "id": "harlequin",
    "name": "harlequin",
-   "desc": "Easy, fast, and beautiful database client for the terminal",
+   "desc": "\ud83c\udccf SQL IDE poderoso para o terminal",
    "category": "data",
    "install": {
     "linux": {
@@ -2685,7 +2685,7 @@
   {
    "id": "hck",
    "name": "hck",
-   "desc": "Sharp cut(1) clone",
+   "desc": "\ud83d\udd2a Alternativa ao cut ultrarr\u00e1pida",
    "category": "cli",
    "install": {
     "linux": {
@@ -2701,7 +2701,7 @@
   {
    "id": "helix",
    "name": "helix",
-   "desc": "Post-modern modal text editor",
+   "desc": "\ud83e\uddec Editor de texto modal p\u00f3s-moderno",
    "category": "editor",
    "install": {
     "linux": {
@@ -2721,7 +2721,7 @@
   {
    "id": "helm",
    "name": "helm",
-   "desc": "Kubernetes package manager",
+   "desc": "\ud83d\udea2 Gerenciador de pacotes Kubernetes",
    "category": "devops",
    "install": {
     "linux": {
@@ -2741,7 +2741,7 @@
   {
    "id": "heroku",
    "name": "heroku",
-   "desc": "CLI for Heroku",
+   "desc": "\u2601\ufe0f CLI do Heroku",
    "category": "cli",
    "install": {
     "linux": {
@@ -2761,7 +2761,7 @@
   {
    "id": "hexyl",
    "name": "hexyl",
-   "desc": "Command-line hex viewer",
+   "desc": "\ud83d\udd22 Visualizador hexadecimal moderno",
    "category": "cli",
    "install": {
     "linux": {
@@ -2781,7 +2781,7 @@
   {
    "id": "howdoi",
    "name": "howdoi",
-   "desc": "Instant coding answers via the command-line",
+   "desc": "\u2753 Busca de respostas diretas para devs",
    "category": "cli",
    "install": {
     "linux": {
@@ -2797,7 +2797,7 @@
   {
    "id": "htmlq",
    "name": "htmlq",
-   "desc": "Uses CSS selectors to extract bits content from HTML files",
+   "desc": "\ud83c\udf10 jq para extrair conte\u00fado HTML",
    "category": "files",
    "install": {
     "linux": {
@@ -2813,7 +2813,7 @@
   {
    "id": "htop",
    "name": "htop",
-   "desc": "Improved top (interactive process viewer)",
+   "desc": "\ud83d\udcca Visualizador de processos cl\u00e1ssico e amig\u00e1vel",
    "category": "cli",
    "install": {
     "linux": {
@@ -2829,7 +2829,7 @@
   {
    "id": "httpie",
    "name": "httpie",
-   "desc": "User-friendly cURL replacement (command-line HTTP client)",
+   "desc": "\ud83c\udf10 Cliente HTTP user-friendly alternativo cURL",
    "category": "network",
    "install": {
     "linux": {
@@ -2849,7 +2849,7 @@
   {
    "id": "httpstat",
    "name": "httpstat",
-   "desc": "Curl statistics made simple",
+   "desc": "\ud83d\udcc8 Estat\u00edsticas de lat\u00eancia de curl visualmente",
    "category": "network",
    "install": {
     "linux": {
@@ -2865,7 +2865,7 @@
   {
    "id": "httpx",
    "name": "httpx",
-   "desc": "Fast and multi-purpose HTTP toolkit",
+   "desc": "\ud83c\udf10 Toolkit HTTP multifuncional em Go",
    "category": "network",
    "install": {
     "linux": {
@@ -2881,7 +2881,7 @@
   {
    "id": "hurl",
    "name": "hurl",
-   "desc": "Run and Test HTTP Requests with plain text and curl",
+   "desc": "\ud83c\udf10 Executa requests HTTP via texto plano",
    "category": "network",
    "install": {
     "linux": {
@@ -2901,7 +2901,7 @@
   {
    "id": "hwatch",
    "name": "hwatch",
-   "desc": "Modern alternative to the watch command",
+   "desc": "\u231a Watcher moderno de comandos iterativos",
    "category": "cli",
    "install": {
     "linux": {
@@ -2917,7 +2917,7 @@
   {
    "id": "hyperfine",
    "name": "hyperfine",
-   "desc": "Command-line benchmarking tool",
+   "desc": "\u23f1\ufe0f Ferramenta de benchmarking CLI",
    "category": "cli",
    "install": {
     "linux": {
@@ -2937,7 +2937,7 @@
   {
    "id": "igrep",
    "name": "igrep",
-   "desc": "Interactive grep",
+   "desc": "\ud83d\udd0d Grep interativo em TUI",
    "category": "cli",
    "install": {
     "linux": {
@@ -2953,7 +2953,7 @@
   {
    "id": "infisical",
    "name": "infisical",
-   "desc": "CLI for Infisical",
+   "desc": "\ud83d\udd10 Gerenciador de segredos end-to-end",
    "category": "cli",
    "install": {
     "linux": {
@@ -2973,7 +2973,7 @@
   {
    "id": "infracost",
    "name": "infracost",
-   "desc": "Cost estimates for Terraform, Terragrunt, and CloudFormation",
+   "desc": "\ud83d\udcb0 Estimativas de custo para Terraform",
    "category": "devops",
    "install": {
     "linux": {
@@ -2993,7 +2993,7 @@
   {
    "id": "inlyne",
    "name": "inlyne",
-   "desc": "GPU powered yet browserless tool to help you quickly view markdown files",
+   "desc": "\ud83d\udcc9 Visualizador Markdown que suporta imagens",
    "category": "files",
    "install": {
     "linux": {
@@ -3009,7 +3009,7 @@
   {
    "id": "inshellisense",
    "name": "inshellisense",
-   "desc": "IDE style command-line auto complete",
+   "desc": "\ud83d\udca1 Autocomplete superpoderoso tipo IDE",
    "category": "terminal",
    "install": {
     "linux": {
@@ -3025,7 +3025,7 @@
   {
    "id": "jan",
    "name": "jan",
-   "desc": "Offline AI chat tool",
+   "desc": "\ud83e\udd16 Cliente de IA local open-source",
    "category": "ai",
    "install": {
     "linux": {
@@ -3045,7 +3045,7 @@
   {
    "id": "jaq",
    "name": "jaq",
-   "desc": "JQ clone focussed on correctness, speed, and simplicity",
+   "desc": "\ud83d\udd0d Clone do jq escrito em Rust",
    "category": "cli",
    "install": {
     "linux": {
@@ -3061,7 +3061,7 @@
   {
    "id": "jc",
    "name": "jc",
-   "desc": "Serializes the output of command-line tools to structured JSON output",
+   "desc": "\ud83d\udd27 Converte sa\u00edda de CLIs para JSON",
    "category": "data",
    "install": {
     "linux": {
@@ -3081,7 +3081,7 @@
   {
    "id": "jira-cli",
    "name": "jira-cli",
-   "desc": "Feature-rich interactive Jira CLI",
+   "desc": "\ud83d\udccb Jira do terminal",
    "category": "cli",
    "install": {
     "linux": {
@@ -3097,7 +3097,7 @@
   {
    "id": "jj",
    "name": "jj",
-   "desc": "Git-compatible distributed version control system",
+   "desc": "\ud83d\udee0\ufe0f Sistema de controle de vers\u00e3o moderno (Jujutsu)",
    "category": "git",
    "install": {
     "linux": {
@@ -3117,7 +3117,7 @@
   {
    "id": "jless",
    "name": "jless",
-   "desc": "Command-line pager for JSON data",
+   "desc": "\ud83d\udc40 Paginador e visualizador de JSON CLI",
    "category": "data",
    "install": {
     "linux": {
@@ -3133,7 +3133,7 @@
   {
    "id": "jnv",
    "name": "jnv",
-   "desc": "Interactive JSON filter using jq",
+   "desc": "\ud83d\udd0d Filtro JSON iterativo interativo",
    "category": "data",
    "install": {
     "linux": {
@@ -3149,7 +3149,7 @@
   {
    "id": "jo",
    "name": "jo",
-   "desc": "JSON output from a shell",
+   "desc": "\ud83d\udee0\ufe0f Utilit\u00e1rio criador de JSON r\u00e1pido",
    "category": "data",
    "install": {
     "linux": {
@@ -3169,7 +3169,7 @@
   {
    "id": "joshuto",
    "name": "joshuto",
-   "desc": "Ranger-like terminal file manager written in Rust",
+   "desc": "\ud83d\udcc1 Gerenciador de arquivos CLI tipo ranger",
    "category": "files",
    "install": {
     "linux": {
@@ -3185,7 +3185,7 @@
   {
    "id": "jq",
    "name": "jq",
-   "desc": "Lightweight and flexible command-line JSON processor",
+   "desc": "\ud83d\udd0d Processador JSON leve via CLI",
    "category": "data",
    "install": {
     "linux": {
@@ -3205,7 +3205,7 @@
   {
    "id": "jql",
    "name": "jql",
-   "desc": "JSON query language CLI tool",
+   "desc": "\ud83d\udd0d Processador JSON em Rust r\u00e1pido",
    "category": "data",
    "install": {
     "linux": {
@@ -3221,7 +3221,7 @@
   {
    "id": "jqp",
    "name": "jqp",
-   "desc": "TUI playground to experiment and play with jq",
+   "desc": "\ud83d\udedd Playground TUI para queries jq",
    "category": "terminal",
    "install": {
     "linux": {
@@ -3237,7 +3237,7 @@
   {
    "id": "jujutsu",
    "name": "jujutsu",
-   "desc": "Git-compatible distributed version control system",
+   "desc": "\ud83d\udee0\ufe0f Controle de vers\u00e3o (alias para jj)",
    "category": "git",
    "install": {
     "linux": {
@@ -3253,7 +3253,7 @@
   {
    "id": "just",
    "name": "just",
-   "desc": "Handy way to save and run project-specific commands",
+   "desc": "\ud83e\udd16 Alternativa moderna ao Make",
    "category": "cli",
    "install": {
     "linux": {
@@ -3273,7 +3273,7 @@
   {
    "id": "k3d",
    "name": "k3d",
-   "desc": "Little helper to run CNCF's k3s in Docker",
+   "desc": "\ud83d\udc33 Roda o k3s no Docker",
    "category": "devops",
    "install": {
     "linux": {
@@ -3293,7 +3293,7 @@
   {
    "id": "k3s",
    "name": "k3s",
-   "desc": "k3s",
+   "desc": "\u2638\ufe0f Kubernetes ultra leve e certificado",
    "category": "cli",
    "install": {
     "linux": {
@@ -3305,7 +3305,7 @@
   {
    "id": "k6",
    "name": "k6",
-   "desc": "Modern load testing tool, using Go and JavaScript",
+   "desc": "\ud83d\ude80 Ferramenta de teste de carga HTTP",
    "category": "cli",
    "install": {
     "linux": {
@@ -3325,7 +3325,7 @@
   {
    "id": "k8sgpt",
    "name": "k8sgpt",
-   "desc": "Scanning your k8s clusters, diagnosing, and triaging issues in simple English",
+   "desc": "\ud83e\udd16 Diagn\u00f3stico de Kubernetes usando IA",
    "category": "devops",
    "install": {
     "linux": {
@@ -3341,7 +3341,7 @@
   {
    "id": "k9s-cli",
    "name": "k9s-cli",
-   "desc": "k9s-cli",
+   "desc": "\ud83d\udc36 Gerencia clusters Kubernetes via TUI",
    "category": "cli",
    "install": {
     "linux": {
@@ -3353,7 +3353,7 @@
   {
    "id": "kakoune",
    "name": "kakoune",
-   "desc": "Selection-based modal text editor",
+   "desc": "\ud83d\udcdd Editor modal baseado em sele\u00e7\u00e3o",
    "category": "editor",
    "install": {
     "linux": {
@@ -3369,7 +3369,7 @@
   {
    "id": "kalker",
    "name": "kalker",
-   "desc": "Full-featured calculator with math syntax",
+   "desc": "\ud83e\uddee Calculadora com sintaxe de matem\u00e1tica e vari\u00e1veis",
    "category": "cli",
    "install": {
     "linux": {
@@ -3389,7 +3389,7 @@
   {
    "id": "kaskade",
    "name": "kaskade",
-   "desc": "TUI for Kafka",
+   "desc": "\ud83c\udfc4 Cliente interativo TUI Kafka",
    "category": "terminal",
    "install": {
     "linux": {
@@ -3405,7 +3405,7 @@
   {
    "id": "kcl",
    "name": "kcl",
-   "desc": "kcl",
+   "desc": "\ud83d\udcd0 Linguagem declarativa para infra",
    "category": "cli",
    "install": {
     "linux": {
@@ -3421,7 +3421,7 @@
   {
    "id": "kdash",
    "name": "kdash",
-   "desc": "Simple and fast dashboard for Kubernetes",
+   "desc": "\u2638\ufe0f Dashboard de Kubernetes TUI minimalista",
    "category": "devops",
    "install": {
     "linux": {
@@ -3437,7 +3437,7 @@
   {
    "id": "kew",
    "name": "kew",
-   "desc": "Command-line music player",
+   "desc": "\ud83c\udfa7 Reprodutor de m\u00fasica terminal em C",
    "category": "cli",
    "install": {
     "linux": {
@@ -3453,7 +3453,7 @@
   {
    "id": "kind",
    "name": "kind",
-   "desc": "Run local Kubernetes cluster in Docker",
+   "desc": "\u2638\ufe0f Kubernetes IN Docker",
    "category": "devops",
    "install": {
     "linux": {
@@ -3473,7 +3473,7 @@
   {
    "id": "klog",
    "name": "klog",
-   "desc": "Command-line tool for time tracking in a human-readable, plain-text file format",
+   "desc": "\u23f1\ufe0f Rastreador de tempo em plain text",
    "category": "files",
    "install": {
     "linux": {
@@ -3489,7 +3489,7 @@
   {
    "id": "kmon",
    "name": "kmon",
-   "desc": "kmon",
+   "desc": "\ud83d\udc27 Monitor e explorador de Kernel Linux",
    "category": "cli",
    "install": {
     "linux": {
@@ -3501,7 +3501,7 @@
   {
    "id": "ko",
    "name": "ko",
-   "desc": "Build and deploy Go applications on Kubernetes",
+   "desc": "\ud83d\udc33 Construtor r\u00e1pido de containers Go",
    "category": "devops",
    "install": {
     "linux": {
@@ -3517,7 +3517,7 @@
   {
    "id": "kondo",
    "name": "kondo",
-   "desc": "Save disk space by cleaning non-essential files from software projects",
+   "desc": "\ud83e\uddf9 Limpa artefatos (node_modules / target / etc)",
    "category": "files",
    "install": {
     "linux": {
@@ -3537,7 +3537,7 @@
   {
    "id": "krew",
    "name": "krew",
-   "desc": "Package manager for kubectl plugins",
+   "desc": "\ud83d\udce6 Gerenciador de plugins para kubectl",
    "category": "cli",
    "install": {
     "linux": {
@@ -3557,7 +3557,7 @@
   {
    "id": "kubecolor",
    "name": "kubecolor",
-   "desc": "Colorize your kubectl output",
+   "desc": "\ud83c\udf08 Colore as sa\u00eddas do kubectl",
    "category": "cli",
    "install": {
     "linux": {
@@ -3577,7 +3577,7 @@
   {
    "id": "kubectl",
    "name": "kubectl",
-   "desc": "Kubernetes command-line interface",
+   "desc": "\u2638\ufe0f Ferramenta de CLI Kubernetes oficial",
    "category": "devops",
    "install": {
     "linux": {
@@ -3597,7 +3597,7 @@
   {
    "id": "kubectx",
    "name": "kubectx",
-   "desc": "Tool that can switch between kubectl contexts easily and create aliases",
+   "desc": "\u2638\ufe0f Alterna rapidamente contextos do kubectl",
    "category": "cli",
    "install": {
     "linux": {
@@ -3617,7 +3617,7 @@
   {
    "id": "kubens",
    "name": "kubens",
-   "desc": "kubens",
+   "desc": "\u2638\ufe0f Alterna rapidamente namespaces no k8s",
    "category": "cli",
    "install": {
     "linux": {
@@ -3633,7 +3633,7 @@
   {
    "id": "kubent",
    "name": "kubent",
-   "desc": "Easily check your clusters for use of deprecated APIs",
+   "desc": "\u2638\ufe0f Verifica APIs depreciadas em clusters Kubernetes",
    "category": "network",
    "install": {
     "linux": {
@@ -3649,7 +3649,7 @@
   {
    "id": "kustomize",
    "name": "kustomize",
-   "desc": "Template-free customization of Kubernetes YAML manifests",
+   "desc": "\u2638\ufe0f Gerenciamento de config Kubernetes s/ template",
    "category": "devops",
    "install": {
     "linux": {
@@ -3669,7 +3669,7 @@
   {
    "id": "lapce",
    "name": "lapce",
-   "desc": "Open source code editor written in Rust",
+   "desc": "\u26a1 Editor de c\u00f3digo r\u00e1pido em Rust",
    "category": "editor",
    "install": {
     "linux": {
@@ -3689,7 +3689,7 @@
   {
    "id": "lazydocker",
    "name": "lazydocker",
-   "desc": "Lazier way to manage everything docker",
+   "desc": "\ud83d\udc33 TUI simples para Docker e Docker Compose",
    "category": "devops",
    "install": {
     "linux": {
@@ -3709,7 +3709,7 @@
   {
    "id": "lazygit",
    "name": "lazygit",
-   "desc": "TUI para git",
+   "desc": "\ud83d\udce6 TUI veloz e imersiva para o Git",
    "category": "git",
    "install": {
     "linux": {
@@ -3729,7 +3729,7 @@
   {
    "id": "lazygit-tui",
    "name": "lazygit-tui",
-   "desc": "lazygit-tui",
+   "desc": "\ud83d\udce6 TUI imersiva para Git (alias)",
    "category": "terminal",
    "install": {
     "linux": {
@@ -3741,7 +3741,7 @@
   {
    "id": "lazynpm",
    "name": "lazynpm",
-   "desc": "lazynpm",
+   "desc": "\ud83d\udce6 TUI interativo para gerenciamento NPM",
    "category": "cli",
    "install": {
     "linux": {
@@ -3753,7 +3753,7 @@
   {
    "id": "lazysql",
    "name": "lazysql",
-   "desc": "Cross-platform TUI database management tool",
+   "desc": "\ud83d\uddc4\ufe0f Cliente SQL e TUI cross-platform multi-bd",
    "category": "data",
    "install": {
     "linux": {
@@ -3769,7 +3769,7 @@
   {
    "id": "lazyvim",
    "name": "lazyvim",
-   "desc": "lazyvim",
+   "desc": "\ud83d\udcdd Configura\u00e7\u00e3o r\u00e1pida pro Neovim",
    "category": "cli",
    "install": {
     "linux": {
@@ -3781,7 +3781,7 @@
   {
    "id": "lefthook",
    "name": "lefthook",
-   "desc": "Fast and powerful Git hooks manager for any type of projects",
+   "desc": "\ud83e\ude9d Gerenciador ultra-r\u00e1pido de Git hooks",
    "category": "git",
    "install": {
     "linux": {
@@ -3801,7 +3801,7 @@
   {
    "id": "lens",
    "name": "lens",
-   "desc": "Kubernetes IDE",
+   "desc": "\ud83d\udd0e IDE Kubernetes multiplataforma",
    "category": "devops",
    "install": {
     "linux": {
@@ -3821,7 +3821,7 @@
   {
    "id": "lf",
    "name": "lf",
-   "desc": "Terminal file manager",
+   "desc": "\ud83d\udcc1 Gerenciador de arquivos de terminal via C",
    "category": "files",
    "install": {
     "linux": {
@@ -3841,7 +3841,7 @@
   {
    "id": "litecli",
    "name": "litecli",
-   "desc": "CLI for SQLite Databases with auto-completion and syntax highlighting",
+   "desc": "\ud83d\uddc4\ufe0f Cliente TUI para SQLite com autocomplete",
    "category": "data",
    "install": {
     "linux": {
@@ -3857,7 +3857,7 @@
   {
    "id": "llm",
    "name": "llm",
-   "desc": "Access large language models from the command-line",
+   "desc": "\ud83e\udd16 Utilit\u00e1rio CLI para executar LLMs locais ou remotos",
    "category": "ai",
    "install": {
     "linux": {
@@ -3871,14 +3871,14 @@
    }
   },
   {
-   "id": "lmstudio",
-   "name": "lmstudio",
-   "desc": "lmstudio",
+   "id": "lm-studio",
+   "name": "lm-studio",
+   "desc": "\ud83e\udd16 Executa LLMs localmente via UI e API",
    "category": "cli",
    "install": {
     "linux": {
      "kind": "script",
-     "ref": "programas/lmstudio/setup.sh"
+     "ref": "programas/lm-studio/setup.sh"
     },
     "windows": {
      "kind": "winget",
@@ -3889,7 +3889,7 @@
   {
    "id": "lnav",
    "name": "lnav",
-   "desc": "Curses-based tool for viewing and analyzing log files",
+   "desc": "\ud83e\udeb5 Visualizador de logs com an\u00e1lise profunda",
    "category": "files",
    "install": {
     "linux": {
@@ -3909,7 +3909,7 @@
   {
    "id": "lolcat",
    "name": "lolcat",
-   "desc": "Rainbows and unicorns in your console!",
+   "desc": "\ud83c\udf08 Texto do terminal com efeito arco-\u00edris",
    "category": "cli",
    "install": {
     "linux": {
@@ -3925,7 +3925,7 @@
   {
    "id": "lsd",
    "name": "lsd",
-   "desc": "Clone of ls with colorful output, file type icons, and more",
+   "desc": "\ud83d\udcc2 Clone de ls moderno com cores e \u00edcones",
    "category": "files",
    "install": {
     "linux": {
@@ -3945,7 +3945,7 @@
   {
    "id": "lychee",
    "name": "lychee",
-   "desc": "Fast, async, resource-friendly link checker",
+   "desc": "\ud83d\udd17 Verificador veloz de links quebrados",
    "category": "cli",
    "install": {
     "linux": {
@@ -3965,7 +3965,7 @@
   {
    "id": "macchina",
    "name": "macchina",
-   "desc": "System information fetcher, with an emphasis on performance and minimalism",
+   "desc": "\ud83d\udda5\ufe0f Info b\u00e1sica do sistema ultraleve",
    "category": "cli",
    "install": {
     "linux": {
@@ -3981,7 +3981,7 @@
   {
    "id": "mani",
    "name": "mani",
-   "desc": "CLI tool to help you manage repositories",
+   "desc": "\ud83d\uddc2\ufe0f CLI para gerenciamento multi reposit\u00f3rios",
    "category": "cli",
    "install": {
     "linux": {
@@ -3997,7 +3997,7 @@
   {
    "id": "marimo",
    "name": "marimo",
-   "desc": "marimo",
+   "desc": "\ud83d\udcd3 Notebooks Python interativos e reativos",
    "category": "cli",
    "install": {
     "linux": {
@@ -4009,7 +4009,7 @@
   {
    "id": "mcfly",
    "name": "mcfly",
-   "desc": "Fly through your shell history",
+   "desc": "\ud83e\udeb0 Busca de hist\u00f3rico no shell com IA",
    "category": "terminal",
    "install": {
     "linux": {
@@ -4029,7 +4029,7 @@
   {
    "id": "mdcat",
    "name": "mdcat",
-   "desc": "Show markdown documents on text terminals",
+   "desc": "\ud83d\udcd6 Exibe formata\u00e7\u00e3o markdown direto no terminal",
    "category": "terminal",
    "install": {
     "linux": {
@@ -4045,7 +4045,7 @@
   {
    "id": "melt",
    "name": "melt",
-   "desc": "Backup and restore Ed25519 SSH keys with seed words",
+   "desc": "\ud83d\udddd\ufe0f Backup e restaura\u00e7\u00e3o SSH segura via seed",
    "category": "cli",
    "install": {
     "linux": {
@@ -4065,7 +4065,7 @@
   {
    "id": "micro",
    "name": "micro",
-   "desc": "Modern and intuitive terminal-based text editor",
+   "desc": "\ud83d\udcdd Editor de texto de terminal moderno e intuitivo",
    "category": "terminal",
    "install": {
     "linux": {
@@ -4085,7 +4085,7 @@
   {
    "id": "miller",
    "name": "miller",
-   "desc": "Like sed, awk, cut, join & sort for name-indexed data such as CSV",
+   "desc": "\ud83d\udcca jq para CSV / TSV / tabular data",
    "category": "data",
    "install": {
     "linux": {
@@ -4105,7 +4105,7 @@
   {
    "id": "miniserve",
    "name": "miniserve",
-   "desc": "High performance static file server",
+   "desc": "\ud83c\udf10 Servidor est\u00e1tico r\u00e1pido via CLI HTTP",
    "category": "files",
    "install": {
     "linux": {
@@ -4125,7 +4125,7 @@
   {
    "id": "mise",
    "name": "mise",
-   "desc": "Polyglot runtime manager (asdf rust clone)",
+   "desc": "\ud83d\udee0\ufe0f Gerenciador multi vers\u00f5es (substituto do asdf)",
    "category": "cli",
    "install": {
     "linux": {
@@ -4145,7 +4145,7 @@
   {
    "id": "mkcert",
    "name": "mkcert",
-   "desc": "Simple tool to make locally trusted development certificates",
+   "desc": "\ud83d\udd10 Cria certificados de dev locais facilmente",
    "category": "cli",
    "install": {
     "linux": {
@@ -4165,7 +4165,7 @@
   {
    "id": "mlr",
    "name": "mlr",
-   "desc": "mlr",
+   "desc": "\ud83d\udcca Utilit\u00e1rio CLI miller para CSV (alias)",
    "category": "cli",
    "install": {
     "linux": {
@@ -4177,7 +4177,7 @@
   {
    "id": "moar",
    "name": "moar",
-   "desc": "moar",
+   "desc": "\ud83d\udc40 Um paginador superpoderoso (less substituto)",
    "category": "cli",
    "install": {
     "linux": {
@@ -4189,7 +4189,7 @@
   {
    "id": "mods",
    "name": "mods",
-   "desc": "AI on the command-line",
+   "desc": "\ud83e\udd16 IA interativa baseada em pipelines no terminal",
    "category": "ai",
    "install": {
     "linux": {
@@ -4209,7 +4209,7 @@
   {
    "id": "monolith",
    "name": "monolith",
-   "desc": "CLI tool for saving complete web pages as a single HTML file",
+   "desc": "\ud83d\udce6 Empacota p\u00e1gina web completa em arquivo HTML \u00fanico",
    "category": "files",
    "install": {
     "linux": {
@@ -4229,7 +4229,7 @@
   {
    "id": "moon",
    "name": "moon",
-   "desc": "Task runner and repo management tool for the web ecosystem, written in Rust",
+   "desc": "\ud83c\udf15 Ferramenta de build multi-linguagens moderna",
    "category": "cli",
    "install": {
     "linux": {
@@ -4245,7 +4245,7 @@
   {
    "id": "mprocs",
    "name": "mprocs",
-   "desc": "Run multiple commands in parallel",
+   "desc": "\u2699\ufe0f Roda m\u00faltiplos comandos concorrentes em TUI",
    "category": "cli",
    "install": {
     "linux": {
@@ -4265,7 +4265,7 @@
   {
    "id": "mycli",
    "name": "mycli",
-   "desc": "CLI for MySQL with auto-completion and syntax highlighting",
+   "desc": "\ud83d\uddc4\ufe0f Cliente TUI para MySQL com autocomplete",
    "category": "data",
    "install": {
     "linux": {
@@ -4281,7 +4281,7 @@
   {
    "id": "mysql",
    "name": "mysql",
-   "desc": "Open source relational database management system",
+   "desc": "\ud83d\uddc3\ufe0f Banco de Dados Relacional",
    "category": "data",
    "install": {
     "linux": {
@@ -4301,7 +4301,7 @@
   {
    "id": "nap",
    "name": "nap",
-   "desc": "Code snippets in your terminal",
+   "desc": "\ud83d\udcdd Gerenciador CLI de snippets de c\u00f3digo",
    "category": "terminal",
    "install": {
     "linux": {
@@ -4317,7 +4317,7 @@
   {
    "id": "navi",
    "name": "navi",
-   "desc": "Interactive cheatsheet tool for the command-line",
+   "desc": "\ud83e\udded Cheatsheets interativos direto no terminal",
    "category": "cli",
    "install": {
     "linux": {
@@ -4333,7 +4333,7 @@
   {
    "id": "ncdu",
    "name": "ncdu",
-   "desc": "NCurses Disk Usage",
+   "desc": "\ud83d\udcca Analisador de espa\u00e7o em disco r\u00e1pido (C)",
    "category": "files",
    "install": {
     "linux": {
@@ -4349,7 +4349,7 @@
   {
    "id": "ncspot",
    "name": "ncspot",
-   "desc": "Cross-platform ncurses Spotify client written in Rust",
+   "desc": "\ud83c\udfb5 Cliente Spotify TUI via CLI cruzada",
    "category": "cli",
    "install": {
     "linux": {
@@ -4369,7 +4369,7 @@
   {
    "id": "neofetch-alt",
    "name": "neofetch-alt",
-   "desc": "neofetch-alt",
+   "desc": "\ud83d\udda5\ufe0f Sysinfo customizado com fastfetch",
    "category": "cli",
    "install": {
     "linux": {
@@ -4381,7 +4381,7 @@
   {
    "id": "neovim",
    "name": "neovim",
-   "desc": "Ambitious Vim-fork focused on extensibility and agility",
+   "desc": "\ud83d\udcdd Vim ultra-extens\u00edvel reescrito",
    "category": "cli",
    "install": {
     "linux": {
@@ -4401,7 +4401,7 @@
   {
    "id": "netlify",
    "name": "netlify",
-   "desc": "netlify",
+   "desc": "\ud83c\udf10 Plataforma de hospedagem Netlify CLI",
    "category": "cli",
    "install": {
     "linux": {
@@ -4413,7 +4413,7 @@
   {
    "id": "newsboat",
    "name": "newsboat",
-   "desc": "RSS/Atom feed reader for text terminals",
+   "desc": "\ud83d\udcf0 Leitor de feed RSS / Atom para TUI",
    "category": "terminal",
    "install": {
     "linux": {
@@ -4429,7 +4429,7 @@
   {
    "id": "ngrok",
    "name": "ngrok",
-   "desc": "Reverse proxy, secure introspectable tunnels to localhost",
+   "desc": "\ud83d\ude87 Exp\u00f5e ambiente local via t\u00fanel web",
    "category": "security",
    "install": {
     "linux": {
@@ -4449,7 +4449,7 @@
   {
    "id": "nix",
    "name": "nix",
-   "desc": "nix",
+   "desc": "\u2744\ufe0f Gerenciador de pacotes reprodut\u00edvel global",
    "category": "cli",
    "install": {
     "linux": {
@@ -4461,7 +4461,7 @@
   {
    "id": "nnn",
    "name": "nnn",
-   "desc": "Tiny, lightning fast, feature-packed file manager",
+   "desc": "\ud83d\udcc1 Gerenciador de arquivos ultra veloz no terminal",
    "category": "files",
    "install": {
     "linux": {
@@ -4477,7 +4477,7 @@
   {
    "id": "nomad",
    "name": "nomad",
-   "desc": "nomad",
+   "desc": "\ud83c\udfd5\ufe0f Orquestrador de workloads da HashiCorp",
    "category": "cli",
    "install": {
     "linux": {
@@ -4493,7 +4493,7 @@
   {
    "id": "nuclei",
    "name": "nuclei",
-   "desc": "HTTP/DNS scanner configurable via YAML templates",
+   "desc": "\ud83d\udd2c Scanner focado em templates de vulnerabilidade",
    "category": "security",
    "install": {
     "linux": {
@@ -4509,7 +4509,7 @@
   {
    "id": "numbat",
    "name": "numbat",
-   "desc": "Statically typed programming language for scientific computations",
+   "desc": "\ud83d\udcd0 Calculadora poderosa e tipada cientificamente",
    "category": "cli",
    "install": {
     "linux": {
@@ -4525,7 +4525,7 @@
   {
    "id": "nushell",
    "name": "nushell",
-   "desc": "Modern shell for the GitHub era",
+   "desc": "\ud83d\udc1a Shell com dados em pipelines tipados modernos",
    "category": "git",
    "install": {
     "linux": {
@@ -4545,7 +4545,7 @@
   {
    "id": "obsidian",
    "name": "obsidian",
-   "desc": "Knowledge base that works on top of a local folder of plain text Markdown files",
+   "desc": "\ud83d\udcd3 Base de conhecimento em Markdown no Desktop",
    "category": "files",
    "install": {
     "linux": {
@@ -4565,7 +4565,7 @@
   {
    "id": "oh-my-posh",
    "name": "oh-my-posh",
-   "desc": "Prompt theme engine for any shell",
+   "desc": "\ud83c\udf08 Engine de prompt configur\u00e1vel customizado",
    "category": "ai",
    "install": {
     "linux": {
@@ -4585,7 +4585,7 @@
   {
    "id": "oha",
    "name": "oha",
-   "desc": "HTTP load generator, inspired by rakyll/hey with tui animation",
+   "desc": "\ud83d\udd2b Ferramenta de load testing HTTP baseada no hey",
    "category": "terminal",
    "install": {
     "linux": {
@@ -4605,7 +4605,7 @@
   {
    "id": "ollama",
    "name": "Ollama",
-   "desc": "LLMs locais",
+   "desc": "\ud83e\udd99 Servidor de IA LLMs para rodar localmente",
    "category": "ai",
    "install": {
     "linux": {
@@ -4625,7 +4625,7 @@
   {
    "id": "onefetch",
    "name": "onefetch",
-   "desc": "Command-line Git information tool",
+   "desc": "\ud83d\udc19 Sum\u00e1rio visual de repos Git via terminal",
    "category": "git",
    "install": {
     "linux": {
@@ -4645,7 +4645,7 @@
   {
    "id": "open-interpreter",
    "name": "open-interpreter",
-   "desc": "open-interpreter",
+   "desc": "\ud83e\udd16 Agente de IA para executar c\u00f3digo no host",
    "category": "cli",
    "install": {
     "linux": {
@@ -4657,7 +4657,7 @@
   {
    "id": "opentofu",
    "name": "opentofu",
-   "desc": "Drop-in replacement for Terraform. Infrastructure as Code Tool",
+   "desc": "\ud83c\udfd7\ufe0f Fork OSS de gerenciador infra-as-code",
    "category": "devops",
    "install": {
     "linux": {
@@ -4677,7 +4677,7 @@
   {
    "id": "ouch",
    "name": "ouch",
-   "desc": "Painless compression and decompression for your terminal",
+   "desc": "\ud83d\udddc\ufe0f Compressor / descompressor super simples",
    "category": "terminal",
    "install": {
     "linux": {
@@ -4693,7 +4693,7 @@
   {
    "id": "oxker",
    "name": "oxker",
-   "desc": "Terminal User Interface (TUI) to view & control docker containers",
+   "desc": "\ud83d\udc33 Ferramenta CLI simples para ver stats do Docker",
    "category": "devops",
    "install": {
     "linux": {
@@ -4709,7 +4709,7 @@
   {
    "id": "oxlint",
    "name": "oxlint",
-   "desc": "High-performance linter for JavaScript and TypeScript written in Rust",
+   "desc": "\ud83e\uddf9 Linter veloz escrito em Rust para ecossistema JS",
    "category": "cli",
    "install": {
     "linux": {
@@ -4729,7 +4729,7 @@
   {
    "id": "packer",
    "name": "packer",
-   "desc": "packer",
+   "desc": "\ud83d\udce6 Automa\u00e7\u00e3o de imagens de VM via HashiCorp",
    "category": "cli",
    "install": {
     "linux": {
@@ -4745,7 +4745,7 @@
   {
    "id": "pastel",
    "name": "pastel",
-   "desc": "Command-line tool to generate, analyze, convert and manipulate colors",
+   "desc": "\ud83c\udfa8 Ferramenta TUI para convers\u00e3o de cores e esquemas",
    "category": "cli",
    "install": {
     "linux": {
@@ -4765,7 +4765,7 @@
   {
    "id": "peco",
    "name": "peco",
-   "desc": "Simplistic interactive filtering tool",
+   "desc": "\ud83d\udd0d Filtragem iterativa leve via TUI",
    "category": "cli",
    "install": {
     "linux": {
@@ -4785,7 +4785,7 @@
   {
    "id": "pgcli",
    "name": "pgcli",
-   "desc": "CLI for Postgres with auto-completion and syntax highlighting",
+   "desc": "\ud83d\udc18 Cliente TUI para PostgreSQL com auto-complete",
    "category": "cli",
    "install": {
     "linux": {
@@ -4801,7 +4801,7 @@
   {
    "id": "pipes-rs",
    "name": "pipes-rs",
-   "desc": "pipes-rs",
+   "desc": "\ud83d\udeb0 Prote\u00e7\u00f5es de tela animadas em Rust",
    "category": "cli",
    "install": {
     "linux": {
@@ -4817,7 +4817,7 @@
   {
    "id": "pipes-sh",
    "name": "pipes-sh",
-   "desc": "Animated pipes terminal screensaver",
+   "desc": "\ud83d\udeb0 Anima\u00e7\u00e3o visual de tubos antigos em shell",
    "category": "terminal",
    "install": {
     "linux": {
@@ -4833,7 +4833,7 @@
   {
    "id": "pixi",
    "name": "pixi",
-   "desc": "Package management made easy",
+   "desc": "\ud83d\udce6 Gerenciador focado em Python e projetos base C/C++",
    "category": "cli",
    "install": {
     "linux": {
@@ -4853,7 +4853,7 @@
   {
    "id": "pkgx",
    "name": "pkgx",
-   "desc": "Standalone binary that can run anything",
+   "desc": "\ud83d\udce6 Executor de bin\u00e1rios direto da nuvem via npx-style",
    "category": "cli",
    "install": {
     "linux": {
@@ -4869,7 +4869,7 @@
   {
    "id": "plandex",
    "name": "plandex",
-   "desc": "plandex",
+   "desc": "\ud83e\udd16 Agente de codifica\u00e7\u00e3o complexa movido a IA",
    "category": "cli",
    "install": {
     "linux": {
@@ -4881,7 +4881,7 @@
   {
    "id": "pls",
    "name": "pls",
-   "desc": "pls",
+   "desc": "\ud83d\udcc2 ls moderno em Python super elegante",
    "category": "cli",
    "install": {
     "linux": {
@@ -4893,7 +4893,7 @@
   {
    "id": "pnpm",
    "name": "pnpm",
-   "desc": "Fast, disk space efficient package manager",
+   "desc": "\ud83d\udce6 Gerenciador de pacotes r\u00e1pido e otimizado para Node",
    "category": "files",
    "install": {
     "linux": {
@@ -4913,7 +4913,7 @@
   {
    "id": "podman",
    "name": "podman",
-   "desc": "Tool for managing OCI containers and pods",
+   "desc": "\ud83d\udc33 Motor de containers sem necessidade de deamon raiz",
    "category": "devops",
    "install": {
     "linux": {
@@ -4933,7 +4933,7 @@
   {
    "id": "poetry",
    "name": "poetry",
-   "desc": "Python package management tool",
+   "desc": "\ud83d\udce6 Gest\u00e3o limpa de ambientes Python e pacotes",
    "category": "cli",
    "install": {
     "linux": {
@@ -4949,7 +4949,7 @@
   {
    "id": "pokeget",
    "name": "pokeget",
-   "desc": "pokeget",
+   "desc": "\ud83d\udd79\ufe0f Pega sprites do Pokemon no terminal (TUI fun)",
    "category": "cli",
    "install": {
     "linux": {
@@ -4961,7 +4961,7 @@
   {
    "id": "pomsky",
    "name": "pomsky",
-   "desc": "Regular expression language",
+   "desc": "\ud83e\udde9 Sintaxe port\u00e1til/ limpa e leg\u00edvel para Regex",
    "category": "cli",
    "install": {
     "linux": {
@@ -4977,7 +4977,7 @@
   {
    "id": "popeye",
    "name": "popeye",
-   "desc": "Kubernetes cluster resource sanitizer",
+   "desc": "\ud83d\udc40 Scanner e analisador de erros em Kubernetes",
    "category": "devops",
    "install": {
     "linux": {
@@ -4993,7 +4993,7 @@
   {
    "id": "porsmo",
    "name": "porsmo",
-   "desc": "porsmo",
+   "desc": "\u23f1\ufe0f CLI Pomodoro e temporizador via terminal TUI",
    "category": "cli",
    "install": {
     "linux": {
@@ -5005,7 +5005,7 @@
   {
    "id": "posting",
    "name": "posting",
-   "desc": "Modern API client that lives in your terminal",
+   "desc": "\ud83c\udf10 Postman em TUI veloz e poderoso para devs API",
    "category": "terminal",
    "install": {
     "linux": {
@@ -5021,7 +5021,7 @@
   {
    "id": "presenterm",
    "name": "presenterm",
-   "desc": "Terminal slideshow tool",
+   "desc": "\ud83d\udcfd\ufe0f Editor de slide apresent\u00e1vel direto pelo terminal",
    "category": "terminal",
    "install": {
     "linux": {
@@ -5041,7 +5041,7 @@
   {
    "id": "procs",
    "name": "procs",
-   "desc": "Modern replacement for ps written in Rust",
+   "desc": "\ud83d\udcca ps moderno focado em usabilidade com \u00e1rvore em cores",
    "category": "cli",
    "install": {
     "linux": {
@@ -5061,7 +5061,7 @@
   {
    "id": "proto",
    "name": "proto",
-   "desc": "Pluggable multi-language version manager",
+   "desc": "\ud83d\udee0\ufe0f Gestor de toolchains acopl\u00e1vel estilo asdf via Rust",
    "category": "cli",
    "install": {
     "linux": {
@@ -5077,7 +5077,7 @@
   {
    "id": "pueue",
    "name": "pueue",
-   "desc": "Command-line tool for managing long-running shell commands",
+   "desc": "\ud83d\udd52 Gerenciamento de tarefas shell longa dura\u00e7\u00e3o / background",
    "category": "terminal",
    "install": {
     "linux": {
@@ -5093,7 +5093,7 @@
   {
    "id": "pulumi",
    "name": "pulumi",
-   "desc": "Cloud native development platform",
+   "desc": "\u2601\ufe0f Crie Infra as Code via linguagens como JS / Go / Python",
    "category": "devops",
    "install": {
     "linux": {
@@ -5113,7 +5113,7 @@
   {
    "id": "px",
    "name": "px",
-   "desc": "Ps and top for human beings (px / ptop)",
+   "desc": "\ud83d\udcca Monitor TUI moderno (ps / top / htop alternativo)",
    "category": "cli",
    "install": {
     "linux": {
@@ -5129,7 +5129,7 @@
   {
    "id": "qsv",
    "name": "qsv",
-   "desc": "Ultra-fast CSV data-wrangling toolkit",
+   "desc": "\ud83d\udcca Ferramenta absurdamente veloz para analisar e editar CSVs",
    "category": "data",
    "install": {
     "linux": {
@@ -5145,7 +5145,7 @@
   {
    "id": "repomix",
    "name": "repomix",
-   "desc": "Pack repository contents into a single AI-friendly file",
+   "desc": "\ud83d\udce6 Mixagem de relat\u00f3rios \u00fateis gerados no seu reposit\u00f3rio",
    "category": "ai",
    "install": {
     "linux": {
@@ -5161,7 +5161,7 @@
   {
    "id": "rio",
    "name": "rio",
-   "desc": "Hardware-accelerated GPU terminal emulator",
+   "desc": "\ud83c\udf0a Terminal acelerado por GPU ultra veloz via Rust",
    "category": "terminal",
    "install": {
     "linux": {
@@ -5181,7 +5181,7 @@
   {
    "id": "rip",
    "name": "rip",
-   "desc": "rip",
+   "desc": "\ud83d\uddd1\ufe0f Ferramenta de remo\u00e7\u00e3o de arquivos segura e recuper\u00e1vel",
    "category": "cli",
    "install": {
     "linux": {
@@ -5193,7 +5193,7 @@
   {
    "id": "ripgrep",
    "name": "ripgrep",
-   "desc": "grep ultrarrápido",
+   "desc": "\ud83d\udd0d Grep hiper-veloz em Rust cruzando arquivos",
    "category": "cli",
    "install": {
     "linux": {
@@ -5213,7 +5213,7 @@
   {
    "id": "ripgrep_all",
    "name": "ripgrep_all",
-   "desc": "ripgrep_all",
+   "desc": "\ud83d\udd0d Ripgrep turbinado incluindo busca de texto em PDF / docx",
    "category": "cli",
    "install": {
     "linux": {
@@ -5225,7 +5225,7 @@
   {
    "id": "rnr",
    "name": "rnr",
-   "desc": "Command-line tool to batch rename files and directories",
+   "desc": "\ud83c\udff7\ufe0f Renomea\u00e7\u00e3o em massa para arquivos baseada em regex TUI",
    "category": "files",
    "install": {
     "linux": {
@@ -5241,7 +5241,7 @@
   {
    "id": "rs-cmatrix",
    "name": "rs-cmatrix",
-   "desc": "rs-cmatrix",
+   "desc": "\ud83d\udcdf O CMatrix de sempre/ s\u00f3 que reescrito robustamente via Rust",
    "category": "cli",
    "install": {
     "linux": {
@@ -5253,7 +5253,7 @@
   {
    "id": "ruff",
    "name": "ruff",
-   "desc": "Extremely fast Python linter, written in Rust",
+   "desc": "\u26a1 O linter e formatador de Python mais r\u00e1pido do oeste",
    "category": "cli",
    "install": {
     "linux": {
@@ -5273,7 +5273,7 @@
   {
    "id": "ruplacer",
    "name": "ruplacer",
-   "desc": "ruplacer",
+   "desc": "\ud83d\udd04 Buscar e substituir no terminal sem medo e sem regex maluco",
    "category": "cli",
    "install": {
     "linux": {
@@ -5285,7 +5285,7 @@
   {
    "id": "rustscan",
    "name": "rustscan",
-   "desc": "Modern Day Portscanner",
+   "desc": "\ud83d\udce1 Mapeador de portas na velocidade da luz focado em auditorias",
    "category": "security",
    "install": {
     "linux": {
@@ -5305,7 +5305,7 @@
   {
    "id": "rye",
    "name": "rye",
-   "desc": "Package Management Solution for Python",
+   "desc": "\ud83c\udf3e Toolkit Python tudo-em-um (substituto pra pip/ venv/ pyenv)",
    "category": "cli",
    "install": {
     "linux": {
@@ -5325,7 +5325,7 @@
   {
    "id": "sad",
    "name": "sad",
-   "desc": "CLI search and replace | Space Age seD",
+   "desc": "\ud83d\ude22 Substitui texto CLI interativamente com preview via fzf estilo",
    "category": "cli",
    "install": {
     "linux": {
@@ -5345,7 +5345,7 @@
   {
    "id": "scc",
    "name": "scc",
-   "desc": "Fast and accurate code counter with complexity and COCOMO estimates",
+   "desc": "\ud83d\udcc8 Calculador ultra eficiente pra contagem de LOC / complexidade",
    "category": "cli",
    "install": {
     "linux": {
@@ -5365,7 +5365,7 @@
   {
    "id": "sd",
    "name": "sd",
-   "desc": "Intuitive find & replace CLI",
+   "desc": "\u2702\ufe0f Substituto moderno do sed pra find-and-replace (sintaxe f\u00e1cil)",
    "category": "files",
    "install": {
     "linux": {
@@ -5385,7 +5385,7 @@
   {
    "id": "serie",
    "name": "serie",
-   "desc": "Rich git commit graph in your terminal",
+   "desc": "\ud83e\udeb5 Visualizador TUI pra logs de git e historicos graficamente ricos",
    "category": "git",
    "install": {
     "linux": {
@@ -5401,7 +5401,7 @@
   {
    "id": "serpl",
    "name": "serpl",
-   "desc": "Simple terminal UI for search and replace",
+   "desc": "\ud83d\udd0d Ferramenta TUI veloz pra busca global e substitui\u00e7\u00e3o r\u00e1pida",
    "category": "terminal",
    "install": {
     "linux": {
@@ -5417,7 +5417,7 @@
   {
    "id": "sesh",
    "name": "sesh",
-   "desc": "Smart session manager for the terminal",
+   "desc": "\ud83d\udd87\ufe0f Gestor inteligente do tmux pra alternar e pular workspaces",
    "category": "terminal",
    "install": {
     "linux": {
@@ -5433,7 +5433,7 @@
   {
    "id": "shell-gpt",
    "name": "shell-gpt",
-   "desc": "shell-gpt",
+   "desc": "\ud83e\udd16 Usa a LLM da OpenAI (GPT) pra traduzir promts pra shell command",
    "category": "ai",
    "install": {
     "linux": {
@@ -5445,7 +5445,7 @@
   {
    "id": "shellcheck",
    "name": "shellcheck",
-   "desc": "Static analysis and lint tool, for (ba)sh scripts",
+   "desc": "\ud83e\uddf9 Analisador est\u00e1tico que n\u00e3o deixa seu script bash falhar e quebrar",
    "category": "terminal",
    "install": {
     "linux": {
@@ -5465,7 +5465,7 @@
   {
    "id": "shfmt",
    "name": "shfmt",
-   "desc": "Autoformat shell script source code",
+   "desc": "\ud83e\uddf9 Formata\u00e7\u00e3o purista padronizada pra seus shellscripts / bash / zsh",
    "category": "terminal",
    "install": {
     "linux": {
@@ -5485,7 +5485,7 @@
   {
    "id": "silicon",
    "name": "silicon",
-   "desc": "Create beautiful image of your source code",
+   "desc": "\ud83d\udcf8 Tira screenshots esteticamente super agrad\u00e1veis do teu codigozinho",
    "category": "cli",
    "install": {
     "linux": {
@@ -5501,7 +5501,7 @@
   {
    "id": "skate",
    "name": "skate",
-   "desc": "Personal key value store",
+   "desc": "\ud83d\udddd\ufe0f Gestor e sicronizador kv TUI simples focado pra Charmbracelet",
    "category": "cli",
    "install": {
     "linux": {
@@ -5521,7 +5521,7 @@
   {
    "id": "skim",
    "name": "skim",
-   "desc": "Fuzzy Finder in rust!",
+   "desc": "\ud83d\udd0d Buscador Fuzzy alternativo super ligeiro escrito via pura Rust (sk)",
    "category": "cli",
    "install": {
     "linux": {
@@ -5541,7 +5541,7 @@
   {
    "id": "slack",
    "name": "slack",
-   "desc": "Team communication and collaboration software",
+   "desc": "\ud83d\udcac Chat app global focado em comunica\u00e7\u00e3o ass\u00edncrona entre equipes",
    "category": "cli",
    "install": {
     "linux": {
@@ -5561,7 +5561,7 @@
   {
    "id": "slides",
    "name": "slides",
-   "desc": "Terminal based presentation tool",
+   "desc": "\ud83d\udcfd\ufe0f Ferramenta m\u00e1gica terminal baseada em Markdown pra apresenta\u00e7\u00f5es",
    "category": "terminal",
    "install": {
     "linux": {
@@ -5577,7 +5577,7 @@
   {
    "id": "slumber",
    "name": "slumber",
-   "desc": "Terminal-based HTTP/REST client",
+   "desc": "\ud83c\udf19 Cliente TUI REST API que foca em ergonomia de requests HTTP",
    "category": "terminal",
    "install": {
     "linux": {
@@ -5593,7 +5593,7 @@
   {
    "id": "sniffnet",
    "name": "sniffnet",
-   "desc": "Cross-platform application to monitor your network traffic",
+   "desc": "\ud83d\udce1 Visualiza interativamente todo o tr\u00e1fego da sua network na tela",
    "category": "network",
    "install": {
     "linux": {
@@ -5609,7 +5609,7 @@
   {
    "id": "so",
    "name": "so",
-   "desc": "Terminal interface for StackOverflow",
+   "desc": "\u2753 Busca perguntas do stack overflow renderizando TUI sem navegador",
    "category": "terminal",
    "install": {
     "linux": {
@@ -5625,7 +5625,7 @@
   {
    "id": "sops",
    "name": "sops",
-   "desc": "Editor of encrypted files",
+   "desc": "\ud83d\udd10 Editor CLI e criptografador moderno que interage com PGP e Cloud KMS",
    "category": "security",
    "install": {
     "linux": {
@@ -5645,7 +5645,7 @@
   {
    "id": "spacer",
    "name": "spacer",
-   "desc": "Small command-line utility for adding spacers to command output",
+   "desc": "\u23f8\ufe0f Coloca espa\u00e7amentos utilit\u00e1rios cronometrados pra sa\u00eddas cont\u00ednuas",
    "category": "cli",
    "install": {
     "linux": {
@@ -5661,7 +5661,7 @@
   {
    "id": "spt",
    "name": "spt",
-   "desc": "spt",
+   "desc": "\ud83c\udfb5 TUI client pra escutar Spotify enquanto usa o neovim no mesmo env",
    "category": "cli",
    "install": {
     "linux": {
@@ -5673,7 +5673,7 @@
   {
    "id": "sqlc",
    "name": "sqlc",
-   "desc": "Generate type safe Go from SQL",
+   "desc": "\ud83d\uddc4\ufe0f Compilador est\u00e1tico robusto que traduz SQL pra type-safe code em Go",
    "category": "data",
    "install": {
     "linux": {
@@ -5689,7 +5689,7 @@
   {
    "id": "starship",
    "name": "Starship",
-   "desc": "prompt multi-shell",
+   "desc": "\ud83d\ude80 Prompt minimalista e hyper flexivel comp\u00e1tivel com Bash/ ZSH e Fish",
    "category": "shell",
    "install": {
     "linux": {
@@ -5709,7 +5709,7 @@
   {
    "id": "steampipe",
    "name": "steampipe",
-   "desc": "Use SQL to instantly query your cloud services",
+   "desc": "\u2601\ufe0f Converte e consulta instantaneamente APIs Cloud pra queries em SQL",
    "category": "devops",
    "install": {
     "linux": {
@@ -5725,7 +5725,7 @@
   {
    "id": "stern",
    "name": "stern",
-   "desc": "Tail multiple Kubernetes pods & their containers",
+   "desc": "\ud83e\udeb5 Visualizador flex\u00edvel pra tail em multi-pods logs do k8s com cores",
    "category": "devops",
    "install": {
     "linux": {
@@ -5745,7 +5745,7 @@
   {
    "id": "stripe",
    "name": "stripe",
-   "desc": "Command-line tool for Stripe",
+   "desc": "\ud83d\udcb3 Utilit\u00e1rio terminal focado em debugar APIs da gateway de pgmt Stripe",
    "category": "cli",
    "install": {
     "linux": {
@@ -5765,7 +5765,7 @@
   {
    "id": "supabase",
    "name": "supabase",
-   "desc": "Postgres development platform",
+   "desc": "\u26a1 CLI suite do Supabase pra criar e orquestrar infra de BaaS localmente",
    "category": "cli",
    "install": {
     "linux": {
@@ -5781,7 +5781,7 @@
   {
    "id": "superfile",
    "name": "superfile",
-   "desc": "Modern and pretty fancy file manager for the terminal",
+   "desc": "\ud83d\udcc1 Explorador terminal TUI focado com visual futurista muito bonito",
    "category": "files",
    "install": {
     "linux": {
@@ -5801,7 +5801,7 @@
   {
    "id": "syft",
    "name": "syft",
-   "desc": "CLI for generating a Software Bill of Materials from container images",
+   "desc": "\ud83d\udd0d Gerador veloz de SBOM listando todas configs de pacote das imagens",
    "category": "devops",
    "install": {
     "linux": {
@@ -5821,7 +5821,7 @@
   {
    "id": "systemctl-tui",
    "name": "systemctl-tui",
-   "desc": "systemctl-tui",
+   "desc": "\u2699\ufe0f Administrador gr\u00e1fico SystemD e control plane de servi\u00e7os em terminal",
    "category": "terminal",
    "install": {
     "linux": {
@@ -5833,7 +5833,7 @@
   {
    "id": "systeroid",
    "name": "systeroid",
-   "desc": "systeroid",
+   "desc": "\ud83e\udde0 Visualizador TUI focado em kernel sysctl parameters config din\u00e2mico",
    "category": "cli",
    "install": {
     "linux": {
@@ -5845,7 +5845,7 @@
   {
    "id": "sysz",
    "name": "sysz",
-   "desc": "sysz",
+   "desc": "\u2699\ufe0f Menu fzf focado em start/stop services do systemctl sem sofrimento",
    "category": "cli",
    "install": {
     "linux": {
@@ -5857,7 +5857,7 @@
   {
    "id": "t-rec",
    "name": "t-rec",
-   "desc": "Blazingly fast terminal recorder that generates animated gif images for the web",
+   "desc": "\ud83c\udfa5 Gravador simples terminal que exporta sess\u00f5es fluidas em GIF nativo",
    "category": "terminal",
    "install": {
     "linux": {
@@ -5873,7 +5873,7 @@
   {
    "id": "tailspin",
    "name": "tailspin",
-   "desc": "Log file highlighter",
+   "desc": "\ud83e\udeb5 Pega logs brutos de servidor e injeta syntax highlight custom pra TUI",
    "category": "files",
    "install": {
     "linux": {
@@ -5893,7 +5893,7 @@
   {
    "id": "taplo",
    "name": "taplo",
-   "desc": "TOML toolkit written in Rust",
+   "desc": "\ud83d\udcdd Toolkit e linter mega r\u00e1pido feito em rust pra ler e compilar arquivos TOML",
    "category": "cli",
    "install": {
     "linux": {
@@ -5913,7 +5913,7 @@
   {
    "id": "task",
    "name": "task",
-   "desc": "Task is a task runner/build tool that aims to be simpler and easier to use",
+   "desc": "\ud83d\udee0\ufe0f Executor simples em golang muito parecido com Make mas mais humano",
    "category": "cli",
    "install": {
     "linux": {
@@ -5933,7 +5933,7 @@
   {
    "id": "taskwarrior-tui",
    "name": "taskwarrior-tui",
-   "desc": "Terminal user interface for taskwarrior",
+   "desc": "\u2705 Controlador de TUDO interativo interface gr\u00e1fica CLI pra taskwarrior",
    "category": "terminal",
    "install": {
     "linux": {
@@ -5949,7 +5949,7 @@
   {
    "id": "tealdeer",
    "name": "tealdeer",
-   "desc": "Very fast implementation of tldr in Rust",
+   "desc": "\ud83e\udd8c Cliente purista e mega r\u00e1pido pra acessar comandos curtos do tldr pages",
    "category": "cli",
    "install": {
     "linux": {
@@ -5969,7 +5969,7 @@
   {
    "id": "television",
    "name": "television",
-   "desc": "General purpose fuzzy finder TUI",
+   "desc": "\ud83d\udcfa Buscador r\u00e1pido e minimalista com UI focada fuzzy focado rust backend",
    "category": "terminal",
    "install": {
     "linux": {
@@ -5989,7 +5989,7 @@
   {
    "id": "tenki",
    "name": "tenki",
-   "desc": "tenki",
+   "desc": "\ud83c\udf24\ufe0f App CLI simples e robusto focado em renderizar a previs\u00e3o clim\u00e1tica",
    "category": "cli",
    "install": {
     "linux": {
@@ -6001,7 +6001,7 @@
   {
    "id": "tenv",
    "name": "tenv",
-   "desc": "OpenTofu / Terraform / Terragrunt / Terramate / Atmos version manager",
+   "desc": "\ud83d\udce6 Version manager modular TUI pra infra Terraform/ OpenTofu/ e Terragrunt",
    "category": "devops",
    "install": {
     "linux": {
@@ -6021,7 +6021,7 @@
   {
    "id": "tere",
    "name": "tere",
-   "desc": "Terminal file explorer",
+   "desc": "\ud83d\udcc1 Navegador purista pra achar caminhos e dar 'cd' incrivelmente r\u00e1pido",
    "category": "files",
    "install": {
     "linux": {
@@ -6037,7 +6037,7 @@
   {
    "id": "termdbms",
    "name": "termdbms",
-   "desc": "termdbms",
+   "desc": "\ud83d\uddc3\ufe0f TUI client e monitor focado pra m\u00faltiplos bancos relacionais sem frescura",
    "category": "cli",
    "install": {
     "linux": {
@@ -6049,7 +6049,7 @@
   {
    "id": "termscp",
    "name": "termscp",
-   "desc": "Feature rich terminal file transfer and explorer",
+   "desc": "\ud83c\udf10 TUI e painel pra transferir arquivos r\u00e1pido via SCP/SFTP local vs remote",
    "category": "files",
    "install": {
     "linux": {
@@ -6065,7 +6065,7 @@
   {
    "id": "termshark",
    "name": "termshark",
-   "desc": "Terminal UI for tshark, inspired by Wireshark",
+   "desc": "\ud83e\udd88 TUI shark focado em ler e interceptar tr\u00e1fego PCAP (WireShark backend)",
    "category": "terminal",
    "install": {
     "linux": {
@@ -6081,7 +6081,7 @@
   {
    "id": "termtyper",
    "name": "termtyper",
-   "desc": "termtyper",
+   "desc": "\u2328\ufe0f Teste TUI pra verificar sua velocidade/WPM digitando no term emulator",
    "category": "cli",
    "install": {
     "linux": {
@@ -6093,7 +6093,7 @@
   {
    "id": "terragrunt",
    "name": "terragrunt",
-   "desc": "Thin wrapper for Terraform e.g. for locking state",
+   "desc": "\u2601\ufe0f Wrapper mega \u00fatil pro terraform que padroniza os m\u00f3dulos/vars DRY config",
    "category": "devops",
    "install": {
     "linux": {
@@ -6113,7 +6113,7 @@
   {
    "id": "tflint",
    "name": "tflint",
-   "desc": "tflint",
+   "desc": "\ud83e\uddf9 Analisador purista que faz cross check de erros best practices em Terraform",
    "category": "cli",
    "install": {
     "linux": {
@@ -6129,7 +6129,7 @@
   {
    "id": "tfsec",
    "name": "tfsec",
-   "desc": "Static analysis security scanner for your terraform code",
+   "desc": "\ud83d\udee1\ufe0f Analisador focado pra achar brechas graves de seguran\u00e7a nos seus Terraform",
    "category": "devops",
    "install": {
     "linux": {
@@ -6145,7 +6145,7 @@
   {
    "id": "tgpt",
    "name": "tgpt",
-   "desc": "AI Chatbots in terminal without needing API keys",
+   "desc": "\ud83e\udd16 Acesso f\u00e1cil \u00e0 LLM e AI de conversa\u00e7\u00e3o pelo terminal s/ precisar de API-Key",
    "category": "ai",
    "install": {
     "linux": {
@@ -6161,7 +6161,7 @@
   {
    "id": "thefuck",
    "name": "thefuck",
-   "desc": "Programmatically correct mistyped console commands",
+   "desc": "\ud83e\udd2c Consertador aut\u00f3mato focado em digitar fuck e reescrever sua syntax errada",
    "category": "cli",
    "install": {
     "linux": {
@@ -6177,7 +6177,7 @@
   {
    "id": "tickrs",
    "name": "tickrs",
-   "desc": "tickrs",
+   "desc": "\ud83d\udcc8 Painel financeiro focado em monitorar cripto e bolsas globais em realtime",
    "category": "cli",
    "install": {
     "linux": {
@@ -6189,7 +6189,7 @@
   {
    "id": "tig",
    "name": "tig",
-   "desc": "Text interface for Git repositories",
+   "desc": "\ud83c\udf33 Interface baseada TUI focado na interatividade bruta usando git tree e git log",
    "category": "git",
    "install": {
     "linux": {
@@ -6205,7 +6205,7 @@
   {
    "id": "tilt",
    "name": "tilt",
-   "desc": "Define your dev environment as code. For microservice apps on Kubernetes",
+   "desc": "\ud83d\udea2 Moteur focado em dev containerizado local pra K8s (atualiza\u00e7\u00f5es hot reload)",
    "category": "devops",
    "install": {
     "linux": {
@@ -6221,7 +6221,7 @@
   {
    "id": "tin-summer",
    "name": "tin-summer",
-   "desc": "tin-summer",
+   "desc": "\ud83d\udcca Utilit\u00e1rio focado de du (disk space) q analisa recursivamente multiprocessamento",
    "category": "cli",
    "install": {
     "linux": {
@@ -6233,7 +6233,7 @@
   {
    "id": "tldr",
    "name": "tldr",
-   "desc": "Simplified and community-driven man pages",
+   "desc": "\ud83d\udcd6 Consulta r\u00e1pida de cheatsheets em texto com exemplos pr\u00e1ticos curtos CLI",
    "category": "cli",
    "install": {
     "linux": {
@@ -6249,7 +6249,7 @@
   {
    "id": "tlrc",
    "name": "tlrc",
-   "desc": "Official tldr client written in Rust",
+   "desc": "\ud83d\udcd6 Cliente purista de tldr escrito em rust super r\u00e1pido com colors bonitas offline",
    "category": "cli",
    "install": {
     "linux": {
@@ -6269,7 +6269,7 @@
   {
    "id": "tmate",
    "name": "tmate",
-   "desc": "Instant terminal sharing",
+   "desc": "\ud83d\udd17 Utilit\u00e1rio terminal focado em emulador remoto e proxy pra sess\u00f5es SSH web",
    "category": "terminal",
    "install": {
     "linux": {
@@ -6285,7 +6285,7 @@
   {
    "id": "tmux",
    "name": "tmux",
-   "desc": "Terminal multiplexer",
+   "desc": "\ud83e\ude9f Multiplexador cl\u00e1ssico focado em criar e manter panes/tabs terminal s/ limite",
    "category": "terminal",
    "install": {
     "linux": {
@@ -6301,7 +6301,7 @@
   {
    "id": "tokei",
    "name": "tokei",
-   "desc": "Program that allows you to count code, quickly",
+   "desc": "\ud83d\udcca Ferramenta contadora TUI focada ultra r\u00e1pida pra saber as LOC das suas pastas",
    "category": "cli",
    "install": {
     "linux": {
@@ -6321,7 +6321,7 @@
   {
    "id": "topgrade",
    "name": "topgrade",
-   "desc": "Upgrade all the things",
+   "desc": "\ud83c\udd99 CLI TUI pra detectar qual seu package manager nativo e atualizar TUDO d'uma vez",
    "category": "cli",
    "install": {
     "linux": {
@@ -6341,7 +6341,7 @@
   {
    "id": "trash-cli",
    "name": "trash-cli",
-   "desc": "Command-line interface to the freedesktop.org trashcan",
+   "desc": "\ud83d\uddd1\ufe0f Lixeira interativa com subcomandos TUI pra recuperar rm executado sem querer",
    "category": "cli",
    "install": {
     "linux": {
@@ -6357,7 +6357,7 @@
   {
    "id": "tre",
    "name": "tre",
-   "desc": "Tree command, improved",
+   "desc": "\ud83c\udf33 Variante moderna e inteligente do cl\u00e1ssico 'tree' com configs coloridas/alias",
    "category": "cli",
    "install": {
     "linux": {
@@ -6373,7 +6373,7 @@
   {
    "id": "trippy",
    "name": "trippy",
-   "desc": "Network diagnostic tool, inspired by mtr",
+   "desc": "\ud83c\udf10 Traceroute/Ping hiper gr\u00e1fico focados c/ relat\u00f3rios detalhados ping/loss net",
    "category": "network",
    "install": {
     "linux": {
@@ -6393,7 +6393,7 @@
   {
    "id": "trivy",
    "name": "trivy",
-   "desc": "Vulnerability scanner for container images, file systems, and Git repos",
+   "desc": "\ud83d\udee1\ufe0f Verificador ultra r\u00e1pido e abrangente focado em vulnerabilidade de imagens OS",
    "category": "git",
    "install": {
     "linux": {
@@ -6413,7 +6413,7 @@
   {
    "id": "trufflehog",
    "name": "trufflehog",
-   "desc": "Find and verify credentials",
+   "desc": "\ud83d\udd11 Ferramenta de auditoria profunda pra achar keys e senhas comitadas na repo net",
    "category": "files",
    "install": {
     "linux": {
@@ -6429,7 +6429,7 @@
   {
    "id": "trzsz",
    "name": "trzsz",
-   "desc": "Simple file transfer tools, similar to lrzsz (rz/sz), and compatible with tmux",
+   "desc": "\ud83d\udce4 CLI de up/down com barra progresso nativa focado pra usar c/ tmux iTerm2 e ssh",
    "category": "files",
    "install": {
     "linux": {
@@ -6449,7 +6449,7 @@
   {
    "id": "tt",
    "name": "tt",
-   "desc": "tt",
+   "desc": "\u2328\ufe0f Testador TUI est\u00e9tico de digita\u00e7\u00e3o focado no estilo minimalista do shell custom",
    "category": "cli",
    "install": {
     "linux": {
@@ -6461,7 +6461,7 @@
   {
    "id": "ttyd",
    "name": "ttyd",
-   "desc": "Command-line tool for sharing terminal over the web",
+   "desc": "\ud83c\udf10 Proxy m\u00e1gico C++ focado em transmitir teu emulador de term TUI pra URL browser",
    "category": "terminal",
    "install": {
     "linux": {
@@ -6481,7 +6481,7 @@
   {
    "id": "ttyper",
    "name": "ttyper",
-   "desc": "ttyper",
+   "desc": "\u2328\ufe0f Aplicativo focado p teste digita\u00e7\u00e3o nativa focado rust com layouts de teclado diff",
    "category": "cli",
    "install": {
     "linux": {
@@ -6493,7 +6493,7 @@
   {
    "id": "turso",
    "name": "turso",
-   "desc": "Interactive SQL shell for Turso",
+   "desc": "\ud83d\uddc4\ufe0f CLI focado no gerenciamento TUI pra DB distribuidos baseados na edge no SQLite",
    "category": "data",
    "install": {
     "linux": {
@@ -6509,7 +6509,7 @@
   {
    "id": "typos",
    "name": "typos",
-   "desc": "typos",
+   "desc": "\u270f\ufe0f Linter corretor m\u00e1gico focado veloz que pega typpos em grandes repozit\u00f3rios C/Git",
    "category": "cli",
    "install": {
     "linux": {
@@ -6525,7 +6525,7 @@
   {
    "id": "typos-cli",
    "name": "typos-cli",
-   "desc": "Source code spell checker",
+   "desc": "\u270f\ufe0f Wrapper TUI focado utilit\u00e1rio de auto fix grammar nativo pra Typos Rust repo",
    "category": "cli",
    "install": {
     "linux": {
@@ -6541,7 +6541,7 @@
   {
    "id": "typst",
    "name": "typst",
-   "desc": "Markup-based typesetting system",
+   "desc": "\ud83d\udcdc Sistema tipogr\u00e1fico de marca\u00e7\u00e3o compilada hiper r\u00e1pido focado em bater o LaTeX",
    "category": "cli",
    "install": {
     "linux": {
@@ -6561,7 +6561,7 @@
   {
    "id": "ugit",
    "name": "ugit",
-   "desc": "Undo git commands. Your damage control git buddy",
+   "desc": "\u23ea CLI TUI desfaz a ultima burrada comitata via alias inteligente revertendo commits",
    "category": "git",
    "install": {
     "linux": {
@@ -6577,7 +6577,7 @@
   {
    "id": "ugrep",
    "name": "ugrep",
-   "desc": "Ultra fast grep with query UI, fuzzy search, archive search, and more",
+   "desc": "\ud83d\udd0d Grep turbinado C++ com grep iterativo interativo q varre multiarquivos mega fast",
    "category": "data",
    "install": {
     "linux": {
@@ -6597,7 +6597,7 @@
   {
    "id": "usql",
    "name": "usql",
-   "desc": "usql",
+   "desc": "\ud83d\uddc4\ufe0f Cliente universal DB em terminal pra postgress/ myqsl/ sqlite/ cassandra e dezenas+",
    "category": "data",
    "install": {
     "linux": {
@@ -6609,7 +6609,7 @@
   {
    "id": "uv",
    "name": "uv",
-   "desc": "Extremely fast Python package installer and resolver, written in Rust",
+   "desc": "\ud83d\udc0d Gerenciador nativo Python/Pip rust based q instala pacotes em milisegundos via cargo",
    "category": "cli",
    "install": {
     "linux": {
@@ -6629,7 +6629,7 @@
   {
    "id": "vault",
    "name": "vault",
-   "desc": "vault",
+   "desc": "\ud83d\udd10 Secrets manager da Hashi corp pra orquestrar acesso config PKI remoto",
    "category": "devops",
    "install": {
     "linux": {
@@ -6645,7 +6645,7 @@
   {
    "id": "vcluster",
    "name": "vcluster",
-   "desc": "Creates fully functional virtual k8s cluster inside host k8s cluster's namespace",
+   "desc": "\u2638\ufe0f Criador TUI focado em provisionar virtual kubernetes cluster dentro da ns do admin",
    "category": "devops",
    "install": {
     "linux": {
@@ -6665,7 +6665,7 @@
   {
    "id": "vegeta",
    "name": "vegeta",
-   "desc": "HTTP load testing tool and library",
+   "desc": "\ud83d\udd2b Atacador super veloz golang pra load tests est\u00e1ticos de HTTP focado c/ reports csv",
    "category": "network",
    "install": {
     "linux": {
@@ -6681,7 +6681,7 @@
   {
    "id": "vercel",
    "name": "vercel",
-   "desc": "Command-line interface for Vercel",
+   "desc": "\u2601\ufe0f Ferramenta cloud TUI pra deploy e link na varcel s/ necessidade de abrir portal web",
    "category": "cli",
    "install": {
     "linux": {
@@ -6697,7 +6697,7 @@
   {
    "id": "vhs",
    "name": "vhs",
-   "desc": "Your CLI home video recorder",
+   "desc": "\ud83c\udfa5 Gravador script\u00e1vel est\u00e9tico focado Charm terminal sessions pra GIF via chrome deamon",
    "category": "cli",
    "install": {
     "linux": {
@@ -6717,7 +6717,7 @@
   {
    "id": "viddy",
    "name": "viddy",
-   "desc": "Modern watch command",
+   "desc": "\ud83d\udc40 Watch de loops custom em golang focado modern que mantem color bash e history nativo",
    "category": "cli",
    "install": {
     "linux": {
@@ -6733,7 +6733,7 @@
   {
    "id": "visidata",
    "name": "visidata",
-   "desc": "Terminal spreadsheet multitool for discovering and arranging data",
+   "desc": "\ud83d\udcca Multitool focado terminal interativo pra visualizar explorar processar data sheet CSV JS",
    "category": "data",
    "install": {
     "linux": {
@@ -6749,7 +6749,7 @@
   {
    "id": "viu",
    "name": "viu",
-   "desc": "Simple terminal image viewer written in Rust",
+   "desc": "\ud83d\uddbc\ufe0f Renderiza a imagem braba ali msm em TUI direto no cell do terminal renderizando pixel block",
    "category": "terminal",
    "install": {
     "linux": {
@@ -6765,7 +6765,7 @@
   {
    "id": "vivid",
    "name": "vivid",
-   "desc": "Generator for LS_COLORS with support for multiple color themes",
+   "desc": "\ud83c\udf08 Configura dezenas variaveis $LS_COLORS focadas coloridas com defaults incr\u00edveis CLI",
    "category": "cli",
    "install": {
     "linux": {
@@ -6785,7 +6785,7 @@
   {
    "id": "vscode",
    "name": "VS Code",
-   "desc": "Editor",
+   "desc": "\ud83d\udcbb Code editor da Microsoft",
    "category": "editor",
    "install": {
     "linux": {
@@ -6805,7 +6805,7 @@
   {
    "id": "walk",
    "name": "walk",
-   "desc": "Terminal navigator",
+   "desc": "\ud83d\udeb6 Navegador CLI super leve e simples com atalhos Vim pra rodar cmds inline dir focado",
    "category": "terminal",
    "install": {
     "linux": {
@@ -6825,7 +6825,7 @@
   {
    "id": "warp",
    "name": "warp",
-   "desc": "Rust-based terminal",
+   "desc": "\ud83d\ude80 Terminal acelerado GPU focado AI auto-completar com interface ide-like revolucion\u00e1ria",
    "category": "terminal",
    "install": {
     "linux": {
@@ -6845,7 +6845,7 @@
   {
    "id": "watchexec",
    "name": "watchexec",
-   "desc": "Execute commands when watched files change",
+   "desc": "\ud83d\udd01 Executor que vigia pastas focadas e roda cmds na mudanca de files ex reload test watcher",
    "category": "files",
    "install": {
     "linux": {
@@ -6865,7 +6865,7 @@
   {
    "id": "waypoint",
    "name": "waypoint",
-   "desc": "waypoint",
+   "desc": "\u2601\ufe0f Empacota roda e faz deploy em multi ambientes focado Hashicorp",
    "category": "cli",
    "install": {
     "linux": {
@@ -6881,7 +6881,7 @@
   {
    "id": "websocat",
    "name": "websocat",
-   "desc": "Command-line client for WebSockets",
+   "desc": "\ud83c\udf10 Canivete sui\u00e7o focado rust tool netcat para WebSockets via TUI c/ debug proxy client/serv",
    "category": "cli",
    "install": {
     "linux": {
@@ -6897,7 +6897,7 @@
   {
    "id": "wezterm",
    "name": "wezterm",
-   "desc": "GPU-accelerated cross-platform terminal emulator and multiplexer",
+   "desc": "\ud83e\ude9f Emulador terminal rust focado em ser o melhor config com tabs/ gpu acelerado via config Lua",
    "category": "terminal",
    "install": {
     "linux": {
@@ -6917,7 +6917,7 @@
   {
    "id": "wiki-tui",
    "name": "wiki-tui",
-   "desc": "wiki-tui",
+   "desc": "\ud83d\udcda Renderizador focado pra buscar wiki pages direto da wikipedia usando TUI incrivelmente r\u00e1pido",
    "category": "terminal",
    "install": {
     "linux": {
@@ -6929,7 +6929,7 @@
   {
    "id": "windsurf",
    "name": "windsurf",
-   "desc": "windsurf",
+   "desc": "\ud83c\udf0a Ferramenta AI IDE proxy proxy local",
    "category": "cli",
    "install": {
     "linux": {
@@ -6945,7 +6945,7 @@
   {
    "id": "wtf",
    "name": "wtf",
-   "desc": "wtf",
+   "desc": "\ud83d\udcca Dashboard purista go focado personaliz\u00e1vel que pega multiplas info widgets systema cli dev",
    "category": "cli",
    "install": {
     "linux": {
@@ -6957,7 +6957,7 @@
   {
    "id": "wtfutil",
    "name": "wtfutil",
-   "desc": "Personal information dashboard for your terminal",
+   "desc": "\ud83d\udcca Alias do dashboard pessoal pra configs TUI (wtfutil)",
    "category": "terminal",
    "install": {
     "linux": {
@@ -6973,7 +6973,7 @@
   {
    "id": "wthrr",
    "name": "wthrr",
-   "desc": "Weather Companion for the Terminal",
+   "desc": "\ud83c\udf24\ufe0f Previsao clima purista focado terminal super charmoso",
    "category": "terminal",
    "install": {
     "linux": {
@@ -6989,7 +6989,7 @@
   {
    "id": "wthrr-the-weathercrab",
    "name": "wthrr-the-weathercrab",
-   "desc": "wthrr-the-weathercrab",
+   "desc": "\ud83c\udf24\ufe0f Previsao meteriol\u00f3gica alias extenso TUI rust",
    "category": "cli",
    "install": {
     "linux": {
@@ -7001,7 +7001,7 @@
   {
    "id": "wuzz",
    "name": "wuzz",
-   "desc": "wuzz",
+   "desc": "\ud83c\udf10 Cliente focado terminal interativo purista pra depurar HTTP requests customizavel em TUI go",
    "category": "cli",
    "install": {
     "linux": {
@@ -7013,7 +7013,7 @@
   {
    "id": "xc",
    "name": "xc",
-   "desc": "Markdown defined task runner",
+   "desc": "\ud83c\udfc3 Executador de rotinas puristas focado em ler de markdown em readme super pr\u00e1tico pra task go",
    "category": "cli",
    "install": {
     "linux": {
@@ -7029,7 +7029,7 @@
   {
    "id": "xcp",
    "name": "xcp",
-   "desc": "xcp",
+   "desc": "\ud83d\udccb Clonador rust utilit\u00e1rio de copia r\u00e1pida 'cp' paralela inteligente q exibe progress bars TUI dir",
    "category": "cli",
    "install": {
     "linux": {
@@ -7041,7 +7041,7 @@
   {
    "id": "xh",
    "name": "xh",
-   "desc": "Friendly and fast tool for sending HTTP requests",
+   "desc": "\ud83c\udf10 HTTP/API purista veloz em rust amigavel e cURL replacement pro request http com defaults bons",
    "category": "network",
    "install": {
     "linux": {
@@ -7061,7 +7061,7 @@
   {
    "id": "xplr",
    "name": "xplr",
-   "desc": "Hackable, minimal, fast TUI file explorer",
+   "desc": "\ud83d\udcc2 File manager TUI purista focado TUI veloz em rust q foca no hacker hackeavel e lua configs",
    "category": "files",
    "install": {
     "linux": {
@@ -7077,7 +7077,7 @@
   {
    "id": "xsv",
    "name": "xsv",
-   "desc": "Fast CSV toolkit written in Rust",
+   "desc": "\ud83d\udcca Fatiador analisador indexador rust purista pra destrinchar csv colossais em ms c/ filters/join",
    "category": "data",
    "install": {
     "linux": {
@@ -7097,7 +7097,7 @@
   {
    "id": "yamlfmt",
    "name": "yamlfmt",
-   "desc": "Extensible command-line tool to format YAML files",
+   "desc": "\ud83e\uddf9 Formatador CLI go linter q conserta espa\u00e7amento chato e tab errors padronizando em .yaml files",
    "category": "data",
    "install": {
     "linux": {
@@ -7113,7 +7113,7 @@
   {
    "id": "yazi",
    "name": "yazi",
-   "desc": "Blazing fast terminal file manager written in Rust, based on async I/O",
+   "desc": "\ud83d\udcc2 O melhor CLI file browser terminal focado em hyper perf usando assincrono em rust image render",
    "category": "files",
    "install": {
     "linux": {
@@ -7133,7 +7133,7 @@
   {
    "id": "yq",
    "name": "yq",
-   "desc": "Process YAML, JSON, XML, CSV and properties documents from the CLI",
+   "desc": "\ud83d\udd0d O class\u00edco jq so que pra ler arquivos yml json xml toml properties em golang TUI terminal query",
    "category": "data",
    "install": {
     "linux": {
@@ -7153,7 +7153,7 @@
   {
    "id": "yt-dlp",
    "name": "yt-dlp",
-   "desc": "Feature-rich command-line audio/video downloader",
+   "desc": "\ud83c\udfa5 O utilit\u00e1rio pika focado em forkar youtube-dl pra burlar limite banda baixar mp4 mp3 de sites",
    "category": "cli",
    "install": {
     "linux": {
@@ -7173,7 +7173,7 @@
   {
    "id": "zed",
    "name": "zed",
-   "desc": "Multiplayer code editor",
+   "desc": "\ud83d\udcdd O sublime text killer editor colaborativo rust purista ultra responsivo renderizado via gpu max fps",
    "category": "editor",
    "install": {
     "linux": {
@@ -7193,7 +7193,7 @@
   {
    "id": "zellij",
    "name": "zellij",
-   "desc": "Pluggable terminal workspace, with terminal multiplexer as the base feature",
+   "desc": "\ud83e\ude9f Multiplexador tipo tmux mas incrivel com ui built-in focada rust out-of-the-box super hackeavel",
    "category": "terminal",
    "install": {
     "linux": {
@@ -7213,7 +7213,7 @@
   {
    "id": "zen-browser",
    "name": "zen-browser",
-   "desc": "zen-browser",
+   "desc": "\ud83c\udf10 O firefox fork rust focado ultra privacy com customiza\u00e7\u00f5es de tela dividida estilo arc purista",
    "category": "cli",
    "install": {
     "linux": {
@@ -7229,7 +7229,7 @@
   {
    "id": "zenith",
    "name": "zenith",
-   "desc": "In terminal graphical metrics for your *nix system",
+   "desc": "\ud83d\udcca O monitor rust TUI purista tipo htop q desenha zoom charts graficos hist\u00f3ricos de rede discos CPU",
    "category": "terminal",
    "install": {
     "linux": {
@@ -7249,7 +7249,7 @@
   {
    "id": "zig",
    "name": "zig",
-   "desc": "Programming language designed for robustness, optimality, and clarity",
+   "desc": "\u26a1 A linguagem de sistemas modernosa que quer matar C e ja vem com um toolchain compativel C/C++ insano",
    "category": "cli",
    "install": {
     "linux": {
@@ -7269,7 +7269,7 @@
   {
    "id": "zizmor",
    "name": "zizmor",
-   "desc": "Find security issues in GitHub Actions setups",
+   "desc": "\ud83d\udee1\ufe0f Verificador est\u00e1tico de configs rust pra testar e rodar linter em GitHub actions ci configs purista",
    "category": "git",
    "install": {
     "linux": {
@@ -7289,7 +7289,7 @@
   {
    "id": "zoxide",
    "name": "zoxide",
-   "desc": "Shell extension to navigate your filesystem faster",
+   "desc": "\u26a1 O substituto veloz magico p CD rust purista que memoriza pasta que tu acessou pra jumps inteligentes",
    "category": "files",
    "install": {
     "linux": {
@@ -7309,7 +7309,7 @@
   {
    "id": "zrok",
    "name": "zrok",
-   "desc": "Geo-scale, next-generation sharing platform built on top of OpenZiti",
+   "desc": "\ud83d\ude87 Tunel seguro open-source p2p Ziti focado ngrok alternative utilit\u00e1rio pra expor localhost pro mundo",
    "category": "cli",
    "install": {
     "linux": {
@@ -7325,7 +7325,7 @@
   {
    "id": "zsh",
    "name": "zsh",
-   "desc": "UNIX shell (command interpreter)",
+   "desc": "\ud83d\udc1a Shell purista pra macOS e Linux super plugavel veloz focada autocompletion e defaults expansivos",
    "category": "terminal",
    "install": {
     "linux": {
@@ -7335,6 +7335,78 @@
     "macos": {
      "kind": "brew",
      "ref": "zsh"
+    }
+   }
+  },
+  {
+   "id": "agg",
+   "name": "agg",
+   "desc": "\ud83c\udfac Converte grava\u00e7\u00f5es asciinema (.cast) em GIFs incr\u00edveis otimizados e hiper-r\u00e1pidos em rust",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/agg/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "asciinema",
+   "name": "asciinema",
+   "desc": "\ud83c\udfa5 Grava e compartilha sess\u00f5es de terminal online de forma super leve em texto puro",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/asciinema/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "entr",
+   "name": "entr",
+   "desc": "\ud83d\udd04 Utilit\u00e1rio CLI purista e limpo pra rodar comandos autom\u00e1ticos na mudan\u00e7a arbitr\u00e1ria de arquivos",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/entr/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "iredis",
+   "name": "iredis",
+   "desc": "\ud83d\uddc4\ufe0f Cliente Redis interativo purista focado em ter auto-complete e cores no terminal",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/iredis/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "mitmproxy",
+   "name": "mitmproxy",
+   "desc": "\ud83c\udf10 Interceptador proxy HTTPS/HTTP m\u00e1gico purista e hacke\u00e1vel no terminal escrito em Python",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/mitmproxy/setup.sh"
+    }
+   }
+  },
+  {
+   "id": "turbo",
+   "name": "turbo",
+   "desc": "\u26a1 Ferramenta e build system bundler vercel hiper r\u00e1pido focado pra monorepos JavaScript/TypeScript",
+   "category": "cli",
+   "install": {
+    "linux": {
+     "kind": "script",
+     "ref": "programas/turbo/setup.sh"
     }
    }
   }
