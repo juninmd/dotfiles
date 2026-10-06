@@ -143,7 +143,7 @@ if [[ -z "$PROFILE" ]]; then
     clear
     HEADER=$("$GUM" style \
       --foreground "#ff7edb" --border-foreground "#bd93f9" --border double \
-      --align center --width 80 --margin "1 2" --padding "3 5" \
+      --align center --margin "1 2" --padding "3 5" \
       ' ▂▃▄▅▆▇█▓▒░ NEXUS DOTFILES 2026 ░▒▓█▇▆▅▄▃▂ ' \
       '' \
       '███╗   ██╗███████╗██╗  ██╗██╗   ██╗███████╗' \
@@ -164,7 +164,7 @@ if [[ -z "$PROFILE" ]]; then
 
     INFO=$("$GUM" style \
       --foreground "#36f9f6" --border-foreground "#ff7edb" --border rounded \
-      --align left --width 40 --margin "1 2" --padding "3 5" \
+      --align left --margin "1 2" --padding "3 5" \
       "$($GUM style --foreground "#bd93f9" --bold '🌌 CONECTANDO AO NEXUS 2026')" \
       '' \
       "$($GUM style --foreground "#ff7edb" '🚀 Motor de dobra calibrado...')" \
@@ -183,7 +183,7 @@ if [[ -z "$PROFILE" ]]; then
     DISK_INFO=$(df -h / | awk 'NR==2 {print $3 "/" $2}' | tr -d 'i')
     SYS_INFO=$("$GUM" style \
       --foreground "#f8f8f2" --border-foreground "#bd93f9" --border double \
-      --align left --width 30 --margin "1 2" --padding "2 3" \
+      --align left --margin "1 2" --padding "2 3" \
       '💻 SYSTEM INFO' \
       '' \
       "👤 User:  $($GUM style --foreground "#fede5d" "$USER_INFO")" \
@@ -202,7 +202,7 @@ if [[ -z "$PROFILE" ]]; then
     "$GUM" style \
       --foreground "#fede5d" --bold \
       --border double --border-foreground "#ff7edb" \
-      --padding "1 2" --margin "1 0" --align center --width 100 \
+      --padding "1 2" --margin "1 0" --align center \
       "🌐 Iniciando Protocolo de Setup 2026 🌐" \
       "Selecione o perfil de instalação para turbinar sua máquina:"
     echo ""
@@ -233,7 +233,7 @@ case "$PROFILE" in
     DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship sd choose gobang bottom macchina xplr circumflex lsd lazydocker lazygit-tui k9s-cli posting aider fastfetch)
     ;;
   dev)
-    DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun mysql lazygit-tui lazydocker ghostty zellij yazi neovim docker uv mise atuin devbox dagger deno biome ruff broot procs pueue glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd aichat duckdb lazysql harlequin fastfetch turbo entr)
+    DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun mysql lazygit-tui lazydocker ghostty zellij yazi neovim docker uv mise atuin devbox dagger deno biome ruff broot procs pueue glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd aichat duckdb lazysql harlequin fastfetch turbo entr doggo tokei jless oha curlie fabric k8sgpt tgpt jan chatbox inshellisense podman devpod daytona just mods llm helix nushell opentofu distrobox moon cline doppler pulumi vault waypoint boundary kubeshark chatblade)
     ;;
   full)
     DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cli-tools zsh starship bun act actionlint age aichat aider amber android ast-grep atac atlas atuin bacon bandwhich bat-extras binsider biome bluetuith bore-cli bottom brave broot bruno carapace cbonsai chafa charm chatbox chatgpt-cli cheat checkov choose circumflex claude-code cline cloudflared cocogitto code2prompt cointop cpufetch cmatrix crane croc csvlens ctop curlie cursor czg d2 dagger dasel daytona dbeaver dbmate delta deno devbox devenv devpod difftastic direnv discord diskonaut distrobox dive docker doggo dolt dotenv-linter dotenvx dprint dsq dua dua-cli duckdb duf dufs dura dust dysk earthly eget erdtree evans fabric neofetch-alt fend firefox flox flyctl fnm fq freeze fx gcloud gdu genact gh gh-dash ghostty ghq git-absorb git-cliff git-filter-repo git-sim git-town gitingest gitleaks gitui glab glances glow gobang gojq gping grex gron grpcurl grype gtt gum hadolint harlequin hck helix helm hexyl howdoi htop htmlq httpie httpstat httpx hurl hwatch hyperfine igrep infracost inlyne inshellisense jan jaq jc jira-cli jj jless jnv jo joshuto jq jql jqp jujutsu just k3d k6 k8sgpt k9s-cli kalker kdash kind klog kmon ko kondo krew kubecolor kubectl kubectx kustomize lazydocker lazygit-tui lazynpm lazysql lefthook lf llm lm-studio lnav lsd lychee macchina mani mcfly mdcat melt miller miniserve mise mkcert moar mods monolith moon mprocs mysql nap navi ncspot neovim newsboat ngrok nuclei numbat nushell obsidian oha ollama onefetch open-interpreter opentofu ouch oxker oxlint pastel peco pipes-rs pipes-sh pkgx plandex poetry pnpm podman pokeget pomsky popeye porsmo posting presenterm procs pueue px qsv repomix rip rnr rs-cmatrix ruff ruplacer rustscan rye sad scc sd serie serpl sesh shell-gpt shellcheck shfmt silicon skate skim slack slides slumber sniffnet so sops spacer spt sqlc steampipe stern supabase superfile syft systemctl-tui systeroid sysz t-rec tailspin taplo task taskwarrior-tui tealdeer television tenki tenv termdbms termscp termshark termtyper tfsec tgpt thefuck tickrs tilt tin-summer tldr tlrc tmux tokei topgrade trash-cli tre trippy trivy trufflehog trzsz tt ttyper turso typos typst ugit ugrep usql uv vault vcluster vegeta vhs viddy visidata viu vivid vscode walk warp watchexec websocat wezterm wiki-tui windsurf wtfutil wthrr wuzz xc xcp xh xplr xsv yamlfmt yazi yq yt-dlp zed zellij zen-browser zenith zizmor zrok ripgrep_all kubens doppler infisical stripe awscli vercel pulumi terragrunt tflint ttyd argc argocd k3s vault bw netlify heroku consul nomad packer dapr aider-chat typos-cli wthrr-the-weathercrab bruno-cli wtf mlr pls devtoy git-next pgcli mycli litecli tere kubent lazyvim oh-my-posh gptme micro nnn tig ncdu kakoune ffuf tmate kaskade aqua kcl devspace lazygit lens marimo bito gorilla-cli boundary waypoint pixi proto rio lapce fastfetch kew gaze dnote lolcat asciinema agg iredis mitmproxy turbo entr common kubeshark chatblade)
@@ -805,7 +805,7 @@ if command -v "$GUM" &> /dev/null; then
   fi
   SUMMARY_BOX=$("$GUM" style \
     --foreground "#f8f8f2" --border-foreground "#36f9f6" --border double \
-    --align center --width 70 --margin "3 2" --padding "4 6" \
+    --align center --margin "3 2" --padding "4 6" \
     "🚀 $($GUM style --foreground "#fede5d" --bold "RESUMO DA INSTALAÇÃO") 🚀" \
     "$DRY_BADGE" \
     "" \
