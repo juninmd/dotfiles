@@ -38,5 +38,5 @@ jobs:
             bun build src/index.ts --compile --target="bun-$t" --outfile "dist/$out"
           done
           (cd dist && sha256sum dotfiles-* > SHA256SUMS)
-      - uses: softprops/action-gh-release@v2
+      - uses: softprops/action-gh-release@v3
         with: { files: installer/dist/* }
