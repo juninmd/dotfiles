@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults: { run: { working-directory: installer } }
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
       - run: bun run typecheck
@@ -27,7 +27,7 @@ jobs:
     permissions: { contents: write }
     defaults: { run: { working-directory: installer } }
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
       - name: Build all targets
