@@ -1,5 +1,8 @@
-#!/bin/bash
-SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
-source "$SCRIPT_DIR/../common/cargo_helper.sh"
-# Tfsec (Terraform security scanner)
+#!/usr/bin/env bash
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+source "$ROOT_DIR/programas/common/go_helper.sh"
+
+echo "Installing tfsec..."
 install_go_package github.com/aquasecurity/tfsec/cmd/tfsec@latest tfsec
+echo "tfsec installed successfully."
