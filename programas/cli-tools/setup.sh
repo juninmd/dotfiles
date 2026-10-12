@@ -10,7 +10,7 @@ sudo apt install -y wget gpg python3-pip golang-go curl unzip ffmpeg build-essen
 # Check for Cargo (Rust)
 if ! command -v cargo &> /dev/null; then
     printf "%b\n" "${c}Cargo not found. Installing Rust...${r}"
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | /usr/bin/env sh -s -- -y
     source "$HOME/.cargo/env"
 fi
 # Source Helper Functions
@@ -27,28 +27,5 @@ else
         local package="$1"
         go install "$package"
     }
-fi
-# Install cargo-binstall for faster installations
-if ! command -v cargo-binstall &> /dev/null; then
-    printf "%b\n" "${c}Installing cargo-binstall...${r}"
-    curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-fi
-# FiraCode Nerd Font
-printf "%b\n" "${c}Installing FiraCode Nerd Font...${r}"
-FONT_DIR="$HOME/.local/share/fonts"
-if [ ! -d "$FONT_DIR" ]; then
-    mkdir -p "$FONT_DIR"
-fi
-if ls "$FONT_DIR"/FiraCode*.ttf 1> /dev/null 2>&1; then
-    printf "%b\n" "${c}FiraCode Nerd Font seems to be installed.${r}"
-else
-    wget -qO /tmp/FiraCode.zip https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
-    unzip -o -q /tmp/FiraCode.zip -d "$FONT_DIR"
-    rm /tmp/FiraCode.zip
-    printf "%b\n" "${c}FiraCode Nerd Font installed.${r}"
-    if command -v fc-cache &> /dev/null; then
-        printf "%b\n" "${c}Updating font cache...${r}"
-        fc-cache -fv
-    fi
 fi
 printf "%b\n" "${c}CLI Tools installed! Ensure ~/.local/bin, ~/.cargo/bin and ~/go/bin are in your PATH.${r}"
