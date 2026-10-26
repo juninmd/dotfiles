@@ -13,7 +13,7 @@ if ! command -v bat &> /dev/null && ! command -v batcat &> /dev/null; then
     # Create symlink if batcat exists but bat doesn't
     if command -v batcat &> /dev/null && ! command -v bat &> /dev/null; then
         mkdir -p ~/.local/bin
-        ln -s $(which batcat) ~/.local/bin/bat
+        ln -sf "$(command -v batcat)" ~/.local/bin/bat
     fi
 else
     printf "%b\n" "${c}bat already installed.${r}"

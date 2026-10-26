@@ -11,7 +11,7 @@ if ! command -v fdfind &> /dev/null && ! command -v fd &> /dev/null; then
     # Create symlink if needed
     if command -v fdfind &> /dev/null && ! command -v fd &> /dev/null; then
         mkdir -p ~/.local/bin
-        ln -s $(which fdfind) ~/.local/bin/fd
+        ln -sf "$(command -v fdfind)" ~/.local/bin/fd
     fi
 else
     printf "%b\n" "${c}fd-find already installed.${r}"
