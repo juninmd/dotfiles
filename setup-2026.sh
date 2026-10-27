@@ -539,6 +539,7 @@ declare -A MOD_DESC=(
   ["ollama"]="🦙 Servidor de IA LLMs para rodar localmente"
   ["onefetch"]="🐙 Sumário visual de repos Git via terminal"
   ["open-interpreter"]="🤖 Agente de IA para executar código no host"
+  ["claude-code"]="🤖 Claude Code AI dev assistant no terminal via anthropic purista"
   ["openhands"]="🤖 Plataforma open-source baseada em agentes de IA para engenharia de software"
   ["opentofu"]="🏗️ Fork OSS de gerenciador infra-as-code"
   ["ouch"]="🗜️ Compressor / descompressor super simples"
@@ -736,6 +737,7 @@ if command -v "$GUM" &> /dev/null; then
   CHOICES=()
   for mod in "${ALL_MODULES[@]}"; do
     desc="${MOD_DESC[$mod]:-🚀 $mod}"
+    desc="${desc//,/-}"
     CHOICES+=("$mod - $desc")
   done
 
@@ -743,9 +745,10 @@ if command -v "$GUM" &> /dev/null; then
   DEFAULTS_DESC=()
   for mod in "${DEFAULT_MODULES[@]}"; do
     desc="${MOD_DESC[$mod]:-🚀 $mod}"
+    desc="${desc//,/-}"
     DEFAULTS_DESC+=("$mod - $desc")
   done
-  DEFAULTS=$(IFS=,; echo "${DEFAULTS_DESC[*]}")
+  DEFAULTS=$(IFS=","; echo "${DEFAULTS_DESC[*]}")
 
   # Interactive selection
   # Note: Use `gum choose` because it supports `--selected` natively (unlike `gum filter`),
@@ -767,7 +770,7 @@ if command -v "$GUM" &> /dev/null; then
 
   # Extract module directories from the selected text
   MODULES=()
-  while IFS= read -r line; do
+  while IFS= read -r line || [ -n "$line" ]; do
     if [ -n "$line" ]; then
       mod="${line%% *}"
       MODULES+=("$mod")
@@ -779,7 +782,8 @@ if command -v "$GUM" &> /dev/null; then
   MOD_LIST=""
   for mod in "${MODULES[@]}"; do
     if [ -n "$mod" ]; then
-      desc="${MOD_DESC[$mod]:-🚀 $mod}"
+    desc="${MOD_DESC[$mod]:-🚀 $mod}"
+    desc="${desc//,/-}"
       MOD_LIST+="  $($GUM style --foreground "#ff7edb" "•") $($GUM style --foreground "#fede5d" "$mod") $($GUM style --foreground "#6272a4" "($desc)")"$'\n'
     fi
   done
