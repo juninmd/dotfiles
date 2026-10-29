@@ -99,7 +99,7 @@ run_module() {
   else
     if command -v "$GUM" &> /dev/null; then
       local bar="$(draw_progress_bar "$current_idx" "$total_mods")"
-      if "$GUM" spin --spinner globe --spinner.foreground "#36f9f6" --title "$bar $($GUM style --foreground "#fede5d" "$progress_prefix Instalando:") $($GUM style --foreground "#ff7edb" "$module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"; then
+      if "$GUM" spin --spinner globe --spinner.foreground "#36f9f6" --title "$bar $($GUM style --foreground "#bd93f9" "⚙") $($GUM style --foreground "#fede5d" "$progress_prefix Instalando:") $($GUM style --foreground "#36f9f6" "$module...")" -- bash -c '"$1" > "/tmp/setup-2026-$2.log" 2>&1' -- "$script" "$module"; then
         echo "$($GUM style --foreground "#72f1b8" "✔") $($GUM style --foreground "#f8f8f2" "$progress_prefix Módulo") $($GUM style --foreground "#fede5d" "$module") $($GUM style --foreground "#f8f8f2" "instalado com sucesso!")"
         SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
       else
@@ -159,7 +159,7 @@ if [[ -z "$PROFILE" ]]; then
       '███████╗╚██████╔╝███████╗╚██████╔╝' \
       '╚══════╝ ╚═════╝ ╚══════╝ ╚═════╝ ' \
       '' \
-      "$($GUM style --foreground "#36f9f6" --bold '⚡ NEXUS 2026: THE ULTIMATE CYBERPUNK EXPERIENCE ⚡')" \
+      "$($GUM style --foreground "#36f9f6" --bold '⚡ NEXUS 2026: V2.0 ULTIMATE CYBERPUNK EDITION ⚡')" \
       "$($GUM style --foreground "#72f1b8" 'A Matrix Foi Atualizada. O Futuro é Agora.')")
 
     INFO=$("$GUM" style \
