@@ -66,7 +66,9 @@
         "overmind",
         "pypipe",
         "terrascan",
-        "vllm"
+        "vllm",
+        "huggingface-cli",
+        "llama.cpp"
       ]
     }
   },
@@ -9048,6 +9050,46 @@
         "windows": {
           "kind": "winget",
           "ref": "Tool.Vllm"
+        }
+      }
+    },
+    {
+      "id": "huggingface-cli",
+      "name": "huggingface-cli",
+      "desc": "\ud83e\udd16 Utilit\u00e1rio oficial via terminal para o Hugging Face Hub",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/huggingface-cli/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "huggingface-cli"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.HuggingfaceCli"
+        }
+      }
+    },
+    {
+      "id": "llama.cpp",
+      "name": "llama.cpp",
+      "desc": "\ud83e\udd99 Infer\u00eancia de LLM em C/C++ nativo e local",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/llama.cpp/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "llama.cpp"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.LlamaCpp"
         }
       }
     }
