@@ -23,7 +23,9 @@
         "fzf",
         "lazygit",
         "bun",
-        "docker"
+        "docker",
+        "fish",
+        "kitty"
       ]
     },
     "ai-dev": {
@@ -68,7 +70,9 @@
         "terrascan",
         "vllm",
         "huggingface-cli",
-        "llama.cpp"
+        "llama.cpp",
+        "fish",
+        "kitty"
       ]
     }
   },
@@ -9090,6 +9094,44 @@
         "windows": {
           "kind": "winget",
           "ref": "Tool.LlamaCpp"
+        }
+      }
+    },
+    {
+      "id": "fish",
+      "name": "Fish",
+      "desc": "Added fish",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/fish/setup.sh"
+        },
+        "macos": {
+          "kind": "script",
+          "ref": "programas/fish/setup.sh"
+        },
+        "windows": {
+          "kind": "script",
+          "ref": "programas/fish/setup.sh"
+        }
+      }
+    },
+    {
+      "id": "kitty",
+      "name": "Kitty",
+      "desc": "Added kitty",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/kitty/setup.sh"
+        },
+        "macos": {
+          "kind": "script",
+          "ref": "programas/kitty/setup.sh"
+        },
+        "windows": {
+          "kind": "script",
+          "ref": "programas/kitty/setup.sh"
         }
       }
     }
