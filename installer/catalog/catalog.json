@@ -9134,6 +9134,66 @@
           "ref": "programas/kitty/setup.sh"
         }
       }
+    },
+    {
+      "id": "tty-clock",
+      "name": "tty-clock",
+      "desc": "\ud83d\udd52 Rel\u00f3gio digital de terminal em C",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/tty-clock/setup.sh"
+        },
+        "macos": {
+          "kind": "script",
+          "ref": "programas/tty-clock/setup.sh"
+        },
+        "windows": {
+          "kind": "script",
+          "ref": "programas/tty-clock/setup.sh"
+        }
+      }
+    },
+    {
+      "id": "cava",
+      "name": "cava",
+      "desc": "\ud83c\udfb5 Visualizador de \u00e1udio no console",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/cava/setup.sh"
+        },
+        "macos": {
+          "kind": "script",
+          "ref": "programas/cava/setup.sh"
+        },
+        "windows": {
+          "kind": "script",
+          "ref": "programas/cava/setup.sh"
+        }
+      }
+    },
+    {
+      "id": "hollywood",
+      "name": "hollywood",
+      "desc": "\ud83c\udfac Dashboard hacker de terminal cyberpunk",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/hollywood/setup.sh"
+        },
+        "macos": {
+          "kind": "script",
+          "ref": "programas/hollywood/setup.sh"
+        },
+        "windows": {
+          "kind": "script",
+          "ref": "programas/hollywood/setup.sh"
+        }
+      }
     }
   ]
 }
