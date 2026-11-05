@@ -25,7 +25,12 @@
         "bun",
         "docker",
         "fish",
-        "kitty"
+        "kitty",
+        "pandoc",
+        "rclone",
+        "restic",
+        "magic-wormhole",
+        "syncthing"
       ]
     },
     "ai-dev": {
@@ -72,7 +77,12 @@
         "huggingface-cli",
         "llama.cpp",
         "fish",
-        "kitty"
+        "kitty",
+        "pandoc",
+        "rclone",
+        "restic",
+        "magic-wormhole",
+        "syncthing"
       ]
     }
   },
@@ -9192,6 +9202,106 @@
         "windows": {
           "kind": "script",
           "ref": "programas/hollywood/setup.sh"
+        }
+      }
+    },
+    {
+      "id": "pandoc",
+      "name": "pandoc",
+      "desc": "\ud83d\udcc4 Conversor universal de documentos",
+      "category": "utils",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/pandoc/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "pandoc"
+        },
+        "windows": {
+          "kind": "script",
+          "ref": "programas/pandoc/setup.sh"
+        }
+      }
+    },
+    {
+      "id": "rclone",
+      "name": "rclone",
+      "desc": "\u2601\ufe0f Gerenciador de armazenamento em nuvem",
+      "category": "utils",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/rclone/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "rclone"
+        },
+        "windows": {
+          "kind": "script",
+          "ref": "programas/rclone/setup.sh"
+        }
+      }
+    },
+    {
+      "id": "restic",
+      "name": "restic",
+      "desc": "\ud83d\udd12 Ferramenta de backup r\u00e1pida e segura",
+      "category": "utils",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/restic/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "restic"
+        },
+        "windows": {
+          "kind": "script",
+          "ref": "programas/restic/setup.sh"
+        }
+      }
+    },
+    {
+      "id": "magic-wormhole",
+      "name": "magic-wormhole",
+      "desc": "\ud83d\udc1b Transfer\u00eancia segura de arquivos",
+      "category": "utils",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/magic-wormhole/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "magic-wormhole"
+        },
+        "windows": {
+          "kind": "script",
+          "ref": "programas/magic-wormhole/setup.sh"
+        }
+      }
+    },
+    {
+      "id": "syncthing",
+      "name": "syncthing",
+      "desc": "\ud83d\udd04 Sincroniza\u00e7\u00e3o cont\u00ednua de arquivos descentralizada",
+      "category": "utils",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/syncthing/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "syncthing"
+        },
+        "windows": {
+          "kind": "script",
+          "ref": "programas/syncthing/setup.sh"
         }
       }
     }
