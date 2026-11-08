@@ -9304,6 +9304,66 @@
           "ref": "programas/syncthing/setup.sh"
         }
       }
+    },
+    {
+      "id": "caddy",
+      "name": "caddy",
+      "desc": "\ud83c\udf10 Servidor web moderno hiper-r\u00e1pido com auto-HTTPS",
+      "category": "net",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/caddy/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "caddy"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Caddy.Caddy"
+        }
+      }
+    },
+    {
+      "id": "pm2",
+      "name": "pm2",
+      "desc": "\ud83d\ude80 Gerenciador de processos de produ\u00e7\u00e3o para Node.js com cluster mode",
+      "category": "dev",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/pm2/setup.sh"
+        },
+        "macos": {
+          "kind": "script",
+          "ref": "programas/pm2/setup.sh"
+        },
+        "windows": {
+          "kind": "npm",
+          "ref": "pm2"
+        }
+      }
+    },
+    {
+      "id": "railway",
+      "name": "railway",
+      "desc": "\ud83d\ude82 CLI da infraestrutura Railway moderna para deploy r\u00e1pido",
+      "category": "cloud",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/railway/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "railway"
+        },
+        "windows": {
+          "kind": "npm",
+          "ref": "@railway/cli"
+        }
+      }
     }
   ]
 }
