@@ -1,6 +1,6 @@
 import type { Catalog, Module, OS, PlannedCommand, Step } from "./types";
 
-const ID_RE = /^[A-Za-z0-9][A-Za-z0-9._\/-]*$/;
+const ID_RE = /^[@A-Za-z0-9][A-Za-z0-9._\/-]*$/;
 
 export function stepToArgv(step: Step): string[] {
   // Refs come from the catalog, but still reject anything shell-ish.
@@ -12,6 +12,7 @@ export function stepToArgv(step: Step): string[] {
     case "winget":
       return ["winget", "install", "--id", step.ref, "-e", "--accept-package-agreements", "--accept-source-agreements"];
     case "script": return ["bash", step.ref];
+    case "npm": return ["npm", "install", "-g", step.ref];
   }
 }
 

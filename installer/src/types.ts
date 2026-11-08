@@ -1,5 +1,5 @@
 export type OS = "linux" | "macos" | "windows";
-export type StepKind = "apt" | "brew" | "cask" | "winget" | "script";
+export type StepKind = "apt" | "brew" | "cask" | "winget" | "script" | "npm";
 export interface Step { kind: StepKind; ref: string }
 export interface Module {
   id: string; name: string; desc: string; category: string;

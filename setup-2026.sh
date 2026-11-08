@@ -176,6 +176,13 @@ if [[ -z "$PROFILE" ]]; then
     UPTIME_INFO=$(uptime -p 2>/dev/null || uptime | sed 's/.*up //; s/, [0-9]* user.*//')
     MEM_INFO=$(free -h | awk '/^Mem:/ {print $3 "/" $2}' | tr -d 'i')
     DISK_INFO=$(df -h / | awk 'NR==2 {print $3 "/" $2}' | tr -d 'i')
+    CPU_INFO=""
+    if command -v lscpu &> /dev/null; then
+      CPU_INFO=$(lscpu | awk -F: '/^Model name/ {gsub(/^[ 	]+|[ 	]+$/, "", $2); print $2}' | head -n 1)
+    elif command -v sysctl &> /dev/null; then
+      CPU_INFO=$(sysctl -n machdep.cpu.brand_string 2>/dev/null || true)
+    fi
+    if [ -z "$CPU_INFO" ]; then CPU_INFO="Unknown"; fi
     SYS_INFO=$("$GUM" style \
       --foreground "#f8f8f2" --border-foreground "#bd93f9" --border double \
       --align left --margin "1 2" --padding "2 3" \
@@ -189,7 +196,8 @@ if [[ -z "$PROFILE" ]]; then
       "📅 Date:  $($GUM style --foreground "#72f1b8" "$DATE_INFO")" \
       "⏱️ Uptime: $($GUM style --foreground "#ff7edb" "$UPTIME_INFO")" \
       "🧠 Mem:   $($GUM style --foreground "#36f9f6" "$MEM_INFO")" \
-      "💾 Disk:  $($GUM style --foreground "#bd93f9" "$DISK_INFO")")
+      "💾 Disk:  $($GUM style --foreground "#bd93f9" "$DISK_INFO")" \
+      "🤖 CPU:   $($GUM style --foreground "#72f1b8" "$CPU_INFO")")
 
     "$GUM" join --vertical --align center "$HEADER" "$("$GUM" join --horizontal --align center "$INFO" "$SYS_INFO")"
     echo ""
@@ -272,6 +280,10 @@ log "Perfil selecionado: $PROFILE"
 
 # Human-readable descriptions for the modules
 declare -A MOD_DESC=(
+  ["caddy"]="🌐 Servidor web moderno hiper-rápido com auto-HTTPS"
+  ["pm2"]="🚀 Gerenciador de processos de produção para Node.js com cluster mode"
+  ["railway"]="🚂 CLI da infraestrutura Railway moderna para deploy rápido"
+
   ["pandoc"]="📄 Conversor universal de documentos"
   ["rclone"]="☁️ Gerenciador de armazenamento em nuvem"
   ["restic"]="🔒 Ferramenta de backup rápida e segura"
