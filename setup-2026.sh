@@ -251,7 +251,7 @@ case "$PROFILE" in
     DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cargo-binstall firacode zsh starship sd choose gobang bottom macchina xplr circumflex lsd lazydocker lazygit-tui k9s-cli posting aider fastfetch ntfy terrascan zellij jq yq)
     ;;
   dev)
-    DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cargo-binstall firacode zsh starship bun mysql lazygit-tui lazydocker ghostty zellij yazi neovim docker uv mise atuin devbox dagger deno biome ruff broot procs pueue glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd aichat duckdb lazysql harlequin fastfetch turbo entr doggo tokei kitty fish jless oha curlie fabric k8sgpt tgpt jan chatbox inshellisense podman devpod daytona just mods llm helix nushell opentofu distrobox moon cline doppler pulumi vault waypoint boundary kubeshark chatblade ntfy terrascan gosec overmind k3sup k9s-cli jq yq)
+    DEFAULT_MODULES=(nix zig gleam elixir eza bat zoxide fzf ripgrep fd-find btop cargo-binstall firacode zsh starship bun mysql lazygit-tui lazydocker ghostty zellij yazi neovim docker uv mise atuin devbox dagger deno biome ruff broot procs pueue glow slumber lazynpm gitui kdash nap sd choose gobang bottom macchina xplr circumflex lsd aichat duckdb lazysql harlequin fastfetch turbo entr doggo tokei kitty fish jless oha curlie fabric k8sgpt tgpt jan chatbox inshellisense podman devpod daytona just mods llm helix nushell opentofu distrobox moon cline doppler pulumi vault waypoint boundary kubeshark chatblade ntfy terrascan gosec overmind k3sup k9s-cli jq yq nvm n)
     ;;
   full)
     DEFAULT_MODULES=(nix zig gleam elixir)
@@ -754,6 +754,8 @@ declare -A MOD_DESC=(
   ["zrok"]="🚇 Tunel seguro open-source p2p Ziti focado ngrok alternative utilitário pra expor localhost pro mundo"
   ["zsh"]="🐚 Shell purista pra macOS e Linux super plugavel veloz focada autocompletion e defaults expansivos"
 
+  ["nvm"]="📦 Node Version Manager - Gerenciador de versões do Node.js"
+  ["n"]="📦 Gerenciador de versões do Node.js (n)"
 )
 
 
@@ -797,7 +799,7 @@ if command -v "$GUM" &> /dev/null; then
     --cursor.foreground="#36f9f6" \
     --item.foreground="#f8f8f2" \
     --item.bold \
-    --header="🌟 $($GUM style --foreground "#36f9f6" --bold "CATÁLOGO NEXUS DE MÓDULOS 2026") (pressione '/' para buscar):" \
+    --header="🌟 $($GUM style --foreground "#36f9f6" --bold "CATÁLOGO NEXUS DE MÓDULOS 2026") (pressione '/' para buscar, Espaço p/ selecionar):" \
     --header.foreground="#fede5d" \
     --header.bold \
     "${CHOICES[@]}")
