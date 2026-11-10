@@ -30,7 +30,9 @@
         "rclone",
         "restic",
         "magic-wormhole",
-        "syncthing"
+        "syncthing",
+        "nvm",
+        "n"
       ]
     },
     "ai-dev": {
@@ -87,26 +89,6 @@
     }
   },
   "modules": [
-    {
-      "id": "git",
-      "name": "Git",
-      "desc": "Controle de vers\u00e3o",
-      "category": "git",
-      "install": {
-        "linux": {
-          "kind": "apt",
-          "ref": "git"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "git"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Git.Git"
-        }
-      }
-    },
     {
       "id": "act",
       "name": "act",
@@ -168,6 +150,26 @@
       }
     },
     {
+      "id": "agg",
+      "name": "agg",
+      "desc": "\ud83c\udfac Converte grava\u00e7\u00f5es asciinema (.cast) em GIFs incr\u00edveis otimizados e hiper-r\u00e1pidos em rust",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/agg/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "agg"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Agg"
+        }
+      }
+    },
+    {
       "id": "aichat",
       "name": "aichat",
       "desc": "\ud83e\udd16 Cliente CLI p/ dezenas de LLMs",
@@ -224,6 +226,26 @@
         "windows": {
           "kind": "winget",
           "ref": "Tool.Aider-chat"
+        }
+      }
+    },
+    {
+      "id": "alacritty",
+      "name": "alacritty",
+      "desc": "\u26a1 Emulador de terminal purista acelerado por GPU rust-based hiper veloz",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/alacritty/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "alacritty"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Alacritty"
         }
       }
     },
@@ -324,6 +346,26 @@
         "windows": {
           "kind": "winget",
           "ref": "argoproj.argocd"
+        }
+      }
+    },
+    {
+      "id": "asciinema",
+      "name": "asciinema",
+      "desc": "\ud83c\udfa5 Grava e compartilha sess\u00f5es de terminal online de forma super leve em texto puro",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/asciinema/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "asciinema"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Asciinema"
         }
       }
     },
@@ -588,6 +630,26 @@
       }
     },
     {
+      "id": "bob",
+      "name": "bob",
+      "desc": "\ud83d\udee0\ufe0f Gerenciador de vers\u00f5es do Neovim hiper r\u00e1pido purista cross-platform",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/bob/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "bob"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Bob"
+        }
+      }
+    },
+    {
       "id": "bore-cli",
       "name": "bore-cli",
       "desc": "\ud83d\ude87 T\u00faneis TCP locais simplificados",
@@ -788,6 +850,26 @@
       }
     },
     {
+      "id": "caddy",
+      "name": "caddy",
+      "desc": "\ud83c\udf10 Servidor web moderno hiper-r\u00e1pido com auto-HTTPS",
+      "category": "net",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/caddy/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "caddy"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Caddy.Caddy"
+        }
+      }
+    },
+    {
       "id": "carapace",
       "name": "carapace",
       "desc": "\ud83d\udc1a Autocomplete multi-shell",
@@ -804,6 +886,46 @@
         "windows": {
           "kind": "winget",
           "ref": "rsteube.Carapace"
+        }
+      }
+    },
+    {
+      "id": "cargo-binstall",
+      "name": "cargo-binstall",
+      "desc": "\ud83d\udce6 Utilit\u00e1rio para baixar bin\u00e1rios compilados do cargo pra instalar super r\u00e1pido rust",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/cargo-binstall/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "cargo-binstall"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Cargo-binstall"
+        }
+      }
+    },
+    {
+      "id": "cava",
+      "name": "cava",
+      "desc": "\ud83c\udfb5 Visualizador de \u00e1udio no console",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/cava/setup.sh"
+        },
+        "macos": {
+          "kind": "script",
+          "ref": "programas/cava/setup.sh"
+        },
+        "windows": {
+          "kind": "script",
+          "ref": "programas/cava/setup.sh"
         }
       }
     },
@@ -864,6 +986,26 @@
         "windows": {
           "kind": "winget",
           "ref": "Tool.Charm"
+        }
+      }
+    },
+    {
+      "id": "chatblade",
+      "name": "chatblade",
+      "desc": "\ud83d\udcac Canivete su\u00ed\u00e7o em CLI para ChatGPT",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/chatblade/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "chatblade"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Chatblade"
         }
       }
     },
@@ -1148,6 +1290,26 @@
       }
     },
     {
+      "id": "cosign",
+      "name": "cosign",
+      "desc": "\u270d\ufe0f Assinatura de containers e verifica\u00e7\u00e3o de artefatos OCI purista",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/cosign/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "cosign"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Cosign"
+        }
+      }
+    },
+    {
       "id": "cpufetch",
       "name": "cpufetch",
       "desc": "\ud83d\udda5\ufe0f Ferramenta de info de CPU",
@@ -1184,6 +1346,26 @@
         "windows": {
           "kind": "winget",
           "ref": "Tool.Crane"
+        }
+      }
+    },
+    {
+      "id": "crewai",
+      "name": "crewai",
+      "desc": "\ud83e\udd16 Framework avan\u00e7ado de orquestra\u00e7\u00e3o de m\u00faltiplos agentes de IA colaborativos",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/crewai/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "crewai"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Crewai"
         }
       }
     },
@@ -2108,6 +2290,26 @@
       }
     },
     {
+      "id": "entr",
+      "name": "entr",
+      "desc": "\ud83d\udd04 Utilit\u00e1rio CLI purista e limpo pra rodar comandos autom\u00e1ticos na mudan\u00e7a arbitr\u00e1ria de arquivos",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/entr/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "entr"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Entr"
+        }
+      }
+    },
+    {
       "id": "erdtree",
       "name": "erdtree",
       "desc": "\ud83c\udf33 Visualizador de disco e \u00e1rvore moderno",
@@ -2268,6 +2470,26 @@
       }
     },
     {
+      "id": "firacode",
+      "name": "firacode",
+      "desc": "\ud83d\udd24 Nerd font moderna com glyphs essenciais para o terminal",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/firacode/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "firacode"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Firacode"
+        }
+      }
+    },
+    {
       "id": "firefox",
       "name": "firefox",
       "desc": "\ud83e\udd8a Navegador web Mozilla",
@@ -2284,6 +2506,25 @@
         "windows": {
           "kind": "winget",
           "ref": "Mozilla.Firefox"
+        }
+      }
+    },
+    {
+      "id": "fish",
+      "name": "Fish",
+      "desc": "Added fish",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/fish/setup.sh"
+        },
+        "macos": {
+          "kind": "script",
+          "ref": "programas/fish/setup.sh"
+        },
+        "windows": {
+          "kind": "script",
+          "ref": "programas/fish/setup.sh"
         }
       }
     },
@@ -2528,6 +2769,26 @@
       }
     },
     {
+      "id": "gh-copilot",
+      "name": "gh-copilot",
+      "desc": "\ud83e\udd16 Extens\u00e3o oficial do GitHub Copilot para o CLI (gh)",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/gh-copilot/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "gh-copilot"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Gh-copilot"
+        }
+      }
+    },
+    {
       "id": "gh-dash",
       "name": "gh-dash",
       "desc": "\ud83d\udcca Dashboard do GitHub em TUI",
@@ -2588,6 +2849,26 @@
       }
     },
     {
+      "id": "git",
+      "name": "Git",
+      "desc": "Controle de vers\u00e3o",
+      "category": "git",
+      "install": {
+        "linux": {
+          "kind": "apt",
+          "ref": "git"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "git"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Git.Git"
+        }
+      }
+    },
+    {
       "id": "git-absorb",
       "name": "git-absorb",
       "desc": "\ud83e\uddf2 git commit --fixup autom\u00e1tico",
@@ -2624,6 +2905,26 @@
         "windows": {
           "kind": "winget",
           "ref": "orhun.git-cliff"
+        }
+      }
+    },
+    {
+      "id": "git-delta",
+      "name": "git-delta",
+      "desc": "\ud83d\udd0d Paginador para Git e diffs com syntax highlighting incr\u00edvel",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/git-delta/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "git-delta"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Git-delta"
         }
       }
     },
@@ -2908,6 +3209,26 @@
       }
     },
     {
+      "id": "gosec",
+      "name": "gosec",
+      "desc": "\ud83d\udee1\ufe0f Scanner de seguran\u00e7a para c\u00f3digo Golang (go)",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/gosec/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "gosec"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Gosec"
+        }
+      }
+    },
+    {
       "id": "gping",
       "name": "gping",
       "desc": "\ud83c\udfd3 Ping com gr\u00e1ficos coloridos no terminal",
@@ -2924,6 +3245,26 @@
         "windows": {
           "kind": "winget",
           "ref": "orf.gping"
+        }
+      }
+    },
+    {
+      "id": "gpt-engineer",
+      "name": "gpt-engineer",
+      "desc": "\ud83e\udd16 Ferramenta CLI de IA para gerar bases de c\u00f3digo completas a partir de prompts",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/gpt-engineer/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "gpt-engineer"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Gpt-engineer"
         }
       }
     },
@@ -3208,6 +3549,26 @@
       }
     },
     {
+      "id": "hollywood",
+      "name": "hollywood",
+      "desc": "\ud83c\udfac Dashboard hacker de terminal cyberpunk",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/hollywood/setup.sh"
+        },
+        "macos": {
+          "kind": "script",
+          "ref": "programas/hollywood/setup.sh"
+        },
+        "windows": {
+          "kind": "script",
+          "ref": "programas/hollywood/setup.sh"
+        }
+      }
+    },
+    {
       "id": "howdoi",
       "name": "howdoi",
       "desc": "\u2753 Busca de respostas diretas para devs",
@@ -3324,6 +3685,26 @@
         "windows": {
           "kind": "winget",
           "ref": "Tool.Httpx"
+        }
+      }
+    },
+    {
+      "id": "huggingface-cli",
+      "name": "huggingface-cli",
+      "desc": "\ud83e\udd16 Utilit\u00e1rio oficial via terminal para o Hugging Face Hub",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/huggingface-cli/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "huggingface-cli"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.HuggingfaceCli"
         }
       }
     },
@@ -3484,6 +3865,46 @@
         "windows": {
           "kind": "winget",
           "ref": "Tool.Inshellisense"
+        }
+      }
+    },
+    {
+      "id": "insomnia",
+      "name": "insomnia",
+      "desc": "\ud83d\udecf\ufe0f Cliente REST/GraphQL purista para testar APIs de forma simplificada UI",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/insomnia/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "insomnia"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Insomnia"
+        }
+      }
+    },
+    {
+      "id": "iredis",
+      "name": "iredis",
+      "desc": "\ud83d\uddc4\ufe0f Cliente Redis interativo purista focado em ter auto-complete e cores no terminal",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/iredis/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "iredis"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Iredis"
         }
       }
     },
@@ -3808,6 +4229,26 @@
       }
     },
     {
+      "id": "k3sup",
+      "name": "k3sup",
+      "desc": "\u2638\ufe0f Utilit\u00e1rio para provisionamento de clusters Kubernetes via SSH (go)",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/k3sup/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "k3sup"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.K3sup"
+        }
+      }
+    },
+    {
       "id": "k6",
       "name": "k6",
       "desc": "\ud83d\ude80 Ferramenta de teste de carga HTTP",
@@ -4008,6 +4449,25 @@
       }
     },
     {
+      "id": "kitty",
+      "name": "Kitty",
+      "desc": "Added kitty",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/kitty/setup.sh"
+        },
+        "macos": {
+          "kind": "script",
+          "ref": "programas/kitty/setup.sh"
+        },
+        "windows": {
+          "kind": "script",
+          "ref": "programas/kitty/setup.sh"
+        }
+      }
+    },
+    {
       "id": "klog",
       "name": "klog",
       "desc": "\u23f1\ufe0f Rastreador de tempo em plain text",
@@ -4204,6 +4664,26 @@
         "windows": {
           "kind": "winget",
           "ref": "Tool.Kubent"
+        }
+      }
+    },
+    {
+      "id": "kubeshark",
+      "name": "kubeshark",
+      "desc": "\ud83e\udd88 Analisador de tr\u00e1fego de API para Kubernetes",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/kubeshark/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "kubeshark"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Kubeshark"
         }
       }
     },
@@ -4448,6 +4928,26 @@
       }
     },
     {
+      "id": "llama.cpp",
+      "name": "llama.cpp",
+      "desc": "\ud83e\udd99 Infer\u00eancia de LLM em C/C++ nativo e local",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/llama.cpp/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "llama.cpp"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.LlamaCpp"
+        }
+      }
+    },
+    {
       "id": "llm",
       "name": "llm",
       "desc": "\ud83e\udd16 Utilit\u00e1rio CLI para executar LLMs locais ou remotos",
@@ -4584,6 +5084,26 @@
         "windows": {
           "kind": "winget",
           "ref": "Tool.Macchina"
+        }
+      }
+    },
+    {
+      "id": "magic-wormhole",
+      "name": "magic-wormhole",
+      "desc": "\ud83d\udc1b Transfer\u00eancia segura de arquivos",
+      "category": "utils",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/magic-wormhole/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "magic-wormhole"
+        },
+        "windows": {
+          "kind": "script",
+          "ref": "programas/magic-wormhole/setup.sh"
         }
       }
     },
@@ -4768,6 +5288,26 @@
       }
     },
     {
+      "id": "mitmproxy",
+      "name": "mitmproxy",
+      "desc": "\ud83c\udf10 Interceptador proxy HTTPS/HTTP m\u00e1gico purista e hacke\u00e1vel no terminal escrito em Python",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/mitmproxy/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "mitmproxy"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Mitmproxy"
+        }
+      }
+    },
+    {
       "id": "mkcert",
       "name": "mkcert",
       "desc": "\ud83d\udd10 Cria certificados de dev locais facilmente",
@@ -4944,6 +5484,26 @@
         "windows": {
           "kind": "winget",
           "ref": "Oracle.MySQL"
+        }
+      }
+    },
+    {
+      "id": "n",
+      "name": "n",
+      "desc": "\ud83d\udce6 Gerenciador de vers\u00f5es do Node.js (n)",
+      "category": "runtime",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/n/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "n"
+        },
+        "windows": {
+          "kind": "npm",
+          "ref": "n"
         }
       }
     },
@@ -5188,6 +5748,26 @@
       }
     },
     {
+      "id": "ntfy",
+      "name": "ntfy",
+      "desc": "\ud83d\udd14 Envia notifica\u00e7\u00f5es push diretamente do terminal via ntfy.sh (go)",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/ntfy/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "ntfy"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Ntfy"
+        }
+      }
+    },
+    {
       "id": "nuclei",
       "name": "nuclei",
       "desc": "\ud83d\udd2c Scanner focado em templates de vulnerabilidade",
@@ -5244,6 +5824,46 @@
         "windows": {
           "kind": "winget",
           "ref": "Nushell.Nushell"
+        }
+      }
+    },
+    {
+      "id": "nvm",
+      "name": "nvm",
+      "desc": "\ud83d\udce6 Node Version Manager",
+      "category": "runtime",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/nvm/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "nvm"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "CoreyButler.NVMforWindows"
+        }
+      }
+    },
+    {
+      "id": "nvtop",
+      "name": "nvtop",
+      "desc": "\ud83d\udcca Monitor de GPU rust-like purista para placas AMD/NVIDIA/Intel no terminal",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/nvtop/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "nvtop"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Nvtop"
         }
       }
     },
@@ -5368,6 +5988,26 @@
       }
     },
     {
+      "id": "openhands",
+      "name": "openhands",
+      "desc": "\ud83e\udd16 Plataforma open-source baseada em agentes de IA para engenharia de software",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/openhands/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "openhands"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Openhands"
+        }
+      }
+    },
+    {
       "id": "opentofu",
       "name": "opentofu",
       "desc": "\ud83c\udfd7\ufe0f Fork OSS de gerenciador infra-as-code",
@@ -5404,6 +6044,26 @@
         "windows": {
           "kind": "winget",
           "ref": "Tool.Ouch"
+        }
+      }
+    },
+    {
+      "id": "overmind",
+      "name": "overmind",
+      "desc": "\ud83e\udde0 Gerenciador de processos moderno (Procfile) usando tmux (go)",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/overmind/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "overmind"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Overmind"
         }
       }
     },
@@ -5464,6 +6124,26 @@
         "macos": {
           "kind": "brew",
           "ref": "packer"
+        }
+      }
+    },
+    {
+      "id": "pandoc",
+      "name": "pandoc",
+      "desc": "\ud83d\udcc4 Conversor universal de documentos",
+      "category": "utils",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/pandoc/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "pandoc"
+        },
+        "windows": {
+          "kind": "script",
+          "ref": "programas/pandoc/setup.sh"
         }
       }
     },
@@ -5644,6 +6324,26 @@
         "windows": {
           "kind": "winget",
           "ref": "Tool.Pls"
+        }
+      }
+    },
+    {
+      "id": "pm2",
+      "name": "pm2",
+      "desc": "\ud83d\ude80 Gerenciador de processos de produ\u00e7\u00e3o para Node.js com cluster mode",
+      "category": "dev",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/pm2/setup.sh"
+        },
+        "macos": {
+          "kind": "script",
+          "ref": "programas/pm2/setup.sh"
+        },
+        "windows": {
+          "kind": "npm",
+          "ref": "pm2"
         }
       }
     },
@@ -5928,6 +6628,26 @@
       }
     },
     {
+      "id": "pypipe",
+      "name": "pypipe",
+      "desc": "\ud83d\udc0d Utilit\u00e1rio de terminal com pipes para executar Python inline",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/pypipe/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "pypipe"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Pypipe"
+        }
+      }
+    },
+    {
       "id": "qsv",
       "name": "qsv",
       "desc": "\ud83d\udcca Ferramenta absurdamente veloz para analisar e editar CSVs",
@@ -5948,6 +6668,46 @@
       }
     },
     {
+      "id": "railway",
+      "name": "railway",
+      "desc": "\ud83d\ude82 CLI da infraestrutura Railway moderna para deploy r\u00e1pido",
+      "category": "cloud",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/railway/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "railway"
+        },
+        "windows": {
+          "kind": "npm",
+          "ref": "@railway/cli"
+        }
+      }
+    },
+    {
+      "id": "rclone",
+      "name": "rclone",
+      "desc": "\u2601\ufe0f Gerenciador de armazenamento em nuvem",
+      "category": "utils",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/rclone/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "rclone"
+        },
+        "windows": {
+          "kind": "script",
+          "ref": "programas/rclone/setup.sh"
+        }
+      }
+    },
+    {
       "id": "repomix",
       "name": "repomix",
       "desc": "\ud83d\udce6 Mixagem de relat\u00f3rios \u00fateis gerados no seu reposit\u00f3rio",
@@ -5964,6 +6724,26 @@
         "windows": {
           "kind": "winget",
           "ref": "Tool.Repomix"
+        }
+      }
+    },
+    {
+      "id": "restic",
+      "name": "restic",
+      "desc": "\ud83d\udd12 Ferramenta de backup r\u00e1pida e segura",
+      "category": "utils",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/restic/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "restic"
+        },
+        "windows": {
+          "kind": "script",
+          "ref": "programas/restic/setup.sh"
         }
       }
     },
@@ -6728,6 +7508,26 @@
       }
     },
     {
+      "id": "syncthing",
+      "name": "syncthing",
+      "desc": "\ud83d\udd04 Sincroniza\u00e7\u00e3o cont\u00ednua de arquivos descentralizada",
+      "category": "utils",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/syncthing/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "syncthing"
+        },
+        "windows": {
+          "kind": "script",
+          "ref": "programas/syncthing/setup.sh"
+        }
+      }
+    },
+    {
       "id": "systemctl-tui",
       "name": "systemctl-tui",
       "desc": "\u2699\ufe0f Administrador gr\u00e1fico SystemD e control plane de servi\u00e7os em terminal",
@@ -7084,6 +7884,26 @@
         "windows": {
           "kind": "winget",
           "ref": "Gruntwork.Terragrunt"
+        }
+      }
+    },
+    {
+      "id": "terrascan",
+      "name": "terrascan",
+      "desc": "\ud83d\udd0d Scanner est\u00e1tico para infraestrutura como c\u00f3digo (IaC)",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/terrascan/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "terrascan"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Terrascan"
         }
       }
     },
@@ -7508,6 +8328,26 @@
       }
     },
     {
+      "id": "tty-clock",
+      "name": "tty-clock",
+      "desc": "\ud83d\udd52 Rel\u00f3gio digital de terminal em C",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/tty-clock/setup.sh"
+        },
+        "macos": {
+          "kind": "script",
+          "ref": "programas/tty-clock/setup.sh"
+        },
+        "windows": {
+          "kind": "script",
+          "ref": "programas/tty-clock/setup.sh"
+        }
+      }
+    },
+    {
       "id": "ttyd",
       "name": "ttyd",
       "desc": "\ud83c\udf10 Proxy m\u00e1gico C++ focado em transmitir teu emulador de term TUI pra URL browser",
@@ -7544,6 +8384,26 @@
         "windows": {
           "kind": "winget",
           "ref": "Tool.Ttyper"
+        }
+      }
+    },
+    {
+      "id": "turbo",
+      "name": "turbo",
+      "desc": "\u26a1 Ferramenta e build system bundler vercel hiper r\u00e1pido focado pra monorepos JavaScript/TypeScript",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/turbo/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "turbo"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Turbo"
         }
       }
     },
@@ -7884,6 +8744,26 @@
         "windows": {
           "kind": "winget",
           "ref": "sharkdp.vivid"
+        }
+      }
+    },
+    {
+      "id": "vllm",
+      "name": "vllm",
+      "desc": "\ud83e\udd16 Engine de infer\u00eancia e servi\u00e7o de alta performance para modelos LLMs em Python",
+      "category": "cli",
+      "install": {
+        "linux": {
+          "kind": "script",
+          "ref": "programas/vllm/setup.sh"
+        },
+        "macos": {
+          "kind": "brew",
+          "ref": "vllm"
+        },
+        "windows": {
+          "kind": "winget",
+          "ref": "Tool.Vllm"
         }
       }
     },
@@ -8524,844 +9404,6 @@
         "windows": {
           "kind": "winget",
           "ref": "Tool.Zsh"
-        }
-      }
-    },
-    {
-      "id": "agg",
-      "name": "agg",
-      "desc": "\ud83c\udfac Converte grava\u00e7\u00f5es asciinema (.cast) em GIFs incr\u00edveis otimizados e hiper-r\u00e1pidos em rust",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/agg/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "agg"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Agg"
-        }
-      }
-    },
-    {
-      "id": "asciinema",
-      "name": "asciinema",
-      "desc": "\ud83c\udfa5 Grava e compartilha sess\u00f5es de terminal online de forma super leve em texto puro",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/asciinema/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "asciinema"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Asciinema"
-        }
-      }
-    },
-    {
-      "id": "entr",
-      "name": "entr",
-      "desc": "\ud83d\udd04 Utilit\u00e1rio CLI purista e limpo pra rodar comandos autom\u00e1ticos na mudan\u00e7a arbitr\u00e1ria de arquivos",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/entr/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "entr"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Entr"
-        }
-      }
-    },
-    {
-      "id": "iredis",
-      "name": "iredis",
-      "desc": "\ud83d\uddc4\ufe0f Cliente Redis interativo purista focado em ter auto-complete e cores no terminal",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/iredis/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "iredis"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Iredis"
-        }
-      }
-    },
-    {
-      "id": "mitmproxy",
-      "name": "mitmproxy",
-      "desc": "\ud83c\udf10 Interceptador proxy HTTPS/HTTP m\u00e1gico purista e hacke\u00e1vel no terminal escrito em Python",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/mitmproxy/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "mitmproxy"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Mitmproxy"
-        }
-      }
-    },
-    {
-      "id": "turbo",
-      "name": "turbo",
-      "desc": "\u26a1 Ferramenta e build system bundler vercel hiper r\u00e1pido focado pra monorepos JavaScript/TypeScript",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/turbo/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "turbo"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Turbo"
-        }
-      }
-    },
-    {
-      "id": "alacritty",
-      "name": "alacritty",
-      "desc": "\u26a1 Emulador de terminal purista acelerado por GPU rust-based hiper veloz",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/alacritty/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "alacritty"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Alacritty"
-        }
-      }
-    },
-    {
-      "id": "bob",
-      "name": "bob",
-      "desc": "\ud83d\udee0\ufe0f Gerenciador de vers\u00f5es do Neovim hiper r\u00e1pido purista cross-platform",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/bob/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "bob"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Bob"
-        }
-      }
-    },
-    {
-      "id": "cargo-binstall",
-      "name": "cargo-binstall",
-      "desc": "\ud83d\udce6 Utilit\u00e1rio para baixar bin\u00e1rios compilados do cargo pra instalar super r\u00e1pido rust",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/cargo-binstall/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "cargo-binstall"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Cargo-binstall"
-        }
-      }
-    },
-    {
-      "id": "chatblade",
-      "name": "chatblade",
-      "desc": "\ud83d\udcac Canivete su\u00ed\u00e7o em CLI para ChatGPT",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/chatblade/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "chatblade"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Chatblade"
-        }
-      }
-    },
-    {
-      "id": "cosign",
-      "name": "cosign",
-      "desc": "\u270d\ufe0f Assinatura de containers e verifica\u00e7\u00e3o de artefatos OCI purista",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/cosign/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "cosign"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Cosign"
-        }
-      }
-    },
-    {
-      "id": "crewai",
-      "name": "crewai",
-      "desc": "\ud83e\udd16 Framework avan\u00e7ado de orquestra\u00e7\u00e3o de m\u00faltiplos agentes de IA colaborativos",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/crewai/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "crewai"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Crewai"
-        }
-      }
-    },
-    {
-      "id": "firacode",
-      "name": "firacode",
-      "desc": "\ud83d\udd24 Nerd font moderna com glyphs essenciais para o terminal",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/firacode/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "firacode"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Firacode"
-        }
-      }
-    },
-    {
-      "id": "gh-copilot",
-      "name": "gh-copilot",
-      "desc": "\ud83e\udd16 Extens\u00e3o oficial do GitHub Copilot para o CLI (gh)",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/gh-copilot/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "gh-copilot"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Gh-copilot"
-        }
-      }
-    },
-    {
-      "id": "git-delta",
-      "name": "git-delta",
-      "desc": "\ud83d\udd0d Paginador para Git e diffs com syntax highlighting incr\u00edvel",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/git-delta/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "git-delta"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Git-delta"
-        }
-      }
-    },
-    {
-      "id": "gosec",
-      "name": "gosec",
-      "desc": "\ud83d\udee1\ufe0f Scanner de seguran\u00e7a para c\u00f3digo Golang (go)",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/gosec/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "gosec"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Gosec"
-        }
-      }
-    },
-    {
-      "id": "gpt-engineer",
-      "name": "gpt-engineer",
-      "desc": "\ud83e\udd16 Ferramenta CLI de IA para gerar bases de c\u00f3digo completas a partir de prompts",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/gpt-engineer/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "gpt-engineer"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Gpt-engineer"
-        }
-      }
-    },
-    {
-      "id": "insomnia",
-      "name": "insomnia",
-      "desc": "\ud83d\udecf\ufe0f Cliente REST/GraphQL purista para testar APIs de forma simplificada UI",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/insomnia/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "insomnia"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Insomnia"
-        }
-      }
-    },
-    {
-      "id": "k3sup",
-      "name": "k3sup",
-      "desc": "\u2638\ufe0f Utilit\u00e1rio para provisionamento de clusters Kubernetes via SSH (go)",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/k3sup/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "k3sup"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.K3sup"
-        }
-      }
-    },
-    {
-      "id": "kubeshark",
-      "name": "kubeshark",
-      "desc": "\ud83e\udd88 Analisador de tr\u00e1fego de API para Kubernetes",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/kubeshark/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "kubeshark"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Kubeshark"
-        }
-      }
-    },
-    {
-      "id": "ntfy",
-      "name": "ntfy",
-      "desc": "\ud83d\udd14 Envia notifica\u00e7\u00f5es push diretamente do terminal via ntfy.sh (go)",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/ntfy/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "ntfy"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Ntfy"
-        }
-      }
-    },
-    {
-      "id": "nvtop",
-      "name": "nvtop",
-      "desc": "\ud83d\udcca Monitor de GPU rust-like purista para placas AMD/NVIDIA/Intel no terminal",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/nvtop/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "nvtop"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Nvtop"
-        }
-      }
-    },
-    {
-      "id": "openhands",
-      "name": "openhands",
-      "desc": "\ud83e\udd16 Plataforma open-source baseada em agentes de IA para engenharia de software",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/openhands/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "openhands"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Openhands"
-        }
-      }
-    },
-    {
-      "id": "overmind",
-      "name": "overmind",
-      "desc": "\ud83e\udde0 Gerenciador de processos moderno (Procfile) usando tmux (go)",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/overmind/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "overmind"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Overmind"
-        }
-      }
-    },
-    {
-      "id": "pypipe",
-      "name": "pypipe",
-      "desc": "\ud83d\udc0d Utilit\u00e1rio de terminal com pipes para executar Python inline",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/pypipe/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "pypipe"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Pypipe"
-        }
-      }
-    },
-    {
-      "id": "terrascan",
-      "name": "terrascan",
-      "desc": "\ud83d\udd0d Scanner est\u00e1tico para infraestrutura como c\u00f3digo (IaC)",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/terrascan/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "terrascan"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Terrascan"
-        }
-      }
-    },
-    {
-      "id": "vllm",
-      "name": "vllm",
-      "desc": "\ud83e\udd16 Engine de infer\u00eancia e servi\u00e7o de alta performance para modelos LLMs em Python",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/vllm/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "vllm"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.Vllm"
-        }
-      }
-    },
-    {
-      "id": "huggingface-cli",
-      "name": "huggingface-cli",
-      "desc": "\ud83e\udd16 Utilit\u00e1rio oficial via terminal para o Hugging Face Hub",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/huggingface-cli/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "huggingface-cli"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.HuggingfaceCli"
-        }
-      }
-    },
-    {
-      "id": "llama.cpp",
-      "name": "llama.cpp",
-      "desc": "\ud83e\udd99 Infer\u00eancia de LLM em C/C++ nativo e local",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/llama.cpp/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "llama.cpp"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Tool.LlamaCpp"
-        }
-      }
-    },
-    {
-      "id": "fish",
-      "name": "Fish",
-      "desc": "Added fish",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/fish/setup.sh"
-        },
-        "macos": {
-          "kind": "script",
-          "ref": "programas/fish/setup.sh"
-        },
-        "windows": {
-          "kind": "script",
-          "ref": "programas/fish/setup.sh"
-        }
-      }
-    },
-    {
-      "id": "kitty",
-      "name": "Kitty",
-      "desc": "Added kitty",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/kitty/setup.sh"
-        },
-        "macos": {
-          "kind": "script",
-          "ref": "programas/kitty/setup.sh"
-        },
-        "windows": {
-          "kind": "script",
-          "ref": "programas/kitty/setup.sh"
-        }
-      }
-    },
-    {
-      "id": "tty-clock",
-      "name": "tty-clock",
-      "desc": "\ud83d\udd52 Rel\u00f3gio digital de terminal em C",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/tty-clock/setup.sh"
-        },
-        "macos": {
-          "kind": "script",
-          "ref": "programas/tty-clock/setup.sh"
-        },
-        "windows": {
-          "kind": "script",
-          "ref": "programas/tty-clock/setup.sh"
-        }
-      }
-    },
-    {
-      "id": "cava",
-      "name": "cava",
-      "desc": "\ud83c\udfb5 Visualizador de \u00e1udio no console",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/cava/setup.sh"
-        },
-        "macos": {
-          "kind": "script",
-          "ref": "programas/cava/setup.sh"
-        },
-        "windows": {
-          "kind": "script",
-          "ref": "programas/cava/setup.sh"
-        }
-      }
-    },
-    {
-      "id": "hollywood",
-      "name": "hollywood",
-      "desc": "\ud83c\udfac Dashboard hacker de terminal cyberpunk",
-      "category": "cli",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/hollywood/setup.sh"
-        },
-        "macos": {
-          "kind": "script",
-          "ref": "programas/hollywood/setup.sh"
-        },
-        "windows": {
-          "kind": "script",
-          "ref": "programas/hollywood/setup.sh"
-        }
-      }
-    },
-    {
-      "id": "pandoc",
-      "name": "pandoc",
-      "desc": "\ud83d\udcc4 Conversor universal de documentos",
-      "category": "utils",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/pandoc/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "pandoc"
-        },
-        "windows": {
-          "kind": "script",
-          "ref": "programas/pandoc/setup.sh"
-        }
-      }
-    },
-    {
-      "id": "rclone",
-      "name": "rclone",
-      "desc": "\u2601\ufe0f Gerenciador de armazenamento em nuvem",
-      "category": "utils",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/rclone/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "rclone"
-        },
-        "windows": {
-          "kind": "script",
-          "ref": "programas/rclone/setup.sh"
-        }
-      }
-    },
-    {
-      "id": "restic",
-      "name": "restic",
-      "desc": "\ud83d\udd12 Ferramenta de backup r\u00e1pida e segura",
-      "category": "utils",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/restic/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "restic"
-        },
-        "windows": {
-          "kind": "script",
-          "ref": "programas/restic/setup.sh"
-        }
-      }
-    },
-    {
-      "id": "magic-wormhole",
-      "name": "magic-wormhole",
-      "desc": "\ud83d\udc1b Transfer\u00eancia segura de arquivos",
-      "category": "utils",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/magic-wormhole/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "magic-wormhole"
-        },
-        "windows": {
-          "kind": "script",
-          "ref": "programas/magic-wormhole/setup.sh"
-        }
-      }
-    },
-    {
-      "id": "syncthing",
-      "name": "syncthing",
-      "desc": "\ud83d\udd04 Sincroniza\u00e7\u00e3o cont\u00ednua de arquivos descentralizada",
-      "category": "utils",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/syncthing/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "syncthing"
-        },
-        "windows": {
-          "kind": "script",
-          "ref": "programas/syncthing/setup.sh"
-        }
-      }
-    },
-    {
-      "id": "caddy",
-      "name": "caddy",
-      "desc": "\ud83c\udf10 Servidor web moderno hiper-r\u00e1pido com auto-HTTPS",
-      "category": "net",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/caddy/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "caddy"
-        },
-        "windows": {
-          "kind": "winget",
-          "ref": "Caddy.Caddy"
-        }
-      }
-    },
-    {
-      "id": "pm2",
-      "name": "pm2",
-      "desc": "\ud83d\ude80 Gerenciador de processos de produ\u00e7\u00e3o para Node.js com cluster mode",
-      "category": "dev",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/pm2/setup.sh"
-        },
-        "macos": {
-          "kind": "script",
-          "ref": "programas/pm2/setup.sh"
-        },
-        "windows": {
-          "kind": "npm",
-          "ref": "pm2"
-        }
-      }
-    },
-    {
-      "id": "railway",
-      "name": "railway",
-      "desc": "\ud83d\ude82 CLI da infraestrutura Railway moderna para deploy r\u00e1pido",
-      "category": "cloud",
-      "install": {
-        "linux": {
-          "kind": "script",
-          "ref": "programas/railway/setup.sh"
-        },
-        "macos": {
-          "kind": "brew",
-          "ref": "railway"
-        },
-        "windows": {
-          "kind": "npm",
-          "ref": "@railway/cli"
         }
       }
     }
