@@ -1,5 +1,9 @@
 # dotfiles
 
+<p align="center">
+  <img src="docs/readme/hero.png" alt="Banner ilustrativo do dotfiles (mockup com dados fictícios)" width="100%">
+</p>
+
 Ambiente de desenvolvimento reproduzível para **Windows, macOS e Linux**, com um instalador TUI (TypeScript + Bun) que lê um catálogo de 466 programas, mostra o plano antes de executar e instala cada item pelo gerenciador nativo do sistema.
 
 📖 Documentação: <https://juninmd.github.io/dotfiles/> · ⬇️ Download: <https://juninmd.github.io/dotfiles/download>
@@ -172,6 +176,18 @@ bun run build
 4. Atualize a documentação em `docs/` quando o módulo merecer uma página.
 
 O `AGENTS.md` do repositório pede no máximo **150 linhas por arquivo** e o ciclo plano → ação → validação.
+
+## Imagens
+
+> [!NOTE]
+> **Mockups ilustrativos.** As telas abaixo foram geradas em HTML com dados fictícios (Playwright) e não são capturas de uma instalação real.
+
+<p align="center">
+  <img src="docs/readme/installer.png" alt="Instalador TUI — mockup ilustrativo com dados fictícios" width="100%">
+  <br>
+  <sub>Instalador TUI — dados fictícios.</sub>
+</p>
+
 
 ## Limitações
 
