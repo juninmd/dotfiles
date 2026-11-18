@@ -8,6 +8,8 @@ updates:
     npm:
       patterns:
       - '*'
+  cooldown:
+    default-days: 7
 - package-ecosystem: pip
   directory: /
   schedule:
@@ -16,6 +18,8 @@ updates:
     pip:
       patterns:
       - '*'
+  cooldown:
+    default-days: 7
 - package-ecosystem: github-actions
   directory: /
   schedule:
@@ -24,6 +28,8 @@ updates:
     github-actions:
       patterns:
       - '*'
+  cooldown:
+    default-days: 7
 - package-ecosystem: docker
   directory: /
   schedule:
@@ -32,3 +38,5 @@ updates:
     docker:
       patterns:
       - '*'
+  cooldown:
+    default-days: 7
