@@ -73,7 +73,7 @@ dotfiles [--profile <nome>] [--dry-run] [--yes]
 | `--yes` | Pula a confirmação “Executar o plano?” |
 | `--help`, `-h` | Mostra o uso e a lista de perfis |
 
-Sem argumentos, a TUI pergunta o perfil e oferece **Personalizado**, que filtra os módulos com suporte ao seu sistema e permite marcar vários com busca por nome/categoria. Um perfil desconhecido encerra com código `2`; se algum módulo falhar, o instalador termina com código `1` e lista os que falharam.
+Sem argumentos, a TUI pergunta o perfil e oferece **Personalizado**, que filtra os módulos com suporte ao seu sistema e permite marcar vários com busca por nome/categoria. Um perfil desconhecido, uma flag inexistente (ex.: `--dryrun`) ou `--profile` sem valor encerram com código `2` sem instalar nada; se algum módulo falhar, o instalador termina com código `1` e lista os que falharam.
 
 Fluxo recomendado — primeiro simular, depois executar:
 
