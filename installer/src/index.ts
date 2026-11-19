@@ -1,16 +1,19 @@
 import catalog from "../catalog/catalog.json";
+import { parseCli } from "./args";
 import { detectOS } from "./platform";
 import { start } from "./ui";
 import type { Catalog } from "./types";
 
-const args = process.argv.slice(2);
-if (args.includes("--help") || args.includes("-h")) {
-  console.log("Uso: dotfiles [--profile <nome>] [--dry-run] [--yes]\nPerfis: " + Object.keys((catalog as Catalog).profiles).join(", "));
+const usage = "Uso: dotfiles [--profile <nome>] [--dry-run] [--yes]\nPerfis: " + Object.keys((catalog as Catalog).profiles).join(", ");
+let cli;
+try {
+  cli = parseCli(process.argv.slice(2));
+} catch (err) {
+  console.error(`${(err as Error).message}\n${usage}`);
+  process.exit(2);
+}
+if (cli.help) {
+  console.log(usage);
   process.exit(0);
 }
-const pi = args.indexOf("--profile");
-await start(catalog as Catalog, detectOS(), {
-  dryRun: args.includes("--dry-run"),
-  yes: args.includes("--yes"),
-  profile: pi >= 0 ? args[pi + 1] : undefined,
-});
+await start(catalog as Catalog, detectOS(), { dryRun: cli.dryRun, yes: cli.yes, profile: cli.profile });
