@@ -58,7 +58,11 @@ export async function start(catalog: Catalog, os: OS, opts: Options): Promise<vo
     s.start(`Instalando ${c.moduleId}`);
     const r = await runCommand(c, opts.dryRun);
     if (r.ok) s.stop(`${pc.green("✔")} ${c.moduleId}`);
-    else { s.stop(`${pc.red("✘")} ${c.moduleId} (exit ${r.code})`); failed.push(c.moduleId); }
+    else {
+      s.stop(`${pc.red("✘")} ${c.moduleId} (exit ${r.code})`);
+      if (r.detail) p.log.message(pc.dim(r.detail));
+      failed.push(c.moduleId);
+    }
   }
   if (failed.length) { p.outro(pc.red(`Falhou: ${failed.join(", ")}`)); process.exit(1); }
   p.outro(pc.green(opts.dryRun ? "Simulação concluída ✨" : "Tudo pronto ✨ Reinicie o terminal."));
