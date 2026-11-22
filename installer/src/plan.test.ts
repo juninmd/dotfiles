@@ -51,3 +51,10 @@ test("shell metacharacters in a ref are rejected", () => {
 test("unknown module id fails loudly", () => {
   expect(() => resolveModules(cat, ["nope"])).toThrow(/unknown module/);
 });
+
+test("script steps run from the repo root, whatever the cwd", () => {
+  const root = join(import.meta.dir, "../..");
+  const [cmd] = buildPlan(resolveModules(cat, ["zsh"]), "linux", root).commands;
+  expect(cmd!.argv).toEqual(["bash", join(root, "programas/zsh/setup.sh")]);
+  expect(existsSync(cmd!.argv[1]!)).toBe(true);
+});

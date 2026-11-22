@@ -48,6 +48,8 @@ irm https://juninmd.github.io/dotfiles/install.ps1 -OutFile install.ps1
 
 No macOS/Linux, o `sh -s --` encaminha os argumentos ao script; o instalador roda o binário temporário e apaga o diretório ao final. No Windows, `@args` só é preenchido quando o script é chamado com argumentos — por isso o `irm | iex` sem parâmetros abre a TUI, mas não aceita flags.
 
+Os passos `script` rodam `programas/<id>/setup.sh` de um clone do repositório. Rodando pelo código (`bun src/index.ts`) o caminho é resolvido sozinho; o binário compilado não traz os scripts, então aponte `DOTFILES_DIR` para um clone (`DOTFILES_DIR=~/dotfiles ./dotfiles`).
+
 ### Instalador shell legado (Linux)
 
 O repositório mantém `setup.sh` e `setup-2026.sh`, que não dependem do binário publicado e executam os scripts de `programas/`:
