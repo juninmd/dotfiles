@@ -6,7 +6,7 @@ import type { Catalog, OS } from "./types";
 
 const OS_LABEL: Record<OS, string> = { linux: "Linux", macos: "macOS", windows: "Windows" };
 
-export interface Options { dryRun: boolean; profile?: string; yes: boolean }
+export interface Options { dryRun: boolean; profile?: string; yes: boolean; root: string }
 
 function bail(v: unknown): asserts v is Exclude<typeof v, symbol> {
   if (p.isCancel(v)) { p.cancel("Cancelado. Nada foi alterado."); process.exit(0); }
@@ -42,7 +42,7 @@ export async function start(catalog: Catalog, os: OS, opts: Options): Promise<vo
     } else ids = catalog.profiles[choice as string]!.modules;
   }
 
-  const { commands, skipped } = buildPlan(resolveModules(catalog, ids), os);
+  const { commands, skipped } = buildPlan(resolveModules(catalog, ids), os, opts.root);
   p.note(commands.map((c) => `${pc.cyan("›")} ${c.label}`).join("\n") || "(vazio)", `Plano · ${commands.length} passos`);
   if (skipped.length) p.log.info(`Sem suporte em ${OS_LABEL[os]}: ${skipped.map((m) => m.name).join(", ")}`);
 

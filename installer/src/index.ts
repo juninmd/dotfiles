@@ -1,4 +1,5 @@
 import catalog from "../catalog/catalog.json";
+import { join } from "node:path";
 import { parseCli } from "./args";
 import { detectOS } from "./platform";
 import { start } from "./ui";
@@ -16,4 +17,6 @@ if (cli.help) {
   console.log(usage);
   process.exit(0);
 }
-await start(catalog as Catalog, detectOS(), { dryRun: cli.dryRun, yes: cli.yes, profile: cli.profile });
+// Scripts live in the repo checkout; a compiled binary has no checkout beside it, so DOTFILES_DIR points at one.
+const root = process.env.DOTFILES_DIR || join(import.meta.dir, "../..");
+await start(catalog as Catalog, detectOS(), { dryRun: cli.dryRun, yes: cli.yes, profile: cli.profile, root });
