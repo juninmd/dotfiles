@@ -35,5 +35,8 @@ export function buildPlan(mods: Module[], os: OS, root = ""): { commands: Planne
     if (!step) skipped.push(m);
     else commands.push({ moduleId: m.id, argv: stepToArgv(step, root), label: `${step.kind} ${step.ref}` });
   }
+  // A fresh Debian/Ubuntu image has an empty package index: `apt-get install` fails until it is refreshed.
+  if (mods.some((m) => m.install[os]?.kind === "apt"))
+    commands.unshift({ moduleId: "apt-update", argv: ["sudo", "apt-get", "update"], label: "apt update" });
   return { commands, skipped };
 }
