@@ -31,7 +31,7 @@ test("every step in the catalog builds a valid command", () => {
 
 test("plan maps to the native package manager per OS", () => {
   const mods = resolveModules(cat, ["git"]);
-  expect(buildPlan(mods, "linux").commands[0]!.argv.slice(0, 3)).toEqual(["sudo", "apt-get", "install"]);
+  expect(buildPlan(mods, "linux").commands.at(-1)!.argv.slice(0, 3)).toEqual(["sudo", "apt-get", "install"]);
   expect(buildPlan(mods, "macos").commands[0]!.argv[0]).toBe("brew");
   expect(buildPlan(mods, "windows").commands[0]!.argv[0]).toBe("winget");
 });
@@ -57,4 +57,12 @@ test("script steps run from the repo root, whatever the cwd", () => {
   const [cmd] = buildPlan(resolveModules(cat, ["zsh"]), "linux", root).commands;
   expect(cmd!.argv).toEqual(["bash", join(root, "programas/zsh/setup.sh")]);
   expect(existsSync(cmd!.argv[1]!)).toBe(true);
+});
+
+test("apt steps are preceded by one index refresh, other managers are not", () => {
+  const linux = buildPlan(resolveModules(cat, ["git", "zsh"]), "linux").commands.map((c) => c.argv.join(" "));
+  expect(linux[0]).toBe("sudo apt-get update");
+  expect(linux.filter((a) => a === "sudo apt-get update")).toHaveLength(1);
+  expect(buildPlan(resolveModules(cat, ["zsh"]), "linux").commands.map((c) => c.argv[1])).not.toContain("apt-get");
+  expect(buildPlan(resolveModules(cat, ["git"]), "macos").commands).toHaveLength(1);
 });
